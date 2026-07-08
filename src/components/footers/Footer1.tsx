@@ -14,7 +14,7 @@ export default function Footer1(_props?: any) {
                   <a href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>
                 </p>
                 <div className="social-link footer justify-content-center mt--20">
-                  <a href="https://github.com/Raad-141" target="_blank" rel="noreferrer" title="Codebase Review">
+                  <a href="https://github.com/raad-x" target="_blank" rel="noreferrer" title="Codebase Review">
                     <i className="fa-brands fa-github" />
                   </a>
                   <a href="#" title="Twitter">
