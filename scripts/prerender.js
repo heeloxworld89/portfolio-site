@@ -52,14 +52,16 @@ async function prerender() {
   // Wait a tiny bit extra for animations/odometer to settle
   await new Promise(r => setTimeout(r, 2000));
 
-  // 4. Extract fully rendered HTML
-  let html = await page.content();
+  // 4. Extract fully rendered HTML for just the root element
+  const rootContent = await page.evaluate(() => {
+    const root = document.getElementById('root');
+    return root ? root.innerHTML : '';
+  });
 
-  // Optionally strip out the injected puppeteer scripts if any, but standard content is fine.
-  
-  // 5. Overwrite index.html with the prerendered HTML
-  fs.writeFileSync(indexPath, html);
-  console.log('Successfully prerendered index.html!');
+  // 5. Save the root content to a file that will be committed to git
+  const rootHtmlPath = path.resolve(__dirname, '../prerendered-root.html');
+  fs.writeFileSync(rootHtmlPath, rootContent);
+  console.log('Successfully saved root HTML to prerendered-root.html!');
 
   // Cleanup
   await browser.close();
