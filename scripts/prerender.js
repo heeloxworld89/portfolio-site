@@ -25,7 +25,10 @@ async function prerender() {
   });
 
   // 2. Launch Puppeteer
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const browser = await puppeteer.launch({ 
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   
   // Disable external resources that might hang the render
