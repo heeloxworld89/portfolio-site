@@ -76,7 +76,7 @@ export default function CVResearch() {
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Independent Research</span>
-        <h2 className="title mb--20" style={{ fontSize: "36px", fontWeight: "700" }}>ORMAS — Three-Signal Learning: Autonomous Self-Correction for Neural Networks</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — Three-Signal Learning: Autonomous Self-Correction for Neural Networks</h2>
         <p className="disc" style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99" }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines across 61 files · Fully reproducible via <code>reproduce.sh</code></strong><br />
           Status: Submitted to NeurIPS 2026 (desk-rejected for margin violation). Workshop paper ready for resubmission. ICLR 2027 in preparation.
@@ -126,7 +126,7 @@ export default function CVResearch() {
           <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "20px" }}>
             ORMAS detects and treats 7 distinct node pathologies in real-time during training. <strong style={{ color: "#c4cfde" }}>Defense-in-depth:</strong> PCGrad operates at the gradient level (before weight updates); self-correction operates at the weight level (after updates).
           </p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table className="research-table">
               <thead>
                 <tr>
@@ -160,7 +160,7 @@ export default function CVResearch() {
           {/* Bar Chart — Noise Robustness */}
           <h5 style={{ fontSize: "16px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Noise Robustness — 40% Symmetric Noise, CIFAR-10</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Best accuracy vs. final accuracy after 200 epochs of training under label noise.</p>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px 24px 16px', marginBottom: '40px', position: 'relative' }}>
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px 24px 16px', marginBottom: '40px', position: 'relative', minWidth: 0, boxSizing: 'border-box' }}>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={noiseData} margin={{ top: 10, right: 40, left: 0, bottom: 10 }} barGap={4}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
@@ -190,7 +190,7 @@ export default function CVResearch() {
           <p style={{ fontSize: "14px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
             We inject σ-Gaussian weight perturbation at training step 1,000 — destroying all learned representations. Mixup permanently collapses to 33.3%. ORMAS recovers autonomously.
           </p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table className="recovery-table">
               <thead>
                 <tr>
@@ -226,7 +226,7 @@ export default function CVResearch() {
           </p>
 
           {/* Baldwin Effect Decay Table */}
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table className="decay-table">
               <thead>
                 <tr>
@@ -262,7 +262,7 @@ export default function CVResearch() {
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#878e99', marginBottom: '20px' }}>
             <strong style={{ color: '#c4cfde' }}>Ablation: Do All Three Signals Matter?</strong> On the DAG architecture under 30% noise:
           </p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '20px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '20px' }}>
             <table className="ablation-table">
               <thead>
                 <tr>
@@ -338,7 +338,7 @@ export default function CVResearch() {
           </p>
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.06)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.06)" }} /></div>
     </div>
   );
 }

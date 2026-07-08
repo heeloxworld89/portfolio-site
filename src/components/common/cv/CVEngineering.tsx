@@ -111,7 +111,7 @@ export default function CVEngineering() {
           border: 1px solid #2a2d32;
         }
         .section-title {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           color: #c4cfde;
           margin-top: 50px;
@@ -126,10 +126,13 @@ export default function CVEngineering() {
           background: rgba(255,255,255,0.05);
           margin-left: 20px;
         }
+        @media (min-width: 768px) {
+          .section-title { font-size: 28px; }
+        }
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
-        <h2 className="title mb--20" style={{ fontSize: "40px", fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
         
         <div style={{ background: "#191b1e", padding: "20px 24px", borderRadius: "8px", borderLeft: "2px solid #2a2d32", marginBottom: "40px", border: "1px solid #2a2d32" }}>
           <p style={{ fontSize: "18px", color: "#c4cfde", margin: 0, fontWeight: "500" }}>
@@ -268,7 +271,7 @@ export default function CVEngineering() {
           <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px" }}>
             Every task entering OXIMO passes through a deterministic 7-stage pipeline. Each stage is modular, independently testable, and can be bypassed via feature flags.
           </p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '40px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -301,7 +304,7 @@ export default function CVEngineering() {
           <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px" }}>
             Knowledge is built from 4 parallel sources (First Principles, Book, Industry, Internet). Every agent's Brain progresses through: Nascent → Learning → Mature → Expert.
           </p>
-          <div className="table-responsive mb--40">
+          <div className="table-responsive mb--40" style={{ overflowX: 'auto' }}>
             <table className="memory-table">
               <thead>
                 <tr>
@@ -353,7 +356,7 @@ export default function CVEngineering() {
 
                 {/* V2 Feature Flags Wave Table */}
                 <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', textTransform: 'uppercase', letterSpacing: '1.5px', marginTop: '25px', marginBottom: '15px' }}>V2 Feature Flags — Wave Breakdown</h5>
-                <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '20px' }}>
+                <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '20px' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr>
@@ -381,7 +384,7 @@ export default function CVEngineering() {
 
                 {/* Test Suite Breakdown Table */}
                 <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', textTransform: 'uppercase', letterSpacing: '1.5px', marginTop: '25px', marginBottom: '15px' }}>Test Suite — Module Breakdown</h5>
-                <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden' }}>
+                <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr>
@@ -415,7 +418,7 @@ export default function CVEngineering() {
             </div>
           </div>
 
-          <div className="mt--50 p-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
+          <div className="mt--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
             
             <h4 style={{ fontSize: "28px", fontWeight: "700", color: "#fff", marginBottom: "25px" }}>The ORMAS-OXIMO Integration</h4>
             
@@ -445,7 +448,7 @@ export default function CVEngineering() {
 
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
     </div>
   );
 }

@@ -14,8 +14,8 @@ export default function Hero(_props?: any) {
                   width={542}
                   height={802}
                 />
-                <h2 className="banner-big-text-1 up-down">AI RESEARCHER</h2>
-                <h2 className="banner-big-text-2 up-down-2">AI RESEARCHER</h2>
+                <h2 className="banner-big-text-1 up-down d-none d-lg-block">AI RESEARCHER</h2>
+                <h2 className="banner-big-text-2 up-down-2 d-none d-lg-block">AI RESEARCHER</h2>
               </div>
             </div>
             <div className="col-lg-6 order-lg-1">

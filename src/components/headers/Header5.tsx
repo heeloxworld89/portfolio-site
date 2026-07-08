@@ -34,14 +34,8 @@ export default function Header5() {
       <div className="row align-items-center">
         <div className="col-6">
           <div className="logo">
-            <Link to={`/`}>
-              <img
-                loading="lazy"
-                alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                width="121"
-                height="41"
-                src="assets/images/logo/white-logo-reeni.png"
-              />
+            <Link to={`/`} style={{ textDecoration: 'none' }}>
+              <h2 className="logo-text text-white m-0" style={{ fontWeight: 800 }}>Raadh.</h2>
             </Link>
           </div>
         </div>
@@ -49,7 +43,8 @@ export default function Header5() {
           <div className="header-right text-end">
             <div className="tmp-side-collups-area d-flex justify-content-end">
               <button
-                className="tmp-menu-bars humberger_menu_active"
+                className="tmp-menu-bars"
+                style={{ background: 'transparent', border: 'none', color: '#c4cfde', fontSize: '24px' }}
                 onClick={() => openModal("mobileMenu2")}
               >
                 <i className="fa-regular fa-bars-staggered"></i>

@@ -16,8 +16,7 @@ export default function MetaComponent({ meta }: MetaProps) {
     };
     updateMeta();
     return () => {
-      document.title =
-        "Personal Portfolio Reactjs Template | Freelancer & Developer Portfolio";
+      // document.title = "Rokib Al Dhin Raadh - Independent AI Researcher";
     };
   }, [meta.title]);
   return (

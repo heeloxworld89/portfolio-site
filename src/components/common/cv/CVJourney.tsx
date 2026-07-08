@@ -3,7 +3,7 @@ export default function CVJourney() {
     <div className="row mb--50" id="journey">
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Origin</span>
-        <h2 className="title mb--20" style={{ fontSize: "36px", fontWeight: "700" }}>The Journey — From First Certificate to Research (Age 12 to 18)</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>The Journey — From First Certificate to Research (Age 12 to 18)</h2>
         <p className="disc" style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99" }}>
           I started coding at 12. Not freelancing, not small scripts, not tutorial projects. Every time I coded, I built something ambitious — something that was too big for my skill level, which forced me to learn fast or fail. Usually both.
         </p>
@@ -99,7 +99,7 @@ export default function CVJourney() {
           </p>
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.1)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.1)" }} /></div>
     </div>
   );
 }

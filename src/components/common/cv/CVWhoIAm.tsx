@@ -14,6 +14,20 @@ export default function CVWhoIAm() {
         .who-card:hover {
           border-color: rgba(255,255,255,0.1);
         }
+        .verification-label {
+          color: #c4cfde;
+          font-weight: 600;
+          flex-shrink: 0;
+          width: 100%;
+          margin-bottom: 4px;
+        }
+        @media (min-width: 768px) {
+          .verification-label {
+            min-width: 200px;
+            width: auto;
+            margin-bottom: 0;
+          }
+        }
         .highlight-text {
           color: #c4cfde;
           font-weight: 500;
@@ -39,7 +53,7 @@ export default function CVWhoIAm() {
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Who I Am</span>
-        <h2 className="title mb--20" style={{ fontSize: "40px", fontWeight: "800", color: "#c4cfde" }}>Rokib Al Dhin Raadh</h2>
+        <h2 className="title mb--20 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>Rokib Al Dhin Raadh</h2>
         
         <div className="hero-text">
           I am <span className="highlight-text">Rokib Al Dhin Raadh</span>. I am 18 years old. I live in Dhaka, Bangladesh.<br/>
@@ -107,8 +121,8 @@ export default function CVWhoIAm() {
                 ['Black Bloxie Analytics', 'Shopify dashboards, per-phase ablation breakdowns, traffic attribution'],
                 ['Work Ethic Verification', 'Unlisted YouTube livestream links — timestamped daily work documentation'],
               ].map(([item, desc], i) => (
-                <li key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', fontSize: '13px' }}>
-                  <span style={{ color: '#c4cfde', fontWeight: 600, minWidth: '200px', flexShrink: 0 }}>{item}</span>
+                <li key={i} className="d-flex flex-wrap align-items-md-start" style={{ gap: '12px', fontSize: '13px' }}>
+                  <span className="verification-label">{item}</span>
                   <span style={{ color: '#4a5568' }}>·</span>
                   <span style={{ color: '#878e99' }}>{desc}</span>
                 </li>
@@ -121,7 +135,7 @@ export default function CVWhoIAm() {
 
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
     </div>
   );
 }

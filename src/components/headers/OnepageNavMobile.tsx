@@ -2,14 +2,13 @@ import { useModalUI } from "@/context/ModalUIContext";
 import { useEffect, useState, type MouseEvent } from "react";
 
 const navItems = [
-  { id: 1, href: "#home", text: "Home" },
-  { id: 2, href: "#about", text: "About" },
-  { id: 3, href: "#service", text: "Services" },
-  { id: 4, href: "#portfolio", text: "Portfolio" },
-  { id: 5, href: "#resume", text: "Resume" },
-  { id: 6, href: "#pricing", text: "Pricing" },
-  { id: 7, href: "#blog", text: "Blog" },
-  { id: 8, href: "#contacts", text: "Contact" },
+  { id: 1, href: "#who-i-am", text: "Who I Am" },
+  { id: 2, href: "#research", text: "Research" },
+  { id: 3, href: "#engineering", text: "Engineering" },
+  { id: 4, href: "#deployment", text: "Deployment" },
+  { id: 5, href: "#journey", text: "Origin" },
+  { id: 6, href: "#education", text: "Education" },
+  { id: 7, href: "#skills-vision", text: "Skills & Vision" }
 ];
 
 export default function OnepageNavMobile({

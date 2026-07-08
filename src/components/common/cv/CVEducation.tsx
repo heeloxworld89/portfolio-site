@@ -92,7 +92,7 @@ export default function CVEducation() {
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
-        <h2 className="title mb--20" style={{ fontSize: "40px", fontWeight: "800", color: "#c4cfde" }}>Formal & Informal Training</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>Formal & Informal Training</h2>
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
@@ -101,7 +101,7 @@ export default function CVEducation() {
         </div>
         
         <div className="content">
-          <h4 style={{ fontSize: "28px", fontWeight: "700", color: "#c4cfde", marginBottom: "20px" }}>How I Learn</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "20px" }}>How I Learn</h4>
           <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "30px", maxWidth: "800px" }}>
             I learn the way a researcher learns: I seek the <strong style={{ color: "#c4cfde" }}>how</strong>, not the <strong style={{ color: "#c4cfde" }}>what</strong>. I don't memorize syntax. I seek the mechanism behind the surface. This led me to study fields outside programming:
           </p>
@@ -132,8 +132,8 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 style={{ fontSize: "28px", fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>Formal Coursework</h4>
-          <div className="mb--50" style={{ background: "#191b1e", padding: "35px", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)" }}>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>Formal Coursework</h4>
+          <div className="mb--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)" }}>
             <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px", fontStyle: "italic" }}>
               Entirely self-taught in machine learning, systems engineering, and theoretical computer science:
             </p>
@@ -166,7 +166,7 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 style={{ fontSize: "28px", fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>The Honest Truth About Traditional Education</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>The Honest Truth About Traditional Education</h4>
           <div className="truth-box">
             <p>
               My high school grades are not what you would expect from someone writing mathematical proofs about neural network convergence. My traditional education suffered because I was spending every available hour on research, code, and building systems.
@@ -177,14 +177,14 @@ export default function CVEducation() {
             <p>
               My formal academic record does not reflect my actual capabilities. What reflects my capabilities is the work: <strong style={{ color: "#c4cfde" }}>309 experiments on a single GPU, 40,933 lines of production code, a registered UK company generating revenue, and a 1.5-year ablation study with published-quality results.</strong>
             </p>
-            <p style={{ fontSize: "22px", fontWeight: "700", marginTop: "30px", color: "#fff" }}>
+            <p className="fs-5 mt-4" style={{ fontWeight: "700", color: "#fff" }}>
               I dream of studying at MIT. I believe that with institutional support — mentorship, compute access, a community of researchers — I can scale what I've built.
             </p>
           </div>
           
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+# Rokib Al Dhin Raadh
+
+Independent AI Researcher from Dhaka, Bangladesh. I build interpretable, logic-driven AI frameworks that challenge the black-box paradigm.
+
+## Key Projects
+- **ORMAS (Objective-driven Resilient Multi-Agent System):** A novel architecture resolving the ISS convergence trap. Uses Constructor Injection and Atomic Rollback to allow autonomous agents to learn safely in adversarial environments without catastrophic breakdown.
+- **OXIMO:** A Cognitive Multi-Agent OS featuring a deterministic 7-stage pipeline. Built for production-grade, highly reliable AI task execution.
+
+## The Journey
+- Self-taught programmer from age 12.
+- By 15, sold a stock market algorithm that funded my compute setup (RTX 4090).
+- At 17, launched Black Bloxie LTD as a lab-rat test for OXIMO in the wild.
+- Currently pursuing fellowship/institutional support to scale Transformer experiments and frontier model access.
+
+## Connect
+- **Website:** https://raadh.me
+- **Twitter:** https://twitter.com/Raad_X_

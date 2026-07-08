@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon/favicon.svg", "favicon/apple-touch-icon.png"],
       manifest: {
-        name: "Reeni Reactjs",
-        short_name: "Reeni",
-        description: "Personal Portfolio Reactjs Template",
+        name: "Rokib Al Dhin Raadh Portfolio",
+        short_name: "Raadh",
+        description: "Independent AI Researcher Portfolio",
         theme_color: "#ffffff",
         display: "standalone", // ✅ ADD THIS
         icons: [

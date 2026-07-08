@@ -26,7 +26,7 @@ export default function CVDeployment() {
     <div className="row mb--50" id="deployment">
       <div className="col-12">
         <span className="subtitle" style={{ color: "#c4cfde", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Deployment</span>
-        <h2 className="title mb--20" style={{ fontSize: "36px", fontWeight: "700" }}>Black Bloxie LTD — The Lab-Rat Test</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>Black Bloxie LTD — The Lab-Rat Test</h2>
         <span className="pill" style={{ display: 'inline-block', background: "rgba(255,255,255,0.05)", color: "#878e99", padding: '4px 12px', borderRadius: '4px', fontSize: '12px', marginBottom: '15px', fontWeight: 600 }}>PRODUCTION-GRADE</span>
         <p className="disc" style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99" }}>
           <strong>Solo Founder | UK Companies House Registered (September 11, 2025) | Operating 2024 – Present</strong><br />
@@ -54,7 +54,7 @@ export default function CVDeployment() {
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
             One command. One thousand products. Two hours. $3.50.
           </p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -76,7 +76,7 @@ export default function CVDeployment() {
           {/* Cost Comparison Table */}
           <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Cost Comparison (1,000 products × 12 assets)</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Why cascaded intelligence matters — same output, fraction of cost.</p>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -107,7 +107,7 @@ export default function CVDeployment() {
           {/* Phase 1: V1 Deployment */}
           <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 1 — V1 Deployment (July 15 – October 15, 2025)</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Initial OXIMO pipeline deployed. All traffic and revenue measured from a standing start with zero advertising spend.</p>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflow: 'hidden', marginBottom: '40px' }}>
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -130,7 +130,7 @@ export default function CVDeployment() {
           {/* Phase 2: Ablation — show as bar chart with absolute values + clear framing */}
           <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 2 — Ablation: Full Removal (Decline)</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>All OXIMO-generated content removed. Store reduced to a standard e-commerce setup. Values show percentage decline from OXIMO-active baseline.</p>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflow: 'hidden', marginBottom: '40px' }}>
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -152,7 +152,7 @@ export default function CVDeployment() {
           {/* Phase 3: Recovery — bar chart with proper domain */}
           <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 3 — V2 + V3 Re-Injection (Recovery)</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>OXIMO V3 capabilities restored. Values show percentage increase from ablated (no-OXIMO) baseline, measured after re-injection.</p>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '30px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -177,7 +177,7 @@ export default function CVDeployment() {
           </p>
 
           {/* Traffic Source Analysis Table */}
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -203,7 +203,7 @@ export default function CVDeployment() {
 
           {/* Current State */}
           <h4 style={{ fontSize: "22px", fontWeight: "600", marginBottom: "15px", marginTop: "40px", color: "#c4cfde" }}>Current State (July 2026)</h4>
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -233,7 +233,7 @@ export default function CVDeployment() {
           </div>
         </div>
       </div>
-      <div className="col-12"><hr style={{ borderColor: "rgba(255,255,255,0.06)", margin: "60px 0" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.06)" }} /></div>
     </div>
   );
 }

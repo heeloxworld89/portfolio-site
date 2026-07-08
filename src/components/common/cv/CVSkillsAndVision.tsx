@@ -177,19 +177,30 @@ export default function CVSkillsAndVision() {
         .needs-table td:first-child { color: #c4cfde; font-weight: 600; white-space: nowrap; }
         .needs-table tr:last-child td { border-bottom: none; }
         .section-header {
-          font-size: 22px;
+          font-size: 24px;
           font-weight: 700;
           color: #c4cfde;
           margin-top: 50px;
           margin-bottom: 24px;
         }
         .lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 576px) { .lang-grid { grid-template-columns: 1fr; } }
+        @media (min-width: 768px) {
+          .section-header { font-size: 28px; }
+          .diff-label { min-width: 200px; width: auto; margin-bottom: 0; }
+        }
+        .diff-label {
+          color: #c4cfde;
+          font-weight: 600;
+          font-size: 14px;
+          flex-shrink: 0;
+          width: 100%;
+          margin-bottom: 8px;
+        }
       `}</style>
       
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Skills, Vision &amp; Metrics</span>
-        <h2 className="title mb--40" style={{ fontSize: "40px", fontWeight: "800", color: "#c4cfde" }}>Technical Skills</h2>
+        <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>Technical Skills</h2>
         
         <div className="content">
           {/* Skill Groups */}
@@ -261,7 +272,7 @@ export default function CVSkillsAndVision() {
 
           {/* How I Fund Everything */}
           <h4 className="section-header">How I Fund Everything</h4>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px' }}>
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '20px' }}>
             <table className="needs-table">
               <thead>
                 <tr>
@@ -302,8 +313,8 @@ export default function CVSkillsAndVision() {
               { label: 'Cross-Disciplinary Self-Education', desc: 'Aerodynamics (ISS theory), financial markets (stock algorithms), sales psychology (cold-calling), company law (UK formation), control theory (convergence proofs).' },
               { label: 'Documented Journey', desc: 'Two years ago, ORMAS and OXIMO sounded delusional. The gap between vision and credibility has closed — because the code exists, the experiments are run, the company is registered.' },
             ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: '16px', padding: '14px 20px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', alignItems: 'flex-start' }}>
-                <span style={{ color: '#c4cfde', fontWeight: 600, fontSize: '14px', minWidth: '200px', flexShrink: 0 }}>{item.label}</span>
+              <div key={i} className="d-flex flex-wrap align-items-md-start" style={{ gap: '16px', padding: '14px 20px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px' }}>
+                <span className="diff-label">{item.label}</span>
                 <span style={{ color: '#878e99', fontSize: '14px' }}>{item.desc}</span>
               </div>
             ))}
@@ -327,7 +338,7 @@ export default function CVSkillsAndVision() {
 
           {/* What I Need */}
           <h4 className="section-header">What I Need</h4>
-          <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflow: "hidden", marginBottom: "40px" }}>
+          <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflowX: "auto", marginBottom: "40px" }}>
             <table className="needs-table">
               <thead>
                 <tr>
