@@ -1,4 +1,4 @@
-import TyperComponent from "@/components/common/TyperComponent";
+
 export default function Hero(_props?: any) {
   return (
     <div className="tmp-banner-one-area" id="home" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
