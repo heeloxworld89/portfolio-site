@@ -2,7 +2,7 @@ export default function CVSkillsAndVision() {
   const skillGroups = [
     {
       title: 'Machine Learning',
-      tags: ['PyTorch', 'CNN / ResNet / DAG', 'Transformers', 'PCGrad Gradient Surgery', 'ISS Convergence Theory', 'Noise-Robust Training'],
+      tags: ['PyTorch', 'CNN / ResNet / DAG', 'Transformers', 'PCGrad Gradient Surgery', 'Convergence Theory', 'Noise-Robust Training'],
     },
     {
       title: 'Systems Engineering',
@@ -15,51 +15,56 @@ export default function CVSkillsAndVision() {
   ];
 
   const metrics = [
-    { value: '18',    label: 'Years Old' },
-    { value: '78K+',  label: 'Lines of Code Written' },
-    { value: '309',   label: 'Experiments Run' },
-    { value: '100%',  label: 'IP Ownership' },
+    { value: '383',     label: 'Controlled Experiments' },
+    { value: '+70.3pp', label: 'ORMAS Recovery Gap' },
+    { value: '99%',     label: 'API Cost Reduction' },
+    { value: '1',       label: 'Formal Convergence Proof' },
   ];
 
   const detailGroups = [
     {
-      title: 'The Foundation',
+      title: 'Foundation',
       rows: [
         { label: 'Institutional Affiliation', value: 'None' },
         { label: 'External Funding',           value: '$0' },
-        { label: 'Work Ethic',                 value: '2+ years of 14–16 hr daily work' },
+        { label: 'IP Ownership',               value: '100%' },
       ],
     },
     {
       title: 'ORMAS Project',
       rows: [
-        { label: 'Codebase',      value: '10,594 lines · 61 files · PyTorch' },
-        { label: 'Hardware Used', value: 'Single RTX 4090' },
+        { label: 'Codebase',           value: '10,594 lines · 61 files · PyTorch' },
+        { label: 'Hardware (Expts)',   value: 'Single RTX 3090' },
+        { label: 'Hardware (Personal)', value: 'RTX 4090' },
       ],
     },
     {
       title: 'OXIMO OS',
       rows: [
         { label: 'Production Code', value: '40,933 lines · 11 mini-repos' },
-        { label: 'Test Suite',      value: '27,228 lines · 2,011 passing · 0 failures' },
+        { label: 'Test Suite',      value: '2,011 passing · 0 failures' },
+        { label: 'Refactor',        value: '72% reduction from 106K-line monolith' },
       ],
     },
     {
       title: 'Black Bloxie LTD',
       rows: [
-        { label: 'Revenue (Zero Ad Spend)', value: '£1,163+' },
-        { label: 'Ablation Result',         value: '−91% revenue on removal · +1,300% on re-injection' },
+        { label: 'Study Duration',       value: '1.5–2 years · Vertical 1 complete' },
+        { label: 'Ablation Result',      value: '−91% on removal · +1,300% on re-injection' },
+        { label: 'Infrastructure Cost',  value: '99% reduction via specialized agent cascade' },
       ],
     },
   ];
 
-  const visionSteps = [
-    { n: '1', title: 'Failed Startups (Age 12–15)',  note: '"The pipeline is the problem."' },
-    { n: '2', title: 'OXIMO (Age 16–17)',            note: '"Build the autonomous pipeline."' },
-    { n: '3', title: 'Black Bloxie LTD (Age 17)',   note: '"Test it in production."' },
-    { n: '4', title: 'ORMAS (Age 17–18)',            note: '"Fix the learning problem."' },
-    { n: '5', title: 'Cherry (Next)',                note: '"Build the self-correcting LLM."' },
-    { n: '★', title: 'OXIDO (Endgame)',              note: '"Deploy everywhere."' },
+  const achievementSteps = [
+    { n: '01', title: 'ORMAS — Self-Correcting Neural Architecture',
+      note: 'First formal convergence proof for any self-correcting architecture. 383 experiments across 4 architectures. +70.3pp recovery gap where baselines permanently collapse.' },
+    { n: '02', title: 'OXIMO — Cognitive Multi-Agent OS',
+      note: '40,933 lines of production code. 2,011 tests, zero failures. Rebuilt from a 106,000-line monolith at 72% reduction. Agents that hire agents, with 3-tier persistent memory.' },
+    { n: '03', title: 'Black Bloxie LTD — Private Equity AI Lab',
+      note: '1.5–2 year controlled ablation study across e-commerce. −91% revenue on OXIMO removal, +1,300% on recovery. 500+ customers. $0 ad spend. Law, software, and medical verticals ongoing.' },
+    { n: '04', title: 'OXIDO — The Convergence',
+      note: 'OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency. The endgame.' },
   ];
 
   return (
@@ -200,7 +205,7 @@ export default function CVSkillsAndVision() {
       
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Skills, Vision &amp; Metrics</span>
-        <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>Technical Skills</h2>
+        <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>The Technical Stack</h2>
         
         <div className="content">
           {/* Skill Groups */}
@@ -233,7 +238,7 @@ export default function CVSkillsAndVision() {
           </div>
 
           {/* By The Numbers */}
-          <h4 className="section-header">By The Numbers</h4>
+          <h4 className="section-header">Portfolio Summary</h4>
           <div className="metrics-grid">
             {metrics.map((m, i) => (
               <div key={i} className="metric-card">
@@ -256,75 +261,57 @@ export default function CVSkillsAndVision() {
             </div>
           ))}
 
-          {/* Work Ethic */}
-          <h4 className="section-header">The Work Ethic — Documented</h4>
-          <div style={{ padding: "28px 32px", background: "#191b1e", borderRadius: "8px", border: "1px solid #2a2d32", borderLeft: "3px solid #2a2d32" }}>
-            <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#c4cfde", marginBottom: "16px" }}>
-              I maintained a documented <strong>14–16 hour daily work schedule</strong> for over 2 years. Continuously. To prove this was real, I applied for a Guinness World Record for sustained productivity. My evidence: continuous unlisted YouTube livestreams of every working day.
-            </p>
-            <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#c4cfde", marginBottom: "16px" }}>
-              Guinness declined the application on health grounds. The point was never the certificate. The point was the documentation. When someone wonders <em>"How did an 18-year-old in Bangladesh build all of this?"</em> — the livestreams are the answer. Not luck. Not privilege. Hours.
-            </p>
-            <p style={{ fontSize: "14px", lineHeight: "1.8", color: "#878e99", margin: 0 }}>
-              Coding is my passion. It has been my passion since I was a child. I am not forcing myself to sit at a desk for 16 hours. I am doing the thing I love for 16 hours. The difference matters.
-            </p>
+          <h4 className="section-header">The Output Pipeline</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '12px' }}>
+            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>14–16 hrs</div>
+              <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Daily Engineering Focus</div>
+            </div>
+            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>100%</div>
+              <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Sole IP Ownership</div>
+            </div>
           </div>
 
+
           {/* How I Fund Everything */}
-          <h4 className="section-header">How I Fund Everything</h4>
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '20px' }}>
-            <table className="needs-table">
-              <thead>
-                <tr>
-                  <th style={{ width: '35%' }}>Item</th>
-                  <th>Source</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>RTX 4090</td>
-                  <td>Purchased with savings from stock market algorithm sold at 15 (~$10,000 USD / ~1M BDT)</td>
-                </tr>
-                <tr>
-                  <td>Black Bloxie</td>
-                  <td>Zero capital investment. Runs on API calls costing dollars. Revenue (£1,163+) exceeds operational cost.</td>
-                </tr>
-                <tr>
-                  <td>Research Costs</td>
-                  <td>LLM provider API bills (DeepSeek, Gemini, OpenAI) — dollars per month, not thousands.</td>
-                </tr>
-                <tr>
-                  <td>Personal Expenses</td>
-                  <td>Minimal. Living at home in Dhaka. Cost of living is a fraction of Western researchers.</td>
-                </tr>
-              </tbody>
-            </table>
+          <h4 className="section-header">Entirely Self-Funded</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '40px' }}>
+            {[
+              { item: 'RTX 3090', src: 'All 383 ORMAS experiments. Dedicated research hardware.' },
+              { item: 'Personal RTX 4090', src: 'Day-to-day development machine. Funded from $10K stock algorithm sale at age 15.' },
+              { item: 'Black Bloxie', src: 'Zero capital. API costs = dollars/month. Revenue exceeds cost.' },
+              { item: 'Research', src: 'LLM API bills — DeepSeek, Gemini, OpenAI. Dollars, not thousands.' },
+              { item: 'Living Costs', src: 'At home in Dhaka. Fraction of Western researcher overhead.' },
+            ].map((r, i) => (
+              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', marginBottom: '6px', letterSpacing: '0.5px' }}>{r.item}</div>
+                <div style={{ fontSize: '13px', lineHeight: '1.6', color: '#878e99' }}>{r.src}</div>
+              </div>
+            ))}
           </div>
-          <p style={{ fontSize: "14px", lineHeight: "1.8", color: "#878e99", marginBottom: "30px" }}>
-            The proof-of-concept is self-funded. The scaling requires institutional support — Transformer-scale experiments, frontier model access, conference travel, and Cherry training compute.
-          </p>
 
           {/* What Makes This Different */}
           <h4 className="section-header">What Makes This Different</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '40px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '40px' }}>
             {[
-              { label: '100% IP Ownership', desc: 'No co-founders, no university claims, no employer IP agreements. Every line of code, every line of math.' },
-              { label: 'Zero Institutional Support', desc: 'Zero external compute grants. Every experiment run on a single personal RTX 4090. Every business registered through personal savings.' },
-              { label: 'Cross-Disciplinary Self-Education', desc: 'Aerodynamics (ISS theory), financial markets (stock algorithms), sales psychology (cold-calling), company law (UK formation), control theory (convergence proofs).' },
-              { label: 'Documented Journey', desc: 'Two years ago, ORMAS and OXIMO sounded delusional. The gap between vision and credibility has closed — because the code exists, the experiments are run, the company is registered.' },
+              { label: '100% IP Ownership', desc: 'No co-founders. No university claims. No employer agreements. Every line of code and math is mine.' },
+              { label: 'Zero Institutional Support', desc: 'Zero compute grants. Every experiment on a personal RTX 3090. Every company registered from personal savings.' },
+              { label: 'Cross-Disciplinary', desc: 'Control theory → stability proofs. Financial markets → stock algorithms. Company law → UK registration. The research demanded breadth.' },
+              { label: 'Documented', desc: 'Two years ago this sounded delusional. The gap closed — because the code runs, the experiments are done, the company generates revenue.' },
             ].map((item, i) => (
-              <div key={i} className="d-flex flex-wrap align-items-md-start" style={{ gap: '16px', padding: '14px 20px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px' }}>
-                <span className="diff-label">{item.label}</span>
+              <div key={i} style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 16px', padding: '12px 18px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', alignItems: 'baseline' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: '#c4cfde', letterSpacing: '1px', textTransform: 'uppercase', flexShrink: 0 }}>{item.label}</span>
                 <span style={{ color: '#878e99', fontSize: '14px' }}>{item.desc}</span>
               </div>
             ))}
           </div>
 
           {/* Vision Pipeline */}
-          <h4 className="section-header">The Vision — Where Everything Connects</h4>
+          <h4 className="section-header">The Work — What Has Been Built</h4>
           <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflow: "hidden", marginBottom: "40px" }}>
             <ul className="vision-list" style={{ padding: "8px 24px" }}>
-              {visionSteps.map((s, i) => (
+              {achievementSteps.map((s, i) => (
                 <li key={i} className="vision-item">
                   <div className="vision-num">{s.n}</div>
                   <div>
@@ -336,32 +323,28 @@ export default function CVSkillsAndVision() {
             </ul>
           </div>
 
-          {/* What I Need */}
-          <h4 className="section-header">What I Need</h4>
+          {/* Scaling Requirements */}
+          <h4 className="section-header">Strategic Roadmap</h4>
           <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflowX: "auto", marginBottom: "40px" }}>
             <table className="needs-table">
-              <thead>
+               <thead>
                 <tr>
-                  <th style={{ width: '35%' }}>Resource</th>
-                  <th>Purpose</th>
+                  <th style={{ width: '35%' }}>Phase</th>
+                  <th>Execution Requirements</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Fellowship / Grant</td>
-                  <td>Fund Transformer-scale experiments, frontier model access, and Cherry training compute.</td>
+                  <td>Compute Scaling (Transformer Integration)</td>
+                  <td>Migrate the validated ORMAS protocol from CNN/DAG architectures to Transformer-scale constraints. The mathematics are architecture-agnostic; execution requires access to multi-node H100/A100 clusters.</td>
                 </tr>
                 <tr>
-                  <td>Institutional Mentorship</td>
-                  <td>Refine this work to publication standards (ICLR 2027, ICSE SEIP).</td>
+                  <td>Project Cherry (Self-Correcting Foundation Model)</td>
+                  <td>Pre-train an LLM using the three-signal loss architecture from scratch. This replaces post-hoc alignment (RLHF) with intrinsic, step-by-step structural correction during the pre-training phase.</td>
                 </tr>
                 <tr>
-                  <td>Relocation</td>
-                  <td>To London (UK) or New York (US).</td>
-                </tr>
-                <tr>
-                  <td>PhD Admission</td>
-                  <td>MIT is the dream. With institutional support — mentorship, compute access, a community of researchers — I can scale what I've built.</td>
+                  <td>Formal Verification &amp; Peer Review</td>
+                  <td>Subject the Input-to-State Stability (ISS) convergence proofs to rigorous scrutiny by applied mathematicians and control theorists prior to open submission.</td>
                 </tr>
               </tbody>
             </table>

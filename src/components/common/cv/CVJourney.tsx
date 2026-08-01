@@ -2,104 +2,90 @@ export default function CVJourney() {
   return (
     <div className="row mb--50" id="journey">
       <div className="col-12">
-        <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Origin</span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>The Journey — From First Certificate to Research (Age 12 to 18)</h2>
-        <p className="disc" style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99" }}>
-          I started coding at 12. Not freelancing, not small scripts, not tutorial projects. Every time I coded, I built something ambitious — something that was too big for my skill level, which forced me to learn fast or fail. Usually both.
+        <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Origin</span>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>The Experimental Ground That Motivated Everything</h2>
+        <p className="disc" style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", maxWidth: '680px', marginBottom: '10px' }}>
+          Every system documented here emerged from a specific failure. The research did not precede the problems — the problems preceded the research.
         </p>
-        
+
         <div className="content mt--30">
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            <strong>First Professional Certificate:</strong> Google — <em>Crash Course on Python</em>. January 31, 2023. I was 15. For a kid in Dhaka with no institutional support, no mentors, and no programming community, getting certified by Google as a programmer was the single best thing that had happened to me. That certificate was proof that I was real.
+
+          {/* Phase 1 — Early Foundation */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '40px' }}>
+            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 24px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '8px' }}>Age 12 — First Principles</div>
+              <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
+                Began programming at 12. Every project was constructed at the edge of current capability — which established a working pattern: learn what the problem demands, not what the curriculum offers. The discipline of self-directed inquiry formed before any formal exposure to computer science.
+              </p>
+            </div>
+            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 24px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '8px' }}>Age 15 — First Validated Output</div>
+              <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
+                Developed a stock market price prediction system: market data ingestion → fundamental analysis → technical analysis → directional prediction. Sold for approximately <strong style={{ color: '#c4cfde' }}>$10,000 USD</strong>. The proceeds funded the RTX 3090 that would later run all 383 ORMAS experiments. More importantly: it was the first externally validated proof that the work was real.
+              </p>
+            </div>
+          </div>
+
+          {/* Phase 2 — The Venture Pattern */}
+          <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "8px", color: "#c4cfde" }}>Five Ventures. Five Distinct Failure Modes. One Convergent Finding.</h4>
+          <p style={{ fontSize: "15px", lineHeight: "1.8", color: "#878e99", marginBottom: "24px" }}>
+            Between ages 12 and 17, five independent ventures were pursued across software, automation, and e-commerce. Each failed at a structurally different layer. Each contributed a data point to the same emerging pattern.
           </p>
 
-          <h4 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "15px", marginTop: "40px" }}>The Stock Market Algorithm (Age ~15) — First Real Money</h4>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            The first project that produced real revenue was a stock market price prediction tool. Architecture: Ingest market data → Analyze fundamentals → Technical analysis → Model predicts directional movement.
-          </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            I sold the tool for approximately <strong>$10,000 USD</strong> (~1 million BDT). At 15 years old, it was the most money I had ever seen. It funded the RTX 4090 that later powered ORMAS.
-          </p>
-
-          <h4 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "15px", marginTop: "40px" }}>The Bleeding Startups (Age 15 to 17)</h4>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "30px" }}>
-            The stock market money gave me capital to start building companies. I call them <strong>bleeding startups</strong>: not dead, but never healthy. Always burning resources, always teaching, never reaching escape velocity.
-          </p>
-          
-          <div className="timeline-container" style={{ position: "relative", padding: "10px 0 20px 20px", borderLeft: "1px solid rgba(255,255,255,0.08)", marginLeft: "10px", marginBottom: "30px" }}>
+          <div className="timeline-container" style={{ position: "relative", padding: "10px 0 20px 20px", borderLeft: "1px solid rgba(255,255,255,0.06)", marginLeft: "10px", marginBottom: "30px" }}>
             {[
-              { 
-                title: "Venture 1: Software Company", 
-                result: "Bled", 
-                desc: "A 15-year-old in Bangladesh lacks the network for enterprise deals." 
+              {
+                title: "Software Services",
+                lesson: "Distribution, at 15, without institutional credibility or network access, is not a technical problem. It is a structural one. Enterprise procurement does not route through technical merit alone."
               },
-              { 
-                title: "Venture 2: Cold-Calling Automation", 
-                location: "(Italy/Spain)",
-                result: "Bled", 
-                desc: "The sales process has human trust dynamics that cannot be fully automated at the point of contact." 
+              {
+                title: "Cold-Call Automation — European Markets",
+                lesson: "Human trust in autonomous agents has a hard threshold at the closing transaction. The automation covered 90% of the sales cycle reliably; the final 10% required human presence. That boundary defined the design constraint that OXIMO later addressed."
               },
-              { 
-                title: "Venture 3: US-Targeted Digital Marketing", 
-                result: "Bled", 
-                desc: "The bottleneck in digital marketing is content production at scale, not distribution." 
+              {
+                title: "US-Targeted Digital Marketing",
+                lesson: "The bottleneck was not distribution. It was content production at scale. The problem required a system that could generate — not one that could merely distribute."
               },
-              { 
-                title: "Venture 4: Organic E-Commerce", 
-                result: "Bled", 
-                desc: "Individual tools for pricing or marketing are incremental improvements. The problem is the pipeline itself." 
+              {
+                title: "Organic E-Commerce",
+                lesson: "Individual tools optimizing pricing or marketing are incremental improvements. The problem is coordination across the entire pipeline: research, listing, pricing, fulfillment, service. One person cannot be the system."
               },
-              { 
-                title: "Venture 5: Additional Automation Tools", 
-                result: "Bled", 
-                desc: "Each added another data point to the pattern." 
+              {
+                title: "Automation Tooling",
+                lesson: "Confirmed the convergent finding across all prior ventures: the bottleneck is never individual capability. It is always coordination."
               }
             ].map((venture, index) => (
-              <div key={index} className="timeline-item" style={{ position: "relative", marginBottom: index !== 4 ? "40px" : "10px", paddingLeft: "30px" }}>
-                {/* Timeline Dot */}
-                <div style={{ 
-                  position: "absolute", left: "-22px", top: "8px", width: "10px", height: "10px", 
-                  borderRadius: "50%", backgroundColor: "#4a5568", border: "1px solid #2a2d32"
+              <div key={index} className="timeline-item" style={{ position: "relative", marginBottom: index !== 4 ? "28px" : "10px", paddingLeft: "30px" }}>
+                <div style={{
+                  position: "absolute", left: "-21px", top: "14px", width: "8px", height: "8px",
+                  borderRadius: "50%", backgroundColor: "#2a2d32", border: "1px solid #4a5568"
                 }}></div>
-                
-                {/* Timeline Content */}
-                <div style={{ 
-                  backgroundColor: "#191b1e", padding: "20px", borderRadius: "8px", 
-                  border: "1px solid #2a2d32"
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", marginBottom: "8px", gap: "10px" }}>
-                    <h5 style={{ fontSize: "17px", fontWeight: "600", color: "#c4cfde", margin: 0 }}>
-                      {venture.title} {venture.location && <span style={{ color: "#878e99", fontSize: "14px", fontWeight: "normal" }}>{venture.location}</span>}
-                    </h5>
-                    <span style={{ 
-                      padding: "2px 10px", backgroundColor: "rgba(255,255,255,0.05)", 
-                      color: "#878e99", borderRadius: "4px", fontSize: "11px", 
-                      fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px"
-                    }}>
-                      {venture.result}
-                    </span>
-                  </div>
-                  <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#878e99", margin: 0 }}>
-                    {venture.desc}
+                <div style={{ backgroundColor: "#191b1e", padding: "18px 22px", borderRadius: "8px", border: "1px solid #2a2d32" }}>
+                  <h5 style={{ fontSize: "14px", fontWeight: "700", color: "#c4cfde", margin: "0 0 6px", letterSpacing: '0.3px' }}>{venture.title}</h5>
+                  <p style={{ fontSize: "14px", lineHeight: "1.7", color: "#878e99", margin: 0 }}>
+                    {venture.lesson}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <h4 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "15px", marginTop: "40px" }}>The Pattern</h4>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px", fontWeight: "bold" }}>
-            The problem is not any single part of the business pipeline — the problem is the pipeline itself.
-          </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            Every venture failed at a different stage. But the root cause was always the same: a human bottleneck. One person — me — trying to be the CEO, developer, marketer, salesperson, and support agent.
-          </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            That insight is why <strong>OXIMO</strong> exists. And when OXIMO hit real-world data and the agents couldn't learn safely, that is why <strong>ORMAS</strong> exists. The failed startups are not separate from the research. They are the research.
-          </p>
+          {/* The Structural Insight */}
+          <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderLeft: "2px solid #c4cfde", borderRadius: "8px", padding: "24px 28px", marginBottom: "30px" }}>
+            <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#c4cfde", marginBottom: "12px", fontWeight: "600" }}>
+              The problem is not any single component of the business pipeline. The problem is the pipeline itself — and the coordination overhead that makes it humanly intractable at scale.
+            </p>
+            <p style={{ fontSize: "14px", lineHeight: "1.75", color: "#878e99", marginBottom: "12px" }}>
+              Five ventures failing at five different stages constitutes a structured experiment in entrepreneurial failure modes. The root variable in every case was identical: one person attempting to occupy every role in a system that requires multiple simultaneous specialized agents operating in coordination.
+            </p>
+            <p style={{ fontSize: "14px", lineHeight: "1.75", color: "#878e99", margin: 0 }}>
+              That observation demanded a structural solution. <strong style={{ color: "#c4cfde" }}>OXIMO</strong> was the response: a cognitive multi-agent operating system that assembles its own organizational structure on demand, decomposes tasks autonomously, and creates new agent roles as the problem requires. When OXIMO's agents needed to learn safely from real-world production data — corrupted, contradictory, adversarial — that constraint motivated <strong style={{ color: "#c4cfde" }}>ORMAS</strong>. The failed ventures are not separate from the research. They are its experimental substrate.
+            </p>
+          </div>
+
         </div>
       </div>
-      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.1)" }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.06)" }} /></div>
     </div>
   );
 }

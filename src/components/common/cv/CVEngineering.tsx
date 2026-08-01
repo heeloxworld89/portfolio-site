@@ -133,7 +133,13 @@ export default function CVEngineering() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
-        
+        <p style={{ fontSize: '13px', color: '#4a5568', marginTop: '-14px', marginBottom: '20px' }}>
+          <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#878e99', textDecoration: 'underline' }}>
+            ↗ View Codebase
+          </a>
+          {' '}&nbsp;·&nbsp; Architecture is complete. Code is not polished — this was production research infrastructure, not a demo.
+        </p>
+
         <div style={{ background: "#191b1e", padding: "20px 24px", borderRadius: "8px", borderLeft: "2px solid #2a2d32", marginBottom: "40px", border: "1px solid #2a2d32" }}>
           <p style={{ fontSize: "18px", color: "#c4cfde", margin: 0, fontWeight: "500" }}>
             Sole Architect & Engineer | 2023 – Present | Python
@@ -150,22 +156,36 @@ export default function CVEngineering() {
         </div>
         
         <div className="content">
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            I have failed five startups between the ages of 12 and 16. Every single one failed commercially. But each failure taught me patterns. Not just technical patterns — <strong style={{ color: "#c4cfde" }}>human operational patterns</strong>. How employees think. How delegation fails. How coordination breaks down.
+          {/* STAT STRIP */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '12px', marginBottom: '40px' }}>
+            {[
+              { val: '40,933', lbl: 'Lines of Code' },
+              { val: '2,011', lbl: 'Tests · 0 Failures' },
+              { val: '11', lbl: 'Mini-Repos' },
+              { val: '72%', lbl: 'Line Reduction' },
+              { val: '12/12', lbl: 'Algorithms Ported' },
+              { val: '47', lbl: 'Feature Flags' },
+            ].map((s, i) => (
+              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '16px', textAlign: 'center' }}>
+                <div style={{ fontSize: '22px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
+                <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "14px" }}>
+            Every existing multi-agent framework I studied required hand-holding: a human to frame each task, prompt each model, and pass the output. I wanted agents that hire other agents, decompose tasks, remember across sessions, and operate like a company. That became 40,933 lines of production code.
           </p>
-          <p style={{ lineHeight: "1.8", color: "#c4cfde", marginBottom: "20px", fontSize: "22px", fontWeight: "600", fontStyle: "italic", borderLeft: "2px solid rgba(255,255,255,0.1)", paddingLeft: "20px" }}>
-            What if I could build an AI company where I describe what needs to happen, and the entire company builds itself?
+          <p style={{ lineHeight: "1.8", color: "#c4cfde", marginBottom: "14px", fontSize: "18px", fontWeight: "600", fontStyle: "italic", borderLeft: "2px solid rgba(255,255,255,0.1)", paddingLeft: "20px" }}>
+            Not a chatbot. A full organizational structure that assembles itself.
           </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            Not a single chatbot. A full organizational structure — departments, roles, employees, managers, knowledge systems, memory — that assembles itself on demand, executes tasks through hierarchical decomposition, learns from its own experience, and creates new capabilities when it encounters tasks it doesn't know how to do.
-          </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            OXIMO is the body. It is the operational chassis that executes, coordinates, learns, and scales. But a body without a brain is just a machine following instructions. The brain — that's <span className="glow-text">ORMAS</span>.
+          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "40px" }}>
+            I rebuilt it from a 106,000-line monolith: 72% line reduction, every critical algorithm intact, zero test failures. The refactor was not a cleanup — it was proof the architecture was sound enough to survive complete reconstruction.
           </p>
 
-          <h4 className="section-title">Architecture: 11 Modular Mini-Repos</h4>
+          <h4 className="section-title">4 Layers. 11 Mini-Repos. Strict Separation of Concerns.</h4>
           <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "30px" }}>
-            Organized across 4 architectural layers, following strict separation of concerns with pure constructor injection throughout.
+            Pure constructor injection throughout. No global state. Every dependency declared, every boundary enforced. This is not a monolith with modules — each repo can be tested, deployed, and replaced independently.
           </p>
           
           <div className="grid-2 mb--50">
@@ -420,22 +440,28 @@ export default function CVEngineering() {
 
           <div className="mt--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
             
-            <h4 style={{ fontSize: "28px", fontWeight: "700", color: "#fff", marginBottom: "25px" }}>The ORMAS-OXIMO Integration</h4>
+            <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>The OXIDO Ecosystem</h4>
+            <p style={{ fontSize: '14px', color: '#878e99', marginBottom: '28px', lineHeight: '1.7', maxWidth: '620px' }}>
+              OXIMO is the cognitive operating system. ORMAS is the immune system it needs to operate safely at scale. Together they form OXIDO — an autonomous multi-agent system with no external intelligence dependency.
+            </p>
             
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-                <div style={{ minWidth: "70px", color: "#878e99", fontWeight: "600", fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase", paddingTop: "2px", flexShrink: 0 }}>Phase 1</div>
-                <div style={{ color: "#878e99", fontSize: "15px" }}><strong style={{ color: "#c4cfde" }}>Current:</strong> OXIMO runs on API-based LLMs. ORMAS is validated on CNNs/DAGs. Both proven separately.</div>
-              </div>
-              <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-                <div style={{ minWidth: "70px", color: "#878e99", fontWeight: "600", fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase", paddingTop: "2px", flexShrink: 0 }}>Phase 2</div>
-                <div style={{ color: "#878e99", fontSize: "15px" }}><strong style={{ color: "#c4cfde" }}>ORMAS-T:</strong> Port ORMAS to Transformers. Train a self-correcting language model using Three-Signal Learning.</div>
-              </div>
-              <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-                <div style={{ minWidth: "70px", color: "#878e99", fontWeight: "600", fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase", paddingTop: "2px", flexShrink: 0 }}>Phase 3</div>
-                <div style={{ color: "#878e99", fontSize: "15px" }}><strong style={{ color: "#c4cfde" }}>OXIDO Ecosystem:</strong> Replace OXIMO's API calls with an ORMAS-powered language model. An autonomous multi-agent system powered by self-correcting intelligence.</div>
-              </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '28px' }}>
+              {[
+                { name: 'OXIMO', role: 'The Cognitive OS', desc: 'Agents that hire agents. Memory that persists. Operations that run without a human in the loop.' },
+                { name: 'ORMAS', role: 'The Immune System', desc: 'Self-correcting learning. Structural transparency. The first architecture that can watch itself fail and recover.' },
+                { name: 'Black Bloxie LTD', role: 'The Empirical Lab', desc: 'Real industries. Real money. Real failure modes. E-commerce was the first completed vertical. Law, software, and medical are running.' },
+              ].map((c, i) => (
+                <div key={i} style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '8px', padding: '18px' }}>
+                  <div style={{ fontSize: '16px', fontWeight: 800, color: '#fff', marginBottom: '3px' }}>{c.name}</div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#c4cfde', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>{c.role}</div>
+                  <div style={{ fontSize: '13px', color: '#878e99', lineHeight: '1.6' }}>{c.desc}</div>
+                </div>
+              ))}
             </div>
+
+            <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
+              OXIMO currently runs on API-based LLMs. ORMAS is validated on CNNs and DAGs. The next phase ports ORMAS to Transformers (ORMAS-T), then trains Cherry — a self-correcting language model — to replace the external API dependency entirely. When that happens, OXIDO becomes the first fully autonomous multi-agent system with an internal immune system.
+            </p>
 
             <hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "30px 0" }} />
             

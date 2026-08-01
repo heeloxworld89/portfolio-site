@@ -24,15 +24,7 @@ export default function CVEducation() {
           background: #1e2024;
           border-color: rgba(255,255,255,0.1);
         }
-        .edu-icon-bg {
-          position: absolute;
-          right: -10px;
-          bottom: -10px;
-          font-size: 100px;
-          color: rgba(255,255,255,0.02);
-          line-height: 1;
-          pointer-events: none;
-        }
+
         .edu-title {
           font-size: 20px;
           color: #c4cfde;
@@ -92,7 +84,7 @@ export default function CVEducation() {
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>Formal & Informal Training</h2>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>Self-Directed. Cross-Disciplinary. Evidence-Based.</h2>
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
@@ -101,32 +93,27 @@ export default function CVEducation() {
         </div>
         
         <div className="content">
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "20px" }}>How I Learn</h4>
-          <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#878e99", marginBottom: "30px", maxWidth: "800px" }}>
-            I learn the way a researcher learns: I seek the <strong style={{ color: "#c4cfde" }}>how</strong>, not the <strong style={{ color: "#c4cfde" }}>what</strong>. I don't memorize syntax. I seek the mechanism behind the surface. This led me to study fields outside programming:
+          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "28px", maxWidth: "700px" }}>
+            Self-taught in ML, systems engineering, and theoretical CS. I learn the way a researcher learns: seek the mechanism, not the surface. The research demanded fields most programmers never touch:
           </p>
           
           <div className="edu-grid">
             <div className="edu-card">
-              <div className="edu-icon-bg">🚀</div>
-              <h5 className="edu-title">Aerodynamics & Rocket Science</h5>
-              <p className="edu-desc">Studied to understand the physical intuition of ISS (Input-to-State Stability) theory for ORMAS convergence proofs.</p>
+              <h5 className="edu-title">Physics of Complex Systems</h5>
+              <p className="edu-desc">Studied to understand the physical intuition behind stability theory for the ORMAS convergence proof.</p>
             </div>
             
             <div className="edu-card">
-              <div className="edu-icon-bg">🧠</div>
               <h5 className="edu-title">Sales Psychology</h5>
               <p className="edu-desc">Because automating European cold calls taught me the psychological limits of human trust in autonomous agents.</p>
             </div>
             
             <div className="edu-card">
-              <div className="edu-icon-bg">📈</div>
               <h5 className="edu-title">Financial Markets</h5>
               <p className="edu-desc">Learned market micro-structure to build institutional-flow-aware stock algorithms at age 15.</p>
             </div>
             
             <div className="edu-card">
-              <div className="edu-icon-bg">⚖️</div>
               <h5 className="edu-title">Company Law & AML</h5>
               <p className="edu-desc">Studied regulations to register Black Bloxie from Bangladesh directly via UK Companies House.</p>
             </div>
@@ -166,20 +153,31 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>The Honest Truth About Traditional Education</h4>
-          <div className="truth-box">
-            <p>
-              My high school grades are not what you would expect from someone writing mathematical proofs about neural network convergence. My traditional education suffered because I was spending every available hour on research, code, and building systems.
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "20px" }}>The Honest Account</h4>
+
+          {/* Big statement */}
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
+            <p style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4 }}>
+              My grades do not reflect my capabilities. What reflects my capabilities is the work.
             </p>
-            <p>
-              <span className="highlight-text">I skipped school to work on OXIMO. I stayed up until 4 AM debugging ORMAS. I prioritized understanding ISS convergence theory over studying for exams.</span>
+            <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
+              I skipped school to work on OXIMO. I stayed up until 4 AM debugging ORMAS. I prioritized understanding stability theory for the convergence proof over studying for exams. Traditional education suffered because research came first.
             </p>
-            <p>
-              My formal academic record does not reflect my actual capabilities. What reflects my capabilities is the work: <strong style={{ color: "#c4cfde" }}>309 experiments on a single GPU, 40,933 lines of production code, a registered UK company generating revenue, and a 1.5-year ablation study with published-quality results.</strong>
-            </p>
-            <p className="fs-5 mt-4" style={{ fontWeight: "700", color: "#fff" }}>
-              I dream of studying at MIT. I believe that with institutional support — mentorship, compute access, a community of researchers — I can scale what I've built.
-            </p>
+          </div>
+
+          {/* Evidence stat strip */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', marginBottom: '40px' }}>
+            {[
+              { val: '383', lbl: 'GPU Experiments' },
+              { val: '40,933', lbl: 'Lines of Code' },
+              { val: 'AAAI 2027', lbl: 'Paper Under Review' },
+              { val: 'UK Ltd', lbl: 'Registered Company' },
+            ].map((s, i) => (
+              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
+                <div style={{ fontSize: '18px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
+                <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+              </div>
+            ))}
           </div>
           
         </div>

@@ -1,62 +1,127 @@
 import TyperComponent from "@/components/common/TyperComponent";
 export default function Hero(_props?: any) {
   return (
-    <div className="tmp-banner-one-area" id="home">
+    <div className="tmp-banner-one-area" id="home" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+      <style>{`
+        .editorial-row {
+          display: flex;
+          padding: 40px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          transition: background-color 0.3s ease;
+        }
+        .editorial-row:hover {
+          background-color: rgba(255,255,255,0.02);
+        }
+        .editorial-date {
+          width: 25%;
+          flex-shrink: 0;
+          padding-right: 20px;
+        }
+        @media (max-width: 768px) {
+          .editorial-row { flex-direction: column; padding: 30px 0; }
+          .editorial-date { width: 100%; margin-bottom: 15px; }
+        }
+        .pulse-dot {
+          width: 8px;
+          height: 8px;
+          background: #ff4a57;
+          border-radius: 50%;
+          display: inline-block;
+          box-shadow: 0 0 10px #ff4a57;
+          animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(255, 74, 87, 0.7); }
+          70% { box-shadow: 0 0 0 10px rgba(255, 74, 87, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 74, 87, 0); }
+        }
+      `}</style>
       <div className="container">
         <div className="banner-one-main-wrapper">
-          <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2">
-              <div className="banner-right-content">
-                <img
-                  className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                  alt="banner-img"
-                  src="/assets/images/banner/banner-user-image-02.png"
-                  width={542}
-                  height={802}
-                />
-                <h2 className="banner-big-text-1 up-down d-none d-lg-block">AI RESEARCHER</h2>
-                <h2 className="banner-big-text-2 up-down-2 d-none d-lg-block">AI RESEARCHER</h2>
-              </div>
-            </div>
-            <div className="col-lg-6 order-lg-1">
-              <div className="inner">
-                <span className="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                  Hello
-                </span>
-                <h1 className="title mt--5 tmp-scroll-trigger tmp-fade-in animation-order-2">
-                  I'm Rokib Al Dhin Raadh <br />
-                  <span className="header-caption">
-                    <span className="cd-headline clip is-full-width">
-                      <TyperComponent
-                        strings={[
-                          "Independent AI Researcher.",
-                          "Architect of ORMAS.",
-                          "Creator of OXIMO.",
-                        ]}
-                      />
-                    </span>
-                  </span>
-                </h1>
-                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  I build interpretable, logic-driven AI frameworks that challenge the black-box paradigm. My work spans neuro-symbolic reasoning, multi-agent systems, and pushing the boundaries of AI transparency.
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              
+              {/* Header */}
+              <div className="tmp-scroll-trigger tmp-fade-in animation-order-1" style={{ marginBottom: '60px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#878e99', marginBottom: '20px' }}>
+                  Independent AI Research — Dhaka, Bangladesh
                 </p>
-                <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
-                  <a
-                    className="tmp-btn hover-icon-reverse radius-round"
-                    href="#research"
-                  >
-                    <span className="icon-reverse-wrapper">
-                      <span className="btn-text">View My Work</span>
-                      <span className="btn-icon">
-                        <i className="fa-sharp fa-regular fa-arrow-right" />
-                      </span>
-                      <span className="btn-icon">
-                        <i className="fa-sharp fa-regular fa-arrow-right" />
-                      </span>
-                    </span>
-                  </a>
-                </div>
+                <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 60px)', fontWeight: 800, color: '#fff', letterSpacing: '-1.5px', marginBottom: '24px', lineHeight: '1.15' }}>
+                  Neural networks fail opaquely.<br />
+                  <span style={{ color: '#c4cfde' }}>I built an architecture that changes that.</span>
+                </h1>
+                <p style={{ fontSize: '18px', color: '#878e99', maxWidth: '620px', margin: 0, lineHeight: '1.7' }}>
+                  ORMAS · OXIMO · OXIDO. Three systems. One research program. The work is documented, reproducible, and running in production.
+                </p>
               </div>
+
+              {/* Editorial List */}
+              <div className="tmp-scroll-trigger tmp-fade-in animation-order-2" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                
+                {/* Row 1 */}
+                 <div className="editorial-row">
+                    <div className="editorial-date">
+                      <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2026</div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Published · DOI</div>
+                    </div>
+                    <div>
+                      <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
+                        <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
+                      </h3>
+                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First formal convergence proof for any self-correcting architecture. 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
+                        <a href="#research" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Full technical details →</a>
+                      </p>
+                    </div>
+                 </div>
+
+                {/* Row 2 */}
+                <div className="editorial-row">
+                   <div className="editorial-date">
+                     <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2024–2026</div>
+                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Research</div>
+                   </div>
+                   <div>
+                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>383 Experiments. One GPU. One Room.</h3>
+                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                       Three emergent results from one architectural decision: autonomous recovery from catastrophic structural collapse, noise robustness matching purpose-built methods, and zero-shot compositional generalization at <strong style={{color: '#c4cfde'}}>58.8% vs 25% chance</strong> — with no replay buffers, no architectural tricks. The mechanism scales from 637K to 11M parameters.
+                     </p>
+                   </div>
+                </div>
+
+                {/* Row 3 */}
+                <div className="editorial-row" style={{ borderBottom: 'none' }}>
+                   <div className="editorial-date">
+                     <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                       <span className="pulse-dot"></span> Active
+                     </div>
+                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Next Phase</div>
+                   </div>
+                   <div>
+                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>The Experiments Have Outgrown Single-GPU Capacity</h3>
+                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                       Extending ORMAS to Transformer architectures and training Cherry — a self-correcting language model — requires institutional compute. The proof-of-concept is complete. The architecture is validated. What comes next requires a different infrastructure. That is what I am building toward.
+                     </p>
+                   </div>
+                </div>
+
+              </div>
+              
+              <div className="tmp-scroll-trigger tmp-fade-in animation-order-3" style={{ marginTop: '50px' }}>
+                <a href="#research" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', color: '#878e99', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
+                  Read the Research
+                  <i className="fa-sharp fa-regular fa-arrow-down" style={{ animation: 'bounce 2s infinite' }}></i>
+                </a>
+                <style>{`
+                  @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                    40% { transform: translateY(-10px); }
+                    60% { transform: translateY(-5px); }
+                  }
+                  a:hover { color: #ff4a57 !important; }
+                `}</style>
+              </div>
+
             </div>
           </div>
         </div>
