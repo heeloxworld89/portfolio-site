@@ -9,6 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon/favicon.svg", "favicon/apple-touch-icon.png"],
+      workbox: {
+        navigateFallbackDenylist: [/^\/assets\/pdf\//, /\.pdf$/],
+      },
       manifest: {
         name: "Rokib Al Dhin Raadh Portfolio",
         short_name: "Raadh",
