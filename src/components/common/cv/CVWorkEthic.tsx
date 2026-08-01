@@ -114,7 +114,7 @@ export default function CVWorkEthic() {
 
           <div className="ps-overline">Personal Statement</div>
           <h2 className="title fs-2" style={{ fontWeight: 800, color: '#fff', marginBottom: '8px', letterSpacing: '-0.5px', lineHeight: 1.2 }}>
-            On Obsession,<br />Independent Research,<br />and What It Actually Takes
+            On Obsession<br />and Independent Research
           </h2>
           <p style={{ fontSize: '15px', color: '#4a5568', marginBottom: '44px', lineHeight: '1.6' }}>
             Dhaka, Bangladesh · 18 · No university, no advisor, no lab.
@@ -198,21 +198,18 @@ export default function CVWorkEthic() {
           <hr className="ps-divider" />
 
           <p className="ps-prose">
-            I want to be precise about the conditions this work was produced under,
-            because they are relevant to anyone evaluating what I am capable of at
-            institutional scale. I have no university framework, no research group,
-            no advisor, and no external funding. Every experiment was run on personal
+            This work was produced with no university framework, no research group,
+            no advisor, and no external funding. Every experiment ran on personal
             hardware. Every architectural decision was made alone.
           </p>
 
           <p className="ps-prose">
             For over two years I maintained a{' '}
             <strong>documented 14–16 hour daily working schedule</strong> — continuous,
-            not occasional. To create an independently verifiable record, I livestreamed
-            every working day unlisted on YouTube: timestamped, continuous footage.
-            I applied for a Guinness World Record for sustained documented productivity.
-            Guinness declined — on health grounds. They will not certify a record that
-            could encourage others to replicate the schedule.
+            not occasional. Every working day was livestreamed unlisted on YouTube:
+            timestamped, continuous footage, independently verifiable.
+            The archive was submitted as a Guinness World Record application for
+            sustained documented research productivity.
           </p>
 
           <div className="ps-stat-row">
@@ -221,8 +218,8 @@ export default function CVWorkEthic() {
               <div className="ps-stat-lbl">Daily · 2+ Yrs · Documented</div>
             </div>
             <div className="ps-stat-tile">
-              <div className="ps-declined-val">Declined</div>
-              <div className="ps-stat-lbl">Guinness Application · Health Grounds</div>
+              <div className="ps-stat-val">28</div>
+              <div className="ps-stat-lbl">Archive Sessions · Nov 2024 · Verified</div>
             </div>
           </div>
 
@@ -315,13 +312,9 @@ export default function CVWorkEthic() {
 
           <p className="ps-prose">
             Working at this intensity without institutional support is not a sustainable
-            research model. The cost is not motivation — that has never been the constraint.
-            The cost is the absence of calibration: the colleagues, advisors, and reviewers
-            who catch errors before they compound.{' '}
-            <strong>A single collaborator who knew the NeurIPS submission template
-            would have prevented a desk rejection on formatting grounds.</strong>{' '}
-            A single advisor who reviewed my training dynamics earlier would have
-            shortened months of iteration.
+            research model. The constraint is not motivation — it never has been.
+            The constraint is the absence of calibration: colleagues, advisors, and reviewers
+            who compress iteration cycles and catch errors before they compound.
           </p>
 
           <p className="ps-prose" style={{ color: '#c4cfde', fontWeight: 600 }}>
