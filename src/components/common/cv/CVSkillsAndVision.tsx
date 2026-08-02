@@ -282,7 +282,7 @@ export default function CVSkillsAndVision() {
               { item: 'Personal RTX 4090', src: 'Day-to-day development machine. Funded from $10K stock algorithm sale at age 15.' },
               { item: 'Black Bloxie', src: 'Zero capital. API costs = dollars/month. Revenue exceeds cost.' },
               { item: 'Research', src: 'LLM API bills — DeepSeek, Gemini, OpenAI. Dollars, not thousands.' },
-              { item: 'Living Costs', src: 'At home in Dhaka. Fraction of Western researcher overhead.' },
+
             ].map((r, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px' }}>
                 <div style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', marginBottom: '6px', letterSpacing: '0.5px' }}>{r.item}</div>

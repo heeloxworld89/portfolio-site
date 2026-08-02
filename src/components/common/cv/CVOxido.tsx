@@ -5,8 +5,8 @@ const pillars = [
     tag: 'Layer 01 · The Immune System',
     name: 'ORMAS',
     tagline: 'Self-correcting neural architecture',
-    desc: 'Detects structural failures mid-training and repairs them autonomously. 383 controlled experiments across 4 architectures. +70.3pp recovery gap over baselines. First formal ISS convergence proof for any self-correcting architecture.',
-    status: 'Published · AAAI 2027 Submitted',
+    desc: 'Detects structural failures mid-training and repairs them autonomously. 383 controlled experiments across 4 architectures. +70.3pp recovery gap over baselines. First local-stability convergence proof for any self-correcting architecture (global convergence remains open).',
+    status: 'Submitted to AAAI 2027 · Zenodo Preprint',
   },
   {
     tag: 'Layer 02 · The Operating System',
@@ -43,12 +43,7 @@ const roadmap = [
     desc: 'A self-correcting language model trained on ORMAS-T. Replaces external API dependency entirely. Zero external intelligence cost per deployment.',
     active: false,
   },
-  {
-    phase: 'End State',
-    label: 'OXIDO at Enterprise Scale',
-    desc: 'Full-stack autonomous company infrastructure licensed to regulated industries: medical, fintech, insurance, legal, hedge funds. Near-zero marginal cost. High switching costs. Compliance-grade audit trail built in.',
-    active: false,
-  },
+
 ];
 
 const sectionLabel: React.CSSProperties = {
@@ -143,29 +138,7 @@ export default function CVOxido() {
           ))}
         </div>
 
-        <p style={sectionLabel}>Business Model</p>
-        <div style={{
-          background: '#191b1e', border: '1px solid #2a2d32',
-          borderRadius: '8px', padding: '28px 32px', marginBottom: '8px',
-        }}>
-          <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#878e99', margin: 0 }}>
-            Enterprise licensing to regulated industries — medical, insurance, fintech, legal, and quantitative finance. Not a SaaS dashboard. Not a consumer product.{' '}
-            <strong style={{ color: '#c4cfde' }}>A company calls, we make them whole.</strong>{' '}
-            OXIMO handles coordination. ORMAS provides the causal audit trail that regulators will require for any AI acting on behalf of an institution. Long sales cycles, high switching costs. Once agents have been running inside an organisation for a year, ripping them out and starting over is not an option. That is the moat.
-          </p>
-        </div>
-        <div style={{
-          background: '#191b1e', border: '1px solid #2a2d32',
-          borderRadius: '8px', padding: '20px 32px', marginBottom: '10px',
-        }}>
-          <p style={{
-            fontSize: '11px', fontWeight: 700, letterSpacing: '2px',
-            textTransform: 'uppercase', color: '#4a5568', marginBottom: '10px',
-          }}>Why Enterprise. Why Not Consumer.</p>
-          <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#4a5568', margin: 0 }}>
-            Not all players can play like a big player. A hedge fund, a hospital system, a private equity firm — these are organisations where data is existential, where a model silently learning the wrong thing has consequences measured in capital, lives, or liability. That is precisely where structural transparency and autonomous repair stop being research properties and become compliance requirements. OXIDO builds for the players where it has to work.
-          </p>
-        </div>
+
 
       </div>
       <div className="col-12">

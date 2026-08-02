@@ -117,7 +117,7 @@ export default function CVResearch() {
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
         <p className="disc" style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: '20px' }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines · 61 files</strong><br />
-          383 controlled experiments. One RTX 3090. Four architectures. The first formal convergence proof for any self-correcting architecture. Published with full 36-page supplementary, reproducible codebase, and complete experimental results archive.
+          383 controlled experiments. One RTX 3090. Four architectures. The first local-stability convergence proof for any self-correcting architecture (global convergence remains open). Preprint with full 36-page supplementary, reproducible codebase, and complete experimental results archive.
         </p>
 
         {/* Action Link Bar */}
@@ -476,7 +476,7 @@ export default function CVResearch() {
 
           <h4 className="section-header">Theoretical Contributions</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>
-            <strong style={{ color: "#c4cfde" }}>Formal Convergence Proof — the first for any self-correcting architecture.</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
+            <strong style={{ color: "#c4cfde" }}>Local Stability Proof — the first for any self-correcting architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
           </p>
           <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />
 

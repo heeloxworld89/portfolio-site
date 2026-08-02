@@ -62,14 +62,14 @@ export default function Hero(_props?: any) {
                  <div className="editorial-row">
                     <div className="editorial-date">
                       <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2026</div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Published · DOI</div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Preprint · Zenodo DOI</div>
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
                         <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
                       </h3>
                       <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First formal convergence proof for any self-correcting architecture. 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
+                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First local-stability convergence proof for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
                         <a href="#research" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Full technical details →</a>
                       </p>
                     </div>

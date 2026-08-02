@@ -211,7 +211,7 @@ export default function CVDeployment() {
           </p>
 
           {/* Traffic Source Analysis Table */}
-          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
+          <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '8px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
@@ -229,6 +229,9 @@ export default function CVDeployment() {
               </tbody>
             </table>
           </div>
+          <p style={{ fontSize: '12px', color: '#4a5568', marginBottom: '30px', lineHeight: '1.6' }}>
+            <strong style={{ color: '#4a5568' }}>Methodology note:</strong> No standard referrer header exists for LLM-originated traffic. Shares are estimated by combining: (a) sessions with referrer strings matching known LLM domains (chatgpt.com, bing.com/chat, gemini.google.com), (b) no-referrer sessions on product pages where organic search is negligible, and (c) UTM-tagged links confirmed in AI assistant outputs. Figures are approximate and directional, not precise counts.
+          </p>
 
           <h4 style={{ fontSize: "22px", fontWeight: "600", marginBottom: "15px", marginTop: "40px", color: "#c4cfde" }}>Key Learning — Why This Proves ORMAS Is Necessary</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "20px" }}>

@@ -232,7 +232,7 @@ export default function CVWorkEthic() {
           {/* Work Archive */}
           <div style={{ marginTop: '8px', marginBottom: '8px' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '16px' }}>
-              Guinness Submission Archive — 28 Sessions · Nov 2024 · OXIMO Development
+              Guinness Submission Archive — 28 Sessions · Nov 2024 · OXIMO Development · <em>Application submitted; outcome pending</em>
             </p>
 
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px', marginBottom: '32px' }}>
