@@ -154,6 +154,7 @@ export default function CVWhoIAm() {
             ))}
             <p style={{ fontSize: "13px", color: "#4a5568", marginTop: "16px", marginBottom: 0 }}>
               Contact: <a href="mailto:rokib@blackbloxie.com" style={{ color: "#c4cfde" }}>rokib@blackbloxie.com</a>
+              {' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: "#c4cfde" }}>raadxbusiness9@gmail.com</a>
             </p>
           </div>
         </div>

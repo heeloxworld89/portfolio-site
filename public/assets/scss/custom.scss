@@ -304,3 +304,88 @@ html, body {
 }
 
 
+/* ═══════════════════════════════════════════════════════
+   SIDEBAR RESPONSIVE FIXES
+   Root cause: .inner-wrapper has overflow:hidden + 80px
+   horizontal padding on a 290px sidebar = only 210px usable.
+   At 125% browser zoom this collapses to ~168px.
+   ═══════════════════════════════════════════════════════ */
+
+/* Tighten inner-wrapper padding so content has more room */
+.header-left-sticky .inner-wrapper {
+  padding: 30px 20px 24px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Nav items — tighter at laptop sizes */
+.header-left-sticky .mainmenu-nav .primary-menu {
+  padding: 20px 0 0 4px !important;
+}
+
+.header-left-sticky .mainmenu-nav .primary-menu li a {
+  font-size: 14px !important;
+  padding: 5px 8px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Sidebar footer — all links must wrap, never clip */
+.header-left-sticky .social-share-style-1 {
+  padding-top: 24px !important;
+  margin-top: 24px !important;
+}
+
+.header-left-sticky .social-share-style-1 ul li {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 10px !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.header-left-sticky .social-share-style-1 a {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  display: inline !important;
+}
+
+/* CV Download button stays full-width */
+.header-left-sticky .social-share-style-1 > div > div:first-child a {
+  width: 100% !important;
+  font-size: 11px !important;
+  padding: 10px 12px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Section labels in sidebar footer */
+.header-left-sticky .social-share-style-1 p {
+  font-size: 10px !important;
+  letter-spacing: 1px !important;
+}
+
+/* At laptop breakpoint (1200–1399px) narrow the sidebar slightly 
+   and push content accordingly so nothing overflows */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .header-left-sticky {
+    width: 260px !important;
+  }
+  .page-with-left-header {
+    margin-left: 260px !important;
+  }
+  .header-left-sticky .inner-wrapper {
+    padding: 24px 16px 20px !important;
+  }
+}
+
+/* At very large screens give sidebar a bit more breathing room */
+@media (min-width: 1600px) {
+  .header-left-sticky {
+    width: 310px !important;
+  }
+  .page-with-left-header {
+    margin-left: 310px !important;
+  }
+}
