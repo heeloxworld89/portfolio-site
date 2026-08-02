@@ -219,16 +219,16 @@ export default function CVDeployment() {
               <thead>
                 <tr>
                   <th style={{ padding: '12px 20px', textAlign: 'left', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32', width: '30%' }}>Referring Channel</th>
-                  <th style={{ padding: '12px 20px', textAlign: 'right', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32', width: '20%' }}>Revenue</th>
+                  <th style={{ padding: '12px 20px', textAlign: 'right', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32', width: '20%' }}>Attribution Share</th>
                   <th style={{ padding: '12px 20px', textAlign: 'left', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32' }}>What It Actually Is</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style={tdFirst}>chatgpt.com</td><td style={tdValue}>£262</td><td style={td}>Direct ChatGPT referrals</td></tr>
-                <tr><td style={tdFirst}>direct</td><td style={tdValue}>£514</td><td style={td}>LLM models without referrer headers</td></tr>
-                <tr><td style={tdFirst}>bing</td><td style={tdValue}>£43.88</td><td style={td}>ChatGPT&apos;s search grounding</td></tr>
-                <tr><td style={tdFirst}>google</td><td style={tdValue}>£24.16</td><td style={td}>Includes Gemini-referred traffic</td></tr>
-                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>chatgpt (other)</td><td style={{ ...tdValue, borderBottom: 'none' }}>£18.55</td><td style={{ ...td, borderBottom: 'none' }}>Additional ChatGPT variants</td></tr>
+                <tr><td style={tdFirst}>LLM Headless</td><td style={tdValue}>~60%</td><td style={td}>LLM models without referrer headers</td></tr>
+                <tr><td style={tdFirst}>ChatGPT (Direct)</td><td style={tdValue}>~30%</td><td style={td}>Direct ChatGPT referrals</td></tr>
+                <tr><td style={tdFirst}>Bing / ChatGPT Grounding</td><td style={tdValue}>~5%</td><td style={td}>ChatGPT&apos;s search grounding layer</td></tr>
+                <tr><td style={tdFirst}>Google / Gemini</td><td style={tdValue}>~3%</td><td style={td}>Includes Gemini-referred traffic</td></tr>
+                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>ChatGPT (Variants)</td><td style={{ ...tdValue, borderBottom: 'none' }}>~2%</td><td style={{ ...td, borderBottom: 'none' }}>Additional ChatGPT surface referrals</td></tr>
               </tbody>
             </table>
           </div>
