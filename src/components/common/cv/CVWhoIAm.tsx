@@ -143,8 +143,8 @@ export default function CVWhoIAm() {
               ['ORMAS Code', '10,594 lines · 61 files · one-command reproduce.sh'],
               ['OXIMO Code', '40,933 lines · 11 repos · 2,011 passing tests'],
               ['Experiment Logs', '383 runs · GlassBox telemetry · training curves'],
-              ['Business Analytics', 'Shopify dashboards · per-phase ablation · LLM traffic attribution'],
-              ['Work Record', 'Unlisted YouTube livestreams · 2+ years continuous · timestamped'],
+              ['Business Analytics', 'Platform analytics · per-phase ablation · LLM traffic attribution'],
+              ['Work Archive', '28 documented research sessions · 2+ years · timestamped'],
             ].map(([key, val], i) => (
               <div key={i} className="who-audit-row">
                 <span className="who-audit-key">{key}</span>
@@ -154,7 +154,6 @@ export default function CVWhoIAm() {
             ))}
             <p style={{ fontSize: "13px", color: "#4a5568", marginTop: "16px", marginBottom: 0 }}>
               Contact: <a href="mailto:rokib@blackbloxie.com" style={{ color: "#c4cfde" }}>rokib@blackbloxie.com</a>
-              {' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: "#c4cfde" }}>raadxbusiness9@gmail.com</a>
             </p>
           </div>
         </div>

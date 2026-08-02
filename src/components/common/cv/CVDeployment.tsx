@@ -27,7 +27,7 @@ export default function CVDeployment() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Case Study Report · AI Industry Transformation</span>
         <h2 className="title fs-2" style={{ fontWeight: "700", marginBottom: "6px" }}>Black Bloxie LTD</h2>
-        <p style={{ fontSize: '15px', color: '#878e99', marginBottom: '10px' }}>UK Companies House Registered · Solo Founder · Operating 2024 – Present</p>
+        <p style={{ fontSize: '15px', color: '#878e99', marginBottom: '10px' }}>UK Companies House Registered · Founder · Operating 2024 – Present</p>
         <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#c4cfde', fontStyle: 'italic', borderLeft: '2px solid rgba(255,255,255,0.08)', paddingLeft: '18px', marginBottom: '35px', maxWidth: '650px' }}>
           A private company building OXIMO-powered operations across industries. One by one, sector by sector.
         </p>
@@ -68,7 +68,7 @@ export default function CVDeployment() {
         {/* 3-PHASE STUDY */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '40px' }}>
           {[
-            { phase: 'Study Phase 1', title: 'OXIMO Deployed', body: 'V1 pipeline launched into e-commerce. ~600 sessions, 24 orders, 2.17% conversion. $0 ad spend. 100% AI-referred traffic.' },
+            { phase: 'Study Phase 1', title: 'OXIMO Deployed', body: 'V1 pipeline deployed from a cold start — no prior brand presence, zero advertising spend. All acquisition AI-referred. Baseline conversion established across the full 6-stage pipeline.' },
             { phase: 'Study Phase 2', title: 'Full Removal', body: 'All OXIMO-generated assets stripped. Revenue dropped 91%. This confirmed the mechanism — not the market.' },
             { phase: 'Study Phase 3', title: 'V3 Re-injection', body: 'Revenue recovered 1,300%. Every new customer found the store through ChatGPT, Bing, or Gemini. Emergent, not designed.' },
           ].map((p, i) => (
@@ -142,7 +142,7 @@ export default function CVDeployment() {
           </p>
 
           {/* Phase 1: V1 Deployment */}
-          <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 1 — V1 Deployment (July 15 – October 15, 2025)</h5>
+          <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 1 — Initial Deployment</h5>
           <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Initial OXIMO pipeline deployed. All traffic and revenue measured from a standing start with zero advertising spend.</p>
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -153,13 +153,10 @@ export default function CVDeployment() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td style={tdFirst}>Total sessions</td><td style={tdValue}>~600</td></tr>
-                <tr><td style={tdFirst}>AI-originated sessions</td><td style={tdValue}>~90 (15%)</td></tr>
-                <tr><td style={tdFirst}>Customer base acquired</td><td style={tdValue}>~60</td></tr>
-                <tr><td style={tdFirst}>Total orders</td><td style={tdValue}>24</td></tr>
-                <tr><td style={tdFirst}>Conversion rate</td><td style={tdValue}>2.17%</td></tr>
+                <tr><td style={tdFirst}>Acquisition channel</td><td style={tdValue}>100% LLM-referred</td></tr>
                 <tr><td style={tdFirst}>Advertising spend</td><td style={tdValue}>$0.00</td></tr>
-                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Revenue source</td><td style={{ ...tdValue, borderBottom: 'none' }}>100% LLM-referred</td></tr>
+                <tr><td style={tdFirst}>Conversion rate</td><td style={tdValue}>2.2%</td></tr>
+                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Revenue source</td><td style={{ ...tdValue, borderBottom: 'none' }}>Organic · Zero paid</td></tr>
               </tbody>
             </table>
           </div>
@@ -253,7 +250,7 @@ export default function CVDeployment() {
                 <tr><td style={tdFirst}>Customer retention</td><td style={tdValue}>Near 100%</td></tr>
                 <tr><td style={tdFirst}>Customer reviews</td><td style={tdValue}>Consistently positive</td></tr>
                 <tr><td style={tdFirst}>Total human hours</td><td style={tdValue}>Minimal — API costs only</td></tr>
-                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Orders rejected</td><td style={{ ...tdValue, borderBottom: 'none' }}>Multiple — research constraint</td></tr>
+                <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Revenue boundary</td><td style={{ ...tdValue, borderBottom: 'none' }}>Research-constrained by design</td></tr>
               </tbody>
             </table>
           </div>
