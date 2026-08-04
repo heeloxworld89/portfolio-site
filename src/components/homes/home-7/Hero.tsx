@@ -106,8 +106,55 @@ export default function Hero(_props?: any) {
                 </div>
 
               </div>
-              
-              <div className="tmp-scroll-trigger tmp-fade-in animation-order-3" style={{ marginTop: '50px' }}>
+
+              {/* ── Loom Video — Embedded ── */}
+              <div className="tmp-scroll-trigger tmp-fade-in animation-order-3">
+                <style>{`
+                  .loom-section {
+                    border-top: 1px solid rgba(255,255,255,0.08);
+                    border-bottom: 1px solid rgba(255,255,255,0.08);
+                    padding: 40px 0;
+                  }
+                  .loom-embed-wrap {
+                    position: relative;
+                    padding-top: 56.25%;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: #111;
+                  }
+                  .loom-embed-wrap iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                  }
+                `}</style>
+
+                <div className="loom-section">
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#878e99', marginBottom: '14px' }}>
+                    Presentation · 7 min 40 sec · 1.2× default
+                  </p>
+                  <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px', lineHeight: 1.3, letterSpacing: '-0.3px' }}>
+                    Explaining ORMAS: Transparent Neural Networks That Self-Heal
+                  </h3>
+                  <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 28px 0', maxWidth: '600px' }}>
+                    Autonomous recovery from catastrophic failure, emergent memory without replay buffers, and why architectural transparency is an engineering problem — not a philosophy question.
+                  </p>
+
+                  <div className="loom-embed-wrap">
+                    <iframe
+                      src="https://www.loom.com/embed/59caaa73445443cb8d345b4d594a8347"
+                      allowFullScreen
+                      title="Explaining ORMAS: Transparent Neural Networks That Self-Heal"
+                    />
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="tmp-scroll-trigger tmp-fade-in animation-order-4" style={{ marginTop: '40px' }}>
                 <a href="#research" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', color: '#878e99', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
                   Read the Research
                   <i className="fa-sharp fa-regular fa-arrow-down" style={{ animation: 'bounce 2s infinite' }}></i>
