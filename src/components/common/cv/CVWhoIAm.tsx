@@ -18,8 +18,8 @@ export default function CVWhoIAm() {
       tag: 'Private Equity · AI Industry Transformation · UK Registered',
       name: 'Black Bloxie LTD',
       claim: 'A private equity company. Every employee is an AI agent.',
-      body: 'The thesis: AI should build, operate, and sell — without human labor in the loop. Black Bloxie holds the equity. OXIMO is the operating system. The AI does the work. Vertical 1 (e-commerce) ran for 1.5–2 years as a controlled ablation study: inject OXIMO, measure revenue; strip it, revenue drops 91%; re-inject, recovers 1,300%. Every sale was referred by ChatGPT, Bing, or Gemini — zero human sales effort, zero ad spend. Vertical 2, 3, and 4 (law, software, medical research) are currently running. OXIMO exists because of Black Bloxie. The company is the empirical proof that the architecture works outside a lab.',
-      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Recovery'], ['500+', 'Customers'], ['$0', 'Ad Spend']],
+      body: 'The thesis: AI should build, operate, and sell — without human labor in the loop. Black Bloxie holds the equity. OXIMO is the operating system. The AI does the work. Vertical 1 (e-commerce) ran as a very early-stage controlled ablation study: inject OXIMO, measure revenue; strip it, revenue drops 91%; re-inject, recovers 1,300%. We achieved four-figure revenue autonomously out of thin air, with zero ad spend and zero human sales effort. We cannot go full scale yet due to AI governance and safety issues, so this is just a tiny fraction of what the system can do. Vertical 2, 3, and 4 (law, software, medical research) are currently running.',
+      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Recovery'], ['500+', 'Early Stage Customers'], ['Four-Figure', 'Revenue Out of Thin Air']],
     },
   ];
 

@@ -35,7 +35,7 @@ export default function CVDeployment() {
         {/* ACTIVE VERTICALS */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '40px' }}>
           {[
-            { status: 'Vertical 1 · Study Complete · Paper in Progress', sector: 'E-Commerce', note: 'Ablation complete. −91% on removal, +1,300% on recovery, 500+ customers, $0 ad spend.' },
+            { status: 'Vertical 1 · Very Early Stage Ablation', sector: 'E-Commerce', note: 'Achieved four-figure revenue and 500+ customers autonomously out of thin air. Kept at small scale due to AI governance constraints.' },
             { status: 'Ongoing', sector: 'Legal (Law Firms)', note: 'AI-transformation of legal workflows.' },
             { status: 'Ongoing', sector: 'Software Companies', note: 'AI-transformation of development pipelines.' },
             { status: 'Ongoing', sector: 'Medical Research', note: 'AI-assisted research operations.' },
@@ -54,7 +54,7 @@ export default function CVDeployment() {
           {[
             { val: '−91%', lbl: 'On OXIMO Removal', sub: 'Causation confirmed' },
             { val: '+1,300%', lbl: 'On Re-injection', sub: 'Recovered + surpassed' },
-            { val: '500+', lbl: 'Customers Acquired', sub: '100% AI-referred, $0 ads' },
+            { val: '500+', lbl: 'Early Stage Customers', sub: 'Four-figure revenue, out of thin air' },
             { val: '1.5–2yr', lbl: 'Study Duration', sub: 'Controlled ablation' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '20px 16px', textAlign: 'center' }}>
@@ -143,7 +143,7 @@ export default function CVDeployment() {
 
           {/* Phase 1: V1 Deployment */}
           <h5 style={{ fontSize: "15px", fontWeight: "700", color: "#c4cfde", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Phase 1 — Initial Deployment</h5>
-          <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Initial OXIMO pipeline deployed. All traffic and revenue measured from a standing start with zero advertising spend.</p>
+          <p style={{ fontSize: "14px", color: "#878e99", marginBottom: "20px" }}>Initial OXIMO pipeline deployed. Achieved four-figure revenue autonomously out of thin air with very small-scale progress. Cannot go full scale yet due to AI governance constraints.</p>
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
@@ -249,7 +249,7 @@ export default function CVDeployment() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td style={tdFirst}>Total customer base</td><td style={tdValue}>500+ loyal customers</td></tr>
+                <tr><td style={tdFirst}>Very early-stage scale</td><td style={tdValue}>500+ customers / Four-figure revenue</td></tr>
                 <tr><td style={tdFirst}>Customer retention</td><td style={tdValue}>Near 100%</td></tr>
                 <tr><td style={tdFirst}>Customer reviews</td><td style={tdValue}>Consistently positive</td></tr>
                 <tr><td style={tdFirst}>Total human hours</td><td style={tdValue}>Minimal — API costs only</td></tr>

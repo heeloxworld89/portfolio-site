@@ -19,7 +19,7 @@ const pillars = [
     tag: 'Layer 03 · The Empirical Lab',
     name: 'Black Bloxie LTD',
     tagline: 'Every employee is an AI agent',
-    desc: '1.5-year controlled ablation on a live UK company confirmed causation: −91% on OXIMO removal, +1,300% on re-injection. 500+ customers. Zero advertising spend. 100% LLM-referred acquisition. Four active verticals: E-Commerce (ablation complete, paper in progress) · Legal (Law Firms) · Software Companies · Medical Research.',
+    desc: 'Very early-stage 1.5-year controlled ablation on a live UK company. −91% on OXIMO removal, +1,300% on re-injection. Achieved four-figure revenue and 500+ customers autonomously out of thin air with very small-scale progress. Cannot go full scale yet due to AI governance and safety constraints. Four active verticals: E-Commerce · Legal · Software · Medical.',
     status: 'Live · 4 Verticals Active',
   },
 ];
