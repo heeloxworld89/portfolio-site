@@ -134,29 +134,7 @@ export default function CVWhoIAm() {
             </div>
           ))}
 
-          <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "10px", padding: "28px 32px", marginTop: "10px" }}>
-            <p style={{ fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#c4cfde", marginBottom: "16px" }}>
-              For VCs & Fellowship Reviewers — Technical Due Diligence
-            </p>
-            {[
-              ['ORMAS Paper', 'Full technical paper · 36-page supplementary · Code available on request'],
-              ['ORMAS Code', '10,594 lines · 61 files · one-command reproduce.sh'],
-              ['OXIMO Code', '40,933 lines · 11 repos · 2,011 passing tests'],
-              ['Experiment Logs', '383 runs · GlassBox telemetry · training curves'],
-              ['Business Analytics', 'Platform analytics · per-phase ablation · LLM traffic attribution'],
-              ['Work Archive', '28 documented research sessions · 2+ years · timestamped'],
-            ].map(([key, val], i) => (
-              <div key={i} className="who-audit-row">
-                <span className="who-audit-key">{key}</span>
-                <span style={{ color: "#4a5568" }}>—</span>
-                <span className="who-audit-val">{val}</span>
-              </div>
-            ))}
-            <p style={{ fontSize: "13px", color: "#4a5568", marginTop: "16px", marginBottom: 0 }}>
-              Contact: <a href="mailto:rokib@blackbloxie.com" style={{ color: "#c4cfde" }}>rokib@blackbloxie.com</a>
-              {' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: "#c4cfde" }}>raadxbusiness9@gmail.com</a>
-            </p>
-          </div>
+
         </div>
       </div>
       <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
