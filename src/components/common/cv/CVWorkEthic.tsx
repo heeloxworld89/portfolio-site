@@ -204,40 +204,33 @@ export default function CVWorkEthic() {
           </p>
 
           <p className="ps-prose">
-            For over two years I maintained a{' '}
-            <strong>documented 14–16 hour daily working schedule</strong> — continuous,
-            not occasional. Every working day was livestreamed unlisted on YouTube:
-            timestamped, continuous footage, independently verifiable.
-            The archive was submitted as a Guinness World Record application for
-            sustained documented research productivity.
+            I naturally work 14–16 hours a day. Out of curiosity—wondering if anyone else was doing the same—I decided to shoot for a Guinness World Record. For about two weeks in November 2024, I livestreamed and documented my daily workflow continuously to serve as live footage for the application. 
           </p>
 
           <div className="ps-stat-row">
             <div className="ps-stat-tile">
               <div className="ps-stat-val">14–16 hrs</div>
-              <div className="ps-stat-lbl">Daily · 2+ Yrs · Documented</div>
+              <div className="ps-stat-lbl">Daily Work Routine</div>
             </div>
             <div className="ps-stat-tile">
               <div className="ps-stat-val">28</div>
-              <div className="ps-stat-lbl">Archive Sessions · Nov 2024 · Verified</div>
+              <div className="ps-stat-lbl">Sessions Recorded · Nov 2024</div>
             </div>
           </div>
 
           <p className="ps-prose">
-            The point was never the certificate. The point was the verifiable record.
-            The livestream archive is available to any reviewer who wants to understand
-            how this volume of work was produced without institutional infrastructure.
+            I submitted the archive just to see what would happen. While I don't livestream every single day anymore, those two weeks of unlisted, timestamped footage exist as an honest, unfiltered window into how this research and codebase were actually built.
           </p>
 
           {/* Work Archive */}
           <div style={{ marginTop: '8px', marginBottom: '8px' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '16px' }}>
-              Guinness Submission Archive — 28 Sessions · Nov 2024 · OXIMO Development · <em>Application submitted; outcome pending</em>
+              Two-Week Livestream Archive — Nov 2024 · OXIMO Development
             </p>
 
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px', marginBottom: '32px' }}>
               <p style={{ fontSize: '14px', color: '#878e99', marginBottom: '20px', lineHeight: '1.6' }}>
-                All 28 continuous daily sessions are unlisted and archived on YouTube. The full continuous log is available below for verification.
+                The 28 unlisted sessions recorded for the Guinness application are archived below.
               </p>
               
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
