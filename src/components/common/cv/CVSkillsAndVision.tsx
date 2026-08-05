@@ -62,7 +62,7 @@ export default function CVSkillsAndVision() {
     { n: '02', title: 'OXIMO — Cognitive Multi-Agent OS',
       note: '40,933 lines of production code. 2,011 tests, zero failures. Rebuilt from a 106,000-line monolith at 72% reduction. Agents that hire agents, with 3-tier persistent memory.' },
     { n: '03', title: 'Black Bloxie LTD — Private Equity AI Lab',
-      note: 'Very early-stage 1.5-year controlled ablation study. −91% revenue on OXIMO removal, +1,300% on recovery. Achieved four-figure revenue and 500+ customers autonomously out of thin air. Cannot scale further due to AI governance constraints. Law, software, and medical verticals ongoing.' },
+      note: 'Very early-stage 1.5-year controlled ablation study. −91% revenue on OXIMO removal, +1,300% on recovery. Achieved four-figure revenue and 500+ customers with fully autonomous Zero-CAC unit economics. Cannot scale further due to AI governance constraints. Law, software, and medical verticals ongoing.' },
     { n: '04', title: 'OXIDO — The Convergence',
       note: 'OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency. The endgame.' },
   ];
