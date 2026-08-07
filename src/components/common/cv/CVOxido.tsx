@@ -16,11 +16,11 @@ const pillars = [
     status: 'Production-Grade · Live',
   },
   {
-    tag: 'Layer 03 · The Empirical Lab',
+    tag: 'Layer 03 · The Validation Layer',
     name: 'Black Bloxie LTD',
-    tagline: 'Every employee is an AI agent',
-    desc: 'Very early-stage 1.5-year controlled ablation on a live UK company. −91% on OXIMO removal, +1,300% on re-injection. Achieved four-figure revenue and 500+ customers with fully autonomous Zero-CAC unit economics at very small scale. Cannot go full scale yet due to AI governance and safety constraints. Four active verticals: E-Commerce · Legal · Software · Medical.',
-    status: 'Live · 4 Verticals Active',
+    tagline: 'Controlled test environment for the OXIDO architecture',
+    desc: '11-month injection-removal-reinjection ablation on a live UK-registered company. OXIMO removed: all commercial output collapsed 91% across all channels simultaneously — ruling out market conditions as a variable. V3 re-injected: commercial output recovered 1,300% from ablated baseline. The causal chain is documented and reproducible. Substrate 1 (e-commerce) complete. Substrates 2–4 (legal, software, medical) pending ablation cycles.',
+    status: 'Ablation Complete · Substrates 2–4 Active',
   },
 ];
 
@@ -115,7 +115,7 @@ export default function CVOxido() {
           maxWidth: '680px', marginBottom: '44px',
           borderLeft: '2px solid rgba(255,255,255,0.07)', paddingLeft: '18px',
         }}>
-          ORMAS is the immune system. OXIMO is the OS. Black Bloxie is the empirical laboratory where both are proven on real revenue, across four active industries, in production. Together they form OXIDO — the infrastructure stack that lets a company run autonomously in high-stakes domains.
+          ORMAS is the immune system. OXIMO is the operating system. Black Bloxie is the controlled test environment where both are validated under real-world conditions — real customers, real supply chains, real regulations. Together they form OXIDO — the infrastructure stack that lets a company operate autonomously in high-stakes domains.
         </p>
 
         {/* THE THREE LAYERS */}

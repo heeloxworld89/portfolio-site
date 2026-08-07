@@ -49,8 +49,8 @@ export default function CVSkillsAndVision() {
     {
       title: 'Black Bloxie LTD',
       rows: [
-        { label: 'Study Duration',       value: '1.5–2 years · Vertical 1 complete' },
-        { label: 'Ablation Result',      value: '−91% on removal · +1,300% on re-injection' },
+        { label: 'Study Duration',       value: '11 months · Substrate 1 complete' },
+        { label: 'Ablation Signal',      value: '−91% on removal · +1,300% on re-injection' },
         { label: 'Infrastructure Cost',  value: '99% reduction via specialized agent cascade' },
       ],
     },
@@ -61,8 +61,8 @@ export default function CVSkillsAndVision() {
       note: 'First formal convergence proof for any self-correcting architecture. 383 experiments across 4 architectures. +70.3pp recovery gap where baselines permanently collapse.' },
     { n: '02', title: 'OXIMO — Cognitive Multi-Agent OS',
       note: '40,933 lines of production code. 2,011 tests, zero failures. Rebuilt from a 106,000-line monolith at 72% reduction. Agents that hire agents, with 3-tier persistent memory.' },
-    { n: '03', title: 'Black Bloxie LTD — Private Equity AI Lab',
-      note: 'Very early-stage 1.5-year controlled ablation study. −91% revenue on OXIMO removal, +1,300% on recovery. Achieved four-figure revenue and 500+ customers with fully autonomous Zero-CAC unit economics. Cannot scale further due to AI governance constraints. Law, software, and medical verticals ongoing.' },
+    { n: '03', title: 'Black Bloxie LTD — Controlled Ablation Study',
+      note: '11-month injection-removal-reinjection study on a live UK-registered company. OXIMO removed: commercial output collapsed 91%. OXIMO re-injected: commercial output recovered 1,300%. Causal proof that the ORMAS/OXIMO/OXIDO stack generates real-world economic output. Zero advertising expenditure. Zero human marketing hours. Substrate 1 (e-commerce) ablation complete. Substrates 2–4 (legal, software, medical) pending.' },
     { n: '04', title: 'OXIDO — The Convergence',
       note: 'OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency. The endgame.' },
   ];

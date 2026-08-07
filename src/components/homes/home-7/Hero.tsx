@@ -75,18 +75,18 @@ export default function Hero(_props?: any) {
                     </div>
                  </div>
 
-                {/* Row 2 — OXIDO Production Case Study */}
+                {/* Row 2 — Controlled Ablation Study */}
                  <div className="editorial-row">
                     <div className="editorial-date">
                       <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2025–2026</div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Production Study</div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Ablation Study</div>
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
-                        £1,707.91. Zero CAC. 396 Customers. 10 Countries.
+                        Controlled Ablation: Causal Proof That the Architecture Works
                       </h3>
                       <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 20px 0', maxWidth: '620px' }}>
-                        An 11-month controlled ablation study on a live UK-registered company — Black Bloxie LTD — where every commercial role is occupied by an AI agent. Full system removal caused a 91% revenue collapse. Re-injection delivered a 1,300% recovery. The causal chain is documented and reproducible.
+                        An 11-month injection-removal-reinjection study on a live UK-registered company used as a controlled test environment. Full system removal collapsed all commercial output by 91%. Re-injection recovered it by 1,300%. The methodology isolates OXIDO as the causal variable — not market conditions, not seasonality. The full evidence is published in two formats.
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                         <a

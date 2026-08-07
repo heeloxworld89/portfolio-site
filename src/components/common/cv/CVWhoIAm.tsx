@@ -15,11 +15,11 @@ export default function CVWhoIAm() {
       stats: [['40,933', 'Lines of Code'], ['2,011', 'Tests · 0 Fails'], ['11', 'Mini-Repos'], ['72%', 'Reduction']],
     },
     {
-      tag: 'Private Equity · AI Industry Transformation · UK Registered',
+      tag: 'Architecture Validation · 11-Month Controlled Ablation Study',
       name: 'Black Bloxie LTD',
-      claim: 'A private equity company. Every employee is an AI agent.',
-      body: 'The thesis: AI should build, operate, and sell — without human labor in the loop. Black Bloxie holds the equity. OXIMO is the operating system. The AI does the work. Vertical 1 (e-commerce) ran as a very early-stage controlled ablation study: inject OXIMO, measure revenue; strip it, revenue drops 91%; re-inject, recovers 1,300%. We achieved four-figure revenue with fully autonomous Zero-CAC unit economics, zero ad spend, and zero human sales effort. We cannot go full scale yet due to AI governance and safety issues, so this is just a tiny fraction of what the system can do. Vertical 2, 3, and 4 (law, software, medical research) are currently running.',
-      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Recovery'], ['500+', 'Early Stage Customers'], ['Four-Figure', 'Autonomous Zero-CAC Revenue']],
+      claim: 'A UK-registered controlled test environment. Every operational role is occupied by an AI agent.',
+      body: 'Created to generate verifiable causal evidence that the ORMAS/OXIMO/OXIDO stack works under real-world conditions. E-commerce selected as the first test substrate for its fastest feedback loop and clearest binary failure signal. Injection-removal-reinjection protocol: OXIMO deployed, commercial output established. Full system removal: output collapsed 91% across all channels simultaneously — ruling out market and seasonality as alternatives. V3 re-injection: output recovered 1,300% from ablated baseline. The causal chain is documented, reproducible, and published.',
+      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['11 mo.', 'Study Duration'], ['0', 'Advertising Spend']],
     },
   ];
 
@@ -85,7 +85,7 @@ export default function CVWhoIAm() {
         }
         .who-stat-lbl {
           font-size: 11px;
-          color: #4a5568;
+          color: #6b7683;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: 600;
