@@ -14,21 +14,6 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <!-- Cache Killer: Force unregister old Service Workers -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for(let registration of registrations) {
-            registration.unregister();
-            console.log('Unregistered stale Service Worker');
-          }
-          if (registrations.length > 0) {
-            window.location.reload(true);
-          }
-        });
-      }
-    </script>
-
     <!-- Open Graph / Link Previews -->
     <meta property="og:title" content="Rokib Al Dhin Raadh — Independent AI Researcher" />
     <meta property="og:description" content="I build interpretable, logic-driven AI frameworks that challenge the black-box paradigm. Creator of ORMAS and OXIMO." />
