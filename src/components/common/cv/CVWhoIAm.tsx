@@ -104,6 +104,60 @@ export default function CVWhoIAm() {
         .who-audit-row:last-child { border-bottom: none; }
         .who-audit-key { color: #c4cfde; font-weight: 600; flex-shrink: 0; }
         .who-audit-val { color: #878e99; }
+
+        .who-router {
+          border: 1px solid #2a2d32;
+          border-radius: 8px;
+          overflow: hidden;
+          margin-bottom: 48px;
+        }
+        .who-router-header {
+          padding: 9px 20px;
+          background: rgba(255,255,255,0.02);
+          border-bottom: 1px solid #2a2d32;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #6b7683;
+        }
+        .who-router-row {
+          display: grid;
+          grid-template-columns: 180px 1fr auto;
+          align-items: center;
+          padding: 13px 20px;
+          border-bottom: 1px solid rgba(255,255,255,0.04);
+          gap: 16px;
+          transition: background 0.2s;
+        }
+        .who-router-row:last-child { border-bottom: none; }
+        .who-router-row:hover { background: rgba(255,255,255,0.02); }
+        .who-router-audience {
+          font-size: 12px;
+          font-weight: 700;
+          color: #c4cfde;
+          letter-spacing: 0.3px;
+        }
+        .who-router-desc {
+          font-size: 13px;
+          color: #878e99;
+          line-height: 1.5;
+        }
+        .who-router-link {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #6b7683;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color 0.2s;
+        }
+        .who-router-link:hover { color: #c4cfde; }
+        @media (max-width: 680px) {
+          .who-router-row { grid-template-columns: 1fr; gap: 6px; }
+          .who-router-link { display: none; }
+        }
       `}</style>
 
       <div className="col-12">
@@ -112,9 +166,46 @@ export default function CVWhoIAm() {
         <p style={{ fontSize: "17px", color: "#878e99", marginBottom: "10px" }}>
           18 · Dhaka, Bangladesh · Independent AI Researcher & Founder
         </p>
-        <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "50px", maxWidth: "700px" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "32px", maxWidth: "700px" }}>
           Neural networks fail opaquely. I built an architecture that changes that — with proof.
         </p>
+
+        {/* ── Audience Router ─────────────────────────────────────── */}
+        <div className="who-router">
+          <div className="who-router-header">Where to start — depending on why you're here</div>
+          {[
+            {
+              audience: 'ML Researcher / Reviewer',
+              desc: 'Convergence proof, 383 experiments, GlassBox telemetry, full tables with honest gaps.',
+              href: '#research',
+              label: 'Research →',
+            },
+            {
+              audience: 'VC / Angel Investor',
+              desc: 'Enterprise licensing thesis, competitor gap, ablation evidence, roadmap.',
+              href: '#oxido',
+              label: 'OXIDO →',
+            },
+            {
+              audience: 'Engineer / Developer',
+              desc: 'Architecture internals, 40,933 lines, 2,011 tests, reproduce.sh runs in under an hour.',
+              href: '#engineering',
+              label: 'Engineering →',
+            },
+            {
+              audience: 'Enterprise Operator',
+              desc: 'Deployment study, causal ablation methodology, two downloadable reports.',
+              href: '#deployment',
+              label: 'Deployment →',
+            },
+          ].map((r, i) => (
+            <div key={i} className="who-router-row">
+              <div className="who-router-audience">{r.audience}</div>
+              <div className="who-router-desc">{r.desc}</div>
+              <a className="who-router-link" href={r.href}>{r.label}</a>
+            </div>
+          ))}
+        </div>
 
         <div className="content">
           {systems.map((s, i) => (

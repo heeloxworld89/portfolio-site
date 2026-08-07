@@ -75,18 +75,23 @@ export default function Hero(_props?: any) {
                     </div>
                  </div>
 
-                {/* Row 2 — Controlled Ablation Study */}
-                 <div className="editorial-row">
+                {/* Row 2 — Ablation Proof + Active Engineering */}
+                 <div className="editorial-row" style={{ borderBottom: 'none' }}>
                     <div className="editorial-date">
-                      <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2025–2026</div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Ablation Study</div>
+                      <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="pulse-dot"></span> Active
+                      </div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>2025 → Now</div>
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
-                        Controlled Ablation: Causal Proof That the Architecture Works
+                        Causal Proof in Production. Now Scaling to Foundation Models.
                       </h3>
-                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 20px 0', maxWidth: '620px' }}>
-                        An 11-month injection-removal-reinjection study on a live UK-registered company used as a controlled test environment. Full system removal collapsed all commercial output by 91%. Re-injection recovered it by 1,300%. The methodology isolates OXIDO as the causal variable — not market conditions, not seasonality. The full evidence is published in two formats.
+                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
+                        An 11-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
+                      </p>
+                      <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
+                        This Is Not a Business. It Is a Controlled Experiment.
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                         <a
@@ -128,22 +133,6 @@ export default function Hero(_props?: any) {
                       </div>
                     </div>
                  </div>
-
-                {/* Row 3 — Scaling to Transformers */}
-                <div className="editorial-row" style={{ borderBottom: 'none' }}>
-                   <div className="editorial-date">
-                     <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                       <span className="pulse-dot"></span> Active
-                     </div>
-                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>ORMAS-T</div>
-                   </div>
-                   <div>
-                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>ORMAS-T: Scaling Self-Correction to Foundation Models</h3>
-                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                       The core mechanism is validated across 383 experiments: autonomous recovery from structural collapse, innate noise robustness, and zero-shot compositional generalization at <strong style={{color: '#c4cfde'}}>58.8% vs 25% baseline</strong>. The empirical proof-of-concept is complete. The active engineering trajectory focuses on scaling the architecture to Transformers and training Cherry — a fully self-correcting language model.
-                     </p>
-                   </div>
-                </div>
 
                </div>
 
