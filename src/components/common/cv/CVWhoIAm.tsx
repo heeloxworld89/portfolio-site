@@ -155,8 +155,8 @@ export default function CVWhoIAm() {
         }
         .who-router-link:hover { color: #c4cfde; }
         @media (max-width: 680px) {
-          .who-router-row { grid-template-columns: 1fr; gap: 6px; }
-          .who-router-link { display: none; }
+          .who-router-row { grid-template-columns: 1fr; gap: 8px; }
+          .who-router-link { display: inline-block; margin-top: 4px; padding-bottom: 2px; border-bottom: 1px solid rgba(107,118,131,0.3); align-self: start; }
         }
       `}</style>
 

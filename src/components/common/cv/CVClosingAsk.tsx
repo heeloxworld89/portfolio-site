@@ -110,10 +110,10 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">Investors &amp; Operators</div>
             <p className="ask-body">
-              I am not raising a round. The specific unlocks for the next phase are: access to multi-node H100/A100 compute for Transformer-scale validation, and an institutional pilot environment where OXIMO can operate on proprietary domain data. If that is your world, email me.
+              The next phase requires multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can operate on proprietary domain data. If you have the infrastructure to deploy this, email me.
             </p>
-            <a className="ask-action" href="mailto:raadkbusiness@gmail.com">
-              raadkbusiness@gmail.com
+            <a className="ask-action" href="mailto:raadxbusiness9@gmail.com">
+              raadxbusiness9@gmail.com
             </a>
           </div>
 
@@ -131,7 +131,7 @@ export default function CVClosingAsk() {
 
         <div className="ask-email-bar">
           <span className="ask-email-label">Direct contact —</span>
-          <a className="ask-email-link" href="mailto:raadkbusiness@gmail.com">raadkbusiness@gmail.com</a>
+          <a className="ask-email-link" href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>
           <span className="ask-email-note">Response within 24 hours. No pitch decks required.</span>
         </div>
 
