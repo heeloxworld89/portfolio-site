@@ -13,13 +13,13 @@ export default function CVJourney() {
           {/* Phase 1 — Early Foundation */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '40px' }}>
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 24px' }}>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '8px' }}>Age 12 — First Principles</div>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '8px' }}>Age 12 — First Principles</div>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
                 Began programming at 12. Every project was constructed at the edge of current capability — which established a working pattern: learn what the problem demands, not what the curriculum offers. The discipline of self-directed inquiry formed before any formal exposure to computer science.
               </p>
             </div>
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 24px' }}>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '8px' }}>Age 15 — First Validated Output</div>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '8px' }}>Age 15 — First Validated Output</div>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
                 Developed a stock market price prediction system: market data ingestion → fundamental analysis → technical analysis → directional prediction. Sold for approximately <strong style={{ color: '#c4cfde' }}>$10,000 USD</strong>. The proceeds funded the RTX 3090 that would later run all 383 ORMAS experiments. More importantly: it was the first externally validated proof that the work was real.
               </p>

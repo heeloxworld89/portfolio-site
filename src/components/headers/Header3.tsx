@@ -40,7 +40,7 @@ export default function Header3() {
                   <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#878e99', marginBottom: '12px' }}>Identity & Social</p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
-                      Twitter <span style={{ color: '#4a5568' }}>·</span>{' '}
+                      Twitter <span style={{ color: '#6b7683' }}>·</span>{' '}
                       <a href="https://twitter.com/Raad_X_" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>@Raad_X_</a>
                     </li>
                   </ul>
@@ -71,11 +71,11 @@ export default function Header3() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
                       <a href="https://anonymous.4open.science/r/ormas-EB73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>ORMAS Codebase ↗</a>
-                      <span style={{ fontSize: '12px', display: 'block', color: '#4a5568', marginTop: '2px' }}>383 runs · fully reproducible</span>
+                      <span style={{ fontSize: '12px', display: 'block', color: '#6b7683', marginTop: '2px' }}>383 runs · fully reproducible</span>
                     </li>
                     <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
                       <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>OXIMO Codebase ↗</a>
-                      <span style={{ fontSize: '12px', display: 'block', color: '#4a5568', marginTop: '2px' }}>Architecture complete · code unpolished</span>
+                      <span style={{ fontSize: '12px', display: 'block', color: '#6b7683', marginTop: '2px' }}>Architecture complete · code unpolished</span>
                     </li>
                     <li style={{ fontSize: '14px', lineHeight: '1.5' }}>
                       <a href="mailto:raadxbusiness9@gmail.com" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0, wordBreak: 'break-all' }}>raadxbusiness9@gmail.com</a>

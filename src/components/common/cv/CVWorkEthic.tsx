@@ -116,7 +116,7 @@ export default function CVWorkEthic() {
           <h2 className="title fs-2" style={{ fontWeight: 800, color: '#fff', marginBottom: '8px', letterSpacing: '-0.5px', lineHeight: 1.2 }}>
             On Obsession<br />and Independent Research
           </h2>
-          <p style={{ fontSize: '15px', color: '#4a5568', marginBottom: '44px', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '15px', color: '#6b7683', marginBottom: '44px', lineHeight: '1.6' }}>
             Dhaka, Bangladesh · 18 · No university, no advisor, no lab.
           </p>
 
@@ -224,7 +224,7 @@ export default function CVWorkEthic() {
 
           {/* Work Archive */}
           <div style={{ marginTop: '8px', marginBottom: '8px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '16px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '16px' }}>
               Two-Week Livestream Archive — Nov 2024 · OXIMO Development
             </p>
 

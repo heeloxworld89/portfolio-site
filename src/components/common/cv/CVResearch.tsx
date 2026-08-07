@@ -139,9 +139,9 @@ export default function CVResearch() {
               <span style={{ fontSize: '20px', lineHeight: 1 }}>{link.icon}</span>
               <span>
                 <div style={{ fontSize: '14px', fontWeight: 700, color: '#c4cfde', lineHeight: 1.2 }}>{link.label}</div>
-                <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '0.8px', marginTop: '3px' }}>{link.sub}</div>
+                <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '0.8px', marginTop: '3px' }}>{link.sub}</div>
               </span>
-              <span style={{ marginLeft: 'auto', color: '#4a5568', fontSize: '12px' }}>↗</span>
+              <span style={{ marginLeft: 'auto', color: '#6b7683', fontSize: '12px' }}>↗</span>
             </a>
           ))}
         </div>
@@ -169,7 +169,7 @@ export default function CVResearch() {
             ].map((s, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 14px', textAlign: 'center' }}>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
-                <div style={{ fontSize: '10px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: 700, lineHeight: 1.4 }}>{s.lbl}</div>
+                <div style={{ fontSize: '10px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: 700, lineHeight: 1.4 }}>{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -269,7 +269,7 @@ export default function CVResearch() {
               { label: 'Why that matters', val: 'Structural telemetry ≠ semantic interpretability. The gap between the two is the primary extension direction.' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>{item.label}</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>{item.label}</div>
                 <div style={{ fontSize: '13px', lineHeight: '1.65', color: '#878e99' }}>{item.val}</div>
               </div>
             ))}
@@ -317,7 +317,7 @@ export default function CVResearch() {
                   <tr key={i}>
                     <td style={{ padding: '12px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', color: '#c4cfde', fontWeight: 600, fontSize: '13px' }}>
                       {r.noise}
-                      {r.note ? <div style={{ fontSize: '11px', color: '#4a5568', fontWeight: 400, marginTop: '3px' }}>{r.note}</div> : null}
+                      {r.note ? <div style={{ fontSize: '11px', color: '#6b7683', fontWeight: 400, marginTop: '3px' }}>{r.note}</div> : null}
                     </td>
                     <td style={{ padding: '12px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', color: '#c4cfde', fontWeight: 700, fontSize: '13px', fontFamily: "'Fira Code', monospace" }}>{r.ormas}</td>
                     <td style={{ padding: '12px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', color: '#878e99', fontSize: '13px', fontFamily: "'Fira Code', monospace" }}>{r.std}</td>
@@ -327,7 +327,7 @@ export default function CVResearch() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: '12px', color: '#4a5568', marginBottom: '40px', lineHeight: '1.6' }}>All results CIFAR-10 unless noted. Equal-compute (200 epochs, same hardware). Framing note: every accuracy result is proof the mechanism functions — not a competitive accuracy benchmark.</p>
+          <p style={{ fontSize: '12px', color: '#6b7683', marginBottom: '40px', lineHeight: '1.6' }}>All results CIFAR-10 unless noted. Equal-compute (200 epochs, same hardware). Framing note: every accuracy result is proof the mechanism functions — not a competitive accuracy benchmark.</p>
           <div className="honest-gap-box" style={{ marginBottom: '40px' }}>
             <h5 style={{ fontSize: '14px', fontWeight: '700', color: '#c4cfde', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Note — Early Stopping & Heavy Dropout</h5>
             <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#878e99', margin: '0 0 10px' }}>
@@ -365,7 +365,7 @@ export default function CVResearch() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: '13px', lineHeight: '1.7', color: '#4a5568', marginBottom: '20px' }}>
+          <p style={{ fontSize: '13px', lineHeight: '1.7', color: '#6b7683', marginBottom: '20px' }}>
             The gap widens monotonically with perturbation scale. At σ=2.0, ORMAS recovers 52.1pp vs Standard CNN's 28.2pp — nearly 2× the net recovery from the same catastrophic shock.
           </p>
           <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#878e99', marginBottom: '10px' }}>
@@ -428,7 +428,7 @@ export default function CVResearch() {
                   <tr key={i}>
                     <td>
                       <div style={{ color: '#c4cfde', fontWeight: 600, marginBottom: '4px', fontFamily: 'inherit' }}>{r.scenario}</div>
-                      <div style={{ fontSize: '12px', color: '#4a5568', fontFamily: 'inherit' }}>{r.note}</div>
+                      <div style={{ fontSize: '12px', color: '#6b7683', fontFamily: 'inherit' }}>{r.note}</div>
                     </td>
                     <td style={{ color: '#878e99', fontFamily: "'Fira Code', monospace" }}>{r.standard}</td>
                     <td style={{ color: r.gap.startsWith('+') ? '#c4cfde' : r.gap === 'Edge-of-chaos' ? '#ff4a57' : '#878e99', fontFamily: "'Fira Code', monospace", fontWeight: r.gap.startsWith('+') ? 700 : 400 }}>{r.ormas}</td>
@@ -544,7 +544,7 @@ export default function CVResearch() {
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '16px 18px' }}>
                 <div style={{ fontSize: '12px', fontFamily: "'Fira Code', monospace", color: '#c4cfde', marginBottom: '6px', fontWeight: 600 }}>{item.param}</div>
                 <div style={{ fontSize: '13px', color: '#878e99', lineHeight: '1.55', marginBottom: '4px' }}>{item.result}</div>
-                <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{item.note}</div>
+                <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{item.note}</div>
               </div>
             ))}
           </div>

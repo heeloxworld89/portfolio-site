@@ -89,23 +89,77 @@ export default function Hero(_props?: any) {
                    </div>
                 </div>
 
-                {/* Row 3 */}
-                <div className="editorial-row" style={{ borderBottom: 'none' }}>
-                   <div className="editorial-date">
-                     <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                       <span className="pulse-dot"></span> Active
-                     </div>
-                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Next Phase</div>
-                   </div>
-                   <div>
-                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>The Experiments Have Outgrown Single-GPU Capacity</h3>
-                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                       Extending ORMAS to Transformer architectures and training Cherry — a self-correcting language model — requires institutional compute. The proof-of-concept is complete. The architecture is validated. What comes next requires a different infrastructure. That is what I am building toward.
-                     </p>
-                   </div>
-                </div>
+                 {/* Row 3 */}
+                 <div className="editorial-row">
+                    <div className="editorial-date">
+                      <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="pulse-dot"></span> Active
+                      </div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Next Phase</div>
+                    </div>
+                    <div>
+                      <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>The Experiments Have Outgrown Single-GPU Capacity</h3>
+                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                        Extending ORMAS to Transformer architectures and training Cherry — a self-correcting language model — requires institutional compute. The proof-of-concept is complete. The architecture is validated. What comes next requires a different infrastructure. That is what I am building toward.
+                      </p>
+                    </div>
+                 </div>
 
-              </div>
+                 {/* Row 4 — OXIDO Production Case Study */}
+                 <div className="editorial-row" style={{ borderBottom: 'none' }}>
+                    <div className="editorial-date">
+                      <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2025–2026</div>
+                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Production Study</div>
+                    </div>
+                    <div>
+                      <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
+                        £1,707.91. Zero CAC. 396 Customers. 10 Countries.
+                      </h3>
+                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 20px 0', maxWidth: '620px' }}>
+                        An 11-month controlled ablation study on a live UK-registered company — Black Bloxie LTD — where every commercial role is occupied by an AI agent. Full system removal caused a 91% revenue collapse. Re-injection delivered a 1,300% recovery. The causal chain is documented and reproducible.
+                      </p>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                        <a
+                          href="/assets/pdf/oxido_academic_research_paper.pdf"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '8px',
+                            padding: '10px 18px',
+                            background: 'rgba(196,207,222,0.06)',
+                            border: '1px solid rgba(196,207,222,0.15)',
+                            borderRadius: '4px',
+                            color: '#c4cfde',
+                            fontSize: '12px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          <i className="fa-sharp fa-regular fa-file-lines" />
+                          System Architecture Paper
+                        </a>
+                        <a
+                          href="/assets/pdf/oxido_investor_whitepaper.pdf"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '8px',
+                            padding: '10px 18px',
+                            background: 'rgba(255,74,87,0.06)',
+                            border: '1px solid rgba(255,74,87,0.18)',
+                            borderRadius: '4px',
+                            color: '#ff4a57',
+                            fontSize: '12px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          <i className="fa-sharp fa-regular fa-chart-line" />
+                          Commercial Evidence Report
+                        </a>
+                      </div>
+                    </div>
+                 </div>
+
+               </div>
 
               {/* ── Loom Video — Embedded ── */}
               <div className="tmp-scroll-trigger tmp-fade-in animation-order-3">

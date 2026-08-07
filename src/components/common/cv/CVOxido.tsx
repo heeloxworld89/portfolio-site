@@ -130,7 +130,7 @@ export default function CVOxido() {
             }}>
               <div style={{
                 fontSize: '10px', fontWeight: 700, letterSpacing: '2px',
-                textTransform: 'uppercase', color: '#4a5568', marginBottom: '14px',
+                textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px',
               }}>{p.tag}</div>
               <div style={{
                 fontSize: '30px', fontWeight: 800, color: '#fff',
@@ -140,7 +140,7 @@ export default function CVOxido() {
                 fontSize: '13px', color: '#878e99', marginBottom: '16px', fontStyle: 'italic',
               }}>{p.tagline}</div>
               <div style={{
-                fontSize: '14px', lineHeight: '1.7', color: '#4a5568', marginBottom: '22px',
+                fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '22px',
               }}>{p.desc}</div>
               <div style={{
                 fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px',
@@ -170,14 +170,14 @@ export default function CVOxido() {
         </div>
 
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '20px 24px', marginBottom: '56px' }}>
-          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '10px' }}>Same model as</p>
+          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>Same model as</p>
           <p style={{ fontSize: '15px', color: '#878e99', margin: 0, lineHeight: '1.7' }}>
             <strong style={{ color: '#c4cfde' }}>Red Hat</strong> — open-source Linux, enterprise support &nbsp;·&nbsp;
             <strong style={{ color: '#c4cfde' }}>MongoDB</strong> — open-source DB, enterprise licensing &nbsp;·&nbsp;
             <strong style={{ color: '#c4cfde' }}>Databricks</strong> — open-source Spark, enterprise platform &nbsp;·&nbsp;
             <strong style={{ color: '#c4cfde' }}>Hugging Face</strong> — open-source models, enterprise API
           </p>
-          <p style={{ fontSize: '14px', color: '#4a5568', marginTop: '10px', marginBottom: 0, fontStyle: 'italic' }}>
+          <p style={{ fontSize: '14px', color: '#6b7683', marginTop: '10px', marginBottom: 0, fontStyle: 'italic' }}>
             One enterprise license with a hedge fund or hospital system is worth more than 10,000 SaaS subscriptions — with lower churn, higher margins, and a stronger technical moat.
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function CVOxido() {
           </table>
         </div>
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '18px 24px', marginBottom: '56px' }}>
-          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '10px' }}>The structural gap none of them close</p>
+          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>The structural gap none of them close</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {[
               ['Catastrophic forgetting', 'ORMAS solves it. 94.6% prior-task retention vs 47.3% standard ResNet-18.'],
@@ -248,7 +248,7 @@ export default function CVOxido() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: '13px', color: '#4a5568', marginTop: '14px', marginBottom: 0, fontStyle: 'italic' }}>
+          <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '14px', marginBottom: 0, fontStyle: 'italic' }}>
             The $757B AI market (growing to $4T by 2035) is moving toward operational AI on proprietary data. Every company in that market needs what ORMAS provides. None of them have it.
           </p>
         </div>

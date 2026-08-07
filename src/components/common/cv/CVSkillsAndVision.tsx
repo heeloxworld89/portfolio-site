@@ -265,11 +265,11 @@ export default function CVSkillsAndVision() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '12px' }}>
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
               <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>14–16 hrs</div>
-              <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Daily Engineering Focus</div>
+              <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Daily Engineering Focus</div>
             </div>
             <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
               <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>100%</div>
-              <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Sole IP Ownership</div>
+              <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Sole IP Ownership</div>
             </div>
           </div>
 

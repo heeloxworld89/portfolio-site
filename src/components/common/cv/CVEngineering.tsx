@@ -133,7 +133,7 @@ export default function CVEngineering() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
-        <p style={{ fontSize: '13px', color: '#4a5568', marginTop: '-14px', marginBottom: '20px' }}>
+        <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '-14px', marginBottom: '20px' }}>
           <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#878e99', textDecoration: 'underline' }}>
             ↗ View Codebase
           </a>
@@ -168,7 +168,7 @@ export default function CVEngineering() {
             ].map((s, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
-                <div style={{ fontSize: '11px', color: '#4a5568', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+                <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
               </div>
             ))}
           </div>
