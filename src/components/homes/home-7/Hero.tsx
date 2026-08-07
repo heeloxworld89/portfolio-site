@@ -75,38 +75,8 @@ export default function Hero(_props?: any) {
                     </div>
                  </div>
 
-                {/* Row 2 */}
-                <div className="editorial-row">
-                   <div className="editorial-date">
-                     <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2024–2026</div>
-                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Research</div>
-                   </div>
-                   <div>
-                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>383 Experiments. One GPU. One Room.</h3>
-                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                       Three emergent results from one architectural decision: autonomous recovery from catastrophic structural collapse, noise robustness matching purpose-built methods, and zero-shot compositional generalization at <strong style={{color: '#c4cfde'}}>58.8% vs 25% chance</strong> — with no replay buffers, no architectural tricks. The mechanism scales from 637K to 11M parameters.
-                     </p>
-                   </div>
-                </div>
-
-                 {/* Row 3 */}
+                {/* Row 2 — OXIDO Production Case Study */}
                  <div className="editorial-row">
-                    <div className="editorial-date">
-                      <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span className="pulse-dot"></span> Active
-                      </div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Next Phase</div>
-                    </div>
-                    <div>
-                      <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>The Experiments Have Outgrown Single-GPU Capacity</h3>
-                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                        Extending ORMAS to Transformer architectures and training Cherry — a self-correcting language model — requires institutional compute. The proof-of-concept is complete. The architecture is validated. What comes next requires a different infrastructure. That is what I am building toward.
-                      </p>
-                    </div>
-                 </div>
-
-                 {/* Row 4 — OXIDO Production Case Study */}
-                 <div className="editorial-row" style={{ borderBottom: 'none' }}>
                     <div className="editorial-date">
                       <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2025–2026</div>
                       <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Production Study</div>
@@ -158,6 +128,22 @@ export default function Hero(_props?: any) {
                       </div>
                     </div>
                  </div>
+
+                {/* Row 3 — Scaling to Transformers */}
+                <div className="editorial-row" style={{ borderBottom: 'none' }}>
+                   <div className="editorial-date">
+                     <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                       <span className="pulse-dot"></span> Active
+                     </div>
+                     <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>ORMAS-T</div>
+                   </div>
+                   <div>
+                     <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>ORMAS-T: Scaling Self-Correction to Foundation Models</h3>
+                     <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                       The core mechanism is validated across 383 experiments: autonomous recovery from structural collapse, innate noise robustness, and zero-shot compositional generalization at <strong style={{color: '#c4cfde'}}>58.8% vs 25% baseline</strong>. The empirical proof-of-concept is complete. The active engineering trajectory focuses on scaling the architecture to Transformers and training Cherry — a fully self-correcting language model.
+                     </p>
+                   </div>
+                </div>
 
                </div>
 
