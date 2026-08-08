@@ -158,10 +158,10 @@ export default function CVEducation() {
           {/* Big statement */}
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
             <p style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4 }}>
-              My grades do not reflect my capabilities. What reflects my capabilities is the work.
+              I chose research over grades — deliberately.
             </p>
             <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
-              I skipped school to work on OXIMO. I stayed up until 4 AM debugging ORMAS. I prioritized understanding stability theory for the convergence proof over studying for exams. Traditional education suffered because research came first.
+              Stability theory for the convergence proof took priority over exam preparation. OXIMO development replaced scheduled class time. The trade-off is documented — not in grades, but in 383 experiments, 40,933 lines of production code, and a published preprint. Evaluate from that.
             </p>
           </div>
 

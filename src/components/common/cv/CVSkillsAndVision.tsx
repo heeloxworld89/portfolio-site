@@ -56,16 +56,6 @@ export default function CVSkillsAndVision() {
     },
   ];
 
-  const achievementSteps = [
-    { n: '01', title: 'ORMAS — Self-Correcting Neural Architecture',
-      note: 'First formal convergence proof for any self-correcting architecture. 383 experiments across 4 architectures. +70.3pp recovery gap where baselines permanently collapse.' },
-    { n: '02', title: 'OXIMO — Cognitive Multi-Agent OS',
-      note: '40,933 lines of production code. 2,011 tests, zero failures. Rebuilt from a 106,000-line monolith at 72% reduction. Agents that hire agents, with 3-tier persistent memory.' },
-    { n: '03', title: 'Black Bloxie LTD — Controlled Ablation Study',
-      note: '11-month injection-removal-reinjection study on a live UK-registered company. OXIMO removed: commercial output collapsed 91%. OXIMO re-injected: commercial output recovered 1,300%. Causal proof that the ORMAS/OXIMO/OXIDO stack generates real-world economic output. Zero advertising expenditure. Zero human marketing hours. Substrate 1 (e-commerce) ablation complete. Substrates 2–4 (legal, software, medical) pending.' },
-    { n: '04', title: 'OXIDO — The Convergence',
-      note: 'OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency. The endgame.' },
-  ];
 
   return (
     <div className="row mb--50" id="skills-vision">
@@ -261,67 +251,21 @@ export default function CVSkillsAndVision() {
             </div>
           ))}
 
-          <h4 className="section-header">The Output Pipeline</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '12px' }}>
-            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>14–16 hrs</div>
-              <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Daily Engineering Focus</div>
-            </div>
-            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '5px' }}>100%</div>
-              <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>Sole IP Ownership</div>
-            </div>
+          {/* ── OXIDO: The Convergence ─────────────────────────────── */}
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '24px 28px', marginBottom: '16px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>OXIDO — The Convergence</div>
+            <p style={{ fontSize: '16px', fontWeight: 600, color: '#c4cfde', margin: '0 0 10px', lineHeight: 1.6 }}>
+              OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency.
+            </p>
+            <p style={{ fontSize: '14px', color: '#878e99', margin: 0, lineHeight: 1.75 }}>
+              Each system was built to solve a specific failure mode. Together they constitute a self-sustaining research and operational stack. The architecture is validated. The next phase is scale.
+            </p>
           </div>
 
-
-          {/* How I Fund Everything */}
-          <h4 className="section-header">Entirely Self-Funded</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '40px' }}>
-            {[
-              { item: 'RTX 3090', src: 'All 383 ORMAS experiments. Dedicated research hardware.' },
-              { item: 'Personal RTX 4090', src: 'Day-to-day development machine. Funded from $10K stock algorithm sale at age 15.' },
-              { item: 'Black Bloxie', src: 'Zero capital. API costs = dollars/month. Revenue exceeds cost.' },
-              { item: 'Research', src: 'LLM API bills — DeepSeek, Gemini, OpenAI. Dollars, not thousands.' },
-
-            ].map((r, i) => (
-              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px' }}>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', marginBottom: '6px', letterSpacing: '0.5px' }}>{r.item}</div>
-                <div style={{ fontSize: '13px', lineHeight: '1.6', color: '#878e99' }}>{r.src}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* What Makes This Different */}
-          <h4 className="section-header">What Makes This Different</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '40px' }}>
-            {[
-              { label: '100% IP Ownership', desc: 'No co-founders. No university claims. No employer agreements. Every line of code and math is mine.' },
-              { label: 'Zero Institutional Support', desc: 'Zero compute grants. Every experiment on a personal RTX 3090. Every company registered from personal savings.' },
-              { label: 'Cross-Disciplinary', desc: 'Control theory → stability proofs. Financial markets → stock algorithms. Company law → UK registration. The research demanded breadth.' },
-              { label: 'Documented', desc: 'Two years ago this sounded delusional. The gap closed — because the code runs, the experiments are done, the company generates revenue.' },
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 16px', padding: '12px 18px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', alignItems: 'baseline' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#c4cfde', letterSpacing: '1px', textTransform: 'uppercase', flexShrink: 0 }}>{item.label}</span>
-                <span style={{ color: '#878e99', fontSize: '14px' }}>{item.desc}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Vision Pipeline */}
-          <h4 className="section-header">The Work — What Has Been Built</h4>
-          <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflow: "hidden", marginBottom: "40px" }}>
-            <ul className="vision-list" style={{ padding: "8px 24px" }}>
-              {achievementSteps.map((s, i) => (
-                <li key={i} className="vision-item">
-                  <div className="vision-num">{s.n}</div>
-                  <div>
-                    <div className="vision-title">{s.title}</div>
-                    <div className="vision-note">{s.note}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Bridge */}
+          <p style={{ fontSize: '14px', color: '#6b7683', fontStyle: 'italic', marginBottom: '32px', paddingLeft: '4px' }}>
+            Two years ago this sounded delusional. The gap closed — because the code runs, the experiments are done, and the architecture is published.
+          </p>
 
           {/* Scaling Requirements */}
           <h4 className="section-header">Strategic Roadmap</h4>

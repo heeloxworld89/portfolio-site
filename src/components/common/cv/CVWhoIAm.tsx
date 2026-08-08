@@ -3,7 +3,7 @@ export default function CVWhoIAm() {
     {
       tag: 'Research · AAAI 2027',
       name: 'ORMAS',
-      claim: 'The first neural network with a mathematical proof it can watch itself and recover.',
+      claim: 'A neural network with a formal local-stability convergence proof — the first of its kind. Global convergence remains an open problem, documented as such in the preprint.',
       body: 'When I zeroed all convolutional layers mid-training, every standard baseline collapsed permanently to chance. ORMAS detected the damage, executed 85 targeted corrections, and recovered to 80.3% — a 70.3 percentage-point gap where the standard architecture had zero recourse.',
       stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['✓', 'Convergence Proof']],
     },
