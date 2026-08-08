@@ -4,28 +4,71 @@ import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
-// ── Service Worker: force reload on any new deployment ──
-// skipWaiting + clientsClaim in workbox config means the new SW is already
-// controlling the page — this reload just makes the user see the new assets.
-import { registerSW } from "virtual:pwa-register";
-registerSW({
-  onNeedRefresh() {
-    // New SW is ready and waiting — force the page to reload immediately.
-    // skipWaiting means the new SW already took control, so this reload
-    // will load fresh assets from the new bundle.
-    window.location.reload();
-  },
-  onOfflineReady() {
-    console.log("App ready for offline use.");
-  },
-  onRegisteredSW(_swScriptUrl: string, registration: ServiceWorkerRegistration | undefined) {
-    if (!registration) return;
-    // Poll every 60 seconds for long-lived tabs (mobile tabs left open in background)
-    setInterval(() => {
+// ─────────────────────────────────────────────────────────────────────────────
+// Service Worker — manual registration with iOS Safari fixes
+//
+// Why manual instead of virtual:pwa-register?
+//   1. updateViaCache:'none' — Safari caches sw.js itself in its HTTP cache,
+//      meaning it never detects a new SW even after you deploy. This option
+//      tells Safari: always fetch sw.js fresh from the network, ignore HTTP cache.
+//   2. pageshow+persisted — iOS Safari's bfcache freezes the page in memory
+//      when you navigate away. When you come back, zero network requests fire.
+//      The SW never gets a chance to check for updates. We detect this and reload.
+// ─────────────────────────────────────────────────────────────────────────────
+
+if ("serviceWorker" in navigator) {
+  const registerSW = async () => {
+    try {
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        // ── THE iOS Safari fix ──────────────────────────────────────────────
+        // Without this, Safari serves sw.js from its own HTTP cache.
+        // The SW is 7 days old, Safari doesn't know there's a new one.
+        updateViaCache: "none",
+      });
+
+      // Force an update check on every single page load — not just first visit.
       registration.update().catch(() => {});
-    }, 60 * 1000);
-  },
-});
+
+      // Poll every 60s for tabs left open in background (common on mobile).
+      setInterval(() => registration.update().catch(() => {}), 60_000);
+
+      // When a new SW installs, reload immediately.
+      // skipWaiting + clientsClaim in workbox means the new SW is already
+      // in control — this reload just flushes the old assets from the page.
+      registration.addEventListener("updatefound", () => {
+        const newWorker = registration.installing;
+        if (!newWorker) return;
+
+        newWorker.addEventListener("statechange", () => {
+          if (
+            newWorker.state === "installed" &&
+            navigator.serviceWorker.controller
+          ) {
+            // New version is ready — reload so the user sees it immediately.
+            window.location.reload();
+          }
+        });
+      });
+    } catch (err) {
+      // SW registration failed — site still works, just no offline support.
+      console.warn("Service worker registration failed:", err);
+    }
+  };
+
+  // ── bfcache restore handler (iOS Safari specific) ─────────────────────────
+  // When Safari restores a frozen page from bfcache (event.persisted === true),
+  // no network request is made. The page is exactly as it was when you left.
+  // If you deployed 7 days ago, the visitor sees the 7-day-old version.
+  // Solution: detect bfcache restore and force a full reload.
+  window.addEventListener("pageshow", (event: PageTransitionEvent) => {
+    if (event.persisted) {
+      // Page was served from bfcache. Reload to get the current version.
+      window.location.reload();
+    }
+  });
+
+  registerSW();
+}
 
 reportWebVitals((metric) => {
   console.log(metric);

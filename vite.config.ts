@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: false, // We register manually in main.tsx with updateViaCache:'none'
       includeAssets: ["favicon/favicon.svg", "favicon/apple-touch-icon.png"],
       workbox: {
         // ── Critical: new SW takes control immediately, no waiting ──
