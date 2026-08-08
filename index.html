@@ -57,6 +57,39 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preconnect to Loom CDN (embedded video in hero) -->
+    <link rel="preconnect" href="https://cdn.loom.com" crossorigin="" />
+
+    <!-- Preload critical Font Awesome woff2 files — prevents icon blank-out on slow connections -->
+    <link rel="preload" href="/assets/fonts/fa-solid-900.woff2"       as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/fa-sharp-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/fa-regular-400.woff2"     as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- Override font-display:block on icon fonts → swap prevents invisible icons on slow connections -->
+    <style>
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url("/assets/fonts/fa-solid-900.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("/assets/fonts/fa-regular-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Font Awesome 6 Sharp";
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url("/assets/fonts/fa-sharp-solid-900.woff2") format("woff2");
+      }
+    </style>
   </head>
   <body>
     <style>
