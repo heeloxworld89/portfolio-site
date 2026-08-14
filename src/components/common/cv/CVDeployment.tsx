@@ -19,7 +19,7 @@ const tdBase: React.CSSProperties = {
   padding: '13px 20px',
   borderBottom: '1px solid rgba(255,255,255,0.04)',
   fontSize: '14px',
-  color: '#878e99',
+  color: '#9aa4b0',
 };
 const tdFirst: React.CSSProperties  = { ...tdBase, color: '#c4cfde', fontWeight: 600, width: '45%' };
 const tdValue: React.CSSProperties  = { ...tdBase, fontFamily: "'Fira Code', monospace", color: '#c4cfde', fontWeight: 700, textAlign: 'right' };
@@ -31,25 +31,25 @@ export default function CVDeployment() {
       <div className="col-12">
 
         {/* ── Section Header ─────────────────────────────────────────────── */}
-        <span className="subtitle" style={{ color: '#878e99', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px' }}>
+        <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px' }}>
           Architecture Validation · Controlled Ablation Study
         </span>
         <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>Deployment Evidence</h2>
-        <p style={{ fontSize: '15px', color: '#878e99', marginBottom: '18px' }}>
+        <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '18px' }}>
           OXIDO Architecture · Validated on Live Production Environment · 11 Months
         </p>
 
         {/* ── Critical Framing Block ─────────────────────────────────────── */}
-        <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px', marginBottom: '28px' }}>
+        <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
           <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '8px' }}>
             This Is Not a Business. It Is a Controlled Experiment.
           </p>
-          <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', margin: 0 }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
             Black Bloxie LTD is a UK Companies House-registered company created as a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. Its purpose is to generate verifiable causal evidence that the ORMAS/OXIMO/OXIDO stack works under real-world conditions — real customers, real supply chains, real regulations. E-commerce was selected as the first test substrate because it provides the fastest feedback loop and the clearest failure signal. The company's commercial output is deliberately constrained to research-grade scale by regulatory boundaries, not by technical limitations.
           </p>
         </div>
 
-        <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '35px', maxWidth: '680px' }}>
+        <p style={{ fontSize: '15px', lineHeight: '1.7', color: '#6b7683', marginBottom: '35px', maxWidth: '680px' }}>
           The full evidence is published in two formats. The <strong>System Architecture Paper</strong> is written for ML researchers and technical evaluators assessing the underlying mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is written for enterprise operators, venture capitalists, and angel investors evaluating the commercial viability of the OXIDO deployment model. Both cover the same 11-month ablation record from different analytical lenses.
         </p>
 
@@ -148,7 +148,7 @@ export default function CVDeployment() {
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px' }}>
               <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '6px' }}>{p.phase}</div>
               <div style={{ fontSize: '15px', fontWeight: 700, color: '#c4cfde', marginBottom: '8px' }}>{p.title}</div>
-              <div style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99' }}>{p.body}</div>
+              <div style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0' }}>{p.body}</div>
             </div>
           ))}
         </div>
@@ -163,7 +163,7 @@ export default function CVDeployment() {
               Substrate 1 · Ablation Complete
             </div>
             <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>E-Commerce</div>
-            <div style={{ fontSize: '12px', color: '#878e99', lineHeight: 1.6 }}>
+            <div style={{ fontSize: '12px', color: '#9aa4b0', lineHeight: 1.6 }}>
               11-month controlled ablation study. Full injection-removal-reinjection cycle completed. Causal attribution confirmed. Selected for fastest feedback loop and clearest binary failure signal.
             </div>
           </div>
@@ -186,19 +186,19 @@ export default function CVDeployment() {
 
           {/* ── Why & Regulatory Framing ──────────────────────────────────── */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '44px' }}>
-            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px' }}>
+            <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '20px 24px' }}>
               <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '8px' }}>
                 Why the Scale Is Deliberately Constrained
               </p>
-              <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', margin: 0 }}>
+              <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
                 The OXIDO architecture operates under a research-grade ablation ceiling. The study is designed to isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role provisioning — which are validated by 2,069 passing tests but are not deployed at scale because no legal framework currently assigns commercial liability to autonomous AI agents. The constraint is jurisdictional, not architectural. ORMAS's ISS convergence proof and GlassBox causal audit trail are the architectural response to that regulatory gap.
               </p>
             </div>
-            <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px' }}>
+            <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '20px 24px' }}>
               <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '8px' }}>
                 What This Study Actually Proves
               </p>
-              <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', margin: 0 }}>
+              <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
                 The ablation study does not prove that the architecture generates large revenue. It proves that the architecture is the <strong style={{ color: '#c4cfde' }}>causal origin</strong> of commercial output — and that its removal causes that output to stop. This is a fundamentally different claim. The first is a scale metric. The second is a causal proof. The OXIDO deployment validates the latter: that ORMAS-trained models, orchestrated by OXIMO, produce measurable real-world economic activity with zero human intervention and zero advertising expenditure.
               </p>
             </div>
@@ -208,10 +208,10 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px', color: '#c4cfde' }}>
             AX09 — Six-Stage Autonomous Content Pipeline
           </h4>
-          <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', marginBottom: '6px' }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '6px' }}>
             Each product is processed by six cascaded AI stages. Cascading specialized inference calls replaces single-shot frontier model calls — achieving a <strong style={{ color: '#c4cfde' }}>99.99% content cost reduction</strong> ($0.0043 per complete 12-asset product suite vs. $50–$150 human freelancer benchmark) at equivalent output quality.
           </p>
-          <p style={{ fontSize: '13px', lineHeight: '1.7', color: '#6b7683', marginBottom: '20px', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '20px', fontStyle: 'italic' }}>
             Deployed in static operation mode. Full autonomous self-hiring and self-modification are validated and ready pending regulatory clarity.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
@@ -246,7 +246,7 @@ export default function CVDeployment() {
             ].map((c, i) => (
               <div key={i} style={{ background: c.muted ? 'rgba(20,22,24,0.7)' : '#191b1e', border: `1px solid ${c.muted ? '#1a1c1f' : '#2a2d32'}`, borderRadius: '8px', padding: '16px', textAlign: 'center', opacity: c.muted ? 0.5 : 1 }}>
                 <div style={{ fontSize: '20px', fontWeight: 800, color: c.muted ? '#6b7683' : '#c4cfde', marginBottom: '4px' }}>{c.cost}</div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: c.muted ? '#6b7683' : '#878e99', lineHeight: 1.4 }}>{c.approach}</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: c.muted ? '#6b7683' : '#9aa4b0', lineHeight: 1.4 }}>{c.approach}</div>
               </div>
             ))}
           </div>
@@ -255,12 +255,12 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px', color: '#c4cfde', marginTop: '10px' }}>
             Ablation Record — Phase-Level Evidence
           </h4>
-          <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', marginBottom: '24px' }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '24px' }}>
             The study design follows an injection-removal-reinjection protocol, analogous to lesion studies in neuroscience, adapted for a live commercial system. It answers one question with verifiable data: does the OXIDO architecture cause commercial output, or does the market?
           </p>
 
           {/* Phase 2 removal table */}
-          <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#878e99', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Phase 2 — System Removal (Decline from Phase 1 Baseline)</h5>
+          <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#9aa4b0', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Phase 2 — System Removal (Decline from Phase 1 Baseline)</h5>
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '28px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
@@ -274,7 +274,7 @@ export default function CVDeployment() {
                 {ablationRemoval.map((r, i) => (
                   <tr key={i}>
                     <td style={{ ...tdFirst, borderBottom: i < ablationRemoval.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>{r.metric}</td>
-                    <td style={{ ...tdValue, borderBottom: i < ablationRemoval.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none', color: '#878e99' }}>{r.pct}%</td>
+                    <td style={{ ...tdValue, borderBottom: i < ablationRemoval.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none', color: '#9aa4b0' }}>{r.pct}%</td>
                     <td style={{ ...tdNote, borderBottom: i < ablationRemoval.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>{r.note}</td>
                   </tr>
                 ))}
@@ -283,7 +283,7 @@ export default function CVDeployment() {
           </div>
 
           {/* Phase 3 recovery table */}
-          <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#878e99', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Phase 3 — V3 Re-Injection (Recovery from Ablated Baseline)</h5>
+          <h5 style={{ fontSize: '13px', fontWeight: 700, color: '#9aa4b0', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Phase 3 — V3 Re-Injection (Recovery from Ablated Baseline)</h5>
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '44px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
@@ -309,7 +309,7 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px', color: '#c4cfde' }}>
             Traffic Source Attribution — The LLM Referral Channel
           </h4>
-          <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', marginBottom: '20px' }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '20px' }}>
             100% of customer acquisition is attributable to LLM-originated channels — a novel distribution mechanism that validates OXIDO's core thesis: AI-generated content structured for LLM consumption creates a self-sustaining acquisition engine without advertising. The Simultaneous Channel Collapse (SCC) methodology — introduced in this study — establishes that &ldquo;Unattributed Direct&rdquo; traffic in LLM-dependent environments is structurally identical to headless LLM referrals.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '8px' }}>
@@ -338,7 +338,7 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: '#c4cfde' }}>
             What the Deployment Proved About ORMAS
           </h4>
-          <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#878e99', marginBottom: '20px' }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '20px' }}>
             The deployment exposed the core failure mode that motivated ORMAS. Real-world supplier data is adversarial: mislabelled categories, inconsistent taxonomies, duplicate SKUs, corrupted pricing fields, and noise patterns that no benchmark dataset replicates. Every existing noise-robust training method tested (ProMix, DivideMix, CoDE, EV) failed in production on this data class. Standard backpropagation learns corrupted labels silently and confidently, with no per-node self-assessment mechanism to detect the failure. ORMAS was built to solve this structurally — not with hyperparameter tuning, but with a three-signal training architecture that formally proves it will detect and correct its own corruption while converging.
           </p>
 
@@ -346,7 +346,7 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '10px', color: '#c4cfde' }}>
             Study Parameters — Research-Grade Operational Boundary
           </h4>
-          <p style={{ fontSize: '13px', lineHeight: '1.7', color: '#6b7683', marginBottom: '14px', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '14px', fontStyle: 'italic' }}>
             These figures reflect deliberate ablation-ceiling constraints, not commercial scale targets. The study was designed to isolate causal attribution, not to maximise output.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
@@ -372,7 +372,7 @@ export default function CVDeployment() {
           {/* ── Roadmap — other substrates ────────────────────────────────── */}
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px', marginTop: '10px', marginBottom: '10px' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>Substrates 2–4 — Pending Ablation Cycles</p>
-            <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#6b7683', margin: 0 }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#6b7683', margin: 0 }}>
               Legal, software, and medical research substrates are architecturally ready via the OXIMO/ORMAS stack. Each requires completing its own injection-removal-reinjection ablation cycle before findings are published. The methodology is identical to Substrate 1. Medical research deployment is gated on ORMAS-T (Transformer-scale self-correcting training) — a prerequisite for fine-tuning on clinical data under FDA-compliant GlassBox auditability.
             </p>
           </div>

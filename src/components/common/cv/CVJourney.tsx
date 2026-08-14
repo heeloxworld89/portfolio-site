@@ -74,7 +74,7 @@ export default function CVJourney() {
         .origin-card-body {
           font-size: 14px;
           line-height: 1.75;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0;
         }
         .origin-card-body strong { color: #c4cfde; }
@@ -89,7 +89,7 @@ export default function CVJourney() {
         .origin-section-lead {
           font-size: 14px;
           line-height: 1.75;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0 0 24px;
         }
 
@@ -133,12 +133,12 @@ export default function CVJourney() {
         .origin-venture-lesson {
           font-size: 13px;
           line-height: 1.7;
-          color: #878e99;
+          color: #9aa4b0;
         }
 
         /* Insight block */
         .origin-insight {
-          background: #191b1e;
+          background: rgba(196,207,222,0.045);
           border: 1px solid #2a2d32;
           border-left: 2px solid #c4cfde;
           border-radius: 0 8px 8px 0;
@@ -154,7 +154,7 @@ export default function CVJourney() {
         .origin-insight-body {
           font-size: 14px;
           line-height: 1.75;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0 0 10px;
         }
         .origin-insight-body:last-child { margin: 0; }
@@ -192,7 +192,7 @@ export default function CVJourney() {
         }
         .origin-metric-note {
           font-size: 12px;
-          color: #878e99;
+          color: #9aa4b0;
           line-height: 1.55;
         }
 
@@ -231,16 +231,16 @@ export default function CVJourney() {
         }
         .origin-finding-text {
           font-size: 12px;
-          color: #878e99;
+          color: #9aa4b0;
           line-height: 1.6;
         }
         .origin-finding-text strong { color: #c4cfde; font-weight: 600; }
       `}</style>
 
       <div className="col-12">
-        <span className="subtitle" style={{ color: '#878e99', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>Origin</span>
+        <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>Origin</span>
         <h2 className="title mb--10 fs-2" style={{ fontWeight: 700 }}>The Experimental Ground That Motivated Everything</h2>
-        <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#878e99', marginBottom: '40px', maxWidth: '640px' }}>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '40px', maxWidth: '640px' }}>
           Every system documented here emerged from a specific failure. The research did not precede the problems — the problems preceded the research.
         </p>
 

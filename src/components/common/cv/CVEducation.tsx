@@ -34,7 +34,7 @@ export default function CVEducation() {
         .edu-desc {
           font-size: 15px;
           line-height: 1.7;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0;
         }
         .course-list {
@@ -47,7 +47,7 @@ export default function CVEducation() {
           padding-left: 30px;
           margin-bottom: 20px;
           font-size: 16px;
-          color: #878e99;
+          color: #9aa4b0;
           line-height: 1.6;
         }
         .course-list li::before {
@@ -83,17 +83,17 @@ export default function CVEducation() {
         }
       `}</style>
       <div className="col-12">
-        <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
+        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>Self-Directed. Cross-Disciplinary. Evidence-Based.</h2>
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
-          <span style={{ color: "#878e99", margin: "0 10px" }}>|</span>
-          <span style={{ color: "#878e99", fontWeight: "500", fontSize: "15px" }}>Prospective Undergraduate, Fall 2027</span>
+          <span style={{ color: "#9aa4b0", margin: "0 10px" }}>|</span>
+          <span style={{ color: "#9aa4b0", fontWeight: "500", fontSize: "15px" }}>Prospective Undergraduate, Fall 2027</span>
         </div>
         
         <div className="content">
-          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "28px", maxWidth: "700px" }}>
+          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "28px", maxWidth: "700px" }}>
             Self-taught in ML, systems engineering, and theoretical CS. I learn the way a researcher learns: seek the mechanism, not the surface. The research demanded fields most programmers never touch:
           </p>
           
@@ -121,7 +121,7 @@ export default function CVEducation() {
 
           <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>Formal Coursework</h4>
           <div className="mb--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)" }}>
-            <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px", fontStyle: "italic" }}>
+            <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "25px", fontStyle: "italic" }}>
               Entirely self-taught in machine learning, systems engineering, and theoretical computer science:
             </p>
             
@@ -142,11 +142,11 @@ export default function CVEducation() {
             </ul>
 
             <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>Additional Credentials</h5>
-            <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "15px" }}>
+            <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "15px" }}>
               <strong style={{ color: "#fff" }}>20+ additional certifications</strong> across ML, systems architecture, and applied AI from Google, UC Davis, University of Michigan & Udemy.
             </p>
             <div style={{ background: "rgba(255,255,255,0.02)", borderLeft: "2px solid #2a2d32", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
-              <p style={{ margin: 0, color: "#878e99", fontSize: "14px" }}>
+              <p style={{ margin: 0, color: "#9aa4b0", fontSize: "14px" }}>
                 All certificates verifiable on request — specific shareable credential links for any course available via{' '}
                 <a href="mailto:rokib@blackbloxie.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
               </p>
@@ -160,7 +160,7 @@ export default function CVEducation() {
             <p style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4 }}>
               I chose research over grades — deliberately.
             </p>
-            <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', margin: 0 }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', margin: 0 }}>
               Stability theory for the convergence proof took priority over exam preparation. OXIMO development replaced scheduled class time. The trade-off is documented — not in grades, but in 383 experiments, 40,933 lines of production code, and a published preprint. Evaluate from that.
             </p>
           </div>

@@ -77,7 +77,7 @@ const td: React.CSSProperties = {
   padding: '13px 20px',
   borderBottom: '1px solid rgba(255,255,255,0.04)',
   fontSize: '14px',
-  color: '#878e99',
+  color: '#9aa4b0',
   lineHeight: '1.6',
 };
 
@@ -91,7 +91,7 @@ export default function CVOxido() {
       <div className="col-12">
 
         <span className="subtitle" style={{
-          color: '#878e99', fontWeight: 'bold', textTransform: 'uppercase',
+          color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase',
           letterSpacing: '2px', fontSize: '14px',
         }}>
           End-to-End Architecture · The Full Picture
@@ -99,19 +99,19 @@ export default function CVOxido() {
         <h2 className="title fs-2" style={{ fontWeight: '700', marginBottom: '6px' }}>OXIDO</h2>
         <p style={{
           fontSize: '13px', fontWeight: 700, letterSpacing: '2px',
-          textTransform: 'uppercase', color: '#878e99', marginBottom: '20px',
+          textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '20px',
         }}>
           Autonomous Infrastructure for AI-Native Companies
         </p>
 
         <p style={{
-          fontSize: '16px', lineHeight: '1.85', color: '#c4cfde',
+          fontSize: '17px', lineHeight: '1.85', color: '#c4cfde',
           maxWidth: '720px', marginBottom: '14px',
         }}>
           OXIDO is not a product. It is a stack — three components, each solving a different layer of the same root problem: AI systems that operate without internal structure, without observability, and without the ability to repair themselves.
         </p>
         <p style={{
-          fontSize: '15px', lineHeight: '1.75', color: '#878e99',
+          fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0',
           maxWidth: '680px', marginBottom: '44px',
           borderLeft: '2px solid rgba(255,255,255,0.07)', paddingLeft: '18px',
         }}>
@@ -137,10 +137,10 @@ export default function CVOxido() {
                 marginBottom: '4px', letterSpacing: '-0.5px',
               }}>{p.name}</div>
               <div style={{
-                fontSize: '13px', color: '#878e99', marginBottom: '16px', fontStyle: 'italic',
+                fontSize: '13px', color: '#9aa4b0', marginBottom: '16px', fontStyle: 'italic',
               }}>{p.tagline}</div>
               <div style={{
-                fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '22px',
+                fontSize: '15px', lineHeight: '1.7', color: '#6b7683', marginBottom: '22px',
               }}>{p.desc}</div>
               <div style={{
                 fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px',
@@ -152,7 +152,7 @@ export default function CVOxido() {
 
         {/* BUSINESS MODEL */}
         <p style={sectionLabel}>Business Model — Enterprise Licensing, Not SaaS</p>
-        <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#878e99', maxWidth: '720px', marginBottom: '20px' }}>
+        <p style={{ fontSize: '17px', lineHeight: '1.8', color: '#9aa4b0', maxWidth: '720px', marginBottom: '20px' }}>
           OXIDO does not have consumer customers. There is no dashboard, no freemium tier, no Product Hunt launch. The value is highest where data is proprietary, messy, high-stakes, and legally sensitive — and where the cost of a model silently learning the wrong thing is catastrophic.
         </p>
 
@@ -164,14 +164,14 @@ export default function CVOxido() {
           ].map((c, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '24px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', marginBottom: '10px', letterSpacing: '0.3px' }}>{c.title}</div>
-              <div style={{ fontSize: '14px', lineHeight: '1.7', color: '#878e99' }}>{c.body}</div>
+              <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#9aa4b0' }}>{c.body}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '20px 24px', marginBottom: '56px' }}>
           <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>Same model as</p>
-          <p style={{ fontSize: '15px', color: '#878e99', margin: 0, lineHeight: '1.7' }}>
+          <p style={{ fontSize: '15px', color: '#9aa4b0', margin: 0, lineHeight: '1.7' }}>
             <strong style={{ color: '#c4cfde' }}>Red Hat</strong> — open-source Linux, enterprise support &nbsp;·&nbsp;
             <strong style={{ color: '#c4cfde' }}>MongoDB</strong> — open-source DB, enterprise licensing &nbsp;·&nbsp;
             <strong style={{ color: '#c4cfde' }}>Databricks</strong> — open-source Spark, enterprise platform &nbsp;·&nbsp;
@@ -184,7 +184,7 @@ export default function CVOxido() {
 
         {/* ENTERPRISE CUSTOMER SECTORS */}
         <p style={sectionLabel}>Who Pays — Enterprise Sectors</p>
-        <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#878e99', maxWidth: '680px', marginBottom: '20px' }}>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '20px' }}>
           These are not customers who find you on Twitter. They come through institutional relationships, conference introductions, and research credibility.
         </p>
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '56px' }}>
@@ -210,10 +210,10 @@ export default function CVOxido() {
 
         {/* COMPETITION */}
         <p style={sectionLabel}>Competition — The Structural Gap</p>
-        <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#878e99', maxWidth: '680px', marginBottom: '8px' }}>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '8px' }}>
           The real competitors are not CrewAI, LangGraph, or AutoGen. Those are developer frameworks — Lego bricks for people who want to build their own agents by hand. They have no institutional customers. They have no learning layer.
         </p>
-        <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#878e99', maxWidth: '680px', marginBottom: '20px' }}>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '20px' }}>
           The real competitors sit between enterprise institutions and their proprietary data:
         </p>
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '20px' }}>
@@ -244,7 +244,7 @@ export default function CVOxido() {
             ].map(([label, value], i) => (
               <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'baseline' }}>
                 <span style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', minWidth: '200px', flexShrink: 0 }}>{label}</span>
-                <span style={{ fontSize: '14px', color: '#878e99' }}>{value}</span>
+                <span style={{ fontSize: '14px', color: '#9aa4b0' }}>{value}</span>
               </div>
             ))}
           </div>
@@ -271,7 +271,7 @@ export default function CVOxido() {
                   fontSize: '16px', fontWeight: 700,
                   color: r.active ? '#fff' : '#c4cfde', marginBottom: '5px',
                 }}>{r.label}</div>
-                <div style={{ fontSize: '14px', color: '#878e99', lineHeight: '1.65' }}>{r.desc}</div>
+                <div style={{ fontSize: '14px', color: '#9aa4b0', lineHeight: '1.65' }}>{r.desc}</div>
               </div>
             </div>
           ))}

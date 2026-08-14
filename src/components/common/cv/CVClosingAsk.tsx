@@ -37,7 +37,7 @@ export default function CVClosingAsk() {
         .ask-body {
           font-size: 13px;
           line-height: 1.75;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0 0 18px;
         }
         .ask-action {
@@ -64,7 +64,7 @@ export default function CVClosingAsk() {
         }
         .ask-email-label {
           font-size: 13px;
-          color: #878e99;
+          color: #9aa4b0;
         }
         .ask-email-link {
           font-size: 15px;
@@ -84,13 +84,13 @@ export default function CVClosingAsk() {
 
       <div className="col-12">
 
-        <span className="subtitle" style={{ color: '#878e99', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
+        <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
           What Comes Next
         </span>
         <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>
           If You Got This Far
         </h2>
-        <p style={{ fontSize: '15px', color: '#878e99', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.75' }}>
+        <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.75' }}>
           The work is documented and reproducible. Here is the specific thing each type of reader can do that would actually move something forward.
         </p>
 

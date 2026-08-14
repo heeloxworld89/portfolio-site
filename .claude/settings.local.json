@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npx tsc *)",
+      "Bash(grep -rn '\\\\-\\\\-color-body\\\\|\\\\-\\\\-body-color\\\\|$body-color\\\\|\\\\-\\\\-bg-color' public/assets/scss/)",
+      "Bash(:)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

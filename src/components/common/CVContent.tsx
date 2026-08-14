@@ -1,4 +1,5 @@
 import CVOxido from "./cv/CVOxido";
+import CVRecognition from "./cv/CVRecognition";
 import CVWhoIAm from "./cv/CVWhoIAm";
 import CVResearch from "./cv/CVResearch";
 import CVEngineering from "./cv/CVEngineering";
@@ -13,6 +14,7 @@ export default function CVContent() {
   return (
     <div className="tmp-section-gap">
       <div className="container">
+        <CVRecognition />
         <CVWhoIAm />
         <CVOxido />
         <CVResearch />

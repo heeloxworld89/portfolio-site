@@ -16,6 +16,18 @@ export default defineConfig({
         clientsClaim: true,
         // ── Remove stale cached files from old deployments ──
         cleanupOutdatedCaches: true,
+        // ── THE stale-site bug ──────────────────────────────────────────────
+        // vite-plugin-pwa auto-registers an SPA "navigateFallback" route bound
+        // to the build-time-precached index.html, and Workbox matches routes
+        // in registration order — that auto route wins over the NetworkFirst
+        // rule below for every navigation, permanently freezing whatever
+        // index.html happened to be precached when the SW first installed.
+        // Disabling it (and excluding index.html from the precache manifest)
+        // forces navigations through NetworkFirst instead, so a page load
+        // always tries the network first and only falls back to cache if
+        // the network is unreachable.
+        navigateFallback: undefined,
+        globIgnores: ["**/index.html"],
         // ── Never cache the HTML shell or SW itself ──
         navigateFallbackDenylist: [/^\/assets\/pdf\//, /\.pdf$/],
         runtimeCaching: [

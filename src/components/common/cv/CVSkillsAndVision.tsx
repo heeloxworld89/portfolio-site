@@ -71,7 +71,7 @@ export default function CVSkillsAndVision() {
           font-size: 11px;
           text-transform: uppercase;
           letter-spacing: 2px;
-          color: #878e99;
+          color: #9aa4b0;
           font-weight: 700;
           margin-bottom: 16px;
         }
@@ -108,7 +108,7 @@ export default function CVSkillsAndVision() {
         }
         .metric-label {
           font-size: 11px;
-          color: #878e99;
+          color: #9aa4b0;
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-weight: 600;
@@ -125,7 +125,7 @@ export default function CVSkillsAndVision() {
           background: rgba(255,255,255,0.02);
           border-bottom: 1px solid #2a2d32;
           font-size: 11px;
-          color: #878e99;
+          color: #9aa4b0;
           text-transform: uppercase;
           letter-spacing: 2px;
           font-weight: 700;
@@ -140,7 +140,7 @@ export default function CVSkillsAndVision() {
         }
         .detail-row:last-child { border-bottom: none; }
         .detail-label { color: #c4cfde; font-weight: 500; font-size: 14px; }
-        .detail-value { color: #878e99; font-size: 14px; text-align: right; }
+        .detail-value { color: #9aa4b0; font-size: 14px; text-align: right; }
         .vision-list { list-style: none; padding: 0; margin: 0; }
         .vision-item {
           display: flex;
@@ -160,15 +160,15 @@ export default function CVSkillsAndVision() {
           justify-content: center;
           font-size: 12px;
           font-weight: 700;
-          color: #878e99;
+          color: #9aa4b0;
           flex-shrink: 0;
           margin-top: 2px;
         }
         .vision-title { color: #c4cfde; font-weight: 600; font-size: 15px; margin-bottom: 3px; }
-        .vision-note  { color: #878e99; font-size: 14px; font-style: italic; }
+        .vision-note  { color: #9aa4b0; font-size: 14px; font-style: italic; }
         .needs-table { width: 100%; border-collapse: collapse; }
         .needs-table th { padding: 12px 20px; text-align: left; color: #c4cfde; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #2a2d32; }
-        .needs-table td { padding: 14px 20px; font-size: 14px; color: #878e99; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+        .needs-table td { padding: 14px 20px; font-size: 14px; color: #9aa4b0; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
         .needs-table td:first-child { color: #c4cfde; font-weight: 600; white-space: nowrap; }
         .needs-table tr:last-child td { border-bottom: none; }
         .section-header {
@@ -257,7 +257,7 @@ export default function CVSkillsAndVision() {
             <p style={{ fontSize: '16px', fontWeight: 600, color: '#c4cfde', margin: '0 0 10px', lineHeight: 1.6 }}>
               OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency.
             </p>
-            <p style={{ fontSize: '14px', color: '#878e99', margin: 0, lineHeight: 1.75 }}>
+            <p style={{ fontSize: '14px', color: '#9aa4b0', margin: 0, lineHeight: 1.75 }}>
               Each system was built to solve a specific failure mode. Together they constitute a self-sustaining research and operational stack. The architecture is validated. The next phase is scale.
             </p>
           </div>

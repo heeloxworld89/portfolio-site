@@ -40,7 +40,7 @@ export default function CVEngineering() {
         .eng-module-list { display: flex; flex-direction: column; gap: 10px; }
         .eng-module-row { display: flex; align-items: baseline; gap: 12px; }
         .eng-module-name { color: #c4cfde; font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 600; flex-shrink: 0; min-width: 150px; }
-        .eng-module-desc { color: #878e99; font-size: 13px; }
+        .eng-module-desc { color: #9aa4b0; font-size: 13px; }
         .grid-2 {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -77,7 +77,7 @@ export default function CVEngineering() {
         .memory-table td {
           background: #191b1e;
           padding: 20px;
-          color: #878e99;
+          color: #9aa4b0;
           font-size: 15px;
         }
         .memory-table tr td:first-child {
@@ -99,7 +99,7 @@ export default function CVEngineering() {
         }
         .pill {
           background: rgba(255,255,255,0.05);
-          color: #878e99;
+          color: #9aa4b0;
           padding: 5px 12px;
           border-radius: 4px;
           font-size: 11px;
@@ -134,7 +134,7 @@ export default function CVEngineering() {
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
         <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '-14px', marginBottom: '20px' }}>
-          <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#878e99', textDecoration: 'underline' }}>
+          <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#9aa4b0', textDecoration: 'underline' }}>
             ↗ View Codebase
           </a>
           {' '}&nbsp;·&nbsp; Architecture is complete. Code is not polished — this was production research infrastructure, not a demo.
@@ -150,7 +150,7 @@ export default function CVEngineering() {
             <span className="pill">2,011 TESTS (0 FAILS)</span>
             <span className="pill" style={{ background: "rgba(255,255,255,0.05)", color: "#c4cfde" }}>PRODUCTION-GRADE</span>
           </div>
-          <p style={{ fontSize: "15px", color: "#878e99", marginTop: "15px", margin: 0 }}>
+          <p style={{ fontSize: "15px", color: "#9aa4b0", marginTop: "15px", margin: 0 }}>
             Status: API-based (LLM providers). Future version will replace API calls with ORMAS-powered self-improving language models.
           </p>
         </div>
@@ -173,18 +173,18 @@ export default function CVEngineering() {
             ))}
           </div>
 
-          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "14px" }}>
+          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
             Every existing multi-agent framework I studied required hand-holding: a human to frame each task, prompt each model, and pass the output. I wanted agents that hire other agents, decompose tasks, remember across sessions, and operate like a company. That became 40,933 lines of production code.
           </p>
           <p style={{ lineHeight: "1.8", color: "#c4cfde", marginBottom: "14px", fontSize: "18px", fontWeight: "600", fontStyle: "italic", borderLeft: "2px solid rgba(255,255,255,0.1)", paddingLeft: "20px" }}>
             Not a chatbot. A full organizational structure that assembles itself.
           </p>
-          <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#878e99", marginBottom: "40px" }}>
+          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "40px" }}>
             I rebuilt it from a 106,000-line monolith: 72% line reduction, every critical algorithm intact, zero test failures. The refactor was not a cleanup — it was proof the architecture was sound enough to survive complete reconstruction.
           </p>
 
           <h4 className="section-title">4 Layers. 11 Mini-Repos. Strict Separation of Concerns.</h4>
-          <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "30px" }}>
+          <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "30px" }}>
             Pure constructor injection throughout. No global state. Every dependency declared, every boundary enforced. This is not a monolith with modules — each repo can be tested, deployed, and replaced independently.
           </p>
           
@@ -238,15 +238,15 @@ export default function CVEngineering() {
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   <li style={{ padding: "14px 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                     <strong style={{ color: "#c4cfde" }}>Tier 1 — Master Realization</strong>
-                    <p style={{ margin: "5px 0 0", color: "#878e99", fontSize: "14px" }}>Receives objective, decomposes into department assignments.</p>
+                    <p style={{ margin: "5px 0 0", color: "#9aa4b0", fontSize: "14px" }}>Receives objective, decomposes into department assignments.</p>
                   </li>
                   <li style={{ padding: "14px 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                     <strong style={{ color: "#c4cfde" }}>Tier 2 — Department Head</strong>
-                    <p style={{ margin: "5px 0 0", color: "#878e99", fontSize: "14px" }}>Plans employee task assignments within its domain.</p>
+                    <p style={{ margin: "5px 0 0", color: "#9aa4b0", fontSize: "14px" }}>Plans employee task assignments within its domain.</p>
                   </li>
                   <li style={{ padding: "14px 0" }}>
                     <strong style={{ color: "#c4cfde" }}>Tier 3 — Employee Executor</strong>
-                    <p style={{ margin: "5px 0 0", color: "#878e99", fontSize: "14px" }}>Detects task type, selects models, executes.</p>
+                    <p style={{ margin: "5px 0 0", color: "#9aa4b0", fontSize: "14px" }}>Detects task type, selects models, executes.</p>
                   </li>
                 </ul>
                 <div style={{ marginTop: "15px", fontSize: "13px", color: "#c4cfde", padding: "10px", background: "rgba(255,255,255,0.02)", borderRadius: "6px" }}>
@@ -260,27 +260,27 @@ export default function CVEngineering() {
               <div className="eng-card" style={{ padding: "20px" }}>
                 <div className="process-step" style={{ marginBottom: "15px" }}>
                   <div className="step-num">01</div>
-                  <div><strong style={{ color: "#fff" }}>Realization Block</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>LLM designs persona, skills, department.</span></div>
+                  <div><strong style={{ color: "#fff" }}>Realization Block</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>LLM designs persona, skills, department.</span></div>
                 </div>
                 <div className="process-step" style={{ marginBottom: "15px" }}>
                   <div className="step-num">02</div>
-                  <div><strong style={{ color: "#fff" }}>Persona Matching</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>ChromaDB vector search prevents duplication.</span></div>
+                  <div><strong style={{ color: "#fff" }}>Persona Matching</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>ChromaDB vector search prevents duplication.</span></div>
                 </div>
                 <div className="process-step" style={{ marginBottom: "15px" }}>
                   <div className="step-num">03</div>
-                  <div><strong style={{ color: "#fff" }}>7-Phase Validation</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>Format, skills, reports-to chain.</span></div>
+                  <div><strong style={{ color: "#fff" }}>7-Phase Validation</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>Format, skills, reports-to chain.</span></div>
                 </div>
                 <div className="process-step" style={{ marginBottom: "15px" }}>
                   <div className="step-num">04</div>
-                  <div><strong style={{ color: "#fff" }}>Prompt Testing</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>Cheap LLM call verifies coherence.</span></div>
+                  <div><strong style={{ color: "#fff" }}>Prompt Testing</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>Cheap LLM call verifies coherence.</span></div>
                 </div>
                 <div className="process-step" style={{ marginBottom: "15px" }}>
                   <div className="step-num">05</div>
-                  <div><strong style={{ color: "#fff" }}>Materialization</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>Persist role + nascent brain to DB.</span></div>
+                  <div><strong style={{ color: "#fff" }}>Materialization</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>Persist role + nascent brain to DB.</span></div>
                 </div>
                 <div className="process-step" style={{ marginBottom: "0" }}>
                   <div className="step-num">06</div>
-                  <div><strong style={{ color: "#c4cfde" }}>Atomic Rollback</strong> <span style={{ color: "#878e99", fontSize: "14px" }}>If any step fails, reverse. No orphans.</span></div>
+                  <div><strong style={{ color: "#c4cfde" }}>Atomic Rollback</strong> <span style={{ color: "#9aa4b0", fontSize: "14px" }}>If any step fails, reverse. No orphans.</span></div>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default function CVEngineering() {
 
           {/* 7-Stage Task Execution Pipeline */}
           <h4 className="section-title">7-Stage Task Execution Pipeline</h4>
-          <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px" }}>
+          <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "25px" }}>
             Every task entering OXIMO passes through a deterministic 7-stage pipeline. Each stage is modular, independently testable, and can be bypassed via feature flags.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '40px' }}>
@@ -313,7 +313,7 @@ export default function CVEngineering() {
                   <tr key={i}>
                     <td style={{ padding: '13px 20px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#c4cfde', fontWeight: 700, fontFamily: "'Fira Code', monospace" }}>{row[0]}</td>
                     <td style={{ padding: '13px 20px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#c4cfde', fontWeight: 600 }}>{row[1]}</td>
-                    <td style={{ padding: '13px 20px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#878e99' }}>{row[2]}</td>
+                    <td style={{ padding: '13px 20px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#9aa4b0' }}>{row[2]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -321,7 +321,7 @@ export default function CVEngineering() {
           </div>
 
           <h4 className="section-title">Cognitive System: 3-Tier Memory</h4>
-          <p style={{ fontSize: "16px", color: "#878e99", marginBottom: "25px" }}>
+          <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "25px" }}>
             Knowledge is built from 4 parallel sources (First Principles, Book, Industry, Internet). Every agent's Brain progresses through: Nascent → Learning → Mature → Expert.
           </p>
           <div className="table-responsive mb--40" style={{ overflowX: 'auto' }}>
@@ -357,7 +357,7 @@ export default function CVEngineering() {
             <div>
               <h4 className="section-title" style={{ marginTop: "0" }}>Safety &amp; Guardrails</h4>
               <div className="eng-card">
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#878e99", fontSize: "15px", display: "flex", flexDirection: "column", gap: "15px" }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#9aa4b0", fontSize: "15px", display: "flex", flexDirection: "column", gap: "15px" }}>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Input Safety — 7-Check Cascade</strong> Rate limiting, burst detection, length bounds, character validation, repetition, entropy bounds, injection pattern matching (jailbreak/DAN).</li>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Output Safety</strong> PII detection and redaction, harmful content scanning.</li>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Behavioral Drift Monitoring</strong> EMA + Page-Hinkley change detection, KL divergence, per-model anomaly alerts.</li>
@@ -368,7 +368,7 @@ export default function CVEngineering() {
             <div>
               <h4 className="section-title" style={{ marginTop: "0" }}>LLM Layer &amp; Testing</h4>
               <div className="eng-card">
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#878e99", fontSize: "15px", display: "flex", flexDirection: "column", gap: "15px" }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#9aa4b0", fontSize: "15px", display: "flex", flexDirection: "column", gap: "15px" }}>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Unified Adapter</strong> Routes to 5 native providers + LiteLLM gateway. Provider fallback chains, Gemini 2.5 thinking budgets, 420-line JSON parser with 6 repair strategies.</li>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>V2 Feature Flags</strong> 47 feature flags deployed across 6 waves (Semantic router, Debate, Shared brain, Sandbox, SSE).</li>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Test Suite Rigor</strong> 2,011 passing tests. 0 failures. 12/12 critical algorithms ported verbatim from original 106K monolith. 82/96 unique bug fixes explicitly ported.</li>
@@ -395,7 +395,7 @@ export default function CVEngineering() {
                       ].map((row, i) => (
                         <tr key={i}>
                           <td style={{ padding: '13px 20px', borderBottom: i < 5 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#c4cfde', fontWeight: 600 }}>{row[0]}</td>
-                          <td style={{ padding: '13px 20px', borderBottom: i < 5 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#878e99' }}>{row[1]}</td>
+                          <td style={{ padding: '13px 20px', borderBottom: i < 5 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#9aa4b0' }}>{row[1]}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -428,7 +428,7 @@ export default function CVEngineering() {
                       ].map((row, i) => (
                         <tr key={i}>
                           <td style={{ padding: '13px 20px', borderBottom: i < 10 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#c4cfde', fontWeight: 600 }}>{row[0]}</td>
-                          <td style={{ padding: '13px 20px', borderBottom: i < 10 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#878e99', textAlign: 'right', fontFamily: "'Fira Code', monospace", fontWeight: 700 }}>{row[1]}</td>
+                          <td style={{ padding: '13px 20px', borderBottom: i < 10 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontSize: '14px', color: '#9aa4b0', textAlign: 'right', fontFamily: "'Fira Code', monospace", fontWeight: 700 }}>{row[1]}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -441,7 +441,7 @@ export default function CVEngineering() {
           <div className="mt--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
             
             <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>The OXIDO Ecosystem</h4>
-            <p style={{ fontSize: '14px', color: '#878e99', marginBottom: '28px', lineHeight: '1.7', maxWidth: '620px' }}>
+            <p style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '28px', lineHeight: '1.7', maxWidth: '620px' }}>
               OXIMO is the cognitive operating system. ORMAS is the immune system it needs to operate safely at scale. Together they form OXIDO — an autonomous multi-agent system with no external intelligence dependency.
             </p>
             
@@ -454,12 +454,12 @@ export default function CVEngineering() {
                 <div key={i} style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '8px', padding: '18px' }}>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#fff', marginBottom: '3px' }}>{c.name}</div>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#c4cfde', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>{c.role}</div>
-                  <div style={{ fontSize: '13px', color: '#878e99', lineHeight: '1.6' }}>{c.desc}</div>
+                  <div style={{ fontSize: '13px', color: '#9aa4b0', lineHeight: '1.6' }}>{c.desc}</div>
                 </div>
               ))}
             </div>
 
-            <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#878e99', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
               OXIMO currently runs on API-based LLMs. ORMAS is validated on CNNs and DAGs. The next phase ports ORMAS to Transformers (ORMAS-T), then trains Cherry — a self-correcting language model — to replace the external API dependency entirely. When that happens, OXIDO becomes the first fully autonomous multi-agent system with an internal immune system.
             </p>
 
@@ -467,8 +467,8 @@ export default function CVEngineering() {
             
             <h5 style={{ fontSize: "18px", color: "#c4cfde", marginBottom: "15px", fontWeight: "600" }}>Planned Publications</h5>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
-              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#878e99", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>ICSE SEIP:</strong> Case study of autonomous e-commerce (Black Bloxie)</span>
-              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#878e99", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>OXIDO Ecosystem Paper:</strong> Integration architecture</span>
+              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#9aa4b0", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>ICSE SEIP:</strong> Case study of autonomous e-commerce (Black Bloxie)</span>
+              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#9aa4b0", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>OXIDO Ecosystem Paper:</strong> Integration architecture</span>
             </div>
           </div>
 

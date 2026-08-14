@@ -42,7 +42,7 @@ export default function CVWorkEthic() {
         .ps-prose {
           font-size: 15px;
           line-height: 1.9;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0 0 20px;
         }
         .ps-prose strong { color: #c4cfde; font-weight: 600; }
@@ -64,14 +64,14 @@ export default function CVWorkEthic() {
         }
 
         .ps-callout {
-          background: rgba(255,255,255,0.02);
+          background: rgba(196,207,222,0.045);
           border: 1px solid #2a2d32;
           border-left: 2px solid #c4cfde;
           border-radius: 0 8px 8px 0;
           padding: 18px 22px;
           margin: 24px 0;
-          font-size: 14px;
-          color: #878e99;
+          font-size: 15px;
+          color: #9aa4b0;
           line-height: 1.8;
         }
         .ps-callout strong { color: #c4cfde; font-weight: 600; }
@@ -110,7 +110,7 @@ export default function CVWorkEthic() {
         }
         .ps-stat-sub {
           font-size: 13px;
-          color: #878e99;
+          color: #9aa4b0;
           margin-top: 8px;
           line-height: 1.6;
         }
@@ -142,7 +142,7 @@ export default function CVWorkEthic() {
         .ps-evidence-row:last-child { border-bottom: none; }
         .ps-evidence-key {
           font-size: 13px;
-          color: #878e99;
+          color: #9aa4b0;
           flex: 1;
         }
         .ps-evidence-val {
@@ -358,7 +358,7 @@ export default function CVWorkEthic() {
             <div className="ps-evidence-block">
               <div className="ps-evidence-header">Work Archive — Nov 2024 · 28 Sessions</div>
               <div style={{ padding: '14px 18px' }}>
-                <p style={{ fontSize: '12px', color: '#878e99', marginBottom: '12px', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '12px', color: '#9aa4b0', marginBottom: '12px', lineHeight: '1.6' }}>
                   Unlisted livestreams recorded for the Guinness application. Unfiltered daily workflow footage.
                 </p>
                 <div className="ps-sessions-grid">

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Private onboarding notes (not for public repo)
+ONBOARDING.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

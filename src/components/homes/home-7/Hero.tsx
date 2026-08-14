@@ -43,14 +43,14 @@ export default function Hero(_props?: any) {
               
               {/* Header */}
               <div className="tmp-scroll-trigger tmp-fade-in animation-order-1" style={{ marginBottom: '60px' }}>
-                <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#878e99', marginBottom: '20px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '20px' }}>
                   Independent AI Research — Dhaka, Bangladesh
                 </p>
                 <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 60px)', fontWeight: 800, color: '#fff', letterSpacing: '-1.5px', marginBottom: '24px', lineHeight: '1.15' }}>
                   Neural networks fail opaquely.<br />
                   <span style={{ color: '#c4cfde' }}>I built an architecture that changes that.</span>
                 </h1>
-                <p style={{ fontSize: '18px', color: '#878e99', maxWidth: '620px', margin: 0, lineHeight: '1.7' }}>
+                <p style={{ fontSize: '18px', color: '#9aa4b0', maxWidth: '620px', margin: 0, lineHeight: '1.7' }}>
                   ORMAS · OXIMO · OXIDO. Three systems. One research program. The work is documented, reproducible, and running in production.
                 </p>
               </div>
@@ -62,13 +62,13 @@ export default function Hero(_props?: any) {
                  <div className="editorial-row">
                     <div className="editorial-date">
                       <div style={{ color: '#c4cfde', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>2026</div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>Preprint · Zenodo DOI</div>
+                      <div style={{ color: '#9aa4b0', fontSize: '13px', marginTop: '6px' }}>Preprint · Zenodo DOI</div>
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
                         <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
                       </h3>
-                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
+                      <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
                         <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First local-stability convergence proof for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
                         <a href="#research" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Full technical details →</a>
                       </p>
@@ -81,13 +81,13 @@ export default function Hero(_props?: any) {
                       <div style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span className="pulse-dot"></span> Active
                       </div>
-                      <div style={{ color: '#878e99', fontSize: '13px', marginTop: '6px' }}>2025 → Now</div>
+                      <div style={{ color: '#9aa4b0', fontSize: '13px', marginTop: '6px' }}>2025 → Now</div>
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
                         Causal Proof in Production. Now Scaling to Foundation Models.
                       </h3>
-                      <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
+                      <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
                         An 11-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
                       </p>
                       <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
@@ -162,13 +162,13 @@ export default function Hero(_props?: any) {
                 `}</style>
 
                 <div className="loom-section">
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#878e99', marginBottom: '14px' }}>
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '14px' }}>
                     Presentation · 7 min 40 sec · 1.2× default
                   </p>
                   <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px', lineHeight: 1.3, letterSpacing: '-0.3px' }}>
                     Explaining ORMAS: Transparent Neural Networks That Self-Heal
                   </h3>
-                  <p style={{ color: '#878e99', fontSize: '16px', lineHeight: '1.8', margin: '0 0 28px 0', maxWidth: '600px' }}>
+                  <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 28px 0', maxWidth: '600px' }}>
                     Autonomous recovery from catastrophic failure, emergent memory without replay buffers, and why architectural transparency is an engineering problem — not a philosophy question.
                   </p>
 
@@ -184,7 +184,7 @@ export default function Hero(_props?: any) {
 
 
               <div className="tmp-scroll-trigger tmp-fade-in animation-order-4" style={{ marginTop: '40px' }}>
-                <a href="#research" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', color: '#878e99', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
+                <a href="#research" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', color: '#9aa4b0', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
                   Read the Research
                   <i className="fa-sharp fa-regular fa-arrow-down" style={{ animation: 'bounce 2s infinite' }}></i>
                 </a>

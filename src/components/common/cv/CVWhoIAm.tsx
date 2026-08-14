@@ -40,7 +40,7 @@ export default function CVWhoIAm() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #878e99;
+          color: #9aa4b0;
           margin-bottom: 10px;
         }
         .who-sys-name {
@@ -60,7 +60,7 @@ export default function CVWhoIAm() {
         .who-body {
           font-size: 15px;
           line-height: 1.75;
-          color: #878e99;
+          color: #9aa4b0;
           margin: 0 0 24px;
         }
         .who-stats {
@@ -103,7 +103,7 @@ export default function CVWhoIAm() {
         }
         .who-audit-row:last-child { border-bottom: none; }
         .who-audit-key { color: #c4cfde; font-weight: 600; flex-shrink: 0; }
-        .who-audit-val { color: #878e99; }
+        .who-audit-val { color: #9aa4b0; }
 
         .who-router {
           border: 1px solid #2a2d32;
@@ -140,7 +140,7 @@ export default function CVWhoIAm() {
         }
         .who-router-desc {
           font-size: 13px;
-          color: #878e99;
+          color: #9aa4b0;
           line-height: 1.5;
         }
         .who-router-link {
@@ -161,9 +161,9 @@ export default function CVWhoIAm() {
       `}</style>
 
       <div className="col-12">
-        <span className="subtitle" style={{ color: "#878e99", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Who I Am</span>
+        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Who I Am</span>
         <h2 className="title fs-1" style={{ fontWeight: "800", color: "#fff", marginBottom: "6px" }}>Rokib Al Dhin Raadh</h2>
-        <p style={{ fontSize: "17px", color: "#878e99", marginBottom: "10px" }}>
+        <p style={{ fontSize: "17px", color: "#9aa4b0", marginBottom: "10px" }}>
           18 · Dhaka, Bangladesh · Independent AI Researcher & Founder
         </p>
         <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "32px", maxWidth: "700px" }}>
