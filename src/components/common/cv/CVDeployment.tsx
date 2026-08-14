@@ -50,7 +50,7 @@ export default function CVDeployment() {
         </div>
 
         <p style={{ fontSize: '15px', lineHeight: '1.7', color: '#6b7683', marginBottom: '35px', maxWidth: '680px' }}>
-          The evidence is published twice, for two different readers. The <strong>System Architecture Paper</strong> is for researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is for operators and investors judging whether the deployment model holds up commercially. Same 11-month record, examined through two different lenses.
+          The evidence is published twice, for two different readers. The <strong>System Architecture Paper</strong> is for researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is for operators and investors judging whether the deployment model holds up commercially. Same 12-month record, examined through two different lenses.
         </p>
 
         {/* ── Paper Download Buttons ─────────────────────────────────────── */}
@@ -75,7 +75,7 @@ export default function CVDeployment() {
             <i className="fa-sharp fa-regular fa-file-lines" />
             System Architecture Paper
             <span style={{ fontSize: '11px', color: '#6b7683', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
-              For technical evaluators · 27 pages
+              For technical evaluators · 29 pages
             </span>
           </a>
 
@@ -113,7 +113,8 @@ export default function CVDeployment() {
             { val: '−91%',    lbl: 'On System Removal', sub: 'All commercial output collapsed' },
             { val: '+1,300%', lbl: 'On Re-Injection', sub: 'Recovery exceeded Phase 1 by 3.3×' },
             { val: '99.99%',  lbl: 'Content Cost Reduction', sub: '$0.0043/product vs. $50–$150 human' },
-            { val: '11 mo.',  lbl: 'Study Duration', sub: '3 phases · injection-removal-reinjection' },
+            { val: '12 mo.',  lbl: 'Study Duration', sub: '4 phases · Aug 2025 – Aug 2026' },
+            { val: '$4,386',  lbl: 'Largest Autonomous Order', sub: '13 Aug 2026 · $0.00 CAC · zero humans' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '20px 16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
@@ -164,7 +165,7 @@ export default function CVDeployment() {
             </div>
             <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>E-Commerce</div>
             <div style={{ fontSize: '12px', color: '#9aa4b0', lineHeight: 1.6 }}>
-              11-month controlled ablation study. Full injection-removal-reinjection cycle completed. Causal attribution confirmed. Selected for fastest feedback loop and clearest binary failure signal.
+              12-month controlled ablation study. Full injection-removal-reinjection cycle completed, plus a Phase 4 post-study event ($4,386 autonomous order on 13 Aug 2026 at $0.00 CAC). Causal attribution confirmed. Selected for fastest feedback loop and clearest binary failure signal.
             </div>
           </div>
           {[
@@ -358,11 +359,13 @@ export default function CVDeployment() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td style={tdFirst}>Study Duration</td><td style={tdValue}>11 months (3 phases)</td></tr>
+                <tr><td style={tdFirst}>Study Duration</td><td style={tdValue}>12 months (4 phases, Aug 2025–Aug 2026)</td></tr>
                 <tr><td style={tdFirst}>Ablation Signal (Removal)</td><td style={tdValue}>−91% commercial output</td></tr>
-                <tr><td style={tdFirst}>Ablation Signal (Re-Injection)</td><td style={tdValue}>+1,300% recovery</td></tr>
+                <tr><td style={tdFirst}>Ablation Signal (Re-Injection)</td><td style={tdValue}>+1,300% recovery · 3.3× peak overshoot</td></tr>
+                <tr><td style={tdFirst}>Largest Autonomous Order</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
+                <tr><td style={tdFirst}>Cumulative Verified Revenue</td><td style={tdValue}>$6,691.68 USD · 79+ orders</td></tr>
                 <tr><td style={tdFirst}>Customers Reached (10 countries)</td><td style={tdValue}>396</td></tr>
-                <tr><td style={tdFirst}>Advertising Expenditure</td><td style={tdValue}>£0.00</td></tr>
+                <tr><td style={tdFirst}>Advertising Expenditure</td><td style={tdValue}>$0.00</td></tr>
                 <tr><td style={tdFirst}>Human Marketing Hours</td><td style={tdValue}>0</td></tr>
                 <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Scale Constraint</td><td style={{ ...tdValue, borderBottom: 'none' }}>Research boundary — regulatory, not technical</td></tr>
               </tbody>

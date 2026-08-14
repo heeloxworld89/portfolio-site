@@ -88,7 +88,7 @@ export default function Hero(_props?: any) {
                         Causal Proof in Production. Now Scaling to Foundation Models.
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
-                        An 11-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
+                        A 12-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The study culminated in a <strong style={{color: '#c4cfde'}}>$4,386 autonomous order on 13 Aug 2026 at $0.00 CAC</strong> — proving the architecture closes high-value transactions, not just commodity ones. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
                       </p>
                       <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
                         This Is Not a Business. It Is a Controlled Experiment.
