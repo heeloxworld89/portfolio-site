@@ -174,18 +174,18 @@ export default function CVEngineering() {
           </div>
 
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            Every existing multi-agent framework I studied required hand-holding: a human to frame each task, prompt each model, and pass the output. I wanted agents that hire other agents, decompose tasks, remember across sessions, and operate like a company. That became 40,933 lines of production code.
+            Every multi-agent framework I studied needed a human in the middle — someone to frame each task, prompt each model, carry the output to the next step. I wanted agents that hire other agents, break work apart themselves, remember what happened last session, and run like a company. That turned into 40,933 lines of production code.
           </p>
           <p style={{ lineHeight: "1.8", color: "#c4cfde", marginBottom: "14px", fontSize: "18px", fontWeight: "600", fontStyle: "italic", borderLeft: "2px solid rgba(255,255,255,0.1)", paddingLeft: "20px" }}>
             Not a chatbot. A full organizational structure that assembles itself.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "40px" }}>
-            I rebuilt it from a 106,000-line monolith: 72% line reduction, every critical algorithm intact, zero test failures. The refactor was not a cleanup — it was proof the architecture was sound enough to survive complete reconstruction.
+            I rebuilt it from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact, not one test failing at the end. The rebuild was never housekeeping. It was the experiment that showed the architecture underneath was sound enough to survive complete reconstruction.
           </p>
 
           <h4 className="section-title">4 Layers. 11 Mini-Repos. Strict Separation of Concerns.</h4>
           <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "30px" }}>
-            Pure constructor injection throughout. No global state. Every dependency declared, every boundary enforced. This is not a monolith with modules — each repo can be tested, deployed, and replaced independently.
+            Constructor injection everywhere, no global state, every dependency declared and every boundary enforced. This is not a monolith wearing modules as a costume — each repo can be tested, deployed, and replaced on its own.
           </p>
           
           <div className="grid-2 mb--50">
@@ -289,7 +289,7 @@ export default function CVEngineering() {
           {/* 7-Stage Task Execution Pipeline */}
           <h4 className="section-title">7-Stage Task Execution Pipeline</h4>
           <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "25px" }}>
-            Every task entering OXIMO passes through a deterministic 7-stage pipeline. Each stage is modular, independently testable, and can be bypassed via feature flags.
+            Every task entering OXIMO runs the same deterministic 7-stage pipeline. Each stage is modular, testable on its own, and can be switched off behind a feature flag.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '40px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -371,7 +371,7 @@ export default function CVEngineering() {
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#9aa4b0", fontSize: "15px", display: "flex", flexDirection: "column", gap: "15px" }}>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Unified Adapter</strong> Routes to 5 native providers + LiteLLM gateway. Provider fallback chains, Gemini 2.5 thinking budgets, 420-line JSON parser with 6 repair strategies.</li>
                   <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>V2 Feature Flags</strong> 47 feature flags deployed across 6 waves (Semantic router, Debate, Shared brain, Sandbox, SSE).</li>
-                  <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Test Suite Rigor</strong> 2,011 passing tests. 0 failures. 12/12 critical algorithms ported verbatim from original 106K monolith. 82/96 unique bug fixes explicitly ported.</li>
+                  <li><strong style={{ color: "#c4cfde", display: "block", marginBottom: "5px" }}>Test Suite Rigor</strong> 2,011 passing tests. 0 failures. 12/12 critical algorithms ported verbatim from original 106K monolith. 82/96 unique bug fixes ported individually.</li>
                 </ul>
 
                 {/* V2 Feature Flags Wave Table */}
@@ -442,7 +442,7 @@ export default function CVEngineering() {
             
             <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>The OXIDO Ecosystem</h4>
             <p style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '28px', lineHeight: '1.7', maxWidth: '620px' }}>
-              OXIMO is the cognitive operating system. ORMAS is the immune system it needs to operate safely at scale. Together they form OXIDO — an autonomous multi-agent system with no external intelligence dependency.
+              OXIMO is the operating system. ORMAS is the immune system it needs in order to run safely at scale. Together they are OXIDO — a multi-agent system with nothing external left to depend on.
             </p>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '28px' }}>
@@ -460,7 +460,7 @@ export default function CVEngineering() {
             </div>
 
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
-              OXIMO currently runs on API-based LLMs. ORMAS is validated on CNNs and DAGs. The next phase ports ORMAS to Transformers (ORMAS-T), then trains Cherry — a self-correcting language model — to replace the external API dependency entirely. When that happens, OXIDO becomes the first fully autonomous multi-agent system with an internal immune system.
+              Today OXIMO runs on API-based LLMs and ORMAS is validated on CNNs and DAGs. Next comes ORMAS-T, carrying the architecture onto Transformers, and then Cherry — a self-correcting language model trained to take the external API out of the loop for good. At that point OXIDO is a fully autonomous multi-agent system with an immune system of its own.
             </p>
 
             <hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "30px 0" }} />

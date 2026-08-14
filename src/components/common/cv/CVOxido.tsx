@@ -5,21 +5,21 @@ const pillars = [
     tag: 'Layer 01 · The Immune System',
     name: 'ORMAS',
     tagline: 'Self-correcting neural architecture',
-    desc: 'Detects structural failures mid-training and repairs them autonomously. 383 controlled experiments across 4 architectures. +70.3pp recovery gap over baselines. First local-stability convergence proof for any self-correcting architecture (global convergence remains open).',
+    desc: 'Finds structural failures mid-training and repairs them without stopping and without a human. 383 controlled experiments across 4 architectures, a +70.3pp recovery gap over compute-matched baselines, and the first local-stability proof for any self-correcting architecture. Global convergence is still open.',
     status: 'Submitted to AAAI 2027 · Zenodo Preprint',
   },
   {
     tag: 'Layer 02 · The Operating System',
     name: 'OXIMO',
     tagline: 'Agents that hire agents',
-    desc: 'Autonomous company OS where agents decompose tasks, self-hire specialists, and maintain organisational memory across sessions. 40,933 lines. 2,011 tests. 0 failures. 11 modules. Rebuilt from a 106K-line monolith.',
+    desc: 'Agents break a task apart, hire the specialists they need, and keep organisational memory between sessions. 40,933 lines, 11 modules, 2,011 tests, zero failures — rebuilt from a 106K-line monolith.',
     status: 'Production-Grade · Live',
   },
   {
     tag: 'Layer 03 · The Validation Layer',
     name: 'Black Bloxie LTD',
     tagline: 'Controlled test environment for the OXIDO architecture',
-    desc: '11-month injection-removal-reinjection ablation on a live UK-registered company. OXIMO removed: all commercial output collapsed 91% across all channels simultaneously — ruling out market conditions as a variable. V3 re-injected: commercial output recovered 1,300% from ablated baseline. The causal chain is documented and reproducible. Substrate 1 (e-commerce) complete. Substrates 2–4 (legal, software, medical) pending ablation cycles.',
+    desc: 'An 11-month lesion study on a live UK-registered company. Pull OXIMO out and commercial output drops 91% across every channel at once — which is exactly what rules out the market as the cause. Put V3 back and it recovers 1,300%. Substrate 1 (e-commerce) is closed; legal, software, and medical are waiting on their own ablation cycles.',
     status: 'Ablation Complete · Substrates 2–4 Active',
   },
 ];
@@ -28,44 +28,44 @@ const roadmap = [
   {
     phase: 'Now',
     label: 'ORMAS + OXIMO + Black Bloxie',
-    desc: 'Self-correcting architecture proven across 4 architectures and published. Autonomous company OS in production across 4 industries. Enterprise licensing ready. Multi-vertical ablation ongoing.',
+    desc: 'The architecture is proven across four network types and published. The agent OS is running in production. The first ablation cycle is closed, and the licensing case is ready to make.',
     active: true,
   },
   {
     phase: 'Next',
     label: 'ORMAS-T — Transformer Scale',
-    desc: 'Porting per-node structural health monitoring to attention heads. Every attention mechanism gets a structural health signal. Enables safe fine-tuning on proprietary institutional data.',
+    desc: 'Port per-node health monitoring onto attention heads, so every attention mechanism carries its own structural signal. That is the prerequisite for fine-tuning safely on institutional data nobody is permitted to leak.',
     active: false,
   },
   {
     phase: 'Then',
     label: 'Project Cherry',
-    desc: 'A self-correcting language model trained on ORMAS-T. Replaces external API dependency entirely. Zero external intelligence cost per deployment.',
+    desc: 'A language model trained from scratch on ORMAS-T. It removes the external API dependency, and with it the per-deployment cost of renting intelligence from somebody else.',
     active: false,
   },
   {
     phase: 'Endgame',
     label: 'OXIDO Full Stack',
-    desc: 'OXIMO + ORMAS-T + Cherry = zero external intelligence dependency. The first fully autonomous multi-agent system with an internal immune system. No API calls. No vendor dependency.',
+    desc: 'OXIMO, ORMAS-T, and Cherry together: a multi-agent system with its own immune system and no external intelligence dependency left in it. No API calls. No vendor.',
     active: false,
   },
 ];
 
 const competitors = [
-  { name: 'Palantir', gap: 'No self-correcting neural architecture. No solution to catastrophic forgetting. No formal stability proof.' },
-  { name: 'Snowflake', gap: 'Data infrastructure only. No training-layer architecture. No compliance-grade auditability.' },
-  { name: 'Databricks', gap: 'Open-source Spark foundation. No per-node self-correction. No GlassBox-equivalent.' },
-  { name: 'Scale AI', gap: 'Relies on human-labeled data. Cannot handle inherently noisy, unlabeled institutional data.' },
-  { name: 'Medical AI cos.', gap: 'Being rejected by FDA right now for black box opacity regardless of accuracy. No architectural fix.' },
-  { name: 'Quant fund ML', gap: 'Suffer catastrophic forgetting on every market regime change. No formal stability guarantee.' },
+  { name: 'Palantir', gap: 'Deep institutional access, but no self-correcting architecture underneath it. No answer to catastrophic forgetting, and no formal stability guarantee.' },
+  { name: 'Snowflake', gap: 'Moves and stores the data. Does nothing at the training layer, and produces no compliance-grade record of how a model reached a decision.' },
+  { name: 'Databricks', gap: 'Built on open-source Spark. Nothing operating at the per-node level, and no equivalent to GlassBox telemetry.' },
+  { name: 'Scale AI', gap: 'The entire model depends on humans labelling the data. Institutional data that is noisy and unlabelled by nature is the one case it cannot serve.' },
+  { name: 'Medical AI cos.', gap: 'Being turned down by the FDA on opacity regardless of how accurate the model is. Accuracy was never the blocker — architecture is, and none of them have an architectural answer.' },
+  { name: 'Quant fund ML', gap: 'Every regime change costs them retained history. No formal guarantee that retraining converges anywhere stable.' },
 ];
 
 const customers = [
-  { sector: 'Hedge Funds / Quant Trading', problem: 'Financial signal data is adversarial. Models silently drift on regime changes.', why: 'Catastrophic forgetting destroys historical pattern retention on every regime shift.' },
-  { sector: 'Insurance Companies', problem: 'Actuarial models suffer distribution shift as risk profiles change over time.', why: 'Continuous drift with no detection. Existing architectures have no stability proof.' },
-  { sector: 'Medical Research', problem: 'Clinical data is personalized, noisy, legally sensitive.', why: 'FDA now architecturally rejects black box models regardless of accuracy. GlassBox is the answer.' },
-  { sector: 'Fintech / Credit Scoring', problem: 'Fraud patterns evolve continuously. Must retain historical patterns while learning new ones.', why: 'Catastrophic forgetting in a domain where forgetting costs money and compliance.' },
-  { sector: 'Data-Rich Private Corps', problem: 'Large organizations that want autonomous operational infrastructure.', why: 'No existing system can run agents that learn from proprietary internal data safely.' },
+  { sector: 'Hedge Funds / Quant Trading', problem: 'Signal data is adversarial by nature, and models drift quietly the moment the regime turns.', why: 'Every regime shift erases retained history, and nothing in the stack detects it happening.' },
+  { sector: 'Insurance Companies', problem: 'Actuarial models decay as the underlying risk profile moves under them.', why: 'Continuous drift with no detection layer, on architectures that carry no stability proof.' },
+  { sector: 'Medical Research', problem: 'Clinical data is personal, noisy, and legally radioactive.', why: 'The FDA now rejects black-box models on architecture alone, however accurate they are. GlassBox is built for exactly that bar.' },
+  { sector: 'Fintech / Credit Scoring', problem: 'Fraud patterns move constantly, and the model has to learn the new ones without losing the old.', why: 'Catastrophic forgetting in a domain where forgetting costs money and compliance at the same time.' },
+  { sector: 'Data-Rich Private Corps', problem: 'Large organizations that want operations running autonomously on their own data.', why: 'Nothing on the market can put agents on proprietary internal data and keep it safe.' },
 ];
 
 const sectionLabel: React.CSSProperties = {
@@ -108,14 +108,14 @@ export default function CVOxido() {
           fontSize: '17px', lineHeight: '1.85', color: '#c4cfde',
           maxWidth: '720px', marginBottom: '14px',
         }}>
-          OXIDO is not a product. It is a stack — three components, each solving a different layer of the same root problem: AI systems that operate without internal structure, without observability, and without the ability to repair themselves.
+          OXIDO is not a product. It is three systems solving three layers of one problem: AI that runs without internal structure, without observability, and without any way to repair itself.
         </p>
         <p style={{
           fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0',
           maxWidth: '680px', marginBottom: '44px',
           borderLeft: '2px solid rgba(255,255,255,0.07)', paddingLeft: '18px',
         }}>
-          ORMAS is the immune system. OXIMO is the operating system. Black Bloxie is the controlled test environment where both are validated under real-world conditions — real customers, real supply chains, real regulations. Together they form OXIDO — the infrastructure stack that lets a company operate autonomously in high-stakes domains.
+          ORMAS is the immune system. OXIMO is the operating system. Black Bloxie is where both get tested against real customers, real supply chains, and real regulators. Together they are OXIDO: the infrastructure that lets a company run itself in domains where being wrong is expensive.
         </p>
 
         {/* THE THREE LAYERS */}
@@ -153,14 +153,14 @@ export default function CVOxido() {
         {/* BUSINESS MODEL */}
         <p style={sectionLabel}>Business Model — Enterprise Licensing, Not SaaS</p>
         <p style={{ fontSize: '17px', lineHeight: '1.8', color: '#9aa4b0', maxWidth: '720px', marginBottom: '20px' }}>
-          OXIDO does not have consumer customers. There is no dashboard, no freemium tier, no Product Hunt launch. The value is highest where data is proprietary, messy, high-stakes, and legally sensitive — and where the cost of a model silently learning the wrong thing is catastrophic.
+          There are no consumer customers here. No dashboard, no free tier, no Product Hunt launch. This is worth the most exactly where the data is proprietary, messy, and legally sensitive — where a model quietly learning the wrong thing is not an inconvenience but a catastrophe.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2px', marginBottom: '20px' }}>
           {[
-            { title: 'The Data Cannot Leave', body: 'Medical records, financial positions, insurance actuarial data — none of this can be uploaded to a third-party SaaS platform. OXIDO is deployed inside client infrastructure, on their servers, under their compliance framework.' },
-            { title: 'GlassBox Is a Compliance Asset', body: 'Regulated industries must explain why their AI made specific decisions. The FDA requires architectural explainability, not bolted-on post-hoc explanations. GlassBox produces a causal audit trail per node, per correction, per epoch.' },
-            { title: 'The Switching Cost Is the Moat', body: 'When OXIMO\'s agents operate inside an organization for 12 months — building episodic memory, maturing to Expert — ripping it out is not an option. The Black Bloxie ablation proved this: −91% on removal. Enterprise clients will experience the same effect.' },
+            { title: 'The Data Cannot Leave', body: 'Medical records, financial positions, actuarial tables — none of it can be uploaded to somebody else’s SaaS platform, ever. OXIDO deploys inside the client’s own infrastructure, on their servers, under their compliance framework.' },
+            { title: 'GlassBox Is a Compliance Asset', body: 'Regulated industries have to explain why the model decided what it decided. The FDA wants explainability built into the architecture, not bolted on afterwards. GlassBox emits a causal audit trail per node, per correction, per epoch — which is the shape of the answer regulators are asking for.' },
+            { title: 'The Switching Cost Is the Moat', body: 'After twelve months inside an organization, OXIMO’s agents have built episodic memory and matured into experts on that specific business. Removing it is not a migration, it is an amputation — and the Black Bloxie ablation measured exactly what that costs: 91% of output, gone.' },
           ].map((c, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '24px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#c4cfde', marginBottom: '10px', letterSpacing: '0.3px' }}>{c.title}</div>
@@ -178,7 +178,7 @@ export default function CVOxido() {
             <strong style={{ color: '#c4cfde' }}>Hugging Face</strong> — open-source models, enterprise API
           </p>
           <p style={{ fontSize: '14px', color: '#6b7683', marginTop: '10px', marginBottom: 0, fontStyle: 'italic' }}>
-            One enterprise license with a hedge fund or hospital system is worth more than 10,000 SaaS subscriptions — with lower churn, higher margins, and a stronger technical moat.
+            One enterprise licence with a hedge fund or a hospital system is worth more than 10,000 SaaS subscriptions, and it churns less, margins better, and sits behind a harder technical moat.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export default function CVOxido() {
         {/* COMPETITION */}
         <p style={sectionLabel}>Competition — The Structural Gap</p>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '8px' }}>
-          The real competitors are not CrewAI, LangGraph, or AutoGen. Those are developer frameworks — Lego bricks for people who want to build their own agents by hand. They have no institutional customers. They have no learning layer.
+          The real competitors are not CrewAI, LangGraph, or AutoGen. Those are developer frameworks — Lego bricks for people assembling their own agents by hand. No institutional customers, and no learning layer anywhere in them.
         </p>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '20px' }}>
           The real competitors sit between enterprise institutions and their proprietary data:
@@ -249,7 +249,7 @@ export default function CVOxido() {
             ))}
           </div>
           <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '14px', marginBottom: 0, fontStyle: 'italic' }}>
-            The $757B AI market (growing to $4T by 2035) is moving toward operational AI on proprietary data. Every company in that market needs what ORMAS provides. None of them have it.
+            The $757B AI market (growing to $4T by 2035) is moving toward operational AI running on proprietary data. Everyone in that market will need what ORMAS does. Right now none of them have it.
           </p>
         </div>
 

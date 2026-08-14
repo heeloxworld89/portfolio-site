@@ -91,7 +91,7 @@ export default function CVClosingAsk() {
           If You Got This Far
         </h2>
         <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.75' }}>
-          The work is documented and reproducible. Here is the specific thing each type of reader can do that would actually move something forward.
+          The work is documented and reproducible. Here is the one thing each kind of reader could do that would move something forward.
         </p>
 
         <div className="ask-grid">
@@ -99,7 +99,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">ML Researchers &amp; Reviewers</div>
             <p className="ask-body">
-              The preprint is on Zenodo. The full codebase reproduces every experiment in under one hour on a single GPU. The area where external scrutiny is most useful: the ISS convergence proof. If you find an error or a tighter bound, I want to know.
+              The preprint is on Zenodo and the codebase reproduces every experiment in under an hour on one GPU. The place scrutiny would help most is the ISS convergence proof. If you find an error in it, or a tighter bound, I would genuinely rather hear it from you than find out later.
             </p>
             <a className="ask-action" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
               Read the Preprint ↗
@@ -110,7 +110,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">Investors &amp; Operators</div>
             <p className="ask-body">
-              The next phase requires multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can operate on proprietary domain data. If you have the infrastructure to deploy this, email me.
+              The next phase needs two things: multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can run against real proprietary data. If you have either, that is the conversation worth having.
             </p>
             <a className="ask-action" href="mailto:raadxbusiness9@gmail.com">
               raadxbusiness9@gmail.com
@@ -121,7 +121,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">Engineers &amp; Builders</div>
             <p className="ask-body">
-              The reproduce.sh script runs every experiment from the paper. The OXIMO architecture is documented in the codebase. If you want to build on this, extend it, or find a flaw — the code is available and the results are verifiable.
+              One script, reproduce.sh, runs every experiment in the paper. The OXIMO architecture is documented inside the codebase. Build on it, extend it, or go looking for the flaw — the code is there and the results check out or they do not.
             </p>
             <a className="ask-action" href="https://anonymous.4open.science/r/ormas-EB73/README.md" target="_blank" rel="noreferrer">
               Explore the Codebase ↗

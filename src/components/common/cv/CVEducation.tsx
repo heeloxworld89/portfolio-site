@@ -94,28 +94,28 @@ export default function CVEducation() {
         
         <div className="content">
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "28px", maxWidth: "700px" }}>
-            Self-taught in ML, systems engineering, and theoretical CS. I learn the way a researcher learns: seek the mechanism, not the surface. The research demanded fields most programmers never touch:
+            Self-taught in ML, systems engineering, and theoretical CS. I go after the mechanism rather than the surface, because the surface has never once been enough to finish the thing I was working on. Along the way the work dragged me into fields most programmers never have a reason to open:
           </p>
           
           <div className="edu-grid">
             <div className="edu-card">
               <h5 className="edu-title">Physics of Complex Systems</h5>
-              <p className="edu-desc">Studied to understand the physical intuition behind stability theory for the ORMAS convergence proof.</p>
+              <p className="edu-desc">The ORMAS convergence proof rests on stability theory, and I could not write it while treating the mathematics as symbols on a page. I needed the physical intuition for why a perturbed system settles — or does not.</p>
             </div>
-            
+
             <div className="edu-card">
               <h5 className="edu-title">Sales Psychology</h5>
-              <p className="edu-desc">Because automating European cold calls taught me the psychological limits of human trust in autonomous agents.</p>
+              <p className="edu-desc">Automating European cold calls showed me exactly where human trust in an autonomous agent runs out. Understanding why it runs out at the transaction, and not before, became a design constraint rather than a curiosity.</p>
             </div>
-            
+
             <div className="edu-card">
               <h5 className="edu-title">Financial Markets</h5>
-              <p className="edu-desc">Learned market micro-structure to build institutional-flow-aware stock algorithms at age 15.</p>
+              <p className="edu-desc">At 15 I was building stock algorithms that had to account for institutional flow. That is not something you can infer from price data alone — it required learning market micro-structure properly.</p>
             </div>
-            
+
             <div className="edu-card">
-              <h5 className="edu-title">Company Law & AML</h5>
-              <p className="edu-desc">Studied regulations to register Black Bloxie from Bangladesh directly via UK Companies House.</p>
+              <h5 className="edu-title">Company Law &amp; AML</h5>
+              <p className="edu-desc">Registering Black Bloxie at UK Companies House from Bangladesh meant learning the filing regime, the anti-money-laundering requirements, and the director obligations myself. No lawyer, no agent.</p>
             </div>
           </div>
 
@@ -161,7 +161,7 @@ export default function CVEducation() {
               I chose research over grades — deliberately.
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', margin: 0 }}>
-              Stability theory for the convergence proof took priority over exam preparation. OXIMO development replaced scheduled class time. The trade-off is documented — not in grades, but in 383 experiments, 40,933 lines of production code, and a published preprint. Evaluate from that.
+              Stability theory for the convergence proof took priority over exam preparation, and OXIMO development took the class time. I knew what I was trading and I made the trade on purpose. The result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of production code, and a published preprint — and that is the evidence I would rather be judged on.
             </p>
           </div>
 

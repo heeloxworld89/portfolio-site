@@ -34,7 +34,7 @@ export default function CVDeployment() {
         <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px' }}>
           Architecture Validation · Controlled Ablation Study
         </span>
-        <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>Deployment Evidence</h2>
+        <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>I Ran a Lesion Study on My Own Company</h2>
         <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '18px' }}>
           OXIDO Architecture · Validated on Live Production Environment · 11 Months
         </p>
@@ -45,12 +45,12 @@ export default function CVDeployment() {
             This Is Not a Business. It Is a Controlled Experiment.
           </p>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-            Black Bloxie LTD is a UK Companies House-registered company created as a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. Its purpose is to generate verifiable causal evidence that the ORMAS/OXIMO/OXIDO stack works under real-world conditions — real customers, real supply chains, real regulations. E-commerce was selected as the first test substrate because it provides the fastest feedback loop and the clearest failure signal. The company's commercial output is deliberately constrained to research-grade scale by regulatory boundaries, not by technical limitations.
+            Black Bloxie LTD is registered at UK Companies House and exists to be a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. A benchmark cannot tell you whether a system survives real customers, real suppliers, and real regulators, so I built somewhere it could fail in public and measured what happened. E-commerce came first because it has the fastest feedback loop and the least ambiguous failure signal. The commercial scale is capped deliberately, by regulatory boundaries rather than technical ones.
           </p>
         </div>
 
         <p style={{ fontSize: '15px', lineHeight: '1.7', color: '#6b7683', marginBottom: '35px', maxWidth: '680px' }}>
-          The full evidence is published in two formats. The <strong>System Architecture Paper</strong> is written for ML researchers and technical evaluators assessing the underlying mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is written for enterprise operators, venture capitalists, and angel investors evaluating the commercial viability of the OXIDO deployment model. Both cover the same 11-month ablation record from different analytical lenses.
+          The evidence is published twice, for two different readers. The <strong>System Architecture Paper</strong> is for researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is for operators and investors judging whether the deployment model holds up commercially. Same 11-month record, examined through two different lenses.
         </p>
 
         {/* ── Paper Download Buttons ─────────────────────────────────────── */}
@@ -256,7 +256,7 @@ export default function CVDeployment() {
             Ablation Record — Phase-Level Evidence
           </h4>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '24px' }}>
-            The study design follows an injection-removal-reinjection protocol, analogous to lesion studies in neuroscience, adapted for a live commercial system. It answers one question with verifiable data: does the OXIDO architecture cause commercial output, or does the market?
+            The design borrows directly from lesion studies in neuroscience — inject, remove, re-inject — applied to a live commercial system instead of a brain. It exists to settle one question with data rather than argument: does the architecture cause the commercial output, or does the market?
           </p>
 
           {/* Phase 2 removal table */}
@@ -339,7 +339,7 @@ export default function CVDeployment() {
             What the Deployment Proved About ORMAS
           </h4>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '20px' }}>
-            The deployment exposed the core failure mode that motivated ORMAS. Real-world supplier data is adversarial: mislabelled categories, inconsistent taxonomies, duplicate SKUs, corrupted pricing fields, and noise patterns that no benchmark dataset replicates. Every existing noise-robust training method tested (ProMix, DivideMix, CoDE, EV) failed in production on this data class. Standard backpropagation learns corrupted labels silently and confidently, with no per-node self-assessment mechanism to detect the failure. ORMAS was built to solve this structurally — not with hyperparameter tuning, but with a three-signal training architecture that formally proves it will detect and correct its own corruption while converging.
+            This deployment is where I first hit the failure mode that produced ORMAS. Real supplier data is adversarial in a way no benchmark reproduces: mislabelled categories, inconsistent taxonomies, duplicate SKUs, corrupted pricing fields. Every noise-robust method I tested — ProMix, DivideMix, CoDE, EV — failed on this class of data in production. Standard backpropagation learns corrupted labels silently and confidently, because no node in the network has any way to assess itself. Hyperparameter tuning does not fix that. A different training architecture does, and that is what ORMAS is.
           </p>
 
           {/* ── Study Parameters (revenue buried here, properly contextualized) */}

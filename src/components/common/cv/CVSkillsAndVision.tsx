@@ -195,7 +195,7 @@ export default function CVSkillsAndVision() {
       
       <div className="col-12">
         <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Skills, Vision &amp; Metrics</span>
-        <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>The Technical Stack</h2>
+        <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>Everything I Had to Learn to Build This</h2>
         
         <div className="content">
           {/* Skill Groups */}
@@ -255,16 +255,16 @@ export default function CVSkillsAndVision() {
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '24px 28px', marginBottom: '16px' }}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>OXIDO — The Convergence</div>
             <p style={{ fontSize: '16px', fontWeight: 600, color: '#c4cfde', margin: '0 0 10px', lineHeight: 1.6 }}>
-              OXIMO (cognitive OS) + ORMAS (immune system) + Cherry (self-correcting LLM) = an autonomous multi-agent system with no external intelligence dependency.
+              OXIMO the operating system, ORMAS the immune system, Cherry the self-correcting model: a multi-agent stack that depends on no intelligence but its own.
             </p>
             <p style={{ fontSize: '14px', color: '#9aa4b0', margin: 0, lineHeight: 1.75 }}>
-              Each system was built to solve a specific failure mode. Together they constitute a self-sustaining research and operational stack. The architecture is validated. The next phase is scale.
+              None of the three was designed as part of a grand plan. Each exists because the one before it hit a wall I could not engineer around. Together they turn out to be self-sustaining. The architecture is validated; what is left is scale.
             </p>
           </div>
 
           {/* Bridge */}
           <p style={{ fontSize: '14px', color: '#6b7683', fontStyle: 'italic', marginBottom: '32px', paddingLeft: '4px' }}>
-            Two years ago this sounded delusional. The gap closed — because the code runs, the experiments are done, and the architecture is published.
+            Two years ago I would have said this out loud and sounded delusional. The distance closed the only way it could: the code runs, the experiments are finished, and the architecture is published where anyone can check it.
           </p>
 
           {/* Scaling Requirements */}
@@ -280,15 +280,15 @@ export default function CVSkillsAndVision() {
               <tbody>
                 <tr>
                   <td>Compute Scaling (Transformer Integration)</td>
-                  <td>Migrate the validated ORMAS protocol from CNN/DAG architectures to Transformer-scale constraints. The mathematics are architecture-agnostic; execution requires access to multi-node H100/A100 clusters.</td>
+                  <td>Carry the validated ORMAS protocol from CNN and DAG architectures onto Transformer-scale constraints. The mathematics is architecture-agnostic, so this is not a research risk — it is a compute problem, and it needs multi-node H100/A100 access.</td>
                 </tr>
                 <tr>
                   <td>Project Cherry (Self-Correcting Foundation Model)</td>
-                  <td>Pre-train an LLM using the three-signal loss architecture from scratch. This replaces post-hoc alignment (RLHF) with intrinsic, step-by-step structural correction during the pre-training phase.</td>
+                  <td>Pre-train a language model on the three-signal architecture from scratch, so structural correction happens step by step during pre-training instead of being bolted on afterwards as RLHF.</td>
                 </tr>
                 <tr>
                   <td>Formal Verification &amp; Peer Review</td>
-                  <td>Subject the Input-to-State Stability (ISS) convergence proofs to rigorous scrutiny by applied mathematicians and control theorists prior to open submission.</td>
+                  <td>Put the Input-to-State Stability proofs in front of applied mathematicians and control theorists who will try to break them, before open submission rather than after.</td>
                 </tr>
               </tbody>
             </table>

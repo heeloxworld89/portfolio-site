@@ -3,22 +3,22 @@ export default function CVWhoIAm() {
     {
       tag: 'Research · AAAI 2027',
       name: 'ORMAS',
-      claim: 'A neural network with a formal local-stability convergence proof — the first of its kind. Global convergence remains an open problem, documented as such in the preprint.',
-      body: 'When I zeroed all convolutional layers mid-training, every standard baseline collapsed permanently to chance. ORMAS detected the damage, executed 85 targeted corrections, and recovered to 80.3% — a 70.3 percentage-point gap where the standard architecture had zero recourse.',
+      claim: 'The first self-correcting neural architecture carrying a formal local-stability proof. Global convergence is still open — the preprint says so on its own first page.',
+      body: 'I killed all three convolutional layers at epoch 100, on a fully converged network, mid-training. Every standard baseline flatlined at 10% — chance — and stayed dead across all three seeds, with zero variance. ORMAS diagnosed its own damage, executed 85 targeted corrections, and climbed back to 80.3%. Same parameter budget, same compute, same data. A 70.3-point gap in a scenario where the standard architecture has no recourse at all.',
       stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['✓', 'Convergence Proof']],
     },
     {
       tag: 'Engineering · Production',
       name: 'OXIMO',
-      claim: 'A cognitive OS where agents hire other agents, remember across sessions, and operate like a company.',
-      body: 'Rebuilt from a 106,000-line monolith. 72% line reduction. All 12 critical algorithms intact. 47 feature flags. 17 implementation phases. 2,011 tests. Zero failures. Not a cleanup — a proof the architecture was sound enough to survive complete reconstruction.',
+      claim: 'An operating system for AI agents that hire other agents, carry memory between sessions, and run an organization with nobody in the loop.',
+      body: 'Rebuilt from a 106,000-line monolith down to 40,933 — 72% smaller, all 12 critical algorithms ported verbatim, 2,011 tests still green. The rebuild was not housekeeping. It was the test of whether the architecture underneath could survive being taken apart to the studs and put back together. It did.',
       stats: [['40,933', 'Lines of Code'], ['2,011', 'Tests · 0 Fails'], ['11', 'Mini-Repos'], ['72%', 'Reduction']],
     },
     {
       tag: 'Architecture Validation · 11-Month Controlled Ablation Study',
       name: 'Black Bloxie LTD',
-      claim: 'A UK-registered controlled test environment. Every operational role is occupied by an AI agent.',
-      body: 'Created to generate verifiable causal evidence that the ORMAS/OXIMO/OXIDO stack works under real-world conditions. E-commerce selected as the first test substrate for its fastest feedback loop and clearest binary failure signal. Injection-removal-reinjection protocol: OXIMO deployed, commercial output established. Full system removal: output collapsed 91% across all channels simultaneously — ruling out market and seasonality as alternatives. V3 re-injection: output recovered 1,300% from ablated baseline. The causal chain is documented, reproducible, and published.',
+      claim: 'A company registered at UK Companies House that exists to be an experiment. Every operational role inside it is held by an AI agent.',
+      body: 'A benchmark cannot tell you whether a system survives contact with real customers, real suppliers, and real regulators. So I built somewhere it could fail in public, and ran a lesion study on my own company: deploy, measure, remove, measure, re-inject, measure. Removal collapsed commercial output 91% — simultaneously across every channel, which is precisely what rules out the market as the explanation. Re-injection recovered 1,300%. That is a causal claim rather than a correlation, and the full record is published.',
       stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['11 mo.', 'Study Duration'], ['0', 'Advertising Spend']],
     },
   ];
@@ -167,7 +167,7 @@ export default function CVWhoIAm() {
           18 · Dhaka, Bangladesh · Independent AI Researcher & Founder
         </p>
         <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "32px", maxWidth: "700px" }}>
-          Neural networks fail opaquely. I built an architecture that changes that — with proof.
+          Neural networks fail silently. I built one that reports its own damage, repairs itself mid-training, and carries a proof that the repair converges.
         </p>
 
         {/* ── Audience Router ─────────────────────────────────────── */}
@@ -176,25 +176,25 @@ export default function CVWhoIAm() {
           {[
             {
               audience: 'ML Researcher / Reviewer',
-              desc: 'Convergence proof, 383 experiments, GlassBox telemetry, full tables with honest gaps.',
+              desc: 'The proof, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.',
               href: '#research',
               label: 'Research →',
             },
             {
               audience: 'VC / Angel Investor',
-              desc: 'Enterprise licensing thesis, competitor gap, ablation evidence, roadmap.',
+              desc: 'Why this licenses to institutions instead of selling as SaaS, what the incumbents structurally cannot do, and the causal evidence behind both.',
               href: '#oxido',
               label: 'OXIDO →',
             },
             {
               audience: 'Engineer / Developer',
-              desc: 'Architecture internals, 40,933 lines, 2,011 tests, reproduce.sh runs in under an hour.',
+              desc: 'Architecture internals, 40,933 lines, 2,011 tests. One script reproduces every experiment in under an hour.',
               href: '#engineering',
               label: 'Engineering →',
             },
             {
               audience: 'Enterprise Operator',
-              desc: 'Deployment study, causal ablation methodology, two downloadable reports.',
+              desc: 'Eleven months of deployment data, the ablation method behind it, and two full reports to download.',
               href: '#deployment',
               label: 'Deployment →',
             },

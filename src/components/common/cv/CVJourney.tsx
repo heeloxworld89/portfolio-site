@@ -3,27 +3,27 @@ export default function CVJourney() {
     {
       title: 'Software Services',
       age: 'Age 12–14',
-      lesson: 'Distribution, without institutional credibility or network access, is not a technical problem. It is a structural one. Enterprise procurement does not route through technical merit alone.',
+      lesson: 'I could build the thing. I could not get it in front of anyone. Distribution without institutional credibility or a network is not a technical problem, and enterprise procurement does not route on technical merit alone.',
     },
     {
       title: 'Cold-Call Automation — European Markets',
       age: 'Age 14–15',
-      lesson: 'Human trust in autonomous agents has a hard threshold at the closing transaction. Automation covered 90% of the sales cycle reliably; the final 10% required human presence. That boundary defined the design constraint that OXIMO later addressed.',
+      lesson: 'Automation handled 90% of the sales cycle reliably. The last 10% — the close — needed a human in the room, every time. Trust in an autonomous agent has a hard ceiling at the transaction, and that ceiling became a design constraint I carried into OXIMO.',
     },
     {
       title: 'US-Targeted Digital Marketing',
       age: 'Age 15',
-      lesson: 'The bottleneck was not distribution. It was content production at scale. The problem required a system that could generate — not one that could merely distribute.',
+      lesson: 'I assumed the bottleneck was distribution. It was production. I did not need something that could move content around; I needed something that could make it at volume.',
     },
     {
       title: 'Organic E-Commerce',
       age: 'Age 15–16',
-      lesson: 'Individual tools optimizing pricing or marketing are incremental improvements. The problem is coordination across the entire pipeline: research, listing, pricing, fulfillment, service. One person cannot be the system.',
+      lesson: 'Optimising pricing, or listings, or marketing individually buys you a few percent. The real problem is coordinating research, listing, pricing, fulfilment, and service at once. One person cannot be the whole system, however hard they work.',
     },
     {
       title: 'Automation Tooling',
       age: 'Age 16–17',
-      lesson: 'Confirmed the convergent finding across all prior ventures: the bottleneck is never individual capability. It is always coordination.',
+      lesson: 'The last one confirmed what the previous four had been telling me: the bottleneck was never individual capability. It was always coordination.',
     },
   ];
 
@@ -241,7 +241,7 @@ export default function CVJourney() {
         <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>Origin</span>
         <h2 className="title mb--10 fs-2" style={{ fontWeight: 700 }}>The Experimental Ground That Motivated Everything</h2>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '40px', maxWidth: '640px' }}>
-          Every system documented here emerged from a specific failure. The research did not precede the problems — the problems preceded the research.
+          Every system on this page came out of something that went wrong first. I did not start with research and go looking for problems. The problems came first, and none of this was planned.
         </p>
 
         <div className="origin-layout">
@@ -254,13 +254,13 @@ export default function CVJourney() {
               <div className="origin-card">
                 <div className="origin-card-tag">Age 12 — First Principles</div>
                 <p className="origin-card-body">
-                  Began programming at 12. Every project was constructed at the edge of current capability — establishing a working pattern: learn what the problem demands, not what the curriculum offers. The discipline of self-directed inquiry formed before any formal exposure to computer science.
+                  I started programming at 12, and every project since has been built slightly past what I already knew how to do. That set the pattern early: learn whatever the problem demands, not whatever the curriculum offers. The habit was fixed well before I had any formal exposure to computer science.
                 </p>
               </div>
               <div className="origin-card">
                 <div className="origin-card-tag">Age 15 — First Validated Output</div>
                 <p className="origin-card-body">
-                  Developed a stock market prediction system: market data ingestion → fundamental analysis → technical analysis → directional prediction. Sold for approximately <strong>$10,000 USD</strong>. The proceeds funded the RTX 3090 that ran all 383 ORMAS experiments. First externally validated proof that the work was real.
+                  I built a stock market prediction system — market data ingestion, fundamental analysis, technical analysis, directional call — and sold it for roughly <strong>$10,000 USD</strong>. That money bought the RTX 3090 that later ran all 383 ORMAS experiments. It was also the first time somebody outside my own head confirmed the work was worth something.
                 </p>
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function CVJourney() {
             {/* Five Ventures */}
             <div className="origin-section-title">Five Ventures. Five Distinct Failure Modes. One Convergent Finding.</div>
             <p className="origin-section-lead">
-              Between ages 12 and 17, five independent ventures were pursued across software, automation, and e-commerce. Each failed at a structurally different layer. Each contributed a data point to the same emerging pattern.
+              Between 12 and 17 I ran five ventures across software, automation, and e-commerce. Each one broke at a structurally different layer, and each one handed me the same finding from a different angle.
             </p>
 
             <div className="origin-venture-list">
@@ -286,13 +286,13 @@ export default function CVJourney() {
             {/* Structural Insight */}
             <div className="origin-insight">
               <p className="origin-insight-lead">
-                The problem is not any single component of the business pipeline. The problem is the pipeline itself — and the coordination overhead that makes it humanly intractable at scale.
+                No single piece of the pipeline was the problem. The pipeline was the problem — and the coordination cost that makes it impossible for one person to hold at scale.
               </p>
               <p className="origin-insight-body">
-                Five ventures failing at five different stages constitutes a structured experiment in entrepreneurial failure modes. The root variable in every case was identical: one person attempting to occupy every role in a system that requires multiple simultaneous specialized agents operating in coordination.
+                Five ventures failing at five different stages is, read generously, a structured experiment in how businesses break. The variable was identical every time: one person trying to occupy every role in a system that needs several specialists working at once.
               </p>
               <p className="origin-insight-body">
-                That observation demanded a structural solution. <strong>OXIMO</strong> was the response: a cognitive multi-agent operating system that assembles its own organizational structure on demand, decomposes tasks autonomously, and creates new agent roles as the problem requires. When OXIMO's agents needed to learn safely from real-world production data — corrupted, contradictory, adversarial — that constraint motivated <strong>ORMAS</strong>. The failed ventures are not separate from the research. They are its experimental substrate.
+                That is a structural problem, so it needed a structural answer. <strong>OXIMO</strong> was mine — an operating system that builds its own org chart on demand, splits tasks up without being told how, and creates new agent roles when the work calls for them. Then its agents needed to learn from real production data: corrupted, contradictory, adversarial. That constraint is where <strong>ORMAS</strong> came from. The failed ventures are not a preamble to the research. They are the substrate it grew out of.
               </p>
             </div>
 

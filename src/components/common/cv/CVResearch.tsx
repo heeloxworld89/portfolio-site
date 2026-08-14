@@ -117,7 +117,7 @@ export default function CVResearch() {
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
         <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: '20px' }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines · 61 files</strong><br />
-          383 controlled experiments. One RTX 3090. Four architectures. The first local-stability convergence proof for any self-correcting architecture (global convergence remains open). Preprint with full 36-page supplementary, reproducible codebase, and complete experimental results archive.
+          383 controlled experiments. One RTX 3090. Four architectures. The first local-stability convergence proof for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
         </p>
 
         {/* Action Link Bar */}
@@ -180,22 +180,22 @@ export default function CVResearch() {
               {
                 n: '01',
                 title: 'Autonomous Structural Repair — Dead-Layer Lesion',
-                body: 'Mid-training dead-layer attack at epoch 100 (full convergence). Standard CNN: permanent collapse to 10.0% ± 0.0% across all 3 seeds — zero variance, deterministic structural death. ORMAS: 85 targeted corrections in epochs 100–110 → recovered to 80.3% (+70.3pp gap). The network diagnosed its own damage. It fixed itself. Checkpoint rollback could recover accuracy — but only by discarding all post-checkpoint learning and with zero causal attribution for the failure.'
+                body: 'I killed a layer at epoch 100, after full convergence. The standard CNN collapsed to 10.0% ± 0.0% — chance, across all three seeds, zero variance, structurally dead and staying dead. ORMAS ran 85 targeted corrections between epochs 100 and 110 and came back to 80.3%, a +70.3pp gap. It diagnosed its own damage and repaired it. A checkpoint rollback recovers the accuracy too, but only by discarding everything learned since the checkpoint, and it tells the operator nothing about what failed or why.'
               },
               {
                 n: '02',
                 title: 'Total Annihilation — All Three Layers Killed Simultaneously',
-                body: 'Protocol escalated: all three convolutional layers zeroed at epoch 100 — destroying every learned representation. Standard CNN: permanent death at 10.0%. ORMAS: 72 corrections (54 "oscillating", 18 "dead"), steadily climbed from 10% → 72.9% over 100 epochs (+60.8pp). Reconstructed feature extractors from zero. Recovery is slower than single-layer (72.9% vs 80.3%) — reflecting the compounding difficulty of rebuilding all three convolutional stages simultaneously.'
+                body: 'Same attack, escalated: all three convolutional layers zeroed at epoch 100, destroying every learned representation in the network. The standard CNN died at 10.0% and stayed there. ORMAS logged 72 corrections — 54 diagnosed as oscillating, 18 as dead — and climbed from 10% back to 72.9% over the next 100 epochs, a +60.8pp gap. It rebuilt its feature extractors from nothing. Recovery is slower than the single-layer case (72.9% against 80.3%), which is what you would expect when all three stages have to be reconstructed at once.'
               },
               {
                 n: '03',
                 title: 'Noise Robustness Without Ensemble Tricks',
-                body: 'Under 40% symmetric label noise over 200 epochs, the Standard CNN decayed 7.8pp from its peak. ORMAS decayed only 2.5pp — anchoring at 77.5% ± 0.7%. No multi-network co-training (DivideMix). No specialized noisy-label objective. Heavy Dropout (p=0.5) matches ORMAS on label noise — but permanently collapses to chance under structural lesion. It can mask noise; it cannot diagnose and repair physical damage. That distinction is the entire point.'
+                body: 'Under 40% symmetric label noise across 200 epochs, the standard CNN decayed 7.8pp from its peak. ORMAS decayed 2.5pp and settled at 77.5% ± 0.7%. No co-training, no second network, no specialised noisy-label objective. Heavy Dropout (p=0.5) matches ORMAS on label noise — and then collapses permanently to chance the moment a layer is lesioned. Regularisation can mask noise. It cannot diagnose and repair physical damage. That distinction is the whole point.'
               },
               {
                 n: '04',
                 title: 'Emergent Zero-Shot Compositional Generalization — Shape Memory',
-                body: 'Sequential training: Phase 1 teaches Shape, Phase 2 teaches Color. Standard ResNet-18 catastrophically forgets: Shape retention drops to 47.3%. ORMAS holds both simultaneously: 94.6% Shape, 96.5% Color — and achieves 58.8% zero-shot accuracy on novel Shape+Color combinations never seen in training (+33.8pp above 25% chance). PCGrad ablation: 59.1% ± 3.6% — statistically indistinguishable. Self-correction alone is the necessary and sufficient driver. This was not designed. It emerged from the health gate.'
+                body: 'Phase 1 teaches shape, Phase 2 teaches colour, sequentially. A standard ResNet-18 forgets: shape retention falls to 47.3%. ORMAS holds both at once — 94.6% shape, 96.5% colour — and then scores 58.8% zero-shot on shape and colour pairings it never saw in training, +33.8pp above 25% chance. The PCGrad ablation lands at 59.1% ± 3.6%, statistically indistinguishable, which isolates self-correction as the driver on its own. I did not design this behaviour. It emerged from the health gate.'
               },
             ].map((c, i) => (
               <div key={i} style={{ display: 'flex', gap: '20px', background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px' }}>
@@ -210,10 +210,10 @@ export default function CVResearch() {
 
           <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "12px", color: "#c4cfde" }}>Why This Exists</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            I was building <strong style={{ color: '#c4cfde' }}>OXIMO</strong> — a multi-agent OS for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>codebase ↗</a> — architecture is all there; production code, not polished) — and I hit the problem I couldn't engineer around. The agents needed to learn safely from real-world data: corrupted labels, adversarial inputs, contradictory signals. Every existing noise-robust framework was an external filter system bolted on top of a network that remained fundamentally blind to its own internal state.
+            I was building <strong style={{ color: '#c4cfde' }}>OXIMO</strong> — a multi-agent OS for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>codebase ↗</a> — the architecture is all there; production code, not polished) — and I hit the one problem I could not engineer around. The agents had to learn from real production data: corrupted labels, adversarial inputs, signals that contradicted each other. Every noise-robust framework I tested turned out to be an external filter bolted onto a network that was still completely blind to its own internal state.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "50px" }}>
-            I needed a neural network that could detect corruption in real time, during training, and repair it — without stopping, without a human, with mathematical proof the correction wouldn't create a new instability. That requirement produced ORMAS.
+            What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a proof that the repair would not introduce a new instability. Nothing like that existed. ORMAS is what that requirement turned into.
           </p>
 
           <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "#c4cfde" }}>The Three-Signal Architecture</h4>
@@ -331,10 +331,10 @@ export default function CVResearch() {
           <div className="honest-gap-box" style={{ marginBottom: '40px' }}>
             <h5 style={{ fontSize: '14px', fontWeight: '700', color: '#c4cfde', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Note — Early Stopping & Heavy Dropout</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#9aa4b0', margin: '0 0 10px' }}>
-              Standard CNN at its oracle-optimal epoch (~39) achieves 77.6% — within 0.5pp of ORMAS's best. However, early stopping requires a clean validation oracle unavailable under label corruption. ORMAS achieves comparable peak accuracy <strong style={{ color: '#c4cfde' }}>without requiring early stopping</strong>.
+              Stopped at its oracle-optimal epoch (~39), the standard CNN hits 77.6% — within 0.5pp of the best ORMAS result. That is a real caveat, with one catch: knowing where to stop requires a clean validation oracle, and under label corruption you do not have one. ORMAS reaches comparable peak accuracy <strong style={{ color: '#c4cfde' }}>without needing to know when to stop</strong>.
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-              Heavy Dropout (p=0.5) matches ORMAS on label noise. But under a dead-layer structural attack it permanently collapses to chance. <strong style={{ color: '#c4cfde' }}>Regularization masks noise. Structural transparency diagnoses and repairs it.</strong> That is a categorically different capability.
+              Heavy Dropout (p=0.5) also matches ORMAS on label noise — then collapses permanently to chance under a dead-layer attack. <strong style={{ color: '#c4cfde' }}>Regularisation masks noise. Structural transparency diagnoses and repairs it.</strong> Those are different capabilities, not different amounts of the same one.
             </p>
           </div>
 
@@ -377,7 +377,7 @@ export default function CVResearch() {
           <div className="honest-gap-box" style={{ marginBottom: '20px' }}>
             <h5 style={{ fontSize: '14px', fontWeight: '700', color: '#c4cfde', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Gap — σ=1.0</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-              Standard CNN recovers to 80.2% at σ=1.0 — nominally surpassing ORMAS (75.4%). However, this "recovery" is blind SGD relearning with zero diagnostic observability. At σ=0.1, ORMAS achieves <strong style={{ color: '#c4cfde' }}>99.1% recovery</strong> — the diagnostic advantage emerges under severe perturbation where targeted repair outperforms undirected gradient descent.
+              At σ=1.0 the standard CNN recovers to 80.2% and ORMAS reaches 75.4%. The baseline wins that row outright. What it does not do is tell anyone what broke — it is blind SGD relearning with no diagnostic trace at all. At σ=0.1, ORMAS recovers <strong style={{ color: '#c4cfde' }}>99.1%</strong>, and the advantage widens as damage gets worse, which is where targeted repair beats undirected gradient descent.
             </p>
           </div>
 
@@ -567,25 +567,25 @@ export default function CVResearch() {
 
           <h4 className="section-header">Scope & Current Boundaries</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            The architecture is validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design — extension to Transformers is a compute and integration problem, not an architecture one. The convergence proof establishes a local stability guarantee; global convergence properties remain an open theoretical question, as they do for every architecture that currently exists.
+            Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. The proof gives a local stability guarantee. Global convergence stays open — as it does for every architecture in existence today.
           </p>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            There is a real computational overhead: PCGrad's dual backward passes introduce a persistent <strong style={{ color: '#c4cfde' }}>1.35× algorithmic floor</strong>. The 2.16× wall-clock overhead on CNNs reflects optimizable Python loop latency, not algorithmic complexity. On the architectures that actually matter — the ones deep enough that silent failure is a real production risk — the overhead is the price of structural transparency.
+            The overhead is real. PCGrad runs two backward passes, which sets a permanent <strong style={{ color: '#c4cfde' }}>1.35× algorithmic floor</strong>. The 2.16× wall-clock figure on CNNs is Python loop latency and can be optimised away; the 1.35× cannot. On networks deep enough that silent failure is a genuine production risk, that is what structural transparency costs.
           </p>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            CIFAR-100 two-layer lesion yields only 7.4% recovery — establishing where single-network isolation cannot reconstruct complex manifolds. This is the honest scope boundary.
+            A two-layer lesion on CIFAR-100 recovers only 7.4%. That is where a single isolated network stops being able to rebuild a complex manifold, and it is the honest edge of the method.
           </p>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "50px" }}>
-            ORMAS targets training-time weight-space pathologies. Test-time structural monitoring (running telemetry during inference to detect distribution shift) is a direct generalization and is explicitly out of scope for the current work.
+            ORMAS addresses training-time weight-space pathologies. Running the same telemetry at inference to catch distribution shift is a direct generalisation of the idea, and it is out of scope for this work.
           </p>
 
           <h4 className="section-header">Research Directions</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '50px' }}>
             {[
-              { title: 'Preemptive Immune Filtering', body: 'V1 is reactive — it repairs after damage occurs. V2 uses local loss disagreement as a per-sample gate, blocking corrupted samples before they touch the gradient path. Shifting from reactive repair to anticipatory immunity.' },
-              { title: 'Transformer Architecture Extension', body: 'Port Three-Signal Learning to attention-based architectures. Natural extension: each attention head receives an independent local loss anchored through a shared key-query bottleneck, enabling per-head health monitoring and surgical correction. New pathology classes at scale: Attention Collapse, Entropy Death, Feature Saturation.' },
-              { title: 'Bridging Structural to Semantic Telemetry', body: 'Current GlassBox provides structural telemetry — which nodes fail, when, and how. It does NOT provide semantic interpretability — what concept a failing node encoded. The emergent disentanglement result provides a bridge: nodes that lock during Phase 2 preserve Phase 1 (Shape) representations. Formalizing via CAVs or Grad-CAM trajectory analysis over the correction lifecycle is the primary open question.' },
-              { title: 'Cherry — Self-Correcting Language Model', body: 'Train a language model from scratch using ORMAS three-signal learning. Not fine-tuning an existing model. The first LLM that can detect and repair its own training pathologies in real time.' },
+              { title: 'Preemptive Immune Filtering', body: 'V1 is reactive: damage happens, then it gets repaired. V2 uses local loss disagreement as a per-sample gate, stopping corrupted samples before they ever reach the gradient path. Repair becomes immunity.' },
+              { title: 'Transformer Architecture Extension', body: 'Carry three-signal learning onto attention. Each head gets an independent local loss anchored through a shared key-query bottleneck, which makes per-head health monitoring and surgical correction possible. Scale brings its own pathology classes to catalogue: attention collapse, entropy death, feature saturation.' },
+              { title: 'Bridging Structural to Semantic Telemetry', body: 'GlassBox reports structure — which nodes failed, when, and how. It cannot tell you what concept a failing node encoded. The disentanglement result hints at the bridge: nodes that lock during Phase 2 are the ones preserving Phase 1 shape representations. Formalising that through CAVs or Grad-CAM trajectories across the correction lifecycle is the open question I most want answered.' },
+              { title: 'Cherry — Self-Correcting Language Model', body: 'A language model trained from scratch on three-signal learning — not a fine-tune of somebody else. It would be the first LLM able to catch and repair its own training pathologies while they happen.' },
             ].map((d, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px 22px' }}>
                 <div style={{ fontSize: '14px', fontWeight: 700, color: '#c4cfde', marginBottom: '6px' }}>{d.title}</div>
@@ -596,10 +596,10 @@ export default function CVResearch() {
 
           <h4 className="section-header">One Architectural Decision. Three Results.</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            The three experimental results — autonomous structural recovery, noise robustness, emergent zero-shot generalization — are not independent findings. They are three manifestations of the same structural property. Bounding the local gradient chain generates the attribution signal. The attribution signal enables the health gate. The health gate enables both structural repair and spatial separation of competing representations.
+            Structural recovery, noise robustness, zero-shot generalisation — these are not three findings. They are one structural property showing up three times. Bounding the local gradient chain produces an attribution signal. The attribution signal makes the health gate possible. The health gate delivers both the repair and the spatial separation of competing representations.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "0" }}>
-            Continuous autonomous correction may be a sufficient condition for the emergence of modular internal structure — without explicit modularity constraints, without replay buffers. That is what makes this a foundational research direction, not a narrow engineering result.
+            Which points at something larger: continuous autonomous correction may be sufficient on its own to make modular internal structure emerge — no explicit modularity constraints, no replay buffers. If that holds, it is a research direction rather than an engineering result.
           </p>
         </div>
       </div>

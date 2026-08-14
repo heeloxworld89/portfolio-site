@@ -198,7 +198,7 @@ export default function CVWorkEthic() {
             {/* I — The Problem */}
             <p className="ps-prose">
               I did not set out to build a self-correcting neural architecture.
-              I set out to build a system where AI agents could actually operate a
+              I set out to build a system where AI agents could operate a
               company — hiring, executing, and coordinating without a human in the
               loop. That required training specialized models on real production
               data. And real production data, unlike any benchmark, is adversarial

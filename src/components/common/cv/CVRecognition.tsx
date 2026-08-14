@@ -75,13 +75,13 @@ export default function CVRecognition() {
 
       <div className="col-12">
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>
-          External Validation
+          Outside Signal
         </span>
         <h2 className="title fs-2" style={{ fontWeight: "800", color: "#fff", marginBottom: "10px" }}>
-          Recognized Before I Asked to Be
+          What Happened When I Sent It Out
         </h2>
         <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", maxWidth: "700px", marginBottom: "28px" }}>
-          Two independent signals, unprompted — from organizations that see far more applications than they can act on. Neither is a credential I'm claiming. Both are read exactly as they happened.
+          I sent the work to two places that see far more applications than they can act on. Neither outcome is a credential, and I am not presenting them as one. Both are written here as they happened — including the part I got wrong.
         </p>
 
         <div className="rec-grid">
@@ -90,11 +90,11 @@ export default function CVRecognition() {
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
             <h3 className="rec-name">Highest-Ranked Application in the Cycle</h3>
             <p className="rec-body">
-              Cosmos Institute reviewed my application for one of their AI grant rounds and rated it the
-              highest of the cycle — despite the round itself being reserved for philosophical AI work,
-              not technical research like ORMAS. Their reviewers were direct about the mismatch: this
-              round isn't the right fit, but the application stood above the pool anyway, and I've been
-              pointed toward a future technical-track round when one opens.
+              I applied to a Cosmos Institute grant round. They came back with two things at once: the
+              application ranked highest in the cycle, and it was in the wrong round — that cycle funded
+              philosophical work on AI, and ORMAS is a technical architecture. So, no grant, and a clear
+              instruction to come back when they open a technical track. I would rather have the honest
+              read than the money.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -113,24 +113,22 @@ export default function CVRecognition() {
             <div className="rec-tag">Entrepreneur First · Investment Team</div>
             <h3 className="rec-name">A 12-Hour Response, Then a Direct Line to the Investment Team</h3>
             <p className="rec-body">
-              I applied to one of Entrepreneur First's newest cohorts. The application was picked up by
-              the investment team in 12 hours — not routed through a standard screening call, but straight
-              to <strong>Nick Sopuch</strong>, an EF investor who runs their SF-based bridge program.
-              We spent the call going through ORMAS's architecture, the mathematics behind it, and the
-              enterprise thesis behind OXIDO. In that same conversation, he described the kind of builder
-              EF looks for by pointing to founders they'd backed as teenagers — including one who joined
-              at 17, built a company that raised over $100M, and then built a second that became a unicorn
-              inside EF's own portfolio. That's the bar the conversation was being measured against.
+              I applied to one of Entrepreneur First's newest cohorts. Twelve hours later the investment
+              team had pulled the application — no standard screening call, straight to{' '}
+              <strong>Nick Sopuch</strong>, an EF investor who runs their SF-based bridge program. We spent
+              the call on ORMAS: the architecture, the mathematics under it, the enterprise thesis behind
+              OXIDO. Partway through, he described the kind of person EF backs by pointing at a founder who
+              joined at 17, raised over $100M, then built a second company that became a unicorn inside EF's
+              own portfolio. That was the comparison set.
             </p>
             <p className="rec-body">
-              At one point Nick asked me directly whether I planned to finish university. I hedged — said
-              maybe I would, when the honest answer is that I want to build full-time and treat university
-              as a networking option, not the plan. In an interview about starting a company, that hedge
-              reads exactly the way it's supposed to: as ambiguity about commitment. It was a fair read on
-              their part, and it's the specific reason the call ended the way it did — not a rejection,
-              but Nick telling me straight: not this cycle, come back in six months. That's the actual
-              experience — a strong technical conversation, and one clear, ownable mistake I know exactly
-              how to fix before the next one. Next time, that answer arrives before the question finishes.
+              Then he asked whether I planned to finish university, and I hedged. I said maybe — when the
+              truth is I want to build full-time and treat university as a networking option, not the plan.
+              In an interview about committing to a company, a hedge on that question reads as exactly what
+              it was. Fair call on his part, and the reason the conversation ended where it did: not a
+              rejection, just Nick telling me plainly to come back in six months. A strong technical
+              conversation and one clean, ownable mistake. Next time the answer arrives before the question
+              finishes.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
