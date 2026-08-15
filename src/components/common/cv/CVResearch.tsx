@@ -475,6 +475,24 @@ export default function CVResearch() {
           </p>
 
           <h4 className="section-header">Theoretical Contributions</h4>
+
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '24px 28px', marginBottom: '24px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
+              Where the Mathematics Came From
+            </div>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: '0 0 14px' }}>
+              In 1989 a mathematician named Eduardo Sontag published a framework called{' '}
+              <strong style={{ color: '#c4cfde' }}>Input-to-State Stability</strong>. It was built for control systems engineering — it is part of how engineers establish that a rocket returns to a stable trajectory after being knocked off it mid-flight, rather than tumbling.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: '0 0 14px' }}>
+              I read the original paper because I had a problem with the same shape. A self-correcting network is a system being perturbed — by corrupted data, by structural damage, and then by its own corrections — and the question I could not answer was whether the correction mechanism settles or oscillates forever. That is not a machine learning question. It is a control theory question, and control theory had already answered it for a different class of system.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: 0 }}>
+              So I adapted the framework: treat each correction as a bounded input disturbance, treat the weight trajectory as the state, and characterize the conditions under which the state stays bounded.{' '}
+              <strong style={{ color: '#c4cfde' }}>That produced the first formal local stability characterization for a self-correcting neural architecture.</strong> I derived it at seventeen. It has not yet been reviewed by a control theorist, and getting it in front of one is the single highest priority I have.
+            </p>
+          </div>
+
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "20px" }}>
             <strong style={{ color: "#c4cfde" }}>Local Stability Characterization — the first for any self-correcting architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
           </p>

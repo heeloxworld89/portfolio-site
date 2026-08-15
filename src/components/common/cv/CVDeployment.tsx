@@ -127,34 +127,173 @@ export default function CVDeployment() {
           ))}
         </div>
 
-        {/* ── Three Ablation Phases ───────────────────────────────────────── */}
+        {/* ── The Falsification Ladder — seven questions ──────────────────── */}
+        <style>{`
+          .ladder-intro {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #9aa4b0;
+            max-width: 720px;
+            margin: 0 0 30px;
+          }
+          .ladder-intro strong { color: #c4cfde; font-weight: 600; }
+          .ladder { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+          .rung {
+            display: grid;
+            grid-template-columns: 54px 1fr;
+            gap: 20px;
+            background: #191b1e;
+            border: 1px solid #2a2d32;
+            border-radius: 10px;
+            padding: 24px 26px;
+            transition: border-color 0.25s;
+          }
+          .rung:hover { border-color: rgba(255,255,255,0.14); }
+          .rung-final {
+            border-color: rgba(255,74,87,0.28);
+            background: linear-gradient(135deg, rgba(255,74,87,0.05) 0%, #191b1e 62%);
+          }
+          @media (max-width: 700px) {
+            .rung { grid-template-columns: 1fr; gap: 10px; padding: 20px; }
+          }
+          .rung-num {
+            font-size: 30px;
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 1px #3a3f47;
+            line-height: 1;
+            padding-top: 2px;
+          }
+          .rung-final .rung-num { -webkit-text-stroke: 1px rgba(255,74,87,0.55); }
+          .rung-phase {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6b7683;
+            margin-bottom: 8px;
+          }
+          .rung-final .rung-phase { color: #ff4a57; }
+          .rung-q {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            margin: 0 0 10px;
+          }
+          .rung-a {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #9aa4b0;
+            margin: 0 0 12px;
+          }
+          .rung-a strong { color: #c4cfde; font-weight: 600; }
+          .rung-verdict {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #c4cfde;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 12px;
+            margin: 0;
+          }
+          .rung-final .rung-verdict { color: #ff4a57; }
+        `}</style>
+
         <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
-          Controlled Ablation Design — Injection · Removal · Re-Injection
+          The Falsification Ladder — Seven Questions, Asked in Order
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px', marginBottom: '44px' }}>
+        <p className="ladder-intro">
+          Every claim that autonomous AI can run commercial operations dies at the same objection: <em>how do you
+          know it was the AI?</em> Correlation is cheap. A store that sells while an AI runs it proves nothing on its
+          own — the market could be carrying it, the category could be growing, the timing could be lucky. So I did not
+          set out to build a business and report the revenue. <strong>I designed a twelve-month experiment to falsify
+          my own thesis, and I structured it as an escalating ladder of seven questions where each rung is a test I
+          could fail in public.</strong> Below is every question in the order it was asked, and what came back.
+        </p>
+
+        <div className="ladder">
           {[
             {
-              phase: 'Phase 1 · Aug – Oct 2025',
-              title: 'OXIMO/AX09 Deployed',
-              body: 'Cold start on a brand-new entity. No prior brand presence. Zero advertising spend. 100% customer acquisition via LLM-referred channels. Baseline commercial output established across the full 6-stage AX09 pipeline.',
+              n: '01',
+              phase: 'Phase 1 · Aug – Oct 2025 · Cold Start',
+              q: 'Can an autonomous system originate commercial demand at all — from nothing?',
+              a: 'The hardest possible starting condition: a brand-new UK entity with zero domain authority, zero brand equity, zero backlink profile, zero advertising budget, and no human in the acquisition loop. OXIMO deployed the full 6-stage AX09 pipeline and the store went live cold. Customers arrived. Every one of them came through LLM-referred channels — no paid acquisition, no outbound, no human sales effort at any point.',
+              verdict: 'Answered: yes. Demand originated where there was none.',
             },
             {
-              phase: 'Phase 2 · Nov 2025 – Feb 2026',
-              title: 'Full System Removal',
-              body: 'All AX09-generated content stripped. Store reverted to bare platform defaults. Commercial output collapsed by 91%. New customer acquisition dropped to zero. Simultaneous cross-channel collapse ruled out market conditions and seasonality as alternative explanations.',
+              n: '02',
+              phase: 'Phase 1 Baseline · Established',
+              q: 'How much can it sell, and at what unit economics?',
+              a: 'A capability claim is worthless without a cost structure behind it. The pipeline produced a complete 12-asset product suite for $0.0043 against a $50–$150 human freelancer benchmark — a 99.99% reduction, at equivalent output quality. Single-shot frontier calls to GPT-4 Turbo would have cost ~$180 for the same work. Baseline commercial output was locked and recorded across all channels as the control condition for everything that followed.',
+              verdict: 'Answered: the marginal cost of output collapses to near zero.',
             },
             {
-              phase: 'Phase 3 · Mar – Jul 2026',
-              title: 'V3 Re-Injection',
-              body: 'OXIMO V3 redeployed. Commercial output recovered by 1,300% from the ablated baseline — overshooting the Phase 1 average by 3.3×. The overshoot is attributed to accumulated institutional memory advantage in the OXIMO knowledge graph.',
+              n: '03',
+              phase: 'Phase 2 · Nov 2025 – Feb 2026 · The Lesion',
+              q: 'Strip the AI out and revert to generic. Was it ever the AI, or was it the market?',
+              a: 'This is the rung the entire study exists for. Every AX09-generated asset was removed and the store was reverted to bare platform defaults — the same products, the same prices, the same supplier, the same category, the same seasonality. The only variable withdrawn was the architecture. Commercial output fell 91%. Conversion fell 77%. Order volume fell 72%, and what remained traced entirely to sessions that predated the removal.',
+              verdict: 'Answered: the architecture was the causal variable, not the market.',
             },
-          ].map((p, i) => (
-            <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px' }}>
-              <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '6px' }}>{p.phase}</div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#c4cfde', marginBottom: '8px' }}>{p.title}</div>
-              <div style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0' }}>{p.body}</div>
+            {
+              n: '04',
+              phase: 'Phase 2 · Dead Zone',
+              q: 'What does total system death actually look like?',
+              a: 'Not decay — cessation. New customer acquisition went to zero and stayed there. The collapse landed across every channel simultaneously rather than tapering channel by channel, which is the specific signature that rules out seasonality, category softness, and macro conditions: no market downturn removes every acquisition channel on the same day. The store stayed live and stayed dead for four months.',
+              verdict: 'Answered: −100% acquisition. Simultaneous, not gradual.',
+            },
+            {
+              n: '05',
+              phase: 'Phase 3 · Mar – Jul 2026 · Re-Injection',
+              q: 'Is the collapse reversible, or did removal destroy something unrecoverable?',
+              a: 'A one-directional result is only half a proof. If the system caused the output, restoring it should restore the output — and if it does not, the causal claim fails in the other direction. OXIMO V3 was redeployed into the same dead entity, with no other change to product, pricing, supplier, or platform.',
+              verdict: 'Answered: yes. The dead zone was a lesion, not a wound.',
+            },
+            {
+              n: '06',
+              phase: 'Phase 3 · Recovery Ablation',
+              q: 'Does it return to baseline — or past it?',
+              a: 'It overshot. Commercial output recovered 1,300% from the ablated floor, exceeding the Phase 1 average by 3.3×. Sessions rebuilt 1,422%, order volume 340%, conversion 214%. The overshoot is the most interesting result in the study and it is not noise: the OXIMO knowledge graph retained everything learned in Phase 1, so V3 restarted with twelve months of accumulated institutional memory instead of starting cold. The system came back knowing things it did not know the first time.',
+              verdict: 'Answered: recovery compounds. Institutional memory is an asset that survives.',
+            },
+            {
+              n: '07',
+              phase: 'Phase 4 · 13 Aug 2026 · High-Value Test',
+              q: 'Everything so far is commodity volume. Can it close a high-value transaction — or does trust break at the price point?',
+              a: 'The obvious residual objection: low-consideration purchases are easy, and none of the above proves an autonomous system can carry a buyer through a decision with real money attached. So the final phase listed high-value inventory and let the architecture handle the entire funnel unassisted — discovery, positioning, objection handling, close. It closed a $4,386 order at $0.00 customer acquisition cost, with zero human involvement at any stage of the transaction.',
+              verdict: 'Answered: the ceiling is not commodity. It closes high-value.',
+            },
+          ].map((r, i) => (
+            <div key={i} className={`rung${r.n === '07' ? ' rung-final' : ''}`}>
+              <div className="rung-num">{r.n}</div>
+              <div>
+                <div className="rung-phase">{r.phase}</div>
+                <p className="rung-q">{r.q}</p>
+                <p className="rung-a">{r.a}</p>
+                <p className="rung-verdict">{r.verdict}</p>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '22px 26px', marginBottom: '44px' }}>
+          <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '10px' }}>
+            What Seven Rungs Buy You That Revenue Never Could
+          </p>
+          <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: '0 0 12px' }}>
+            Run only Phase 1 and you have a store that sells — indistinguishable from luck. Add Phase 2 and you have
+            causation. Add Phase 3 and you have reversibility, which rules out the possibility that the collapse was
+            coincidental damage. Add Phase 4 and you have ceiling. <strong>Each rung closes an escape route a
+            sceptic would otherwise take, and they only work in sequence.</strong>
+          </p>
+          <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: 0 }}>
+            What this does not establish is scale, and I will not pretend otherwise: this is n=1, one substrate, one
+            operator, held deliberately at research grade. What it does establish is the thing scale cannot —
+            <strong> that the architecture is the origin of the output, that removing it stops the output, that
+            restoring it compounds the output, and that the mechanism survives contact with a real transaction at a
+            real price.</strong> Those four claims are load-bearing. Revenue is not.
+          </p>
         </div>
 
         {/* ── Test Substrates (not "business verticals") ──────────────────── */}

@@ -88,8 +88,6 @@ export default function CVEducation() {
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
-          <span style={{ color: "#9aa4b0", margin: "0 10px" }}>|</span>
-          <span style={{ color: "#9aa4b0", fontWeight: "500", fontSize: "15px" }}>Prospective Undergraduate, Fall 2027</span>
         </div>
         
         <div className="content">

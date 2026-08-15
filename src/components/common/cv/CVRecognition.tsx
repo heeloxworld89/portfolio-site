@@ -165,24 +165,6 @@ export default function CVRecognition() {
           I sent the work to two places that see far more applications than they can act on. Neither outcome is a credential, and I am not presenting them as one. Both are written here as they happened — including the part I got wrong.
         </p>
 
-        <div className="rec-verdict">
-          <p className="rec-verdict-lead">
-            Cosmos and Entrepreneur First both evaluated this work at close range, and neither discounted it for Dhaka.
-          </p>
-          <p className="rec-verdict-body">
-            Cosmos ranked it top of cycle. EF routed it to a sponsor-level investor within twelve hours. Both are
-            environments where PhDs, not eighteen-year-olds without one, are the default. That is good evidence for
-            exactly one claim: <strong>when the work is actually read, it holds — and expert evaluators do not discount
-            it for where it came from.</strong>
-          </p>
-          <p className="rec-verdict-body">
-            It is worth being precise about what it does not establish. Cosmos is a remote grant and EF admits
-            internationally by design, relocating people as its core model — so neither result says anything about
-            selection filters that are geographically constrained, and neither is an acceptance. I have not been
-            accepted anywhere. What I have is two independent close reads that came back positive on the substance.
-          </p>
-        </div>
-
         <div className="rec-grid">
           {/* Cosmos Institute */}
           <div className="rec-card">
@@ -247,56 +229,23 @@ export default function CVRecognition() {
           </div>
         </div>
 
-        {/* ── Where the proof came from ─────────────────────────────── */}
-        <div className="rec-origin">
-          <div className="rec-origin-tag">Where the Mathematics Came From</div>
-          <p className="rec-origin-body">
-            In 1989 a mathematician named Eduardo Sontag published a framework called{' '}
-            <strong>Input-to-State Stability</strong>. It was built for control systems engineering — it is part of
-            how engineers establish that a rocket returns to a stable trajectory after being knocked off it
-            mid-flight, rather than tumbling.
+        {/* ── What the two reads add up to ───────────────────────────── */}
+        <div className="rec-verdict">
+          <p className="rec-verdict-lead">
+            Two independent close reads, and neither discounted the work for coming out of Dhaka.
           </p>
-          <p className="rec-origin-body">
-            I read the original paper because I had a problem with the same shape. A self-correcting network is a
-            system being perturbed — by corrupted data, by structural damage, and then by its own corrections — and
-            the question I could not answer was whether the correction mechanism settles or oscillates forever. That
-            is not a machine learning question. It is a control theory question, and control theory had already
-            answered it for a different class of system.
+          <p className="rec-verdict-body">
+            Both are environments where a PhD is the default and an eighteen-year-old without one is not. Taken
+            together they support exactly one claim, and it is a narrow one: <strong>when the work is actually read
+            by people qualified to judge it, it holds.</strong>
           </p>
-          <p className="rec-origin-body">
-            So I adapted the framework: treat each correction as a bounded input disturbance, treat the weight
-            trajectory as the state, and characterize the conditions under which the state stays bounded.{' '}
-            <strong>That produced the first formal local stability characterization for a self-correcting neural
-            architecture.</strong> I derived it at seventeen. It has not yet been reviewed by a control theorist, and
-            getting it in front of one is the single highest priority I have.
+          <p className="rec-verdict-body">
+            What they do not establish is equally worth stating. Cosmos is a remote grant and EF admits
+            internationally by design, so neither result says anything about selection filters that are
+            geographically constrained. Neither is an acceptance. No funding, no offer, no advisor. What I have is
+            two organizations that looked closely and came back positive on the substance — and one mistake in the
+            second conversation that was entirely mine.
           </p>
-        </div>
-
-        {/* ── Prepared answers ──────────────────────────────────────── */}
-        <div className="rec-qa">
-          <div className="rec-qa-header">Two questions I get asked, answered straight</div>
-
-          <div className="rec-qa-item">
-            <p className="rec-qa-q">Why is the deployment so small? Why not scale it?</p>
-            <p className="rec-qa-a">
-              The ceiling on that study is legal, not technical: no jurisdiction currently assigns commercial
-              liability to an autonomous agent, so scaling past research grade would mean operating in a gap I cannot
-              indemnify. <strong>I would rather hold a clean experiment at research scale than find that boundary
-              from the wrong side of it.</strong>
-            </p>
-          </div>
-
-          <div className="rec-qa-item">
-            <p className="rec-qa-q">Who else has looked at this?</p>
-            <p className="rec-qa-a">
-              Two organizations, both at close range. Cosmos Institute ranked the application highest in its cycle
-              and told me plainly it was in the wrong round — that cycle funded philosophical work, and this is a
-              technical architecture. Entrepreneur First pulled it inside twelve hours and put me in front of an
-              investor rather than a screener; that conversation ended on a question about university where I hedged,
-              which was a fair thing for them to weigh, and I was told to come back in six months. No acceptances, no
-              funding, no advisor. <strong>Two close reads that held on substance, and one mistake that was mine.</strong>
-            </p>
-          </div>
         </div>
       </div>
       <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>

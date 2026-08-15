@@ -112,17 +112,21 @@ export default function Hero(_props?: any) {
                       <div style={{ color: '#9aa4b0', fontSize: '13px', marginTop: '6px' }}>2025 → Now</div>
                     </div>
                     <div>
+                      <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 10px 0' }}>
+                        This Is Not a Business. It Is a Controlled Experiment.
+                      </p>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
-                        Causal Proof in Production. Now Scaling to Foundation Models.
+                        I Registered a Company to Try to Disprove My Own Architecture.
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
-                        A 12-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The study culminated in a <strong style={{color: '#c4cfde'}}>$4,386 autonomous order on 13 Aug 2026 at $0.00 CAC</strong> — proving the architecture closes high-value transactions, not just commodity ones. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
+                        Twelve months, one live UK-registered entity, seven escalating tests designed so I could fail each one in public. Deploy it cold and demand appears. Strip it out and revert to generic: <strong style={{color: '#c4cfde'}}>−91% output, −100% new customers</strong>, collapsing across every channel on the same day — which is the one pattern no market downturn produces. Put it back and output recovers <strong style={{color: '#c4cfde'}}>+1,300%</strong>, overshooting the original baseline 3.3× on accumulated memory alone. Then the last test: can it close something expensive? It closed a <strong style={{color: '#c4cfde'}}>$4,386 order at $0.00 acquisition cost</strong>, no human anywhere in the transaction.
                       </p>
                       <p style={{ color: '#9aa4b0', fontSize: '15px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
-                        The scale stops there because I stopped it. No jurisdiction currently assigns commercial liability to an autonomous agent, so the study was held at research grade rather than run a live company at the edge of that question. The ceiling was regulatory. It was never the architecture.
+                        The scale stops there because I stopped it. No jurisdiction currently assigns commercial liability to an autonomous agent, so I held the study at research grade rather than run a live company at the edge of that question. The ceiling was regulatory. It was never the architecture.{' '}
+                        <a href="#deployment" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>All seven tests, in order →</a>
                       </p>
-                      <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
-                        This Is Not a Business. It Is a Controlled Experiment.
+                      <p style={{ color: '#9aa4b0', fontSize: '15px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '14px' }}>
+                        <strong style={{color: '#c4cfde'}}>What I am building next:</strong> porting per-node structural health monitoring onto attention heads (ORMAS-T), then training Cherry — a self-correcting language model from scratch.
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                         <a
