@@ -325,7 +325,7 @@ export default function CVJourney() {
                 { from: 'Cannot distribute at scale', to: 'OXIMO: agents that self-hire specialists' },
                 { from: 'Agents break at closing', to: 'OXIMO: memory-persistent Expert agents' },
                 { from: 'Production data is adversarial', to: 'ORMAS: health-gated self-correction' },
-                { from: 'No structural stability proof', to: 'ISS convergence theorem' },
+                { from: 'No structural stability guarantee', to: 'ISS local stability characterization' },
               ].map((r, i) => (
                 <div key={i} className="origin-finding-row">
                   <div className="origin-finding-dot" />

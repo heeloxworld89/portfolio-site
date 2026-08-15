@@ -99,7 +99,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">ML Researchers &amp; Reviewers</div>
             <p className="ask-body">
-              The preprint is on Zenodo and the codebase reproduces every experiment in under an hour on one GPU. The place scrutiny would help most is the ISS convergence proof. If you find an error in it, or a tighter bound, I would genuinely rather hear it from you than find out later.
+              The preprint is on Zenodo and the codebase reproduces every experiment in under an hour on one GPU. The place scrutiny would help most is the ISS local stability characterization. If you find an error in it, or a tighter bound, I would genuinely rather hear it from you than find out later.
             </p>
             <a className="ask-action" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
               Read the Preprint ↗

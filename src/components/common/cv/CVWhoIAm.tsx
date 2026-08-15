@@ -3,9 +3,9 @@ export default function CVWhoIAm() {
     {
       tag: 'Research · AAAI 2027',
       name: 'ORMAS',
-      claim: 'The first self-correcting neural architecture carrying a formal local-stability proof. Global convergence is still open — the preprint says so on its own first page.',
+      claim: 'The first self-correcting neural architecture carrying a formal local stability characterization. Global convergence is still open — the preprint says so on its own first page.',
       body: 'I killed all three convolutional layers at epoch 100, on a fully converged network, mid-training. Every standard baseline flatlined at 10% — chance — and stayed dead across all three seeds, with zero variance. ORMAS diagnosed its own damage, executed 85 targeted corrections, and climbed back to 80.3%. Same parameter budget, same compute, same data. A 70.3-point gap in a scenario where the standard architecture has no recourse at all.',
-      stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['✓', 'Convergence Proof']],
+      stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['✓', 'Stability Characterized']],
     },
     {
       tag: 'Engineering · Production',
@@ -15,11 +15,11 @@ export default function CVWhoIAm() {
       stats: [['40,933', 'Lines of Code'], ['2,011', 'Tests · 0 Fails'], ['11', 'Mini-Repos'], ['72%', 'Reduction']],
     },
     {
-      tag: 'Architecture Validation · 11-Month Controlled Ablation Study',
+      tag: 'Architecture Validation · 12-Month Controlled Ablation Study',
       name: 'Black Bloxie LTD',
-      claim: 'A company registered at UK Companies House that exists to be an experiment. Every operational role inside it is held by an AI agent.',
-      body: 'A benchmark cannot tell you whether a system survives contact with real customers, real suppliers, and real regulators. So I built somewhere it could fail in public, and ran a lesion study on my own company: deploy, measure, remove, measure, re-inject, measure. Removal collapsed commercial output 91% — simultaneously across every channel, which is precisely what rules out the market as the explanation. Re-injection recovered 1,300%. That is a causal claim rather than a correlation, and the full record is published.',
-      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['11 mo.', 'Study Duration'], ['0', 'Advertising Spend']],
+      claim: 'A company registered at UK Companies House that exists to be an experiment. Every operational role inside it is held by an AI agent. The output ceiling is one I set, not one the architecture hit.',
+      body: 'A benchmark cannot tell you whether a system survives contact with real customers, real suppliers, and real regulators. So I built somewhere it could fail in public, and ran a lesion study on my own company: deploy, measure, remove, measure, re-inject, measure. Removal collapsed commercial output 91% — simultaneously across every channel, which is precisely what rules out the market as the explanation. Re-injection recovered 1,300%. A Phase 4 event then closed a $4,386 order autonomously at $0.00 acquisition cost, which settles the question of whether this only works on commodity volume. Everything above that line was left on the table on purpose: no legal framework yet assigns commercial liability to an autonomous agent, so I held the study at research grade rather than find out where the boundary is with a live company.',
+      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['$4,386', 'Largest Auto Order'], ['12 mo.', 'Study Duration']],
     },
   ];
 
@@ -163,11 +163,15 @@ export default function CVWhoIAm() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Who I Am</span>
         <h2 className="title fs-1" style={{ fontWeight: "800", color: "#fff", marginBottom: "6px" }}>Rokib Al Dhin Raadh</h2>
-        <p style={{ fontSize: "17px", color: "#9aa4b0", marginBottom: "10px" }}>
-          18 · Dhaka, Bangladesh · Independent AI Researcher & Founder
+        <p style={{ fontSize: "19px", fontWeight: 600, color: "#c4cfde", marginBottom: "10px", lineHeight: 1.6 }}>
+          <strong style={{ fontWeight: 800, color: "#fff" }}>18 years old</strong>
+          <span style={{ color: "#6b7683", margin: "0 9px" }}>·</span>
+          Dhaka, Bangladesh
+          <span style={{ color: "#6b7683", margin: "0 9px" }}>·</span>
+          Independent AI Researcher &amp; Founder
         </p>
         <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "32px", maxWidth: "700px" }}>
-          Neural networks fail silently. I built one that reports its own damage, repairs itself mid-training, and carries a proof that the repair converges.
+          Neural networks fail silently. I built one that reports its own damage, repairs itself mid-training, and carries a formal characterization of when that repair stays stable.
         </p>
 
         {/* ── Audience Router ─────────────────────────────────────── */}
@@ -176,7 +180,7 @@ export default function CVWhoIAm() {
           {[
             {
               audience: 'ML Researcher / Reviewer',
-              desc: 'The proof, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.',
+              desc: 'The stability result, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.',
               href: '#research',
               label: 'Research →',
             },

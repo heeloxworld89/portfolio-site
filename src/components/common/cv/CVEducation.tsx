@@ -100,7 +100,7 @@ export default function CVEducation() {
           <div className="edu-grid">
             <div className="edu-card">
               <h5 className="edu-title">Physics of Complex Systems</h5>
-              <p className="edu-desc">The ORMAS convergence proof rests on stability theory, and I could not write it while treating the mathematics as symbols on a page. I needed the physical intuition for why a perturbed system settles — or does not.</p>
+              <p className="edu-desc">The ORMAS stability characterization rests on control theory, and I could not write it while treating the mathematics as symbols on a page. I needed the physical intuition for why a perturbed system settles — or does not.</p>
             </div>
 
             <div className="edu-card">
@@ -161,7 +161,7 @@ export default function CVEducation() {
               I chose research over grades — deliberately.
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', margin: 0 }}>
-              Stability theory for the convergence proof took priority over exam preparation, and OXIMO development took the class time. I knew what I was trading and I made the trade on purpose. The result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of production code, and a published preprint — and that is the evidence I would rather be judged on.
+              Stability theory for the ISS characterization took priority over exam preparation, and OXIMO development took the class time. I knew what I was trading and I made the trade on purpose. The result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of production code, and a published preprint — and that is the evidence I would rather be judged on.
             </p>
           </div>
 

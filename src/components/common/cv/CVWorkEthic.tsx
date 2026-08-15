@@ -239,10 +239,9 @@ export default function CVWorkEthic() {
               Building this required going significantly below the level of
               standard ML engineering. Custom training loops. Custom telemetry
               that emits 23,000+ diagnostic signals per run, with every correction
-              causally tagged to its pathology, node, and epoch. I derived and
-              proved an{' '}
-              <strong>Input-to-State Stability (ISS) convergence guarantee</strong>{' '}
-              — the first formal stability proof for any self-correcting neural
+              causally tagged to its pathology, node, and epoch. I derived an{' '}
+              <strong>Input-to-State Stability (ISS) local stability characterization</strong>{' '}
+              — the first formal stability result for any self-correcting neural
               architecture — and validated it empirically across 383 controlled
               experiments on four architectures, from 637K to 11M parameters, on
               a single RTX 3090.
@@ -266,13 +265,22 @@ export default function CVWorkEthic() {
               originally motivated this research, is the empirical proof that the
               architecture works outside a controlled setting. I deployed it
               inside <strong>Black Bloxie LTD</strong>, a UK holding company I
-              registered at seventeen, as a structured 11-month ablation study.
+              registered at seventeen, as a structured 12-month ablation study.
               Deploy, measure, remove, measure, re-inject, measure. Commercial
               output collapsed 91% on removal — simultaneously across all channels,
               ruling out market conditions as a variable. It recovered 1,300% on
-              re-injection. Every customer acquisition was driven entirely by LLM
+              re-injection, and later closed a $4,386 order autonomously at $0.00
+              acquisition cost. Every customer acquisition was driven entirely by LLM
               referral traffic — no ad spend, no human sales effort. The mechanism
               was confirmed causally, not merely correlated.
+            </p>
+            <p className="ps-prose">
+              I stopped it there deliberately. The architecture was not the limit;
+              the law was. No jurisdiction currently assigns commercial liability to
+              an autonomous agent, and I was not willing to discover where that
+              boundary sits by running a live company through it. Holding the study
+              at research grade cost me the bigger number and bought me a clean
+              result, which was the correct trade for what I was trying to prove.
             </p>
 
             <hr className="ps-divider" />
@@ -306,7 +314,7 @@ export default function CVWorkEthic() {
             <p className="ps-prose" style={{ color: '#c4cfde', fontWeight: 600 }}>
               The infrastructure for the next phase of this research —
               Transformer-scale validation, Project Cherry, formal peer review
-              of the ISS proof — requires exactly the kind of institutional
+              of the ISS result — requires exactly the kind of institutional
               environment I have been building without. That is the direct and
               honest reason I am pursuing fellowships and research positions.
               Not for validation. For leverage.
@@ -335,17 +343,19 @@ export default function CVWorkEthic() {
             <div className="ps-stat-tile">
               <div className="ps-stat-val">−91% / +1,300%</div>
               <div className="ps-stat-lbl">Ablation Signal · Black Bloxie</div>
-              <div className="ps-stat-sub">On OXIMO removal / on re-injection. 11-month study. Causal, not correlational.</div>
+              <div className="ps-stat-sub">On OXIMO removal / on re-injection. 12-month study. Causal, not correlational.</div>
             </div>
 
             <div className="ps-evidence-block">
               <div className="ps-evidence-header">Study Parameters</div>
               {[
-                ['Duration', '11 months'],
+                ['Duration', '12 months'],
                 ['Architecture', 'ORMAS + OXIMO'],
                 ['Substrate', 'E-commerce (Substrate 1)'],
                 ['Ad Spend', '£0'],
                 ['Human Sales Hrs', '0'],
+                ['Largest Auto Order', '$4,386'],
+                ['Scale Ceiling', 'Self-imposed'],
                 ['Protocol', 'Inject → Remove → Re-inject'],
               ].map(([k, v]) => (
                 <div key={k} className="ps-evidence-row">

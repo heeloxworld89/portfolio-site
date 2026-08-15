@@ -50,6 +50,34 @@ export default function Hero(_props?: any) {
                   Neural networks fail opaquely.<br />
                   <span style={{ color: '#c4cfde' }}>I built an architecture that changes that.</span>
                 </h1>
+
+                {/* Age line — large, on-system */}
+                <p className="hero-age">
+                  <span className="hero-age-num">18</span>years old. No university, no advisor,
+                  no lab, no funding.
+                </p>
+                <style>{`
+                  .hero-age {
+                    max-width: 620px;
+                    margin: 0 0 28px;
+                    padding: 22px 0;
+                    border-top: 1px solid rgba(255,255,255,0.08);
+                    border-bottom: 1px solid rgba(255,255,255,0.08);
+                    font-size: clamp(16px, 1.7vw, 20px);
+                    font-weight: 500;
+                    color: #c4cfde;
+                    line-height: 1.75;
+                  }
+                  .hero-age-num {
+                    font-size: clamp(38px, 4.6vw, 52px);
+                    font-weight: 800;
+                    color: #fff;
+                    letter-spacing: -1.5px;
+                    line-height: 1;
+                    margin-right: 10px;
+                  }
+                `}</style>
+
                 <p style={{ fontSize: '18px', color: '#9aa4b0', maxWidth: '620px', margin: 0, lineHeight: '1.7' }}>
                   ORMAS · OXIMO · OXIDO. Three systems. One research program. The work is documented, reproducible, and running in production.
                 </p>
@@ -69,7 +97,7 @@ export default function Hero(_props?: any) {
                         <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First local-stability convergence proof for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
+                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First formal local stability characterization for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
                         <a href="#research" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Full technical details →</a>
                       </p>
                     </div>
@@ -89,6 +117,9 @@ export default function Hero(_props?: any) {
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
                         A 12-month injection-removal-reinjection study on a live UK-registered company isolated OXIDO as the causal variable: <strong style={{color: '#c4cfde'}}>−91% on removal, +1,300% on re-injection</strong> — simultaneously across all channels, ruling out market conditions. The study culminated in a <strong style={{color: '#c4cfde'}}>$4,386 autonomous order on 13 Aug 2026 at $0.00 CAC</strong> — proving the architecture closes high-value transactions, not just commodity ones. The mechanism is confirmed. The active trajectory: porting per-node structural health monitoring to attention heads (ORMAS-T) and training Cherry, a fully self-correcting language model from scratch.
+                      </p>
+                      <p style={{ color: '#9aa4b0', fontSize: '15px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
+                        The scale stops there because I stopped it. No jurisdiction currently assigns commercial liability to an autonomous agent, so the study was held at research grade rather than run a live company at the edge of that question. The ceiling was regulatory. It was never the architecture.
                       </p>
                       <p style={{ color: '#ff4a57', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
                         This Is Not a Business. It Is a Controlled Experiment.

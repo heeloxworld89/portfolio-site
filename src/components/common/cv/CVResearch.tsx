@@ -117,7 +117,7 @@ export default function CVResearch() {
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
         <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: '20px' }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines · 61 files</strong><br />
-          383 controlled experiments. One RTX 3090. Four architectures. The first local-stability convergence proof for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
+          383 controlled experiments. One RTX 3090. Four architectures. The first formal local stability characterization for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
         </p>
 
         {/* Action Link Bar */}
@@ -213,7 +213,7 @@ export default function CVResearch() {
             I was building <strong style={{ color: '#c4cfde' }}>OXIMO</strong> — a multi-agent OS for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>codebase ↗</a> — the architecture is all there; production code, not polished) — and I hit the one problem I could not engineer around. The agents had to learn from real production data: corrupted labels, adversarial inputs, signals that contradicted each other. Every noise-robust framework I tested turned out to be an external filter bolted onto a network that was still completely blind to its own internal state.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "50px" }}>
-            What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a proof that the repair would not introduce a new instability. Nothing like that existed. ORMAS is what that requirement turned into.
+            What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a formal account of the conditions under which that repair stays stable. Nothing like that existed. ORMAS is what that requirement turned into.
           </p>
 
           <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "#c4cfde" }}>The Three-Signal Architecture</h4>
@@ -476,7 +476,7 @@ export default function CVResearch() {
 
           <h4 className="section-header">Theoretical Contributions</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "20px" }}>
-            <strong style={{ color: "#c4cfde" }}>Local Stability Proof — the first for any self-correcting architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
+            <strong style={{ color: "#c4cfde" }}>Local Stability Characterization — the first for any self-correcting architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
           </p>
           <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />
 

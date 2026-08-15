@@ -5,7 +5,7 @@ const pillars = [
     tag: 'Layer 01 · The Immune System',
     name: 'ORMAS',
     tagline: 'Self-correcting neural architecture',
-    desc: 'Finds structural failures mid-training and repairs them without stopping and without a human. 383 controlled experiments across 4 architectures, a +70.3pp recovery gap over compute-matched baselines, and the first local-stability proof for any self-correcting architecture. Global convergence is still open.',
+    desc: 'Finds structural failures mid-training and repairs them without stopping and without a human. 383 controlled experiments across 4 architectures, a +70.3pp recovery gap over compute-matched baselines, and the first formal local stability characterization for any self-correcting architecture. Global convergence is still open.',
     status: 'Submitted to AAAI 2027 · Zenodo Preprint',
   },
   {
@@ -19,7 +19,7 @@ const pillars = [
     tag: 'Layer 03 · The Validation Layer',
     name: 'Black Bloxie LTD',
     tagline: 'Controlled test environment for the OXIDO architecture',
-    desc: 'An 11-month lesion study on a live UK-registered company. Pull OXIMO out and commercial output drops 91% across every channel at once — which is exactly what rules out the market as the cause. Put V3 back and it recovers 1,300%. Substrate 1 (e-commerce) is closed; legal, software, and medical are waiting on their own ablation cycles.',
+    desc: 'A 12-month lesion study on a live UK-registered company. Pull OXIMO out and commercial output drops 91% across every channel at once — which is exactly what rules out the market as the cause. Put V3 back and it recovers 1,300%, then watch it close a $4,386 order autonomously at $0.00 acquisition cost. The scale ceiling above that is mine, not the architecture: no legal framework yet assigns commercial liability to an autonomous agent. Substrate 1 (e-commerce) is closed; legal, software, and medical are waiting on their own ablation cycles.',
     status: 'Ablation Complete · Substrates 2–4 Active',
   },
 ];
@@ -62,7 +62,7 @@ const competitors = [
 
 const customers = [
   { sector: 'Hedge Funds / Quant Trading', problem: 'Signal data is adversarial by nature, and models drift quietly the moment the regime turns.', why: 'Every regime shift erases retained history, and nothing in the stack detects it happening.' },
-  { sector: 'Insurance Companies', problem: 'Actuarial models decay as the underlying risk profile moves under them.', why: 'Continuous drift with no detection layer, on architectures that carry no stability proof.' },
+  { sector: 'Insurance Companies', problem: 'Actuarial models decay as the underlying risk profile moves under them.', why: 'Continuous drift with no detection layer, on architectures that carry no formal stability analysis at all.' },
   { sector: 'Medical Research', problem: 'Clinical data is personal, noisy, and legally radioactive.', why: 'The FDA now rejects black-box models on architecture alone, however accurate they are. GlassBox is built for exactly that bar.' },
   { sector: 'Fintech / Credit Scoring', problem: 'Fraud patterns move constantly, and the model has to learn the new ones without losing the old.', why: 'Catastrophic forgetting in a domain where forgetting costs money and compliance at the same time.' },
   { sector: 'Data-Rich Private Corps', problem: 'Large organizations that want operations running autonomously on their own data.', why: 'Nothing on the market can put agents on proprietary internal data and keep it safe.' },

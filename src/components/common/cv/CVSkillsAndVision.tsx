@@ -18,7 +18,7 @@ export default function CVSkillsAndVision() {
     { value: '383',     label: 'Controlled Experiments' },
     { value: '+70.3pp', label: 'ORMAS Recovery Gap' },
     { value: '99%',     label: 'API Cost Reduction' },
-    { value: '1',       label: 'Formal Convergence Proof' },
+    { value: '1',       label: 'Local Stability Characterization' },
   ];
 
   const detailGroups = [
@@ -49,9 +49,11 @@ export default function CVSkillsAndVision() {
     {
       title: 'Black Bloxie LTD',
       rows: [
-        { label: 'Study Duration',       value: '11 months · Substrate 1 complete' },
+        { label: 'Study Duration',       value: '12 months · Substrate 1 complete' },
         { label: 'Ablation Signal',      value: '−91% on removal · +1,300% on re-injection' },
+        { label: 'Largest Autonomous Order', value: '$4,386 · $0.00 acquisition cost' },
         { label: 'Infrastructure Cost',  value: '99% reduction via specialized agent cascade' },
+        { label: 'Scale Ceiling',        value: 'Self-imposed — regulatory, not architectural' },
       ],
     },
   ];
@@ -288,7 +290,7 @@ export default function CVSkillsAndVision() {
                 </tr>
                 <tr>
                   <td>Formal Verification &amp; Peer Review</td>
-                  <td>Put the Input-to-State Stability proofs in front of applied mathematicians and control theorists who will try to break them, before open submission rather than after.</td>
+                  <td>Put the Input-to-State Stability characterization in front of applied mathematicians and control theorists who will try to break it, before open submission rather than after.</td>
                 </tr>
               </tbody>
             </table>

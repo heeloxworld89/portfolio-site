@@ -36,7 +36,7 @@ export default function CVDeployment() {
         </span>
         <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>I Ran a Lesion Study on My Own Company</h2>
         <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '18px' }}>
-          OXIDO Architecture · Validated on Live Production Environment · 11 Months
+          OXIDO Architecture · Validated on Live Production Environment · 12 Months
         </p>
 
         {/* ── Critical Framing Block ─────────────────────────────────────── */}
@@ -45,7 +45,10 @@ export default function CVDeployment() {
             This Is Not a Business. It Is a Controlled Experiment.
           </p>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-            Black Bloxie LTD is registered at UK Companies House and exists to be a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. A benchmark cannot tell you whether a system survives real customers, real suppliers, and real regulators, so I built somewhere it could fail in public and measured what happened. E-commerce came first because it has the fastest feedback loop and the least ambiguous failure signal. The commercial scale is capped deliberately, by regulatory boundaries rather than technical ones.
+            Black Bloxie LTD is registered at UK Companies House and exists to be a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. A benchmark cannot tell you whether a system survives real customers, real suppliers, and real regulators, so I built somewhere it could fail in public and measured what happened. E-commerce came first because it has the fastest feedback loop and the least ambiguous failure signal.
+          </p>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: '12px 0 0' }}>
+            <strong style={{ color: '#c4cfde' }}>Read the numbers below with that in mind.</strong> They are small because I capped them. The unit economics say what the ceiling could have been — $0.0043 to produce a complete product suite against a $50–$150 human benchmark, and a $4,386 order closed autonomously at zero acquisition cost. What stopped the study from scaling was not cost, not demand, and not the architecture. It was that no jurisdiction currently assigns commercial liability to an autonomous agent, and I would rather hold a clean experiment at research grade than find that boundary from the wrong side of it.
           </p>
         </div>
 
@@ -192,7 +195,7 @@ export default function CVDeployment() {
                 Why the Scale Is Deliberately Constrained
               </p>
               <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-                The OXIDO architecture operates under a research-grade ablation ceiling. The study is designed to isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role provisioning — which are validated by 2,069 passing tests but are not deployed at scale because no legal framework currently assigns commercial liability to autonomous AI agents. The constraint is jurisdictional, not architectural. ORMAS's ISS convergence proof and GlassBox causal audit trail are the architectural response to that regulatory gap.
+                The OXIDO architecture operates under a research-grade ablation ceiling. The study is designed to isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role provisioning — which are validated by 2,069 passing tests but are not deployed at scale because no legal framework currently assigns commercial liability to autonomous AI agents. The constraint is jurisdictional, not architectural. ORMAS's ISS local stability characterization and GlassBox causal audit trail are the architectural response to that regulatory gap.
               </p>
             </div>
             <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '20px 24px' }}>
@@ -364,7 +367,8 @@ export default function CVDeployment() {
                 <tr><td style={tdFirst}>Ablation Signal (Re-Injection)</td><td style={tdValue}>+1,300% recovery · 3.3× peak overshoot</td></tr>
                 <tr><td style={tdFirst}>Largest Autonomous Order</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
                 <tr><td style={tdFirst}>Cumulative Verified Revenue</td><td style={tdValue}>$6,691.68 USD · 79+ orders</td></tr>
-                <tr><td style={tdFirst}>Customers Reached (10 countries)</td><td style={tdValue}>396</td></tr>
+                <tr><td style={tdFirst}>Paying Customers (10 countries)</td><td style={tdValue}>396</td></tr>
+                <tr><td style={tdFirst}>Total Engaged Leads</td><td style={tdValue}>500+</td></tr>
                 <tr><td style={tdFirst}>Advertising Expenditure</td><td style={tdValue}>$0.00</td></tr>
                 <tr><td style={tdFirst}>Human Marketing Hours</td><td style={tdValue}>0</td></tr>
                 <tr><td style={{ ...tdFirst, borderBottom: 'none' }}>Scale Constraint</td><td style={{ ...tdValue, borderBottom: 'none' }}>Research boundary — regulatory, not technical</td></tr>
