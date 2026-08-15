@@ -51,15 +51,6 @@ const roadmap = [
   },
 ];
 
-const competitors = [
-  { name: 'Palantir', gap: 'Deep institutional access, but no self-correcting architecture underneath it. No answer to catastrophic forgetting, and no formal stability guarantee.' },
-  { name: 'Snowflake', gap: 'Moves and stores the data. Does nothing at the training layer, and produces no compliance-grade record of how a model reached a decision.' },
-  { name: 'Databricks', gap: 'Built on open-source Spark. Nothing operating at the per-node level, and no equivalent to GlassBox telemetry.' },
-  { name: 'Scale AI', gap: 'The entire model depends on humans labelling the data. Institutional data that is noisy and unlabelled by nature is the one case it cannot serve.' },
-  { name: 'Medical AI cos.', gap: 'Being turned down by the FDA on opacity regardless of how accurate the model is. Accuracy was never the blocker — architecture is, and none of them have an architectural answer.' },
-  { name: 'Quant fund ML', gap: 'Every regime change costs them retained history. No formal guarantee that retraining converges anywhere stable.' },
-];
-
 const customers = [
   { sector: 'Hedge Funds / Quant Trading', problem: 'Signal data is adversarial by nature, and models drift quietly the moment the regime turns.', why: 'Every regime shift erases retained history, and nothing in the stack detects it happening.' },
   { sector: 'Insurance Companies', problem: 'Actuarial models decay as the underlying risk profile moves under them.', why: 'Continuous drift with no detection layer, on architectures that carry no formal stability analysis at all.' },
@@ -169,19 +160,6 @@ export default function CVOxido() {
           ))}
         </div>
 
-        <div style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '20px 24px', marginBottom: '56px' }}>
-          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>Same model as</p>
-          <p style={{ fontSize: '15px', color: '#9aa4b0', margin: 0, lineHeight: '1.7' }}>
-            <strong style={{ color: '#c4cfde' }}>Red Hat</strong> — open-source Linux, enterprise support &nbsp;·&nbsp;
-            <strong style={{ color: '#c4cfde' }}>MongoDB</strong> — open-source DB, enterprise licensing &nbsp;·&nbsp;
-            <strong style={{ color: '#c4cfde' }}>Databricks</strong> — open-source Spark, enterprise platform &nbsp;·&nbsp;
-            <strong style={{ color: '#c4cfde' }}>Hugging Face</strong> — open-source models, enterprise API
-          </p>
-          <p style={{ fontSize: '14px', color: '#6b7683', marginTop: '10px', marginBottom: 0, fontStyle: 'italic' }}>
-            One enterprise licence with a hedge fund or a hospital system is worth more than 10,000 SaaS subscriptions, and it churns less, margins better, and sits behind a harder technical moat.
-          </p>
-        </div>
-
         {/* ENTERPRISE CUSTOMER SECTORS */}
         <p style={sectionLabel}>Who Pays — Enterprise Sectors</p>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '20px' }}>
@@ -208,34 +186,13 @@ export default function CVOxido() {
           </table>
         </div>
 
-        {/* COMPETITION */}
-        <p style={sectionLabel}>Competition — The Structural Gap</p>
-        <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '8px' }}>
-          The real competitors are not CrewAI, LangGraph, or AutoGen. Those are developer frameworks — Lego bricks for people assembling their own agents by hand. No institutional customers, and no learning layer anywhere in them.
-        </p>
+        {/* THE STRUCTURAL GAP */}
+        <p style={sectionLabel}>The Structural Gap</p>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#9aa4b0', maxWidth: '680px', marginBottom: '20px' }}>
-          The real competitors sit between enterprise institutions and their proprietary data:
+          CrewAI, LangGraph, and AutoGen are developer frameworks — Lego bricks for people assembling their own agents by hand. No institutional customers, no learning layer, and nothing that touches the training-time failure modes below.
         </p>
-        <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginBottom: '20px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr>
-                <th style={{ padding: '12px 20px', textAlign: 'left', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32', width: '20%' }}>Competitor</th>
-                <th style={{ padding: '12px 20px', textAlign: 'left', color: '#c4cfde', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', borderBottom: '1px solid #2a2d32' }}>What They Don't Have</th>
-              </tr>
-            </thead>
-            <tbody>
-              {competitors.map((c, i) => (
-                <tr key={i}>
-                  <td style={{ ...tdFirst, borderBottom: i < competitors.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>{c.name}</td>
-                  <td style={{ ...td, borderBottom: i < competitors.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>{c.gap}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
         <div style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '18px 24px', marginBottom: '56px' }}>
-          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>The structural gap none of them close</p>
+          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>What the stack actually closes</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {[
               ['Catastrophic forgetting', 'ORMAS solves it. 94.6% prior-task retention vs 47.3% standard ResNet-18.'],
@@ -248,9 +205,6 @@ export default function CVOxido() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '14px', marginBottom: 0, fontStyle: 'italic' }}>
-            The $757B AI market (growing to $4T by 2035) is moving toward operational AI running on proprietary data. Everyone in that market will need what ORMAS does. Right now none of them have it.
-          </p>
         </div>
 
         {/* ROADMAP */}

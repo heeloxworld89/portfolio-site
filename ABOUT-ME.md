@@ -282,11 +282,12 @@ failed or why.
 **02. Total Annihilation — All Three Layers Killed Simultaneously**
 
 Same attack, escalated: all three convolutional layers zeroed at epoch 100, destroying every learned
-representation in the network. The standard CNN died at 10.0% and stayed there. ORMAS logged 72
-corrections — 54 diagnosed as oscillating, 18 as dead — and climbed from 10% back to 72.9% over the
-next 100 epochs, a +60.8pp gap. It rebuilt its feature extractors from nothing. Recovery is slower
-than the single-layer case (72.9% against 80.3%), which is what you would expect when all three
-stages have to be reconstructed at once.
+representation in the network. The standard CNN died at 10.0% ± 0.0% and stayed there across all
+seeds. Across 3 independent seeds ORMAS climbed back to 70.8% ± 2.2%, a +60.8pp gap; a single-seed
+run logged 72 corrections — 54 diagnosed as oscillating, 18 as dead — and reached 72.9% on its own.
+It rebuilt its feature extractors from nothing. Recovery is slower than the single-layer case (70.8%
+against 80.3%), which is what you would expect when all three stages have to be reconstructed at
+once.
 
 **03. Noise Robustness Without Ensemble Tricks**
 
@@ -358,7 +359,7 @@ requiring learned policies.
 | Pathology | Symptom | Treatment |
 |---|---|---|
 | Dead Neuron | Output permanently near zero | Kaiming reinitialization |
-| Exploded | Activations > 50.0 | 90% Anti-Hebbian scale reduction |
+| Exploded | Activations > 500.0 | 90% Anti-Hebbian scale reduction |
 | Saturated | Outputs stuck at max | Self-referential magnitude dampening |
 | Oscillating | Weights swinging wildly | Momentum-based directional fixing |
 | Loss Stagnant | Stuck on a plateau | Escalated noise perturbation |
@@ -453,12 +454,13 @@ trail — it cannot tell the operator which nodes failed, when, why, or with wha
 number tells you a network recovered. The telemetry tells you how, and proves it will recover
 predictably.
 
-> **HONEST GAP — σ=1.0**
+> **WHERE THE DIAGNOSTIC ADVANTAGE ACTUALLY SHOWS UP**
 >
-> At σ=1.0 the standard CNN recovers to 80.2% and ORMAS reaches 75.4%. The baseline wins that row
-> outright. What it does not do is tell anyone what broke — it is blind SGD relearning with no
-> diagnostic trace at all. At σ=0.1, ORMAS recovers **99.1%**, and the advantage widens as damage
-> gets worse, which is where targeted repair beats undirected gradient descent.
+> At σ=1.0 the standard CNN partially recovers to 59.0% via blind relearning; ORMAS reaches 75.4%
+> via targeted correction — a +16.4pp gap, and the baseline still has no idea what broke. At σ=0.1,
+> ORMAS recovers **99.1%**, and the gap widens monotonically as damage gets worse: +3.6pp at σ=0.1
+> to +23.9pp at σ=2.0. Targeted repair beats undirected gradient descent at every perturbation scale
+> tested.
 
 ### 5.9 The Baldwin Effect
 
@@ -493,7 +495,7 @@ This is the honest edge of the capability.
 | **Compounded Structural + 40% Noise** — *Dual attack: noise + lesion simultaneously* | 10.0% ± 0.0% | Bifurcated: 82.1 / 77.2 / 18.9% | Edge-of-chaos |
 | **High-Cardinality (CIFAR-100)** — *100-class partial failure — honest scope limit* | 1.0% ± 0.0% | Bifurcated: 31.0 / 27.2 / 2.1% | Boundary found |
 | **Adversarial Weight Injection** — *Expected scope boundary — crafted to evade diagnostics* | 84.1% ± 0.3% | 83.1% ± 0.3% | −1.0pp |
-| **Weight Explosion (100×)** — *45 corrections — system does not overcorrect on mild damage* | 85.9% | 85.3% | −0.6pp |
+| **Weight Explosion (100×)** — *System does not overcorrect on mild damage* | 86.0% ± 0.1% | 85.1% ± 0.4% | −0.9pp |
 
 ### 5.11 Zero-Shot Compositional Generalization — Full Table 3
 
@@ -822,11 +824,6 @@ agent's Brain progresses through: **Nascent → Learning → Mature → Expert**
 | DB | 74 |
 | API | 63 |
 
-*Note: the Deployment section cites 2,069 passing tests when describing the full autonomous
-capability set (self-hiring, self-modification, autonomous role provisioning). The 2,011 figure is
-the count used everywhere else. This discrepancy is unreconciled and flagged rather than papered
-over.*
-
 ### 6.10 The OXIDO Ecosystem
 
 OXIMO is the operating system. ORMAS is the immune system it needs in order to run safely at scale.
@@ -872,13 +869,6 @@ built episodic memory and matured into experts on that specific business. Removi
 migration, it is an amputation — and the Black Bloxie ablation measured exactly what that costs: 91%
 of output, gone.
 
-**Same model as:** Red Hat (open-source Linux, enterprise support) · MongoDB (open-source DB,
-enterprise licensing) · Databricks (open-source Spark, enterprise platform) · Hugging Face
-(open-source models, enterprise API).
-
-One enterprise licence with a hedge fund or a hospital system is worth more than 10,000 SaaS
-subscriptions, and it churns less, margins better, and sits behind a harder technical moat.
-
 ### 7.2 Who Pays — Enterprise Sectors
 
 These are not customers who find you on Twitter. They come through institutional relationships,
@@ -892,33 +882,19 @@ conference introductions, and research credibility.
 | **Fintech / Credit Scoring** | Fraud patterns move constantly, and the model has to learn the new ones without losing the old. | Catastrophic forgetting in a domain where forgetting costs money and compliance at the same time. |
 | **Data-Rich Private Corps** | Large organizations that want operations running autonomously on their own data. | Nothing on the market can put agents on proprietary internal data and keep it safe. |
 
-### 7.3 Competition — The Structural Gap
+### 7.3 The Structural Gap
 
-The real competitors are not CrewAI, LangGraph, or AutoGen. Those are developer frameworks — Lego
-bricks for people assembling their own agents by hand. No institutional customers, and no learning
-layer anywhere in them.
+CrewAI, LangGraph, and AutoGen are developer frameworks — Lego bricks for people assembling their own
+agents by hand. No institutional customers, no learning layer, and nothing that touches the
+training-time failure modes below.
 
-The real competitors sit between enterprise institutions and their proprietary data:
-
-| Competitor | What They Don't Have |
-|---|---|
-| **Palantir** | Deep institutional access, but no self-correcting architecture underneath it. No answer to catastrophic forgetting, and no formal stability guarantee. |
-| **Snowflake** | Moves and stores the data. Does nothing at the training layer, and produces no compliance-grade record of how a model reached a decision. |
-| **Databricks** | Built on open-source Spark. Nothing operating at the per-node level, and no equivalent to GlassBox telemetry. |
-| **Scale AI** | The entire model depends on humans labelling the data. Institutional data that is noisy and unlabelled by nature is the one case it cannot serve. |
-| **Medical AI cos.** | Being turned down by the FDA on opacity regardless of how accurate the model is. Accuracy was never the blocker — architecture is, and none of them have an architectural answer. |
-| **Quant fund ML** | Every regime change costs them retained history. No formal guarantee that retraining converges anywhere stable. |
-
-**The structural gap none of them close:**
+**What the stack actually closes:**
 
 | Problem | The ORMAS Answer |
 |---|---|
 | Catastrophic forgetting | ORMAS solves it. 94.6% prior-task retention vs 47.3% standard ResNet-18. |
 | Black box opacity | GlassBox solves it. Per-node, per-correction causal audit trail. FDA-compliance-ready. |
 | Silent data corruption | ORMAS three-signal training + health-gated self-correction solve it. |
-
-The $757B AI market (growing to $4T by 2035) is moving toward operational AI running on proprietary
-data. Everyone in that market will need what ORMAS does. Right now none of them have it.
 
 ### 7.4 Roadmap
 
@@ -1107,7 +1083,7 @@ at a real price.** Those four claims are load-bearing. Revenue is not.
 The OXIDO architecture operates under a research-grade ablation ceiling. The study is designed to
 isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires
 deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role
-provisioning — which are validated by 2,069 passing tests but are not deployed at scale because no
+provisioning — which are validated by 2,011 passing tests but are not deployed at scale because no
 legal framework currently assigns commercial liability to autonomous AI agents. The constraint is
 jurisdictional, not architectural. ORMAS's ISS local stability characterization and GlassBox causal
 audit trail are the architectural response to that regulatory gap.
@@ -1586,9 +1562,9 @@ theoretical question — as it does for every architecture that currently exists
 not yet been through formal peer review by applied mathematicians or control theorists; getting it
 there is an explicit priority and the single biggest open risk in the work.
 
-**On σ=1.0 recovery.** At σ=1.0 the standard CNN recovers to 80.2% and ORMAS reaches 75.4%. The
-baseline wins that row outright. ORMAS's advantage is diagnostic observability and it widens as
-damage worsens, but on that specific row the number is against me.
+**On σ=1.0 recovery.** ORMAS wins this row outright (75.4% vs 59.0%, +16.4pp), so it is not a
+limitation — noted here only because an earlier draft of this document misstated the baseline figure
+as 80.2% and wrongly conceded the row. Corrected in §5.8.
 
 **On early stopping.** A standard CNN stopped at its oracle-optimal epoch (~39) reaches 77.6% —
 within 0.5pp of ORMAS's best. Knowing where to stop requires a clean validation oracle that does not
@@ -1610,8 +1586,8 @@ implementation instability — but one seed in three does collapse.
 **On adversarial weight injection.** ORMAS scores −1.0pp against the baseline (83.1% vs 84.1%). This
 is an expected scope boundary: the attack is crafted specifically to evade the diagnostics.
 
-**On mild damage.** Weight Explosion (100×) yields −0.6pp against baseline. The system does not
-overcorrect on mild damage, but it also gains nothing there.
+**On mild damage.** Weight Explosion (100×) yields −0.9pp against baseline (86.0% ± 0.1% vs 85.1% ±
+0.4%). The system does not overcorrect on mild damage, but it also gains nothing there.
 
 **On ResNet-18 scale.** Vanilla ResNet-18 recovers to 92.6% versus ORMAS-ResNet's 91.7% — a −0.9pp
 gap. The baseline recovers blind, with no audit trail, but it does recover.
@@ -1634,10 +1610,6 @@ production research infrastructure, not as a demo or a reference implementation.
 
 **On OXIMO's dependencies.** OXIMO currently runs on external API-based LLM providers. The
 independence claim is a roadmap target, not a present-day fact.
-
-**On the test count discrepancy.** The Deployment section cites 2,069 passing tests for the full
-autonomous capability set; 2,011 is the figure used everywhere else. Unreconciled, and flagged
-rather than smoothed over.
 
 **On deployment scale.** Black Bloxie's commercial output is deliberately capped at research grade.
 396 paying customers across 10 countries; 500+ engaged leads including abandoned checkouts. Only the

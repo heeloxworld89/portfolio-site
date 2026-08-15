@@ -11,7 +11,7 @@ export default function CVResearch() {
 
   const pathologies = [
     { name: 'Dead Neuron',    symptom: 'Output permanently near zero',  treatment: 'Kaiming reinitialization' },
-    { name: 'Exploded',       symptom: 'Activations > 50.0',            treatment: '90% Anti-Hebbian scale reduction' },
+    { name: 'Exploded',       symptom: 'Activations > 500.0',           treatment: '90% Anti-Hebbian scale reduction' },
     { name: 'Saturated',      symptom: 'Outputs stuck at max',           treatment: 'Self-referential magnitude dampening' },
     { name: 'Oscillating',    symptom: 'Weights swinging wildly',        treatment: 'Momentum-based directional fixing' },
     { name: 'Loss Stagnant',  symptom: 'Stuck on a plateau',             treatment: 'Escalated noise perturbation' },
@@ -41,7 +41,7 @@ export default function CVResearch() {
     { scenario: 'Compounded Structural + 40% Noise', standard: '10.0% ± 0.0%', ormas: 'Bifurcated: 82.1 / 77.2 / 18.9%', gap: 'Edge-of-chaos', note: 'Dual attack: noise + lesion simultaneously' },
     { scenario: 'High-Cardinality (CIFAR-100)', standard: '1.0% ± 0.0%', ormas: 'Bifurcated: 31.0 / 27.2 / 2.1%', gap: 'Boundary found', note: '100-class partial failure — honest scope limit' },
     { scenario: 'Adversarial Weight Injection', standard: '84.1% ± 0.3%', ormas: '83.1% ± 0.3%', gap: '−1.0pp', note: 'Expected scope boundary — crafted to evade diagnostics' },
-    { scenario: 'Weight Explosion (100×)', standard: '85.9%', ormas: '85.3%', gap: '−0.6pp', note: '45 corrections — system does not overcorrect on mild damage' },
+    { scenario: 'Weight Explosion (100×)', standard: '86.0% ± 0.1%', ormas: '85.1% ± 0.4%', gap: '−0.9pp', note: 'System does not overcorrect on mild damage' },
   ];
 
   // Zero-Shot Table 3 from paper
@@ -185,7 +185,7 @@ export default function CVResearch() {
               {
                 n: '02',
                 title: 'Total Annihilation — All Three Layers Killed Simultaneously',
-                body: 'Same attack, escalated: all three convolutional layers zeroed at epoch 100, destroying every learned representation in the network. The standard CNN died at 10.0% and stayed there. ORMAS logged 72 corrections — 54 diagnosed as oscillating, 18 as dead — and climbed from 10% back to 72.9% over the next 100 epochs, a +60.8pp gap. It rebuilt its feature extractors from nothing. Recovery is slower than the single-layer case (72.9% against 80.3%), which is what you would expect when all three stages have to be reconstructed at once.'
+                body: 'Same attack, escalated: all three convolutional layers zeroed at epoch 100, destroying every learned representation in the network. The standard CNN died at 10.0% ± 0.0% and stayed there across all seeds. Across 3 independent seeds ORMAS climbed back to 70.8% ± 2.2%, a +60.8pp gap; a single-seed run logged 72 corrections — 54 diagnosed as oscillating, 18 as dead — and reached 72.9% on its own. It rebuilt its feature extractors from nothing. Recovery is slower than the single-layer case (70.8% against 80.3%), which is what you would expect when all three stages have to be reconstructed at once.'
               },
               {
                 n: '03',
@@ -375,9 +375,9 @@ export default function CVResearch() {
             <strong style={{ color: '#c4cfde' }}>ResNet-18 Scale:</strong> Stages 2+3 killed at epoch 100. ORMAS-ResNet: 264 corrections → 91.7%. Vanilla ResNet-18: 92.6% (blind recovery). The accuracy gap is −0.9pp. But the blind baseline has no audit trail — it cannot tell the operator which nodes failed, when, why, or with what pathway. An accuracy number tells you a network recovered. The telemetry tells you how, and proves it will recover predictably.
           </p>
           <div className="honest-gap-box" style={{ marginBottom: '20px' }}>
-            <h5 style={{ fontSize: '14px', fontWeight: '700', color: '#c4cfde', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Gap — σ=1.0</h5>
+            <h5 style={{ fontSize: '14px', fontWeight: '700', color: '#c4cfde', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Where the Diagnostic Advantage Actually Shows Up</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-              At σ=1.0 the standard CNN recovers to 80.2% and ORMAS reaches 75.4%. The baseline wins that row outright. What it does not do is tell anyone what broke — it is blind SGD relearning with no diagnostic trace at all. At σ=0.1, ORMAS recovers <strong style={{ color: '#c4cfde' }}>99.1%</strong>, and the advantage widens as damage gets worse, which is where targeted repair beats undirected gradient descent.
+              At σ=1.0 the standard CNN partially recovers to 59.0% via blind relearning; ORMAS reaches 75.4% via targeted correction — a +16.4pp gap, and the baseline still has no idea what broke. At σ=0.1, ORMAS recovers <strong style={{ color: '#c4cfde' }}>99.1%</strong>, and the gap widens monotonically as damage gets worse: +3.6pp at σ=0.1 to +23.9pp at σ=2.0. Targeted repair beats undirected gradient descent at every perturbation scale tested.
             </p>
           </div>
 
