@@ -78,7 +78,7 @@ export default function CVDeployment() {
             <i className="fa-sharp fa-regular fa-file-lines" />
             System Architecture Paper
             <span style={{ fontSize: '11px', color: '#6b7683', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
-              For technical evaluators · 29 pages
+              For technical evaluators · 30 pages
             </span>
           </a>
 

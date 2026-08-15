@@ -954,7 +954,7 @@ data. Everyone in that market will need what ORMAS does. Right now none of them 
 > of it.
 
 The evidence is published twice, for two different readers. The **System Architecture Paper** is for
-researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO (29 pages). The
+researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO (30 pages). The
 **Commercial Evidence Report** is for operators and investors judging whether the deployment model
 holds up commercially (10 tiers). Same 12-month record, examined through two different lenses.
 
@@ -1675,7 +1675,7 @@ submitted to a round funding philosophical rather than technical work.
 
 | Document | Path | Audience |
 |---|---|---|
-| System Architecture Paper | `/assets/pdf/oxido_academic_research_paper.pdf` | Technical evaluators · 29 pages |
+| System Architecture Paper | `/assets/pdf/oxido_academic_research_paper.pdf` | Technical evaluators · 30 pages |
 | Commercial Evidence Report | `/assets/pdf/oxido_investor_whitepaper.pdf` | VCs & angel investors · 10 tiers |
 | Curriculum Vitae | `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf` | General |
 
