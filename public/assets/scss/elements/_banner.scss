@@ -1977,14 +1977,11 @@
 }
 
 .index-seven {
-  .tmp-banner-one-area {
-    @media #{$extra-device} {
-      background-image: none !important;
-    }
-    @media #{$laptop-device} {
-      background-image: none !important;
-    }
-  }
+  // NOTE: the template originally forced `background-image: none !important`
+  // here for $laptop-device (1200–1599px) and $extra-device (1600–1919px),
+  // which killed the hero background on almost every laptop and desktop —
+  // it only survived below 1200px and at 1920px+. Removed so the banner
+  // image renders at every width.
   .tmp-banner-one-area {
     position: relative;
     #particles-js {

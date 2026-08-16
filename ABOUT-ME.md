@@ -121,10 +121,12 @@ That was the stated comparison set.
 
 Then he asked whether I planned to finish university, and I hedged. I said maybe — when the truth is
 I want to build full-time, and university is at most something I would do alongside that, not the
-plan. In an interview about committing to a company, a hedge on that question reads as exactly what
-it was. Fair call on his part, and the reason the conversation ended where it did: not a rejection,
-just Nick telling me plainly to come back in six months. A strong technical conversation and one
-clean, ownable mistake. Next time the answer arrives before the question finishes.
+plan. Hedging on that question in an interview about committing to a company does exactly one thing:
+it puts a question mark over whether you are going to build at all. The answer came back on that
+basis — my background was not the fit they look for in a co-founder, and there was not enough
+certainty behind it to move this cycle. Reapply in six months, once it is stronger. That was the
+whole of it: a strong technical conversation and one clean, ownable mistake. Next time the answer
+arrives before the question finishes.
 
 | Signal | Value |
 |---|---|
