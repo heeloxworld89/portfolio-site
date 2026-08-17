@@ -23,7 +23,7 @@ const tdBase: React.CSSProperties = {
 };
 const tdFirst: React.CSSProperties  = { ...tdBase, color: '#c4cfde', fontWeight: 600, width: '45%' };
 const tdValue: React.CSSProperties  = { ...tdBase, fontFamily: "'Fira Code', monospace", color: '#c4cfde', fontWeight: 700, textAlign: 'right' };
-const tdNote: React.CSSProperties   = { ...tdBase, fontSize: '12px', color: '#6b7683' };
+const tdNote: React.CSSProperties   = { ...tdBase, fontSize: '12px', color: '#838d99' };
 
 export default function CVDeployment() {
   return (
@@ -52,7 +52,7 @@ export default function CVDeployment() {
           </p>
         </div>
 
-        <p style={{ fontSize: '15px', lineHeight: '1.7', color: '#6b7683', marginBottom: '35px', maxWidth: '680px' }}>
+        <p style={{ fontSize: '15px', lineHeight: '1.7', color: '#838d99', marginBottom: '35px', maxWidth: '680px' }}>
           The evidence is published twice, for two different readers. The <strong>System Architecture Paper</strong> is for researchers and technical evaluators looking at the mechanics of ORMAS and OXIMO. The <strong>Commercial Evidence Report</strong> is for operators and investors judging whether the deployment model holds up commercially. Same 12-month record, examined through two different lenses.
         </p>
 
@@ -77,7 +77,7 @@ export default function CVDeployment() {
           >
             <i className="fa-sharp fa-regular fa-file-lines" />
             System Architecture Paper
-            <span style={{ fontSize: '11px', color: '#6b7683', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
+            <span style={{ fontSize: '11px', color: '#838d99', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
               For technical evaluators · 30 pages
             </span>
           </a>
@@ -101,14 +101,14 @@ export default function CVDeployment() {
           >
             <i className="fa-sharp fa-regular fa-chart-line" />
             Commercial Evidence Report
-            <span style={{ fontSize: '11px', color: '#6b7683', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
+            <span style={{ fontSize: '11px', color: '#838d99', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
               For VCs &amp; angel investors · 10 tiers
             </span>
           </a>
         </div>
 
         {/* ── Methodology Headline Metrics ────────────────────────────────── */}
-        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '14px' }}>
           Ablation Signal Strength
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(155px, 1fr))', gap: '10px', marginBottom: '44px' }}>
@@ -122,7 +122,7 @@ export default function CVDeployment() {
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '20px 16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
               <div style={{ fontSize: '12px', color: '#c4cfde', fontWeight: 700, marginBottom: '4px' }}>{s.lbl}</div>
-              <div style={{ fontSize: '11px', color: '#6b7683', lineHeight: 1.4 }}>{s.sub}</div>
+              <div style={{ fontSize: '11px', color: '#838d99', lineHeight: 1.4 }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -170,7 +170,7 @@ export default function CVDeployment() {
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #6b7683;
+            color: #838d99;
             margin-bottom: 8px;
           }
           .rung-final .rung-phase { color: #ff4a57; }
@@ -201,7 +201,7 @@ export default function CVDeployment() {
           .rung-final .rung-verdict { color: #ff4a57; }
         `}</style>
 
-        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '14px' }}>
           The Falsification Ladder — Seven Questions, Asked in Order
         </p>
         <p className="ladder-intro">
@@ -297,12 +297,12 @@ export default function CVDeployment() {
         </div>
 
         {/* ── Test Substrates (not "business verticals") ──────────────────── */}
-        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '14px' }}>
           Test Substrates — Architecture Applicability
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '10px', marginBottom: '44px' }}>
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '18px' }}>
-            <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '4px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '4px' }}>
               Substrate 1 · Ablation Complete
             </div>
             <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>E-Commerce</div>
@@ -316,11 +316,11 @@ export default function CVDeployment() {
             { sector: 'Medical Research', note: 'Gated on ORMAS-T (Transformer-scale). ORMAS GlassBox compliance layer targets FDA explainability mandates for clinical fine-tuning.' },
           ].map((v, i) => (
             <div key={i} style={{ background: '#141618', border: '1px solid #222529', borderRadius: '8px', padding: '18px' }}>
-              <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a5568', marginBottom: '4px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '4px' }}>
                 Substrate {i + 2} · Pending
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#6b7683', marginBottom: '6px' }}>{v.sector}</div>
-              <div style={{ fontSize: '12px', color: '#565d68', lineHeight: 1.6 }}>{v.note}</div>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#838d99', marginBottom: '6px' }}>{v.sector}</div>
+              <div style={{ fontSize: '12px', color: '#838d99', lineHeight: 1.6 }}>{v.note}</div>
             </div>
           ))}
         </div>
@@ -354,7 +354,7 @@ export default function CVDeployment() {
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '6px' }}>
             Each product is processed by six cascaded AI stages. Cascading specialized inference calls replaces single-shot frontier model calls — achieving a <strong style={{ color: '#c4cfde' }}>99.99% content cost reduction</strong> ($0.0043 per complete 12-asset product suite vs. $50–$150 human freelancer benchmark) at equivalent output quality.
           </p>
-          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '20px', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#838d99', marginBottom: '20px', fontStyle: 'italic' }}>
             Deployed in static operation mode. Full autonomous self-hiring and self-modification are validated and ready pending regulatory clarity.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
@@ -377,7 +377,7 @@ export default function CVDeployment() {
           </div>
 
           {/* ── Cost Comparison ───────────────────────────────────────────── */}
-          <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '14px' }}>
+          <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '14px' }}>
             Cost Per Product — Same Output Quality
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px', marginBottom: '40px' }}>
@@ -388,8 +388,8 @@ export default function CVDeployment() {
               { approach: 'AX09 Cascade',              cost: '$0.0043', muted: false },
             ].map((c, i) => (
               <div key={i} style={{ background: c.muted ? 'rgba(20,22,24,0.7)' : '#191b1e', border: `1px solid ${c.muted ? '#1a1c1f' : '#2a2d32'}`, borderRadius: '8px', padding: '16px', textAlign: 'center', opacity: c.muted ? 0.5 : 1 }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: c.muted ? '#6b7683' : '#c4cfde', marginBottom: '4px' }}>{c.cost}</div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: c.muted ? '#6b7683' : '#9aa4b0', lineHeight: 1.4 }}>{c.approach}</div>
+                <div style={{ fontSize: '20px', fontWeight: 800, color: c.muted ? '#838d99' : '#c4cfde', marginBottom: '4px' }}>{c.cost}</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: c.muted ? '#838d99' : '#9aa4b0', lineHeight: 1.4 }}>{c.approach}</div>
               </div>
             ))}
           </div>
@@ -473,8 +473,8 @@ export default function CVDeployment() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: '12px', color: '#6b7683', marginBottom: '40px', lineHeight: '1.6' }}>
-            <strong style={{ color: '#6b7683' }}>Attribution methodology:</strong> Shares derived from referrer analysis, no-referrer SCC attribution during Phase 2 ablation, and UTM-tagged links confirmed in LLM assistant outputs. All figures directional — formal SCC proof in the System Architecture Paper, Section 3.5.
+          <p style={{ fontSize: '12px', color: '#838d99', marginBottom: '40px', lineHeight: '1.6' }}>
+            <strong style={{ color: '#838d99' }}>Attribution methodology:</strong> Shares derived from referrer analysis, no-referrer SCC attribution during Phase 2 ablation, and UTM-tagged links confirmed in LLM assistant outputs. All figures directional — formal SCC proof in the System Architecture Paper, Section 3.5.
           </p>
 
           {/* ── What This Proved About ORMAS ──────────────────────────────── */}
@@ -489,7 +489,7 @@ export default function CVDeployment() {
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '10px', color: '#c4cfde' }}>
             Study Parameters — Research-Grade Operational Boundary
           </h4>
-          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#6b7683', marginBottom: '14px', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#838d99', marginBottom: '14px', fontStyle: 'italic' }}>
             These figures reflect deliberate ablation-ceiling constraints, not commercial scale targets. The study was designed to isolate causal attribution, not to maximise output.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '30px' }}>
@@ -517,8 +517,8 @@ export default function CVDeployment() {
 
           {/* ── Roadmap — other substrates ────────────────────────────────── */}
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px', marginTop: '10px', marginBottom: '10px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>Substrates 2–4 — Pending Ablation Cycles</p>
-            <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#6b7683', margin: 0 }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '10px' }}>Substrates 2–4 — Pending Ablation Cycles</p>
+            <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#838d99', margin: 0 }}>
               Legal, software, and medical research substrates are architecturally ready via the OXIMO/ORMAS stack. Each requires completing its own injection-removal-reinjection ablation cycle before findings are published. The methodology is identical to Substrate 1. Medical research deployment is gated on ORMAS-T (Transformer-scale self-correcting training) — a prerequisite for fine-tuning on clinical data under FDA-compliant GlassBox auditability.
             </p>
           </div>

@@ -171,6 +171,30 @@ const navItems = [
   },
   {
     id: 7,
+    href: "#work-ethic",
+    text: "Personal Statement",
+    isCurrent: false,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="feather feather-feather"
+      >
+        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+        <line x1={16} y1={8} x2={2} y2={22} />
+        <line x1={17.5} y1={15} x2={9} y2={15} />
+      </svg>
+    ),
+  },
+  {
+    id: 8,
     href: "#education",
     text: "Education",
     isCurrent: false,
@@ -193,7 +217,7 @@ const navItems = [
     ),
   },
   {
-    id: 8,
+    id: 9,
     href: "#skills-vision",
     text: "Skills & Vision",
     isCurrent: false,
@@ -212,6 +236,29 @@ const navItems = [
       >
         <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
         <path d="M22 12A10 10 0 0 0 12 2v10z" />
+      </svg>
+    ),
+  },
+  {
+    id: 10,
+    href: "#contact",
+    text: "Contact",
+    isCurrent: false,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="feather feather-mail"
+      >
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
       </svg>
     ),
   }

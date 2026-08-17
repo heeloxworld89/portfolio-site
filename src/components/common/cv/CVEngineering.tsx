@@ -1,3 +1,5 @@
+import ExpandableSection from '../ExpandableSection';
+
 export default function CVEngineering() {
   return (
     <div className="row mb--50" id="engineering">
@@ -131,9 +133,9 @@ export default function CVEngineering() {
         }
       `}</style>
       <div className="col-12">
-        <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
+        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
-        <p style={{ fontSize: '13px', color: '#6b7683', marginTop: '-14px', marginBottom: '20px' }}>
+        <p style={{ fontSize: '13px', color: '#838d99', marginTop: '-14px', marginBottom: '20px' }}>
           <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#9aa4b0', textDecoration: 'underline' }}>
             ↗ View Codebase
           </a>
@@ -168,7 +170,7 @@ export default function CVEngineering() {
             ].map((s, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
-                <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+                <div style={{ fontSize: '11px', color: '#838d99', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -183,6 +185,10 @@ export default function CVEngineering() {
             I rebuilt it from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact, not one test failing at the end. The rebuild was never housekeeping. It was the experiment that showed the architecture underneath was sound enough to survive complete reconstruction.
           </p>
 
+          <ExpandableSection
+            closedLabel="View Full Architecture Detail"
+            hint="The 4-layer module breakdown, the Sacred Chain, self-hiring pipeline, memory tiers, safety systems, and test-suite tables — for engineers."
+          >
           <h4 className="section-title">4 Layers. 11 Mini-Repos. Strict Separation of Concerns.</h4>
           <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "30px" }}>
             Constructor injection everywhere, no global state, every dependency declared and every boundary enforced. This is not a monolith wearing modules as a costume — each repo can be tested, deployed, and replaced on its own.
@@ -438,29 +444,18 @@ export default function CVEngineering() {
             </div>
           </div>
 
+          </ExpandableSection>
+
           <div className="mt--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
             
-            <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>The OXIDO Ecosystem</h4>
-            <p style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '28px', lineHeight: '1.7', maxWidth: '620px' }}>
-              OXIMO is the operating system. ORMAS is the immune system it needs in order to run safely at scale. Together they are OXIDO — a multi-agent system with nothing external left to depend on.
+            <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>Where OXIMO Fits</h4>
+            <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '20px', lineHeight: '1.75', maxWidth: '620px' }}>
+              Everything above is OXIMO on its own. It doesn't run alone in the bigger picture — see{' '}
+              <a href="#oxido" style={{ color: '#c4cfde', textDecoration: 'underline' }}>OXIDO</a> above for how it fits with ORMAS and Black Bloxie.
             </p>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '28px' }}>
-              {[
-                { name: 'OXIMO', role: 'The Cognitive OS', desc: 'Agents that hire agents. Memory that persists. Operations that run without a human in the loop.' },
-                { name: 'ORMAS', role: 'The Immune System', desc: 'Self-correcting learning. Structural transparency. The first architecture that can watch itself fail and recover.' },
-                { name: 'Black Bloxie LTD', role: 'The Empirical Lab', desc: 'Real industries. Real money. Real failure modes. E-commerce was the first completed vertical. Law, software, and medical are running.' },
-              ].map((c, i) => (
-                <div key={i} style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '8px', padding: '18px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 800, color: '#fff', marginBottom: '3px' }}>{c.name}</div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#c4cfde', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>{c.role}</div>
-                  <div style={{ fontSize: '13px', color: '#9aa4b0', lineHeight: '1.6' }}>{c.desc}</div>
-                </div>
-              ))}
-            </div>
 
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
-              Today OXIMO runs on API-based LLMs and ORMAS is validated on CNNs and DAGs. Next comes ORMAS-T, carrying the architecture onto Transformers, and then Cherry — a self-correcting language model trained to take the external API out of the loop for good. At that point OXIDO is a fully autonomous multi-agent system with an immune system of its own.
+              Today OXIMO runs on API-based LLMs. Next comes ORMAS-T, carrying per-node health monitoring onto Transformers, and then Cherry — a self-correcting language model trained to take the external API out of the loop for good.
             </p>
 
             <hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "30px 0" }} />

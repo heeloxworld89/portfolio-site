@@ -37,10 +37,10 @@ export default function Header3() {
 
                 {/* Identity & Social */}
                 <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#878e99', marginBottom: '12px' }}>Identity & Social</p>
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '12px' }}>Identity & Social</p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
-                      Twitter <span style={{ color: '#6b7683' }}>·</span>{' '}
+                    <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '8px', lineHeight: '1.5' }}>
+                      Twitter <span style={{ color: '#838d99' }}>·</span>{' '}
                       <a href="https://twitter.com/Raad_X_" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>@Raad_X_</a>
                     </li>
                   </ul>
@@ -48,17 +48,17 @@ export default function Header3() {
 
                 {/* Research Artifacts */}
                 <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#878e99', marginBottom: '12px' }}>Research Artifacts</p>
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '12px' }}>Research Artifacts</p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '12px', lineHeight: '1.4' }}>
+                    <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '12px', lineHeight: '1.4' }}>
                       <i className="fa-sharp fa-regular fa-file-pdf" style={{ marginRight: '8px', width: '16px', textAlign: 'center' }}></i>
                       <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>ORMAS Paper (DOI)</a>
                     </li>
-                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '12px', lineHeight: '1.4' }}>
+                    <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '12px', lineHeight: '1.4' }}>
                       <i className="fa-sharp fa-regular fa-code" style={{ marginRight: '8px', width: '16px', textAlign: 'center' }}></i>
                       <a href="https://anonymous.4open.science/r/ormas-EB73" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>Codebase (383 runs)</a>
                     </li>
-                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.4' }}>
+                    <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '8px', lineHeight: '1.4' }}>
                       <i className="fa-sharp fa-regular fa-database" style={{ marginRight: '8px', width: '16px', textAlign: 'center' }}></i>
                       <a href="https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>GlassBox Telemetry</a>
                     </li>
@@ -67,15 +67,15 @@ export default function Header3() {
 
                 {/* Codebase Review */}
                 <div>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#878e99', marginBottom: '12px' }}>Codebase Review</p>
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '12px' }}>Codebase Review</p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                   <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
+                   <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '8px', lineHeight: '1.5' }}>
                       <a href="https://anonymous.4open.science/r/ormas-EB73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>ORMAS Codebase ↗</a>
-                      <span style={{ fontSize: '12px', display: 'block', color: '#6b7683', marginTop: '2px' }}>383 runs · fully reproducible</span>
+                      <span style={{ fontSize: '12px', display: 'block', color: '#838d99', marginTop: '2px' }}>383 runs · fully reproducible</span>
                     </li>
-                    <li style={{ fontSize: '14px', color: '#878e99', marginBottom: '8px', lineHeight: '1.5' }}>
+                    <li style={{ fontSize: '14px', color: '#9aa4b0', marginBottom: '8px', lineHeight: '1.5' }}>
                       <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0 }}>OXIMO Codebase ↗</a>
-                      <span style={{ fontSize: '12px', display: 'block', color: '#6b7683', marginTop: '2px' }}>Architecture complete · code unpolished</span>
+                      <span style={{ fontSize: '12px', display: 'block', color: '#838d99', marginTop: '2px' }}>Architecture complete · code unpolished</span>
                     </li>
                     <li style={{ fontSize: '14px', lineHeight: '1.5' }}>
                       <a href="mailto:raadxbusiness9@gmail.com" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline', padding: 0, wordBreak: 'break-all' }}>raadxbusiness9@gmail.com</a>

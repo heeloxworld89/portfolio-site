@@ -68,7 +68,7 @@ export default function CVJourney() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 10px;
         }
         .origin-card-body {
@@ -119,7 +119,7 @@ export default function CVJourney() {
           font-weight: 700;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           padding-top: 2px;
         }
 
@@ -187,7 +187,7 @@ export default function CVJourney() {
           font-weight: 700;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 6px;
         }
         .origin-metric-note {
@@ -209,7 +209,7 @@ export default function CVJourney() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           background: rgba(255,255,255,0.02);
         }
         .origin-finding-row {
@@ -225,7 +225,7 @@ export default function CVJourney() {
           height: 6px;
           border-radius: 50%;
           background: #2a2d32;
-          border: 1px solid #4a5568;
+          border: 1px solid #838d99;
           flex-shrink: 0;
           margin-top: 5px;
         }

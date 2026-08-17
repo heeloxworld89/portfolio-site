@@ -55,7 +55,7 @@ export default function CVEducation() {
           position: absolute;
           left: 0;
           top: 2px;
-          color: #4a5568;
+          color: #838d99;
           font-size: 14px;
         }
         .course-list strong {
@@ -173,7 +173,7 @@ export default function CVEducation() {
             ].map((s, i) => (
               <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
                 <div style={{ fontSize: '18px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
-                <div style={{ fontSize: '11px', color: '#6b7683', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+                <div style={{ fontSize: '11px', color: '#838d99', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
               </div>
             ))}
           </div>

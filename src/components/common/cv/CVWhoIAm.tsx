@@ -18,7 +18,7 @@ export default function CVWhoIAm() {
       tag: 'Architecture Validation · 12-Month Controlled Ablation Study',
       name: 'Black Bloxie LTD',
       claim: 'A company registered at UK Companies House that exists to be an experiment. Every operational role inside it is held by an AI agent. The output ceiling is one I set, not one the architecture hit.',
-      body: 'A benchmark cannot tell you whether a system survives contact with real customers, real suppliers, and real regulators. So I built somewhere it could fail in public, and ran a lesion study on my own company: deploy, measure, remove, measure, re-inject, measure. Removal collapsed commercial output 91% — simultaneously across every channel, which is precisely what rules out the market as the explanation. Re-injection recovered 1,300%. A Phase 4 event then closed a $4,386 order autonomously at $0.00 acquisition cost, which settles the question of whether this only works on commodity volume. Everything above that line was left on the table on purpose: no legal framework yet assigns commercial liability to an autonomous agent, so I held the study at research grade rather than find out where the boundary is with a live company.',
+      body: 'A benchmark cannot tell you whether a system survives real customers, suppliers, and regulators — so instead of writing one, I ran a twelve-month lesion study on my own company: seven escalating tests, structured so each one was a chance to fail in public. Every rung is answered, in order, in the Deployment section below.',
       stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['$4,386', 'Largest Auto Order'], ['12 mo.', 'Study Duration']],
     },
   ];
@@ -85,7 +85,7 @@ export default function CVWhoIAm() {
         }
         .who-stat-lbl {
           font-size: 11px;
-          color: #6b7683;
+          color: #838d99;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: 600;
@@ -119,7 +119,7 @@ export default function CVWhoIAm() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
         }
         .who-router-row {
           display: grid;
@@ -148,7 +148,7 @@ export default function CVWhoIAm() {
           font-weight: 700;
           letter-spacing: 1px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           text-decoration: none;
           white-space: nowrap;
           transition: color 0.2s;
@@ -165,9 +165,9 @@ export default function CVWhoIAm() {
         <h2 className="title fs-1" style={{ fontWeight: "800", color: "#fff", marginBottom: "6px" }}>Rokib Al Dhin Raadh</h2>
         <p style={{ fontSize: "19px", fontWeight: 600, color: "#c4cfde", marginBottom: "10px", lineHeight: 1.6 }}>
           <strong style={{ fontWeight: 800, color: "#fff" }}>18 years old</strong>
-          <span style={{ color: "#6b7683", margin: "0 9px" }}>·</span>
+          <span style={{ color: "#838d99", margin: "0 9px" }}>·</span>
           Dhaka, Bangladesh
-          <span style={{ color: "#6b7683", margin: "0 9px" }}>·</span>
+          <span style={{ color: "#838d99", margin: "0 9px" }}>·</span>
           Independent AI Researcher &amp; Founder
         </p>
         <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#c4cfde", fontWeight: "600", borderLeft: "2px solid #2a2d32", paddingLeft: "20px", marginBottom: "32px", maxWidth: "700px" }}>
@@ -198,7 +198,7 @@ export default function CVWhoIAm() {
             },
             {
               audience: 'Enterprise Operator',
-              desc: 'Eleven months of deployment data, the ablation method behind it, and two full reports to download.',
+              desc: 'Twelve months of deployment data, the ablation method behind it, and two full reports to download.',
               href: '#deployment',
               label: 'Deployment →',
             },

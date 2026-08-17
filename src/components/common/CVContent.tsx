@@ -8,6 +8,7 @@ import CVJourney from "./cv/CVJourney";
 import CVWorkEthic from "./cv/CVWorkEthic";
 import CVEducation from "./cv/CVEducation";
 import CVSkillsAndVision from "./cv/CVSkillsAndVision";
+import CVFundraising from "./cv/CVFundraising";
 import CVClosingAsk from "./cv/CVClosingAsk";
 
 export default function CVContent() {
@@ -24,6 +25,7 @@ export default function CVContent() {
         <CVWorkEthic />
         <CVEducation />
         <CVSkillsAndVision />
+        <CVFundraising />
         <CVClosingAsk />
       </div>
     </div>

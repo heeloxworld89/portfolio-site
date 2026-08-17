@@ -119,14 +119,10 @@ enterprise thesis. Mid-call he framed the kind of founder EF backs by pointing a
 at 17, raised $100M+, then built a second company that became a unicorn inside EF's own portfolio.
 That was the stated comparison set.
 
-Then he asked whether I planned to finish university, and I hedged. I said maybe — when the truth is
-I want to build full-time, and university is at most something I would do alongside that, not the
-plan. Hedging on that question in an interview about committing to a company does exactly one thing:
-it puts a question mark over whether you are going to build at all. The answer came back on that
-basis — my background was not the fit they look for in a co-founder, and there was not enough
-certainty behind it to move this cycle. Reapply in six months, once it is stronger. That was the
-whole of it: a strong technical conversation and one clean, ownable mistake. Next time the answer
-arrives before the question finishes.
+Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is
+I want to build full-time. That's the one thing I'd take back: a hedge on a commitment question, in
+a conversation about committing to a company. Nick read it exactly right. Lesson learned, and the
+next conversation with EF is already in motion.
 
 | Signal | Value |
 |---|---|

@@ -14,13 +14,6 @@ export default function CVSkillsAndVision() {
     },
   ];
 
-  const metrics = [
-    { value: '383',     label: 'Controlled Experiments' },
-    { value: '+70.3pp', label: 'ORMAS Recovery Gap' },
-    { value: '99%',     label: 'API Cost Reduction' },
-    { value: '1',       label: 'Local Stability Characterization' },
-  ];
-
   const detailGroups = [
     {
       title: 'Foundation',
@@ -86,34 +79,6 @@ export default function CVSkillsAndVision() {
           font-size: 13px;
           font-weight: 500;
           border: 1px solid #2a2d32;
-        }
-        .metrics-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
-          margin-bottom: 32px;
-        }
-        @media (max-width: 992px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 576px)  { .metrics-grid { grid-template-columns: 1fr; } }
-        .metric-card {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
-          border-radius: 8px;
-          padding: 28px 20px;
-          text-align: center;
-        }
-        .metric-value {
-          font-size: 36px;
-          font-weight: 800;
-          color: #c4cfde;
-          margin-bottom: 6px;
-        }
-        .metric-label {
-          font-size: 11px;
-          color: #9aa4b0;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          font-weight: 600;
         }
         .detail-block {
           background: #191b1e;
@@ -196,7 +161,7 @@ export default function CVSkillsAndVision() {
       `}</style>
       
       <div className="col-12">
-        <span className="subtitle" style={{ color: "#ff014f", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Skills, Vision &amp; Metrics</span>
+        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Skills, Vision &amp; Metrics</span>
         <h2 className="title mb--40 fs-1" style={{ fontWeight: "800", color: "#c4cfde" }}>Everything I Had to Learn to Build This</h2>
         
         <div className="content">
@@ -229,16 +194,12 @@ export default function CVSkillsAndVision() {
             </div>
           </div>
 
-          {/* By The Numbers */}
-          <h4 className="section-header">Portfolio Summary</h4>
-          <div className="metrics-grid">
-            {metrics.map((m, i) => (
-              <div key={i} className="metric-card">
-                <div className="metric-value">{m.value}</div>
-                <div className="metric-label">{m.label}</div>
-              </div>
-            ))}
-          </div>
+          {/* Reference Tables */}
+          <h4 className="section-header">The Numbers, By Project</h4>
+          <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '24px', maxWidth: '640px', lineHeight: 1.7 }}>
+            Everything above is the skill set. This is where it landed — the exact scope of each of the
+            three systems, in one place for reference rather than repeated as headline stats.
+          </p>
 
           {/* Detail Rows */}
           {detailGroups.map((g, i) => (
@@ -255,7 +216,7 @@ export default function CVSkillsAndVision() {
 
           {/* ── OXIDO: The Convergence ─────────────────────────────── */}
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '24px 28px', marginBottom: '16px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6b7683', marginBottom: '10px' }}>OXIDO — The Convergence</div>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '10px' }}>OXIDO — The Convergence</div>
             <p style={{ fontSize: '16px', fontWeight: 600, color: '#c4cfde', margin: '0 0 10px', lineHeight: 1.6 }}>
               OXIMO the operating system, ORMAS the immune system, Cherry the self-correcting model: a multi-agent stack that depends on no intelligence but its own.
             </p>
@@ -265,32 +226,35 @@ export default function CVSkillsAndVision() {
           </div>
 
           {/* Bridge */}
-          <p style={{ fontSize: '14px', color: '#6b7683', fontStyle: 'italic', marginBottom: '32px', paddingLeft: '4px' }}>
+          <p style={{ fontSize: '14px', color: '#838d99', fontStyle: 'italic', marginBottom: '32px', paddingLeft: '4px' }}>
             Two years ago I would have said this out loud and sounded delusional. The distance closed the only way it could: the code runs, the experiments are finished, and the architecture is published where anyone can check it.
           </p>
 
-          {/* Scaling Requirements */}
-          <h4 className="section-header">Strategic Roadmap</h4>
+          {/* What's actually needed next — three concrete, unordered requirements */}
+          <h4 className="section-header">Three Things Still Missing</h4>
+          <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '20px', maxWidth: '640px', lineHeight: 1.7 }}>
+            The <a href="#oxido" style={{ color: '#c4cfde', textDecoration: 'underline' }}>OXIDO roadmap</a> above is what happens next, in order. This is different: not a phased plan, but the three external resources that phase depends on — they run in parallel, and none of them depends on the others.
+          </p>
           <div style={{ background: "#191b1e", border: "1px solid #2a2d32", borderRadius: "8px", overflowX: "auto", marginBottom: "40px" }}>
             <table className="needs-table">
                <thead>
                 <tr>
-                  <th style={{ width: '35%' }}>Phase</th>
-                  <th>Execution Requirements</th>
+                  <th style={{ width: '35%' }}>What's Missing</th>
+                  <th>Why It's the Blocker</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Compute Scaling (Transformer Integration)</td>
-                  <td>Carry the validated ORMAS protocol from CNN and DAG architectures onto Transformer-scale constraints. The mathematics is architecture-agnostic, so this is not a research risk — it is a compute problem, and it needs multi-node H100/A100 access.</td>
+                  <td>Multi-node compute</td>
+                  <td>The ORMAS protocol carries over to Transformers unchanged — the mathematics is architecture-agnostic. What's missing isn't a research result, it's H100/A100 access at multi-node scale.</td>
                 </tr>
                 <tr>
-                  <td>Project Cherry (Self-Correcting Foundation Model)</td>
-                  <td>Pre-train a language model on the three-signal architecture from scratch, so structural correction happens step by step during pre-training instead of being bolted on afterwards as RLHF.</td>
+                  <td>A reason to train Cherry</td>
+                  <td>Pre-training a language model on the three-signal architecture from scratch means structural correction happens during pre-training instead of being bolted on afterward as RLHF. That's a compute-heavy bet I'm not going to make alone on a single GPU.</td>
                 </tr>
                 <tr>
-                  <td>Formal Verification &amp; Peer Review</td>
-                  <td>Put the Input-to-State Stability characterization in front of applied mathematicians and control theorists who will try to break it, before open submission rather than after.</td>
+                  <td>A control theorist</td>
+                  <td>The ISS characterization needs someone qualified trying to break it before I submit it anywhere, not after.</td>
                 </tr>
               </tbody>
             </table>

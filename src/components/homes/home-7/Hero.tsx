@@ -97,7 +97,7 @@ export default function Hero(_props?: any) {
                         <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
-                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: structural transparency as a prerequisite for autonomous neural self-repair. First formal local stability characterization for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
+                        <strong style={{color: '#c4cfde'}}>ORMAS</strong>: a neural network that reports its own damage and repairs itself mid-training. First formal local stability characterization for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
                         <a href="#research" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Full technical details →</a>
                       </p>
                     </div>
@@ -119,11 +119,8 @@ export default function Hero(_props?: any) {
                         I Registered a Company to Try to Disprove My Own Architecture.
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
-                        Twelve months, one live UK-registered entity, seven escalating tests designed so I could fail each one in public. Deploy it cold and demand appears. Strip it out and revert to generic: <strong style={{color: '#c4cfde'}}>−91% output, −100% new customers</strong>, collapsing across every channel on the same day — which is the one pattern no market downturn produces. Put it back and output recovers <strong style={{color: '#c4cfde'}}>+1,300%</strong>, overshooting the original baseline 3.3× on accumulated memory alone. Then the last test: can it close something expensive? It closed a <strong style={{color: '#c4cfde'}}>$4,386 order at $0.00 acquisition cost</strong>, no human anywhere in the transaction.
-                      </p>
-                      <p style={{ color: '#9aa4b0', fontSize: '15px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px' }}>
-                        The scale stops there because I stopped it. No jurisdiction currently assigns commercial liability to an autonomous agent, so I held the study at research grade rather than run a live company at the edge of that question. The ceiling was regulatory. It was never the architecture.{' '}
-                        <a href="#deployment" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>All seven tests, in order →</a>
+                        Twelve months, one live UK-registered entity, seven escalating tests designed so I could fail each one in public — strip the architecture out and demand collapses, put it back and demand overshoots, then hand it something expensive to close on its own. <strong style={{color: '#c4cfde'}}>Every rung is answered on the record.</strong>{' '}
+                        <a href="#deployment" style={{ color: '#c4cfde', textDecoration: 'underline', fontWeight: 600 }}>Read all seven, in order →</a>
                       </p>
                       <p style={{ color: '#9aa4b0', fontSize: '15px', lineHeight: '1.8', margin: '0 0 14px 0', maxWidth: '620px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '14px' }}>
                         <strong style={{color: '#c4cfde'}}>What I am building next:</strong> porting per-node structural health monitoring onto attention heads (ORMAS-T), then training Cherry — a self-correcting language model from scratch.

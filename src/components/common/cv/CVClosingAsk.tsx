@@ -25,7 +25,7 @@ export default function CVClosingAsk() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 10px;
         }
         .ask-audience {
@@ -77,7 +77,7 @@ export default function CVClosingAsk() {
         .ask-email-link:hover { color: #fff; }
         .ask-email-note {
           font-size: 12px;
-          color: #6b7683;
+          color: #838d99;
           font-style: italic;
         }
       `}</style>
@@ -112,8 +112,8 @@ export default function CVClosingAsk() {
             <p className="ask-body">
               The next phase needs two things: multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can run against real proprietary data. If you have either, that is the conversation worth having.
             </p>
-            <a className="ask-action" href="mailto:raadxbusiness9@gmail.com">
-              raadxbusiness9@gmail.com
+            <a className="ask-action" href="#fundraising">
+              The Fundraising Case ↑
             </a>
           </div>
 

@@ -19,7 +19,7 @@ export default function CVWorkEthic() {
           font-weight: 700;
           letter-spacing: 3px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 14px;
         }
 
@@ -34,7 +34,7 @@ export default function CVWorkEthic() {
 
         .ps-byline {
           font-size: 14px;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 36px;
           line-height: 1.6;
         }
@@ -78,7 +78,7 @@ export default function CVWorkEthic() {
 
         .ps-sign {
           font-size: 13px;
-          color: #6b7683;
+          color: #838d99;
           margin-top: 32px;
           padding-top: 20px;
           border-top: 1px solid rgba(255,255,255,0.05);
@@ -106,7 +106,7 @@ export default function CVWorkEthic() {
           font-weight: 700;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
         }
         .ps-stat-sub {
           font-size: 13px;
@@ -129,7 +129,7 @@ export default function CVWorkEthic() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
         }
         .ps-evidence-row {
           display: flex;
@@ -265,14 +265,11 @@ export default function CVWorkEthic() {
               originally motivated this research, is the empirical proof that the
               architecture works outside a controlled setting. I deployed it
               inside <strong>Black Bloxie LTD</strong>, a UK holding company I
-              registered at seventeen, as a structured 12-month ablation study.
-              Deploy, measure, remove, measure, re-inject, measure. Commercial
-              output collapsed 91% on removal — simultaneously across all channels,
-              ruling out market conditions as a variable. It recovered 1,300% on
-              re-injection, and later closed a $4,386 order autonomously at $0.00
-              acquisition cost. Every customer acquisition was driven entirely by LLM
-              referral traffic — no ad spend, no human sales effort. The mechanism
-              was confirmed causally, not merely correlated.
+              registered at seventeen, and ran it as a twelve-month falsification
+              exercise rather than a business — seven escalating tests, each one a
+              chance to prove myself wrong in public. Every rung is answered, in
+              order, in the Deployment section below. The mechanism was confirmed
+              causally, not merely correlated.
             </p>
             <p className="ps-prose">
               I stopped it there deliberately. The architecture was not the limit;

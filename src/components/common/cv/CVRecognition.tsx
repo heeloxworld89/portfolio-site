@@ -11,12 +11,32 @@ export default function CVRecognition() {
           height: 100%;
         }
         .rec-card:hover { border-color: rgba(255,255,255,0.12); }
+        .rec-logo-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 18px;
+        }
+        .rec-logo-chip {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 9px 16px;
+          border-radius: 6px;
+        }
+        .rec-logo-chip.on-white {
+          background: #fff;
+        }
+        .rec-logo-chip.on-dark {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid #2a2d32;
+        }
+        .rec-logo-chip img { display: block; height: 15px; width: auto; }
         .rec-tag {
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 12px;
         }
         .rec-name {
@@ -55,7 +75,7 @@ export default function CVRecognition() {
         }
         .rec-stat-lbl {
           font-size: 10px;
-          color: #6b7683;
+          color: #838d99;
           text-transform: uppercase;
           letter-spacing: 0.8px;
           font-weight: 600;
@@ -107,7 +127,7 @@ export default function CVRecognition() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
           margin-bottom: 14px;
         }
         .rec-origin-body {
@@ -132,7 +152,7 @@ export default function CVRecognition() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #6b7683;
+          color: #838d99;
         }
         .rec-qa-item {
           padding: 20px 22px;
@@ -168,6 +188,11 @@ export default function CVRecognition() {
         <div className="rec-grid">
           {/* Cosmos Institute */}
           <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <img src="/assets/images/logos/cosmos-institute.svg" alt="Cosmos Institute" />
+              </div>
+            </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
             <h3 className="rec-name">Highest-Ranked Application in the Cycle</h3>
             <p className="rec-body">
@@ -191,6 +216,11 @@ export default function CVRecognition() {
 
           {/* Entrepreneur First */}
           <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-dark">
+                <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" style={{ height: '12px' }} />
+              </div>
+            </div>
             <div className="rec-tag">Entrepreneur First · Investment Team</div>
             <h3 className="rec-name">A 12-Hour Response, Then a Direct Line to the Investment Team</h3>
             <p className="rec-body">
@@ -203,14 +233,10 @@ export default function CVRecognition() {
               portfolio. That was the stated comparison set.
             </p>
             <p className="rec-body">
-              Then he asked whether I planned to finish university, and I hedged. I said maybe — when the
-              truth is I want to build full-time, and university is at most something I would do alongside
-              that, not the plan. Hedging on that question in an interview about committing to a company
-              does exactly one thing: it puts a question mark over whether you are going to build at all.
-              The answer came back on that basis — my background was not the fit they look for in a
-              co-founder, and there was not enough certainty behind it to move this cycle. Reapply in six
-              months, once it is stronger. That was the whole of it: a strong technical conversation and one
-              clean, ownable mistake. Next time the answer arrives before the question finishes.
+              Then he asked whether I planned to finish university, and I hedged — said maybe, when the
+              truth is I want to build full-time. That's the one thing I'd take back: a hedge on a
+              commitment question, in a conversation about committing to a company. Nick read it exactly
+              right. Lesson learned, and the next conversation with EF is already in motion.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -220,10 +246,6 @@ export default function CVRecognition() {
               <div className="rec-stat">
                 <span className="rec-stat-val">Direct</span>
                 <span className="rec-stat-lbl">To Investment Team</span>
-              </div>
-              <div className="rec-stat">
-                <span className="rec-stat-val">6 mo.</span>
-                <span className="rec-stat-lbl">Invited to Reapply</span>
               </div>
             </div>
           </div>
