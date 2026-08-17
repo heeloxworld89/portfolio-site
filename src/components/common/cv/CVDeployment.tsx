@@ -1,4 +1,5 @@
 import React from 'react';
+import ExpandableSection from '../ExpandableSection';
 
 // ─── Ablation data — exact figures from SHA-256 reconciled master dataset ────
 const ablationRemoval = [
@@ -347,6 +348,10 @@ export default function CVDeployment() {
             </div>
           </div>
 
+          <ExpandableSection
+            closedLabel="View AX09 Technical Spec"
+            hint="The six-stage pipeline, cost breakdown, phase-level ablation tables, traffic attribution, and study parameters — for engineers and technical evaluators."
+          >
           {/* ── AX09 Six-Stage Pipeline ───────────────────────────────────── */}
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px', color: '#c4cfde' }}>
             AX09 — Six-Stage Autonomous Content Pipeline
@@ -522,6 +527,8 @@ export default function CVDeployment() {
               Legal, software, and medical research substrates are architecturally ready via the OXIMO/ORMAS stack. Each requires completing its own injection-removal-reinjection ablation cycle before findings are published. The methodology is identical to Substrate 1. Medical research deployment is gated on ORMAS-T (Transformer-scale self-correcting training) — a prerequisite for fine-tuning on clinical data under FDA-compliant GlassBox auditability.
             </p>
           </div>
+
+          </ExpandableSection>
 
         </div>
       </div>
