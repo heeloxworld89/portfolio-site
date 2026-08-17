@@ -193,8 +193,8 @@ export default function CVFundraising() {
           </p>
           <p className="fr-ask-body">
             This is a pre-seed, first-institutional-check conversation. There is no accelerator
-            behind it and no fellowship funding it — every dollar spent so far has been personal,
-            and every result on this site was produced that way.
+            behind it — every dollar spent so far has been personal, and every result on this site
+            was produced that way.
           </p>
           <div className="fr-use-list">
             <div className="fr-use-row">

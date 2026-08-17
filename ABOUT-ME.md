@@ -1353,8 +1353,8 @@ compound.
 
 **The infrastructure for the next phase of this research — Transformer-scale validation, Project
 Cherry, formal peer review of the ISS result — requires exactly the kind of institutional
-environment I have been building without. That is the direct and honest reason I am pursuing
-fellowships and research positions. Not for validation. For leverage.**
+environment I have been building without. That is the direct and honest reason I am raising. Not
+for validation. For leverage.**
 
 *— Rokib Al Dhin Raadh, Dhaka, Bangladesh, 2026*
 
