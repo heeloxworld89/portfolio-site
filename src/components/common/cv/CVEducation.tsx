@@ -113,7 +113,7 @@ export default function CVEducation() {
 
             <div className="edu-card">
               <h5 className="edu-title">Company Law &amp; AML</h5>
-              <p className="edu-desc">Registering Black Bloxie at UK Companies House from Bangladesh meant learning the filing regime, the anti-money-laundering requirements, and the director obligations myself. No lawyer, no agent.</p>
+              <p className="edu-desc">Registering Black Bloxie at UK Companies House from Bangladesh meant learning the filing regime, the anti-money-laundering requirements, and the director obligations myself. No lawyer, no agent. The director of record is my father's name — practical, not operational; the company itself, its site, and everything it does runs under mine.</p>
             </div>
           </div>
 

@@ -1402,7 +1402,8 @@ micro-structure properly.
 
 **Company Law & AML.** Registering Black Bloxie at UK Companies House from Bangladesh meant learning
 the filing regime, the anti-money-laundering requirements, and the director obligations myself. No
-lawyer, no agent.
+lawyer, no agent. The director of record is my father's name — practical, not operational; the
+company itself, its site, and everything it does runs under mine.
 
 ### 11.1 Formal Coursework
 
