@@ -104,7 +104,7 @@ they open a technical track. I would rather have the honest read than the money.
 
 | Signal | Value |
 |---|---|
-| Ranked | #1 in cycle |
+| Ranked | Highest in cycle |
 | Outcome | Off-track — wrong round, right score |
 
 ### 3.2 Entrepreneur First — Investment Team

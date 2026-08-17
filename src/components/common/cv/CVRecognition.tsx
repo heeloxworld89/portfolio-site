@@ -204,7 +204,7 @@ export default function CVRecognition() {
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">#1</span>
+                <span className="rec-stat-val">Highest</span>
                 <span className="rec-stat-lbl">Ranked, Cycle</span>
               </div>
               <div className="rec-stat">
