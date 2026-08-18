@@ -19,7 +19,7 @@ export default function CVWhoIAm() {
       name: 'Black Bloxie LTD',
       claim: 'A company registered at UK Companies House that exists to be an experiment. Every operational role inside it is held by an AI agent. The output ceiling is one I set, not one the architecture hit.',
       body: 'A benchmark cannot tell you whether a system survives real customers, suppliers, and regulators — so instead of writing one, I ran a twelve-month lesion study on my own company: seven escalating tests, structured so each one was a chance to fail in public. Every rung is answered, in order, in the Deployment section below.',
-      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['$4,386', 'Largest Auto Order'], ['12 mo.', 'Study Duration']],
+      stats: [['−91%', 'On Removal'], ['+1,300%', 'On Re-Injection'], ['$4,386', 'One Order, Not Revenue'], ['12 mo.', 'Study Duration']],
     },
   ];
 

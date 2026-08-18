@@ -350,7 +350,7 @@ export default function CVWorkEthic() {
                 ['Substrate', 'E-commerce (Substrate 1)'],
                 ['Ad Spend', '£0'],
                 ['Human Sales Hrs', '0'],
-                ['Largest Auto Order', '$4,386'],
+                ['Test Order, Not Revenue', '$4,386'],
                 ['Scale Ceiling', 'Self-imposed'],
                 ['Protocol', 'Inject → Remove → Re-inject'],
               ].map(([k, v]) => (

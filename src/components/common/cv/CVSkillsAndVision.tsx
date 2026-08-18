@@ -44,7 +44,7 @@ export default function CVSkillsAndVision() {
       rows: [
         { label: 'Study Duration',       value: '12 months · Substrate 1 complete' },
         { label: 'Ablation Signal',      value: '−91% on removal · +1,300% on re-injection' },
-        { label: 'Largest Autonomous Order', value: '$4,386 · $0.00 acquisition cost' },
+        { label: 'Single Test Order (Not Revenue)', value: '$4,386 · $0.00 acquisition cost' },
         { label: 'Infrastructure Cost',  value: '99% reduction via specialized agent cascade' },
         { label: 'Scale Ceiling',        value: 'Self-imposed — regulatory, not architectural' },
       ],

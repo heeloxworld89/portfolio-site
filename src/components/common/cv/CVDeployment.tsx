@@ -118,7 +118,7 @@ export default function CVDeployment() {
             { val: '+1,300%', lbl: 'On Re-Injection', sub: 'Recovery exceeded Phase 1 by 3.3×' },
             { val: '99.99%',  lbl: 'Content Cost Reduction', sub: '$0.0043/product vs. $50–$150 human' },
             { val: '12 mo.',  lbl: 'Study Duration', sub: '4 phases · Aug 2025 – Aug 2026' },
-            { val: '$4,386',  lbl: 'Largest Autonomous Order', sub: '13 Aug 2026 · $0.00 CAC · zero humans' },
+            { val: '$4,386',  lbl: 'One Test Order, Not Revenue', sub: 'Rung 7 proof only · 13 Aug 2026 · $0.00 CAC' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '20px 16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
@@ -509,7 +509,7 @@ export default function CVDeployment() {
                 <tr><td style={tdFirst}>Study Duration</td><td style={tdValue}>12 months (4 phases, Aug 2025–Aug 2026)</td></tr>
                 <tr><td style={tdFirst}>Ablation Signal (Removal)</td><td style={tdValue}>−91% commercial output</td></tr>
                 <tr><td style={tdFirst}>Ablation Signal (Re-Injection)</td><td style={tdValue}>+1,300% recovery · 3.3× peak overshoot</td></tr>
-                <tr><td style={tdFirst}>Largest Autonomous Order</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
+                <tr><td style={tdFirst}>Single Test Order (Not Revenue)</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
                 <tr><td style={tdFirst}>Cumulative Verified Revenue</td><td style={tdValue}>$6,691.68 USD · 79+ orders</td></tr>
                 <tr><td style={tdFirst}>Paying Customers (10 countries)</td><td style={tdValue}>396</td></tr>
                 <tr><td style={tdFirst}>Total Engaged Leads</td><td style={tdValue}>500+</td></tr>
