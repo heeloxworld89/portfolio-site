@@ -224,13 +224,13 @@ export default function CVRecognition() {
             <div className="rec-tag">Entrepreneur First · Investment Team</div>
             <h3 className="rec-name">A 12-Hour Response, Then a Direct Line to the Investment Team</h3>
             <p className="rec-body">
-              The application was pulled by the investment team within <strong>twelve hours</strong>, bypassing
-              standard screening entirely and routing straight to <strong>Nick Sopuch</strong> — an EF investor who
-              runs one of their investment teams and their SF-based bridge program, an Ada Ventures scout, and Head
-              of Operations at Axiom Therapeutics. The call covered the architecture, the mathematics underneath it,
-              and the enterprise thesis. Mid-call he framed the kind of founder EF backs by pointing at someone who
-              joined at 17, raised $100M+, then built a second company that became a unicorn inside EF's own
-              portfolio. That was the stated comparison set.
+              The application was pulled by the investment team within <strong>twelve hours</strong>. The call
+              itself was with <strong>Nick Sopuch</strong> — who runs one of EF's investment teams and their
+              SF-based bridge program, scouts for Ada Ventures, and is Head of Operations at Axiom
+              Therapeutics. We spent it on the architecture, the mathematics underneath it, and the enterprise
+              thesis behind OXIDO — not a script. Mid-call he sized me against the kind of founder EF backs:
+              someone who joined at 17, raised $100M+, then built a second company that became a unicorn
+              inside EF's own portfolio. That was the comparison set.
             </p>
             <p className="rec-body">
               Then he asked whether I planned to finish university, and I hedged — said maybe, when the
