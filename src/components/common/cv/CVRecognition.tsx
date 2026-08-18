@@ -84,13 +84,22 @@ export default function CVRecognition() {
         }
         .rec-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 14px;
         }
-        @media (max-width: 900px) {
-          .rec-grid { grid-template-columns: 1fr; }
+
+        /* Second entry — same build quality; the category is carried by the label,
+           not by making the card look provisional. */
+        .rec-secondary {
+          background: #191b1e;
+          border: 1px solid #2a2d32;
+          border-radius: 10px;
+          padding: 28px 30px;
+          margin-bottom: 24px;
+          transition: border-color 0.3s;
         }
+        .rec-secondary:hover { border-color: rgba(255,255,255,0.12); }
         .rec-verdict {
           background: rgba(196,207,222,0.045);
           border: 1px solid #2a2d32;
@@ -179,10 +188,12 @@ export default function CVRecognition() {
           Outside Signal
         </span>
         <h2 className="title fs-2" style={{ fontWeight: "800", color: "#fff", marginBottom: "10px" }}>
-          What Happened When I Sent It Out
+          Two Outside Verdicts, and What Each One Is Actually Worth
         </h2>
         <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", maxWidth: "700px", marginBottom: "28px" }}>
-          I sent the work to two places that see far more applications than they can act on. Neither outcome is a credential, and I am not presenting them as one. Both are written here as they happened — including the part I got wrong.
+          One organization read the work. One organization read me. Those are different instruments measuring
+          different things, and the difference is worth more than the flattery of collapsing them — so I have
+          weighted them separately and said plainly what each one does and does not establish.
         </p>
 
         <div className="rec-grid">
@@ -214,59 +225,67 @@ export default function CVRecognition() {
             </div>
           </div>
 
-          {/* Entrepreneur First */}
-          <div className="rec-card">
-            <div className="rec-logo-row">
-              <div className="rec-logo-chip on-dark">
-                <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" style={{ height: '12px' }} />
-              </div>
+        </div>
+
+        {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
+        <div className="rec-secondary">
+          <div className="rec-logo-row">
+            <div className="rec-logo-chip on-dark">
+              <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" style={{ height: '11px' }} />
             </div>
-            <div className="rec-tag">Entrepreneur First · Investment Team</div>
-            <h3 className="rec-name">A 12-Hour Response, Then a Direct Line to the Investment Team</h3>
-            <p className="rec-body">
-              The application was pulled by the investment team within <strong>twelve hours</strong>. The call
-              itself was with <strong>Nick Sopuch</strong> — who runs one of EF's investment teams and their
-              SF-based bridge program, scouts for Ada Ventures, and is Head of Operations at Axiom
-              Therapeutics. We spent it on the architecture, the mathematics underneath it, and the enterprise
-              thesis behind OXIDO — not a script. Mid-call he sized me against the kind of founder EF backs:
-              someone who joined at 17, raised $100M+, then built a second company that became a unicorn
-              inside EF's own portfolio. That was the comparison set.
-            </p>
-            <p className="rec-body">
-              Then he asked whether I planned to finish university, and I hedged — said maybe, when the
-              truth is I want to build full-time. That's the one thing I'd take back: a hedge on a
-              commitment question, in a conversation about committing to a company. Nick read it exactly
-              right. Lesson learned, and the next conversation with EF is already in motion.
-            </p>
-            <div className="rec-stats">
-              <div className="rec-stat">
-                <span className="rec-stat-val">12 hrs</span>
-                <span className="rec-stat-lbl">To First Response</span>
-              </div>
-              <div className="rec-stat">
-                <span className="rec-stat-val">Direct</span>
-                <span className="rec-stat-lbl">To Investment Team</span>
-              </div>
+          </div>
+          <div className="rec-tag">Entrepreneur First · Talent Team · Gate 1 Screen</div>
+          <h3 className="rec-name">EF Came Looking. I Was Ready for the Architecture and Not for the Obvious Question.</h3>
+          <p className="rec-body">
+            EF runs one of the most aggressive sourcing operations in European venture, and it found me in
+            Dhaka — <strong>their talent team opened the conversation, not me</strong>. The call itself was with{' '}
+            <strong>Nick Sopuch</strong>, who runs one of EF&apos;s investment teams and their SF-based bridge
+            program, scouts for Ada Ventures, and is Head of Operations at Axiom Therapeutics. Mid-call he sized
+            me against the kind of founder EF backs: someone who joined at 17, raised $100M+, then built a
+            second company that became a unicorn inside EF&apos;s own portfolio. That was the comparison set.
+          </p>
+          <p className="rec-body">
+            Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
+            want to build full-time. That&apos;s the one thing I&apos;d take back: a hedge on a commitment
+            question, in a conversation whose entire purpose is reading how someone thinks. Nick read it exactly
+            right. Lesson learned, and the next conversation with EF is already in motion.
+          </p>
+          <div className="rec-stats">
+            <div className="rec-stat">
+              <span className="rec-stat-val">Inbound</span>
+              <span className="rec-stat-lbl">EF Opened Contact</span>
+            </div>
+            <div className="rec-stat">
+              <span className="rec-stat-val">Gate 1</span>
+              <span className="rec-stat-lbl">Talent Team Screen</span>
             </div>
           </div>
         </div>
 
-        {/* ── What the two reads add up to ───────────────────────────── */}
+        {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            Two independent close reads, and neither discounted the work for coming out of Dhaka.
+            Neither of these is a credential. Read precisely, they are still the two most useful pieces of
+            outside information I have.
           </p>
           <p className="rec-verdict-body">
-            Both are environments where a PhD is the default and an eighteen-year-old without one is not. Taken
-            together they support exactly one claim, and it is a narrow one: <strong>when the work is actually read
-            by people qualified to judge it, it holds.</strong>
+            <strong>Cosmos read the work.</strong> They ranked it highest in the cycle and then told me exactly
+            why it still would not be funded — that round backed philosophical work on AI, and ORMAS is a
+            technical architecture. A ranking with a reason attached is the most valuable thing a reviewer can
+            hand you, and it supports one narrow claim: <strong>when the work is read by people qualified to
+            judge it, it holds.</strong>
           </p>
           <p className="rec-verdict-body">
-            What they do not establish is equally worth stating. Cosmos is a remote grant and EF admits
-            internationally by design, so neither result says anything about selection filters that are
-            geographically constrained. Neither is an acceptance. No funding, no offer, no advisor. What I have is
-            two organizations that looked closely and came back positive on the substance — and one mistake in the
-            second conversation that was entirely mine.
+            <strong>EF read me</strong> — for fifteen minutes, at Gate 1, by design. Different instrument,
+            different measurement, and a no I earned on a question that had nothing to do with the
+            architecture. Both organizations went looking in an environment where a PhD is the default and an
+            eighteen-year-old without one is not, and neither discounted the work for coming out of Dhaka.
+          </p>
+          <p className="rec-verdict-body">
+            What neither establishes is worth stating just as plainly. No funding, no offer, no advisor. Cosmos
+            is a remote grant and EF admits internationally by design, so neither says anything about selection
+            filters that are geographically constrained. I would rather hold two accurately weighted results
+            than one inflated one — the weighting is the part that makes the rest of this page worth believing.
           </p>
         </div>
       </div>

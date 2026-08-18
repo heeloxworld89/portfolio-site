@@ -107,40 +107,58 @@ they open a technical track. I would rather have the honest read than the money.
 | Ranked | Highest in cycle |
 | Outcome | Off-track — wrong round, right score |
 
-### 3.2 Entrepreneur First — Investment Team
+### 3.2 Entrepreneur First — Talent Team, Gate 1 Screen
 
-**Result: A 12-Hour Response, Then a Direct Line to the Investment Team**
+**Result: EF opened the conversation. Fifteen-minute screen, no offer.**
 
-The application was pulled by the investment team within **twelve hours**. The call itself was with
-**Nick Sopuch** — who runs one of EF's investment teams and their SF-based bridge program, scouts
-for Ada Ventures, and is Head of Operations at Axiom Therapeutics. We spent it on the architecture,
-the mathematics underneath it, and the enterprise thesis behind OXIDO — not a script. Mid-call he
-sized me against the kind of founder EF backs: someone who joined at 17, raised $100M+, then built
-a second company that became a unicorn inside EF's own portfolio. That was the comparison set.
+EF runs one of the most aggressive sourcing operations in European venture, and it found me in
+Dhaka — **their talent team opened the conversation, not me**. The call itself was with **Nick
+Sopuch**, who runs one of EF's investment teams and their SF-based bridge program, scouts for Ada
+Ventures, and is Head of Operations at Axiom Therapeutics. Mid-call he sized me against the kind of
+founder EF backs: someone who joined at 17, raised $100M+, then built a second company that became a
+unicorn inside EF's own portfolio. That was the comparison set.
 
-Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is
-I want to build full-time. That's the one thing I'd take back: a hedge on a commitment question, in
-a conversation about committing to a company. Nick read it exactly right. Lesson learned, and the
-next conversation with EF is already in motion.
+Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
+want to build full-time. That's the one thing I'd take back: a hedge on a commitment question, in a
+conversation whose entire purpose is reading how someone thinks. Nick read it exactly right. Lesson
+learned, and the next conversation with EF is already in motion.
 
 | Signal | Value |
 |---|---|
-| Time to first response | 12 hours |
-| Routing | Direct to the investment team |
+| Origin | Inbound — EF talent team opened contact |
+| Stage | Gate 1 — talent team sourcing |
+| Format | 15-minute phone screen, Calendly booking |
+| Technical evaluation | None — explicitly not the purpose of the stage |
+| Outcome | No offer |
 
-### 3.3 What the Two Reads Add Up To
+*Correction note (private — not shown on the site): earlier versions of this document and the site
+claimed a "12-hour response" and a "direct line to the investment team." Both were false. The
+outreach came from Megan Widjaja on the talent team as routine Gate 1 sourcing, and the speed was
+ordinary — Nick's own words on the call were "we just move fast in general." The calendar event was
+titled "Phone Screen," 15 minutes, Calendly. Nothing technical was evaluated and no investment
+committee formed a view on the substance, so a walk-back costs far less than previously assumed.
+Do not reinstate the 12-hour or investment-team framing in any document or in any contact with EF.*
 
-> **Two independent close reads, and neither discounted the work for coming out of Dhaka.**
+### 3.3 What This Adds Up To
 
-Both are environments where a PhD is the default and an eighteen-year-old without one is not. Taken
-together they support exactly one claim, and it is a narrow one: **when the work is actually read by
-people qualified to judge it, it holds.**
+> **Neither of these is a credential. Read precisely, they are still the two most useful pieces of
+> outside information I have.**
 
-What they do not establish is equally worth stating. Cosmos is a remote grant and EF admits
-internationally by design, so neither result says anything about selection filters that are
-geographically constrained. Neither is an acceptance. No funding, no offer, no advisor. What I have
-is two organizations that looked closely and came back positive on the substance — and one mistake
-in the second conversation that was entirely mine.
+**Cosmos read the work.** They ranked it highest in the cycle and then told me exactly why it still
+would not be funded — that round backed philosophical work on AI, and ORMAS is a technical
+architecture. A ranking with a reason attached is the most valuable thing a reviewer can hand you,
+and it supports one narrow claim: **when the work is read by people qualified to judge it, it holds.**
+
+**EF read me** — for fifteen minutes, at Gate 1, by design. Different instrument, different
+measurement, and a no I earned on a question that had nothing to do with the architecture. Both
+organizations went looking in an environment where a PhD is the default and an eighteen-year-old
+without one is not, and neither discounted the work for coming out of Dhaka.
+
+What neither establishes is worth stating just as plainly. No funding, no offer, no advisor. Cosmos
+is a remote grant and EF admits internationally by design, so neither says anything about selection
+filters that are geographically constrained. I would rather hold two accurately weighted results
+than one inflated one — the weighting is the part that makes the rest of this document worth
+believing.
 
 ---
 
