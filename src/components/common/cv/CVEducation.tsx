@@ -81,6 +81,37 @@ export default function CVEducation() {
           color: #fff;
           font-weight: 600;
         }
+        .fiap-note {
+          margin-top: 30px;
+          background: rgba(237,20,91,0.045);
+          border: 1px solid rgba(237,20,91,0.28);
+          border-radius: 10px;
+          padding: 30px 32px;
+        }
+        .fiap-logo-row {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+          margin-bottom: 18px;
+        }
+        .fiap-logo-chip {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 9px 16px;
+          border-radius: 6px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid #2a2d32;
+        }
+        .fiap-logo-chip img { display: block; height: 16px; width: auto; }
+        .fiap-tag {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #838d99;
+        }
       `}</style>
       <div className="col-12">
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
@@ -125,7 +156,10 @@ export default function CVEducation() {
             
             <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
             <ul className="course-list">
-              <li><a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>Universal AI Foundational Models</a></li>
+              <li>
+                <a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>Universal AI Foundational Models</a>
+                <span style={{ color: "#838d99", fontSize: "13px" }}> — accessed via FIAP sponsorship, see below</span>
+              </li>
               <li><a href="https://mitxonline.mit.edu/records/shared/cc81d799-e745-4f8e-8837-a75d4e1bfd49/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI & Precision Medicine</a></li>
               <li><a href="https://mitxonline.mit.edu/records/shared/3d1aa3ad-4f07-4f64-aaf8-7dbc720913db/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI and Sustainability: Energy</a></li>
               <li><a href="https://mitxonline.mit.edu/records/shared/ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI and Sustainability: Transportation</a></li>
@@ -147,6 +181,30 @@ export default function CVEducation() {
               <p style={{ margin: 0, color: "#9aa4b0", fontSize: "14px" }}>
                 All certificates verifiable on request — specific shareable credential links for any course available via{' '}
                 <a href="mailto:rokib@blackbloxie.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
+              </p>
+            </div>
+
+            <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>A Note on FIAP</h5>
+            <div className="fiap-note">
+              <div className="fiap-logo-row">
+                <div className="fiap-logo-chip">
+                  <img src="/assets/images/logos/fiap.svg" alt="FIAP" />
+                </div>
+                <span className="fiap-tag">São Paulo, Brazil · Sponsored Access</span>
+              </div>
+              <p style={{ fontSize: "17px", fontWeight: 700, color: "#fff", marginBottom: "14px", lineHeight: 1.5 }}>
+                FIAP doesn't hand this out by default — this was set up specifically for me.
+              </p>
+              <p style={{ fontSize: "15px", lineHeight: "1.75", color: "#9aa4b0", margin: 0 }}>
+                FIAP is one of Brazil's leading technology-focused institutions, consistently rated among
+                the country's top private schools for computer science and programming. I did enough MIT
+                coursework early on to be offered a place in an in-person MIT scholarship program — I
+                couldn't attend, for financial reasons, not academic ones. In early 2026, FIAP made me a
+                member and gave me sponsored access to MIT Open Learning's Universal AI program on the MIT
+                Learn platform — as far as I understand it, not something they hand out as standard
+                practice. That's where the Universal AI Foundational Models credit above actually came
+                from, and it's the reason I could keep taking MIT-level courses without the tuition behind
+                them. FIAP helped, and I'm grateful for it.
               </p>
             </div>
           </div>

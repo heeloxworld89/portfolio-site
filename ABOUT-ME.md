@@ -1409,7 +1409,7 @@ Entirely self-taught in machine learning, systems engineering, and theoretical c
 
 **MITx**
 
-- Universal AI Foundational Models
+- Universal AI Foundational Models — accessed via FIAP sponsorship, see below
 - AI & Precision Medicine
 - AI and Sustainability: Energy
 - AI and Sustainability: Transportation
@@ -1428,6 +1428,25 @@ University of Michigan & Udemy. All certificates verifiable on request — speci
 credential links for any course available via raadxbusiness9@gmail.com or rokib@blackbloxie.com.
 
 (Direct credential links are indexed in Section 16.)
+
+**A Note on FIAP**
+
+FIAP doesn't hand this out by default — this was set up specifically for me. FIAP is one of Brazil's
+leading technology-focused institutions, consistently rated among the country's top private schools
+for computer science and programming. I did enough MIT coursework early on to be offered a place in
+an in-person MIT scholarship program — I couldn't attend, for financial reasons, not academic ones.
+In early 2026, FIAP made me a member and gave me sponsored access to MIT Open Learning's Universal AI
+program on the MIT Learn platform — as far as I understand it, not something they hand out as
+standard practice. That's where the Universal AI Foundational Models credit above actually came from,
+and it's the reason I could keep taking MIT-level courses without the tuition behind them. FIAP
+helped, and I'm grateful for it.
+
+(Site note: the live page displays the FIAP wordmark logo alongside this note, sourced directly from
+fiap.com.br's own site assets.)
+
+*Verification note: unlike Cosmos and EF, I don't have an email trail for this one. The evidence is my
+own MIT Learn account dashboard, which shows "As a member of FIAP you have access to: Universal AI"
+under my name. I also don't know exactly why FIAP added me — I'm not speculating about that here.*
 
 ### 11.2 The Honest Account
 
