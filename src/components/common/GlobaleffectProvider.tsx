@@ -159,7 +159,7 @@ export default function GlobaleffectProvider() {
     const servicesWidget =
       document.querySelector<HTMLElement>(".services-widget");
 
-    if (!servicesWidget) return; // ✅ early return ensures it's not null after this
+    if (!servicesWidget) return; // early return ensures it's not null after this
 
     const activeBg = servicesWidget.querySelector<HTMLElement>(".active-bg");
 

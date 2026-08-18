@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -32,7 +33,7 @@ export default function CVResearch() {
     { noise: 'Sym 40% (final)', ormas: '77.5% ±0.7%', std: '75.6% ±1.4%', mixup: '36.5%', note: 'Peak decay: ORMAS 2.5pp vs CNN 7.8pp' },
     { noise: 'Asym 20%', ormas: '84.3% ±0.3%', std: '83.3% ±0.4%', mixup: '53.6%', note: '' },
     { noise: 'Asym 30%', ormas: '83.1% ±0.1%', std: '81.5% ±0.6%', mixup: '52.0%', note: '' },
-    { noise: 'Asym 40%', ormas: '80.6% ±0.3%', std: '78.0% ±0.2%', mixup: '50.0% ⚠️', note: 'Mixup collapses — ORMAS +2.6pp' },
+    { noise: 'Asym 40%', ormas: '80.6% ±0.3%', std: '78.0% ±0.2%', mixup: '50.0%', note: 'Mixup collapses — ORMAS +2.6pp' },
     { noise: 'CIFAR-10N (Real)', ormas: '83.9%', std: '83.8%', mixup: '—', note: 'Real human annotator noise. Decay: ORMAS 2.7pp, CNN 3.7pp (1.4× more)' },
   ];
 
@@ -47,8 +48,8 @@ export default function CVResearch() {
 
   // Zero-Shot Table 3 from paper
   const zeroShotRows = [
-    { model: 'Standard ResNet-18', phase1: '83.6%', phase2: '91.4%', retention: '47.3% ⚠️', zeroShot: '51.1%', gap: '+26.1pp' },
-    { model: 'ORMAS Three-Signal', phase1: '94.6%', phase2: '96.5%', retention: '94.6% ✓', zeroShot: '58.8%', gap: '+33.8pp' },
+    { model: 'Standard ResNet-18', phase1: '83.6%', phase2: '91.4%', retention: '47.3%', retentionState: 'bad', zeroShot: '51.1%', gap: '+26.1pp' },
+    { model: 'ORMAS Three-Signal', phase1: '94.6%', phase2: '96.5%', retention: '94.6%', retentionState: 'good', zeroShot: '58.8%', gap: '+33.8pp' },
   ];
 
   const CustomTooltip = ({ active, payload, label }: any) => {
@@ -80,6 +81,47 @@ export default function CVResearch() {
       <style>{`
         .research-table { width: 100%; border-collapse: collapse; }
         .research-table th { padding: 12px 18px; text-align: left; color: #c4cfde; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #2a2d32; }
+        .res-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+        .res-link {
+          display: flex; align-items: center; gap: 13px;
+          background: #191b1e; border: 1px solid #2a2d32; border-radius: 10px;
+          padding: 14px 18px; text-decoration: none;
+          flex: 1 1 190px; min-width: 170px; max-width: 280px;
+          transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+        }
+        .res-link:hover {
+          border-color: rgba(196,207,222,0.5);
+          background: #1d2024;
+          transform: translateY(-2px);
+        }
+        .res-link-icon {
+          display: flex; align-items: center; justify-content: center;
+          width: 36px; height: 36px; flex-shrink: 0; border-radius: 8px;
+          border: 1px solid rgba(196,207,222,0.22);
+          background: rgba(196,207,222,0.07);
+          color: #c4cfde;
+        }
+        .res-link:hover .res-link-icon {
+          background: rgba(196,207,222,0.14);
+          border-color: rgba(196,207,222,0.45);
+        }
+        .res-link-text { display: flex; flex-direction: column; min-width: 0; }
+        .res-link-label { font-size: 14px; font-weight: 700; color: #c4cfde; line-height: 1.25; }
+        .res-link-sub {
+          font-size: 10.5px; color: #a6b0bc; text-transform: uppercase;
+          letter-spacing: 0.8px; margin-top: 3px;
+        }
+        .res-link-out { margin-left: auto; color: #838d99; transition: color 0.25s ease, transform 0.25s ease; }
+        .res-link:hover .res-link-out { color: #c4cfde; transform: translate(2px, -2px); }
+        @media (prefers-reduced-motion: reduce) { .res-link:hover { transform: none; } }
+
+        .res-retention {
+          display: inline-flex; align-items: center; gap: 7px;
+          font-weight: 700; white-space: nowrap;
+        }
+        .res-retention--good { color: #7fd88f; }
+        .res-retention--bad  { color: #e0a35c; }
+
         .research-table td { padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; color: #9aa4b0; vertical-align: top; }
         .research-table td:first-child { color: #c4cfde; font-family: 'Fira Code', monospace; font-weight: 600; white-space: nowrap; }
         .research-table tr:last-child td { border-bottom: none; }
@@ -122,27 +164,19 @@ export default function CVResearch() {
         </p>
 
         {/* Action Link Bar */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '36px' }}>
-          {[
-            { icon: '📄', label: 'Paper', sub: 'Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
-            { icon: '⚗️', label: 'Codebase', sub: 'Reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
-            { icon: '📦', label: 'Results Archive', sub: 'All experiment logs', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
-          ].map((link, i) => (
-            <a key={i} href={link.href} target="_blank" rel="noreferrer" style={{
-              display: 'flex', alignItems: 'center', gap: '12px',
-              background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px',
-              padding: '12px 18px', textDecoration: 'none', transition: 'border-color 0.2s',
-              flex: '1 1 180px', minWidth: '160px', maxWidth: '260px'
-            }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = '#c4cfde')}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = '#2a2d32')}
-            >
-              <span style={{ fontSize: '20px', lineHeight: 1 }}>{link.icon}</span>
-              <span>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#c4cfde', lineHeight: 1.2 }}>{link.label}</div>
-                <div style={{ fontSize: '11px', color: '#838d99', textTransform: 'uppercase', letterSpacing: '0.8px', marginTop: '3px' }}>{link.sub}</div>
+        <div className="res-links">
+          {([
+            { icon: 'fileText', label: 'Paper', sub: 'Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
+            { icon: 'flask', label: 'Codebase', sub: 'Reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
+            { icon: 'archive', label: 'Results Archive', sub: 'All experiment logs', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
+          ] as const).map((link, i) => (
+            <a key={i} href={link.href} target="_blank" rel="noreferrer" className="res-link">
+              <span className="res-link-icon"><Icon name={link.icon} size={17} /></span>
+              <span className="res-link-text">
+                <span className="res-link-label">{link.label}</span>
+                <span className="res-link-sub">{link.sub}</span>
               </span>
-              <span style={{ marginLeft: 'auto', color: '#838d99', fontSize: '12px' }}>↗</span>
+              <span className="res-link-out"><Icon name="externalLink" size={14} /></span>
             </a>
           ))}
         </div>
@@ -211,7 +245,7 @@ export default function CVResearch() {
 
           <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "12px", color: "#c4cfde" }}>Why This Exists</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "14px" }}>
-            I was building <strong style={{ color: '#c4cfde' }}>OXIMO</strong> — a multi-agent OS for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>codebase ↗</a> — the architecture is all there; production code, not polished) — and I hit the one problem I could not engineer around. The agents had to learn from real production data: corrupted labels, adversarial inputs, signals that contradicted each other. Every noise-robust framework I tested turned out to be an external filter bolted onto a network that was still completely blind to its own internal state.
+            I was building <strong style={{ color: '#c4cfde' }}>OXIMO</strong> — a multi-agent OS for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>codebase</a> — the architecture is all there; production code, not polished) — and I hit the one problem I could not engineer around. The agents had to learn from real production data: corrupted labels, adversarial inputs, signals that contradicted each other. Every noise-robust framework I tested turned out to be an external filter bolted onto a network that was still completely blind to its own internal state.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "50px" }}>
             What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a formal account of the conditions under which that repair stays stable. Nothing like that existed. ORMAS is what that requirement turned into.
@@ -220,6 +254,7 @@ export default function CVResearch() {
           <ExpandableSection
             closedLabel="View Full Technical Detail"
             hint="The three-signal math, every experimental table, the ISS derivation, ablations, and scope boundaries — for reviewers and engineers."
+            meta={['383 experiments', 'ISS derivation', 'Ablation tables', 'Scope boundaries']}
           >
           <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "#c4cfde" }}>The Three-Signal Architecture</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "20px" }}>
@@ -467,7 +502,12 @@ export default function CVResearch() {
                     <td style={{ color: '#c4cfde', fontFamily: 'inherit', fontWeight: 600 }}>{r.model}</td>
                     <td>{r.phase1}</td>
                     <td>{r.phase2}</td>
-                    <td style={{ color: r.retention.includes('⚠️') ? '#9aa4b0' : '#c4cfde', fontWeight: r.retention.includes('✓') ? 700 : 400 }}>{r.retention}</td>
+                    <td>
+                      <span className={`res-retention res-retention--${r.retentionState}`}>
+                        <Icon name={r.retentionState === 'good' ? 'check' : 'alert'} size={14} />
+                        {r.retention}
+                      </span>
+                    </td>
                     <td style={{ color: '#c4cfde', fontWeight: 700 }}>{r.zeroShot}</td>
                     <td style={{ color: '#c4cfde' }}>{r.gap}</td>
                   </tr>

@@ -181,10 +181,10 @@ A 12-month lesion study on a live UK-registered company. Pull OXIMO out and comm
 91% across every channel at once — which is exactly what rules out the market as the cause. Put V3
 back and it recovers 1,300%, then watch it close a $4,386 order autonomously at $0.00 acquisition
 cost. The scale ceiling above that is mine, not the architecture: no legal framework yet assigns
-commercial liability to an autonomous agent. Substrate 1 (e-commerce) is closed; legal, software,
-and medical are waiting on their own ablation cycles.
+commercial liability to an autonomous agent. Substrate 1 (e-commerce) is closed; medical research,
+defense systems, and regulated financial data are gated on ORMAS itself, not on scheduling.
 
-**Status:** Ablation Complete · Substrates 2–4 Active
+**Status:** Ablation Complete · Substrates 2–4 ORMAS-Gated
 
 ### The Three Systems, Summarised
 
@@ -651,6 +651,124 @@ Which points at something larger: continuous autonomous correction may be suffic
 make modular internal structure emerge — no explicit modularity constraints, no replay buffers. If
 that holds, it is a research direction rather than an engineering result.
 
+### 5.20 What ORMAS Is Actually For — The Three Gated Verticals
+
+A self-correcting network is a fancy object until you can say what it is for.
+
+Four substrates were planned. One is done — e-commerce — and it was chosen precisely because it
+needed none of this: open data, a feedback loop measured in days, and a binary failure signal. That
+made it the clean place to test whether the orchestration layer causes commercial output, with
+nothing else confounding it.
+
+The three still open are **medical research, defense systems, and regulated financial data**. They
+are not queued behind the first one. They are gated — and OXIDO is not the thing that opens them.
+ORMAS is.
+
+**Lock 1 — Access is granted on auditability, not accuracy.** You do not get clinical records,
+classified telemetry, or regulated position data by beating the incumbent on a benchmark. You get
+them by proving, per decision, what the model did and why. Every current architecture answers that
+question post hoc — an approximation of a network that has already made up its mind. ORMAS emits it
+as a physical property of its own backward pass: five telemetry layers, down to an exact boolean
+tensor of which node was corrected, when, and by how much.
+
+**Lock 2 — The answer is not in the training set.** Each of these domains needs the model to keep
+learning after deployment — per patient, per regime, per mission — without destroying what it
+already knew. That is the one thing a standard network structurally cannot do. Train it on the new
+thing and it forgets the old thing; this is catastrophic forgetting, and every existing workaround
+needs replay buffers, task boundaries, or task IDs at inference. ORMAS needs none of them, because
+the conflict signal that triggers a correction is itself the notification that something new has
+arrived.
+
+#### Medical Research
+
+*What is locked:* Clinical data is released on governance, not accuracy. Since the FDA finalised its
+Predetermined Change Control Plan guidance in December 2024, a deployed model is allowed to keep
+updating — but only within modifications specified, validated, and monitored in advance. The bar
+moved from "frozen" to "bounded and accounted for," which is a harder engineering requirement, not
+an easier one.
+
+*Why standard practice fails:* The requirement is the exact opposite of frozen. What works for
+patient A does not work for patient B, and the question that matters — what is happening to this one
+— is not a statistical property of the population they were drawn from. Current practice wraps a
+static network in heavy engineering at both ends: aggressive normalisation going in, a stack of
+statistical correction coming out. The population-level numbers come out right. The individual is
+still unanswered.
+
+*What ORMAS contributes:* It learned a second task while holding 94.6% of the first, with no replay
+buffer and no task labels, against ResNet-18's 47.3% — consistent across all three seeds. On
+combinations it was never shown grouped it scored 58.8% against a 25% chance baseline. I want to be
+precise about what that is: compositional generalisation over learned attributes, not causal
+inference about an unobserved cause. It is the precondition for per-patient adaptation, not the
+capability itself. What it does establish is that a model can keep learning after deployment without
+erasing what it already knew — and every correction lands in L4 as a bounded, timestamped,
+ISS-bounded event, which is the exact class of artifact a Change Control Plan has to specify in
+advance.
+
+*What is not proven:* Gated on ORMAS-T. Transformer scale is unproven and no clinical data has ever
+touched this — the retention numbers are CIFAR-10. There is also an unanswered scaling question
+aimed directly at this vertical: per-patient adaptation implies thousands of sequential tasks, and
+the ceiling on task count before the graph becomes computationally impractical has not been
+established.
+
+#### Defense Systems
+
+*What is locked:* Classified sensor data does not leave its enclave, and nothing goes into an enclave
+that cannot account for its own behaviour.
+
+*Why standard practice fails:* A platform approaching a target stops receiving the data it was
+trained on — jamming, spoofing, sensor degradation, deliberate corruption. The distribution moves
+under the model at precisely the moment the model matters, and there is no operator in the loop to
+notice.
+
+*What ORMAS contributes:* This is where the measured robustness sits. Under 40% label noise ORMAS
+decayed 2.5 pp from peak against 7.8 pp standard. After a mid-training dead-layer lesion it recovered
+to 80.3% where a parameter-matched CNN collapsed permanently to 10.0%, across every initialisation.
+Under σ=1.0 weight perturbation, 75.4% against 59.0%. On a 50-node DAG at 30% noise — dense enough
+that uncorrected training goes to NaN — 22,014 autonomous corrections held it numerically stable for
+200 epochs.
+
+*What is not proven:* Every number above is training-time. The paper's threat model is training-time
+weight-space pathology, not input-space attack on a fixed network — and on adversarial weight
+injection the standard baseline actually beats ORMAS by 1.0 pp, because those weights are built to
+keep activation statistics nominal and evade the exact signals ORMAS watches. Test-time distribution
+shift is named in the paper as an open extension, not a result. So this is simultaneously the most
+compelling analogue I have and the least tested one. I would rather say that than let the numbers
+imply a field result they do not support.
+
+#### Regulated Financial Data
+
+*What is locked:* Position, execution, and client data are SEC-regulated and competitively fatal to
+expose. None of it leaves the building, ever — which rules out every hosted model by construction.
+
+*Why standard practice fails:* Regime change. A model trained through one market regime degrades
+exactly when the regime turns, and retraining on the new one destroys what it knew about the old.
+Then the old regime comes back. This is catastrophic forgetting with money attached, and the industry
+currently pays for it by retraining on a schedule and accepting the loss.
+
+*What ORMAS contributes:* The sequential-task experiment is that problem in miniature: train Phase 1,
+switch to Phase 2 with no replay buffer and no task label, then measure what survives of Phase 1.
+Standard ResNet-18 keeps 47.3%. ORMAS keeps 94.6%. The mechanism is not a scheduler or a buffer —
+gradient conflict forces the two regimes into physically separate regions of weight space, so neither
+overwrites the other.
+
+*What is not proven:* CIFAR-10 is not a market, and no financial data has touched this. The mechanism
+is the claim; the domain transfer is untested.
+
+#### The Line Between Measured and Projected
+
+**Measured, in the paper, across 383 experiments:** 94.6% retention under sequential task shift;
+58.8% zero-shot compositional accuracy against 25% chance; 80.3% recovery from a mid-training
+dead-layer lesion against a baseline that collapses to 10.0%; 2.5 pp decay under 40% label noise
+against 7.8 pp; correction frequency decaying from 4.2 to 0.05 per epoch as the network stabilises;
+and the five-layer telemetry stack, which is native rather than reconstructed.
+
+**Projected, and not yet run:** silent node injection into a live network; the ~99% retention that
+dedicated per-task capacity should produce; ORMAS at Transformer scale; test-time distribution shift;
+and any clinical, financial, or defense data whatsoever.
+
+All three verticals above depend on the second column. I would rather draw that line clearly than let
+a reader assume the first column already covers it.
+
 ---
 
 ## 6. OXIMO — Cognitive Multi-Agent Operating System
@@ -855,10 +973,11 @@ quietly learning the wrong thing is not an inconvenience but a catastrophe.
 be uploaded to somebody else's SaaS platform, ever. OXIDO deploys inside the client's own
 infrastructure, on their servers, under their compliance framework.
 
-**GlassBox Is a Compliance Asset.** Regulated industries have to explain why the model decided what
-it decided. The FDA wants explainability built into the architecture, not bolted on afterwards.
-GlassBox emits a causal audit trail per node, per correction, per epoch — which is the shape of the
-answer regulators are asking for.
+**GlassBox Is a Compliance Asset.** Regulated industries have to account for what the model did and
+why. The FDA does not mandate any particular architecture — plenty of opaque models are cleared —
+but its Change Control Plan framework requires modifications to be pre-specified, validated, and
+monitored. GlassBox emits a causal audit trail per node, per correction, per epoch: that artifact
+produced natively, rather than reconstructed after the fact.
 
 **The Switching Cost Is the Moat.** After twelve months inside an organization, OXIMO's agents have
 built episodic memory and matured into experts on that specific business. Removing it is not a
@@ -874,8 +993,9 @@ conference introductions, and research credibility.
 |---|---|---|
 | **Hedge Funds / Quant Trading** | Signal data is adversarial by nature, and models drift quietly the moment the regime turns. | Every regime shift erases retained history, and nothing in the stack detects it happening. |
 | **Insurance Companies** | Actuarial models decay as the underlying risk profile moves under them. | Continuous drift with no detection layer, on architectures that carry no formal stability analysis at all. |
-| **Medical Research** | Clinical data is personal, noisy, and legally radioactive. | The FDA now rejects black-box models on architecture alone, however accurate they are. GlassBox is built for exactly that bar. |
+| **Medical Research** | Clinical data is personal, noisy, and legally radioactive. | Access is granted on governance rather than accuracy, and the FDA's Change Control Plan framework permits post-approval learning only within bounds pre-specified and monitored. GlassBox emits that monitoring artifact natively. |
 | **Fintech / Credit Scoring** | Fraud patterns move constantly, and the model has to learn the new ones without losing the old. | Catastrophic forgetting in a domain where forgetting costs money and compliance at the same time. |
+| **Defense / National Security** | Models degrade precisely when input streams are jammed, spoofed, or degraded, and nothing enters a classified enclave that cannot account for its own behaviour. | Strongest technical fit of any segment, slowest access path: clearance, facility accreditation, and export control gate it — not the architecture. Realistically routed through a cleared prime rather than sold direct, and I am a foreign national, which lengthens that path further. |
 | **Data-Rich Private Corps** | Large organizations that want operations running autonomously on their own data. | Nothing on the market can put agents on proprietary internal data and keep it safe. |
 
 ### 7.3 The Structural Gap
@@ -889,7 +1009,7 @@ training-time failure modes below.
 | Problem | The ORMAS Answer |
 |---|---|
 | Catastrophic forgetting | ORMAS solves it. 94.6% prior-task retention vs 47.3% standard ResNet-18. |
-| Black box opacity | GlassBox solves it. Per-node, per-correction causal audit trail. FDA-compliance-ready. |
+| Black box opacity | GlassBox addresses it. Per-node, per-correction causal audit trail, emitted natively rather than reconstructed post hoc. |
 | Silent data corruption | ORMAS three-signal training + health-gated self-correction solve it. |
 
 ### 7.4 Roadmap
@@ -1070,9 +1190,9 @@ at a real price.** Those four claims are load-bearing. Revenue is not.
 | Substrate | Status | Detail |
 |---|---|---|
 | **1 · E-Commerce** | Ablation Complete | 12-month controlled ablation study. Full injection-removal-reinjection cycle completed. Causal attribution confirmed. Selected for fastest feedback loop and clearest binary failure signal. |
-| **2 · Legal (Law Firms)** | Pending | Architecture validated via OXIMO. Ablation cycle pending — deployment protocol identical to Substrate 1. |
-| **3 · Software Companies** | Pending | Architecture validated via OXIMO. Ablation cycle pending — deployment protocol identical to Substrate 1. |
-| **4 · Medical Research** | Pending | Gated on ORMAS-T (Transformer-scale). ORMAS GlassBox compliance layer targets FDA explainability mandates for clinical fine-tuning. |
+| **2 · Medical Research** | ORMAS-Gated | Access is granted on auditability, not accuracy — and the clinical question is about one patient, which a frozen population model cannot answer. Both are ORMAS problems. |
+| **3 · Defense Systems** | ORMAS-Gated | Input streams degrade, get jammed, and get deliberately corrupted in the field. Training-time robustness is measured; the in-field test-time case is an untested extension. |
+| **4 · Regulated Financial Data** | ORMAS-Gated | Regime change is catastrophic forgetting with money on it. The data cannot leave the building, which rules out every hosted model. |
 
 ### 8.4 Why the Scale Is Deliberately Constrained
 
@@ -1197,12 +1317,12 @@ includes abandoned checkouts and sessions that reached intent but did not conver
 number is used anywhere a commercial claim is made. The distinction matters and I would rather state
 it than let a reader assume the larger figure means customers.
 
-**Substrates 2–4 — Pending Ablation Cycles.** Legal, software, and medical research substrates are
-architecturally ready via the OXIMO/ORMAS stack. Each requires completing its own
-injection-removal-reinjection ablation cycle before findings are published. The methodology is
-identical to Substrate 1. Medical research deployment is gated on ORMAS-T (Transformer-scale
-self-correcting training) — a prerequisite for fine-tuning on clinical data under FDA-compliant
-GlassBox auditability.
+**Substrates 2–4 — Gated, Not Queued.** Medical research, defense systems, and regulated financial
+data are not waiting on scheduling. Each sits behind two locks that the orchestration layer alone
+cannot open: access is granted on auditability rather than accuracy, and the answer required is not
+in the training set. Both locks are architectural, which makes ORMAS the prerequisite and ORMAS-T
+(Transformer-scale) the gating milestone — not another ablation cycle. Full reasoning per vertical
+is in Section 5.20.
 
 ---
 
@@ -1636,12 +1756,14 @@ legal framework currently assigns commercial liability to autonomous AI agents.
 analysis, no-referrer SCC attribution during the Phase 2 ablation, and UTM-tagged links confirmed in
 LLM assistant outputs. The formal SCC proof is in the System Architecture Paper, Section 3.5.
 
-**On substrates 2–4.** Legal, software, and medical are architecturally ready but have **not**
-completed their own ablation cycles. No findings are published for them.
+**On substrates 2–4.** Medical research, defense systems, and regulated financial data have **not**
+completed ablation cycles, and no findings are published for them. They are additionally gated on
+ORMAS-T, which does not exist yet. Nothing in any of those three domains has been tested on real
+domain data — the supporting numbers are all CIFAR-10.
 
-**On the EF outcome.** I was not accepted into that cohort. I hedged on a direct question about
-university commitment, that read as ambiguity, and it was a fair call. I was invited to reapply in
-six months.
+**On the EF outcome.** No offer came out of that conversation. I hedged on a direct question about
+university commitment, that read as ambiguity, and it was a fair call. The next conversation with EF
+is already in motion.
 
 **On the Cosmos outcome.** I received no grant. The application ranked highest in its cycle but was
 submitted to a round funding philosophical rather than technical work.

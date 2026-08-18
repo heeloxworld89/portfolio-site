@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 import ExpandableSection from '../ExpandableSection';
 
 export default function CVEngineering() {
@@ -136,8 +137,9 @@ export default function CVEngineering() {
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Systems Engineering</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>OXIMO — Cognitive Multi-Agent OS</h2>
         <p style={{ fontSize: '13px', color: '#838d99', marginTop: '-14px', marginBottom: '20px' }}>
-          <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#9aa4b0', textDecoration: 'underline' }}>
-            ↗ View Codebase
+          <a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '6px', verticalAlign: 'middle' }}>
+            View Codebase
+            <Icon name="externalLink" size={13} />
           </a>
           {' '}&nbsp;·&nbsp; Architecture is complete. Code is not polished — this was production research infrastructure, not a demo.
         </p>
@@ -188,6 +190,7 @@ export default function CVEngineering() {
           <ExpandableSection
             closedLabel="View Full Architecture Detail"
             hint="The 4-layer module breakdown, the Sacred Chain, self-hiring pipeline, memory tiers, safety systems, and test-suite tables — for engineers."
+            meta={['4 layers', '11 mini-repos', 'Sacred Chain', '2,011 tests']}
           >
           <h4 className="section-title">4 Layers. 11 Mini-Repos. Strict Separation of Concerns.</h4>
           <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "30px" }}>

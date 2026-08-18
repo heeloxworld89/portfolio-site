@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 export default function CVClosingAsk() {
   return (
     <div className="row mb--50" id="contact">
@@ -102,7 +103,8 @@ export default function CVClosingAsk() {
               The preprint is on Zenodo and the codebase reproduces every experiment in under an hour on one GPU. The place scrutiny would help most is the ISS local stability characterization. If you find an error in it, or a tighter bound, I would genuinely rather hear it from you than find out later.
             </p>
             <a className="ask-action" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
-              Read the Preprint ↗
+              Read the Preprint
+              <Icon name="externalLink" size={14} />
             </a>
           </div>
 
@@ -113,7 +115,8 @@ export default function CVClosingAsk() {
               The next phase needs two things: multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can run against real proprietary data. If you have either, that is the conversation worth having.
             </p>
             <a className="ask-action" href="#fundraising">
-              The Fundraising Case ↑
+              The Fundraising Case
+              <Icon name="arrowRight" size={14} />
             </a>
           </div>
 
@@ -124,7 +127,8 @@ export default function CVClosingAsk() {
               One script, reproduce.sh, runs every experiment in the paper. The OXIMO architecture is documented inside the codebase. Build on it, extend it, or go looking for the flaw — the code is there and the results check out or they do not.
             </p>
             <a className="ask-action" href="https://anonymous.4open.science/r/ormas-EB73/README.md" target="_blank" rel="noreferrer">
-              Explore the Codebase ↗
+              Explore the Codebase
+              <Icon name="externalLink" size={14} />
             </a>
           </div>
         </div>

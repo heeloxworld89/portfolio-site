@@ -28,7 +28,7 @@ export const ModalUIProvider = ({ children }: { children: ReactNode }) => {
   });
   const location = useLocation();
 
-  // 🔁 Reset all modals when the route changes
+  // Reset all modals when the route changes
   useEffect(() => {
     setOpenModals({
       mobileMenu1: false,

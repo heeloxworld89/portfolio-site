@@ -331,39 +331,12 @@ html, body {
   text-overflow: ellipsis;
 }
 
-/* Sidebar footer — all links must wrap, never clip */
+/* Sidebar footer — layout is owned by the component (Header3.tsx).
+   The previous overrides here forced `display:inline` on every anchor,
+   which broke the flex rows; intentionally not reinstated. */
 .header-left-sticky .social-share-style-1 {
-  padding-top: 24px !important;
-  margin-top: 24px !important;
-}
-
-.header-left-sticky .social-share-style-1 ul li {
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  margin-bottom: 10px !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-.header-left-sticky .social-share-style-1 a {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
-  display: inline !important;
-}
-
-/* CV Download button stays full-width */
-.header-left-sticky .social-share-style-1 > div > div:first-child a {
-  width: 100% !important;
-  font-size: 11px !important;
-  padding: 10px 12px !important;
-  letter-spacing: 0.5px !important;
-}
-
-/* Section labels in sidebar footer */
-.header-left-sticky .social-share-style-1 p {
-  font-size: 10px !important;
-  letter-spacing: 1px !important;
+  padding-top: 22px !important;
+  margin-top: 22px !important;
 }
 
 /* At laptop breakpoint (1200–1399px) narrow the sidebar slightly 
@@ -388,4 +361,64 @@ html, body {
   .page-with-left-header {
     margin-left: 310px !important;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Side navigation — clearer active state and hover affordance
+   ══════════════════════════════════════════════════════════════ */
+.header-left-sticky .mainmenu-nav .primary-menu li a {
+  position: relative;
+  color: #98a2ae !important;
+  border-radius: 8px !important;
+  padding: 8px 12px 8px 14px !important;
+  transition: color 0.22s ease, background-color 0.22s ease !important;
+
+  /* left accent bar, hidden until active */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleY(0.3);
+    width: 2px;
+    height: 62%;
+    border-radius: 2px;
+    background: #ff4a57;
+    opacity: 0;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  svg {
+    opacity: 0.55 !important;
+    color: currentColor !important;
+    transition: opacity 0.22s ease;
+  }
+
+  &:hover {
+    color: #d7dee8 !important;
+    background-color: rgba(196, 207, 222, 0.06);
+    svg { opacity: 0.9 !important; }
+  }
+}
+
+.header-left-sticky .mainmenu-nav .primary-menu li.current a {
+  color: #ffffff !important;
+  background-color: rgba(255, 74, 87, 0.09);
+  font-weight: 600;
+
+  &::before {
+    opacity: 1;
+    transform: translateY(-50%) scaleY(1);
+  }
+  svg {
+    opacity: 1 !important;
+    color: #ff6b76 !important;
+  }
+  /* neutralise the old faint full-bleed wash */
+  &::after { opacity: 0 !important; visibility: hidden !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-left-sticky .mainmenu-nav .primary-menu li a,
+  .header-left-sticky .mainmenu-nav .primary-menu li a::before { transition: none !important; }
 }

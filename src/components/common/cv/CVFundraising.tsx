@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 const caseBeats = [
   {
     n: '01',
@@ -224,7 +225,8 @@ export default function CVFundraising() {
             raadxbusiness9@gmail.com
           </a>
           <a className="fr-cta-secondary" href="/assets/pdf/oxido_pitch_deck.pdf" target="_blank" rel="noreferrer">
-            Download the Pitch Deck ↗
+            Download the Pitch Deck
+            <Icon name="externalLink" size={14} />
           </a>
         </div>
 

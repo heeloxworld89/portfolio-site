@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 import React from 'react';
 import ExpandableSection from '../ExpandableSection';
 
@@ -76,7 +77,7 @@ export default function CVDeployment() {
             onMouseEnter={e => (e.currentTarget.style.background = 'rgba(196,207,222,0.1)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'rgba(196,207,222,0.05)')}
           >
-            <i className="fa-sharp fa-regular fa-file-lines" />
+            <Icon name="fileText" size={15} />
             System Architecture Paper
             <span style={{ fontSize: '11px', color: '#838d99', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
               For technical evaluators · 30 pages
@@ -93,14 +94,14 @@ export default function CVDeployment() {
               background: 'rgba(255,74,87,0.06)',
               border: '1px solid rgba(255,74,87,0.18)',
               borderRadius: '5px',
-              color: '#ff4a57',
+              color: '#ff6b76',
               fontSize: '13px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase',
               textDecoration: 'none', transition: 'all 0.25s ease',
             }}
             onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,74,87,0.12)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,74,87,0.06)')}
           >
-            <i className="fa-sharp fa-regular fa-chart-line" />
+            <Icon name="chart" size={15} />
             Commercial Evidence Report
             <span style={{ fontSize: '11px', color: '#838d99', fontWeight: 400, letterSpacing: 0, textTransform: 'none' }}>
               For VCs &amp; angel investors · 10 tiers
@@ -312,13 +313,13 @@ export default function CVDeployment() {
             </div>
           </div>
           {[
-            { sector: 'Legal (Law Firms)', note: 'Architecture validated via OXIMO. Ablation cycle pending — deployment protocol identical to Substrate 1.' },
-            { sector: 'Software Companies', note: 'Architecture validated via OXIMO. Ablation cycle pending — deployment protocol identical to Substrate 1.' },
-            { sector: 'Medical Research', note: 'Gated on ORMAS-T (Transformer-scale). ORMAS GlassBox compliance layer targets FDA explainability mandates for clinical fine-tuning.' },
+            { sector: 'Medical Research', note: 'Access is granted on governance, not accuracy, and the FDA now permits post-approval learning only within pre-specified, monitored bounds. Producing that bound and that monitor is an architecture problem.' },
+            { sector: 'Defense Systems', note: 'Input streams degrade, get jammed, and get deliberately corrupted in the field. Training-time robustness is measured; the in-field test-time case is an untested extension.' },
+            { sector: 'Regulated Financial Data', note: 'Regime change is catastrophic forgetting with money on it. The data cannot leave the building, which rules out every hosted model.' },
           ].map((v, i) => (
             <div key={i} style={{ background: '#141618', border: '1px solid #222529', borderRadius: '8px', padding: '18px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '4px' }}>
-                Substrate {i + 2} · Pending
+                Substrate {i + 2} · ORMAS-Gated
               </div>
               <div style={{ fontSize: '15px', fontWeight: 700, color: '#838d99', marginBottom: '6px' }}>{v.sector}</div>
               <div style={{ fontSize: '12px', color: '#838d99', lineHeight: 1.6 }}>{v.note}</div>
@@ -351,6 +352,7 @@ export default function CVDeployment() {
           <ExpandableSection
             closedLabel="View AX09 Technical Spec"
             hint="The six-stage pipeline, cost breakdown, phase-level ablation tables, traffic attribution, and study parameters — for engineers and technical evaluators."
+            meta={['6-stage pipeline', '$0.0043 per suite', 'Phase ablations', 'Traffic attribution']}
           >
           {/* ── AX09 Six-Stage Pipeline ───────────────────────────────────── */}
           <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '6px', color: '#c4cfde' }}>
@@ -522,9 +524,9 @@ export default function CVDeployment() {
 
           {/* ── Roadmap — other substrates ────────────────────────────────── */}
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px', marginTop: '10px', marginBottom: '10px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '10px' }}>Substrates 2–4 — Pending Ablation Cycles</p>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '10px' }}>Substrates 2–4 — Gated, Not Queued</p>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#838d99', margin: 0 }}>
-              Legal, software, and medical research substrates are architecturally ready via the OXIMO/ORMAS stack. Each requires completing its own injection-removal-reinjection ablation cycle before findings are published. The methodology is identical to Substrate 1. Medical research deployment is gated on ORMAS-T (Transformer-scale self-correcting training) — a prerequisite for fine-tuning on clinical data under FDA-compliant GlassBox auditability.
+              Medical research, defense systems, and regulated financial data are not waiting on scheduling. Each sits behind two locks that the orchestration layer alone cannot open: access is granted on auditability rather than accuracy, and the answer required is not in the training set. Both locks are architectural, which makes ORMAS the prerequisite and ORMAS-T (Transformer-scale) the gating milestone — not another ablation cycle. The full reasoning for each of the three is set out in the OXIDO section.
             </p>
           </div>
 

@@ -4,10 +4,8 @@ import CVWhoIAm from "./cv/CVWhoIAm";
 import CVResearch from "./cv/CVResearch";
 import CVEngineering from "./cv/CVEngineering";
 import CVDeployment from "./cv/CVDeployment";
-import CVJourney from "./cv/CVJourney";
-import CVWorkEthic from "./cv/CVWorkEthic";
+import CVOriginStatement from "./cv/CVOriginStatement";
 import CVEducation from "./cv/CVEducation";
-import CVSkillsAndVision from "./cv/CVSkillsAndVision";
 import CVFundraising from "./cv/CVFundraising";
 import CVClosingAsk from "./cv/CVClosingAsk";
 
@@ -21,10 +19,8 @@ export default function CVContent() {
         <CVResearch />
         <CVEngineering />
         <CVDeployment />
-        <CVJourney />
-        <CVWorkEthic />
+        <CVOriginStatement />
         <CVEducation />
-        <CVSkillsAndVision />
         <CVFundraising />
         <CVClosingAsk />
       </div>

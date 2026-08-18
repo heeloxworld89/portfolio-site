@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 
 export default function Hero(_props?: any) {
   return (
@@ -21,6 +22,27 @@ export default function Hero(_props?: any) {
           .editorial-row { flex-direction: column; padding: 30px 0; }
           .editorial-date { width: 100%; margin-bottom: 15px; }
         }
+        .hero-doi-link {
+          display: inline-flex; align-items: center; gap: 9px;
+          color: #fff; text-decoration: none;
+          transition: color 0.25s ease;
+        }
+        .hero-doi-link:hover { color: #c4cfde; }
+        .hero-doi-link svg { opacity: 0.55; transition: opacity 0.25s ease, transform 0.25s ease; }
+        .hero-doi-link:hover svg { opacity: 1; transform: translate(2px, -2px); }
+        .hero-cta {
+          display: inline-flex; align-items: center; gap: 9px;
+          padding: 11px 18px; border-radius: 6px;
+          font-size: 12px; font-weight: 700; letter-spacing: 0.8px;
+          text-transform: uppercase; text-decoration: none;
+          transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+        .hero-cta:hover { transform: translateY(-2px); }
+        .hero-cta-a { background: rgba(196,207,222,0.07); border: 1px solid rgba(196,207,222,0.22); color: #c4cfde; }
+        .hero-cta-a:hover { background: rgba(196,207,222,0.13); border-color: rgba(196,207,222,0.45); color: #e8edf4; }
+        .hero-cta-b { background: rgba(255,74,87,0.08); border: 1px solid rgba(255,74,87,0.3); color: #ff6b76; }
+        .hero-cta-b:hover { background: rgba(255,74,87,0.15); border-color: rgba(255,74,87,0.55); color: #ff8a93; }
+        @media (prefers-reduced-motion: reduce) { .hero-cta:hover { transform: none; } }
         .pulse-dot {
           width: 8px;
           height: 8px;
@@ -94,7 +116,7 @@ export default function Hero(_props?: any) {
                     </div>
                     <div>
                       <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
-                        <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>ORMAS: Three-Signal Learning — Zenodo DOI ↗</a>
+                        <a href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer" className="hero-doi-link">ORMAS: Three-Signal Learning — Zenodo DOI<Icon name="externalLink" size={16} /></a>
                       </h3>
                       <p style={{ color: '#9aa4b0', fontSize: '17px', lineHeight: '1.8', margin: 0, maxWidth: '620px' }}>
                         <strong style={{color: '#c4cfde'}}>ORMAS</strong>: a neural network that reports its own damage and repairs itself mid-training. First formal local stability characterization for any self-correcting architecture (global convergence remains open). 383 experiments · 4 architectures · +70.3pp recovery gap where baselines permanently collapse.{' '}
@@ -126,40 +148,12 @@ export default function Hero(_props?: any) {
                         <strong style={{color: '#c4cfde'}}>What I am building next:</strong> porting per-node structural health monitoring onto attention heads (ORMAS-T), then training Cherry — a self-correcting language model from scratch.
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                        <a
-                          href="/assets/pdf/oxido_academic_research_paper.pdf"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '8px',
-                            padding: '10px 18px',
-                            background: 'rgba(196,207,222,0.06)',
-                            border: '1px solid rgba(196,207,222,0.15)',
-                            borderRadius: '4px',
-                            color: '#c4cfde',
-                            fontSize: '12px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          <i className="fa-sharp fa-regular fa-file-lines" />
+                        <a href="/assets/pdf/oxido_academic_research_paper.pdf" target="_blank" rel="noreferrer" className="hero-cta hero-cta-a">
+                          <Icon name="fileText" size={15} />
                           System Architecture Paper
                         </a>
-                        <a
-                          href="/assets/pdf/oxido_investor_whitepaper.pdf"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '8px',
-                            padding: '10px 18px',
-                            background: 'rgba(255,74,87,0.06)',
-                            border: '1px solid rgba(255,74,87,0.18)',
-                            borderRadius: '4px',
-                            color: '#ff4a57',
-                            fontSize: '12px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          <i className="fa-sharp fa-regular fa-chart-line" />
+                        <a href="/assets/pdf/oxido_investor_whitepaper.pdf" target="_blank" rel="noreferrer" className="hero-cta hero-cta-b">
+                          <Icon name="chart" size={15} />
                           Commercial Evidence Report
                         </a>
                       </div>
@@ -216,17 +210,27 @@ export default function Hero(_props?: any) {
 
 
               <div className="tmp-scroll-trigger tmp-fade-in animation-order-4" style={{ marginTop: '40px' }}>
-                <a href="#research" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', color: '#9aa4b0', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
+                <a href="#research" className="hero-scroll-cue">
                   Read the Research
-                  <i className="fa-sharp fa-regular fa-arrow-down" style={{ animation: 'bounce 2s infinite' }}></i>
+                  <span className="hero-scroll-cue-icon"><Icon name="arrowDown" size={15} /></span>
                 </a>
                 <style>{`
-                  @keyframes bounce {
-                    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-                    40% { transform: translateY(-10px); }
-                    60% { transform: translateY(-5px); }
+                  .hero-scroll-cue {
+                    display: inline-flex; align-items: center; gap: 10px;
+                    color: #9aa4b0; font-size: 13px; font-weight: 700;
+                    letter-spacing: 1px; text-transform: uppercase;
+                    text-decoration: none; transition: color 0.25s ease;
                   }
-                  a:hover { color: #ff4a57 !important; }
+                  .hero-scroll-cue:hover { color: #c4cfde; }
+                  .hero-scroll-cue-icon { animation: heroBounce 2s infinite; }
+                  @keyframes heroBounce {
+                    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                    40% { transform: translateY(-7px); }
+                    60% { transform: translateY(-3px); }
+                  }
+                  @media (prefers-reduced-motion: reduce) {
+                    .hero-scroll-cue-icon { animation: none; }
+                  }
                 `}</style>
               </div>
 

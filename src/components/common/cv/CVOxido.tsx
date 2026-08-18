@@ -1,4 +1,7 @@
-import React from 'react';
+import Icon from '@/components/common/Icon';
+import React, { useState } from 'react';
+import VerticalModal from '../VerticalModal';
+import { deepDives } from './verticalDeepDives';
 
 // ─── The six named things — the whole cast, so nothing is ambiguous ──────────
 const namedThings = [
@@ -46,7 +49,7 @@ const roadmap = [
     status: 'Active',
     label: 'ORMAS-T — Transformer Scale',
     desc: 'Porting the three signals and local readouts to attention heads, with per-head structural monitoring.',
-    removes: 'The architecture restriction — unlocks continuous on-premise fine-tuning on institutional data, which is what the medical segment requires.',
+    removes: 'The architecture restriction — unlocks continuous on-premise fine-tuning on institutional data, which is the single gate standing in front of all three remaining verticals.',
     active: true,
   },
   {
@@ -60,9 +63,38 @@ const roadmap = [
 ];
 
 const buyerSegments = [
-  { range: '#1–10', who: 'US academic medical centres running clinical AI under an FDA pathway', problem: 'The FDA rejects models on architecture rather than accuracy. The compliance requirement is already documented, so the budget line exists before we arrive.', pop: '~150–200 US institutions with both an internal AI research group and a regulated deployment route' },
-  { range: '#11–30', who: 'Quantitative funds and asset managers with in-house ML teams', problem: 'Catastrophic forgetting across market regime changes — models degrade on exactly the patterns they were trained on, at the moment those patterns matter. Data cannot leave for competitive reasons.', pop: 'Several hundred globally at meaningful size' },
-  { range: '#31–50', who: 'Insurers and credit-risk teams', problem: 'Continuous distribution shift plus a supervisor requiring model-risk documentation. Silent drift surfaces as reserve miscalculation — a compliance failure with direct financial liability.', pop: '—' },
+  { range: '#1–10', who: 'US academic medical centres running clinical AI under an FDA pathway', problem: 'Access is granted on governance rather than accuracy, and the FDA’s Change Control Plan framework permits continuous updating only within bounds specified and monitored in advance. The compliance line is already budgeted; ORMAS emits the monitoring artifact natively instead of wrapping a model in one.', pop: '~150–200 US institutions with both an internal AI research group and a regulated deployment route' },
+  { range: '#11–25', who: 'Quantitative funds and asset managers with in-house ML teams', problem: 'Catastrophic forgetting across market regime changes — models degrade on exactly the patterns they were trained on, at the moment those patterns matter. Data cannot leave for competitive reasons.', pop: 'Several hundred globally at meaningful size' },
+  { range: '#26–40', who: 'Insurers and credit-risk teams', problem: 'Continuous distribution shift plus a supervisor requiring model-risk documentation. Silent drift surfaces as reserve miscalculation — a compliance failure with direct financial liability.', pop: 'Low hundreds globally — carriers and lenders large enough to run a formal model-risk function under SR 11-7 or Solvency II' },
+  { range: '#41–50', who: 'Defense and national-security integrators', problem: 'Models degrade precisely when input streams are jammed, spoofed, or degraded, and nothing enters a classified enclave that cannot account for its own behaviour. The technical fit is the strongest of the four segments.', pop: 'Last by design, not by preference: clearance, facility accreditation, and export control gate this segment — not the architecture. Realistically routed through a cleared prime rather than sold direct, and I am a foreign national, which lengthens that path further.' },
+];
+
+// ─── The three ORMAS-gated verticals — what the architecture is actually for ──
+const gatedVerticals = [
+  {
+    name: 'Medical Research',
+    lock: 'Clinical data is released on governance, not accuracy. Since the FDA finalised its Predetermined Change Control Plan guidance in December 2024, a deployed model is allowed to keep updating — but only within modifications specified, validated, and monitored in advance. The bar moved from “frozen” to “bounded and accounted for,” which is a harder engineering requirement, not an easier one.',
+    why: 'The requirement is the exact opposite of frozen. What works for patient A does not work for patient B, and the question that matters — what is happening to this one — is not a statistical property of the population they were drawn from. Current practice wraps a static network in heavy engineering at both ends: aggressive normalisation going in, a stack of statistical correction coming out. The population-level numbers come out right. The individual is still unanswered.',
+    what: 'ORMAS learned a second task while holding 94.6% of the first, with no replay buffer and no task labels, against ResNet-18’s 47.3% — consistent across all three seeds. On combinations it was never shown grouped it scored 58.8% against a 25% chance baseline. I want to be precise about what that is: compositional generalisation over learned attributes, not causal inference about an unobserved cause. It is the precondition for per-patient adaptation, not the capability itself. What it does establish is that a model can keep learning after deployment without erasing what it already knew — and every correction lands in L4 as a bounded, timestamped, ISS-bounded event, which is the exact class of artifact a Change Control Plan has to specify in advance.',
+    gap: 'Gated on ORMAS-T. Transformer scale is unproven and no clinical data has ever touched this — the retention numbers are CIFAR-10. There is also an unanswered scaling question aimed directly at this vertical: per-patient adaptation implies thousands of sequential tasks, and the ceiling on task count before the graph becomes computationally impractical has not been established.',
+    chips: ['FDA change-control fit', 'Personalisation gap', '~150–200 institutions'],
+  },
+  {
+    name: 'Defense Systems',
+    lock: 'Classified sensor data does not leave its enclave, and nothing goes into an enclave that cannot account for its own behaviour.',
+    why: 'A platform approaching a target stops receiving the data it was trained on — jamming, spoofing, sensor degradation, deliberate corruption. The distribution moves under the model at precisely the moment the model matters, and there is no operator in the loop to notice.',
+    what: 'This is where the measured robustness sits. Under 40% label noise ORMAS decayed 2.5 pp from peak against 7.8 pp standard. After a mid-training dead-layer lesion it recovered to 80.3% where a parameter-matched CNN collapsed permanently to 10.0%, across every initialisation. Under σ=1.0 weight perturbation, 75.4% against 59.0%. On a 50-node DAG at 30% noise — dense enough that uncorrected training goes to NaN — 22,014 autonomous corrections held it numerically stable for 200 epochs.',
+    gap: 'Every number above is training-time. The paper’s threat model is training-time weight-space pathology, not input-space attack on a fixed network — and on adversarial weight injection the standard baseline actually beats ORMAS by 1.0 pp, because those weights are built to keep activation statistics nominal and evade the exact signals ORMAS watches. Test-time distribution shift is named in the paper as an open extension, not a result. So this is simultaneously the most compelling analogue I have and the least tested one. I would rather say that than let the numbers imply a field result they do not support.',
+    chips: ['Measured robustness', 'Known blind spot', 'Access path reality'],
+  },
+  {
+    name: 'Regulated Financial Data',
+    lock: 'Position, execution, and client data are SEC-regulated and competitively fatal to expose. None of it leaves the building, ever — which rules out every hosted model by construction.',
+    why: 'Regime change. A model trained through one market regime degrades exactly when the regime turns, and retraining on the new one destroys what it knew about the old. Then the old regime comes back. This is catastrophic forgetting with money attached, and the industry currently pays for it by retraining on a schedule and accepting the loss.',
+    what: 'The sequential-task experiment is that problem in miniature: train Phase 1, switch to Phase 2 with no replay buffer and no task label, then measure what survives of Phase 1. Standard ResNet-18 keeps 47.3%. ORMAS keeps 94.6%. The mechanism is not a scheduler or a buffer — gradient conflict forces the two regimes into physically separate regions of weight space, so neither overwrites the other.',
+    gap: 'CIFAR-10 is not a market, and no financial data has touched this. The mechanism is the claim; the domain transfer is untested.',
+    chips: ['Cleanest mapping', '94.6% vs 47.3%', 'First commercial move'],
+  },
 ];
 
 const sectionLabel: React.CSSProperties = {
@@ -71,6 +103,8 @@ const sectionLabel: React.CSSProperties = {
 };
 
 export default function CVOxido() {
+  const [openDive, setOpenDive] = useState<number | null>(null);
+
   return (
     <div className="row mb--50" id="oxido">
       <style>{`
@@ -164,7 +198,118 @@ export default function CVOxido() {
         }
         .oxido-link:hover { border-color: rgba(196,207,222,0.4); }
         .oxido-link-label { font-size: 13px; font-weight: 700; color: #c4cfde; }
-        .oxido-link-sub { font-size: 10px; color: #838d99; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 2px; }
+        .oxido-link-sub { font-size: 10px; color: #a6b0bc; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px; display: flex; align-items: center; gap: 5px; }
+
+        .oxido-dive-btn {
+          position: relative; overflow: hidden;
+          display: flex; align-items: center; gap: 16px;
+          width: 100%; margin-top: 18px; text-align: left; cursor: pointer;
+          padding: 18px 22px; border-radius: 12px;
+          border: 1px solid #3a4048;
+          background:
+            linear-gradient(180deg, rgba(196,207,222,0.075) 0%, rgba(196,207,222,0.03) 100%),
+            #16181c;
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.05),
+            0 6px 22px -14px rgba(0,0,0,0.9);
+          color: #c4cfde;
+          transition: border-color 0.25s ease, box-shadow 0.25s ease,
+                      transform 0.25s ease, background 0.25s ease;
+        }
+        .oxido-dive-btn:hover {
+          transform: translateY(-2px);
+          border-color: rgba(196,207,222,0.55);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.07),
+            0 10px 30px -14px rgba(0,0,0,0.95),
+            0 0 0 3px rgba(196,207,222,0.07);
+        }
+        .oxido-dive-btn:focus-visible {
+          outline: none; border-color: #c4cfde;
+          box-shadow: 0 0 0 3px rgba(196,207,222,0.25);
+        }
+        .oxido-dive-btn::after {
+          content: ""; position: absolute; inset: 0; pointer-events: none;
+          background: linear-gradient(105deg, transparent 34%,
+            rgba(196,207,222,0.06) 44%, rgba(196,207,222,0.13) 50%,
+            rgba(196,207,222,0.06) 56%, transparent 66%);
+          transform: translateX(-100%);
+          animation: oxidoSweep 6.5s ease-in-out infinite;
+          animation-delay: 1.2s;
+        }
+        @keyframes oxidoSweep {
+          0%, 55% { transform: translateX(-100%); }
+          100%    { transform: translateX(100%); }
+        }
+        .oxido-dive-icon {
+          position: relative; flex-shrink: 0;
+          width: 42px; height: 42px;
+          display: flex; align-items: center; justify-content: center;
+          border-radius: 10px;
+          border: 1px solid rgba(196,207,222,0.28);
+          background: rgba(196,207,222,0.08);
+          transition: background 0.25s ease, border-color 0.25s ease;
+        }
+        .oxido-dive-btn:hover .oxido-dive-icon {
+          background: rgba(196,207,222,0.15);
+          border-color: rgba(196,207,222,0.5);
+        }
+        .oxido-dive-icon::before {
+          content: ""; position: absolute; top: -3px; right: -3px;
+          width: 8px; height: 8px; border-radius: 50%;
+          background: #c4cfde; box-shadow: 0 0 0 2px #16181c;
+          animation: oxidoPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes oxidoPulse {
+          0%, 100% { opacity: 1;    transform: scale(1); }
+          50%      { opacity: 0.35; transform: scale(0.75); }
+        }
+        .oxido-dive-txt { flex: 1; min-width: 0; }
+        .oxido-dive-btn-label {
+          display: block; font-size: 15px; font-weight: 700;
+          letter-spacing: 0.2px; color: #e8edf4; margin-bottom: 4px; line-height: 1.35;
+        }
+        .oxido-dive-btn-hint {
+          display: block; font-size: 12.5px; line-height: 1.6; color: #a6b0bc; font-weight: 400;
+        }
+        .oxido-dive-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+        .oxido-dive-chip {
+          font-size: 10.5px; font-weight: 700; letter-spacing: 0.9px;
+          text-transform: uppercase; color: #c4cfde;
+          background: rgba(196,207,222,0.09);
+          border: 1px solid rgba(196,207,222,0.22);
+          border-radius: 999px; padding: 4px 11px; white-space: nowrap;
+        }
+        .oxido-dive-cta {
+          flex-shrink: 0; display: flex; align-items: center; gap: 10px; color: #c4cfde;
+        }
+        .oxido-dive-cta-word {
+          font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+        }
+        .oxido-dive-cta-ring {
+          width: 34px; height: 34px;
+          display: flex; align-items: center; justify-content: center;
+          border-radius: 50%;
+          border: 1px solid rgba(196,207,222,0.3);
+          background: rgba(196,207,222,0.07);
+          transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+        .oxido-dive-btn:hover .oxido-dive-cta-ring {
+          background: rgba(196,207,222,0.16);
+          border-color: rgba(196,207,222,0.55);
+          transform: scale(1.06);
+        }
+        @media (max-width: 640px) {
+          .oxido-dive-btn { gap: 13px; padding: 16px; align-items: flex-start; }
+          .oxido-dive-icon { width: 36px; height: 36px; }
+          .oxido-dive-btn-label { font-size: 14px; }
+          .oxido-dive-cta-word { display: none; }
+          .oxido-dive-cta { align-self: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .oxido-dive-btn::after, .oxido-dive-icon::before { animation: none; }
+          .oxido-dive-btn:hover { transform: none; }
+        }
       `}</style>
       <div className="col-12">
 
@@ -224,13 +369,13 @@ export default function CVOxido() {
           <a className="oxido-link" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
             <span>
               <div className="oxido-link-label">ORMAS Paper</div>
-              <div className="oxido-link-sub">Zenodo DOI ↗</div>
+              <div className="oxido-link-sub">Zenodo DOI<Icon name="externalLink" size={11} /></div>
             </span>
           </a>
           <a className="oxido-link" href="/assets/pdf/oxido_investor_whitepaper.pdf" target="_blank" rel="noreferrer">
             <span>
               <div className="oxido-link-label">12-Month Record</div>
-              <div className="oxido-link-sub">Commercial Evidence Report ↗</div>
+              <div className="oxido-link-sub">Commercial Evidence Report<Icon name="externalLink" size={11} /></div>
             </span>
           </a>
           <a className="oxido-link" href="#deployment">
@@ -242,7 +387,7 @@ export default function CVOxido() {
           <a className="oxido-link" href="https://orcid.org/0009-0003-1178-5296" target="_blank" rel="noreferrer">
             <span>
               <div className="oxido-link-label">ORCID</div>
-              <div className="oxido-link-sub">0009-0003-1178-5296 ↗</div>
+              <div className="oxido-link-sub">0009-0003-1178-5296<Icon name="externalLink" size={11} /></div>
             </span>
           </a>
         </div>
@@ -299,7 +444,7 @@ export default function CVOxido() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2px', marginBottom: '56px' }}>
           {[
             { title: 'The Data Cannot Leave', body: 'Medical records, financial positions, actuarial tables — none of it can be uploaded to somebody else’s SaaS platform, ever. OXIDO deploys inside the client’s own infrastructure, on their servers, under their compliance framework.' },
-            { title: 'GlassBox Is a Compliance Asset', body: 'Regulated industries have to explain why the model decided what it decided. The FDA wants explainability built into the architecture, not bolted on afterwards. GlassBox emits a causal audit trail per node, per correction, per epoch — which is the shape of the answer regulators are asking for.' },
+            { title: 'GlassBox Is a Compliance Asset', body: 'Regulated industries have to account for what the model did and why. The FDA does not mandate any particular architecture — plenty of opaque models are cleared — but its Change Control Plan framework requires modifications to be pre-specified, validated, and monitored. GlassBox emits a causal audit trail per node, per correction, per epoch: that artifact produced natively, rather than reconstructed after the fact.' },
             { title: 'The Switching Cost Is the Moat', body: 'After twelve months inside an organization, OXIMO’s agents have built episodic memory and matured into experts on that specific business. Removing it is not a migration, it is an amputation — the Black Bloxie ablation measured exactly what that costs: 91% of output, gone.' },
           ].map((c, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', padding: '24px' }}>
@@ -361,6 +506,126 @@ export default function CVOxido() {
           We are building the layer itself.
         </p>
 
+        {/* WHAT ORMAS IS FOR — the three gated verticals */}
+        <p style={sectionLabel}>What ORMAS Is Actually For</p>
+        <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '720px', marginBottom: '16px' }}>
+          A self-correcting network is a fancy object until you can say what it is for. Four
+          substrates were planned. One is done — e-commerce — and it was chosen precisely
+          because it needed none of this: open data, a feedback loop measured in days, and a
+          binary failure signal. That made it the clean place to test whether the orchestration
+          layer causes commercial output, with nothing else confounding it.
+        </p>
+        <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '720px', marginBottom: '28px' }}>
+          The three still open are <strong style={{ color: '#c4cfde' }}>medical research, defense
+          systems, and regulated financial data</strong>. They are not queued behind the first one.
+          They are gated — and OXIDO is not the thing that opens them. ORMAS is.
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '12px', marginBottom: '28px' }}>
+          {[
+            { n: 'Lock 1', t: 'Access is granted on auditability, not accuracy.', b: 'You do not get clinical records, classified telemetry, or regulated position data by beating the incumbent on a benchmark. You get them by proving, per decision, what the model did and why. Every current architecture answers that question post hoc — an approximation of a network that has already made up its mind. ORMAS emits it as a physical property of its own backward pass: five telemetry layers, down to an exact boolean tensor of which node was corrected, when, and by how much.' },
+            { n: 'Lock 2', t: 'The answer is not in the training set.', b: 'Each of these domains needs the model to keep learning after deployment — per patient, per regime, per mission — without destroying what it already knew. That is the one thing a standard network structurally cannot do. Train it on the new thing and it forgets the old thing; this is catastrophic forgetting, and every existing workaround needs replay buffers, task boundaries, or task IDs at inference. ORMAS needs none of them, because the conflict signal that triggers a correction is itself the notification that something new has arrived.' },
+          ].map((l, i) => (
+            <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '22px 24px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '8px' }}>{l.n}</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '10px', lineHeight: 1.45 }}>{l.t}</div>
+              <div style={{ fontSize: '14px', lineHeight: 1.75, color: '#9aa4b0' }}>{l.b}</div>
+            </div>
+          ))}
+        </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+            {gatedVerticals.map((v, i) => (
+              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '24px 26px' }}>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>{v.name}</div>
+                {[
+                  { k: 'What is locked', v: v.lock },
+                  { k: 'Why standard practice fails', v: v.why },
+                  { k: 'What ORMAS contributes', v: v.what },
+                ].map((row, j) => (
+                  <div key={j} style={{ marginBottom: '12px' }}>
+                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#838d99', marginBottom: '5px' }}>{row.k}</div>
+                    <div style={{ fontSize: '14px', lineHeight: 1.75, color: '#9aa4b0' }}>{row.v}</div>
+                  </div>
+                ))}
+                <div style={{ background: 'rgba(255,74,87,0.05)', borderLeft: '2px solid #ff4a57', borderRadius: '0 6px 6px 0', padding: '12px 16px', marginTop: '14px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ff4a57', marginBottom: '5px' }}>What is not proven</div>
+                  <div style={{ fontSize: '14px', lineHeight: 1.75, color: '#9aa4b0' }}>{v.gap}</div>
+                </div>
+
+                <button
+                  type="button"
+                  className="oxido-dive-btn"
+                  onClick={() => setOpenDive(i)}
+                  aria-haspopup="dialog"
+                >
+                  <span className="oxido-dive-icon" aria-hidden="true">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="15 3 21 3 21 9" />
+                      <polyline points="9 21 3 21 3 15" />
+                      <line x1="21" y1="3" x2="14" y2="10" />
+                      <line x1="3" y1="21" x2="10" y2="14" />
+                    </svg>
+                  </span>
+                  <span className="oxido-dive-txt">
+                    <span className="oxido-dive-btn-label">View the Full Breakdown</span>
+                    <span className="oxido-dive-btn-hint">
+                      Written for a non-technical reader — the problem, the mechanism, the market, and the limits
+                    </span>
+                    <span className="oxido-dive-meta">
+                      {(v.chips ?? []).map((c) => (
+                        <span key={c} className="oxido-dive-chip">{c}</span>
+                      ))}
+                    </span>
+                  </span>
+                  <span className="oxido-dive-cta">
+                    <span className="oxido-dive-cta-word">Open</span>
+                    <span className="oxido-dive-cta-ring" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {deepDives.map((d, i) => (
+            <VerticalModal
+              key={d.key}
+              open={openDive === i}
+              onClose={() => setOpenDive(null)}
+              eyebrow={d.eyebrow}
+              title={d.title}
+            >
+              {d.body}
+            </VerticalModal>
+          ))}
+
+          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '22px 26px', marginBottom: '10px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '10px' }}>The Line Between Measured and Projected</div>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '10px' }}>
+              <strong style={{ color: '#c4cfde' }}>Measured, in the paper, across 383 experiments:</strong> 94.6% retention
+              under sequential task shift; 58.8% zero-shot compositional accuracy against 25% chance; 80.3% recovery from a
+              mid-training dead-layer lesion against a baseline that collapses to 10.0%; 2.5 pp decay under 40% label noise
+              against 7.8 pp; correction frequency decaying from 4.2 to 0.05 per epoch as the network stabilises; and the
+              five-layer telemetry stack, which is native rather than reconstructed.
+            </p>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '10px' }}>
+              <strong style={{ color: '#c4cfde' }}>Projected, and not yet run:</strong> silent node injection into a live
+              network; the ~99% retention that dedicated per-task capacity should produce; ORMAS at Transformer scale; test-time
+              distribution shift; and any clinical, financial, or defense data whatsoever.
+            </p>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', margin: 0 }}>
+              All three verticals above depend on the second column. I would rather draw that line clearly than let a reader
+              assume the first column already covers it.
+            </p>
+          </div>
+
+        <div style={{ marginBottom: '56px' }} />
+
         {/* COMPETITION — prose, not a matrix */}
         <p style={sectionLabel}>Competition</p>
         <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '720px', marginBottom: '16px' }}>
@@ -384,7 +649,7 @@ export default function CVOxido() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {[
               ['Catastrophic forgetting', 'ORMAS solves it. 94.6% prior-task retention vs 47.3% standard ResNet-18.'],
-              ['Black box opacity', 'GlassBox solves it. Per-node, per-correction causal audit trail. FDA-compliance-ready.'],
+              ['Black box opacity', 'GlassBox addresses it. Per-node, per-correction causal audit trail, emitted natively rather than reconstructed post hoc.'],
               ['Silent data corruption', 'ORMAS three-signal training + health-gated self-correction solve it.'],
             ].map(([label, value], i) => (
               <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'baseline' }}>

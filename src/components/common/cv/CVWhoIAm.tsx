@@ -5,7 +5,7 @@ export default function CVWhoIAm() {
       name: 'ORMAS',
       claim: 'The first self-correcting neural architecture carrying a formal local stability characterization. Global convergence is still open — the preprint says so on its own first page.',
       body: 'I killed all three convolutional layers at epoch 100, on a fully converged network, mid-training. Every standard baseline flatlined at 10% — chance — and stayed dead across all three seeds, with zero variance. ORMAS diagnosed its own damage, executed 85 targeted corrections, and climbed back to 80.3%. Same parameter budget, same compute, same data. A 70.3-point gap in a scenario where the standard architecture has no recourse at all.',
-      stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['✓', 'Stability Characterized']],
+      stats: [['383', 'Experiments'], ['80.3%', 'Recovery'], ['+70.3pp', 'Gap vs. Baseline'], ['ISS', 'Stability Characterized']],
     },
     {
       tag: 'Engineering · Production',
