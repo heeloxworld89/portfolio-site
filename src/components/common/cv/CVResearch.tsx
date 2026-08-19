@@ -3,6 +3,7 @@ import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import ExpandableSection from '../ExpandableSection';
+import ResearchVisualization from './ResearchVisualization';
 
 export default function CVResearch() {
   const noiseData = [
@@ -250,6 +251,18 @@ export default function CVResearch() {
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "50px" }}>
             What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a formal account of the conditions under which that repair stays stable. Nothing like that existed. ORMAS is what that requirement turned into.
           </p>
+
+          <h4 style={{ fontSize: '22px', fontWeight: 700, color: '#c4cfde', marginBottom: '10px' }}>
+            The Difference, in One Picture
+          </h4>
+          <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '760px', marginBottom: '22px' }}>
+            The headline claim of the paper is not accuracy — it is <strong style={{ color: '#c4cfde' }}>attribution</strong>.
+            Here is the same node dying in both architectures. The telemetry on the right is quoted verbatim from the
+            supplementary material.
+          </p>
+          <ResearchVisualization />
+
+          <div style={{ marginBottom: '50px' }} />
 
           <ExpandableSection
             closedLabel="View Full Technical Detail"

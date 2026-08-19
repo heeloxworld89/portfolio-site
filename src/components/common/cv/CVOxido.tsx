@@ -2,6 +2,7 @@ import Icon from '@/components/common/Icon';
 import React, { useState } from 'react';
 import VerticalModal from '../VerticalModal';
 import { deepDives } from './verticalDeepDives';
+import OxidoVisualization from './OxidoVisualization';
 
 // ─── The six named things — the whole cast, so nothing is ambiguous ──────────
 const namedThings = [
@@ -723,6 +724,15 @@ export default function CVOxido() {
             </div>
           ))}
         </div>
+        <p style={sectionLabel}>What OXIDO Actually Looks Like</p>
+        <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '760px', marginBottom: '24px' }}>
+          One question decides whether a regulated institution can deploy anything at all, and it is not about accuracy.
+          It is whether their data has to cross the wall. Everything in this architecture follows from that.
+        </p>
+        <OxidoVisualization />
+
+        <div style={{ marginBottom: '48px' }} />
+
         <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#838d99', marginBottom: '0' }}>
           Two milestones worth more than anything else right now: a control theorist's response
           on the stability result, and any ORMAS-T artifact at all — a small model with one

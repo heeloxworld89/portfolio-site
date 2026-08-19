@@ -1,5 +1,6 @@
 import Icon from '@/components/common/Icon';
 import ExpandableSection from '../ExpandableSection';
+import EngineeringVisualization from './EngineeringVisualization';
 
 export default function CVEngineering() {
   return (
@@ -186,6 +187,15 @@ export default function CVEngineering() {
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "40px" }}>
             I rebuilt it from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact, not one test failing at the end. The rebuild was never housekeeping. It was the experiment that showed the architecture underneath was sound enough to survive complete reconstruction.
           </p>
+
+          <h4 className="section-title">How a Task Becomes an Organization</h4>
+          <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '760px', marginBottom: '22px' }}>
+            Every agent framework asks you to define the agents first. This one is handed a sentence and works out the
+            org chart itself — including hiring a specialist that did not exist when the task started.
+          </p>
+          <EngineeringVisualization />
+
+          <div style={{ marginBottom: '50px' }} />
 
           <ExpandableSection
             closedLabel="View Full Architecture Detail"
