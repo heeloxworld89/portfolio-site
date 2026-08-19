@@ -780,6 +780,30 @@ dead-layer lesion against a baseline that collapses to 10.0%; 2.5 pp decay under
 against 7.8 pp; correction frequency decaying from 4.2 to 0.05 per epoch as the network stabilises;
 and the five-layer telemetry stack, which is native rather than reconstructed.
 
+**Static is scaffolding. Dynamic is the product.**
+
+The published network is *static*: node counts hand-set, capacity fixed, a 50-node graph — because a
+fixed graph is what you need to isolate and measure a mechanism. None of those numbers are the
+architecture. The system was specified from the start to be dynamic, and the dynamic version is the
+product.
+
+This is also why the ISS bound being *local* is the design rather than the shortfall. A global
+convergence proof is defined over a fixed parameter space θ ∈ ℝⁿ; the moment the graph grows a node,
+n changes and the proof stops referring to anything. Locality is what buys topological freedom:
+every node carries its own objective, so a new node has something to learn from the instant it
+exists; mean-subtracted initialisation (Σⱼ w_new,j = 0) means it enters contributing zero net
+perturbation, leaving existing conserved quantities intact; and because the bound is per-node, an
+injection is just another bounded perturbation of the class the mechanism already absorbs 22,014
+times per run. **A globally coupled, globally proven system could not grow. This one can.**
+
+**Why dynamic capacity is the whole thesis.** The 58.8% zero-shot ceiling is not the mechanism
+straining — it is a fixed graph doing the only thing it can when two tasks compete for one block.
+The telemetry names the culprit: Node 3 (256→512) died and was resurrected **eleven times** because
+it was too large to dedicate to one task and was forced to serve both. Silent Node Injection is the
+resolution. Give the graph the ability to split that block and the conflict stops existing.
+Projected retention rises toward ~99%, zero-shot toward 85–92% — reasoned projections from measured
+telemetry, not results, and the single thing most worth funding an experiment to settle.
+
 **Built and compute-gated — this is the ask, not a research risk:**
 
 ORMAS-T, the Transformer port, is written. The three signals are defined per-node on a directed
@@ -787,7 +811,7 @@ graph and a Transformer is a directed graph; PCGrad, the mean-centering conserva
 the health gate all operate at optimiser level and are blind to the layer beneath them. That is why
 the protocol already carried across **four architecture families** — FC-DAG, CNN, an 11.24M-parameter
 Fat CNN, and ResNet-18 — without redesign, holding parity on ResNet-18 (91.7% vs 92.6% baseline)
-while still emitting the audit trail. What is missing is multi-node H100/A100 access, not a result.
+while still emitting the audit trail. What a Transformer additionally needs is a pathology taxonomy for attention — dead heads, saturated heads, gradient-dead heads where softmax saturates so hard nothing flows backward — which is roughly sixty lines of plug-in diagnostics against machinery that already exists, not a redesign. What is genuinely missing is multi-node H100/A100 access, not a result.
 Silent Node Injection and the ~99% retention dedicated capacity should produce sit in the same
 bucket: reasoned, written, waiting on hardware.
 

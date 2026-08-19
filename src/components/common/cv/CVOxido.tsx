@@ -47,9 +47,9 @@ const roadmap = [
   {
     phase: 'Phase 3',
     status: 'Active',
-    label: 'ORMAS-T — Transformer Scale',
-    desc: 'Porting the three signals and local readouts to attention heads, with per-head structural monitoring.',
-    removes: 'The architecture restriction — unlocks continuous on-premise fine-tuning on institutional data, which is the single gate standing in front of all three remaining verticals.',
+    label: 'ORMAS-T — Dynamic Capacity at Transformer Scale',
+    desc: 'Two things at once: per-head structural monitoring on attention, and the switch from a hand-set graph to one that grows its own capacity through Silent Node Injection. The static published network was scaffolding for the proof; this is the architecture it was always specified to become.',
+    removes: 'The fixed-capacity ceiling — the thing that caps zero-shot at 58.8% and forces one block to serve two competing tasks. Removing it is what makes continuous on-premise learning on messy institutional data viable, and it is the single gate standing in front of all three remaining verticals.',
     active: true,
   },
   {
@@ -620,14 +620,28 @@ export default function CVOxido() {
               parity on the last one (91.7% vs 92.6%) while still producing the audit trail.
             </p>
             <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '12px' }}>
-              <strong style={{ color: '#c4cfde' }}>2 · Built and compute-gated — this is the ask.</strong> ORMAS-T, the
-              Transformer port, is not an open research question waiting on an insight. The three signals are defined per-node
-              on a directed graph, and a Transformer is a directed graph. PCGrad projection, the mean-centering conservation
-              constraint, and the health gate all operate at optimiser level and are blind to what the layer underneath them
-              looks like — which is exactly why the protocol already carried across four architecture families without being
-              redesigned. What is missing is not a result. It is multi-node H100/A100 access. Silent node injection and the
-              ~99% retention that dedicated per-task capacity should produce sit in the same bucket: written, reasoned, and
-              waiting on hardware.
+              <strong style={{ color: '#c4cfde' }}>2 · Built and compute-gated — this is the ask.</strong> The published
+              network is <em>static</em>: node counts hand-set, capacity fixed, a 50-node graph because a fixed graph is what
+              you need to isolate and measure a mechanism. None of those numbers are the architecture — they are scaffolding
+              for the proof of concept. The system was designed from the start to be dynamic, and the dynamic version is the
+              product. PCGrad, the conservation constraint, and the health gate all sit at optimiser level and are blind to the
+              layer beneath them, which is why the protocol already carried across four architecture families unchanged; what
+              a Transformer additionally needs is a pathology taxonomy for attention — dead heads, saturated heads,
+              gradient-dead heads where softmax saturates so hard nothing flows backward. That is roughly sixty lines of
+              plug-in diagnostics against machinery that already exists, not a redesign. What is genuinely missing is
+              multi-node H100/A100 access.
+            </p>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', margin: 0 }}>
+              <strong style={{ color: '#c4cfde' }}>2b · Why dynamic capacity is the whole thesis.</strong> The 58.8%
+              zero-shot ceiling is not the mechanism straining — it is a fixed graph doing the only thing it can when two
+              tasks compete for one block. The telemetry names the culprit precisely: Node 3, the 256→512 block, died and was
+              resurrected <strong>eleven times</strong> because it was too large to dedicate to a single task and was forced
+              to serve both. Silent Node Injection is the resolution, and it is licensed by the same conservation constraint
+              that governs ordinary corrections: initialise a new node so its weights sum to zero and it enters a live network
+              contributing zero net perturbation, leaving every existing conserved quantity intact. Give the graph the ability
+              to split that block and the conflict is not managed better — it stops existing. Projected retention rises toward
+              ~99% and the zero-shot ceiling toward 85–92%. Those two figures are reasoned projections from the measured
+              telemetry, not results, and they are the single thing most worth funding an experiment to settle.
             </p>
             <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', margin: 0 }}>
               <strong style={{ color: '#ff6b76' }}>3 · Genuinely open — compute does not close these.</strong> No clinical,

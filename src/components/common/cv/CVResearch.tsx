@@ -543,6 +543,33 @@ export default function CVResearch() {
           </p>
           <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />
 
+          {/* ── Why local is the point, not the caveat ─────────────────────── */}
+          <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '24px 28px', marginBottom: '30px' }}>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '10px' }}>
+              Why the Bound Is Local — and Why That Is the Design, Not the Compromise
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', marginBottom: '12px' }}>
+              A local-only result usually reads as a weaker version of something better. Here it is the opposite, and the
+              reason matters more than the bound itself. <strong style={{ color: '#c4cfde' }}>A global convergence proof is
+              defined over a fixed parameter space</strong> <InlineMath math="\theta \in \mathbb{R}^n" />. The moment the
+              graph grows a node, <InlineMath math="n" /> changes — and the proof does not weaken, it stops referring to
+              anything at all.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', marginBottom: '12px' }}>
+              Locality is what buys the freedom to change topology mid-training. Every node carries its own objective, so a
+              newly added node has something to learn from the instant it exists rather than waiting for a global gradient to
+              find it. Mean-subtracted initialisation (<InlineMath math="\sum_j w_{\text{new},j} = 0" />) means it enters
+              contributing zero net perturbation, leaving every existing conserved quantity undisturbed. And because the
+              stability bound is stated per node, an injection is simply another bounded perturbation of exactly the class
+              the mechanism already absorbs — 22,014 times in a single 200-epoch run.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', margin: 0 }}>
+              <strong style={{ color: '#c4cfde' }}>A globally coupled, globally proven system could not grow. This one
+              can.</strong> Global convergence remains open and the preprint says so — but a global proof would have
+              foreclosed the architecture rather than strengthened it.
+            </p>
+          </div>
+
           {/* Ablation Study */}
           <h4 className="section-header">Ablation Study — Do All Three Signals Matter?</h4>
           <p style={{ fontSize: '17px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '20px' }}>
