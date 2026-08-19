@@ -30,6 +30,35 @@ const tdNote: React.CSSProperties   = { ...tdBase, fontSize: '12px', color: '#83
 export default function CVDeployment() {
   return (
     <div className="row mb--50" id="deployment">
+      <style>{`
+        .dep-money {
+          background: #191b1e; border: 1px solid #2a2d32;
+          border-radius: 10px; padding: 24px 26px; margin-bottom: 44px;
+        }
+        .dep-money-h {
+          font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+          text-transform: uppercase; color: #c4cfde; margin-bottom: 10px;
+        }
+        .dep-money-p { font-size: 15px; line-height: 1.8; color: #9aa4b0; margin: 0 0 20px; max-width: 760px; }
+        .dep-money-grid {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          gap: 10px; margin-bottom: 18px;
+        }
+        .dep-money-cell {
+          background: #141618; border: 1px solid #24272c;
+          border-radius: 8px; padding: 16px 18px;
+        }
+        .dep-money-cell.is-hero { border-color: rgba(255,74,87,0.34); background: rgba(255,74,87,0.05); }
+        .dep-money-v { font-size: 21px; font-weight: 800; color: #c4cfde; line-height: 1.1; margin-bottom: 5px; }
+        .dep-money-cell.is-hero .dep-money-v { color: #ff8a93; }
+        .dep-money-l { font-size: 12px; font-weight: 700; color: #c4cfde; margin-bottom: 4px; }
+        .dep-money-s { font-size: 11.5px; color: #838d99; line-height: 1.5; }
+        .dep-money-note {
+          font-size: 14.5px; line-height: 1.8; color: #9aa4b0; margin: 0;
+          padding-top: 16px; border-top: 1px solid #24272c;
+        }
+        .dep-money-note strong { color: #c4cfde; font-weight: 600; }
+      `}</style>
       <div className="col-12">
 
         {/* ── Section Header ─────────────────────────────────────────────── */}
@@ -119,7 +148,7 @@ export default function CVDeployment() {
             { val: '+1,300%', lbl: 'On Re-Injection', sub: 'Recovery exceeded Phase 1 by 3.3×' },
             { val: '99.99%',  lbl: 'Content Cost Reduction', sub: '$0.0043/product vs. $50–$150 human' },
             { val: '12 mo.',  lbl: 'Study Duration', sub: '4 phases · Aug 2025 – Aug 2026' },
-            { val: '$4,386',  lbl: 'One Test Order, Not Revenue', sub: 'Rung 7 proof only · 13 Aug 2026 · $0.00 CAC' },
+            { val: '£0',      lbl: 'Advertising Spend', sub: 'Across the entire study · 0 human sales hours' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '20px 16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
@@ -127,6 +156,37 @@ export default function CVDeployment() {
               <div style={{ fontSize: '11px', color: '#838d99', lineHeight: 1.4 }}>{s.sub}</div>
             </div>
           ))}
+        </div>
+
+        {/* ── Money, stated plainly so it cannot be misread ───────────────── */}
+        <div className="dep-money">
+          <div className="dep-money-h">The Money, Before Anyone Guesses</div>
+          <p className="dep-money-p">
+            This study is regularly misread as a revenue claim, in both directions — people assume the largest number
+            is the total, or that the total is a rounding error. Here is the entire commercial record, so neither
+            reading survives.
+          </p>
+          <div className="dep-money-grid">
+            {[
+              { v: '$6,691.68', l: 'Total verified revenue', s: 'Everything the company earned in 12 months' },
+              { v: '79+', l: 'Orders', s: 'Across 10 countries' },
+              { v: '~$30', l: 'Typical order', s: 'The other 78 orders average $29.56' },
+              { v: '$4,386', l: 'Largest single order', s: 'The Rung 7 test · 13 Aug 2026 · $0.00 CAC', hero: true },
+            ].map((m) => (
+              <div className={`dep-money-cell${m.hero ? ' is-hero' : ''}`} key={m.l}>
+                <div className="dep-money-v">{m.v}</div>
+                <div className="dep-money-l">{m.l}</div>
+                <div className="dep-money-s">{m.s}</div>
+              </div>
+            ))}
+          </div>
+          <p className="dep-money-note">
+            <strong>That one order is 65% of everything the company ever earned.</strong> Which is exactly the point —
+            it is not a revenue curve, it is a single deliberate test of whether an autonomous system could carry a
+            buyer through a high-consideration purchase. The honest summary of the commercial side is{' '}
+            <strong>under seven thousand dollars</strong>, and it is small because I capped it at research grade. The
+            architecture claim never rested on the money.
+          </p>
         </div>
 
         {/* ── The Falsification Ladder — seven questions ──────────────────── */}
@@ -511,9 +571,10 @@ export default function CVDeployment() {
                 <tr><td style={tdFirst}>Study Duration</td><td style={tdValue}>12 months (4 phases, Aug 2025–Aug 2026)</td></tr>
                 <tr><td style={tdFirst}>Ablation Signal (Removal)</td><td style={tdValue}>−91% commercial output</td></tr>
                 <tr><td style={tdFirst}>Ablation Signal (Re-Injection)</td><td style={tdValue}>+1,300% recovery · 3.3× peak overshoot</td></tr>
-                <tr><td style={tdFirst}>Single Test Order (Not Revenue)</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
-                <tr><td style={tdFirst}>Cumulative Verified Revenue</td><td style={tdValue}>$6,691.68 USD · 79+ orders</td></tr>
-                <tr><td style={tdFirst}>Paying Customers (10 countries)</td><td style={tdValue}>396</td></tr>
+                <tr><td style={tdFirst}>Total Verified Revenue (12 months)</td><td style={tdValue}>$6,691.68 USD</td></tr>
+                <tr><td style={tdFirst}>Orders · Countries</td><td style={tdValue}>79+ · 10</td></tr>
+                <tr><td style={tdFirst}>Typical Order Value</td><td style={tdValue}>~$29.56</td></tr>
+                <tr><td style={tdFirst}>Largest Single Order (Rung 7 test)</td><td style={tdValue}>$4,386 · 13 Aug 2026 · $0.00 CAC</td></tr>
                 <tr><td style={tdFirst}>Total Engaged Leads</td><td style={tdValue}>500+</td></tr>
                 <tr><td style={tdFirst}>Advertising Expenditure</td><td style={tdValue}>$0.00</td></tr>
                 <tr><td style={tdFirst}>Human Marketing Hours</td><td style={tdValue}>0</td></tr>

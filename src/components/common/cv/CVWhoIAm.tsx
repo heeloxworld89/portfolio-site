@@ -59,8 +59,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'Preprint published · ablation closed',
-    body: 'The twelve-month lesion study closed on the live company, and ORMAS went up on Zenodo with a codebase that reproduces every run. First time the work left my own head and was read by people qualified to judge it.',
+    title: 'Preprint live · submitted to AAAI 2027 · ablation closed',
+    body: 'The twelve-month lesion study closed on the live company. ORMAS went up on Zenodo with a codebase that reproduces every run, and into the AAAI 2027 main technical track for anonymous review. First time the work left my own head and was read by people qualified to judge it.',
   },
 ];
 
@@ -72,7 +72,7 @@ const systems = [
     stat: '80.3%',
     statLbl: 'recovery · baseline 10.0%',
     href: '#research',
-    state: 'Published',
+    state: 'AAAI 2027 · submitted',
   },
   {
     name: 'OXIMO',

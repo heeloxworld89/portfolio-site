@@ -1,15 +1,25 @@
 /**
- * OXIMO — what actually happens to a task.
+ * OXIMO — what actually happens to a task, and what makes it production rather
+ * than a demo.
  *
- * The distinguishing fact is not "multi-agent". It is that the human never
- * specifies the org chart: the router decides complexity, and if no agent has
- * the required skill the system designs, validates, tests, and materialises one
- * mid-task, with atomic rollback if any step fails. That branch — B1/B2 — is
- * the thing no other framework does, so the figure is built around it.
+ * Previous version fanned four bezier curves out of the router and back, which
+ * tangled and put a translucent highlight over the stage labels. Rebuilt as a
+ * straight spine: the four paths are named once in the spine and detailed in
+ * cards, and the "current stage" is shown by a moving stroke rather than a fill
+ * overlay so labels never lose contrast.
  *
- * Pipeline, paths, hiring FSM, memory tiers and cost figures are from the
- * OXIMO README and docs/architecture.md.
+ * Figures from the OXIMO README and docs/architecture.md.
  */
+
+const stages = [
+  { x: 100, t: 'Safety Gate',    s: '7-check cascade' },
+  { x: 244, t: 'Dynamic Router', s: 'complexity + skills' },
+  { x: 388, t: 'Execute',        s: 'one of four paths', hot: true },
+  { x: 532, t: 'Sacred Chain',   s: 'Master → Dept → Emp' },
+  { x: 676, t: 'Validate',       s: 'multi-stage merge' },
+  { x: 820, t: 'Learn',          s: 'brain updated' },
+];
+const STAGE_W = 128;
 
 const paths = [
   { id: 'A1', cond: 'Simple · skills exist', flow: 'Context assembly → single agent → validate', hire: false },
@@ -22,15 +32,9 @@ const hiringFSM = [
   { n: '1', s: 'RealizationBlock', d: 'An LLM designs the role — persona, skills, department, seniority.' },
   { n: '2', s: 'PersonaMatcher', d: 'Vector search against existing roles so it never hires a duplicate.' },
   { n: '3', s: 'HireValidator', d: 'Seven checks: ID format, duplicates, reporting chain, skill coherence.' },
-  { n: '4', s: 'PromptTester', d: 'One cheap call verifies the new role actually produces coherent output.' },
-  { n: '5', s: 'RoleMaterializer', d: 'Atomic transaction — role, brain, and audit record committed together.' },
+  { n: '4', s: 'PromptTester', d: 'One cheap call verifies the new role produces coherent output.' },
+  { n: '5', s: 'RoleMaterializer', d: 'Atomic transaction — role, brain, and audit record commit together.' },
   { n: '6', s: 'Rollback', d: 'Any step fails and the whole hire reverses. No orphaned agents, ever.' },
-];
-
-const memory = [
-  { t: 'Working', s: 'In-process deque', h: 'The current session', c: '#7d8794' },
-  { t: 'Episodic', s: 'Database, role-scoped', h: 'Task outcomes and failure lessons', c: '#a6b0bc' },
-  { t: 'Semantic', s: 'Vector store', h: 'Deep knowledge, retrievable across roles', c: '#c4cfde' },
 ];
 
 const costs = [
@@ -44,71 +48,63 @@ export default function EngineeringVisualization() {
   return (
     <div className="evz">
       <style>{`
-        .evz { margin: 8px 0 0; }
         .evz-block {
           background: #121417; border: 1px solid #2a2d32;
-          border-radius: 12px; padding: 22px 24px 18px; margin-bottom: 14px;
+          border-radius: 12px; padding: 22px 24px 20px; margin-bottom: 14px;
         }
         .evz-h { font-size: 15px; font-weight: 700; color: #e8edf4; margin: 0 0 4px; }
-        .evz-s { font-size: 12.5px; color: #a6b0bc; line-height: 1.6; margin: 0 0 18px; max-width: 700px; }
+        .evz-s { font-size: 12.5px; color: #a6b0bc; line-height: 1.6; margin: 0 0 18px; max-width: 720px; }
         .evz-svg { width: 100%; height: auto; display: block; }
 
-        .evz-run { animation: evzRun 6s ease-in-out infinite; }
+        /* travelling signal on a straight spine */
+        .evz-run { animation: evzRun 7s cubic-bezier(.45,0,.55,1) infinite; }
         @keyframes evzRun {
-          0%    { transform: translateX(0);   opacity: 0; }
-          6%    { opacity: 1; }
-          88%   { opacity: 1; }
-          94%   { opacity: 0; }
-          100%  { transform: translateX(376px); opacity: 0; }
+          0%   { transform: translateX(0);   opacity: 0; }
+          5%   { opacity: 1; }
+          90%  { opacity: 1; }
+          97%  { opacity: 0; }
+          100% { transform: translateX(860px); opacity: 0; }
         }
-        .evz-stage { animation: evzStage 6s ease-out infinite; }
-        @keyframes evzStage {
+        /* current stage: a moving STROKE, never a fill over the label */
+        .evz-ring { animation: evzRing 7s ease-out infinite; opacity: 0; }
+        @keyframes evzRing {
           0%, 100% { opacity: 0; }
-          12%, 30% { opacity: 1; }
-        }
-        .evz-hirebranch { animation: evzHire 6s ease-in-out infinite; }
-        @keyframes evzHire {
-          0%, 34%  { opacity: 0.25; }
-          46%, 66% { opacity: 1; }
-          78%,100% { opacity: 0.25; }
+          6%, 17%  { opacity: 1; }
         }
 
-        /* paths */
-        .evz-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin-top: 4px; }
+        .evz-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(226px, 1fr)); gap: 10px; margin-top: 16px; }
         .evz-path { background: #191b1e; border: 1px solid #2a2d32; border-radius: 9px; padding: 15px 17px; }
-        .evz-path.is-hire { border-color: rgba(255,74,87,0.3); background: rgba(255,74,87,0.035); }
+        .evz-path.is-hire { border-color: rgba(255,74,87,0.32); background: rgba(255,74,87,0.04); }
         .evz-path-id { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #c4cfde; margin-bottom: 4px; }
         .evz-path.is-hire .evz-path-id { color: #ff6b76; }
         .evz-path-cond { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: #838d99; margin-bottom: 8px; }
         .evz-path-flow { font-size: 12.5px; line-height: 1.6; color: #9aa4b0; }
 
-        /* hiring FSM */
         .evz-fsm { display: flex; flex-direction: column; gap: 2px; }
         .evz-fsm-step {
           display: grid; grid-template-columns: 30px 158px 1fr; gap: 14px; align-items: baseline;
           background: #191b1e; border: 1px solid #2a2d32; padding: 13px 18px;
         }
         .evz-fsm-step:first-child { border-radius: 9px 9px 0 0; }
-        .evz-fsm-step:last-child  { border-radius: 0 0 9px 9px; border-color: rgba(255,74,87,0.28); background: rgba(255,74,87,0.035); }
+        .evz-fsm-step:last-child  { border-radius: 0 0 9px 9px; border-color: rgba(255,74,87,0.28); background: rgba(255,74,87,0.04); }
         @media (max-width: 700px) { .evz-fsm-step { grid-template-columns: 30px 1fr; } .evz-fsm-d { grid-column: 2; } }
         .evz-fsm-n {
           width: 22px; height: 22px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           background: #2a2d32; color: #c4cfde; font-size: 11px; font-weight: 700;
         }
-        .evz-fsm-step:last-child .evz-fsm-n { background: rgba(255,74,87,0.16); color: #ff6b76; }
+        .evz-fsm-step:last-child .evz-fsm-n { background: rgba(255,74,87,0.18); color: #ff6b76; }
         .evz-fsm-s { font-size: 13px; font-weight: 700; color: #c4cfde; font-family: ui-monospace, Menlo, monospace; }
         .evz-fsm-d { font-size: 13px; line-height: 1.6; color: #9aa4b0; }
 
-        /* memory + cost split */
         .evz-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        @media (max-width: 860px) { .evz-two { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { .evz-two { grid-template-columns: 1fr; } }
 
-        .evz-mem { display: flex; flex-direction: column; gap: 8px; }
         .evz-mem-row {
           display: grid; grid-template-columns: 82px 1fr; gap: 14px; align-items: center;
-          background: #191b1e; border: 1px solid #2a2d32; border-radius: 8px; padding: 13px 16px;
+          background: #191b1e; border: 1px solid #2a2d32; border-radius: 8px; padding: 13px 16px; margin-bottom: 8px;
         }
+        .evz-mem-row:last-child { margin-bottom: 0; }
         .evz-mem-t { font-size: 12.5px; font-weight: 700; }
         .evz-mem-s { font-size: 10px; color: #7d8794; margin-top: 2px; }
         .evz-mem-h { font-size: 12.5px; color: #9aa4b0; line-height: 1.55; }
@@ -131,83 +127,53 @@ export default function EngineeringVisualization() {
         .evz-note strong { color: #a6b0bc; font-weight: 600; }
 
         @media (prefers-reduced-motion: reduce) {
-          .evz-run, .evz-stage, .evz-hirebranch { animation: none; opacity: 1; }
+          .evz-run, .evz-ring { animation: none; }
+          .evz-run { opacity: 1; }
         }
       `}</style>
 
-      {/* ══ THE LIFECYCLE ═══════════════════════════════════════════ */}
+      {/* ══ THE PIPELINE ════════════════════════════════════════════ */}
       <div className="evz-block">
         <h4 className="evz-h">What Happens to a Task</h4>
         <p className="evz-s">
-          A task arrives as one sentence of natural language. Nobody has told the system who should do it, how to split
-          it, or whether the right specialist exists yet. <strong style={{ color: '#c4cfde' }}>An organisation assembles
-          itself around the work</strong> and a validated deliverable comes out the other side.
+          A task arrives as one sentence. Nobody has said who should do it, how to split it, or whether the right
+          specialist exists yet. <strong style={{ color: '#c4cfde' }}>An organisation assembles itself around the
+          work</strong> and a validated deliverable comes out the other side.
         </p>
 
-        <svg className="evz-svg" viewBox="0 0 900 240" role="img"
-             aria-label="A task passes through a safety gate, then a dynamic router which classifies complexity and required skills, then branches to one of four execution paths. If no agent has the required skill the system hires one mid-task. Output is validated, merged, and the agents learn from the result.">
+        <svg className="evz-svg" viewBox="0 0 980 132" role="img"
+             aria-label="A task passes through a safety gate, a dynamic router that classifies complexity and required skills, an execution step that takes one of four paths, the Sacred Chain hierarchy, a validation and merge step, and finally a learning step that updates each agent's brain.">
           <defs>
             <filter id="evzGlow" x="-70%" y="-70%" width="240%" height="240%">
               <feGaussianBlur stdDeviation="3" result="b" />
               <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
-            <marker id="evzArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-              <path d="M0 0 L10 5 L0 10 z" fill="#3a4048" />
-            </marker>
           </defs>
 
-          {/* spine */}
-          <line x1="96" y1="112" x2="812" y2="112" stroke="#2a2d32" strokeWidth="1.4" markerEnd="url(#evzArr)" />
-          <g className="evz-run"><circle cx="96" cy="112" r="4.5" fill="#c4cfde" filter="url(#evzGlow)" /></g>
+          {/* straight spine, entirely behind the boxes */}
+          <line x1="96" y1="62" x2="952" y2="62" stroke="#262a30" strokeWidth="1.4" />
+          <g className="evz-run"><circle cx="96" cy="62" r="4.5" fill="#c4cfde" filter="url(#evzGlow)" /></g>
 
-          {/* input */}
-          <text x="14" y="108" fill="#838d99" fontSize="10" fontWeight="700" letterSpacing="1.3">TASK IN</text>
-          <text x="14" y="123" fill="#7d8794" fontSize="9">one sentence</text>
+          <text x="8" y="58" fill="#a6b0bc" fontSize="10" fontWeight="700" letterSpacing="1.2">TASK IN</text>
+          <text x="8" y="72" fill="#7d8794" fontSize="8.5">one sentence</text>
 
-          {/* stages */}
-          {[
-            { x: 130, t: 'Safety Gate', s: '7-check cascade' },
-            { x: 268, t: 'Dynamic Router', s: 'complexity + skills' },
-            { x: 560, t: 'Sacred Chain', s: 'Master → Dept → Emp' },
-            { x: 700, t: 'Validate & Merge', s: 'multi-stage' },
-            { x: 812, t: 'Learn', s: 'brain updated' },
-          ].map((s, i) => (
-            <g key={s.t}>
-              <rect x={s.x - 56} y="88" width="112" height="48" rx="8" fill="#16181c" stroke="#3a4048" strokeWidth="1.3" />
-              <rect className="evz-stage" x={s.x - 56} y="88" width="112" height="48" rx="8" fill="#c4cfde" opacity="0.07"
-                    style={{ animationDelay: `${i * 0.55}s` }} />
-              <text x={s.x} y="108" textAnchor="middle" fill="#c4cfde" fontSize="10.5" fontWeight="700">{s.t}</text>
-              <text x={s.x} y="123" textAnchor="middle" fill="#7d8794" fontSize="8.5">{s.s}</text>
+          {stages.map((st, i) => (
+            <g key={st.t}>
+              <rect x={st.x} y="36" width={STAGE_W} height="52" rx="9"
+                    fill="#191b1e" stroke={st.hot ? 'rgba(255,74,87,0.42)' : '#343941'} strokeWidth="1.3" />
+              <rect className="evz-ring" x={st.x} y="36" width={STAGE_W} height="52" rx="9"
+                    fill="none" stroke={st.hot ? '#ff6b76' : '#c4cfde'} strokeWidth="1.8"
+                    style={{ animationDelay: `${i * 0.9}s` }} />
+              <text x={st.x + STAGE_W / 2} y="59" textAnchor="middle" fill="#e8edf4" fontSize="11.5" fontWeight="700">{st.t}</text>
+              <text x={st.x + STAGE_W / 2} y="75" textAnchor="middle" fill="#98a2ae" fontSize="9">{st.s}</text>
             </g>
           ))}
 
-          {/* four-path fan */}
-          <text x="412" y="34" textAnchor="middle" fill="#838d99" fontSize="9.5" fontWeight="700" letterSpacing="1.2">FOUR EXECUTION PATHS</text>
-          {[
-            { y: 52,  id: 'A1', hire: false },
-            { y: 80,  id: 'A2', hire: false },
-            { y: 148, id: 'B1', hire: true },
-            { y: 176, id: 'B2', hire: true },
-          ].map((p) => (
-            <g key={p.id} className={p.hire ? 'evz-hirebranch' : undefined}>
-              <path d={`M324 112 Q 370 112 380 ${p.y + 11} L 424 ${p.y + 11}`} fill="none"
-                    stroke={p.hire ? '#ff6b76' : '#3a4048'} strokeWidth="1.2" />
-              <rect x="424" y={p.y} width="80" height="22" rx="5"
-                    fill="#16181c" stroke={p.hire ? '#ff6b76' : '#3a4048'} strokeWidth="1.2" />
-              <text x="464" y={p.y + 15} textAnchor="middle" fill={p.hire ? '#ff6b76' : '#a6b0bc'} fontSize="10" fontWeight="700">{p.id}</text>
-              <path d={`M504 ${p.y + 11} Q 536 ${p.y + 11} 548 112`} fill="none"
-                    stroke={p.hire ? '#ff6b76' : '#3a4048'} strokeWidth="1.2" />
-            </g>
-          ))}
-
-          <g className="evz-hirebranch">
-            <text x="464" y="212" textAnchor="middle" fill="#ff8a93" fontSize="10" fontWeight="700">
-              B1 / B2 — no agent has the skill, so it hires one mid-task
-            </text>
-            <text x="464" y="227" textAnchor="middle" fill="#7d8794" fontSize="9">
-              this branch is the part no other framework has
-            </text>
-          </g>
+          {/* the branch, named once, centred under Execute */}
+          <line x1="452" y1="88" x2="452" y2="104" stroke="rgba(255,74,87,0.42)" strokeWidth="1.2" />
+          <text x="452" y="119" textAnchor="middle" fill="#ff8a93" fontSize="10" fontWeight="700">
+            A1 · A2 · B1 · B2 — the B-paths hire a specialist mid-task
+          </text>
         </svg>
 
         <div className="evz-paths">
@@ -221,12 +187,12 @@ export default function EngineeringVisualization() {
         </div>
       </div>
 
-      {/* ══ SELF-HIRING FSM ═════════════════════════════════════════ */}
+      {/* ══ SELF-HIRING ═════════════════════════════════════════════ */}
       <div className="evz-block">
         <h4 className="evz-h">The Branch Nobody Else Has — Hiring, Mid-Task</h4>
         <p className="evz-s">
           Every agent framework asks you to define your agents up front. When OXIMO meets work no existing role can
-          handle, it designs the role itself, checks it is not a duplicate, validates it, tests it produces coherent
+          handle, it designs the role, checks it is not a duplicate, validates it, tests that it produces coherent
           output, and commits it — <strong style={{ color: '#c4cfde' }}>with no human at any step</strong>. This is the
           orchestration-layer ancestor of Silent Node Injection.
         </p>
@@ -253,17 +219,19 @@ export default function EngineeringVisualization() {
             Three memory tiers, plus an Ebbinghaus decay curve so unused knowledge fades and reinforced knowledge
             strengthens. Agents mature Nascent → Learning → Mature → Expert.
           </p>
-          <div className="evz-mem">
-            {memory.map((m) => (
-              <div className="evz-mem-row" key={m.t}>
-                <div>
-                  <div className="evz-mem-t" style={{ color: m.c }}>{m.t}</div>
-                  <div className="evz-mem-s">{m.s}</div>
-                </div>
-                <div className="evz-mem-h">{m.h}</div>
+          {[
+            { t: 'Working', s: 'In-process deque', h: 'The current session', c: '#7d8794' },
+            { t: 'Episodic', s: 'Database, role-scoped', h: 'Task outcomes and failure lessons', c: '#a6b0bc' },
+            { t: 'Semantic', s: 'Vector store', h: 'Deep knowledge, retrievable across roles', c: '#c4cfde' },
+          ].map((m) => (
+            <div className="evz-mem-row" key={m.t}>
+              <div>
+                <div className="evz-mem-t" style={{ color: m.c }}>{m.t}</div>
+                <div className="evz-mem-s">{m.s}</div>
               </div>
-            ))}
-          </div>
+              <div className="evz-mem-h">{m.h}</div>
+            </div>
+          ))}
           <p className="evz-note">
             This is what the ablation measured. Removing an embedded system does not migrate it —{' '}
             <strong>it discards twelve months of accumulated memory, and output fell 91%.</strong>

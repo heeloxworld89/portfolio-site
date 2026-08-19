@@ -11,7 +11,7 @@ const namedThings = [
   { name: 'AX09', line: "The first application built on OXIMO: it decides what to sell and produces everything needed to sell it.", kind: 'A vertical extension of Layer 1 — built, ran in production' },
   { name: 'Black Bloxie LTD', line: 'A real UK company, run entirely by AX09 on OXIMO, used as a laboratory.', kind: 'The test environment — not a product' },
   { name: 'The Falsification Ladder', line: 'Seven escalating experiments run on that company to try to disprove the thesis.', kind: 'The method' },
-  { name: 'ORMAS', line: 'The training architecture. A network diagnoses and repairs itself, and produces an audit trail as a byproduct.', kind: 'Layer 2 — finished, published, 383 experiments' },
+  { name: 'ORMAS', line: 'The training architecture. A network diagnoses and repairs itself, and produces an audit trail as a byproduct.', kind: 'Layer 2 — finished · preprint live · submitted to AAAI 2027' },
   { name: 'Project Cherry', line: 'A model trained from scratch on ORMAS, removing the last external dependency.', kind: 'Layer 3 — not built' },
 ];
 

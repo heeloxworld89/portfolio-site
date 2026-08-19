@@ -206,7 +206,7 @@ defense systems, and regulated financial data are gated on ORMAS itself, not on 
 
 ### The Three Systems, Summarised
 
-**ORMAS — Research · AAAI 2027**
+**ORMAS — Research · Submitted to AAAI 2027 (under review)**
 
 The first self-correcting neural architecture carrying a formal local stability characterization.
 Global convergence is still open — the preprint says so on its own first page.
@@ -1636,7 +1636,7 @@ development took the class time. I knew what I was trading and I made the trade 
 result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of
 production code, and a published preprint — and that is the evidence I would rather be judged on.
 
-| 383 | 40,933 | AAAI 2027 | UK Ltd |
+| 383 | 40,933 | AAAI 2027 (submitted) | UK Ltd |
 |---|---|---|---|
 | GPU Experiments | Lines of Code | Paper Under Review | Registered Company |
 

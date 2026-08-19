@@ -459,26 +459,6 @@ export default function CVEngineering() {
 
           </ExpandableSection>
 
-          <div className="mt--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", overflow: "hidden" }}>
-            
-            <h4 style={{ fontSize: "24px", fontWeight: "700", color: "#fff", marginBottom: "8px" }}>Where OXIMO Fits</h4>
-            <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '20px', lineHeight: '1.75', maxWidth: '620px' }}>
-              Everything above is OXIMO on its own. It doesn't run alone in the bigger picture — see{' '}
-              <a href="#oxido" style={{ color: '#c4cfde', textDecoration: 'underline' }}>OXIDO</a> above for how it fits with ORMAS and Black Bloxie.
-            </p>
-
-            <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', marginBottom: '0', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
-              Today OXIMO runs on API-based LLMs. Next comes ORMAS-T, carrying per-node health monitoring onto Transformers, and then Cherry — a self-correcting language model trained to take the external API out of the loop for good.
-            </p>
-
-            <hr style={{ borderColor: "rgba(255,255,255,0.05)", margin: "30px 0" }} />
-            
-            <h5 style={{ fontSize: "18px", color: "#c4cfde", marginBottom: "15px", fontWeight: "600" }}>Planned Publications</h5>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
-              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#9aa4b0", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>ICSE SEIP:</strong> Case study of autonomous e-commerce (Black Bloxie)</span>
-              <span style={{ padding: "10px 20px", background: "rgba(0,0,0,0.3)", borderRadius: "8px", color: "#9aa4b0", fontSize: "14px", border: "1px solid rgba(255,255,255,0.05)" }}><strong style={{ color: "#fff" }}>OXIDO Ecosystem Paper:</strong> Integration architecture</span>
-            </div>
-          </div>
 
         </div>
       </div>

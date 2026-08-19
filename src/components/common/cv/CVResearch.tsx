@@ -82,6 +82,20 @@ export default function CVResearch() {
       <style>{`
         .research-table { width: 100%; border-collapse: collapse; }
         .research-table th { padding: 12px 18px; text-align: left; color: #c4cfde; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #2a2d32; }
+        .res-venue {
+          display: flex; gap: 16px; align-items: flex-start;
+          background: rgba(255,74,87,0.05); border: 1px solid rgba(255,74,87,0.28);
+          border-radius: 10px; padding: 18px 22px; margin-bottom: 22px; max-width: 820px;
+        }
+        @media (max-width: 620px) { .res-venue { flex-direction: column; gap: 10px; } }
+        .res-venue-tag {
+          flex-shrink: 0; font-size: 9.5px; font-weight: 700; letter-spacing: 1.4px;
+          text-transform: uppercase; color: #ff6b76;
+          background: rgba(255,74,87,0.1); border: 1px solid rgba(255,74,87,0.34);
+          border-radius: 999px; padding: 5px 12px; white-space: nowrap; margin-top: 2px;
+        }
+        .res-venue-txt { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; }
+        .res-venue-txt strong { color: #e8edf4; font-weight: 700; }
         .res-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
         .res-link {
           display: flex; align-items: center; gap: 13px;
@@ -159,6 +173,14 @@ export default function CVResearch() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Independent Research</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
+        <div className="res-venue">
+          <span className="res-venue-tag">Submitted · Under Review</span>
+          <span className="res-venue-txt">
+            <strong>AAAI 2027 — Main Technical Track.</strong> Anonymous submission, currently under review. Not
+            accepted, not published there, and I will say so until a decision exists. The preprint is live on Zenodo
+            with a DOI so the work can be read and attacked now rather than after a committee gets to it.
+          </span>
+        </div>
         <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: '20px' }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines · 61 files</strong><br />
           383 controlled experiments. One RTX 3090. Four architectures. The first formal local stability characterization for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.

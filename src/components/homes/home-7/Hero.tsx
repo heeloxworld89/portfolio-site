@@ -20,8 +20,8 @@ const stack = [
     layer: 'L2',
     name: 'ORMAS',
     desc: 'Self-correcting training architecture',
-    metric: '383 experiments · 4 architectures',
-    status: 'Published',
+    metric: '383 experiments · submitted to AAAI 2027',
+    status: 'Preprint live',
     state: 'live' as const,
   },
   {
