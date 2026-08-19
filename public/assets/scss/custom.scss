@@ -422,3 +422,52 @@ html, body {
   .header-left-sticky .mainmenu-nav .primary-menu li a,
   .header-left-sticky .mainmenu-nav .primary-menu li a::before { transition: none !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   Anchor scrolling — land on the section heading, not its middle
+   ══════════════════════════════════════════════════════════════ */
+
+/* The template forced `scroll-behavior: auto !important`, which killed smooth
+   scrolling for every plain href="#…" link (hero CTAs, in-page cross-links).
+   Restore it, and honour reduced-motion properly. */
+html {
+  scroll-behavior: smooth !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+}
+
+/* Breathing room above every scroll target so the heading is never flush
+   against the viewport edge. Mobile gets extra clearance for the sticky
+   header, which is position:fixed once it engages. */
+#home,
+#recognition,
+#who-i-am,
+#oxido,
+#research,
+#engineering,
+#deployment,
+#cherry,
+#journey,
+#education,
+#fundraising,
+#contact {
+  scroll-margin-top: 40px;
+}
+
+@media (max-width: 1199px) {
+  #home,
+  #recognition,
+  #who-i-am,
+  #oxido,
+  #research,
+  #engineering,
+  #deployment,
+  #cherry,
+  #journey,
+  #education,
+  #fundraising,
+  #contact {
+    scroll-margin-top: 96px;
+  }
+}

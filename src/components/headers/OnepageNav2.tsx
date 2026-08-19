@@ -282,9 +282,18 @@ export default function OnepageNav2({
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    document
-      .querySelector(id)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const el = document.querySelector(id);
+    if (!el) return;
+    // block:"start" — land on the section heading. "center" put the top of every
+    // section above the fold, which is why sections opened mid-way.
+    el.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+    // keep the URL in sync without triggering a second, unoffset jump
+    if (history.replaceState) history.replaceState(null, "", id);
   };
 
   return (
