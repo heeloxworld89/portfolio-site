@@ -182,12 +182,22 @@ export const deepDives: DeepDive[] = [
         </p>
 
         <div className="vm-gap">
-          <div className="vm-gap-tag">What Is Not Proven</div>
+          <div className="vm-gap-tag">What Is Compute-Gated, and What Is Genuinely Open</div>
           <p>
-            <strong>No clinical data has ever touched ORMAS.</strong> The retention numbers are
-            CIFAR-10. ORMAS-T — the Transformer-scale version this vertical requires — does not exist,
-            and the paper&apos;s own open question is whether the conservation-preserving
-            initialisation survives attention heads.
+            <strong>Compute-gated — this is the ask, not a research risk.</strong> ORMAS-T is written.
+            The three signals are defined per-node on a directed graph and a Transformer is a directed
+            graph; PCGrad, the conservation constraint, and the health gate all sit at optimiser level.
+            That is why the protocol already carried across four architecture families — FC-DAG, CNN,
+            an 11.24M-parameter Fat CNN, and ResNet-18 — without being redesigned. What is missing is
+            multi-node H100/A100 access. The one honest unknown inside this bucket, which the paper
+            states itself: whether the conservation-preserving initialisation behaves the same way on
+            attention heads as on conv nodes.
+          </p>
+          <p>
+            <strong>Genuinely open — compute does not close this.</strong> No clinical data has ever
+            touched ORMAS. The retention numbers are CIFAR-10, and getting past that is a partnership
+            and data-access problem, not a hardware one. No PCCP has been drafted, submitted, or
+            discussed with anyone.
           </p>
           <p>
             <strong>Compositional is not causal.</strong> The 58.8% result is compositional
@@ -340,7 +350,7 @@ export const deepDives: DeepDive[] = [
         </p>
 
         <div className="vm-gap">
-          <div className="vm-gap-tag">What Is Not Proven — Read Before Weighing This Vertical</div>
+          <div className="vm-gap-tag">Genuinely Open — Not a Compute Problem. Read Before Weighing This Vertical.</div>
           <p>
             <strong>Every number above is training-time.</strong> The paper&apos;s threat model is
             training-time weight-space pathology, explicitly <em>distinct from input-space adversarial
@@ -500,12 +510,14 @@ export const deepDives: DeepDive[] = [
         </p>
 
         <div className="vm-gap">
-          <div className="vm-gap-tag">What Is Not Proven</div>
+          <div className="vm-gap-tag">What Is Outstanding — and Why None of It Is a Cluster Problem</div>
           <p>
-            <strong>No financial data has touched ORMAS.</strong> The retention numbers are CIFAR-10.
-            The obvious experiment — run the same sequential protocol on public market data, two
-            regimes, no replay buffer, measure retention — has not been run. It requires no permission
-            from anyone and it is the highest-value missing item in the entire commercial programme.
+            <strong>This vertical is not compute-gated.</strong> The validating experiment — run the
+            same sequential protocol on public market data, two regimes, no replay buffer, measure
+            retention — needs no cluster, no permission, and no partner. It has simply not been run
+            yet, which makes it the cheapest outstanding item in the entire programme and the first
+            place new resource should go. No financial data has touched ORMAS; the retention numbers
+            are CIFAR-10.
           </p>
           <p>
             <strong>The sharpest technical objection:</strong> ORMAS triggers on gradient{' '}

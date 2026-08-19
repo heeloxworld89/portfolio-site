@@ -780,12 +780,29 @@ dead-layer lesion against a baseline that collapses to 10.0%; 2.5 pp decay under
 against 7.8 pp; correction frequency decaying from 4.2 to 0.05 per epoch as the network stabilises;
 and the five-layer telemetry stack, which is native rather than reconstructed.
 
-**Projected, and not yet run:** silent node injection into a live network; the ~99% retention that
-dedicated per-task capacity should produce; ORMAS at Transformer scale; test-time distribution shift;
-and any clinical, financial, or defense data whatsoever.
+**Built and compute-gated — this is the ask, not a research risk:**
 
-All three verticals above depend on the second column. I would rather draw that line clearly than let
-a reader assume the first column already covers it.
+ORMAS-T, the Transformer port, is written. The three signals are defined per-node on a directed
+graph and a Transformer is a directed graph; PCGrad, the mean-centering conservation constraint, and
+the health gate all operate at optimiser level and are blind to the layer beneath them. That is why
+the protocol already carried across **four architecture families** — FC-DAG, CNN, an 11.24M-parameter
+Fat CNN, and ResNet-18 — without redesign, holding parity on ResNet-18 (91.7% vs 92.6% baseline)
+while still emitting the audit trail. What is missing is multi-node H100/A100 access, not a result.
+Silent Node Injection and the ~99% retention dedicated capacity should produce sit in the same
+bucket: reasoned, written, waiting on hardware.
+
+**Genuinely open — compute does not close these:**
+
+- No clinical, financial, or defense data has touched this — a partnership and data-access problem
+- Test-time distribution shift — named in the paper as an unrun extension
+- Adversarial weight injection — known structural blind spot, ORMAS 1.0 pp *worse* than baseline
+- Whether attention heads behave like conv nodes under the conservation constraint — the one honest
+  unknown inside the compute-gated bucket; the paper asks it and does not answer it
+- Task-count ceiling before the graph becomes impractical — bears directly on medical personalisation
+
+Collapsing "we have not bought the GPUs" into "we do not know if it works" is the single most common
+way this programme gets misread, and it inverts the investment case. If the remaining work were
+discovery, compute would not obviously help. Because it is execution, compute is precisely the unlock.
 
 ---
 

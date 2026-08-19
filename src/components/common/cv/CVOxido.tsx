@@ -76,7 +76,7 @@ const gatedVerticals = [
     lock: 'Clinical data is released on governance, not accuracy. Since the FDA finalised its Predetermined Change Control Plan guidance in December 2024, a deployed model is allowed to keep updating — but only within modifications specified, validated, and monitored in advance. The bar moved from “frozen” to “bounded and accounted for,” which is a harder engineering requirement, not an easier one.',
     why: 'The requirement is the exact opposite of frozen. What works for patient A does not work for patient B, and the question that matters — what is happening to this one — is not a statistical property of the population they were drawn from. Current practice wraps a static network in heavy engineering at both ends: aggressive normalisation going in, a stack of statistical correction coming out. The population-level numbers come out right. The individual is still unanswered.',
     what: 'ORMAS learned a second task while holding 94.6% of the first, with no replay buffer and no task labels, against ResNet-18’s 47.3% — consistent across all three seeds. On combinations it was never shown grouped it scored 58.8% against a 25% chance baseline. I want to be precise about what that is: compositional generalisation over learned attributes, not causal inference about an unobserved cause. It is the precondition for per-patient adaptation, not the capability itself. What it does establish is that a model can keep learning after deployment without erasing what it already knew — and every correction lands in L4 as a bounded, timestamped, ISS-bounded event, which is the exact class of artifact a Change Control Plan has to specify in advance.',
-    gap: 'Gated on ORMAS-T. Transformer scale is unproven and no clinical data has ever touched this — the retention numbers are CIFAR-10. There is also an unanswered scaling question aimed directly at this vertical: per-patient adaptation implies thousands of sequential tasks, and the ceiling on task count before the graph becomes computationally impractical has not been established.',
+    gap: 'Separate the two things here. Compute-gated: ORMAS-T is written and the mechanism already carried across four architecture families including ResNet-18 — running it at Transformer scale needs multi-node H100/A100 access, not a new idea. Genuinely open: no clinical data has ever touched this, and that is a partnership and access problem no amount of GPU solves. The retention numbers are CIFAR-10. One real unknown sits underneath the vertical specifically — per-patient adaptation implies thousands of sequential tasks, and the ceiling on task count before the graph becomes impractical has not been established.',
     chips: ['FDA change-control fit', 'Personalisation gap', '~150–200 institutions'],
   },
   {
@@ -84,7 +84,7 @@ const gatedVerticals = [
     lock: 'Classified sensor data does not leave its enclave, and nothing goes into an enclave that cannot account for its own behaviour.',
     why: 'A platform approaching a target stops receiving the data it was trained on — jamming, spoofing, sensor degradation, deliberate corruption. The distribution moves under the model at precisely the moment the model matters, and there is no operator in the loop to notice.',
     what: 'This is where the measured robustness sits. Under 40% label noise ORMAS decayed 2.5 pp from peak against 7.8 pp standard. After a mid-training dead-layer lesion it recovered to 80.3% where a parameter-matched CNN collapsed permanently to 10.0%, across every initialisation. Under σ=1.0 weight perturbation, 75.4% against 59.0%. On a 50-node DAG at 30% noise — dense enough that uncorrected training goes to NaN — 22,014 autonomous corrections held it numerically stable for 200 epochs.',
-    gap: 'Every number above is training-time. The paper’s threat model is training-time weight-space pathology, not input-space attack on a fixed network — and on adversarial weight injection the standard baseline actually beats ORMAS by 1.0 pp, because those weights are built to keep activation statistics nominal and evade the exact signals ORMAS watches. Test-time distribution shift is named in the paper as an open extension, not a result. So this is simultaneously the most compelling analogue I have and the least tested one. I would rather say that than let the numbers imply a field result they do not support.',
+    gap: 'This vertical is the one where the gap is genuinely scientific rather than financial, and I am not going to blur that. Every number above is training-time. The paper’s threat model is training-time weight-space pathology, not input-space attack on a fixed network — and on adversarial weight injection the standard baseline beats ORMAS by 1.0 pp, because those weights keep activation statistics nominal and evade exactly the signals ORMAS watches. Test-time distribution shift is named in the paper as an unrun extension. Compute does not fix either of those; they need experiments that have not been designed yet. Strongest technical fit of the three, weakest evidence, slowest access path.',
     chips: ['Measured robustness', 'Known blind spot', 'Access path reality'],
   },
   {
@@ -92,7 +92,7 @@ const gatedVerticals = [
     lock: 'Position, execution, and client data are SEC-regulated and competitively fatal to expose. None of it leaves the building, ever — which rules out every hosted model by construction.',
     why: 'Regime change. A model trained through one market regime degrades exactly when the regime turns, and retraining on the new one destroys what it knew about the old. Then the old regime comes back. This is catastrophic forgetting with money attached, and the industry currently pays for it by retraining on a schedule and accepting the loss.',
     what: 'The sequential-task experiment is that problem in miniature: train Phase 1, switch to Phase 2 with no replay buffer and no task label, then measure what survives of Phase 1. Standard ResNet-18 keeps 47.3%. ORMAS keeps 94.6%. The mechanism is not a scheduler or a buffer — gradient conflict forces the two regimes into physically separate regions of weight space, so neither overwrites the other.',
-    gap: 'CIFAR-10 is not a market, and no financial data has touched this. The mechanism is the claim; the domain transfer is untested.',
+    gap: 'The mechanism is proven and the domain mapping is the cleanest of the three — but no financial data has touched it yet, and CIFAR-10 is not a market. Worth being precise about why: this one is not compute-gated. The validating experiment is the sequential-task protocol run on public market data, two regimes, no replay buffer, measure retention. It needs no cluster, no permission, and no partner. It has simply not been run yet, which makes it the cheapest outstanding item in the entire programme and the first thing new resource should go to. The open question underneath it: ORMAS triggers on gradient conflict, and real regime transitions are gradual rather than abrupt — a mechanism that fires on conflict may not fire on slow drift.',
     chips: ['Cleanest mapping', '94.6% vs 47.3%', 'First commercial move'],
   },
 ];
@@ -605,22 +605,37 @@ export default function CVOxido() {
           ))}
 
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '22px 26px', marginBottom: '10px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '10px' }}>The Line Between Measured and Projected</div>
-            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '10px' }}>
-              <strong style={{ color: '#c4cfde' }}>Measured, in the paper, across 383 experiments:</strong> 94.6% retention
-              under sequential task shift; 58.8% zero-shot compositional accuracy against 25% chance; 80.3% recovery from a
-              mid-training dead-layer lesion against a baseline that collapses to 10.0%; 2.5 pp decay under 40% label noise
-              against 7.8 pp; correction frequency decaying from 4.2 to 0.05 per epoch as the network stabilises; and the
-              five-layer telemetry stack, which is native rather than reconstructed.
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#c4cfde', marginBottom: '12px' }}>What Is Done, What Is Compute-Gated, What Is Genuinely Open</div>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '14px' }}>
+              These get collapsed into one pile far too often, and the difference is the entire investment case. Three
+              categories, kept separate.
             </p>
-            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '10px' }}>
-              <strong style={{ color: '#c4cfde' }}>Projected, and not yet run:</strong> silent node injection into a live
-              network; the ~99% retention that dedicated per-task capacity should produce; ORMAS at Transformer scale; test-time
-              distribution shift; and any clinical, financial, or defense data whatsoever.
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '12px' }}>
+              <strong style={{ color: '#7fd88f' }}>1 · Proven, in the paper, across 383 experiments and four architecture
+              families.</strong> 94.6% retention under sequential task shift; 58.8% zero-shot compositional accuracy against
+              25% chance; 80.3% recovery from a mid-training dead-layer lesion where the baseline collapses to 10.0%; 2.5 pp
+              decay under 40% label noise against 7.8 pp; correction frequency decaying 4.2 → 0.05 per epoch; five-layer
+              telemetry emitted natively. Critically, this was not a single-architecture result — the protocol ran on an
+              FC-DAG, a CNN, an 11.24M-parameter Fat CNN, <strong style={{ color: '#c4cfde' }}>and ResNet-18</strong>, holding
+              parity on the last one (91.7% vs 92.6%) while still producing the audit trail.
+            </p>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', marginBottom: '12px' }}>
+              <strong style={{ color: '#c4cfde' }}>2 · Built and compute-gated — this is the ask.</strong> ORMAS-T, the
+              Transformer port, is not an open research question waiting on an insight. The three signals are defined per-node
+              on a directed graph, and a Transformer is a directed graph. PCGrad projection, the mean-centering conservation
+              constraint, and the health gate all operate at optimiser level and are blind to what the layer underneath them
+              looks like — which is exactly why the protocol already carried across four architecture families without being
+              redesigned. What is missing is not a result. It is multi-node H100/A100 access. Silent node injection and the
+              ~99% retention that dedicated per-task capacity should produce sit in the same bucket: written, reasoned, and
+              waiting on hardware.
             </p>
             <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#9aa4b0', margin: 0 }}>
-              All three verticals above depend on the second column. I would rather draw that line clearly than let a reader
-              assume the first column already covers it.
+              <strong style={{ color: '#ff6b76' }}>3 · Genuinely open — compute does not close these.</strong> No clinical,
+              financial, or defense data has ever touched this, and that is a data-access and partnership problem, not a GPU
+              problem. Test-time distribution shift is named in the paper as an unrun extension. Adversarial weight injection
+              is a known structural blind spot where ORMAS is 1.0 pp <em>worse</em> than baseline. And whether attention heads
+              behave like conv nodes under the conservation constraint is the one honest unknown inside category 2 — the paper
+              says so itself, and I am not going to pretend otherwise.
             </p>
           </div>
 
