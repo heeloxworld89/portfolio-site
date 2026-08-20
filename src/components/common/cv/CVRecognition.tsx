@@ -89,6 +89,34 @@ export default function CVRecognition() {
           margin-bottom: 14px;
         }
 
+        /* Application → 12 hrs → call booked */
+        .rec-clock {
+          display: grid; grid-template-columns: 1fr auto 1fr;
+          gap: 14px; align-items: center;
+          background: rgba(255,74,87,0.055);
+          border: 1px solid rgba(255,74,87,0.3);
+          border-radius: 10px; padding: 18px 22px; margin: 0 0 20px;
+        }
+        @media (max-width: 620px) {
+          .rec-clock { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+        }
+        .rec-clock-step { display: flex; flex-direction: column; gap: 4px; }
+        .rec-clock-step.is-end { text-align: right; }
+        @media (max-width: 620px) { .rec-clock-step.is-end { text-align: center; } }
+        .rec-clock-k {
+          font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px;
+          text-transform: uppercase; color: #838d99;
+        }
+        .rec-clock-v { font-size: 14px; font-weight: 700; color: #e8edf4; line-height: 1.35; }
+        .rec-clock-gap { display: flex; align-items: center; gap: 10px; }
+        @media (max-width: 620px) { .rec-clock-gap { justify-content: center; } }
+        .rec-clock-line { width: 26px; height: 1px; background: rgba(255,107,118,0.45); }
+        @media (max-width: 620px) { .rec-clock-line { width: 40px; } }
+        .rec-clock-num {
+          font-size: 20px; font-weight: 800; color: #ff6b76;
+          letter-spacing: -0.3px; white-space: nowrap;
+        }
+
         /* Second entry — same build quality; the category is carried by the label,
            not by making the card look provisional. */
         .rec-secondary {
@@ -235,14 +263,32 @@ export default function CVRecognition() {
             </div>
           </div>
           <div className="rec-tag">Entrepreneur First · Talent Team · Gate 1 Screen</div>
-          <h3 className="rec-name">EF Came Looking. I Was Ready for the Architecture and Not for the Obvious Question.</h3>
+          <h3 className="rec-name">I Hit Submit. Twelve Hours Later I Had a Call Booked With Nick Sopuch.</h3>
+
+          <div className="rec-clock">
+            <div className="rec-clock-step">
+              <span className="rec-clock-k">Application</span>
+              <span className="rec-clock-v">Submitted cold</span>
+            </div>
+            <div className="rec-clock-gap">
+              <span className="rec-clock-line" />
+              <span className="rec-clock-num">12 hrs</span>
+              <span className="rec-clock-line" />
+            </div>
+            <div className="rec-clock-step is-end">
+              <span className="rec-clock-k">Response</span>
+              <span className="rec-clock-v">Call booked with Nick Sopuch</span>
+            </div>
+          </div>
+
           <p className="rec-body">
-            EF runs one of the most aggressive sourcing operations in European venture, and it found me in
-            Dhaka — <strong>their talent team opened the conversation, not me</strong>. The call itself was with{' '}
-            <strong>Nick Sopuch</strong>, who runs one of EF&apos;s investment teams and their SF-based bridge
-            program, scouts for Ada Ventures, and is Head of Operations at Axiom Therapeutics. Mid-call he sized
-            me against the kind of founder EF backs: someone who joined at 17, raised $100M+, then built a
-            second company that became a unicorn inside EF&apos;s own portfolio. That was the comparison set.
+            No introduction, no warm path, no network — an application from Dhaka into one of the most aggressive
+            sourcing operations in European venture. <strong>Twelve hours later their talent team came back to put a
+            call in the diary.</strong> The call was with <strong>Nick Sopuch</strong>, who runs one of EF&apos;s
+            investment teams and their SF-based bridge program, scouts for Ada Ventures, and is Head of Operations at
+            Axiom Therapeutics. Mid-call he sized me against the kind of founder EF backs: someone who joined at 17,
+            raised $100M+, then built a second company that became a unicorn inside EF&apos;s own portfolio. That was
+            the comparison set.
           </p>
           <p className="rec-body">
             Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
@@ -252,8 +298,8 @@ export default function CVRecognition() {
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
-              <span className="rec-stat-val">Inbound</span>
-              <span className="rec-stat-lbl">EF Opened Contact</span>
+              <span className="rec-stat-val">12 hrs</span>
+              <span className="rec-stat-lbl">Submit → Call Booked</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">Gate 1</span>

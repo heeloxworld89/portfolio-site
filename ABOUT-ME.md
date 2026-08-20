@@ -109,10 +109,11 @@ they open a technical track. I would rather have the honest read than the money.
 
 ### 3.2 Entrepreneur First — Talent Team, Gate 1 Screen
 
-**Result: EF opened the conversation. Fifteen-minute screen, no offer.**
+**Result: Twelve hours from a cold application to a booked call with Nick Sopuch. Fifteen-minute Gate 1 screen, no offer.**
 
-EF runs one of the most aggressive sourcing operations in European venture, and it found me in
-Dhaka — **their talent team opened the conversation, not me**. The call itself was with **Nick
+No introduction, no warm path, no network — a cold application from Dhaka into one of the most
+aggressive sourcing operations in European venture. **Twelve hours later their talent team came back
+to put a call in the diary.** The call itself was with **Nick
 Sopuch**, who runs one of EF's investment teams and their SF-based bridge program, scouts for Ada
 Ventures, and is Head of Operations at Axiom Therapeutics. Mid-call he sized me against the kind of
 founder EF backs: someone who joined at 17, raised $100M+, then built a second company that became a
@@ -125,7 +126,7 @@ learned, and the next conversation with EF is already in motion.
 
 | Signal | Value |
 |---|---|
-| Origin | Inbound — EF talent team opened contact |
+| Turnaround | 12 hours — cold application → call booked |
 | Stage | Gate 1 — talent team sourcing |
 | Format | 15-minute phone screen, Calendly booking |
 | Technical evaluation | None — explicitly not the purpose of the stage |
