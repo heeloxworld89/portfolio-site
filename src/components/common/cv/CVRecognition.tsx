@@ -119,18 +119,28 @@ export default function CVRecognition() {
 
         /* ── Quiet status line ── */
         .rec-status {
-          display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+          display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
           background: rgba(196,207,222,0.035);
           border: 1px solid #2a2d32;
           border-left: 2px solid #ff4a57;
           border-radius: 0 8px 8px 0;
           padding: 15px 20px; margin-bottom: 24px;
         }
+        .rec-status-logo {
+          display: inline-flex; align-items: center; justify-content: center;
+          flex-shrink: 0; padding: 9px 14px; border-radius: 6px;
+          background: rgba(255,74,87,0.07); border: 1px solid rgba(255,74,87,0.28);
+        }
+        .rec-status-logo img { display: block; height: 15px; width: auto; }
+        .rec-status-body {
+          display: flex; flex-direction: column; gap: 4px;
+          flex: 1; min-width: 220px;
+        }
         .rec-status-k {
           font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px;
-          text-transform: uppercase; color: #838d99; flex-shrink: 0;
+          text-transform: uppercase; color: #838d99;
         }
-        .rec-status-v { font-size: 14.5px; line-height: 1.65; color: #9aa4b0; flex: 1; min-width: 220px; }
+        .rec-status-v { font-size: 14.5px; line-height: 1.6; color: #9aa4b0; }
         .rec-status-v strong { color: #c4cfde; font-weight: 600; }
         .rec-status-d {
           font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
@@ -331,10 +341,15 @@ export default function CVRecognition() {
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
-          <span className="rec-status-k">Current status</span>
-          <span className="rec-status-v">
-            In EF&apos;s <strong>Bridge</strong> selection process, at the first interview stage. I&apos;ll update
-            this page as it moves.
+          <span className="rec-status-logo">
+            <img src="/assets/images/logos/the-bridge.png" alt="The Bridge" />
+          </span>
+          <span className="rec-status-body">
+            <span className="rec-status-k">Current status</span>
+            <span className="rec-status-v">
+              In the selection process for <strong>The Bridge</strong> — Entrepreneur First&apos;s eight-week
+              San Francisco residency — at the first interview stage. I&apos;ll update this page as it moves.
+            </span>
           </span>
           <span className="rec-status-d">Aug 2026</span>
         </div>

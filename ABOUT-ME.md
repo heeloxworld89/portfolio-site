@@ -124,8 +124,9 @@ want to build full-time. That's the one thing I'd take back: a hedge on a commit
 conversation whose entire purpose is reading how someone thinks. Nick read it exactly right. Lesson
 learned, and the conversation with EF has since continued.
 
-**Current status (Aug 2026):** in EF's Bridge selection process, at the first interview stage.
-This section will be updated as it moves.
+**Current status (Aug 2026):** in the selection process for **The Bridge** — Entrepreneur First's
+eight-week San Francisco residency — at the first interview stage. This section will be updated as
+it moves.
 
 *Private note, not on the site: the invitation came after the Gate 1 screen did not convert, which
 means EF re-opened the process on their own initiative. Worth knowing, not worth announcing —
