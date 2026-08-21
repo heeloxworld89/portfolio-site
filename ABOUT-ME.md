@@ -122,7 +122,28 @@ unicorn inside EF's own portfolio. That was the comparison set.
 Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
 want to build full-time. That's the one thing I'd take back: a hedge on a commitment question, in a
 conversation whose entire purpose is reading how someone thinks. Nick read it exactly right. Lesson
-learned, and the next conversation with EF is already in motion.
+learned — and EF came back anyway.
+
+**Update — 21 August 2026: invited to first interview for The Bridge.**
+
+> "We very much enjoyed digging into your application and think there could be a strong fit. We'd be
+> keen to get to know you better in a first discussion with our team."
+> — Entrepreneur First · The Bridge
+
+The Gate 1 screen did not convert, and the mistake in it was mine. EF opened the door again anyway,
+this time into **The Bridge** — the programme Nick Sopuch runs. Their stated selection process:
+
+| Stage | Format | Status |
+|---|---|---|
+| 1 · First interview | Online | **Invited** |
+| 2 · Second interview | Online | Pending |
+| 3 · Reference checks | Third-party | Pending |
+| 4 · Third interview | In person or online | Pending |
+
+*Stated precisely: this is an invitation to the first of four stages — not a place in the programme
+and not an offer. The mail is automated and EF says plainly they have a high number of people to see.
+What it does establish is narrow and worth having: after a screen I handled badly, they read the
+application again and asked me back.*
 
 | Signal | Value |
 |---|---|

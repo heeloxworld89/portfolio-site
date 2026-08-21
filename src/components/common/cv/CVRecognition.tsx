@@ -117,6 +117,73 @@ export default function CVRecognition() {
           letter-spacing: -0.3px; white-space: nowrap;
         }
 
+        /* ── Update block ── */
+        .rec-update {
+          background: #191b1e;
+          border: 1px solid rgba(255,74,87,0.32);
+          border-radius: 10px;
+          padding: 26px 30px;
+          margin-bottom: 24px;
+        }
+        .rec-update-top {
+          display: flex; align-items: center; justify-content: space-between;
+          gap: 14px; flex-wrap: wrap; margin-bottom: 16px;
+        }
+        .rec-update-badge {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10px; font-weight: 700; letter-spacing: 1.6px;
+          text-transform: uppercase; color: #ff6b76;
+          background: rgba(255,74,87,0.1); border: 1px solid rgba(255,74,87,0.34);
+          border-radius: 999px; padding: 5px 13px;
+        }
+        .rec-update-dot {
+          width: 6px; height: 6px; border-radius: 50%; background: #ff6b76;
+          animation: recPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes recPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .rec-update-src {
+          font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+          text-transform: uppercase; color: #838d99;
+        }
+        .rec-update-h {
+          font-size: 20px; font-weight: 800; color: #fff;
+          margin: 0 0 16px; line-height: 1.3;
+        }
+        .rec-quote {
+          margin: 0 0 18px; padding: 0 0 0 20px;
+          border-left: 2px solid rgba(255,107,118,0.5);
+          font-size: 15.5px; line-height: 1.75; color: #e8edf4; font-style: italic;
+        }
+        .rec-quote cite {
+          display: block; margin-top: 9px; font-style: normal;
+          font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+          text-transform: uppercase; color: #838d99;
+        }
+        .rec-stage-row {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 8px; margin: 0 0 18px;
+        }
+        .rec-stage {
+          background: #141618; border: 1px solid #24272c;
+          border-radius: 8px; padding: 14px 16px;
+        }
+        .rec-stage.is-now {
+          border-color: rgba(255,74,87,0.45);
+          background: rgba(255,74,87,0.06);
+        }
+        .rec-stage-n {
+          font-size: 10px; font-weight: 800; letter-spacing: 1.4px;
+          color: #7d8794; margin-bottom: 7px;
+        }
+        .rec-stage.is-now .rec-stage-n { color: #ff6b76; }
+        .rec-stage-t { font-size: 13.5px; font-weight: 700; color: #e8edf4; line-height: 1.35; }
+        .rec-stage-s { font-size: 11px; color: #98a2ae; margin-top: 3px; }
+        .rec-update-honest {
+          font-size: 14px; line-height: 1.8; color: #9aa4b0; margin: 0;
+          padding-top: 16px; border-top: 1px solid #24272c;
+        }
+        .rec-update-honest strong { color: #c4cfde; font-weight: 600; }
+
         /* Second entry — same build quality; the category is carried by the label,
            not by making the card look provisional. */
         .rec-secondary {
@@ -294,7 +361,7 @@ export default function CVRecognition() {
             Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
             want to build full-time. That&apos;s the one thing I&apos;d take back: a hedge on a commitment
             question, in a conversation whose entire purpose is reading how someone thinks. Nick read it exactly
-            right. Lesson learned, and the next conversation with EF is already in motion.
+            right. Lesson learned — and EF came back anyway. What follows is what happened next.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
@@ -306,6 +373,50 @@ export default function CVRecognition() {
               <span className="rec-stat-lbl">Talent Team Screen</span>
             </div>
           </div>
+        </div>
+
+        {/* ── The update: EF re-engaged after the screen ─────────────── */}
+        <div className="rec-update">
+          <div className="rec-update-top">
+            <span className="rec-update-badge"><span className="rec-update-dot" />Update · 21 August 2026</span>
+            <span className="rec-update-src">The Bridge · Entrepreneur First</span>
+          </div>
+
+          <h3 className="rec-update-h">Invited to First Interview — The Bridge</h3>
+
+          <blockquote className="rec-quote">
+            “We very much enjoyed digging into your application and think there could be a strong fit. We&apos;d be
+            keen to get to know you better in a first discussion with our team.”
+            <cite>Entrepreneur First · The Bridge</cite>
+          </blockquote>
+
+          <p className="rec-body">
+            The Gate 1 screen did not convert, and I said above that the mistake in it was mine. EF opened the door
+            again regardless — this time into <strong>The Bridge</strong>, the programme Nick Sopuch runs. Below is
+            the selection process exactly as they set it out.
+          </p>
+
+          <div className="rec-stage-row">
+            {[
+              { n: '01', t: 'First interview', s: 'Online · invited', now: true },
+              { n: '02', t: 'Second interview', s: 'Online' },
+              { n: '03', t: 'Reference checks', s: 'Third-party' },
+              { n: '04', t: 'Third interview', s: 'In person or online' },
+            ].map((st) => (
+              <div className={`rec-stage${st.now ? ' is-now' : ''}`} key={st.n}>
+                <div className="rec-stage-n">{st.n}</div>
+                <div className="rec-stage-t">{st.t}</div>
+                <div className="rec-stage-s">{st.s}</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="rec-update-honest">
+            <strong>Stated precisely:</strong> this is an invitation to the first of four stages, not a place in the
+            programme and not an offer. The email is an automated one and EF says plainly they have a high number of
+            people to see. What it does establish is narrow and worth having — <strong>after a screen I handled badly,
+            they read the application again and asked me back.</strong>
+          </p>
         </div>
 
         {/* ── What this actually adds up to ──────────────────────────── */}
@@ -324,7 +435,8 @@ export default function CVRecognition() {
           <p className="rec-verdict-body">
             <strong>EF read me</strong> — for fifteen minutes, at Gate 1, by design. Different instrument,
             different measurement, and a no I earned on a question that had nothing to do with the
-            architecture. Both organizations went looking in an environment where a PhD is the default and an
+            architecture. They then re-opened the process on their own initiative, which is the part I
+            did not control and the part I would point at. Both organizations went looking in an environment where a PhD is the default and an
             eighteen-year-old without one is not, and neither discounted the work for coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">
