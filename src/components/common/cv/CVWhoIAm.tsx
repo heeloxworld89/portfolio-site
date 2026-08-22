@@ -123,6 +123,43 @@ export default function CVWhoIAm() {
           margin: 48px 0 18px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
         }
 
+        /* ── founder video: vertical source gets a vertical frame ── */
+        .wi-why {
+          display: grid; grid-template-columns: 320px 1fr;
+          gap: 34px; align-items: center;
+          background: #121417; border: 1px solid #2a2d32;
+          border-radius: 12px; padding: 28px 30px; margin: 6px 0 4px;
+        }
+        @media (max-width: 860px) {
+          .wi-why { grid-template-columns: 1fr; gap: 22px; justify-items: center; }
+          .wi-why-side { text-align: left; }
+        }
+        .wi-why-embed {
+          position: relative; width: 100%; max-width: 320px;
+          aspect-ratio: 9 / 16;
+          border-radius: 14px; overflow: hidden;
+          background: #0b0c0e; border: 1px solid #2a2d32;
+          box-shadow: 0 20px 50px -28px rgba(0,0,0,0.95);
+        }
+        .wi-why-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+        .wi-why-eyebrow {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px;
+          text-transform: uppercase; color: #ff6b76; margin-bottom: 12px;
+        }
+        .wi-why-h {
+          font-size: 19px; font-weight: 700; color: #e8edf4;
+          margin: 0 0 12px; line-height: 1.35;
+        }
+        .wi-why-p { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; margin: 0 0 12px; }
+        .wi-why-p strong { color: #c4cfde; font-weight: 600; }
+        .wi-why-p a { color: #c4cfde; text-decoration: underline; }
+        .wi-why-p a:hover { color: #fff; }
+        .wi-why-cap {
+          font-size: 12.5px; line-height: 1.65; color: #838d99;
+          margin: 14px 0 0; padding-top: 13px; border-top: 1px solid #24272c;
+        }
+
         /* ── timeline ─────────────────────────────────────── */
         .wi-tl { position: relative; padding-left: 4px; }
         .wi-tl-row {
@@ -265,16 +302,38 @@ export default function CVWhoIAm() {
           Six Years, One Through-Line
         </h2>
 
-        <p className="wi-lead">
-          <strong>Rokib Al Dhin Raadh — 18, Dhaka, Bangladesh.</strong> I did not start with research and go looking for
-          problems. Five ventures failed at five different layers between the ages of twelve and seventeen, and all five
-          returned the same finding. Everything on this page exists because of what that finding forced me to build next.
-        </p>
-        <p className="wi-lead" style={{ marginBottom: 0 }}>
-          Nothing here was planned. Each piece exists because the one before it hit a wall I could not engineer around.
-        </p>
+        {/* ── The founder video carries the introduction itself — no filler
+             copy beside it, and no separate lead paragraph above it. ── */}
+        <div className="wi-why">
+          <div className="wi-why-embed">
+            <iframe
+              src="https://www.loom.com/embed/c30a0509fdc442b5b6f6ea47213798c9"
+              allowFullScreen
+              loading="lazy"
+              title="Founder introduction — Rokib Al Dhin Raadh"
+            />
+          </div>
+          <div className="wi-why-side">
+            <div className="wi-why-eyebrow">
+              <Icon name="play" size={14} />
+              Founder Introduction · 31 sec
+            </div>
+            <h3 className="wi-why-h">Rokib Al Dhin Raadh — 18, Dhaka, Bangladesh.</h3>
+            <p className="wi-why-p">
+              I did not start with research and go looking for problems. Five ventures failed at five different
+              layers between the ages of twelve and seventeen, and all five returned the same finding. Everything on
+              this page exists because of what that finding forced me to build next.
+            </p>
+            <p className="wi-why-p">
+              <strong>Nothing here was planned.</strong> Each piece exists because the one before it hit a wall I
+              could not engineer around.
+            </p>
+            <p className="wi-why-cap">
+              In the video — the three verticals this is aimed at, why none of them work today, and ORMAS.
+            </p>
+          </div>
+        </div>
 
-        {/* ══ TIMELINE ═══════════════════════════════════════════ */}
         <div className="wi-label">The Through-Line</div>
         <div className="wi-tl">
           {timeline.map((t) => (

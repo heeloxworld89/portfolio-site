@@ -82,6 +82,42 @@ export default function CVResearch() {
       <style>{`
         .research-table { width: 100%; border-collapse: collapse; }
         .research-table th { padding: 12px 18px; text-align: left; color: #c4cfde; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #2a2d32; }
+        .rv-video {
+          display: grid; grid-template-columns: 0.82fr 1.18fr;
+          gap: 34px; align-items: center;
+          background: #121417; border: 1px solid #2a2d32;
+          border-radius: 12px; padding: 28px 30px; margin: 6px 0 24px;
+        }
+        @media (max-width: 991px) { .rv-video { grid-template-columns: 1fr; gap: 22px; } }
+        .rv-video-eyebrow {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px;
+          text-transform: uppercase; color: #ff6b76; margin-bottom: 12px;
+        }
+        .rv-video-h {
+          font-size: 21px; font-weight: 700; color: #e8edf4;
+          margin: 0 0 13px; line-height: 1.32; letter-spacing: -0.2px;
+        }
+        .rv-video-p { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; margin: 0 0 16px; }
+        .rv-video-p strong { color: #c4cfde; font-weight: 600; }
+        .rv-video-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid #24272c; padding-top: 14px; }
+        .rv-video-list li {
+          position: relative; padding-left: 16px; margin-bottom: 8px;
+          font-size: 13px; line-height: 1.6; color: #98a2ae;
+        }
+        .rv-video-list li:last-child { margin-bottom: 0; }
+        .rv-video-list li::before {
+          content: ""; position: absolute; left: 0; top: 8px;
+          width: 4px; height: 4px; border-radius: 50%; background: #ff6b76;
+        }
+        .rv-video-embed {
+          position: relative; padding-top: 56.25%;
+          border-radius: 10px; overflow: hidden;
+          background: #0b0c0e; border: 1px solid #2a2d32;
+          box-shadow: 0 20px 50px -30px rgba(0,0,0,0.9);
+        }
+        .rv-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
         .res-venue {
           display: flex; gap: 16px; align-items: flex-start;
           background: rgba(255,74,87,0.05); border: 1px solid rgba(255,74,87,0.28);
@@ -173,6 +209,35 @@ export default function CVResearch() {
       <div className="col-12">
         <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Independent Research</span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
+        {/* ── The section's own overview video, before any of the detail ── */}
+        <div className="rv-video">
+          <div className="rv-video-side">
+            <div className="rv-video-eyebrow">
+              <Icon name="play" size={14} />
+              Presentation · 7 min 40 sec
+            </div>
+            <h3 className="rv-video-h">Explaining ORMAS: Transparent Neural Networks That Self-Heal</h3>
+            <p className="rv-video-p">
+              Everything below this is the written record — the three signals, all 383 experiments, the ISS
+              derivation, and every table including the ones that go against me. This is{' '}
+              <strong>the same argument said out loud</strong>, in under eight minutes.
+            </p>
+            <ul className="rv-video-list">
+              <li>Autonomous recovery from catastrophic mid-training failure</li>
+              <li>Compositional memory that emerges without replay buffers</li>
+              <li>Why transparency is an engineering problem, not a philosophy question</li>
+            </ul>
+          </div>
+          <div className="rv-video-embed">
+            <iframe
+              src="https://www.loom.com/embed/59caaa73445443cb8d345b4d594a8347"
+              allowFullScreen
+              loading="lazy"
+              title="Explaining ORMAS: Transparent Neural Networks That Self-Heal"
+            />
+          </div>
+        </div>
+
         <div className="res-venue">
           <span className="res-venue-tag">Submitted · Under Review</span>
           <span className="res-venue-txt">

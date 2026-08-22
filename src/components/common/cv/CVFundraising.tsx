@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Icon from '@/components/common/Icon';
+import VerticalModal from '@/components/common/VerticalModal';
 const caseBeats = [
   {
     n: '01',
@@ -49,6 +51,8 @@ const businessTiers = [
 ];
 
 export default function CVFundraising() {
+  const [deckOpen, setDeckOpen] = useState(false);
+
   return (
     <div className="row mb--50" id="fundraising">
       <style>{`
@@ -83,6 +87,62 @@ export default function CVFundraising() {
         .fr-use-text { font-size: 14px; line-height: 1.7; color: #9aa4b0; }
         .fr-use-text strong { color: #fff; font-weight: 600; }
 
+        .fr-actions {
+          background: #191b1e; border: 1px solid #2a2d32;
+          border-radius: 12px; padding: 24px 26px; margin-top: 8px;
+        }
+        .fr-actions-h {
+          font-size: 11px; font-weight: 700; letter-spacing: 1.8px;
+          text-transform: uppercase; color: #838d99; margin-bottom: 16px;
+        }
+        .fr-actions-grid {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+          gap: 10px;
+        }
+        .fr-act {
+          display: flex; align-items: flex-start; gap: 13px;
+          text-align: left; cursor: pointer; text-decoration: none;
+          background: #141618; border: 1px solid #2a2d32;
+          border-radius: 10px; padding: 17px 18px;
+          transition: border-color .22s, background .22s, transform .22s;
+        }
+        .fr-act:hover {
+          border-color: rgba(196,207,222,0.45); background: #1b1e22; transform: translateY(-2px);
+        }
+        .fr-act.is-primary {
+          border-color: rgba(255,74,87,0.34); background: rgba(255,74,87,0.05);
+        }
+        .fr-act.is-primary:hover { border-color: rgba(255,74,87,0.6); background: rgba(255,74,87,0.09); }
+        .fr-act-icon {
+          flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px;
+          display: flex; align-items: center; justify-content: center;
+          border: 1px solid rgba(196,207,222,0.2);
+          background: rgba(196,207,222,0.06); color: #c4cfde;
+        }
+        .fr-act.is-primary .fr-act-icon {
+          border-color: rgba(255,74,87,0.34); background: rgba(255,74,87,0.1); color: #ff6b76;
+        }
+        .fr-act-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+        .fr-act-t { font-size: 14px; font-weight: 700; color: #e8edf4; line-height: 1.3; }
+        .fr-act.is-primary .fr-act-t { color: #ff8a93; }
+        .fr-act-s { font-size: 12px; line-height: 1.55; color: #98a2ae; }
+        .fr-actions-note {
+          font-size: 12.5px; line-height: 1.7; color: #838d99;
+          margin: 16px 0 0; padding-top: 14px; border-top: 1px solid #24272c;
+        }
+        .fr-actions-note a { color: #c4cfde; text-decoration: underline; }
+        .fr-actions-note a:hover { color: #fff; }
+
+        .fr-deck-frame {
+          position: relative; width: 100%; height: 72vh; min-height: 420px;
+          border-radius: 10px; overflow: hidden;
+          background: #0b0c0e; border: 1px solid #2a2d32;
+        }
+        .fr-deck-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+        .fr-deck-fallback { font-size: 12.5px; color: #838d99; margin: 12px 0 0; }
+        .fr-deck-fallback a { color: #c4cfde; text-decoration: underline; }
+        @media (prefers-reduced-motion: reduce) { .fr-act:hover { transform: none; } }
+
         .fr-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
         .fr-cta-primary {
           display: inline-flex; align-items: center; gap: 10px;
@@ -112,9 +172,11 @@ export default function CVFundraising() {
         </h2>
         <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '740px', marginBottom: '40px' }}>
           Everything above this section is the long version — the proofs, the tables, the honest
-          gaps. This is the short one: what the position actually is, what it's worth, and what
-          I'm asking for to move it forward. If you read nothing else on this site, read this and
-          the deployment ladder.
+          gaps. <strong style={{ color: '#c4cfde' }}>This is the investor brief.</strong> What the
+          position actually is, what it is worth, what is missing, and what I am asking for. The deck
+          is readable in the page below, and every document behind it is linked rather than gated. If
+          you read only two things here, read this and the{' '}
+          <a href="#deployment" style={{ color: '#c4cfde', textDecoration: 'underline' }}>deployment ladder</a>.
         </p>
 
         {/* THE CASE, FOUR BEATS */}
@@ -220,15 +282,62 @@ export default function CVFundraising() {
           </p>
         </div>
 
-        <div className="fr-cta-row">
-          <a className="fr-cta-primary" href="mailto:raadxbusiness9@gmail.com?subject=OXIDO%20—%20Investor%20Conversation">
-            raadxbusiness9@gmail.com
-          </a>
-          <a className="fr-cta-secondary" href="/assets/pdf/oxido_pitch_deck.pdf" target="_blank" rel="noreferrer">
-            Download the Pitch Deck
-            <Icon name="externalLink" size={14} />
-          </a>
+        {/* ── Investor actions ─────────────────────────────────────── */}
+        <div className="fr-actions">
+          <div className="fr-actions-h">Three ways to take this further</div>
+
+          <div className="fr-actions-grid">
+            <button type="button" className="fr-act is-primary" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
+              <span className="fr-act-icon"><Icon name="chart" size={17} /></span>
+              <span className="fr-act-body">
+                <span className="fr-act-t">Read the deck here</span>
+                <span className="fr-act-s">Opens in the page — no download, no form, no email gate.</span>
+              </span>
+            </button>
+
+            <a className="fr-act" href="/assets/pdf/oxido_pitch_deck.pdf" target="_blank" rel="noreferrer">
+              <span className="fr-act-icon"><Icon name="download" size={17} /></span>
+              <span className="fr-act-body">
+                <span className="fr-act-t">Take the PDF</span>
+                <span className="fr-act-s">Same deck, as a file, if you would rather forward it to a partner.</span>
+              </span>
+            </a>
+
+            <a className="fr-act" href="mailto:raadxbusiness9@gmail.com?subject=OXIDO%20%E2%80%94%20Investor%20Conversation">
+              <span className="fr-act-icon"><Icon name="mail" size={17} /></span>
+              <span className="fr-act-body">
+                <span className="fr-act-t">Start the conversation</span>
+                <span className="fr-act-s">raadxbusiness9@gmail.com — I answer every one myself.</span>
+              </span>
+            </a>
+          </div>
+
+          <p className="fr-actions-note">
+            Two longer documents sit behind this if you want the underlying record rather than the summary: the{' '}
+            <a href="/assets/pdf/oxido_investor_whitepaper.pdf" target="_blank" rel="noreferrer">Commercial Evidence Report</a>{' '}
+            for the twelve-month ablation, and the{' '}
+            <a href="/assets/pdf/oxido_academic_research_paper.pdf" target="_blank" rel="noreferrer">System Architecture Paper</a>{' '}
+            for the mechanics.
+          </p>
         </div>
+
+        <VerticalModal
+          open={deckOpen}
+          onClose={() => setDeckOpen(false)}
+          eyebrow="OXIDO · Investor Deck"
+          title="The Pitch Deck"
+        >
+          <div className="fr-deck-frame">
+            <iframe
+              src="/assets/pdf/oxido_pitch_deck.pdf#view=FitH"
+              title="OXIDO investor pitch deck"
+            />
+          </div>
+          <p className="fr-deck-fallback">
+            If the deck does not render in your browser,{' '}
+            <a href="/assets/pdf/oxido_pitch_deck.pdf" target="_blank" rel="noreferrer">open the PDF directly</a>.
+          </p>
+        </VerticalModal>
 
       </div>
       <div className="col-12"><hr className="my-5" style={{ borderColor: 'rgba(255,255,255,0.05)' }} /></div>

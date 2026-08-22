@@ -217,27 +217,6 @@ export default function Hero(_props?: any) {
         .hx-metric-l { font-size: 12.5px; color: #c4cfde; font-weight: 600; line-height: 1.4; }
         .hx-metric-s { font-size: 11.5px; color: #838d99; margin-top: 4px; line-height: 1.45; }
 
-        /* ── loom ──────────────────────────────────────────── */
-        .hx-loom {
-          border-top: 1px solid rgba(255,255,255,0.08);
-          border-bottom: 1px solid rgba(255,255,255,0.08);
-          padding: 44px 0; margin-bottom: 40px;
-        }
-        .hx-loom-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 44px; align-items: center; }
-        @media (max-width: 991px) { .hx-loom-grid { grid-template-columns: 1fr; gap: 26px; } }
-        .hx-loom-eyebrow {
-          display: inline-flex; align-items: center; gap: 8px;
-          font-size: 10.5px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 14px;
-        }
-        .hx-loom-h { color: #fff; font-size: clamp(19px, 2vw, 23px); font-weight: 700; margin: 0 0 12px; line-height: 1.3; }
-        .hx-loom-p { color: #9aa4b0; font-size: 16px; line-height: 1.75; margin: 0; }
-        .hx-embed {
-          position: relative; padding-top: 56.25%; border-radius: 10px;
-          overflow: hidden; background: #0b0c0e; border: 1px solid #2a2d32;
-        }
-        .hx-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-
         .hx-cue {
           display: inline-flex; align-items: center; gap: 10px;
           color: #838d99; font-size: 12.5px; font-weight: 700;
@@ -355,31 +334,6 @@ export default function Hero(_props?: any) {
               <div className="hx-metric-s">{m.s}</div>
             </div>
           ))}
-        </div>
-
-        {/* ══ LOOM ══════════════════════════════════════════════ */}
-        <div className="hx-loom tmp-scroll-trigger tmp-fade-in animation-order-3">
-          <div className="hx-loom-grid">
-            <div>
-              <div className="hx-loom-eyebrow">
-                <Icon name="play" size={14} />
-                Presentation · 7 min 40 sec
-              </div>
-              <h3 className="hx-loom-h">Explaining ORMAS: Transparent Neural Networks That Self-Heal</h3>
-              <p className="hx-loom-p">
-                Autonomous recovery from catastrophic failure, emergent memory without replay buffers, and why
-                architectural transparency is an engineering problem rather than a philosophy question.
-              </p>
-            </div>
-            <div className="hx-embed">
-              <iframe
-                src="https://www.loom.com/embed/59caaa73445443cb8d345b4d594a8347"
-                allowFullScreen
-                loading="lazy"
-                title="Explaining ORMAS: Transparent Neural Networks That Self-Heal"
-              />
-            </div>
-          </div>
         </div>
 
         <div className="tmp-scroll-trigger tmp-fade-in animation-order-4">
