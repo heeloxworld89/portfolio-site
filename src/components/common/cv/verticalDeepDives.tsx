@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import ExpandableSection from '../ExpandableSection';
 
 // ─── Deep-dive modal content for the three ORMAS-gated verticals ─────────────
 // Written for a non-technical reader first (the "In Plain English" box), then
@@ -160,6 +161,110 @@ export const deepDives: DeepDive[] = [
           then measure what survives of task one. The standard network forgot more than half. ORMAS
           forgot about five percent.
         </p>
+
+        <ExpandableSection
+          closedLabel="But isn’t this what federated learning already does?"
+          hint="The first objection anyone who works in medical AI raises — answered properly, including what federated learning genuinely solved and where it stops."
+          meta={['FedAvg · 2017', 'MELLODDY · 10 pharma cos', 'Two layers, not rivals']}
+        >
+          <p className="vm-p">
+            <strong>What federated learning solved, and it is a real achievement.</strong> Medical data cannot move —
+            GDPR, HIPAA, IVDR. Before FL the options were: centralise the data (usually illegal), train one weak model
+            per institution, or do not train. FedAvg (McMahan et al., 2017) inverted the relationship: instead of
+            bringing data to the model, bring the model to the data. The server distributes weights, each institution
+            trains locally, only gradient updates return, the server aggregates. Gradients carry the direction of
+            learning, not the samples that produced it.
+          </p>
+          <p className="vm-p">
+            Serious infrastructure was built on that — Owkin’s Substra, NVIDIA FLARE, PySyft, Flower. The most
+            consequential demonstration was <strong>MELLODDY</strong>: ten pharmaceutical companies, among them
+            Novartis, Bayer, Janssen, AstraZeneca, Eli Lilly and Amgen, jointly trained a drug-target model across
+            their proprietary compound libraries and published in 2022. The joint model beat every company’s siloed
+            model and no molecular data left any building. That is not something to argue with.
+          </p>
+
+          <div className="vm-h">Where it stops</div>
+          <p className="vm-p">
+            Federated learning’s contribution is <strong>at training time, across institutions</strong>. The round
+            completes, a model is deployed, and the problem it does not address starts immediately.
+          </p>
+          <table className="vm-table">
+            <thead><tr><th>Limit</th><th>What happens</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Frozen after the round</strong></td>
+                <td>The deployed weights encode the distribution up to the last round. Flu season shifts presentation, a new antibiotic changes the treatment landscape, a new imaging protocol changes pixel statistics. The model does not notice.</td>
+              </tr>
+              <tr>
+                <td><strong>Round latency</strong></td>
+                <td>Between rounds the edge model cannot update at all. For institutions running clinical data governance before each cycle, that gap is measured in days.</td>
+              </tr>
+              <tr>
+                <td><strong>Non-IID heterogeneity</strong></td>
+                <td>FedAvg’s convergence analysis assumes each client’s data is identically distributed. A children’s hospital in Bangkok and an oncology centre in Paris are not. FedProx, SCAFFOLD and MOON exist because of this, and it remains open under severe heterogeneity.</td>
+              </tr>
+              <tr>
+                <td><strong>Structural blindness</strong></td>
+                <td>Local training inside a federated round is ordinary backpropagation — one global loss across all parameters. It registers that something failed and carries nothing about which node caused it. The federated audit trail records who participated under what governance, and says nothing about the model’s internal health.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="vm-p">
+            That last one is the load-bearing gap, and it is <em>not</em> a criticism of federated learning. It is a
+            property of backpropagation that FL inherits, because every local step inside a round uses it.
+          </p>
+
+          <div className="vm-h">Two layers, not two rivals</div>
+          <div className="vm-stack">
+            <div className="vm-stack-row">
+              <div className="vm-stack-tag">Cross-institution</div>
+              <div className="vm-stack-txt">
+                Federated learning
+                <span className="vm-stack-sub">
+                  Train across silos without moving data. Gradient aggregation, differential privacy, secure
+                  aggregation. Output: a jointly trained model.
+                </span>
+              </div>
+            </div>
+            <div className="vm-stack-row is-box">
+              <div className="vm-stack-tag">Then deployed</div>
+              <div className="vm-stack-txt">
+                …at each institution, where the world keeps changing
+              </div>
+            </div>
+            <div className="vm-stack-row">
+              <div className="vm-stack-tag">Within-institution</div>
+              <div className="vm-stack-txt">
+                ORMAS
+                <span className="vm-stack-sub">
+                  Continuous self-correction on local data. No server, no round latency, a native per-correction
+                  audit trail, and adaptation bounded by the ISS characterisation.
+                </span>
+              </div>
+            </div>
+          </div>
+          <p className="vm-p">
+            FL answers <em>how do several organisations build a shared model without centralising data.</em> ORMAS
+            answers <em>how does that model keep learning, repair itself, and stay accountable once it is deployed.</em>{' '}
+            <strong>Those are sequential questions, and the second begins exactly where the first ends.</strong>
+          </p>
+          <p className="vm-p">
+            The hybrid is the interesting part. A federated round produces the initial model; each institution
+            deploys it and ORMAS adapts it to local patterns; at the next round boundary each edge contributes
+            locally refined knowledge back — richer than a frozen model would have been. The shared model improves
+            from edge adaptation, the edges improve from aggregation.
+          </p>
+
+          <div className="vm-gap" style={{ marginTop: '22px' }}>
+            <div className="vm-gap-tag">Said plainly</div>
+            <p>
+              The edge layer is validated on CIFAR-10, not on clinical data, and it has never been joined to a live
+              federated deployment. What exists is a mechanism with 383 experiments behind it and a coordination layer
+              already running at scale in industry. <strong>Connecting them is engineering, not research</strong> — but
+              nobody has done it yet, including me.
+            </p>
+          </div>
+        </ExpandableSection>
 
         <div className="vm-h">The Market</div>
         <p className="vm-p">
