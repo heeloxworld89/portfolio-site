@@ -146,6 +146,26 @@ export default function CVRecognition() {
           font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
           text-transform: uppercase; color: #7d8794; flex-shrink: 0;
         }
+        /* Stage strip — states where the process stands without narrating the wait. */
+        .rec-stages { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 9px; }
+        .rec-stage {
+          display: inline-flex; align-items: center; gap: 6px;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
+          text-transform: uppercase; border-radius: 999px; padding: 4px 11px;
+          color: #a8b3c0; background: rgba(196,207,222,0.07);
+          border: 1px solid rgba(196,207,222,0.2);
+        }
+        .rec-stage.is-done { color: #8fd89c; background: rgba(127,216,143,0.08); border-color: rgba(127,216,143,0.28); }
+        .rec-stage.is-live { color: #ff8189; background: rgba(255,74,87,0.08); border-color: rgba(255,74,87,0.3); }
+        .rec-stage-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+        .rec-stage.is-live .rec-stage-dot { animation: recStagePulse 2.2s ease-in-out infinite; }
+        @keyframes recStagePulse {
+          0%, 100% { opacity: 1; }
+          50%      { opacity: 0.3; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .rec-stage.is-live .rec-stage-dot { animation: none; }
+        }
 
         /* Second entry — same build quality; the category is carried by the label,
            not by making the card look provisional. */
@@ -246,12 +266,13 @@ export default function CVRecognition() {
           Outside Signal
         </span>
         <h2 className="title fs-2" style={{ fontWeight: "800", color: "#fff", marginBottom: "10px" }}>
-          Two Outside Verdicts, and What Each One Is Actually Worth
+          Two Outside Reads, and What Each One Is Worth
         </h2>
         <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", maxWidth: "700px", marginBottom: "28px" }}>
           One organization read the work. One organization read me. Those are different instruments measuring
           different things, and the difference is worth more than the flattery of collapsing them — so I have
-          weighted them separately and said plainly what each one does and does not establish.
+          weighted them separately and said plainly what each one does and does not establish. One is closed.
+          One is still running.
         </p>
 
         <div className="rec-grid">
@@ -321,10 +342,16 @@ export default function CVRecognition() {
             the comparison set.
           </p>
           <p className="rec-body">
-            Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is I
-            want to build full-time. That&apos;s the one thing I&apos;d take back: a hedge on a commitment
+            Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is
+            that I am building this either way. That is the one thing I would take back: a hedge on a commitment
             question, in a conversation whose entire purpose is reading how someone thinks. Nick read it exactly
-            right. Lesson learned, and the conversation with EF has since continued.
+            right, so let me answer it properly here. I have already taken the coursework — MITx, Coursera,
+            fifty-five programme certificates — and if I go, it will be for the network, not the material.
+            <strong> Funding changes how fast this gets built. It does not change whether.</strong>
+          </p>
+          <p className="rec-body">
+            That call did not resolve into a yes or a no. It resolved into a longer process, and the process is
+            still running — two interviews deep into The Bridge, as of the line below.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
@@ -347,11 +374,17 @@ export default function CVRecognition() {
           <span className="rec-status-body">
             <span className="rec-status-k">Current status</span>
             <span className="rec-status-v">
-              In the selection process for <strong>The Bridge</strong> — Entrepreneur First&apos;s eight-week
-              San Francisco residency — at the first interview stage. I&apos;ll update this page as it moves.
+              Two interviews into the selection process for <strong>The Bridge</strong> — Entrepreneur
+              First&apos;s eight-week San Francisco residency. Both rounds are behind me and the decision
+              sits with EF. I&apos;ll update this page when it moves.
+            </span>
+            <span className="rec-stages">
+              <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
+              <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
+              <span className="rec-stage is-live"><span className="rec-stage-dot" />Decision Pending</span>
             </span>
           </span>
-          <span className="rec-status-d">Aug 2026</span>
+          <span className="rec-status-d">Sep 2026</span>
         </div>
 
         {/* ── What this actually adds up to ──────────────────────────── */}
@@ -368,15 +401,17 @@ export default function CVRecognition() {
             judge it, it holds.</strong>
           </p>
           <p className="rec-verdict-body">
-            <strong>EF read me</strong> — for fifteen minutes, at Gate 1, by design. Different instrument,
-            different measurement, and a no I earned on a question that had nothing to do with the
-            architecture. Both organizations went looking in an environment where a PhD is the default and an
-            eighteen-year-old without one is not, and neither discounted the work for coming out of Dhaka.
+            <strong>EF read me</strong> — fifteen minutes at Gate 1, by design, weighted toward how I think
+            rather than what I have built. That screen produced no verdict at all. It produced a longer
+            process, which is where it still sits. Both organizations went looking in an environment where a
+            PhD is the default and an eighteen-year-old without one is not, and neither discounted the work for
+            coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">
-            What neither establishes is worth stating just as plainly. No funding, no offer, no advisor. Cosmos
-            is a remote grant and EF admits internationally by design, so neither says anything about selection
-            filters that are geographically constrained. I would rather hold two accurately weighted results
+            What neither establishes is worth stating just as plainly. No funding, no offer, no advisor — an
+            open process is not an outcome, and I am not going to write it up as one. Cosmos is a remote grant
+            and EF admits internationally by design, so neither says anything about selection filters that are
+            geographically constrained. I would rather hold two accurately weighted results
             than one inflated one — the weighting is the part that makes the rest of this page worth believing.
           </p>
         </div>
