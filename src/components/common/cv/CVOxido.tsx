@@ -6,7 +6,7 @@ import OxidoVisualization from './OxidoVisualization';
 
 // ─── The six named things — the whole cast, so nothing is ambiguous ──────────
 const namedThings = [
-  { name: 'OXIDO', line: 'The company and the full stack.', kind: 'The whole' },
+  { name: 'OXIEDO', line: 'The company and the full stack. Live at oxiedo.com.', kind: 'The whole' },
   { name: 'OXIMO', line: 'The operating system. Agents that hire agents.', kind: 'Layer 1 — built, ran in production' },
   { name: 'AX09', line: "The first application built on OXIMO: it decides what to sell and produces everything needed to sell it.", kind: 'A vertical extension of Layer 1 — built, ran in production' },
   { name: 'Black Bloxie LTD', line: 'A real UK company, run entirely by AX09 on OXIMO, used as a laboratory.', kind: 'The test environment — not a product' },
@@ -107,8 +107,35 @@ export default function CVOxido() {
   const [openDive, setOpenDive] = useState<number | null>(null);
 
   return (
-    <div className="row mb--50" id="oxido">
+    <div className="row mb--50" id="oxiedo">
       <style>{`
+        .ox-site {
+          display: inline-flex; align-items: center; gap: 11px;
+          text-decoration: none; margin-bottom: 26px;
+          padding: 10px 18px; border-radius: 999px;
+          background: rgba(255,74,87,0.1); border: 1px solid rgba(255,74,87,0.42);
+          transition: background .25s, border-color .25s, transform .25s;
+        }
+        .ox-site:hover {
+          background: rgba(255,74,87,0.19); border-color: rgba(255,74,87,0.75);
+          transform: translateY(-1px);
+        }
+        .ox-site-dot {
+          width: 7px; height: 7px; border-radius: 50%; background: #ff6b76;
+          animation: oxSiteLive 2.2s ease-in-out infinite;
+        }
+        @keyframes oxSiteLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .ox-site-k {
+          font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+          text-transform: uppercase; color: #ff8189;
+        }
+        .ox-site-v { font-size: 14.5px; font-weight: 700; color: #fff; letter-spacing: 0.2px; }
+        .ox-site-a { font-size: 15px; color: #ff8189; }
+        @media (prefers-reduced-motion: reduce) {
+          .ox-site-dot { animation: none; }
+          .ox-site:hover { transform: none; }
+        }
+
         .oxido-thing-table { border: 1px solid #2a2d32; border-radius: 8px; overflow: hidden; margin-bottom: 40px; }
         .oxido-thing-row {
           display: grid;
@@ -320,20 +347,33 @@ export default function CVOxido() {
         }}>
           The Complete Definition
         </span>
-        <h2 className="title fs-2" style={{ fontWeight: '700', marginBottom: '6px' }}>OXIDO</h2>
+        <h2 className="title fs-2" style={{ fontWeight: '700', marginBottom: '6px' }}>OXIEDO</h2>
         <p style={{
           fontSize: '13px', fontWeight: 700, letterSpacing: '2px',
-          textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '24px',
+          textTransform: 'uppercase', color: '#9aa4b0', marginBottom: '18px',
         }}>
           What It Is, How Every Part Connects, and Why It Exists
         </p>
+
+        {/* The company is live — say so at the top of the section that defines it. */}
+        <a
+          className="ox-site"
+          href="https://oxiedo.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="ox-site-dot" aria-hidden="true" />
+          <span className="ox-site-k">Live</span>
+          <span className="ox-site-v">oxiedo.com</span>
+          <span className="ox-site-a" aria-hidden="true">&#8599;</span>
+        </a>
 
         {/* THE ONE SENTENCE */}
         <p style={{
           fontSize: '22px', lineHeight: '1.6', color: '#fff', fontWeight: 700,
           maxWidth: '760px', marginBottom: '22px', letterSpacing: '-0.2px',
         }}>
-          OXIDO is building the layer underneath AI that lets a machine account for what
+          OXIEDO is building the layer underneath AI that lets a machine account for what
           it learned — and the company that runs itself on top of it.
         </p>
 
@@ -444,7 +484,7 @@ export default function CVOxido() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2px', marginBottom: '56px' }}>
           {[
-            { title: 'The Data Cannot Leave', body: 'Medical records, financial positions, actuarial tables — none of it can be uploaded to somebody else’s SaaS platform, ever. OXIDO deploys inside the client’s own infrastructure, on their servers, under their compliance framework.' },
+            { title: 'The Data Cannot Leave', body: 'Medical records, financial positions, actuarial tables — none of it can be uploaded to somebody else’s SaaS platform, ever. OXIEDO deploys inside the client’s own infrastructure, on their servers, under their compliance framework.' },
             { title: 'GlassBox Is a Compliance Asset', body: 'Regulated industries have to account for what the model did and why. The FDA does not mandate any particular architecture — plenty of opaque models are cleared — but its Change Control Plan framework requires modifications to be pre-specified, validated, and monitored. GlassBox emits a causal audit trail per node, per correction, per epoch: that artifact produced natively, rather than reconstructed after the fact.' },
             { title: 'The Switching Cost Is the Moat', body: 'After twelve months inside an organization, OXIMO’s agents have built episodic memory and matured into experts on that specific business. Removing it is not a migration, it is an amputation — the Black Bloxie ablation measured exactly what that costs: 91% of output, gone.' },
           ].map((c, i) => (
@@ -519,7 +559,7 @@ export default function CVOxido() {
         <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '720px', marginBottom: '28px' }}>
           The three still open are <strong style={{ color: '#c4cfde' }}>medical research, defense
           systems, and regulated financial data</strong>. They are not queued behind the first one.
-          They are gated — and OXIDO is not the thing that opens them. ORMAS is.
+          They are gated — and OXIEDO is not the thing that opens them. ORMAS is.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '12px', marginBottom: '28px' }}>
@@ -724,7 +764,7 @@ export default function CVOxido() {
             </div>
           ))}
         </div>
-        <p style={sectionLabel}>What OXIDO Actually Looks Like</p>
+        <p style={sectionLabel}>What OXIEDO Actually Looks Like</p>
         <p style={{ fontSize: '16px', lineHeight: '1.85', color: '#9aa4b0', maxWidth: '760px', marginBottom: '24px' }}>
           One question decides whether a regulated institution can deploy anything at all, and it is not about accuracy.
           It is whether their data has to cross the wall. Everything in this architecture follows from that.

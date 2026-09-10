@@ -56,6 +56,67 @@ export default function Hero(_props?: any) {
         .hx { padding: 104px 0 88px; }
         @media (max-width: 991px) { .hx { padding: 72px 0 64px; } }
 
+        /* ── launch banner ─────────────────────────────────────
+           The company going live is the single newest fact on this page,
+           so it sits above everything else and is the first clickable thing. */
+        .hx-launch {
+          display: flex; align-items: center; justify-content: space-between;
+          gap: 28px; flex-wrap: wrap; text-decoration: none;
+          position: relative; overflow: hidden;
+          padding: 22px 28px; margin-bottom: 44px; border-radius: 14px;
+          border: 1px solid rgba(255,74,87,0.42);
+          background:
+            radial-gradient(120% 180% at 0% 50%, rgba(255,74,87,0.16) 0%, rgba(255,74,87,0) 62%),
+            linear-gradient(180deg, #1a1418 0%, #141518 100%);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 18px 46px -28px rgba(255,74,87,0.55);
+          transition: border-color .25s, transform .25s, box-shadow .25s;
+        }
+        .hx-launch:hover {
+          transform: translateY(-2px);
+          border-color: rgba(255,74,87,0.8);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 22px 54px -26px rgba(255,74,87,0.75);
+        }
+        .hx-launch::after {
+          content: ""; position: absolute; inset: 0; pointer-events: none;
+          background: linear-gradient(105deg, transparent 36%, rgba(255,255,255,0.07) 50%, transparent 64%);
+          transform: translateX(-100%);
+          animation: hxLaunchSweep 5.5s ease-in-out infinite;
+        }
+        @keyframes hxLaunchSweep {
+          0%, 58% { transform: translateX(-100%); }
+          100%    { transform: translateX(100%); }
+        }
+        .hx-launch-l { display: flex; flex-direction: column; gap: 9px; min-width: 260px; flex: 1; }
+        .hx-launch-kick {
+          display: inline-flex; align-items: center; gap: 9px; align-self: flex-start;
+          font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase;
+          color: #ff8189; background: rgba(255,74,87,0.13);
+          border: 1px solid rgba(255,74,87,0.42); border-radius: 999px; padding: 5px 13px;
+        }
+        .hx-launch-kick i {
+          width: 7px; height: 7px; border-radius: 50%; background: #ff6b76;
+          animation: hxPulse 2.4s infinite; font-style: normal;
+        }
+        .hx-launch-h {
+          font-size: clamp(21px, 2.5vw, 29px); font-weight: 800; color: #fff;
+          letter-spacing: -0.7px; line-height: 1.2; margin: 0;
+        }
+        .hx-launch-h b { color: #ff8189; font-weight: 800; }
+        .hx-launch-p { font-size: 14.5px; line-height: 1.65; color: #b3bcc7; margin: 0; max-width: 640px; }
+        .hx-launch-btn {
+          display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0;
+          padding: 15px 24px; border-radius: 9px;
+          font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+          color: #fff; background: #d43644; border: 1px solid #ff6b76;
+          transition: background .25s;
+        }
+        /* Hover darkens rather than brightens — white text has to stay above 4.5:1. */
+        .hx-launch:hover .hx-launch-btn { background: #bd2734; }
+        @media (max-width: 720px) {
+          .hx-launch { padding: 20px 20px; gap: 18px; }
+          .hx-launch-btn { width: 100%; justify-content: center; }
+        }
+
         .hx-top {
           display: grid; grid-template-columns: 1.08fr 0.92fr;
           gap: 56px; align-items: center; margin-bottom: 60px;
@@ -232,13 +293,38 @@ export default function Hero(_props?: any) {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .hx-live, .hx-dot, .hx-cue-i, .hx-tick-line { animation: none !important; }
+          .hx-live, .hx-dot, .hx-cue-i, .hx-tick-line,
+          .hx-launch::after, .hx-launch-kick i { animation: none !important; }
+          .hx-launch:hover { transform: none; }
           .hx-tick-line:first-of-type { opacity: 1; }
           .hx-cta:hover { transform: none; }
         }
       `}</style>
 
       <div className="container hx">
+
+        {/* ══ LAUNCH ════════════════════════════════════════════ */}
+        <a
+          className="hx-launch tmp-scroll-trigger tmp-fade-in animation-order-1"
+          href="https://oxiedo.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="hx-launch-l">
+            <span className="hx-launch-kick"><i />Now Live</span>
+            <h2 className="hx-launch-h">
+              The company is live at <b>oxiedo.com</b>
+            </h2>
+            <p className="hx-launch-p">
+              OXIEDO has shipped. Everything below is the work it is built on — the architecture, the
+              experiments, and the twelve-month ablation that proved the stack causes the output.
+            </p>
+          </span>
+          <span className="hx-launch-btn">
+            Visit oxiedo.com
+            <Icon name="externalLink" size={15} />
+          </span>
+        </a>
 
         {/* ══ TOP ═══════════════════════════════════════════════ */}
         <div className="hx-top tmp-scroll-trigger tmp-fade-in animation-order-1">
@@ -269,7 +355,11 @@ export default function Hero(_props?: any) {
             </p>
 
             <div className="hx-ctas">
-              <a className="hx-cta hx-cta-p" href="#research">
+              <a className="hx-cta hx-cta-p" href="https://oxiedo.com" target="_blank" rel="noreferrer">
+                <Icon name="externalLink" size={15} />
+                oxiedo.com
+              </a>
+              <a className="hx-cta hx-cta-s" href="#research">
                 <Icon name="fileText" size={15} />
                 Read the Research
               </a>
@@ -287,8 +377,8 @@ export default function Hero(_props?: any) {
           {/* ── status panel ── */}
           <div className="hx-panel">
             <div className="hx-panel-bar">
-              <span className="hx-panel-t">OXIDO · Stack Status</span>
-              <span className="hx-panel-badge">2 of 3 layers built</span>
+              <span className="hx-panel-t">OXIEDO · Stack Status</span>
+              <span className="hx-panel-badge">Company live · 2 of 3 layers built</span>
             </div>
 
             {stack.map((s) => (

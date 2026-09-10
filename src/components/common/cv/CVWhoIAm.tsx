@@ -105,7 +105,7 @@ const systems = [
 
 const router = [
   { a: 'ML Researcher / Reviewer', d: 'The stability result, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.', h: '#research', l: 'Research' },
-  { a: 'VC / Angel Investor', d: 'Why this licenses to institutions rather than selling as SaaS, what incumbents structurally cannot do, and the causal evidence behind both.', h: '#oxido', l: 'OXIDO' },
+  { a: 'VC / Angel Investor', d: 'Why this licenses to institutions rather than selling as SaaS, what incumbents structurally cannot do, and the causal evidence behind both.', h: '#oxiedo', l: 'OXIEDO' },
   { a: 'Engineer / Developer', d: 'Architecture internals, 40,933 lines, 2,011 tests. One script reproduces every experiment in under an hour.', h: '#engineering', l: 'Engineering' },
   { a: 'Enterprise Operator', d: 'Twelve months of deployment data, the ablation method behind it, and two full reports to download.', h: '#deployment', l: 'Deployment' },
 ];

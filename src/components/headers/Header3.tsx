@@ -106,6 +106,23 @@ export default function Header3() {
         .sb-btn svg { flex-shrink: 0; }
         .sb-btn-label { flex: 1; min-width: 0; }
 
+        /* Company site — solid fill so it outranks everything else in the dock. */
+        .sb-btn--site {
+          position: relative; overflow: hidden;
+          background: #d43644; border: 1px solid #ff6b76; color: #fff;
+          text-transform: uppercase;
+        }
+        .sb-btn--site:hover {
+          background: #bd2734; border-color: #ff8a93; color: #fff;
+          transform: translateY(-1px);
+        }
+        .sb-btn--site .sb-live {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: #fff; flex-shrink: 0;
+          animation: sbLive 2.2s ease-in-out infinite;
+        }
+        @keyframes sbLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
         .sb-btn--cv {
           background: rgba(255,74,87,0.1);
           border: 1px solid rgba(255,74,87,0.32);
@@ -221,6 +238,7 @@ export default function Header3() {
         }
         @media (prefers-reduced-motion: reduce) {
           .sb-btn:hover, .lk-item:hover { transform: none; }
+          .sb-btn--site .sb-live { animation: none; }
         }
       `}</style>
 
@@ -249,6 +267,17 @@ export default function Header3() {
               <span className="title">Find With Me</span>
 
               <div className="sb-dock">
+                <a
+                  href="https://oxiedo.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="sb-btn sb-btn--site"
+                >
+                  <span className="sb-live" aria-hidden="true" />
+                  <span className="sb-btn-label">oxiedo.com</span>
+                  <Icon name="externalLink" size={14} />
+                </a>
+
                 <a
                   href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf"
                   target="_blank"

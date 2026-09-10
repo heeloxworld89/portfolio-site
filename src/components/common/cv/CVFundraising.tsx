@@ -6,7 +6,7 @@ const caseBeats = [
     n: '01',
     label: 'The Problem',
     body: 'One design decision from 1986 means no unit inside a network can assess its own state. Every institution holding data worth learning from — hospitals, funds, insurers — is locked out, because no regulator accepts "trust us."',
-    href: '#oxido',
+    href: '#oxiedo',
     link: 'Full argument →',
   },
   {
@@ -27,7 +27,7 @@ const caseBeats = [
     n: '04',
     label: 'Why Now',
     body: 'Regulators reject models on architecture, not accuracy. Rented inference stops scaling at institutional volume. Models degrade invisibly with no detection at the training layer. All three converged in the last two years.',
-    href: '#oxido',
+    href: '#oxiedo',
     link: 'The three forces →',
   },
 ];
@@ -99,6 +99,17 @@ export default function CVFundraising() {
           display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
           gap: 10px;
         }
+        .fr-act.is-site {
+          background: rgba(255,74,87,0.1) !important;
+          border-color: rgba(255,74,87,0.42) !important;
+        }
+        .fr-act.is-site:hover {
+          background: rgba(255,74,87,0.18) !important;
+          border-color: rgba(255,74,87,0.72) !important;
+        }
+        .fr-act.is-site .fr-act-icon { color: #ff8189; }
+        .fr-act.is-site .fr-act-t { color: #fff; }
+
         .fr-act {
           display: flex; align-items: flex-start; gap: 13px;
           text-align: left; cursor: pointer; text-decoration: none;
@@ -275,7 +286,7 @@ export default function CVFundraising() {
           </div>
           <p className="fr-ask-body">
             If you hold any of those three, or you're an institution matching the buyer profile in
-            the OXIDO section above, that's the conversation worth having. I'll volunteer every gap
+            the OXIEDO section above, that's the conversation worth having. I'll volunteer every gap
             before you find it — zero contracts, zero buyer interviews, not validated on
             transformers yet, and the stability result hasn't been checked by a control theorist.
             Naming those first is what makes the rest of this credible.
@@ -284,9 +295,17 @@ export default function CVFundraising() {
 
         {/* ── Investor actions ─────────────────────────────────────── */}
         <div className="fr-actions">
-          <div className="fr-actions-h">Three ways to take this further</div>
+          <div className="fr-actions-h">Four ways to take this further</div>
 
           <div className="fr-actions-grid">
+            <a className="fr-act is-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
+              <span className="fr-act-icon"><Icon name="externalLink" size={17} /></span>
+              <span className="fr-act-body">
+                <span className="fr-act-t">See the company — oxiedo.com</span>
+                <span className="fr-act-s">OXIEDO is live. The product, in its own words, rather than mine.</span>
+              </span>
+            </a>
+
             <button type="button" className="fr-act is-primary" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
               <span className="fr-act-icon"><Icon name="chart" size={17} /></span>
               <span className="fr-act-body">
@@ -303,7 +322,7 @@ export default function CVFundraising() {
               </span>
             </a>
 
-            <a className="fr-act" href="mailto:raadxbusiness9@gmail.com?subject=OXIDO%20%E2%80%94%20Investor%20Conversation">
+            <a className="fr-act" href="mailto:raadxbusiness9@gmail.com?subject=OXIEDO%20%E2%80%94%20Investor%20Conversation">
               <span className="fr-act-icon"><Icon name="mail" size={17} /></span>
               <span className="fr-act-body">
                 <span className="fr-act-t">Start the conversation</span>
@@ -324,13 +343,13 @@ export default function CVFundraising() {
         <VerticalModal
           open={deckOpen}
           onClose={() => setDeckOpen(false)}
-          eyebrow="OXIDO · Investor Deck"
+          eyebrow="OXIEDO · Investor Deck"
           title="The Pitch Deck"
         >
           <div className="fr-deck-frame">
             <iframe
               src="/assets/pdf/oxido_pitch_deck.pdf#view=FitH"
-              title="OXIDO investor pitch deck"
+              title="OXIEDO investor pitch deck"
             />
           </div>
           <p className="fr-deck-fallback">

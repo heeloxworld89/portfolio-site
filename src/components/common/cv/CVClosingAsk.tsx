@@ -81,6 +81,22 @@ export default function CVClosingAsk() {
           color: #838d99;
           font-style: italic;
         }
+        .ask-site {
+          display: inline-flex; align-items: center; gap: 9px;
+          text-decoration: none; padding: 9px 16px; border-radius: 999px;
+          background: rgba(255,74,87,0.1); border: 1px solid rgba(255,74,87,0.42);
+          font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.2px;
+          transition: background 0.22s, border-color 0.22s;
+        }
+        .ask-site:hover {
+          background: rgba(255,74,87,0.19); border-color: rgba(255,74,87,0.75); color: #fff;
+        }
+        .ask-site-dot {
+          width: 7px; height: 7px; border-radius: 50%; background: #ff6b76;
+          animation: askSiteLive 2.2s ease-in-out infinite;
+        }
+        @keyframes askSiteLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @media (prefers-reduced-motion: reduce) { .ask-site-dot { animation: none; } }
       `}</style>
 
       <div className="col-12">
@@ -137,6 +153,11 @@ export default function CVClosingAsk() {
           <span className="ask-email-label">Direct contact —</span>
           <a className="ask-email-link" href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>
           <span className="ask-email-note">Response within 24 hours. No pitch decks required.</span>
+          <a className="ask-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
+            <span className="ask-site-dot" aria-hidden="true" />
+            oxiedo.com
+            <Icon name="externalLink" size={14} />
+          </a>
         </div>
 
       </div>

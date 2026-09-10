@@ -1,5 +1,5 @@
 /**
- * OXIDO — the boundary comparison.
+ * OXIEDO — the boundary comparison.
  *
  * The single fact that decides whether a regulated institution can buy anything
  * at all is: does our data have to cross the wall? Everything else in the
@@ -195,14 +195,14 @@ export default function OxidoVisualization() {
           </p>
         </div>
 
-        {/* ══ OXIDO ═══════════════════════════════════════════════════ */}
+        {/* ══ OXIEDO ═══════════════════════════════════════════════════ */}
         <div className="ovz-panel is-oxido">
-          <div className="ovz-eyebrow">The OXIDO stack</div>
+          <div className="ovz-eyebrow">The OXIEDO stack</div>
           <h4 className="ovz-title">The Intelligence Is Yours</h4>
           <p className="ovz-sub">So nothing has to cross the wall at all.</p>
 
           <svg className="ovz-svg" viewBox="0 0 460 290" role="img"
-               aria-label="In the OXIDO stack all three layers — the agent operating system, the training architecture, and the model itself — sit inside your infrastructure. Data circulates internally and never crosses the boundary.">
+               aria-label="In the OXIEDO stack all three layers — the agent operating system, the training architecture, and the model itself — sit inside your infrastructure. Data circulates internally and never crosses the boundary.">
             <defs>
               <pattern id="ovzGridB" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M20 0H0V20" fill="none" stroke="#1b1e22" strokeWidth="1" />

@@ -67,7 +67,7 @@ export default function CVDeployment() {
         </span>
         <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>I Ran a Lesion Study on My Own Company</h2>
         <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '18px' }}>
-          OXIDO Architecture · Validated on Live Production Environment · 12 Months
+          OXIEDO Architecture · Validated on Live Production Environment · 12 Months
         </p>
 
         {/* ── Critical Framing Block ─────────────────────────────────────── */}
@@ -76,7 +76,7 @@ export default function CVDeployment() {
             This Is Not a Business. It Is a Controlled Experiment.
           </p>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-            Black Bloxie LTD is registered at UK Companies House and exists to be a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIDO architecture. A benchmark cannot tell you whether a system survives real customers, real suppliers, and real regulators, so I built somewhere it could fail in public and measured what happened. E-commerce came first because it has the fastest feedback loop and the least ambiguous failure signal.
+            Black Bloxie LTD is registered at UK Companies House and exists to be a <strong style={{ color: '#c4cfde' }}>controlled test environment</strong> for the OXIEDO architecture. A benchmark cannot tell you whether a system survives real customers, real suppliers, and real regulators, so I built somewhere it could fail in public and measured what happened. E-commerce came first because it has the fastest feedback loop and the least ambiguous failure signal.
           </p>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: '12px 0 0' }}>
             <strong style={{ color: '#c4cfde' }}>Read the numbers below with that in mind.</strong> They are small because I capped them. The unit economics say what the ceiling could have been — $0.0043 to produce a complete product suite against a $50–$150 human benchmark, and a $4,386 order closed autonomously at zero acquisition cost. What stopped the study from scaling was not cost, not demand, and not the architecture. It was that no jurisdiction currently assigns commercial liability to an autonomous agent, and I would rather hold a clean experiment at research grade than find that boundary from the wrong side of it.
@@ -396,7 +396,7 @@ export default function CVDeployment() {
                 Why the Scale Is Deliberately Constrained
               </p>
               <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-                The OXIDO architecture operates under a research-grade ablation ceiling. The study is designed to isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role provisioning — which are validated by 2,011 passing tests but are not deployed at scale because no legal framework currently assigns commercial liability to autonomous AI agents. The constraint is jurisdictional, not architectural. ORMAS's ISS local stability characterization and GlassBox causal audit trail are the architectural response to that regulatory gap.
+                The OXIEDO architecture operates under a research-grade ablation ceiling. The study is designed to isolate causal variables, not to maximise commercial output. Scaling beyond ablation-grade requires deploying OXIMO's full autonomous capabilities — self-hiring, self-modification, autonomous role provisioning — which are validated by 2,011 passing tests but are not deployed at scale because no legal framework currently assigns commercial liability to autonomous AI agents. The constraint is jurisdictional, not architectural. ORMAS's ISS local stability characterization and GlassBox causal audit trail are the architectural response to that regulatory gap.
               </p>
             </div>
             <div style={{ background: 'rgba(196,207,222,0.045)', border: '1px solid #2a2d32', borderLeft: '2px solid #c4cfde', borderRadius: '0 8px 8px 0', padding: '20px 24px' }}>
@@ -404,7 +404,7 @@ export default function CVDeployment() {
                 What This Study Actually Proves
               </p>
               <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', margin: 0 }}>
-                The ablation study does not prove that the architecture generates large revenue. It proves that the architecture is the <strong style={{ color: '#c4cfde' }}>causal origin</strong> of commercial output — and that its removal causes that output to stop. This is a fundamentally different claim. The first is a scale metric. The second is a causal proof. The OXIDO deployment validates the latter: that ORMAS-trained models, orchestrated by OXIMO, produce measurable real-world economic activity with zero human intervention and zero advertising expenditure.
+                The ablation study does not prove that the architecture generates large revenue. It proves that the architecture is the <strong style={{ color: '#c4cfde' }}>causal origin</strong> of commercial output — and that its removal causes that output to stop. This is a fundamentally different claim. The first is a scale metric. The second is a causal proof. The OXIEDO deployment validates the latter: that ORMAS-trained models, orchestrated by OXIMO, produce measurable real-world economic activity with zero human intervention and zero advertising expenditure.
               </p>
             </div>
           </div>
@@ -520,7 +520,7 @@ export default function CVDeployment() {
             Traffic Source Attribution — The LLM Referral Channel
           </h4>
           <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#9aa4b0', marginBottom: '20px' }}>
-            100% of customer acquisition is attributable to LLM-originated channels — a novel distribution mechanism that validates OXIDO's core thesis: AI-generated content structured for LLM consumption creates a self-sustaining acquisition engine without advertising. The Simultaneous Channel Collapse (SCC) methodology — introduced in this study — establishes that &ldquo;Unattributed Direct&rdquo; traffic in LLM-dependent environments is structurally identical to headless LLM referrals.
+            100% of customer acquisition is attributable to LLM-originated channels — a novel distribution mechanism that validates OXIEDO's core thesis: AI-generated content structured for LLM consumption creates a self-sustaining acquisition engine without advertising. The Simultaneous Channel Collapse (SCC) methodology — introduced in this study — establishes that &ldquo;Unattributed Direct&rdquo; traffic in LLM-dependent environments is structurally identical to headless LLM referrals.
           </p>
           <div style={{ background: '#191b1e', borderRadius: '8px', border: '1px solid #2a2d32', overflowX: 'auto', marginBottom: '8px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -587,7 +587,7 @@ export default function CVDeployment() {
           <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '20px 24px', marginTop: '10px', marginBottom: '10px' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#838d99', marginBottom: '10px' }}>Substrates 2–4 — Gated, Not Queued</p>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#838d99', margin: 0 }}>
-              Medical research, defense systems, and regulated financial data are not waiting on scheduling. Each sits behind two locks that the orchestration layer alone cannot open: access is granted on auditability rather than accuracy, and the answer required is not in the training set. Both locks are architectural, which makes ORMAS the prerequisite and ORMAS-T (Transformer-scale) the gating milestone — not another ablation cycle. The full reasoning for each of the three is set out in the OXIDO section.
+              Medical research, defense systems, and regulated financial data are not waiting on scheduling. Each sits behind two locks that the orchestration layer alone cannot open: access is granted on auditability rather than accuracy, and the answer required is not in the training set. Both locks are architectural, which makes ORMAS the prerequisite and ORMAS-T (Transformer-scale) the gating milestone — not another ablation cycle. The full reasoning for each of the three is set out in the OXIEDO section.
             </p>
           </div>
 

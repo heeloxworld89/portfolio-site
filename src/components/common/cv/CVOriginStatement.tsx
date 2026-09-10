@@ -623,8 +623,8 @@ export default function CVOriginStatement() {
           </p>
           <p className="os-p">
             The{' '}
-            <a href="#oxido" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
-              OXIDO roadmap
+            <a href="#oxiedo" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
+              OXIEDO roadmap
             </a>{' '}
             is what happens next, in order. This is a different list: not a phased plan, but the three
             external resources that phase depends on. They run in parallel, and none depends on the

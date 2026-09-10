@@ -48,8 +48,8 @@ const navItems = [
   },
   {
     id: 2,
-    href: "#oxido",
-    text: "OXIDO",
+    href: "#oxiedo",
+    text: "OXIEDO",
     isCurrent: false,
     icon: (
       <svg
