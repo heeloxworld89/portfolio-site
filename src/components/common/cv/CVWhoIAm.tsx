@@ -113,10 +113,10 @@ const systems = [
 ];
 
 const router = [
-  { a: 'ML Researcher / Reviewer', d: 'The stability result, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.', h: '#research', l: 'Research' },
-  { a: 'VC / Angel Investor', d: 'What the company sells, who pays for it, and where it honestly stands. The full case is on oxiedo.com.', h: '#oxiedo', l: 'Business' },
-  { a: 'Engineer / Developer', d: 'The agent operating system: 40,933 lines, 2,011 tests, and how a sentence became an org chart.', h: '#oximo', l: 'OXIMO' },
-  { a: 'Operator / Sceptic', d: 'Twelve months of trying to falsify my own thesis on a live company, and the money stated plainly.', h: '#black-bloxie', l: 'Black Bloxie' },
+  { a: 'ML Researcher / Reviewer', d: 'The stability result, all 383 runs, the telemetry design, and every table including the one that goes against me.', h: '#research', l: 'Research' },
+  { a: 'VC / Angel Investor', d: 'What it sells, who pays for it, and everything I would disclose in diligence before being asked.', h: '#oxiedo', l: 'Business' },
+  { a: 'Engineer / Developer', d: '40,933 lines, 2,011 tests, and a system that turns one sentence into a company that staffs itself.', h: '#oximo', l: 'OXIMO' },
+  { a: 'Operator / Sceptic', d: 'Twelve months spent trying to disprove my own system on a live company, and every pound it took.', h: '#black-bloxie', l: 'Black Bloxie' },
 ];
 
 export default function CVWhoIAm() {
@@ -308,7 +308,7 @@ export default function CVWhoIAm() {
           Who I Am
         </span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: '#fff' }}>
-          One research result, one company, and the work that led to both
+          Everything I have built, and the order it happened in
         </h2>
 
         {/* ── The founder video carries the introduction itself — no filler
@@ -329,22 +329,21 @@ export default function CVWhoIAm() {
             </div>
             <h3 className="wi-why-h">Rokib Al Dhin Raadh — 18, Dhaka, Bangladesh.</h3>
             <p className="wi-why-p">
-              I did not start with research and go looking for problems. Five ventures failed at five different
-              layers between the ages of twelve and seventeen, all five returned the same finding, and everything
-              after that exists because of what the finding forced me to build.
+              I did not go looking for a research problem. I ran five businesses between twelve and seventeen,
+              watched all five break, and noticed they were all breaking for the same reason. Everything since has
+              been me chasing that one sentence further down than the last person bothered to.
             </p>
             <p className="wi-why-p">
-              <strong>Two of those things are live and two are closed.</strong> ORMAS is the research and OXIEDO is
-              the company built on it. OXIMO and the twelve-month experiment that ran on it are finished work, kept
-              here because they are where the research question came from.
+              <strong>Two of these are live. Two are finished. One does not exist yet.</strong> I would rather you
+              knew which was which in the first thirty seconds than work it out halfway down the page.
             </p>
             <p className="wi-why-cap">
-              In the video — the three verticals this is aimed at, why none of them work today, and ORMAS.
+              In the video: who this is for, why nothing on the market does it today, and what ORMAS actually is.
             </p>
           </div>
         </div>
 
-        <div className="wi-label">How It Actually Happened</div>
+        <div className="wi-label">Six Years, In Order</div>
         <div className="wi-tl">
           {timeline.map((t) => (
             <div className="wi-tl-row" key={t.title}>
@@ -370,7 +369,7 @@ export default function CVWhoIAm() {
         </div>
 
         {/* ══ SYSTEMS ════════════════════════════════════════════ */}
-        <div className="wi-label">The Five Named Things, and Which Are Live</div>
+        <div className="wi-label">The Five Things, and Where Each One Stands</div>
         <div className="wi-sys">
           {systems.map((s) => (
             <a
@@ -404,7 +403,7 @@ export default function CVWhoIAm() {
         {/* ══ ROUTER ═════════════════════════════════════════════ */}
         <div className="wi-label">Where to Start</div>
         <div className="wi-router">
-          <div className="wi-router-h">Depending on why you are here</div>
+          <div className="wi-router-h">Skip ahead, depending on why you came</div>
           {router.map((r) => (
             <div className="wi-router-row" key={r.a}>
               <div className="wi-router-a">{r.a}</div>

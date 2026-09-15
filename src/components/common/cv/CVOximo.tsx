@@ -24,14 +24,15 @@ export default function CVOximo() {
       id="oximo"
       phase="before"
       eyebrow="OXIMO · 2023–2025"
-      title="Agents that hire agents. Built, run in production, and set down."
+      title="40,933 lines of an operating system where the agents hire their own staff."
       lead={
         <>
-          Five ventures said the bottleneck was coordination, so I built the structural answer: an
-          operating system where a sentence becomes an org chart, and where the system designs and hires
-          a specialist when no existing agent has the skill.{' '}
-          <strong>I am not building on OXIMO any more. It is prior work, and it is on this page because
-          of what it taught me rather than what it became.</strong>
+          Five businesses had told me the same thing five times over: the limit was never how good I was,
+          it was coordination. So I stopped trying harder and built the answer as a system. Hand it one
+          sentence and it works out the org chart itself, then designs and hires a specialist when nobody
+          on staff can do the job.{' '}
+          <strong>It ran a real company for a year. I have stopped developing it, and I say exactly why
+          further down.</strong>
         </>
       }
       meta={[
@@ -120,33 +121,34 @@ export default function CVOximo() {
           View the codebase
           <Icon name="externalLink" size={13} />
         </a>
-        {' '}&nbsp;·&nbsp; Production research infrastructure, not a demo. The code is not polished.
+        {' '}&nbsp;·&nbsp; This had to run a live company, not a demo. The code shows it.
       </p>
 
       <div className="ox-closed">
-        <div className="ox-closed-k">Why it is closed</div>
+        <div className="ox-closed-k">Why I stopped</div>
         <p>
-          OXIMO orchestrates calls to models it does not own. That was the right shape for the problem I
-          had, and it ran a real company for twelve months — which is the section directly after this
-          one. But it kept running into a limit that was not an orchestration limit at all.
+          Every agent in OXIMO is, underneath, a wrapper around somebody else&apos;s model that nobody can
+          see inside. That was fine while the work was clean. It ran a real company for a year, which is
+          the next section.
         </p>
         <p>
-          Every agent in it was ultimately a wrapper around a network nobody could see inside. When the
-          business data got messy — mislabelled, contradictory, corrupted, which is what production data
-          actually is — no amount of better coordination fixed it, because the failure was one layer
-          down, inside the model.{' '}
-          <strong>That is the wall that sent me into the research, and the research is where I stayed.</strong>
+          Then I tried to train on the company&apos;s own data. Real production data is mislabelled,
+          contradictory and half corrupted, and I watched every published method for handling it fail in
+          turn. DivideMix, ProMix, CoDE. None of them helped, and it took me a while to accept why: I was
+          trying to fix a coordination problem that was not a coordination problem.{' '}
+          <strong>The failure was one floor down, inside the model, and no amount of better orchestration
+          was ever going to reach it.</strong>
         </p>
         <p>
-          So OXIMO is not Layer 1 of anything. It is the project that produced the question ORMAS
-          answers, and I have stopped developing it.
+          So I went down a floor and stayed there. OXIMO is the project that handed me the question. ORMAS
+          is the answer, and it is where all of my time goes now.
         </p>
       </div>
 
-      <p className="ox-label">How a task became an organization</p>
+      <p className="ox-label">Watch a sentence turn into a company</p>
       <p className="ox-p">
-        Every agent framework asks you to define the agents first. This one was handed a sentence and
-        worked out the org chart itself — including hiring a specialist that did not exist when the task
+        Every other agent framework makes you define the agents up front. This one was handed a sentence
+        and worked out the org chart on its own, hiring a specialist that did not exist when the job
         started.
       </p>
       <EngineeringVisualization />

@@ -39,14 +39,14 @@ export default function CVBlackBloxie() {
       id="black-bloxie"
       phase="before"
       eyebrow="Black Bloxie LTD · 2025–2026"
-      title="I ran a twelve-month lesion study on my own company."
+      title="I spent a year trying to prove my own system didn’t work."
       lead={
         <>
-          Black Bloxie is a real UK-registered company, and it was never meant to be a business. It was
-          built to be the test environment for OXIMO — somewhere the system could fail in public, with
-          real suppliers, real customers and real money.{' '}
-          <strong>Deploy, measure. Remove, measure. Restore, measure.</strong> If the architecture was
-          doing the work, removing it should kill the output and putting it back should revive it.
+          Anybody can run an AI system and post the revenue. It proves nothing, because you never find out
+          whether the market would have done it anyway. So I registered a real company in the UK, let
+          OXIMO run it with a real supplier and real customers in ten countries, and then{' '}
+          <strong>tore the system out to see whether the business died.</strong> It died. Then I put it
+          back to see whether it would come alive again. It came back bigger than before.
         </>
       }
       meta={[
@@ -135,10 +135,10 @@ export default function CVBlackBloxie() {
 
       <div className="bb-note">
         <p>
-          <strong>What this is evidence for, precisely.</strong> This study tests OXIMO — an orchestration
-          layer running on off-the-shelf models. It says nothing about ORMAS, which is a separate piece of
-          work with its own separate evidence. Treating this as proof of the research would be the
-          easiest mistake to make on this page, so it is ruled out here rather than in a footnote.
+          <strong>Read this carefully before you credit me with too much.</strong> What got tested here is
+          OXIMO, an orchestration layer sitting on top of models somebody else trained. It proves nothing
+          whatsoever about ORMAS, which is separate work with its own separate evidence. It would be very
+          easy to blur those two together on a page like this. I am not going to.
         </p>
       </div>
 
@@ -177,10 +177,10 @@ export default function CVBlackBloxie() {
       </div>
 
       <div className="bb-money">
-        <div className="bb-money-h">The money, before anyone guesses</div>
+        <div className="bb-money-h">Now the money, before you go looking for it</div>
         <p className="bb-money-p">
-          This gets misread in both directions — people assume the largest number is the total, or that
-          the total is a rounding error. Here is the entire commercial record, so neither reading survives.
+          People get this wrong in both directions. Half assume the big number is the total and half assume
+          the total is a rounding error. So here is every pound the company ever took.
         </p>
         <div className="bb-money-grid">
           {[
@@ -197,11 +197,11 @@ export default function CVBlackBloxie() {
           ))}
         </div>
         <p className="bb-money-note">
-          <strong>That one order is 65% of everything the company ever earned.</strong> Which is the point
-          — this is not a revenue curve, it is a single deliberate test of whether an autonomous system
-          could carry a buyer through a high-consideration purchase. The honest summary of the commercial
-          side is <strong>under seven thousand dollars</strong>, and it is small because I capped it at
-          research grade.
+          <strong>One order is 65% of everything that company ever earned.</strong> That was the whole
+          purpose of it. I wanted to know whether an autonomous system could carry somebody through a
+          genuinely expensive decision, so I set one up and it did. The honest total is{' '}
+          <strong>under seven thousand dollars</strong>, and it is small because I held it there
+          deliberately.
         </p>
       </div>
 
@@ -224,19 +224,19 @@ export default function CVBlackBloxie() {
       </ExpandableSection>
 
       <div className="bb-ceiling">
-        <div className="bb-ceiling-k">Why it stopped, and what it sent me to</div>
+        <div className="bb-ceiling-k">Why I stopped it, and where it sent me</div>
         <p>
-          The study was capped at research grade on purpose. No jurisdiction currently assigns commercial
-          liability to an autonomous agent, and I would rather hold a clean experiment than find that
-          boundary from the wrong side of it.
+          I capped the study on purpose. No country has decided yet who is liable when an autonomous agent
+          signs a contract, and I would rather keep a clean experiment than discover that boundary from the
+          wrong side of it.
         </p>
         <p>
-          The more important stopping point was technical. Rung 6 overshot because the system had
-          accumulated real memory — which meant the next thing to do was let it learn from the
-          business&apos;s own data. That data was mislabelled, contradictory and corrupted, which is what
-          production data is. Every established method for handling it failed.{' '}
-          <strong>That is the wall this experiment ran into, and the reason the work after it is
-          research rather than engineering.</strong>
+          The technical reason mattered more. Rung 6 overshot because the system had built up a year of
+          real memory, and the obvious next move was to let it learn from the company&apos;s own data.
+          That data was a mess: mislabelled, contradictory, half of it corrupted. Which is what production
+          data always is. I tried every published method for it and watched all of them fail.{' '}
+          <strong>That wall is the whole reason the next thing I built was research and not another
+          product.</strong>
         </p>
       </div>
     </CVSection>

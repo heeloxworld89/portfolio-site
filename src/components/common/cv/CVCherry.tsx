@@ -21,13 +21,15 @@ export default function CVCherry() {
       id="cherry"
       phase="now"
       eyebrow="Project Cherry · Planned"
-      title="The thing I intend to build next, and have not started."
+      title="The next one. Written down completely, and deliberately not started."
       lead={
         <>
-          ORMAS gives a network a bounded account of every change it makes to itself. Cherry is what
-          happens if you use that to let the network <strong>change its own shape</strong> — grow a new
-          part when the existing ones cannot cover a problem, and retire one that stops earning its
-          place. <strong>None of it is built. It is on this page as intent, not as a result.</strong>
+          Once a network can tell you which of its parts is failing and by how much, you can do something
+          nobody currently does: let it <strong>grow a new part on demand</strong>, and retire one that has
+          stopped earning its place. Fixed capacity is the ceiling on every number in the research section
+          above, and this is how it comes off.{' '}
+          <strong>I have written the whole thing and built none of it.</strong> It is here because I would
+          rather show you where this goes than have you find out later.
         </>
       }
       meta={[
@@ -68,25 +70,26 @@ export default function CVCherry() {
       <div className="cy-warn">
         <span className="cy-warn-t">Nothing measured</span>
         <span className="cy-warn-v">
-          There are no experiments behind this section, because there is no system yet. Every number on
-          the rest of this page was measured. Nothing here was.
+          Every number elsewhere on this page came out of an experiment I ran. There are none here,
+          because there is nothing built yet to run them on. Read this as intent.
         </span>
       </div>
 
       <p className="cy-p">
-        The mechanism ORMAS already has is the precondition. A network that knows which of its parts is
-        failing, and by how much, is a network that can be told to grow a replacement — and a new part
-        can be introduced with zero net effect on what the network currently does, so nothing already
-        working is disturbed while it learns.{' '}
-        <strong>Fixed capacity is what caps the current results, and this is the plan for removing it.</strong>
+        ORMAS already supplies the hard part. A network that knows which of its components is dying, and
+        by how much, is a network you can tell to grow a replacement. The new part can be slipped in
+        with zero net effect on anything the network currently does, so nothing that already works gets
+        disturbed while the new part learns its job.{' '}
+        <strong>Fixed capacity is what holds down every number in the research section. This is how it
+        comes off.</strong>
       </p>
 
-      <p className="cy-label">The idea, drawn</p>
+      <p className="cy-label">What it would look like</p>
       <CherryVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="cy-label">What it is not</p>
+      <p className="cy-label">Things people will assume this is, and why it isn’t</p>
       <div className="cy-not">
         {notThis.map((n) => (
           <div className="cy-not-row" key={n.k}>

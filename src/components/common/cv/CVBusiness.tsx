@@ -23,10 +23,10 @@ const sectors = [
 ];
 
 const position = [
-  { k: 'Stage',     v: 'Pre-revenue. No customers, no pilot, no institutional investment.' },
+  { k: 'Stage',     v: 'Pre-revenue. No customers, no pilot, and not one customer conversation yet.' },
   { k: 'Entity',    v: 'A research company in formation. Delaware C-corporation being established; contracting meanwhile through an existing UK-registered company.' },
   { k: 'Evidence',  v: 'Every result is CIFAR-10 or CIFAR-100. No clinical, financial, biological or defence data has touched the system.' },
-  { k: 'Team',      v: 'One person. That is the first thing the round is spent on.' },
+  { k: 'Team',      v: 'Me. All of it. That is the first thing the round gets spent on fixing.' },
 ];
 
 export default function CVBusiness() {
@@ -37,14 +37,15 @@ export default function CVBusiness() {
       id="oxiedo"
       phase="now"
       eyebrow="OXIEDO · The Business"
-      title="The company I am building around the research."
+      title="I turned it into a company, and the market has a legal deadline."
       lead={
         <>
-          ORMAS answers a question, and <strong>OXIEDO is the answer to what that question is worth.</strong>{' '}
-          The most valuable data in the world sits unused — hospital records, bank ledgers, licensed
-          corpora — not because anyone holding it is careless, but because training on it means handing
-          it to a model that afterwards cannot say what it did with it. OXIEDO licenses the architecture
-          that supplies the missing account.
+          Hospital records. Bank ledgers. Assay runs. Licensed corpora. The best data in the world is
+          sitting in buildings where nobody is allowed to train on it, and the people holding it are
+          right to refuse — you cannot hand your data to something that will never be able to tell you
+          what it did with it. <strong>From December 2027, in Europe, refusing stops being a judgement
+          call and becomes an obligation.</strong> OXIEDO licenses the architecture that produces the
+          answer while the model learns, instead of guessing at it afterwards.
         </>
       }
       meta={[
@@ -125,10 +126,10 @@ export default function CVBusiness() {
 
       <a className="bz-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
         <span className="bz-cta-l">
-          <h3 className="bz-cta-h">The company has its own site, and it is the real one.</h3>
+          <h3 className="bz-cta-h">The company has its own site. Go and read it.</h3>
           <p className="bz-cta-p">
-            The product, the five sectors, the licence, the pricing logic and the full risk register
-            live at oxiedo.com. This page is about the person who built it.
+            The product, the licence, the pricing logic, the five sectors and the full risk register are
+            all over there, in far more detail than belongs on a personal page. This one is about me.
           </p>
         </span>
         <span className="bz-cta-b">
@@ -139,13 +140,15 @@ export default function CVBusiness() {
 
       <div className="bz-thesis">
         <p>
-          Transparency is the mechanism. <strong>Unlocked data is the product.</strong> That
-          distinction is the whole business. Nobody buys an audit trail for its own sake — they buy
-          the ability to train on data they already hold and currently cannot touch.
+          Nobody has ever wanted an audit trail. What a hospital wants is to train on its own patient
+          records without ending up in front of a regulator. <strong>Transparency is just the mechanism.
+          What I am actually selling is access to data these institutions already own and still cannot
+          touch.</strong> Getting that the wrong way round is how every interpretability company so far
+          has ended up with a tool nobody buys.
         </p>
       </div>
 
-      <p className="bz-label">One question, asked in five places</p>
+      <p className="bz-label">The same question, in five industries that pay differently</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -155,12 +158,12 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label">Why it has to run where the data already is</p>
+      <p className="bz-label">Why it has to run inside their building</p>
       <OxidoVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="bz-label">Where it honestly stands</p>
+      <p className="bz-label">What I would tell you in diligence, without being asked</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>
@@ -172,8 +175,8 @@ export default function CVBusiness() {
 
       <div className="bz-deck">
         <span className="bz-deck-t">
-          <strong>Investors —</strong> the raise, the milestones and the risk register are set out at{' '}
-          oxiedo.com/invest. The deck is here if you would rather read it in one pass.
+          <strong>Investors —</strong> the round, the six milestones and every risk I know about are laid
+          out at oxiedo.com/invest. If you would rather see it in one pass, the deck opens right here.
         </span>
         <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
           <Icon name="chart" size={15} />

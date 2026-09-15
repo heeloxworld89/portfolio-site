@@ -39,12 +39,12 @@ export default function CVOriginStatement() {
       id="statement"
       phase="about"
       eyebrow="Personal Statement"
-      title="On obsession and independent research."
+      title="How this actually gets done, and the three things it is missing."
       lead={
         <>
-          The work itself is set out above. This is about how it gets done and what is missing from it —{' '}
-          <strong>because the constraint on this programme has never been motivation, and saying so
-          plainly is more useful than another result.</strong>
+          The work is above. This is the conditions it was made under, and what I do not have.{' '}
+          <strong>I have never once been short of motivation, and I would rather tell you where the real
+          gap is than put it somewhere more flattering.</strong>
         </>
       }
     >
@@ -283,16 +283,16 @@ export default function CVOriginStatement() {
 
         <div className="os-body">
           <p className="os-p">
-            This was produced with no university framework, no research group, no advisor, and no
-            external funding. Every experiment ran on personal hardware. Every architectural decision
-            was made alone.
+            No university framework. No research group. No advisor. No external funding. Every experiment
+            ran on hardware I bought myself, and every architectural decision in this programme was made by
+            one person at a desk in Dhaka.
           </p>
           <p className="os-p">
-            I naturally work 14–16 hours a day. Out of curiosity — wondering whether anyone else was
-            doing the same — I decided to document it formally. For two weeks in November 2024 I
-            livestreamed my daily workflow continuously, recording{' '}
-            <strong>28 sessions as live footage for a Guinness World Record application</strong>. The
-            archive is unedited and linked below.
+            I work fourteen to sixteen hours a day and always have. At some point I got curious about
+            whether other people actually did that or only said it, so I documented mine properly. For two
+            weeks in November 2024 I livestreamed the entire working day, every day, and came out with{' '}
+            <strong>28 sessions of live footage filed as a Guinness World Record application</strong>.
+            None of it is edited. All of it is linked below.
           </p>
         </div>
 
@@ -345,15 +345,14 @@ export default function CVOriginStatement() {
 
         <div className="os-body">
           <p className="os-p">
-            Two years ago I would have said all of this out loud and sounded delusional. The distance
-            closed the only way it could: the code runs, the experiments are finished, and the
-            architecture is published where anyone can check it.
+            Two years ago I would have said all of this out loud and sounded delusional. There was only
+            one way to close that gap and it was not by talking. The code runs. The experiments are
+            finished. The architecture is public, and anybody who wants to attack it now can.
           </p>
           <p className="os-p">
-            But working at this intensity without institutional support is not a sustainable research
-            model. The constraint is not motivation — it never has been. The constraint is the absence
-            of calibration: colleagues, advisors, and reviewers who compress iteration cycles and
-            catch errors before they compound.
+            What I am not going to pretend is that working this way scales. The thing I am short of has
+            never been drive. It is calibration: colleagues, an advisor, reviewers, the people who halve an
+            iteration cycle and catch a mistake before it has three months of work stacked on top of it.
           </p>
           <p className="os-p">
             What the company does next is set out at{' '}

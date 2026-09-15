@@ -5,13 +5,13 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Outside Signal"
-      title="Two outside reads, and what each one is worth."
+      title="Two organisations went looking, and neither of them found me by accident."
       lead={
         <>
-          One organization read the work. One organization read me. Those are different instruments
-          measuring different things, and the difference is worth more than the flattery of collapsing
-          them — so I have weighted them separately and said plainly what each one does and does not
-          establish. <strong>One is closed. One is still running.</strong>
+          Cosmos read the work and ranked it first in their cycle. Entrepreneur First read me and had a
+          call booked inside twelve hours. <strong>Those measure completely different things, and I am not
+          going to pretend otherwise to make the page look better.</strong> So: what each one proves, and
+          what it doesn&apos;t.
         </>
       }
     >
@@ -286,13 +286,13 @@ export default function CVRecognition() {
               </div>
             </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
-            <h3 className="rec-name">Highest-Ranked Application in the Cycle</h3>
+            <h3 className="rec-name">They Ranked It First in the Cycle, Then Told Me Why They Still Wouldn’t Fund It</h3>
             <p className="rec-body">
-              I applied to a Cosmos Institute grant round. They came back with two things at once: the
-              application ranked highest in the cycle, and it was in the wrong round — that cycle funded
-              philosophical work on AI, and ORMAS is a technical architecture. So, no grant, and a clear
-              instruction to come back when they open a technical track. I would rather have the honest
-              read than the money.
+              I applied to a Cosmos Institute grant round and got back two things in the same email. My
+              application had ranked highest in the cycle, and it was in completely the wrong round —
+              that one funded philosophical work on AI, and ORMAS is an architecture. No money, and an
+              instruction to come back when they open a technical track. A ranking with a reason attached
+              is worth more to me than the grant would have been.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -335,21 +335,21 @@ export default function CVRecognition() {
           </div>
 
           <p className="rec-body">
-            No introduction, no warm path, no network — an application from Dhaka into one of the most aggressive
-            sourcing operations in European venture. <strong>Twelve hours later their talent team came back to put a
-            call in the diary.</strong> The call was with <strong>Nick Sopuch</strong>, who runs one of EF&apos;s
-            investment teams and their SF-based bridge program, scouts for Ada Ventures, and is Head of Operations at
-            Axiom Therapeutics. Mid-call he sized me against the kind of founder EF backs: someone who joined at 17,
-            raised $100M+, then built a second company that became a unicorn inside EF&apos;s own portfolio. That was
-            the comparison set.
+            No introduction, no warm path, nobody vouching for me. A cold application out of Dhaka into one of the
+            most aggressive sourcing operations in European venture. <strong>Twelve hours later their talent team
+            came back to put a call in the diary.</strong> It was with <strong>Nick Sopuch</strong>, who runs one of
+            EF&apos;s investment teams and their San Francisco bridge programme, scouts for Ada Ventures, and is Head
+            of Operations at Axiom Therapeutics. Halfway through he reached for a comparison: a founder who joined EF
+            at seventeen, raised over $100M, then built a second company that turned into a unicorn inside their own
+            portfolio. That was the set he was putting me in.
           </p>
           <p className="rec-body">
-            Then he asked whether I planned to finish university, and I hedged — said maybe, when the truth is
-            that I am building this either way. That is the one thing I would take back: a hedge on a commitment
-            question, in a conversation whose entire purpose is reading how someone thinks. Nick read it exactly
-            right, so let me answer it properly here. I have already taken the coursework — MITx, Coursera,
-            fifty-five programme certificates — and if I go, it will be for the network, not the material.
-            <strong> Funding changes how fast this gets built. It does not change whether.</strong>
+            Then he asked whether I was going to finish university and I hedged. Said maybe. The truth is I am
+            building this either way, and hedging on a commitment question in a conversation whose entire purpose is
+            reading how somebody thinks was the one thing I got wrong that day. He read it exactly right. So let me
+            answer it properly here: I have already done the coursework, MITx and Coursera and fifty-five programme
+            certificates of it, and if I ever go it will be for the people, not the material.
+            <strong> Money changes how fast this gets built. It does not change whether it gets built.</strong>
           </p>
           <p className="rec-body">
             That call did not resolve into a yes or a no. It resolved into a longer process, and the process is
@@ -392,29 +392,27 @@ export default function CVRecognition() {
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            Neither of these is a credential. Read precisely, they are still the two most useful pieces of
-            outside information I have.
+            Neither of these is a credential and I am not going to dress them up as one. They are still the two
+            most useful outside signals I have.
           </p>
           <p className="rec-verdict-body">
-            <strong>Cosmos read the work.</strong> They ranked it highest in the cycle and then told me exactly
-            why it still would not be funded — that round backed philosophical work on AI, and ORMAS is a
-            technical architecture. A ranking with a reason attached is the most valuable thing a reviewer can
-            hand you, and it supports one narrow claim: <strong>when the work is read by people qualified to
-            judge it, it holds.</strong>
+            <strong>Cosmos read the work.</strong> Ranked it first, then told me precisely why it still would not
+            get funded. A ranking with a reason attached is the single most useful thing a reviewer can give you,
+            and it supports exactly one claim, narrowly: <strong>when people qualified to judge this actually read
+            it, it holds up.</strong>
           </p>
           <p className="rec-verdict-body">
-            <strong>EF read me</strong> — fifteen minutes at Gate 1, by design, weighted toward how I think
-            rather than what I have built. That screen produced no verdict at all. It produced a longer
-            process, which is where it still sits. Both organizations went looking in an environment where a
-            PhD is the default and an eighteen-year-old without one is not, and neither discounted the work for
-            coming out of Dhaka.
+            <strong>EF read me.</strong> Fifteen minutes, by design, weighted towards how I think rather than what
+            I have built. It produced no verdict at all — it produced a longer process, which is where it still
+            sits. Both of these happened in a field where a PhD is the baseline and an eighteen-year-old without one
+            is not, and neither organisation marked the work down for coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">
-            What neither establishes is worth stating just as plainly. No funding, no offer, no advisor — an
-            open process is not an outcome, and I am not going to write it up as one. Cosmos is a remote grant
-            and EF admits internationally by design, so neither says anything about selection filters that are
-            geographically constrained. I would rather hold two accurately weighted results
-            than one inflated one — the weighting is the part that makes the rest of this page worth believing.
+            Now what they do not establish. No funding, no offer, no advisor. An open process is not an
+            outcome and I am not going to write it up as one. Cosmos is a remote grant and EF admits
+            internationally on purpose, so neither tells you anything about the filters that are actually
+            bound to geography. Two results weighted accurately beat one result inflated, and that
+            weighting is the reason you should believe the rest of this page.
           </p>
         </div>
       </div>

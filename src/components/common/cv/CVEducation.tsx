@@ -5,13 +5,13 @@ export default function CVEducation() {
       id="education"
       phase="about"
       eyebrow="Education"
-      title="Self-taught, and specific about what that cost."
+      title="Nobody taught me any of this."
       lead={
         <>
-          No university, no advisor, no lab. What I have instead is coursework I chose because a problem
-          demanded it — and the work kept dragging me into fields most programmers never have a reason to
-          open. <strong>The honest account of what I traded away is at the bottom of this section, not
-          buried.</strong>
+          No university, no advisor, no lab, nobody senior to check a derivation before I committed to it.
+          I took the coursework when a problem forced me to, and the work kept dragging me into fields
+          most programmers never open once. <strong>What it cost me to learn it this way is written out at
+          the bottom of this section rather than skipped.</strong>
         </>
       }
     >

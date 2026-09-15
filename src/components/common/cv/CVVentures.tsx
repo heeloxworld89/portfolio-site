@@ -52,13 +52,14 @@ export default function CVVentures() {
       id="ventures"
       phase="before"
       eyebrow="Ventures · 2020–2025"
-      title="Five businesses and one exit, between twelve and seventeen."
+      title="Five businesses and an exit, all of it before I turned eighteen."
       lead={
         <>
-          None of this was research. It was five attempts at building a company, each one breaking at a
-          structurally different layer, and one system that worked well enough that somebody bought it.{' '}
-          <strong>The five failures converge on a single finding, and that finding is the reason
-          everything after this exists.</strong>
+          I started my first company at twelve. Four more followed and every one of them broke somewhere
+          different. Somewhere in the middle I built a stock-prediction system good enough that somebody
+          paid me around ten thousand dollars for it, at fifteen.{' '}
+          <strong>The five failures all pointed at the same thing, and that one sentence is the reason
+          the rest of this page exists.</strong>
         </>
       }
       meta={[
@@ -123,17 +124,17 @@ export default function CVVentures() {
           <div className="vn-exit-k">Built and exited · age 15</div>
         </div>
         <div>
-          <h3 className="vn-exit-h">A stock-prediction system, built and sold</h3>
+          <h3 className="vn-exit-h">A stock-prediction system, built and sold at fifteen</h3>
           <p className="vn-exit-p">
-            The one thing from this period that worked commercially and left my hands. It is on this page
-            for two reasons. It was the first time somebody outside my own head priced the work — and{' '}
-            <strong>the money bought the RTX 3090 that later ran all 383 ORMAS experiments.</strong> The
-            research programme on this site was funded by an exit at fifteen.
+            The first time anybody outside my own head put a number on the work. It matters for a reason
+            that has nothing to do with the money itself:{' '}
+            <strong>I spent it on the RTX 3090 that ran all 383 ORMAS experiments.</strong> Every result on
+            this page was paid for by something I built and sold before I could drive.
           </p>
         </div>
       </div>
 
-      <p className="vn-label">Five ventures, five different failure modes</p>
+      <p className="vn-label">Five companies, five different ways to break</p>
       <div className="vn-list">
         {ventures.map((v) => (
           <div className="vn-row" key={v.n}>
@@ -151,14 +152,15 @@ export default function CVVentures() {
       </div>
 
       <div className="vn-finding">
-        <div className="vn-finding-k">What five failures agreed on</div>
+        <div className="vn-finding-k">What all five were telling me</div>
         <p>
-          Every one of them broke somewhere different, and every one of them broke for the same reason.{' '}
-          <strong>The bottleneck was never individual capability. It was always coordination.</strong>
+          Every one broke in a different place. Every one broke for the same reason.{' '}
+          <strong>The limit was never how capable I was. It was always coordination.</strong>
         </p>
         <p>
-          A structural problem needs a structural answer, not a better version of me. That is the
-          sentence that produced OXIMO, and OXIMO is what eventually produced the research.
+          Which means working harder was never going to fix it. A structural problem needs a structural
+          answer, and that realisation is where OXIMO came from — and OXIMO, eventually, is where the
+          research came from.
         </p>
       </div>
     </CVSection>

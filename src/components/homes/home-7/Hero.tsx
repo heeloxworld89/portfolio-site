@@ -1,304 +1,220 @@
 import Icon from '@/components/common/Icon';
 
 /**
- * Hero — the site's thesis is an architecture that emits its own state, so the
- * hero emits the project's state. The right-hand panel is a status readout of
- * the actual stack; the ticker cycles telemetry lines quoted from the ORMAS
- * supplementary material rather than invented "live" data.
+ * Hero — the one-screen brief.
+ *
+ * Four blocks, in the order a stranger needs them:
+ *   1. the company is live          (one line, not a banner)
+ *   2. the claim, and who is making it
+ *   3. the single result that backs the claim, drawn rather than asserted
+ *   4. where the three live things are, matching the page's phase structure
+ *
+ * Everything the previous hero carried and this one does not — the telemetry
+ * ticker, the four-metric strip, the layer stack — said less than the one
+ * result now shown on the right.
  */
 
-const current = [
+const lanes = [
   {
     tag: 'Research',
     name: 'ORMAS',
-    desc: 'A training architecture that accounts for what it changed',
-    metric: '383 experiments · submitted to AAAI 2027',
-    status: 'Published',
+    line: 'The architecture itself. 383 experiments, four families, every run reproducible. In review at AAAI 2027.',
+    href: '#research',
+    cta: 'Read it',
     state: 'live' as const,
+    external: false,
   },
   {
     tag: 'Business',
     name: 'OXIEDO',
-    desc: 'Licensing it to institutions whose data is locked',
-    metric: 'oxiedo.com · five sectors · one licence',
-    status: 'Live',
+    line: 'The company. One licence, five sectors, and a market that has to buy this by law before 2028.',
+    href: 'https://oxiedo.com',
+    cta: 'oxiedo.com',
     state: 'live' as const,
+    external: true,
   },
   {
     tag: 'Next',
     name: 'Project Cherry',
-    desc: 'Letting a network change its own shape',
-    metric: 'Specified · nothing measured yet',
-    status: 'Not built',
+    line: 'A network that grows its own parts. Written down in full, and deliberately not started yet.',
+    href: '#cherry',
+    cta: 'The plan',
     state: 'pending' as const,
+    external: false,
   },
-];
-
-const prior = [
-  { name: 'OXIMO', desc: 'Agent operating system · 40,933 lines', status: 'Closed' },
-  { name: 'Black Bloxie LTD', desc: '12-month lesion study · −91% / +1,300%', status: 'Study closed' },
-];
-
-// Verbatim from supplementary.tex §5.1–5.3
-const telemetry = [
-  '[node_13] goodness 0.04 → CRITICAL · neurogenesis · loss 1.842→1.791 · ACCEPTED',
-  '[conv_layer_3] gradient conflict 0.58 → QUARANTINED · noise memorisation',
-  '[baldwin] corrections 4.2/epoch → 0.00 · network self-stabilised · locked',
-  '[dag_run] 23,227 correction events logged across 200 epochs',
-];
-
-const metrics = [
-  { v: '383', l: 'Controlled experiments', s: 'On one RTX 3090' },
-  { v: '80.3%', l: 'Recovery after a killed layer', s: 'Baseline: 10.0%, permanently' },
-  { v: '94.6%', l: 'Prior task retained', s: 'ResNet-18 retains 47.3%' },
-  { v: '22,014', l: 'Attributed corrections', s: 'Where standard training returned NaN' },
 ];
 
 export default function Hero(_props?: any) {
   return (
     <div className="tmp-banner-one-area" id="home">
       <style>{`
-        .hx { padding: 104px 0 88px; }
-        @media (max-width: 991px) { .hx { padding: 72px 0 64px; } }
+        .hx { padding: 30px 0 84px; }
+        @media (max-width: 991px) { .hx { padding: 22px 0 60px; } }
 
-        /* ── launch banner ─────────────────────────────────────
-           The company going live is the single newest fact on this page,
-           so it sits above everything else and is the first clickable thing. */
-        .hx-launch {
-          display: flex; align-items: center; justify-content: space-between;
-          gap: 28px; flex-wrap: wrap; text-decoration: none;
-          position: relative; overflow: hidden;
-          padding: 22px 28px; margin-bottom: 44px; border-radius: 14px;
-          border: 1px solid rgba(255,74,87,0.42);
-          background:
-            radial-gradient(120% 180% at 0% 50%, rgba(255,74,87,0.16) 0%, rgba(255,74,87,0) 62%),
-            linear-gradient(180deg, #1a1418 0%, #141518 100%);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 18px 46px -28px rgba(255,74,87,0.55);
-          transition: border-color .25s, transform .25s, box-shadow .25s;
+        /* ── 1 · live strip ─────────────────────────────────── */
+        .hx-live-bar {
+          display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+          text-decoration: none; margin-bottom: 52px;
+          padding: 11px 18px; border-radius: 10px;
+          border: 1px solid rgba(255,74,87,0.36);
+          background: linear-gradient(90deg, rgba(255,74,87,0.13) 0%, rgba(255,74,87,0.03) 55%, rgba(255,74,87,0) 100%), #16181c;
+          transition: border-color .25s, background .25s;
         }
-        .hx-launch:hover {
-          transform: translateY(-2px);
-          border-color: rgba(255,74,87,0.8);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 22px 54px -26px rgba(255,74,87,0.75);
+        .hx-live-bar:hover { border-color: rgba(255,74,87,0.7); }
+        .hx-live-tag {
+          display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+          font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+          color: #ff8189;
         }
-        .hx-launch::after {
-          content: ""; position: absolute; inset: 0; pointer-events: none;
-          background: linear-gradient(105deg, transparent 36%, rgba(255,255,255,0.07) 50%, transparent 64%);
-          transform: translateX(-100%);
-          animation: hxLaunchSweep 5.5s ease-in-out infinite;
-        }
-        @keyframes hxLaunchSweep {
-          0%, 58% { transform: translateX(-100%); }
-          100%    { transform: translateX(100%); }
-        }
-        .hx-launch-l { display: flex; flex-direction: column; gap: 9px; min-width: 260px; flex: 1; }
-        .hx-launch-kick {
-          display: inline-flex; align-items: center; gap: 9px; align-self: flex-start;
-          font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase;
-          color: #ff8189; background: rgba(255,74,87,0.13);
-          border: 1px solid rgba(255,74,87,0.42); border-radius: 999px; padding: 5px 13px;
-        }
-        .hx-launch-kick i {
+        .hx-live-dot {
           width: 7px; height: 7px; border-radius: 50%; background: #ff6b76;
-          animation: hxPulse 2.4s infinite; font-style: normal;
-        }
-        .hx-launch-h {
-          font-size: clamp(21px, 2.5vw, 29px); font-weight: 800; color: #fff;
-          letter-spacing: -0.7px; line-height: 1.2; margin: 0;
-        }
-        .hx-launch-h b { color: #ff8189; font-weight: 800; }
-        .hx-launch-p { font-size: 14.5px; line-height: 1.65; color: #b3bcc7; margin: 0; max-width: 640px; }
-        .hx-launch-btn {
-          display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0;
-          padding: 15px 24px; border-radius: 9px;
-          font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
-          color: #fff; background: #d43644; border: 1px solid #ff6b76;
-          transition: background .25s;
-        }
-        /* Hover darkens rather than brightens — white text has to stay above 4.5:1. */
-        .hx-launch:hover .hx-launch-btn { background: #bd2734; }
-        @media (max-width: 720px) {
-          .hx-launch { padding: 20px 20px; gap: 18px; }
-          .hx-launch-btn { width: 100%; justify-content: center; }
-        }
-
-        .hx-top {
-          display: grid; grid-template-columns: 1.08fr 0.92fr;
-          gap: 56px; align-items: center; margin-bottom: 60px;
-        }
-        @media (max-width: 1100px) { .hx-top { grid-template-columns: 1fr; gap: 40px; } }
-
-        /* ── narrative ─────────────────────────────────────── */
-        .hx-eyebrow {
-          display: inline-flex; align-items: center; gap: 10px;
-          font-size: 12px; font-weight: 700; letter-spacing: 2.4px;
-          text-transform: uppercase; color: #a6b0bc; margin-bottom: 22px;
-          padding: 7px 15px 7px 12px; border-radius: 999px;
-          background: rgba(196,207,222,0.05); border: 1px solid #2f343a;
-        }
-        .hx-live {
-          width: 7px; height: 7px; border-radius: 50%; background: #ff4a57;
           animation: hxPulse 2.4s infinite;
         }
         @keyframes hxPulse {
-          0%   { box-shadow: 0 0 0 0 rgba(255,74,87,0.65); }
-          70%  { box-shadow: 0 0 0 9px rgba(255,74,87,0); }
+          0%   { box-shadow: 0 0 0 0 rgba(255,74,87,0.6); }
+          70%  { box-shadow: 0 0 0 8px rgba(255,74,87,0); }
           100% { box-shadow: 0 0 0 0 rgba(255,74,87,0); }
         }
+        .hx-live-txt { font-size: 14px; color: #c4cfde; flex: 1; min-width: 200px; line-height: 1.5; }
+        .hx-live-txt b { color: #fff; font-weight: 700; }
+        .hx-live-go {
+          display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+          font-size: 12px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+          color: #fff;
+        }
+
+        /* ── 2 · claim + 3 · result ─────────────────────────── */
+        .hx-top {
+          display: grid; grid-template-columns: 1.12fr 0.88fr;
+          gap: 60px; align-items: start; margin-bottom: 64px;
+        }
+        @media (max-width: 1100px) { .hx-top { grid-template-columns: 1fr; gap: 44px; } }
+
+        .hx-id {
+          display: inline-flex; align-items: center; gap: 11px; flex-wrap: wrap;
+          font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px;
+          text-transform: uppercase; color: #a6b0bc; margin-bottom: 26px;
+          padding: 7px 15px; border-radius: 999px;
+          background: rgba(196,207,222,0.05); border: 1px solid #2f343a;
+        }
+        .hx-id i { width: 3px; height: 3px; border-radius: 50%; background: #565d68; font-style: normal; }
 
         .hx-h1 {
-          font-size: clamp(34px, 4.6vw, 58px); font-weight: 800; color: #fff;
-          letter-spacing: -1.6px; line-height: 1.08; margin: 0 0 26px;
+          font-size: clamp(34px, 4.7vw, 60px); font-weight: 800; color: #fff;
+          letter-spacing: -2px; line-height: 1.04; margin: 0 0 18px;
         }
-        .hx-h1 span { color: #c4cfde; }
+        .hx-h1 span { display: block; color: #ff8189; }
 
-        .hx-age {
-          display: flex; align-items: baseline; gap: 14px;
-          padding: 20px 0; margin: 0 0 24px; max-width: 560px;
-          border-top: 1px solid rgba(255,255,255,0.09);
-          border-bottom: 1px solid rgba(255,255,255,0.09);
+        .hx-kicker {
+          font-size: clamp(18px, 1.9vw, 23px); font-weight: 700; color: #c4cfde;
+          line-height: 1.4; letter-spacing: -0.4px; margin: 0 0 26px;
+          padding-left: 16px; border-left: 3px solid #ff4a57;
         }
-        .hx-age-n {
-          font-size: clamp(40px, 4.8vw, 56px); font-weight: 800; color: #fff;
-          letter-spacing: -2px; line-height: 0.9;
-        }
-        .hx-age-t { font-size: clamp(15px, 1.6vw, 18px); color: #c4cfde; line-height: 1.6; font-weight: 500; }
 
-        .hx-thesis {
-          font-size: 17px; line-height: 1.75; color: #9aa4b0;
-          max-width: 570px; margin: 0 0 32px;
-        }
-        .hx-thesis strong { color: #c4cfde; font-weight: 600; }
+        .hx-lead { font-size: 17px; line-height: 1.78; color: #9aa4b0; max-width: 610px; margin: 0 0 16px; }
+        .hx-lead strong { color: #c4cfde; font-weight: 600; }
 
-        .hx-ctas { display: flex; flex-wrap: wrap; gap: 11px; }
+        .hx-trust {
+          font-size: 13px; line-height: 1.75; color: #838d99;
+          max-width: 610px; margin: 0 0 32px;
+          padding-left: 15px; border-left: 2px solid #2f343a;
+        }
+        .hx-trust b { color: #a6b0bc; font-weight: 600; }
+
+        .hx-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
         .hx-cta {
           display: inline-flex; align-items: center; gap: 9px;
-          padding: 13px 22px; border-radius: 8px; text-decoration: none;
-          font-size: 12.5px; font-weight: 700; letter-spacing: 0.8px;
-          text-transform: uppercase;
+          padding: 14px 22px; border-radius: 8px; text-decoration: none;
+          font-size: 12.5px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase;
           transition: background .25s, border-color .25s, transform .25s, color .25s;
         }
         .hx-cta:hover { transform: translateY(-2px); }
-        .hx-cta-p {
-          background: rgba(255,74,87,0.12); border: 1px solid rgba(255,74,87,0.38); color: #ff6b76;
-        }
-        .hx-cta-p:hover { background: rgba(255,74,87,0.2); border-color: rgba(255,74,87,0.65); color: #ff8a93; }
-        .hx-cta-s {
-          background: rgba(196,207,222,0.055); border: 1px solid #343941; color: #c4cfde;
-        }
-        .hx-cta-s:hover { background: rgba(196,207,222,0.11); border-color: rgba(196,207,222,0.5); color: #fff; }
+        .hx-cta-p { background: #d43644; border: 1px solid #ff6b76; color: #fff; }
+        .hx-cta-p:hover { background: #bd2734; color: #fff; }
+        .hx-cta-s { background: rgba(196,207,222,0.055); border: 1px solid #343941; color: #c4cfde; }
+        .hx-cta-s:hover { background: rgba(196,207,222,0.12); border-color: rgba(196,207,222,0.5); color: #fff; }
 
-        /* ── status panel ──────────────────────────────────── */
-        .hx-panel {
+        /* the result card */
+        .hx-res {
           background: linear-gradient(180deg, #16181c 0%, #121417 100%);
-          border: 1px solid #2f343a; border-radius: 14px; overflow: hidden;
-          box-shadow: 0 24px 60px -30px rgba(0,0,0,0.95);
+          border: 1px solid #2f343a; border-radius: 14px; padding: 28px 30px;
+          box-shadow: 0 24px 60px -32px rgba(0,0,0,0.95);
         }
-        .hx-panel-bar {
-          display: flex; align-items: center; justify-content: space-between;
-          gap: 12px; padding: 13px 18px;
-          background: rgba(255,255,255,0.022); border-bottom: 1px solid #2a2d32;
+        .hx-res-k {
+          font-size: 9.5px; font-weight: 800; letter-spacing: 2px;
+          text-transform: uppercase; color: #838d99; margin-bottom: 12px;
         }
-        .hx-panel-t {
-          font-size: 10.5px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #a6b0bc;
-        }
-        .hx-panel-badge {
-          font-size: 9.5px; font-weight: 700; letter-spacing: 1.3px;
-          text-transform: uppercase; color: #7fd88f;
-          background: rgba(127,216,143,0.1); border: 1px solid rgba(127,216,143,0.3);
-          border-radius: 999px; padding: 3px 10px; white-space: nowrap;
-        }
+        .hx-res-q { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.5; margin: 0 0 24px; }
 
-        .hx-prior {
-          display: grid; grid-template-columns: 1fr auto; gap: 4px 14px;
-          align-items: baseline; padding: 9px 0;
-          border-bottom: 1px solid rgba(255,255,255,0.045);
-        }
-        .hx-prior:last-child { border-bottom: none; }
-        .hx-prior-n { font-size: 13px; font-weight: 700; color: #c4cfde; }
-        .hx-prior-s {
-          font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
-          text-transform: uppercase; color: #7d8794; white-space: nowrap;
-        }
-        .hx-prior-d { grid-column: 1 / -1; font-size: 11.5px; color: #838d99; }
+        .hx-bar { margin-bottom: 18px; }
+        .hx-bar-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
+        .hx-bar-n { font-size: 12.5px; font-weight: 700; color: #c4cfde; }
+        .hx-bar-v { font-size: 21px; font-weight: 800; letter-spacing: -0.5px; font-family: ui-monospace, Menlo, monospace; }
+        .hx-bar.is-good .hx-bar-v { color: #8fd89c; }
+        .hx-bar.is-bad  .hx-bar-v { color: #ff6b76; }
+        .hx-bar-track { height: 9px; border-radius: 999px; background: #1e2126; overflow: hidden; }
+        .hx-bar-fill { height: 100%; border-radius: 999px; transform-origin: left center; animation: hxGrow 1.1s cubic-bezier(.2,.8,.2,1) both; }
+        .hx-bar.is-good .hx-bar-fill { background: linear-gradient(90deg, #5fb872, #8fd89c); }
+        .hx-bar.is-bad  .hx-bar-fill { background: linear-gradient(90deg, #a32d37, #ff6b76); }
+        @keyframes hxGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        .hx-bar-s { font-size: 11.5px; color: #838d99; margin-top: 6px; line-height: 1.5; }
 
-        .hx-row {
-          display: grid; grid-template-columns: 62px 1fr auto;
-          gap: 14px; align-items: center; padding: 17px 18px;
-          border-bottom: 1px solid rgba(255,255,255,0.045);
+        .hx-res-delta {
+          display: inline-flex; align-items: baseline; gap: 9px;
+          background: rgba(127,216,143,0.09); border: 1px solid rgba(127,216,143,0.3);
+          border-radius: 8px; padding: 9px 15px; margin: 6px 0 18px;
         }
-        .hx-row.is-pending { background: rgba(255,74,87,0.035); }
-        .hx-l {
-          font-size: 9px; font-weight: 800; letter-spacing: 1.2px;
-          text-transform: uppercase; color: #7d8794;
-        }
-        .hx-n { font-size: 15px; font-weight: 700; color: #e8edf4; line-height: 1.25; }
-        .hx-d { font-size: 11.5px; color: #98a2ae; margin-top: 2px; }
-        .hx-m {
-          font-size: 10.5px; color: #7d8794; margin-top: 5px;
-          font-family: ui-monospace, Menlo, monospace;
-        }
-        .hx-st {
-          display: inline-flex; align-items: center; gap: 7px;
-          font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
-          text-transform: uppercase; white-space: nowrap;
-        }
-        .hx-st.live { color: #7fd88f; }
-        .hx-st.pending { color: #ff6b76; }
-        .hx-dot { width: 6px; height: 6px; border-radius: 50%; }
-        .hx-st.live .hx-dot { background: #7fd88f; animation: hxBlink 3s ease-in-out infinite; }
-        .hx-st.pending .hx-dot { background: transparent; border: 1.5px solid #ff6b76; }
-        @keyframes hxBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+        .hx-res-delta b { font-size: 18px; font-weight: 800; color: #8fd89c; font-family: ui-monospace, Menlo, monospace; }
+        .hx-res-delta span { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9aa4b0; }
 
-        .hx-lab { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.045); }
-        .hx-lab-h {
-          font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px;
-          text-transform: uppercase; color: #7d8794; margin-bottom: 9px;
+        .hx-res-cap { font-size: 13px; line-height: 1.7; color: #98a2ae; margin: 0 0 16px; }
+        .hx-res-foot {
+          font-size: 11.5px; line-height: 1.65; color: #838d99;
+          padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); margin: 0;
         }
-        .hx-lab-n { font-size: 14px; font-weight: 700; color: #c4cfde; line-height: 1.4; }
-        .hx-lab-v { display: flex; gap: 20px; margin-top: 11px; flex-wrap: wrap; }
-        .hx-lab-v div { font-size: 11.5px; color: #98a2ae; }
-        .hx-lab-v b { display: block; font-size: 16px; font-weight: 800; margin-bottom: 2px; }
-        .hx-lab-v .down b { color: #ff6b76; }
-        .hx-lab-v .up b { color: #7fd88f; }
+        .hx-res-foot b { color: #a6b0bc; font-weight: 600; }
 
-        /* telemetry ticker */
-        .hx-tick { padding: 13px 18px; background: #0b0c0e; position: relative; height: 64px; overflow: hidden; }
-        .hx-tick-h {
-          font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #7d8794; margin-bottom: 7px;
-        }
-        .hx-tick-line {
-          position: absolute; left: 18px; right: 18px; top: 34px;
-          font-family: ui-monospace, Menlo, monospace; font-size: 10.5px;
-          line-height: 1.5; color: #a6b0bc; opacity: 0;
-          animation: hxTick 16s linear infinite;
-          white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-        @keyframes hxTick {
-          0%, 1%    { opacity: 0; transform: translateY(6px); }
-          3%, 22%   { opacity: 1; transform: translateY(0); }
-          25%, 100% { opacity: 0; transform: translateY(-6px); }
-        }
-
-        /* ── metrics strip ─────────────────────────────────── */
-        .hx-metrics {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* ── 4 · lanes ──────────────────────────────────────── */
+        .hx-lanes {
+          display: grid; grid-template-columns: repeat(3, 1fr);
           gap: 1px; background: #2a2d32; border: 1px solid #2a2d32;
-          border-radius: 12px; overflow: hidden; margin-bottom: 56px;
+          border-radius: 12px; overflow: hidden; margin-bottom: 22px;
         }
-        .hx-metric { background: #121417; padding: 22px 24px; }
-        .hx-metric-v {
-          font-size: clamp(21px, 2.3vw, 27px); font-weight: 800; color: #c4cfde;
-          line-height: 1.1; margin-bottom: 7px; letter-spacing: -0.5px;
+        @media (max-width: 860px) { .hx-lanes { grid-template-columns: 1fr; } }
+        .hx-lane {
+          display: flex; flex-direction: column; gap: 8px;
+          background: #16181c; padding: 22px 24px; text-decoration: none;
+          transition: background .25s;
         }
-        .hx-metric-l { font-size: 12.5px; color: #c4cfde; font-weight: 600; line-height: 1.4; }
-        .hx-metric-s { font-size: 11.5px; color: #838d99; margin-top: 4px; line-height: 1.45; }
+        .hx-lane:hover { background: #1b1e23; }
+        .hx-lane-k {
+          display: inline-flex; align-items: center; gap: 7px;
+          font-size: 9.5px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+        }
+        .hx-lane.is-live    .hx-lane-k { color: #8fd89c; }
+        .hx-lane.is-pending .hx-lane-k { color: #ff8189; }
+        .hx-lane-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+        .hx-lane.is-live .hx-lane-dot { animation: hxBlink 3s ease-in-out infinite; }
+        .hx-lane.is-pending .hx-lane-dot { background: transparent; border: 1.5px solid currentColor; }
+        @keyframes hxBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+        .hx-lane-n { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .hx-lane-l { font-size: 13px; line-height: 1.6; color: #98a2ae; flex: 1; }
+        .hx-lane-go {
+          display: inline-flex; align-items: center; gap: 7px; margin-top: 4px;
+          font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #c4cfde;
+        }
+        .hx-lane:hover .hx-lane-go { color: #fff; }
+
+        .hx-before {
+          font-size: 13px; line-height: 1.8; color: #838d99; margin: 0 0 40px;
+        }
+        .hx-before b { color: #a6b0bc; font-weight: 600; }
+        .hx-before a { color: #a6b0bc; text-decoration: none; border-bottom: 1px solid #343941; }
+        .hx-before a:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
 
         .hx-cue {
           display: inline-flex; align-items: center; gap: 10px;
-          color: #838d99; font-size: 12.5px; font-weight: 700;
+          color: #838d99; font-size: 12px; font-weight: 700;
           letter-spacing: 1px; text-transform: uppercase;
           text-decoration: none; transition: color .25s;
         }
@@ -306,71 +222,58 @@ export default function Hero(_props?: any) {
         .hx-cue-i { animation: hxBounce 2s infinite; }
         @keyframes hxBounce {
           0%,20%,50%,80%,100% { transform: translateY(0); }
-          40% { transform: translateY(-7px); }
+          40% { transform: translateY(-6px); }
           60% { transform: translateY(-3px); }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .hx-live, .hx-dot, .hx-cue-i, .hx-tick-line,
-          .hx-launch::after, .hx-launch-kick i { animation: none !important; }
-          .hx-launch:hover { transform: none; }
-          .hx-tick-line:first-of-type { opacity: 1; }
-          .hx-cta:hover { transform: none; }
+          .hx-live-dot, .hx-lane-dot, .hx-cue-i, .hx-bar-fill { animation: none !important; }
+          .hx-cta:hover, .hx-live-bar:hover { transform: none; }
         }
       `}</style>
 
       <div className="container hx">
 
-        {/* ══ LAUNCH ════════════════════════════════════════════ */}
-        <a
-          className="hx-launch tmp-scroll-trigger tmp-fade-in animation-order-1"
-          href="https://oxiedo.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="hx-launch-l">
-            <span className="hx-launch-kick"><i />Now Live</span>
-            <h2 className="hx-launch-h">
-              The company is live at <b>oxiedo.com</b>
-            </h2>
-            <p className="hx-launch-p">
-              OXIEDO has shipped. Everything below is the work it is built on — the architecture, the
-              experiments, and the twelve-month ablation that proved the stack causes the output.
-            </p>
+        {/* ══ 1 · the company is live ═══════════════════════════ */}
+        <a className="hx-live-bar" href="https://oxiedo.com" target="_blank" rel="noreferrer">
+          <span className="hx-live-tag"><span className="hx-live-dot" />Now Live</span>
+          <span className="hx-live-txt">
+            <b>OXIEDO is live.</b> The company I built on this research is open for business at oxiedo.com.
           </span>
-          <span className="hx-launch-btn">
-            Visit oxiedo.com
-            <Icon name="externalLink" size={15} />
-          </span>
+          <span className="hx-live-go">Visit <Icon name="externalLink" size={14} /></span>
         </a>
 
-        {/* ══ TOP ═══════════════════════════════════════════════ */}
+        {/* ══ 2 · the claim ·  3 · the evidence ════════════════ */}
         <div className="hx-top tmp-scroll-trigger tmp-fade-in animation-order-1">
 
           <div>
-            <div className="hx-eyebrow">
-              <span className="hx-live" />
-              Independent AI Research · Dhaka, Bangladesh
+            <div className="hx-id">
+              Rokib Al Dhin Raadh <i /> 18 <i /> Dhaka, Bangladesh <i /> Independent
             </div>
 
             <h1 className="hx-h1">
-              Neural networks fail opaquely.<br />
-              <span>I built an architecture that doesn&apos;t.</span>
+              The black box was never a law of nature.
+              <span>It was one decision, made in 1986.</span>
             </h1>
 
-            <div className="hx-age">
-              <div className="hx-age-n">18</div>
-              <div className="hx-age-t">
-                years old. No university, no advisor, no lab, no funding — one research result, and a company
-                built on it.
-              </div>
-            </div>
+            <p className="hx-kicker">I went back and changed it. I was seventeen.</p>
 
-            <p className="hx-thesis">
-              The most valuable data in the world sits unused, because training on it means handing it to a model
-              that afterwards cannot say what it did with it. ORMAS makes a network record every change it makes to
-              itself, as it happens. <strong>383 controlled experiments, every run reproducible from seed, and the
-              one result that went against me published alongside the rest.</strong>
+            <p className="hx-lead">
+              Every neural network ever shipped has the same blind spot. One error signal touches every
+              parameter at once, so when something inside goes wrong there is no number anywhere in the
+              system that says what. Forty years of interpretability has been people standing outside a
+              finished model, guessing backwards.
+            </p>
+            <p className="hx-lead">
+              <strong>I stopped guessing.</strong> Bound the path from each node to the loss at exactly four
+              operations and the guess becomes a measurement — one the network takes about itself, while it
+              trains, and cannot route around.
+            </p>
+
+            <p className="hx-trust">
+              383 controlled experiments. One RTX 3090. <b>No university, no lab, no advisor, no funding,
+              and nobody else on the project.</b> The paper is public, the code reproduces every run from
+              seed, and the company built on it went live this year.
             </p>
 
             <div className="hx-ctas">
@@ -382,73 +285,87 @@ export default function Hero(_props?: any) {
                 <Icon name="fileText" size={15} />
                 Read the Research
               </a>
-              <a className="hx-cta hx-cta-s" href="#black-bloxie">
-                <Icon name="chart" size={15} />
-                See the Proof
-              </a>
               <a className="hx-cta hx-cta-s" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
-                <Icon name="externalLink" size={15} />
+                <Icon name="link" size={15} />
                 Preprint
               </a>
             </div>
           </div>
 
-          {/* ── status panel ── */}
-          <div className="hx-panel">
-            <div className="hx-panel-bar">
-              <span className="hx-panel-t">Where things stand</span>
-              <span className="hx-panel-badge">Company live</span>
-            </div>
+          {/* the single result that carries the claim */}
+          <div className="hx-res">
+            <div className="hx-res-k">One experiment, and what it settles</div>
+            <p className="hx-res-q">
+              I killed a layer. Mid-training, on a network that had already reached 85%, on purpose.
+            </p>
 
-            {current.map((c) => (
-              <div className={`hx-row${c.state === 'pending' ? ' is-pending' : ''}`} key={c.name}>
-                <div className="hx-l">{c.tag}</div>
-                <div>
-                  <div className="hx-n">{c.name}</div>
-                  <div className="hx-d">{c.desc}</div>
-                  <div className="hx-m">{c.metric}</div>
-                </div>
-                <div className={`hx-st ${c.state}`}>
-                  <span className="hx-dot" />
-                  {c.status}
-                </div>
+            <div className="hx-bar is-good">
+              <div className="hx-bar-top">
+                <span className="hx-bar-n">ORMAS</span>
+                <span className="hx-bar-v">80.3%</span>
               </div>
-            ))}
-
-            <div className="hx-lab">
-              <div className="hx-lab-h">Before this — finished work, kept for the record</div>
-              {prior.map((p) => (
-                <div className="hx-prior" key={p.name}>
-                  <span className="hx-prior-n">{p.name}</span>
-                  <span className="hx-prior-d">{p.desc}</span>
-                  <span className="hx-prior-s">{p.status}</span>
-                </div>
-              ))}
+              <div className="hx-bar-track">
+                <div className="hx-bar-fill" style={{ width: '80.3%' }} />
+              </div>
+              <div className="hx-bar-s">Found the damage inside one epoch. Climbed back through 85 repairs, each one logged with its cause.</div>
             </div>
 
-            <div className="hx-tick">
-              <div className="hx-tick-h">Recorded telemetry · ORMAS DAG run</div>
-              {telemetry.map((t, i) => (
-                <div className="hx-tick-line" key={t} style={{ animationDelay: `${i * 4}s` }}>{t}</div>
-              ))}
+            <div className="hx-bar is-bad">
+              <div className="hx-bar-top">
+                <span className="hx-bar-n">Parameter-matched baseline</span>
+                <span className="hx-bar-v">10.0%</span>
+              </div>
+              <div className="hx-bar-track">
+                <div className="hx-bar-fill" style={{ width: '10%', animationDelay: '0.15s' }} />
+              </div>
+              <div className="hx-bar-s">Chance. It never comes back. Not on any seed, not ever.</div>
             </div>
+
+            <div className="hx-res-delta">
+              <b>+70.3 pp</b>
+              <span>the gap</span>
+            </div>
+
+            <p className="hx-res-cap">
+              The ordinary network doesn&apos;t fail to find the damage. It has nothing to look at. Nobody
+              ever computed a number that would tell it which part died.
+            </p>
+            <p className="hx-res-foot">
+              <b>Conditions:</b> CIFAR-10, 85.1% before the lesion, three seeds, parameter-matched baseline.
+              Error bars, the full table and the one result that went against me are in the research section.
+            </p>
           </div>
         </div>
 
-        {/* ══ METRICS ═══════════════════════════════════════════ */}
-        <div className="hx-metrics tmp-scroll-trigger tmp-fade-in animation-order-2">
-          {metrics.map((m) => (
-            <div className="hx-metric" key={m.l}>
-              <div className="hx-metric-v">{m.v}</div>
-              <div className="hx-metric-l">{m.l}</div>
-              <div className="hx-metric-s">{m.s}</div>
-            </div>
-          ))}
-        </div>
+        {/* ══ 4 · where the three live things are ══════════════ */}
+        <div className="tmp-scroll-trigger tmp-fade-in animation-order-2">
+          <div className="hx-lanes">
+            {lanes.map((l) => (
+              <a
+                className={`hx-lane is-${l.state}`}
+                key={l.name}
+                href={l.href}
+                {...(l.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+              >
+                <span className={`hx-lane-k`}><span className="hx-lane-dot" />{l.tag}</span>
+                <span className="hx-lane-n">{l.name}</span>
+                <span className="hx-lane-l">{l.line}</span>
+                <span className="hx-lane-go">
+                  {l.cta} <Icon name={l.external ? 'externalLink' : 'arrowRight'} size={12} />
+                </span>
+              </a>
+            ))}
+          </div>
 
-        <div className="tmp-scroll-trigger tmp-fade-in animation-order-4">
+          <p className="hx-before">
+            <b>Everything before that —</b> <a href="#oximo">OXIMO</a>, 40,933 lines of an operating system
+            where agents hire their own staff · <a href="#black-bloxie">Black Bloxie LTD</a>, a real company I
+            spent twelve months trying to disprove myself with · <a href="#ventures">five businesses and one
+            exit</a>, all of it before I turned eighteen.
+          </p>
+
           <a href="#recognition" className="hx-cue">
-            Start from the outside signal
+            Start where other people judged it
             <span className="hx-cue-i"><Icon name="arrowDown" size={15} /></span>
           </a>
         </div>

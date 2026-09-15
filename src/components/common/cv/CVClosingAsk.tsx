@@ -6,8 +6,8 @@ export default function CVClosingAsk() {
       id="contact"
       phase="about"
       eyebrow="What Comes Next"
-      title="If you got this far."
-      lead="The work is documented and reproducible. Here is the one thing each kind of reader could do that would move something forward."
+      title="You read the whole thing."
+      lead="Then you already know more about this work than almost anybody alive. One thing each kind of reader could do from here that would genuinely move it forward."
       last
     >
       <style>{`
@@ -114,7 +114,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">ML Researchers &amp; Reviewers</div>
             <p className="ask-body">
-              The preprint is on Zenodo and the codebase reproduces every experiment in under an hour on one GPU. The place scrutiny would help most is the ISS local stability characterization. If you find an error in it, or a tighter bound, I would genuinely rather hear it from you than find out later.
+              The preprint is on Zenodo and the codebase reproduces all 383 runs in under an hour on one GPU. The place I most want someone looking is the ISS stability result. If there is an error in it, or a tighter bound available, I would far rather hear it from you now than find out from a reviewer in six months.
             </p>
             <a className="ask-action" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
               Read the Preprint
@@ -138,7 +138,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">Engineers &amp; Builders</div>
             <p className="ask-body">
-              One script, reproduce.sh, runs every experiment in the paper. The OXIMO architecture is documented inside the codebase. Build on it, extend it, or go looking for the flaw — the code is there and the results check out or they do not.
+              One script, reproduce.sh, runs every experiment in the paper. Build on it, extend it, or go hunting for the flaw. The code is sitting there and either the numbers come out or they do not.
             </p>
             <a className="ask-action" href="https://anonymous.4open.science/r/ormas-EB73/README.md" target="_blank" rel="noreferrer">
               Explore the Codebase

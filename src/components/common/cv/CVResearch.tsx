@@ -83,15 +83,16 @@ export default function CVResearch() {
       id="research"
       phase="now"
       eyebrow="ORMAS · The Research"
-      title="A neural network that can watch itself."
+      title="ORMAS: the network that knows which part of itself is broken."
       lead={
         <>
-          Global backpropagation diffuses every error signal across every parameter at once, so when a
-          network fails there is no quantity anywhere inside it that says which part failed. That is not
-          a difficulty — it is a thing the mathematics never computed.{' '}
-          <strong>Bound each node&apos;s local gradient chain to four operations and the attribution
-          becomes a measurement instead of an estimate.</strong> This section is the whole argument,
-          with the conditions on every figure and the one result that went against me.
+          SHAP, LIME, integrated gradients, attention maps, probing classifiers, circuit discovery. All of
+          it works the same way: wait until the model has made up its mind, then stand outside it and
+          reconstruct what must have happened. The reconstruction is often good. It is never checkable.{' '}
+          <strong>I built the other thing.</strong> A network where the account is produced by the same
+          arithmetic that does the learning, so there is nothing to reconstruct and nothing to take on
+          faith. What follows is the entire argument, every number, and the one experiment that went
+          against me.
         </>
       }
       meta={[
