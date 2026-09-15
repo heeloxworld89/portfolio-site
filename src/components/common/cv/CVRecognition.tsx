@@ -4,14 +4,15 @@ export default function CVRecognition() {
     <CVSection
       id="recognition"
       phase="now"
-      eyebrow="Outside Signal"
-      title="Three outside reads, and not one of them found me by accident."
+      eyebrow="Recent · Jul – Dec 2026"
+      title="All of this happened in the last three months."
       lead={
         <>
-          A NeurIPS workshop put me on its programme committee. Cosmos read the work and ranked it first in
-          their cycle. Entrepreneur First read me and had a call booked inside twelve hours.{' '}
-          <strong>Those three measure completely different things, and I am not going to blur them
-          together to make the page look better.</strong> So: what each one proves, and what it doesn&apos;t.
+          July: Cosmos ranked the work first in their cycle. August: Entrepreneur First went from cold
+          application to a booked call in twelve hours. September: two rounds into The Bridge in San
+          Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
+          <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
+          proves — and, because it matters more, what it doesn&apos;t.
         </>
       }
     >
@@ -28,8 +29,35 @@ export default function CVRecognition() {
         .rec-logo-row {
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          gap: 14px;
           margin-bottom: 18px;
         }
+        /* Date stamp — same treatment on every entry, so the section reads
+           as a dated record rather than a set of unrelated claims. */
+        .rec-date {
+          display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+          font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px;
+          text-transform: uppercase; color: var(--pf-ink-3);
+          background: var(--pf-surface-2);
+          border: 1px solid var(--pf-border);
+          border-radius: 999px; padding: 6px 13px;
+        }
+        .rec-date svg { opacity: 0.6; }
+        .rec-date.is-live {
+          color: var(--pf-pos);
+          background: rgba(var(--pf-pos-rgb), 0.08);
+          border-color: rgba(var(--pf-pos-rgb), 0.32);
+        }
+        .rec-date-dot {
+          width: 6px; height: 6px; border-radius: 50%; background: currentColor;
+          animation: recLive 2.2s ease-in-out infinite;
+        }
+        @keyframes recLive {
+          0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(var(--pf-pos-rgb), 0.45); }
+          70%      { opacity: 0.5; box-shadow: 0 0 0 6px rgba(var(--pf-pos-rgb), 0); }
+        }
+        @media (prefers-reduced-motion: reduce) { .rec-date-dot { animation: none; } }
         .rec-logo-chip {
           display: inline-flex;
           align-items: center;
@@ -96,6 +124,29 @@ export default function CVRecognition() {
           margin-top: 3px;
         }
         @media (max-width: 900px) { .rec-grid { grid-template-columns: 1fr !important; } }
+        /* Run of months — the section's argument is momentum, so show it
+           before any of the individual entries. */
+        .rec-run {
+          display: grid; grid-template-columns: repeat(4, 1fr);
+          gap: 1px; background: var(--pf-border);
+          border: 1px solid var(--pf-border);
+          border-radius: 10px; overflow: hidden; margin-bottom: 26px;
+        }
+        @media (max-width: 860px) { .rec-run { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 460px) { .rec-run { grid-template-columns: 1fr; } }
+        .rec-run-cell { background: var(--pf-surface); padding: 15px 17px; }
+        .rec-run-cell.is-live { background: rgba(var(--pf-pos-rgb), 0.05); }
+        .rec-run-cell.is-ahead { background: var(--pf-surface-2); }
+        .rec-run-m {
+          display: flex; align-items: center; gap: 7px;
+          font-size: 14px; font-weight: 800; letter-spacing: -0.2px;
+          color: var(--pf-ink); margin-bottom: 6px;
+        }
+        .rec-run-m span { font-size: 11px; font-weight: 700; color: var(--pf-ink-4); letter-spacing: 0.5px; }
+        .rec-run-cell.is-live .rec-run-m { color: var(--pf-pos); }
+        .rec-run-who { font-size: 12.5px; font-weight: 700; color: var(--pf-ink-2); margin-bottom: 3px; }
+        .rec-run-what { font-size: 11.5px; line-height: 1.5; color: var(--pf-ink-3); }
+
         .rec-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -160,7 +211,7 @@ export default function CVRecognition() {
           flex: 1; min-width: 220px;
         }
         .rec-status-k {
-          font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px;
+          font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
           text-transform: uppercase; color: var(--pf-ink-3);
         }
         .rec-status-v { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); }
@@ -178,8 +229,8 @@ export default function CVRecognition() {
           color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.07);
           border: 1px solid rgba(var(--pf-ink-rgb), 0.2);
         }
-        .rec-stage.is-done { color: var(--pf-pos); background: rgba(var(--pf-pos-rgb), 0.08); border-color: rgba(var(--pf-pos-rgb), 0.28); }
-        .rec-stage.is-live { color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.08); border-color: rgba(var(--pf-accent-rgb), 0.3); }
+        .rec-stage.is-done { color: var(--pf-ink-2); background: var(--pf-surface-2); border-color: var(--pf-border); }
+        .rec-stage.is-live { color: var(--pf-pos); background: rgba(var(--pf-pos-rgb), 0.08); border-color: rgba(var(--pf-pos-rgb), 0.32); }
         .rec-stage-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
         .rec-stage.is-live .rec-stage-dot { animation: recStagePulse 2.2s ease-in-out infinite; }
         @keyframes recStagePulse {
@@ -286,6 +337,24 @@ export default function CVRecognition() {
 
       <div>
 
+        <div className="rec-run">
+          {[
+            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked first in cycle', state: 'done' },
+            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
+            { m: 'Sep', y: '2026', who: 'The Bridge · EF', what: 'Two interviews in, decision pending', state: 'live' },
+            { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
+          ].map((r) => (
+            <div className={`rec-run-cell is-${r.state}`} key={r.m}>
+              <div className="rec-run-m">
+                {r.state === 'live' ? <span className="rec-date-dot" aria-hidden="true" /> : null}
+                {r.m} <span>{r.y}</span>
+              </div>
+              <div className="rec-run-who">{r.who}</div>
+              <div className="rec-run-what">{r.what}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="rec-grid">
           {/* NeurIPS — AI4GOOD workshop programme committee */}
           <div className="rec-card">
@@ -293,6 +362,7 @@ export default function CVRecognition() {
               <div className="rec-logo-chip on-white">
                 <img src="/assets/images/logos/neurips.svg" alt="NeurIPS" />
               </div>
+              <span className="rec-date">Dec 2026</span>
             </div>
             <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
             <h3 className="rec-name">I Review for a NeurIPS Workshop</h3>
@@ -322,6 +392,7 @@ export default function CVRecognition() {
               <div className="rec-logo-chip on-white">
                 <img src="/assets/images/logos/cosmos-institute.svg" alt="Cosmos Institute" />
               </div>
+              <span className="rec-date">Jul 2026</span>
             </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
             <h3 className="rec-name">They Ranked It First in the Cycle, Then Told Me Why They Still Wouldn’t Fund It</h3>
@@ -350,10 +421,11 @@ export default function CVRecognition() {
         <div className="rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-dark">
-              <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" style={{ height: '11px' }} />
+              <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
             </div>
+            <span className="rec-date">Aug 2026</span>
           </div>
-          <div className="rec-tag">Entrepreneur First · Talent Team · Gate 1 Screen</div>
+          <div className="rec-tag">Entrepreneur First · London · First Screen</div>
           <h3 className="rec-name">I Hit Submit. Twelve Hours Later I Had a Call Booked With Nick Sopuch.</h3>
 
           <div className="rec-clock">
@@ -382,16 +454,17 @@ export default function CVRecognition() {
             portfolio. That was the set he was putting me in.
           </p>
           <p className="rec-body">
-            Then he asked whether I was going to finish university and I hedged. Said maybe. The truth is I am
-            building this either way, and hedging on a commitment question in a conversation whose entire purpose is
-            reading how somebody thinks was the one thing I got wrong that day. He read it exactly right. So let me
-            answer it properly here: I have already done the coursework, MITx and Coursera and fifty-five programme
-            certificates of it, and if I ever go it will be for the people, not the material.
-            <strong> Money changes how fast this gets built. It does not change whether it gets built.</strong>
+            Fifteen minutes, by design. EF are explicit that a first screen is not about the idea — it is about how
+            somebody thinks. We covered why the black box is an architecture problem rather than a tooling one, the
+            three signals, and where I want to take it. He asked whether I planned to finish university, and the
+            answer I gave him is the one on this page: I have already done the coursework, MITx and Coursera and
+            fifty-five programme certificates of it, and if I ever go it will be for the people rather than the
+            material. <strong>Money changes how fast this gets built. It does not change whether it gets
+            built.</strong>
           </p>
           <p className="rec-body">
-            That call did not resolve into a yes or a no. It resolved into a longer process, and the process is
-            still running — two interviews deep into The Bridge, as of the line below.
+            It was a first conversation and it did what a first conversation does. The one below is where it went
+            next.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
@@ -399,8 +472,8 @@ export default function CVRecognition() {
               <span className="rec-stat-lbl">Submit → Call Booked</span>
             </div>
             <div className="rec-stat">
-              <span className="rec-stat-val">Gate 1</span>
-              <span className="rec-stat-lbl">Talent Team Screen</span>
+              <span className="rec-stat-val">15 min</span>
+              <span className="rec-stat-lbl">First Screen · London</span>
             </div>
           </div>
         </div>
@@ -413,10 +486,13 @@ export default function CVRecognition() {
               <img src="/assets/images/logos/the-bridge.png" alt="The Bridge" />
             </span>
             <span className="rec-status-meta">
-              <span className="rec-status-k">Live · Entrepreneur First</span>
+              <span className="rec-status-k">Entrepreneur First</span>
               <span className="rec-status-t">The Bridge — San Francisco</span>
             </span>
-            <span className="rec-status-d">As of Sep 2026</span>
+            <span className="rec-date is-live">
+              <span className="rec-date-dot" aria-hidden="true" />
+              Sep 2026 · In Progress
+            </span>
           </div>
 
           <p className="rec-status-v">
@@ -426,8 +502,9 @@ export default function CVRecognition() {
             runs for founders who already have something built rather than an idea to test.
           </p>
           <p className="rec-status-v">
-            I am in the selection process. <strong>Two interview rounds are behind me</strong> and the
-            decision sits with EF. I will update this line when it moves, whichever way it goes.
+            This one is happening right now. <strong>Two interview rounds are behind me</strong>, EF have the
+            decision, and nothing has come back yet. That is the whole of it as of September 2026 — this
+            line gets updated the day it moves.
           </p>
 
           <span className="rec-stages">
@@ -456,10 +533,10 @@ export default function CVRecognition() {
             it, it holds up.</strong>
           </p>
           <p className="rec-verdict-body">
-            <strong>EF read me.</strong> Fifteen minutes, by design, weighted towards how I think rather than what
-            I have built. It produced no verdict at all — it produced a longer process, which is where it still
-            sits. Both of these happened in a field where a PhD is the baseline and an eighteen-year-old without one
-            is not, and neither organisation marked the work down for coming out of Dhaka.
+            <strong>EF read me.</strong> Fifteen minutes in London in August, weighted towards how I think rather
+            than what I have built, and it opened a conversation that is still going — two rounds into The Bridge
+            in September. All of this happened in a field where a PhD is the baseline and an eighteen-year-old
+            without one is not, and nobody marked the work down for coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">
             Now what they do not establish. No funding, no offer, no advisor. An open process is not an

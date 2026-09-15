@@ -395,7 +395,7 @@ export default function CVWhoIAm() {
         </div>
 
         <p className="wi-standing-note">
-          The two outside reads are in <a href="#recognition">Recognition</a>, directly above. The five ventures
+          The last three months are in <a href="#recognition">Recent</a>, directly above. The five ventures
           are in <a href="#ventures">Ventures</a>; credentials and the honest account of what I traded away are in{' '}
           <a href="#education">Education</a>.
         </p>

@@ -366,7 +366,7 @@ export default function Hero(_props?: any) {
           </p>
 
           <a href="#recognition" className="hx-cue">
-            Start where other people judged it
+            Start with the last three months
             <span className="hx-cue-i"><Icon name="arrowDown" size={15} /></span>
           </a>
         </div>
