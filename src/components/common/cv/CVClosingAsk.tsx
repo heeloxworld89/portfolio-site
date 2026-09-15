@@ -1,7 +1,15 @@
 import Icon from '@/components/common/Icon';
+import CVSection from './CVSection';
 export default function CVClosingAsk() {
   return (
-    <div className="row mb--50" id="contact">
+    <CVSection
+      id="contact"
+      phase="about"
+      eyebrow="What Comes Next"
+      title="If you got this far."
+      lead="The work is documented and reproducible. Here is the one thing each kind of reader could do that would move something forward."
+      last
+    >
       <style>{`
         /* ─── Closing Ask — scoped to .ask-* ─── */
 
@@ -99,17 +107,7 @@ export default function CVClosingAsk() {
         @media (prefers-reduced-motion: reduce) { .ask-site-dot { animation: none; } }
       `}</style>
 
-      <div className="col-12">
-
-        <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
-          What Comes Next
-        </span>
-        <h2 className="title fs-2" style={{ fontWeight: 700, marginBottom: '6px' }}>
-          If You Got This Far
-        </h2>
-        <p style={{ fontSize: '15px', color: '#9aa4b0', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.75' }}>
-          The work is documented and reproducible. Here is the one thing each kind of reader could do that would move something forward.
-        </p>
+      <div>
 
         <div className="ask-grid">
           <div className="ask-card">
@@ -128,11 +126,11 @@ export default function CVClosingAsk() {
             <div className="ask-for">For</div>
             <div className="ask-audience">Investors &amp; Operators</div>
             <p className="ask-body">
-              The next phase needs two things: multi-node H100/A100 compute for Transformer-scale validation, and institutional pilot environments where OXIMO can run against real proprietary data. If you have either, that is the conversation worth having.
+              The next phase needs two things: multi-node compute for Transformer-scale validation, and a dataset partner willing to let the architecture run against data that carries a real obligation. If you have either, that is the conversation worth having. The round, the milestones and the risk register are set out in full on the company site.
             </p>
-            <a className="ask-action" href="#fundraising">
-              The Fundraising Case
-              <Icon name="arrowRight" size={14} />
+            <a className="ask-action" href="https://oxiedo.com/invest" target="_blank" rel="noreferrer">
+              The Investment Case
+              <Icon name="externalLink" size={14} />
             </a>
           </div>
 
@@ -161,10 +159,6 @@ export default function CVClosingAsk() {
         </div>
 
       </div>
-
-      <div className="col-12">
-        <hr className="my-5" style={{ borderColor: 'rgba(255,255,255,0.05)' }} />
-      </div>
-    </div>
+    </CVSection>
   );
 }

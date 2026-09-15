@@ -1,5 +1,5 @@
 /**
- * OXIEDO — the boundary comparison.
+ * The boundary comparison.
  *
  * The single fact that decides whether a regulated institution can buy anything
  * at all is: does our data have to cross the wall? Everything else in the
@@ -7,27 +7,27 @@
  * about. Not a feature grid — a wall, and what crosses it.
  */
 
-const layers = [
+const delivered = [
   {
-    n: 'Layer 1',
-    name: 'OXIMO',
-    what: 'The operating system. Agents that decompose work, hire specialists when no skill exists, and remember across sessions.',
-    removes: 'The human in the middle of every task.',
+    n: '01',
+    name: 'The model',
+    what: 'Deploys exactly as it would have done. Same architecture, same inference cost, no change to the serving path.',
+    removes: 'Nothing. That is the point — the trade is not capability for accountability.',
     status: 'built',
   },
   {
-    n: 'Layer 2',
-    name: 'ORMAS',
-    what: 'The training architecture. Per-node self-assessment, health-gated repair, and a causal audit trail emitted natively.',
-    removes: 'The black box — and with it, the reason regulated data stays locked.',
+    n: '02',
+    name: 'The named parts',
+    what: 'What the model learned from each source, held as a discrete addressable object, bound to the record of the data that justified it.',
+    removes: 'The dead end where data enters a model and stops being something anyone can point at.',
     status: 'built',
   },
   {
-    n: 'Layer 3',
-    name: 'Project Cherry',
-    what: 'A model trained by ORMAS from scratch, owned by the institution it runs inside.',
-    removes: 'The external API dependency — the last thing that forces data across the wall.',
-    status: 'unbuilt',
+    n: '03',
+    name: 'The record',
+    what: 'Every change training made: which component, at which step, under which diagnosis, by how much, inside what declared limit. Signed, and diffable against the last approved version.',
+    removes: 'The estimate. An auditor gets a log instead of somebody’s reconstruction.',
+    status: 'built',
   },
 ];
 
@@ -197,12 +197,12 @@ export default function OxidoVisualization() {
 
         {/* ══ OXIEDO ═══════════════════════════════════════════════════ */}
         <div className="ovz-panel is-oxido">
-          <div className="ovz-eyebrow">The OXIEDO stack</div>
-          <h4 className="ovz-title">The Intelligence Is Yours</h4>
+          <div className="ovz-eyebrow">With ORMAS</div>
+          <h4 className="ovz-title">The Training Happens Inside</h4>
           <p className="ovz-sub">So nothing has to cross the wall at all.</p>
 
           <svg className="ovz-svg" viewBox="0 0 460 290" role="img"
-               aria-label="In the OXIEDO stack all three layers — the agent operating system, the training architecture, and the model itself — sit inside your infrastructure. Data circulates internally and never crosses the boundary.">
+               aria-label="With ORMAS the training architecture, the resulting model and the record it produces all sit inside your own infrastructure. Data circulates internally and never crosses the boundary.">
             <defs>
               <pattern id="ovzGridB" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M20 0H0V20" fill="none" stroke="#1b1e22" strokeWidth="1" />
@@ -225,9 +225,9 @@ export default function OxidoVisualization() {
 
             {/* three layers */}
             {[
-              { y: 66,  n: 'OXIMO',  s: 'agents that organise themselves', c: '#c4cfde' },
-              { y: 126, n: 'ORMAS',  s: 'trains on it · audits itself',     c: '#c4cfde' },
-              { y: 186, n: 'CHERRY', s: 'the model you own',                c: '#7fd88f' },
+              { y: 66,  n: 'ORMAS',  s: 'trains on it, in your building',  c: '#c4cfde' },
+              { y: 126, n: 'THE MODEL', s: 'yours, same cost as ever',      c: '#c4cfde' },
+              { y: 186, n: 'THE RECORD', s: 'the account, signed',          c: '#7fd88f' },
             ].map((l) => (
               <g key={l.n}>
                 <rect className="ovz-layerglow" x="188" y={l.y} width="164" height="44" rx="7" fill={l.c} />
@@ -253,15 +253,15 @@ export default function OxidoVisualization() {
 
           <p className="ovz-caption">
             Same wall, everything inside it. That is not a privacy feature bolted on — it is{' '}
-            <span className="good">the only configuration these buyers can legally deploy</span>, and it is why all
-            three layers had to exist.
+            <span className="good">the only configuration these buyers can legally deploy</span>, and it is the
+            reason the account has to be produced during training rather than recovered afterwards.
           </p>
         </div>
       </div>
 
-      {/* ══ WHAT EACH LAYER REMOVES ═════════════════════════════════ */}
+      {/* ══ WHAT IS DELIVERED ═══════════════════════════════════════ */}
       <div className="ovz-stack">
-        {layers.map((l) => (
+        {delivered.map((l) => (
           <div className={`ovz-layer${l.status === 'unbuilt' ? ' is-unbuilt' : ''}`} key={l.name}>
             <div>
               <div className="ovz-l-n">{l.n}</div>

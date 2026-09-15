@@ -1,39 +1,5 @@
 import ExpandableSection from '../ExpandableSection';
-
-const ventures = [
-  {
-    title: 'Software Services',
-    age: 'Age 12–14',
-    lesson: 'I could build the thing. I could not get it in front of anyone. Distribution without institutional credibility or a network is not a technical problem, and enterprise procurement does not route on technical merit alone.',
-  },
-  {
-    title: 'Cold-Call Automation — European Markets',
-    age: 'Age 14–15',
-    lesson: 'Automation handled 90% of the sales cycle reliably. The last 10% — the close — needed a human in the room, every time. Trust in an autonomous agent has a hard ceiling at the transaction, and that ceiling became a design constraint I carried into OXIMO.',
-  },
-  {
-    title: 'US-Targeted Digital Marketing',
-    age: 'Age 15',
-    lesson: 'I assumed the bottleneck was distribution. It was production. I did not need something that could move content around; I needed something that could make it at volume.',
-  },
-  {
-    title: 'Organic E-Commerce',
-    age: 'Age 15–16',
-    lesson: 'Optimising pricing, or listings, or marketing individually buys you a few percent. The real problem is coordinating research, listing, pricing, fulfilment, and service at once. One person cannot be the whole system, however hard they work.',
-  },
-  {
-    title: 'Automation Tooling',
-    age: 'Age 16–17',
-    lesson: 'The last one confirmed what the previous four had been telling me: the bottleneck was never individual capability. It was always coordination.',
-  },
-];
-
-const problemToArchitecture = [
-  { from: 'Cannot distribute at scale', to: 'OXIMO — agents that self-hire specialists' },
-  { from: 'Agents break at closing', to: 'OXIMO — memory-persistent Expert agents' },
-  { from: 'Production data is adversarial', to: 'ORMAS — health-gated self-correction' },
-  { from: 'No structural stability guarantee', to: 'ISS local stability characterization' },
-];
+import CVSection from './CVSection';
 
 const skillGroups = [
   {
@@ -58,48 +24,6 @@ const skillGroups = [
   },
 ];
 
-const detailGroups = [
-  {
-    title: 'Foundation',
-    rows: [
-      { label: 'Institutional Affiliation', value: 'None' },
-      { label: 'External Funding', value: '$0' },
-      { label: 'IP Ownership', value: '100%' },
-    ],
-  },
-  {
-    title: 'ORMAS Project',
-    rows: [
-      { label: 'Codebase', value: '10,594 lines · 61 files · PyTorch' },
-      { label: 'Hardware (Experiments)', value: 'Single RTX 3090' },
-      { label: 'Hardware (Personal)', value: 'RTX 4090' },
-      { label: 'Controlled Experiments', value: '383 · 4 architectures · 6 noise regimes' },
-      { label: 'Parameter Range Tested', value: '637K – 11.24M' },
-    ],
-  },
-  {
-    title: 'OXIMO OS',
-    rows: [
-      { label: 'Production Code', value: '40,933 lines · 11 mini-repos' },
-      { label: 'Test Suite', value: '2,011 passing · 0 failures' },
-      { label: 'Refactor', value: '72% reduction from 106K-line monolith' },
-    ],
-  },
-  {
-    title: 'Black Bloxie LTD — Study Parameters',
-    rows: [
-      { label: 'Study Duration', value: '12 months · Substrate 1 complete' },
-      { label: 'Protocol', value: 'Inject → Remove → Re-inject' },
-      { label: 'Ablation Signal', value: '−91% on removal · +1,300% on re-injection' },
-      { label: 'Single Test Order (Not Revenue)', value: '$4,386 · $0.00 acquisition cost' },
-      { label: 'Advertising Spend', value: '£0' },
-      { label: 'Human Sales Hours', value: '0' },
-      { label: 'Infrastructure Cost', value: '99% reduction via specialized agent cascade' },
-      { label: 'Scale Ceiling', value: 'Self-imposed — regulatory, not architectural' },
-    ],
-  },
-];
-
 const sessions = [
   '9L1WZ9PO-bI', 'JW-WqB52ugo', 'NWz7uzN_NNQ', '2rbk0J3jp6Q', 'hBwS1rivWPA',
   'n7KlERWehl4', 'kjVlV4BVDyA', '-fH4VMbQOfk', '5O2FrndmxFo', '7OEl6Mqjjds',
@@ -111,7 +35,19 @@ const sessions = [
 
 export default function CVOriginStatement() {
   return (
-    <div className="row mb--50" id="journey">
+    <CVSection
+      id="statement"
+      phase="about"
+      eyebrow="Personal Statement"
+      title="On obsession and independent research."
+      lead={
+        <>
+          The work itself is set out above. This is about how it gets done and what is missing from it —{' '}
+          <strong>because the constraint on this programme has never been motivation, and saying so
+          plainly is more useful than another result.</strong>
+        </>
+      }
+    >
       <style>{`
         /* ─── Merged Origin + Personal Statement — scoped to .os-* ─── */
 
@@ -320,28 +256,17 @@ export default function CVOriginStatement() {
         }
       `}</style>
 
-      <div className="col-12">
+      <div>
 
-        {/* ══ HEADER ══════════════════════════════════════════════ */}
-        <div className="os-head">
-          <div className="os-overline">Origin &amp; Personal Statement</div>
-          <h2 className="os-title">On Obsession and Independent Research</h2>
-          <p className="os-byline">Dhaka, Bangladesh · 18 · No university, no advisor, no lab.</p>
-          <p className="os-lead">
-            Every system on this page came out of something that went wrong first. I did not start
-            with research and go looking for problems — the problems came first, and none of this was
-            planned. <strong>Nothing here was designed as part of a grand plan. Each piece exists
-            because the one before it hit a wall I could not engineer around.</strong>
-          </p>
-        </div>
+        <p className="os-byline">Dhaka, Bangladesh · 18 · No university, no advisor, no lab.</p>
 
         <div className="os-band">
           {[
-            { v: '5', l: 'Ventures · Ages 12–17' },
-            { v: '$10K', l: 'First Exit · Age 15' },
-            { v: '383', l: 'Controlled Experiments' },
-            { v: '+70.3 pp', l: 'Recovery Gap vs Baseline' },
-            { v: '−91% / +1,300%', l: 'Ablation Signal · 12 Months' },
+            { v: '14–16 hrs', l: 'Typical working day' },
+            { v: '28', l: 'Documented sessions' },
+            { v: '$0', l: 'External funding' },
+            { v: '1', l: 'People on the programme' },
+            { v: '100%', l: 'IP ownership' },
           ].map((s, i) => (
             <div key={i} className="os-band-cell">
               <div className="os-band-val">{s.v}</div>
@@ -350,200 +275,9 @@ export default function CVOriginStatement() {
           ))}
         </div>
 
-        {/* ══ ACT I ═══════════════════════════════════════════════ */}
-        <div className="os-act">
-          <div className="os-act-num">Part One</div>
-          <h3 className="os-act-title">Five Ventures. Five Failure Modes. One Finding.</h3>
-        </div>
-
-        <div className="os-found">
-          <div className="os-card">
-            <div className="os-card-tag">Age 12 — First Principles</div>
-            <p className="os-card-body">
-              I started programming at 12, and every project since has been built slightly past what
-              I already knew how to do. That set the pattern early: learn whatever the problem
-              demands, not whatever the curriculum offers. The habit was fixed well before I had any
-              formal exposure to computer science.
-            </p>
-          </div>
-          <div className="os-card">
-            <div className="os-card-tag">Age 15 — First Validated Output</div>
-            <p className="os-card-body">
-              I built a stock market prediction system — market data ingestion, fundamental analysis,
-              technical analysis, directional call — and sold it for roughly <strong>$10,000 USD</strong>.
-              That money bought the RTX 3090 that later ran all 383 ORMAS experiments. It was also the
-              first time somebody outside my own head confirmed the work was worth something.
-            </p>
-          </div>
-        </div>
-
-        <div className="os-body" style={{ marginBottom: '24px' }}>
-          <p className="os-p">
-            Between 12 and 17 I ran five ventures across software, automation, and e-commerce. Each
-            one broke at a structurally different layer, and each one handed me the same finding from
-            a different angle.
-          </p>
-        </div>
-
-        <div className="os-venture-list">
-          {ventures.map((v, i) => (
-            <div key={i} className="os-venture">
-              <div className="os-venture-age">{v.age}</div>
-              <div>
-                <div className="os-venture-title">{v.title}</div>
-                <div className="os-venture-lesson">{v.lesson}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="os-callout">
-          <p className="os-callout-lead">
-            No single piece of the pipeline was the problem. The pipeline was the problem — and the
-            coordination cost that makes it impossible for one person to hold at scale.
-          </p>
-          <p>
-            Five ventures failing at five different stages is, read generously, a structured
-            experiment in how businesses break. The variable was identical every time: one person
-            trying to occupy every role in a system that needs several specialists working at once.
-          </p>
-          <p>
-            <strong>The bottleneck was never individual capability. It was always coordination.</strong>
-          </p>
-        </div>
-
-        <hr className="os-rule" />
-
-        {/* ══ ACT II ══════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
-          <div className="os-act-num">Part Two</div>
-          <h3 className="os-act-title">What That Forced Me to Build</h3>
-        </div>
-
-        <div className="os-body">
-          <p className="os-p">
-            A structural problem needs a structural answer. <strong>OXIMO</strong> was mine — an
-            operating system where AI agents could actually run a company: building their own org
-            chart on demand, splitting work without being told how, and creating new agent roles when
-            the job called for them. Hiring, executing, and coordinating with no human in the loop.
-          </p>
-          <p className="os-p">
-            Which immediately produced a second problem I had not planned for. Those agents needed to
-            learn from real production data — and real production data, unlike any benchmark, is
-            adversarial by default: contradictions, noise, missing signals, corrupt labels. Every
-            state-of-the-art noise-handling method I tested — DivideMix, ProMix, CoDE — collapsed the
-            moment the data stopped being curated.
-          </p>
-
-          <div className="os-pull">
-            The gap between research benchmarks and production reality is not a fine-tuning problem.
-            It is a structural one.
-          </div>
-
-          <p className="os-p">
-            So the answer had to be architectural. Backpropagation has been unchanged since 1986 — a
-            single global loss signal distributed uniformly across every node, with no mechanism for
-            any node to evaluate its own state. A network trained on corrupted labels has no internal
-            alarm system. It learns the wrong thing silently and confidently. I could not accept that
-            as a constraint to engineer around. I decided to engineer the constraint out.
-          </p>
-          <p className="os-p">
-            <strong>ORMAS</strong> is the result: a three-signal training architecture with per-node
-            structural self-assessment. Every node maintains its own local loss anchor — a
-            4,416-parameter bottleneck that is mathematically incapable of memorizing noise. A
-            health-gated correction engine monitors seven structural pathology types in real time and
-            executes selective rollback with expert immunity. The network does not just train. It
-            observes itself training.
-          </p>
-          <p className="os-p">
-            Building it meant going well below the level of standard ML engineering. Custom training
-            loops. Custom telemetry emitting 23,000+ diagnostic signals per run, every correction
-            causally tagged to its pathology, node, and epoch. I derived an{' '}
-            <strong>Input-to-State Stability (ISS) local stability characterization</strong> — the
-            first formal stability result for any self-correcting neural architecture — and validated
-            it across 383 controlled experiments on four architectures, from 637K to 11M parameters,
-            on a single RTX 3090.
-          </p>
-
-          <div className="os-callout">
-            <p className="os-callout-lead">
-              The result that surprised me most was not the recovery.
-            </p>
-            <p>
-              It was the emergence of zero-shot compositional generalization — training on shapes and
-              colors separately, then testing on unseen combinations. ORMAS reached{' '}
-              <strong>58.8% on novel pairings against 25% chance</strong>, with no replay buffers and
-              no architectural tricks. Neural networks can generalize. They just need internal
-              structure that supports it.
-            </p>
-          </div>
-        </div>
-
-        <div style={{ marginTop: '30px' }}>
-          <ExpandableSection
-            closedLabel="Every problem, and the architecture it produced"
-            hint="The direct mapping from each venture failure to the component that exists because of it — plus full codebase, hardware, and test-suite numbers for all three systems."
-            meta={['Problem → architecture map', '4 reference tables', 'Codebase & hardware']}
-          >
-            <div className="os-map" style={{ marginBottom: '18px' }}>
-              <div className="os-map-head">From Problem → Architecture</div>
-              {problemToArchitecture.map((r, i) => (
-                <div key={i} className="os-map-row">
-                  <div className="os-map-from">{r.from}</div>
-                  <div className="os-map-arrow">→</div>
-                  <div className="os-map-to">{r.to}</div>
-                </div>
-              ))}
-            </div>
-            {detailGroups.map((g, i) => (
-              <div key={i} className="os-detail">
-                <div className="os-detail-head">{g.title}</div>
-                {g.rows.map((r, j) => (
-                  <div key={j} className="os-detail-row">
-                    <div className="os-detail-label">{r.label}</div>
-                    <div className="os-detail-value">{r.value}</div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </ExpandableSection>
-        </div>
-
-        <hr className="os-rule" />
-
-        {/* ══ ACT III ═════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
-          <div className="os-act-num">Part Three</div>
-          <h3 className="os-act-title">Proving It Outside the Lab</h3>
-        </div>
-
-        <div className="os-body">
-          <p className="os-p">
-            OXIMO — the operating system that started all of this — is also the empirical proof that
-            the architecture works outside a controlled setting. I deployed it inside{' '}
-            <strong>Black Bloxie LTD</strong>, a UK holding company I registered at seventeen, and ran
-            it as a twelve-month falsification exercise rather than a business: seven escalating
-            tests, each one a chance to prove myself wrong in public. Every rung is answered, in
-            order, in the{' '}
-            <a href="#deployment" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
-              Deployment section
-            </a>
-            . The mechanism was confirmed causally, not merely correlated.
-          </p>
-          <p className="os-p">
-            I stopped it there deliberately. The architecture was not the limit; the law was. No
-            jurisdiction currently assigns commercial liability to an autonomous agent, and I was not
-            willing to discover where that boundary sits by running a live company through it. Holding
-            the study at research grade cost me the bigger number and bought me a clean result, which
-            was the correct trade for what I was trying to prove.
-          </p>
-        </div>
-
-        <hr className="os-rule" />
-
         {/* ══ ACT IV ══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
-          <div className="os-act-num">Part Four</div>
+          <div className="os-act-num">Part One</div>
           <h3 className="os-act-title">How the Work Actually Gets Done</h3>
         </div>
 
@@ -605,7 +339,7 @@ export default function CVOriginStatement() {
 
         {/* ══ ACT V ═══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
-          <div className="os-act-num">Part Five</div>
+          <div className="os-act-num">Part Two</div>
           <h3 className="os-act-title">What Is Still Missing</h3>
         </div>
 
@@ -622,13 +356,11 @@ export default function CVOriginStatement() {
             catch errors before they compound.
           </p>
           <p className="os-p">
-            The{' '}
-            <a href="#oxiedo" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
-              OXIEDO roadmap
-            </a>{' '}
-            is what happens next, in order. This is a different list: not a phased plan, but the three
-            external resources that phase depends on. They run in parallel, and none depends on the
-            others.
+            What the company does next is set out at{' '}
+            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
+              oxiedo.com
+            </a>. This is a different list — not a plan, but the three external things that plan depends
+            on. They run in parallel, and none depends on the others.
           </p>
         </div>
 
@@ -662,16 +394,13 @@ export default function CVOriginStatement() {
             The infrastructure for the next phase — Transformer-scale validation, Project Cherry,
             formal peer review of the ISS result — requires exactly the kind of institutional
             environment I have been building without. That is the direct and honest reason I am
-            raising. Not for validation. For leverage.
+            raising, and it is not for validation. It is for leverage.
           </p>
         </div>
 
         <div className="os-sign">Rokib Al Dhin Raadh — Dhaka, Bangladesh — 2026</div>
       </div>
 
-      <div className="col-12">
-        <hr className="my-5" style={{ borderColor: 'rgba(255,255,255,0.06)' }} />
-      </div>
-    </div>
+    </CVSection>
   );
 }

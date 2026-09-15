@@ -31,73 +31,82 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '15',
     year: '2023',
     kind: 'proof',
-    title: 'Sold a stock-prediction system for ~$10,000',
-    body: 'The first time someone outside my own head confirmed the work was worth something. The money bought the RTX 3090 that later ran all 383 ORMAS experiments.',
+    title: 'Built and sold a stock-prediction system',
+    body: 'The first time someone outside my own head priced the work — around $10,000. The money bought the RTX 3090 that later ran all 383 ORMAS experiments.',
   },
   {
     age: '16–17',
-    year: '2024',
+    year: '2023–25',
     kind: 'build',
-    title: 'OXIMO — agents that hire agents',
-    body: 'A structural problem needed a structural answer. Rebuilt from a 106,000-line monolith to 40,933 lines with all 12 algorithms ported verbatim and 2,011 tests green.',
+    title: 'OXIMO — the structural answer to coordination',
+    body: 'Agents that decompose work and hire a specialist when none exists. Rebuilt from a 106,000-line monolith to 40,933 lines with every algorithm ported and 2,011 tests green. Closed now, and on this page as prior work.',
   },
   {
     age: '17',
-    year: '2025',
+    year: '2025–26',
     kind: 'build',
-    title: 'Registered Black Bloxie LTD · derived the ISS result',
-    body: 'A UK company set up to be a laboratory rather than a business. In the same period I derived the first formal stability characterization for a self-correcting architecture — at seventeen, with no advisor.',
+    title: 'Black Bloxie LTD — twelve months of trying to disprove it',
+    body: 'A real UK company built to be a test environment rather than a business. Remove the system, measure. Put it back, measure. −91% and +1,300%. It also found the wall: the models underneath could not handle the company’s own messy data.',
   },
   {
     age: '17–18',
     year: '2025–26',
     kind: 'build',
     title: 'ORMAS — 383 experiments on one GPU',
-    body: 'Four architecture families, six noise regimes. A network that diagnoses its own damage mid-training and repairs it: 80.3% recovery where parameter-matched baselines flatline at 10.0% forever.',
+    body: 'The wall turned into the research. Four architecture families, six noise regimes. A network that diagnoses its own damage mid-training and repairs it: 80.3% recovery where parameter-matched baselines flatline at 10.0% permanently.',
   },
   {
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'Preprint live · submitted to AAAI 2027 · ablation closed',
-    body: 'The twelve-month lesion study closed on the live company. ORMAS went up on Zenodo with a codebase that reproduces every run, and into the AAAI 2027 main technical track for anonymous review. First time the work left my own head and was read by people qualified to judge it.',
+    title: 'OXIEDO goes live',
+    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live, submitted to AAAI 2027, and the architecture released in full on publication.',
   },
 ];
 
 const systems = [
   {
     name: 'ORMAS',
-    role: 'The architecture',
+    role: 'The research',
     line: 'A network that reports its own damage and repairs it mid-training.',
     stat: '80.3%',
     statLbl: 'recovery · baseline 10.0%',
     href: '#research',
-    state: 'AAAI 2027 · submitted',
+    state: 'Current work',
+  },
+  {
+    name: 'OXIEDO',
+    role: 'The business',
+    line: 'The company licensing the architecture to institutions that hold locked data.',
+    stat: 'Live',
+    statLbl: 'oxiedo.com · five sectors',
+    href: '#oxiedo',
+    state: 'Live',
   },
   {
     name: 'OXIMO',
-    role: 'The operating system',
-    line: 'Agents that decompose work and hire the specialist when none exists.',
+    role: 'Prior work',
+    line: 'An operating system where agents decompose work and hire their own specialists.',
     stat: '40,933',
     statLbl: 'lines · 2,011 tests green',
-    href: '#engineering',
-    state: 'Production',
+    href: '#oximo',
+    state: 'Closed',
   },
   {
     name: 'Black Bloxie',
-    role: 'The laboratory',
-    line: 'A real UK company run by agents, used to try to falsify the thesis.',
+    role: 'The experiment on OXIMO',
+    line: 'A real UK company used as a test environment, to see whether the system caused the output.',
     stat: '−91% / +1,300%',
-    statLbl: '12-month causal ablation',
-    href: '#deployment',
-    state: 'Study closed',
+    statLbl: '12-month lesion study',
+    href: '#black-bloxie',
+    state: 'Closed',
   },
   {
     name: 'Project Cherry',
-    role: 'The endpoint',
-    line: 'A growing mesh of specialists the institution owns outright.',
-    stat: 'Layer 3',
-    statLbl: 'specified · compute-gated',
+    role: 'Planned',
+    line: 'Letting a network change its own shape. Specified, and not started.',
+    stat: '—',
+    statLbl: 'nothing measured yet',
     href: '#cherry',
     state: 'Not built',
   },
@@ -105,9 +114,9 @@ const systems = [
 
 const router = [
   { a: 'ML Researcher / Reviewer', d: 'The stability result, all 383 runs, the telemetry design, and every table — including the ones where the result goes against me.', h: '#research', l: 'Research' },
-  { a: 'VC / Angel Investor', d: 'Why this licenses to institutions rather than selling as SaaS, what incumbents structurally cannot do, and the causal evidence behind both.', h: '#oxiedo', l: 'OXIEDO' },
-  { a: 'Engineer / Developer', d: 'Architecture internals, 40,933 lines, 2,011 tests. One script reproduces every experiment in under an hour.', h: '#engineering', l: 'Engineering' },
-  { a: 'Enterprise Operator', d: 'Twelve months of deployment data, the ablation method behind it, and two full reports to download.', h: '#deployment', l: 'Deployment' },
+  { a: 'VC / Angel Investor', d: 'What the company sells, who pays for it, and where it honestly stands. The full case is on oxiedo.com.', h: '#oxiedo', l: 'Business' },
+  { a: 'Engineer / Developer', d: 'The agent operating system: 40,933 lines, 2,011 tests, and how a sentence became an org chart.', h: '#oximo', l: 'OXIMO' },
+  { a: 'Operator / Sceptic', d: 'Twelve months of trying to falsify my own thesis on a live company, and the money stated plainly.', h: '#black-bloxie', l: 'Black Bloxie' },
 ];
 
 export default function CVWhoIAm() {
@@ -299,7 +308,7 @@ export default function CVWhoIAm() {
           Who I Am
         </span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: '#fff' }}>
-          Six Years, One Through-Line
+          One research result, one company, and the work that led to both
         </h2>
 
         {/* ── The founder video carries the introduction itself — no filler
@@ -321,12 +330,13 @@ export default function CVWhoIAm() {
             <h3 className="wi-why-h">Rokib Al Dhin Raadh — 18, Dhaka, Bangladesh.</h3>
             <p className="wi-why-p">
               I did not start with research and go looking for problems. Five ventures failed at five different
-              layers between the ages of twelve and seventeen, and all five returned the same finding. Everything on
-              this page exists because of what that finding forced me to build next.
+              layers between the ages of twelve and seventeen, all five returned the same finding, and everything
+              after that exists because of what the finding forced me to build.
             </p>
             <p className="wi-why-p">
-              <strong>Nothing here was planned.</strong> Each piece exists because the one before it hit a wall I
-              could not engineer around.
+              <strong>Two of those things are live and two are closed.</strong> ORMAS is the research and OXIEDO is
+              the company built on it. OXIMO and the twelve-month experiment that ran on it are finished work, kept
+              here because they are where the research question came from.
             </p>
             <p className="wi-why-cap">
               In the video — the three verticals this is aimed at, why none of them work today, and ORMAS.
@@ -334,7 +344,7 @@ export default function CVWhoIAm() {
           </div>
         </div>
 
-        <div className="wi-label">The Through-Line</div>
+        <div className="wi-label">How It Actually Happened</div>
         <div className="wi-tl">
           {timeline.map((t) => (
             <div className="wi-tl-row" key={t.title}>
@@ -360,7 +370,7 @@ export default function CVWhoIAm() {
         </div>
 
         {/* ══ SYSTEMS ════════════════════════════════════════════ */}
-        <div className="wi-label">What Came Out of It</div>
+        <div className="wi-label">The Five Named Things, and Which Are Live</div>
         <div className="wi-sys">
           {systems.map((s) => (
             <a
@@ -386,8 +396,9 @@ export default function CVWhoIAm() {
         </div>
 
         <p className="wi-standing-note">
-          The two outside reads are in <a href="#recognition">Recognition</a>, directly above. Credentials, the FIAP
-          note, and the honest account of what I traded away are in <a href="#education">Education</a>.
+          The two outside reads are in <a href="#recognition">Recognition</a>, directly above. The five ventures
+          are in <a href="#ventures">Ventures</a>; credentials and the honest account of what I traded away are in{' '}
+          <a href="#education">Education</a>.
         </p>
 
         {/* ══ ROUTER ═════════════════════════════════════════════ */}

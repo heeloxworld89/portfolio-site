@@ -1,6 +1,20 @@
+import CVSection from './CVSection';
 export default function CVRecognition() {
   return (
-    <div className="row mb--50" id="recognition">
+    <CVSection
+      id="recognition"
+      phase="now"
+      eyebrow="Outside Signal"
+      title="Two outside reads, and what each one is worth."
+      lead={
+        <>
+          One organization read the work. One organization read me. Those are different instruments
+          measuring different things, and the difference is worth more than the flattery of collapsing
+          them — so I have weighted them separately and said plainly what each one does and does not
+          establish. <strong>One is closed. One is still running.</strong>
+        </>
+      }
+    >
       <style>{`
         .rec-card {
           background: #191b1e;
@@ -261,19 +275,7 @@ export default function CVRecognition() {
         .rec-qa-a strong { color: #c4cfde; font-weight: 600; }
       `}</style>
 
-      <div className="col-12">
-        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>
-          Outside Signal
-        </span>
-        <h2 className="title fs-2" style={{ fontWeight: "800", color: "#fff", marginBottom: "10px" }}>
-          Two Outside Reads, and What Each One Is Worth
-        </h2>
-        <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", maxWidth: "700px", marginBottom: "28px" }}>
-          One organization read the work. One organization read me. Those are different instruments measuring
-          different things, and the difference is worth more than the flattery of collapsing them — so I have
-          weighted them separately and said plainly what each one does and does not establish. One is closed.
-          One is still running.
-        </p>
+      <div>
 
         <div className="rec-grid">
           {/* Cosmos Institute */}
@@ -416,7 +418,6 @@ export default function CVRecognition() {
           </p>
         </div>
       </div>
-      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
-    </div>
+    </CVSection>
   );
 }

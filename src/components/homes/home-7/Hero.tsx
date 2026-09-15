@@ -7,31 +7,36 @@ import Icon from '@/components/common/Icon';
  * supplementary material rather than invented "live" data.
  */
 
-const stack = [
+const current = [
   {
-    layer: 'L1',
-    name: 'OXIMO',
-    desc: 'Cognitive multi-agent OS',
-    metric: '40,933 lines · 2,011 tests passing',
-    status: 'Operational',
-    state: 'live' as const,
-  },
-  {
-    layer: 'L2',
+    tag: 'Research',
     name: 'ORMAS',
-    desc: 'Self-correcting training architecture',
+    desc: 'A training architecture that accounts for what it changed',
     metric: '383 experiments · submitted to AAAI 2027',
-    status: 'Preprint live',
+    status: 'Published',
     state: 'live' as const,
   },
   {
-    layer: 'L3',
+    tag: 'Business',
+    name: 'OXIEDO',
+    desc: 'Licensing it to institutions whose data is locked',
+    metric: 'oxiedo.com · five sectors · one licence',
+    status: 'Live',
+    state: 'live' as const,
+  },
+  {
+    tag: 'Next',
     name: 'Project Cherry',
-    desc: 'A model the institution owns',
-    metric: 'Specified · compute-gated',
+    desc: 'Letting a network change its own shape',
+    metric: 'Specified · nothing measured yet',
     status: 'Not built',
     state: 'pending' as const,
   },
+];
+
+const prior = [
+  { name: 'OXIMO', desc: 'Agent operating system · 40,933 lines', status: 'Closed' },
+  { name: 'Black Bloxie LTD', desc: '12-month lesion study · −91% / +1,300%', status: 'Study closed' },
 ];
 
 // Verbatim from supplementary.tex §5.1–5.3
@@ -46,7 +51,7 @@ const metrics = [
   { v: '383', l: 'Controlled experiments', s: 'On one RTX 3090' },
   { v: '80.3%', l: 'Recovery after a killed layer', s: 'Baseline: 10.0%, permanently' },
   { v: '94.6%', l: 'Prior task retained', s: 'ResNet-18 retains 47.3%' },
-  { v: '−91% / +1,300%', l: '12-month causal ablation', s: 'Run on a live UK company' },
+  { v: '22,014', l: 'Attributed corrections', s: 'Where standard training returned NaN' },
 ];
 
 export default function Hero(_props?: any) {
@@ -205,15 +210,28 @@ export default function Hero(_props?: any) {
           border-radius: 999px; padding: 3px 10px; white-space: nowrap;
         }
 
+        .hx-prior {
+          display: grid; grid-template-columns: 1fr auto; gap: 4px 14px;
+          align-items: baseline; padding: 9px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.045);
+        }
+        .hx-prior:last-child { border-bottom: none; }
+        .hx-prior-n { font-size: 13px; font-weight: 700; color: #c4cfde; }
+        .hx-prior-s {
+          font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
+          text-transform: uppercase; color: #7d8794; white-space: nowrap;
+        }
+        .hx-prior-d { grid-column: 1 / -1; font-size: 11.5px; color: #838d99; }
+
         .hx-row {
-          display: grid; grid-template-columns: 34px 1fr auto;
+          display: grid; grid-template-columns: 62px 1fr auto;
           gap: 14px; align-items: center; padding: 17px 18px;
           border-bottom: 1px solid rgba(255,255,255,0.045);
         }
         .hx-row.is-pending { background: rgba(255,74,87,0.035); }
         .hx-l {
-          font-size: 10px; font-weight: 800; letter-spacing: 1px;
-          color: #7d8794; font-family: ui-monospace, Menlo, monospace;
+          font-size: 9px; font-weight: 800; letter-spacing: 1.2px;
+          text-transform: uppercase; color: #7d8794;
         }
         .hx-n { font-size: 15px; font-weight: 700; color: #e8edf4; line-height: 1.25; }
         .hx-d { font-size: 11.5px; color: #98a2ae; margin-top: 2px; }
@@ -343,15 +361,16 @@ export default function Hero(_props?: any) {
             <div className="hx-age">
               <div className="hx-age-n">18</div>
               <div className="hx-age-t">
-                years old. No university, no advisor, no lab, no funding — and a three-layer stack with the middle
-                layer published.
+                years old. No university, no advisor, no lab, no funding — one research result, and a company
+                built on it.
               </div>
             </div>
 
             <p className="hx-thesis">
-              A network that diagnoses and repairs its own damage mid-training. An operating system whose agents hire
-              their own specialists. And a twelve-month lesion study on a real company, run to prove the architecture —
-              not the market — was causing the output. <strong>All of it documented, reproducible, and checkable.</strong>
+              The most valuable data in the world sits unused, because training on it means handing it to a model
+              that afterwards cannot say what it did with it. ORMAS makes a network record every change it makes to
+              itself, as it happens. <strong>383 controlled experiments, every run reproducible from seed, and the
+              one result that went against me published alongside the rest.</strong>
             </p>
 
             <div className="hx-ctas">
@@ -363,7 +382,7 @@ export default function Hero(_props?: any) {
                 <Icon name="fileText" size={15} />
                 Read the Research
               </a>
-              <a className="hx-cta hx-cta-s" href="#deployment">
+              <a className="hx-cta hx-cta-s" href="#black-bloxie">
                 <Icon name="chart" size={15} />
                 See the Proof
               </a>
@@ -377,33 +396,34 @@ export default function Hero(_props?: any) {
           {/* ── status panel ── */}
           <div className="hx-panel">
             <div className="hx-panel-bar">
-              <span className="hx-panel-t">OXIEDO · Stack Status</span>
-              <span className="hx-panel-badge">Company live · 2 of 3 layers built</span>
+              <span className="hx-panel-t">Where things stand</span>
+              <span className="hx-panel-badge">Company live</span>
             </div>
 
-            {stack.map((s) => (
-              <div className={`hx-row${s.state === 'pending' ? ' is-pending' : ''}`} key={s.name}>
-                <div className="hx-l">{s.layer}</div>
+            {current.map((c) => (
+              <div className={`hx-row${c.state === 'pending' ? ' is-pending' : ''}`} key={c.name}>
+                <div className="hx-l">{c.tag}</div>
                 <div>
-                  <div className="hx-n">{s.name}</div>
-                  <div className="hx-d">{s.desc}</div>
-                  <div className="hx-m">{s.metric}</div>
+                  <div className="hx-n">{c.name}</div>
+                  <div className="hx-d">{c.desc}</div>
+                  <div className="hx-m">{c.metric}</div>
                 </div>
-                <div className={`hx-st ${s.state}`}>
+                <div className={`hx-st ${c.state}`}>
                   <span className="hx-dot" />
-                  {s.status}
+                  {c.status}
                 </div>
               </div>
             ))}
 
             <div className="hx-lab">
-              <div className="hx-lab-h">Laboratory · Black Bloxie LTD</div>
-              <div className="hx-lab-n">A 12-month controlled ablation, run on a live UK company</div>
-              <div className="hx-lab-v">
-                <div className="down"><b>−91%</b>on removal</div>
-                <div className="up"><b>+1,300%</b>on re-injection</div>
-                <div><b style={{ color: '#c4cfde' }}>£0</b>ad spend</div>
-              </div>
+              <div className="hx-lab-h">Before this — finished work, kept for the record</div>
+              {prior.map((p) => (
+                <div className="hx-prior" key={p.name}>
+                  <span className="hx-prior-n">{p.name}</span>
+                  <span className="hx-prior-d">{p.desc}</span>
+                  <span className="hx-prior-s">{p.status}</span>
+                </div>
+              ))}
             </div>
 
             <div className="hx-tick">

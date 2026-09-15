@@ -1,6 +1,20 @@
+import CVSection from './CVSection';
 export default function CVEducation() {
   return (
-    <div className="row mb--50" id="education">
+    <CVSection
+      id="education"
+      phase="about"
+      eyebrow="Education"
+      title="Self-taught, and specific about what that cost."
+      lead={
+        <>
+          No university, no advisor, no lab. What I have instead is coursework I chose because a problem
+          demanded it — and the work kept dragging me into fields most programmers never have a reason to
+          open. <strong>The honest account of what I traded away is at the bottom of this section, not
+          buried.</strong>
+        </>
+      }
+    >
       <style>{`
         .edu-grid {
           display: grid;
@@ -113,9 +127,7 @@ export default function CVEducation() {
           color: #838d99;
         }
       `}</style>
-      <div className="col-12">
-        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Education</span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: "800", color: "#c4cfde" }}>Self-Directed. Cross-Disciplinary. Evidence-Based.</h2>
+      <div>
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
@@ -238,7 +250,6 @@ export default function CVEducation() {
           
         </div>
       </div>
-      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.05)" }} /></div>
-    </div>
+    </CVSection>
   );
 }

@@ -4,6 +4,7 @@ import { BlockMath, InlineMath } from 'react-katex';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import ExpandableSection from '../ExpandableSection';
 import ResearchVisualization from './ResearchVisualization';
+import CVSection from './CVSection';
 
 export default function CVResearch() {
   const noiseData = [
@@ -78,7 +79,28 @@ export default function CVResearch() {
   };
 
   return (
-    <div className="row mb--50" id="research">
+    <CVSection
+      id="research"
+      phase="now"
+      eyebrow="ORMAS · The Research"
+      title="A neural network that can watch itself."
+      lead={
+        <>
+          Global backpropagation diffuses every error signal across every parameter at once, so when a
+          network fails there is no quantity anywhere inside it that says which part failed. That is not
+          a difficulty — it is a thing the mathematics never computed.{' '}
+          <strong>Bound each node&apos;s local gradient chain to four operations and the attribution
+          becomes a measurement instead of an estimate.</strong> This section is the whole argument,
+          with the conditions on every figure and the one result that went against me.
+        </>
+      }
+      meta={[
+        { k: 'Experiments', v: '383 controlled' },
+        { k: 'Hardware', v: 'One RTX 3090' },
+        { k: 'Families', v: 'Four architectures' },
+        { k: 'Data', v: 'CIFAR-10 / 100 only' },
+      ]}
+    >
       <style>{`
         .research-table { width: 100%; border-collapse: collapse; }
         .research-table th { padding: 12px 18px; text-align: left; color: #c4cfde; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #2a2d32; }
@@ -206,9 +228,7 @@ export default function CVResearch() {
         .bifurcation-callout { background: linear-gradient(135deg, rgba(255,74,87,0.06) 0%, rgba(25,27,30,1) 60%); border: 1px solid rgba(255,74,87,0.2); border-left: 3px solid #ff4a57; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
         .honest-gap-box { background: rgba(196,207,222,0.045); border: 1px solid #2a2d32; border-left: 2px solid #c4cfde; border-radius: 0 8px 8px 0; padding: 20px 24px; margin-bottom: 30px; }
       `}</style>
-      <div className="col-12">
-        <span className="subtitle" style={{ color: "#9aa4b0", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "2px", fontSize: "14px" }}>Independent Research</span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: "700" }}>ORMAS — A Neural Network That Can Watch Itself</h2>
+      <div>
         {/* ── The section's own overview video, before any of the detail ── */}
         <div className="rv-video">
           <div className="rv-video-side">
@@ -795,7 +815,6 @@ export default function CVResearch() {
           </p>
         </div>
       </div>
-      <div className="col-12"><hr className="my-5" style={{ borderColor: "rgba(255,255,255,0.06)" }} /></div>
-    </div>
+    </CVSection>
   );
 }

@@ -1,0 +1,100 @@
+import CherryVisualization from './CherryVisualization';
+import CVSection from './CVSection';
+
+/**
+ * Project Cherry — planned, not built.
+ *
+ * Previously 1,715 words presented as "Layer 3" of a stack. There is no stack.
+ * This is one thing I intend to build and have not started, and the only honest
+ * way to show it is short.
+ */
+
+const notThis = [
+  { k: 'Not fine-tuning',    v: 'Fine-tuning is a discrete event against a frozen base, and it forgets. There is no frozen base here and no discrete event.' },
+  { k: 'Not LoRA or adapters', v: 'Adapters need a task ID at inference — you must already know which one to load. Here, which parts activate is the result of routing, not an input to it.' },
+  { k: 'Not Mixture-of-Experts', v: 'The closest existing thing, and the difference is instructive. MoE fixes the expert count before training and monitors nothing per expert. This grows on demand, and every part is independently monitored and repairable.' },
+];
+
+export default function CVCherry() {
+  return (
+    <CVSection
+      id="cherry"
+      phase="now"
+      eyebrow="Project Cherry · Planned"
+      title="The thing I intend to build next, and have not started."
+      lead={
+        <>
+          ORMAS gives a network a bounded account of every change it makes to itself. Cherry is what
+          happens if you use that to let the network <strong>change its own shape</strong> — grow a new
+          part when the existing ones cannot cover a problem, and retire one that stops earning its
+          place. <strong>None of it is built. It is on this page as intent, not as a result.</strong>
+        </>
+      }
+      meta={[
+        { k: 'Status', v: 'Not built' },
+        { k: 'Written', v: 'Specification only' },
+        { k: 'Gated on', v: 'Multi-node compute' },
+        { k: 'Evidence', v: 'None yet' },
+      ]}
+    >
+      <style>{`
+        .cy-warn {
+          display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+          background: rgba(255,74,87,0.06); border: 1px solid rgba(255,74,87,0.3);
+          border-radius: 10px; padding: 16px 22px; margin-bottom: 36px;
+        }
+        .cy-warn-t {
+          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
+          color: #ff8189; background: rgba(255,74,87,0.12);
+          border: 1px solid rgba(255,74,87,0.36); border-radius: 999px; padding: 4px 12px; flex-shrink: 0;
+        }
+        .cy-warn-v { font-size: 14.5px; line-height: 1.65; color: #b3bcc7; flex: 1; min-width: 240px; }
+
+        .cy-label {
+          font-size: 11px; font-weight: 800; letter-spacing: 2px;
+          text-transform: uppercase; color: #838d99;
+          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+        }
+        .cy-p { font-size: 16px; line-height: 1.85; color: #9aa4b0; max-width: 760px; margin: 0 0 30px; }
+        .cy-p strong { color: #c4cfde; font-weight: 600; }
+
+        .cy-not { display: flex; flex-direction: column; gap: 2px; }
+        .cy-not-row { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: #191b1e; border: 1px solid #2a2d32; padding: 17px 22px; }
+        @media (max-width: 700px) { .cy-not-row { grid-template-columns: 1fr; gap: 6px; } }
+        .cy-not-k { font-size: 13.5px; font-weight: 700; color: #c4cfde; }
+        .cy-not-v { font-size: 13.5px; line-height: 1.7; color: #9aa4b0; }
+      `}</style>
+
+      <div className="cy-warn">
+        <span className="cy-warn-t">Nothing measured</span>
+        <span className="cy-warn-v">
+          There are no experiments behind this section, because there is no system yet. Every number on
+          the rest of this page was measured. Nothing here was.
+        </span>
+      </div>
+
+      <p className="cy-p">
+        The mechanism ORMAS already has is the precondition. A network that knows which of its parts is
+        failing, and by how much, is a network that can be told to grow a replacement — and a new part
+        can be introduced with zero net effect on what the network currently does, so nothing already
+        working is disturbed while it learns.{' '}
+        <strong>Fixed capacity is what caps the current results, and this is the plan for removing it.</strong>
+      </p>
+
+      <p className="cy-label">The idea, drawn</p>
+      <CherryVisualization />
+
+      <div style={{ marginBottom: '40px' }} />
+
+      <p className="cy-label">What it is not</p>
+      <div className="cy-not">
+        {notThis.map((n) => (
+          <div className="cy-not-row" key={n.k}>
+            <div className="cy-not-k">{n.k}</div>
+            <div className="cy-not-v">{n.v}</div>
+          </div>
+        ))}
+      </div>
+    </CVSection>
+  );
+}
