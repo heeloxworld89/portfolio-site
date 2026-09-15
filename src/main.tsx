@@ -70,6 +70,64 @@ if ("serviceWorker" in navigator) {
   registerSW();
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Stale-chunk recovery
+//
+// App.tsx lazy-loads the page, so the running bundle fetches its chunks by
+// content hash at click time. If a deploy lands while a tab is open, those
+// hashes no longer exist on the server and the import fails with
+// "Failed to fetch dynamically imported module". No service-worker setting
+// can prevent this: the page is already executing the old JavaScript.
+//
+// Vite fires `vite:preloadError` for exactly this case. Reloading pulls a
+// fresh index.html (which Vercel serves no-store) and with it the new hashes.
+//
+// The sessionStorage guard matters: if a chunk is missing because the deploy
+// itself is broken, an unguarded reload loops forever and the site is dead.
+// One attempt per tab, then let the error surface.
+// ─────────────────────────────────────────────────────────────────────────────
+const RELOAD_KEY = "chunk-reload-attempted";
+
+function recoverFromStaleChunk(reason: string) {
+  if (sessionStorage.getItem(RELOAD_KEY)) {
+    console.error("Chunk load failed again after reload — not retrying.", reason);
+    return;
+  }
+  try {
+    sessionStorage.setItem(RELOAD_KEY, "1");
+  } catch {
+    /* private mode — reload once anyway rather than leaving a broken page */
+  }
+  window.location.reload();
+}
+
+window.addEventListener("vite:preloadError", (event) => {
+  event.preventDefault();
+  recoverFromStaleChunk("vite:preloadError");
+});
+
+// Belt and braces: not every failed dynamic import routes through
+// vite:preloadError (a rejected import inside React.lazy can surface as a
+// plain unhandled rejection).
+window.addEventListener("unhandledrejection", (event) => {
+  const message = String(event.reason?.message ?? event.reason ?? "");
+  if (/dynamically imported module|Importing a module script failed|error loading dynamically imported/i.test(message)) {
+    event.preventDefault();
+    recoverFromStaleChunk(message);
+  }
+});
+
+// Clear the guard once the app has actually mounted and run for a moment.
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    try {
+      sessionStorage.removeItem(RELOAD_KEY);
+    } catch {
+      /* ignore */
+    }
+  }, 5_000);
+});
+
 reportWebVitals((metric) => {
   console.log(metric);
 });

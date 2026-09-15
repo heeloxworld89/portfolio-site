@@ -48,7 +48,13 @@ export default defineConfig({
             options: {
               cacheName: "static-assets",
               expiration: { maxAgeSeconds: 60 * 60 * 24 * 365 },
+              // Only cache what the origin actually served as a build asset.
+              // A 200 alone is not enough: a misrouted request can return the
+              // HTML shell, and storing that as a JS chunk for a year bricks
+              // the tab. Requiring the response to be same-origin and basic
+              // keeps opaque/redirected responses out of the asset cache.
               cacheableResponse: { statuses: [200] },
+              matchOptions: { ignoreVary: true },
             },
           },
           {
