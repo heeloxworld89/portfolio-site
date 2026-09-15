@@ -198,12 +198,8 @@ export default function CherryVisualization() {
                aria-label="A single frozen monolithic model. Every query activates the entire model, and nothing about it changes afterwards.">
             <defs>
               <pattern id="cvzGridA" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-border)" strokeWidth="1" />
               </pattern>
-              <filter id="cvzGlowA" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur stdDeviation="3.2" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
             </defs>
 
             <rect width="460" height="300" fill="url(#cvzGridA)" opacity="0.65" />
@@ -212,7 +208,7 @@ export default function CherryVisualization() {
             <text x="12" y="146" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
             <line x1="58" y1="155" x2="150" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse">
-              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowA)" />
+              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
             </g>
 
             {/* monolith */}
@@ -231,7 +227,7 @@ export default function CherryVisualization() {
             {/* output */}
             <line x1="326" y1="155" x2="414" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse-out" transform="translate(326,0)">
-              <circle cx="0" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowA)" />
+              <circle cx="0" cy="155" r="3.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
             </g>
             <text x="448" y="146" textAnchor="end" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
 
@@ -260,12 +256,8 @@ export default function CherryVisualization() {
                aria-label="A router directs each prompt to a few specialised nodes out of many. They collaborate to produce an answer, feed what they learned back into the mesh in real time, and the mesh grows a new node when it meets work it cannot do.">
             <defs>
               <pattern id="cvzGridB" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-border)" strokeWidth="1" />
               </pattern>
-              <filter id="cvzGlowB" x="-80%" y="-80%" width="260%" height="260%">
-                <feGaussianBlur stdDeviation="3.6" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
               <marker id="cvzArrow" viewBox="0 0 10 10" refX="8" refY="5"
                       markerWidth="5" markerHeight="5" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="var(--pf-accent)" />
@@ -278,7 +270,7 @@ export default function CherryVisualization() {
             <text x="12" y="146" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
             <line x1="58" y1="155" x2="92" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse">
-              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowB)" />
+              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
             </g>
 
             {/* router */}
@@ -305,7 +297,7 @@ export default function CherryVisualization() {
                   <g key={i} className="cvz-new-g">
                     <g className="cvz-new">
                       <circle cx={n.x} cy={n.y} r="13" fill="rgba(var(--pf-pos-rgb), 0.12)" stroke="var(--pf-pos)" strokeWidth="1.3" strokeDasharray="3 2.5" />
-                      <circle cx={n.x} cy={n.y} r="5.5" fill="var(--pf-pos)" filter="url(#cvzGlowB)" />
+                      <circle cx={n.x} cy={n.y} r="5.5" fill="var(--pf-pos)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
                       <text x={n.x} y={n.y + 30} textAnchor="middle" fill="var(--pf-pos)" fontSize="8.5" fontWeight="700" letterSpacing="0.8">NEW NODE</text>
                     </g>
                   </g>
@@ -316,8 +308,7 @@ export default function CherryVisualization() {
                   <g key={i}>
                     <circle className="cvz-halo" cx={n.x} cy={n.y} r="11" fill="rgba(var(--pf-accent-rgb), 0.3)"
                             style={{ animationDelay: `${n.delay}s` }} />
-                    <circle className="cvz-node-active" cx={n.x} cy={n.y} r="7" fill="var(--pf-accent)"
-                            filter="url(#cvzGlowB)" style={{ animationDelay: `${n.delay}s` }} />
+                    <circle className="cvz-node-active" cx={n.x} cy={n.y} r="7" fill="var(--pf-accent)" style={{ animationDelay: `${n.delay}s` }} stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
                   </g>
                 );
               }
@@ -327,7 +318,7 @@ export default function CherryVisualization() {
             {/* output */}
             <line x1="380" y1="140" x2="414" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse-out" transform="translate(346,0)">
-              <circle cx="34" cy="146" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowB)" />
+              <circle cx="34" cy="146" r="3.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
             </g>
             <text x="448" y="146" textAnchor="end" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
 

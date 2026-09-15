@@ -93,8 +93,8 @@ export default function OxidoVisualization() {
 
         .ovz-layerglow { animation: ovzLayer 4.2s ease-in-out infinite; }
         @keyframes ovzLayer {
-          0%, 100% { opacity: 0.18; }
-          50%      { opacity: 0.5; }
+          0%, 100% { opacity: 0.12; }
+          50%      { opacity: 0.42; }
         }
 
         /* layer stack */
@@ -145,12 +145,8 @@ export default function OxidoVisualization() {
                aria-label="In a standard enterprise AI stack, the agent framework sits inside your infrastructure but the model does not. Your proprietary data must cross the boundary out to a vendor API on every single query.">
             <defs>
               <pattern id="ovzGridA" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-border)" strokeWidth="1" />
               </pattern>
-              <filter id="ovzGlowA" x="-70%" y="-70%" width="240%" height="240%">
-                <feGaussianBlur stdDeviation="3" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
             </defs>
             <rect width="460" height="290" fill="url(#ovzGridA)" opacity="0.6" />
 
@@ -172,9 +168,9 @@ export default function OxidoVisualization() {
 
             {/* outbound */}
             <line x1="202" y1="130" x2="316" y2="130" stroke="var(--pf-ink-4)" strokeWidth="1.4" />
-            <g className="ovz-leak"><circle cx="202" cy="130" r="4" fill="var(--pf-accent)" filter="url(#ovzGlowA)" /></g>
+            <g className="ovz-leak"><circle cx="202" cy="130" r="4" fill="var(--pf-accent)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" /></g>
             <line x1="316" y1="166" x2="202" y2="166" stroke="var(--pf-ink-4)" strokeWidth="1.4" />
-            <g className="ovz-return" transform="translate(316,0)"><circle cx="0" cy="166" r="3.5" fill="var(--pf-ink)" filter="url(#ovzGlowA)" /></g>
+            <g className="ovz-return" transform="translate(316,0)"><circle cx="0" cy="166" r="3.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" /></g>
 
             {/* vendor */}
             <rect x="316" y="92" width="130" height="112" rx="10" fill="var(--pf-surface)" stroke="var(--pf-ink-4)" strokeWidth="1.5" strokeDasharray="4 3" />
@@ -205,12 +201,8 @@ export default function OxidoVisualization() {
                aria-label="With ORMAS the training architecture, the resulting model and the record it produces all sit inside your own infrastructure. Data circulates internally and never crosses the boundary.">
             <defs>
               <pattern id="ovzGridB" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-border)" strokeWidth="1" />
               </pattern>
-              <filter id="ovzGlowB" x="-70%" y="-70%" width="240%" height="240%">
-                <feGaussianBlur stdDeviation="3" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
             </defs>
             <rect width="460" height="290" fill="url(#ovzGridB)" opacity="0.6" />
 
@@ -230,7 +222,7 @@ export default function OxidoVisualization() {
               { y: 186, n: 'THE RECORD', s: 'the account, signed',          c: 'var(--pf-pos)' },
             ].map((l) => (
               <g key={l.n}>
-                <rect className="ovz-layerglow" x="188" y={l.y} width="164" height="44" rx="7" fill={l.c} />
+                <rect className="ovz-layerglow" x="186.5" y={l.y - 1.5} width="167" height="47" rx="8" fill="none" stroke={l.c} strokeWidth="1.5" />
                 <rect x="188" y={l.y} width="164" height="44" rx="7" fill="var(--pf-surface)" stroke={l.c} strokeWidth="1.3" opacity="0.95" />
                 <text x="270" y={l.y + 20} textAnchor="middle" fill={l.c} fontSize="11.5" fontWeight="700" letterSpacing="0.8">{l.n}</text>
                 <text x="270" y={l.y + 35} textAnchor="middle" fill="var(--pf-ink-2)" fontSize="9">{l.s}</text>
@@ -242,7 +234,7 @@ export default function OxidoVisualization() {
             <path className="ovz-orbit" d="M352 88 Q 392 88 392 146 Q 392 208 352 208" fill="none" stroke="var(--pf-pos)" strokeWidth="1.5" />
             <path className="ovz-orbit" d="M270 110 L270 126" fill="none" stroke="var(--pf-pos)" strokeWidth="1.5" />
             <path className="ovz-orbit" d="M270 170 L270 186" fill="none" stroke="var(--pf-pos)" strokeWidth="1.5" />
-            <circle cx="392" cy="146" r="3.5" fill="var(--pf-pos)" filter="url(#ovzGlowB)" />
+            <circle cx="392" cy="146" r="3.5" fill="var(--pf-pos)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" />
             <text x="408" y="150" fill="var(--pf-pos)" fontSize="8.5" fontWeight="700">loops</text>
             <text x="408" y="161" fill="var(--pf-pos)" fontSize="8.5" fontWeight="700">inside</text>
 

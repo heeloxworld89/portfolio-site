@@ -65,7 +65,7 @@ export default function ResearchVisualization() {
         .rvz-diffuse { animation: rvzDiffuse 5s ease-in-out infinite; }
         @keyframes rvzDiffuse {
           0%, 30%  { opacity: 0; }
-          46%, 88% { opacity: 1; }
+          46%, 88% { opacity: 1; }   /* fill-opacity carries the tint */
           100%     { opacity: 0; }
         }
         /* ORMAS: log prints */
@@ -115,6 +115,7 @@ export default function ResearchVisualization() {
         @media (prefers-reduced-motion: reduce) {
           .rvz-dying, .rvz-alarm, .rvz-diffuse, .rvz-logline, .rvz-curve { animation: none; }
           .rvz-diffuse, .rvz-logline { opacity: 1; }
+          .rvz-diffuse { fill-opacity: 0.16; }
           .rvz-curve { stroke-dashoffset: 0; }
         }
       `}</style>
@@ -130,10 +131,6 @@ export default function ResearchVisualization() {
           <svg className="rvz-svg" viewBox="0 0 440 210" role="img"
                aria-label="In a standard network a node dies during training and the error signal diffuses across every parameter at once, so no component can be identified as the cause. Only the global loss curve moves.">
             <defs>
-              <filter id="rvzGlowA" x="-70%" y="-70%" width="240%" height="240%">
-                <feGaussianBlur stdDeviation="2.6" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
             </defs>
 
             {/* three layers of nodes */}
@@ -148,7 +145,7 @@ export default function ResearchVisualization() {
                       fill={dying ? 'var(--pf-pos)' : 'var(--pf-surface-2)'}
                       stroke="var(--pf-ink-4)" strokeWidth="1.2"
                     />
-                    <circle className="rvz-diffuse" cx={x} cy={y} r="11" fill="var(--pf-accent)" opacity="0.16" />
+                    <circle className="rvz-diffuse" cx={x} cy={y} r="11" fill="var(--pf-accent)" fillOpacity="0.16" />
                   </g>
                 );
               })
@@ -158,7 +155,7 @@ export default function ResearchVisualization() {
               [55, 105, 155].map((y1) =>
                 [55, 105, 155].map((y2, j) => (
                   <line key={`${li}-${y1}-${j}`} x1={x + 11} y1={y1} x2={[155, 240, 325][li] - 11} y2={y2}
-                        stroke="var(--pf-surface-2)" strokeWidth="0.8" />
+                        stroke="var(--pf-border)" strokeWidth="0.8" />
                 ))
               )
             )}
@@ -200,10 +197,6 @@ epoch 43  loss 2.910 → 3.221
           <svg className="rvz-svg" viewBox="0 0 440 210" role="img"
                aria-label="In ORMAS the same failing node is localised immediately. An alarm fires on that node alone, it is quarantined and repaired, and a verification pass confirms the repair improved global loss before the change is committed.">
             <defs>
-              <filter id="rvzGlowB" x="-80%" y="-80%" width="260%" height="260%">
-                <feGaussianBlur stdDeviation="3" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
             </defs>
 
             {[70, 155, 240, 325].map((x, li) =>
@@ -230,7 +223,7 @@ epoch 43  loss 2.910 → 3.221
               [55, 105, 155].map((y1) =>
                 [55, 105, 155].map((y2, j) => (
                   <line key={`${li}-${y1}-${j}`} x1={x + 11} y1={y1} x2={[155, 240, 325][li] - 11} y2={y2}
-                        stroke="var(--pf-surface-2)" strokeWidth="0.8" />
+                        stroke="var(--pf-border)" strokeWidth="0.8" />
                 ))
               )
             )}
@@ -288,7 +281,7 @@ epoch 43  loss 2.910 → 3.221
           {/* gridlines */}
           {[0, 1, 2, 3, 4].map((v) => (
             <g key={v}>
-              <line x1={CH_X} y1={py(v)} x2={CH_X + CH_W} y2={py(v)} stroke="var(--pf-surface-2)" strokeWidth="1" />
+              <line x1={CH_X} y1={py(v)} x2={CH_X + CH_W} y2={py(v)} stroke="var(--pf-border)" strokeWidth="1" />
               <text x={CH_X - 8} y={py(v) + 3.5} textAnchor="end" fill="var(--pf-ink-3)" fontSize="9">{v}</text>
             </g>
           ))}

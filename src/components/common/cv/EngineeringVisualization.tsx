@@ -144,15 +144,11 @@ export default function EngineeringVisualization() {
         <svg className="evz-svg" viewBox="0 0 980 132" role="img"
              aria-label="A task passes through a safety gate, a dynamic router that classifies complexity and required skills, an execution step that takes one of four paths, the Sacred Chain hierarchy, a validation and merge step, and finally a learning step that updates each agent's brain.">
           <defs>
-            <filter id="evzGlow" x="-70%" y="-70%" width="240%" height="240%">
-              <feGaussianBlur stdDeviation="3" result="b" />
-              <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
           </defs>
 
           {/* straight spine, entirely behind the boxes */}
           <line x1="96" y1="62" x2="952" y2="62" stroke="var(--pf-border)" strokeWidth="1.4" />
-          <g className="evz-run"><circle cx="96" cy="62" r="4.5" fill="var(--pf-ink)" filter="url(#evzGlow)" /></g>
+          <g className="evz-run"><circle cx="96" cy="62" r="4.5" fill="var(--pf-ink)" stroke="var(--pf-surface)" strokeWidth="2" paintOrder="stroke" /></g>
 
           <text x="8" y="58" fill="var(--pf-ink-2)" fontSize="10" fontWeight="700" letterSpacing="1.2">TASK IN</text>
           <text x="8" y="72" fill="var(--pf-ink-3)" fontSize="8.5">one sentence</text>
