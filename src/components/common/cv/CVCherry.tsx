@@ -33,10 +33,10 @@ export default function CVCherry() {
         </>
       }
       meta={[
-        { k: 'Status', v: 'Not built' },
-        { k: 'Written', v: 'Specification only' },
-        { k: 'Gated on', v: 'Multi-node compute' },
-        { k: 'Evidence', v: 'None yet' },
+        { k: 'Status', v: 'Not started' },
+        { k: 'Written', v: 'Full specification' },
+        { k: 'Gated on', v: 'Multi-node H100 access' },
+        { k: 'Evidence', v: 'None. Zero runs.' },
       ]}
     >
       <style>{`

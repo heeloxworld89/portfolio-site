@@ -36,10 +36,10 @@ export default function CVOximo() {
         </>
       }
       meta={[
-        { k: 'Status', v: 'Closed · prior work' },
-        { k: 'Scale', v: '40,933 lines' },
+        { k: 'Status', v: 'Closed by choice' },
+        { k: 'Scale', v: '40,933 lines, alone' },
         { k: 'Tests', v: '2,011 · 0 failures' },
-        { k: 'Rebuild', v: '72% smaller' },
+        { k: 'Rebuild', v: '106k → 41k lines' },
       ]}
     >
       <style>{`
@@ -88,12 +88,12 @@ export default function CVOximo() {
 
       <div className="ox-stats">
         {[
-          { v: '40,933', l: 'Lines of code' },
-          { v: '2,011', l: 'Tests · 0 failures' },
-          { v: '11', l: 'Mini-repos' },
-          { v: '72%', l: 'Line reduction' },
-          { v: '12/12', l: 'Algorithms ported' },
-          { v: '47', l: 'Feature flags' },
+          { v: '40,933', l: 'Lines in production' },
+          { v: '2,011', l: 'Tests, none failing' },
+          { v: '11', l: 'Independently deployable repos' },
+          { v: '72%', l: 'Smaller after the rebuild' },
+          { v: '12/12', l: 'Algorithms ported intact' },
+          { v: '47', l: 'Flags across 17 phases' },
         ].map((s) => (
           <div className="ox-stat" key={s.l}>
             <div className="ox-stat-v">{s.v}</div>
@@ -157,7 +157,7 @@ export default function CVOximo() {
 
       <ExpandableSection
         closedLabel="Open the architecture detail"
-        hint="The four-layer module breakdown across eleven mini-repos, for anyone who wants to see how it was actually put together."
+        hint="The four-layer module breakdown across eleven mini-repos, for anyone who wants to see how it was put together."
         meta={['4 layers', '11 mini-repos', 'Constructor injection']}
       >
         <p className="ox-p">

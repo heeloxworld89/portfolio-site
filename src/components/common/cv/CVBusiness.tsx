@@ -15,17 +15,17 @@ import CVSection from './CVSection';
  */
 
 const sectors = [
-  { n: 'AI Training',               q: 'Is this run failing, and where?' },
-  { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?' },
-  { n: 'Medical AI',                q: 'Which site caused this, and can we show it?' },
-  { n: 'Data Obligation',           q: 'What data is in here, and can I remove it?' },
-  { n: 'Defense & Safety-Critical', q: 'What did the system do to itself in the field?' },
+  { n: 'AI Training',               q: 'Is this run failing, and which component?', w: 'A lab burning $15M on a run that stopped 419 times' },
+  { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A bank whose model cannot clear SR 26-2 validation' },
+  { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital whose approved model may never be updated' },
+  { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A controller facing erasure against trained weights' },
+  { n: 'Defense & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
 ];
 
 const position = [
   { k: 'Stage',     v: 'Pre-revenue. No customers, no pilot, and not one customer conversation yet.' },
   { k: 'Entity',    v: 'A research company in formation. Delaware C-corporation being established; contracting meanwhile through an existing UK-registered company.' },
-  { k: 'Evidence',  v: 'Every result is CIFAR-10 or CIFAR-100. No clinical, financial, biological or defence data has touched the system.' },
+  { k: 'Evidence',  v: 'Every result is CIFAR-10 or CIFAR-100. No clinical, financial, biological or defence data has ever touched the system, and no amount of compute fixes that — it needs a custodian to say yes.' },
   { k: 'Team',      v: 'Me. All of it. That is the first thing the round gets spent on fixing.' },
 ];
 
@@ -97,6 +97,7 @@ export default function CVBusiness() {
         .bz-sector { display: grid; grid-template-columns: 220px 1fr; gap: 18px; background: var(--pf-surface); padding: 15px 20px; }
         .bz-sector-n { font-size: 14px; font-weight: 700; color: var(--pf-ink); }
         .bz-sector-q { font-size: 14px; color: var(--pf-ink-2); line-height: 1.6; }
+        .bz-sector-w { font-size: 12px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 3px; }
         @media (max-width: 640px) { .bz-sector { grid-template-columns: 1fr; gap: 4px; } }
 
         .bz-pos { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
@@ -142,7 +143,7 @@ export default function CVBusiness() {
         <p>
           Nobody has ever wanted an audit trail. What a hospital wants is to train on its own patient
           records without ending up in front of a regulator. <strong>Transparency is just the mechanism.
-          What I am actually selling is access to data these institutions already own and still cannot
+          What I sell is access to data these institutions already own and still cannot
           touch.</strong> Getting that the wrong way round is how every interpretability company so far
           has ended up with a tool nobody buys.
         </p>
@@ -153,7 +154,10 @@ export default function CVBusiness() {
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
             <div className="bz-sector-n">{s.n}</div>
-            <div className="bz-sector-q">{s.q}</div>
+            <div>
+              <div className="bz-sector-q">{s.q}</div>
+              <div className="bz-sector-w">{s.w}</div>
+            </div>
           </div>
         ))}
       </div>

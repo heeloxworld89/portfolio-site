@@ -111,8 +111,8 @@ export default function CVClosingAsk() {
 
         <div className="ask-grid">
           <div className="ask-card">
-            <div className="ask-for">For</div>
-            <div className="ask-audience">ML Researchers &amp; Reviewers</div>
+            <div className="ask-for">If you review papers</div>
+            <div className="ask-audience">Try to break the stability bound</div>
             <p className="ask-body">
               The preprint is on Zenodo and the codebase reproduces all 383 runs in under an hour on one GPU. The place I most want someone looking is the ISS stability result. If there is an error in it, or a tighter bound available, I would far rather hear it from you now than find out from a reviewer in six months.
             </p>
@@ -123,8 +123,8 @@ export default function CVClosingAsk() {
           </div>
 
           <div className="ask-card">
-            <div className="ask-for">For</div>
-            <div className="ask-audience">Investors &amp; Operators</div>
+            <div className="ask-for">If you fund things</div>
+            <div className="ask-audience">Two things unlock the next result</div>
             <p className="ask-body">
               The next phase needs two things: multi-node compute for Transformer-scale validation, and a dataset partner willing to let the architecture run against data that carries a real obligation. If you have either, that is the conversation worth having. The round, the milestones and the risk register are set out in full on the company site.
             </p>
@@ -135,8 +135,8 @@ export default function CVClosingAsk() {
           </div>
 
           <div className="ask-card">
-            <div className="ask-for">For</div>
-            <div className="ask-audience">Engineers &amp; Builders</div>
+            <div className="ask-for">If you trust code over claims</div>
+            <div className="ask-audience">Run it yourself in under an hour</div>
             <p className="ask-body">
               One script, reproduce.sh, runs every experiment in the paper. Build on it, extend it, or go hunting for the flaw. The code is sitting there and either the numbers come out or they do not.
             </p>
@@ -150,7 +150,7 @@ export default function CVClosingAsk() {
         <div className="ask-email-bar">
           <span className="ask-email-label">Direct contact —</span>
           <a className="ask-email-link" href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>
-          <span className="ask-email-note">Response within 24 hours. No pitch decks required.</span>
+          <span className="ask-email-note">I answer every one myself, usually within a day.</span>
           <a className="ask-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
             <span className="ask-site-dot" aria-hidden="true" />
             oxiedo.com

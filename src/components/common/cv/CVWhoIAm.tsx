@@ -68,7 +68,7 @@ const systems = [
   {
     name: 'ORMAS',
     role: 'The research',
-    line: 'A network that reports its own damage and repairs it mid-training.',
+    line: 'It finds its own broken component mid-training, names it, and repairs it.',
     stat: '80.3%',
     statLbl: 'recovery · baseline 10.0%',
     href: '#research',
@@ -77,7 +77,7 @@ const systems = [
   {
     name: 'OXIEDO',
     role: 'The business',
-    line: 'The company licensing the architecture to institutions that hold locked data.',
+    line: 'Licensing it to the institutions legally barred from training on their own data.',
     stat: 'Live',
     statLbl: 'oxiedo.com · five sectors',
     href: '#oxiedo',
@@ -86,7 +86,7 @@ const systems = [
   {
     name: 'OXIMO',
     role: 'Prior work',
-    line: 'An operating system where agents decompose work and hire their own specialists.',
+    line: 'Hand it a sentence; it builds the org chart and hires what it does not have.',
     stat: '40,933',
     statLbl: 'lines · 2,011 tests green',
     href: '#oximo',
@@ -95,7 +95,7 @@ const systems = [
   {
     name: 'Black Bloxie',
     role: 'The experiment on OXIMO',
-    line: 'A real UK company used as a test environment, to see whether the system caused the output.',
+    line: 'A real UK company I ran for a year purely to find out if the system was the cause.',
     stat: '−91% / +1,300%',
     statLbl: '12-month lesion study',
     href: '#black-bloxie',
@@ -104,19 +104,19 @@ const systems = [
   {
     name: 'Project Cherry',
     role: 'Planned',
-    line: 'Letting a network change its own shape. Specified, and not started.',
+    line: 'A network that grows its own components. Fully specified, deliberately unstarted.',
     stat: '—',
-    statLbl: 'nothing measured yet',
+    statLbl: 'zero experiments, and I say so',
     href: '#cherry',
     state: 'Not built',
   },
 ];
 
 const router = [
-  { a: 'ML Researcher / Reviewer', d: 'The stability result, all 383 runs, the telemetry design, and every table including the one that goes against me.', h: '#research', l: 'Research' },
-  { a: 'VC / Angel Investor', d: 'What it sells, who pays for it, and everything I would disclose in diligence before being asked.', h: '#oxiedo', l: 'Business' },
-  { a: 'Engineer / Developer', d: '40,933 lines, 2,011 tests, and a system that turns one sentence into a company that staffs itself.', h: '#oximo', l: 'OXIMO' },
-  { a: 'Operator / Sceptic', d: 'Twelve months spent trying to disprove my own system on a live company, and every pound it took.', h: '#black-bloxie', l: 'Black Bloxie' },
+  { a: 'You review papers', d: 'The ISS derivation, all 383 runs, the telemetry design, and the table where the baseline beats me. Attack the stability bound first — that is where I most want to be wrong early.', h: '#research', l: 'The research' },
+  { a: 'You write cheques', d: 'What it sells, who is obliged to buy it and by when, and the whole risk register volunteered before anybody asks for it.', h: '#oxiedo', l: 'The company' },
+  { a: 'You read code before opinions', d: '40,933 lines, 2,011 tests, and a system handed one sentence that works out its own org chart and hires what it lacks.', h: '#oximo', l: 'The codebase' },
+  { a: 'You have heard this before', d: 'Twelve months spent trying to kill my own thesis on a live company with real customers, and every pound it ever took, stated so it cannot be read generously.', h: '#black-bloxie', l: 'The experiment' },
 ];
 
 export default function CVWhoIAm() {
@@ -338,7 +338,7 @@ export default function CVWhoIAm() {
               knew which was which in the first thirty seconds than work it out halfway down the page.
             </p>
             <p className="wi-why-cap">
-              In the video: who this is for, why nothing on the market does it today, and what ORMAS actually is.
+              In the video: who this is for, why nothing on the market does it today, and what ORMAS is.
             </p>
           </div>
         </div>
@@ -403,7 +403,7 @@ export default function CVWhoIAm() {
         {/* ══ ROUTER ═════════════════════════════════════════════ */}
         <div className="wi-label">Where to Start</div>
         <div className="wi-router">
-          <div className="wi-router-h">Skip ahead, depending on why you came</div>
+          <div className="wi-router-h">Four ways in. Pick the one that matches why you opened this.</div>
           {router.map((r) => (
             <div className="wi-router-row" key={r.a}>
               <div className="wi-router-a">{r.a}</div>

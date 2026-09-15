@@ -13,35 +13,35 @@ const ventures = [
     n: '01',
     title: 'Software Services',
     age: 'Age 12–14',
-    broke: 'Distribution',
+    broke: 'Nobody would take the meeting',
     lesson: 'I could build the thing. I could not get it in front of anyone. Distribution without institutional credibility is not a technical problem, and enterprise procurement does not route on technical merit alone.',
   },
   {
     n: '02',
     title: 'Cold-Call Automation — European Markets',
     age: 'Age 14–15',
-    broke: 'Trust at the transaction',
+    broke: 'Trust ran out at the close',
     lesson: 'Automation handled 90% of the sales cycle reliably. The last 10% — the close — needed a human in the room every time. Trust in an autonomous agent has a hard ceiling at the transaction, and that ceiling became a design constraint I carried into everything after.',
   },
   {
     n: '03',
     title: 'US-Targeted Digital Marketing',
     age: 'Age 15',
-    broke: 'The wrong bottleneck',
+    broke: 'I solved the wrong problem',
     lesson: 'I assumed the bottleneck was distribution. It was production. I did not need something that could move content around; I needed something that could make it at volume.',
   },
   {
     n: '04',
     title: 'Organic E-Commerce',
     age: 'Age 15–16',
-    broke: 'Coordination',
+    broke: 'One person is not a system',
     lesson: 'Optimising pricing, or listings, or marketing individually buys a few percent. The real problem is coordinating research, listing, pricing, fulfilment and service at once. One person cannot be the whole system, however hard they work.',
   },
   {
     n: '05',
     title: 'Automation Tooling',
     age: 'Age 16–17',
-    broke: 'Coordination, again',
+    broke: 'Same wall, fifth time',
     lesson: 'The last one confirmed what the previous four had been saying. The bottleneck was never individual capability. It was always coordination.',
   },
 ];
@@ -63,10 +63,10 @@ export default function CVVentures() {
         </>
       }
       meta={[
-        { k: 'Ventures', v: 'Five' },
-        { k: 'Exit', v: '~$10,000 · age 15' },
-        { k: 'Span', v: 'Ages 12–17' },
-        { k: 'Outcome', v: 'One finding' },
+        { k: 'Companies', v: 'Five, ages 12–17' },
+        { k: 'Exit', v: '~$10,000 at fifteen' },
+        { k: 'What it bought', v: 'The RTX 3090' },
+        { k: 'What they taught', v: 'One sentence' },
       ]}
     >
       <style>{`

@@ -58,7 +58,7 @@ export default function Footer1(_props?: any) {
                 <div className="ft-inner">
                   <p className="ft-name">Rokib Al Dhin Raadh</p>
                   <p className="ft-role">
-                    18-year-old independent AI researcher &amp; systems engineer — Dhaka, Bangladesh
+                    18 · Dhaka, Bangladesh · Building ORMAS and the company licensing it
                   </p>
 
                   <div className="ft-mails">

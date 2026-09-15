@@ -50,10 +50,10 @@ export default function CVBlackBloxie() {
         </>
       }
       meta={[
-        { k: 'What it tests', v: 'OXIMO, not ORMAS' },
-        { k: 'Duration', v: '12 months' },
-        { k: 'On removal', v: '−91%' },
-        { k: 'On restoration', v: '+1,300%' },
+        { k: 'What it tests', v: 'OXIMO. Not ORMAS.' },
+        { k: 'Duration', v: '12 months, 7 rungs' },
+        { k: 'On removal', v: '−91% output' },
+        { k: 'On restoration', v: '+1,300% back' },
       ]}
     >
       <style>{`
@@ -157,7 +157,7 @@ export default function CVBlackBloxie() {
 
       <div className="bb-tables">
         <div className="bb-table down">
-          <div className="bb-table-h">Phase 2 · What removal did</div>
+          <div className="bb-table-h">Phase 2 · I took the system out</div>
           {removal.map((r) => (
             <div className="bb-tr" key={r.m}>
               <div><div className="bb-tm">{r.m}</div><div className="bb-tn">{r.n}</div></div>
@@ -166,7 +166,7 @@ export default function CVBlackBloxie() {
           ))}
         </div>
         <div className="bb-table up">
-          <div className="bb-table-h">Phase 3 · What restoration did</div>
+          <div className="bb-table-h">Phase 3 · I put it back</div>
           {recovery.map((r) => (
             <div className="bb-tr" key={r.m}>
               <div><div className="bb-tm">{r.m}</div><div className="bb-tn">{r.n}</div></div>

@@ -262,11 +262,11 @@ export default function CVOriginStatement() {
 
         <div className="os-band">
           {[
-            { v: '14–16 hrs', l: 'Typical working day' },
-            { v: '28', l: 'Documented sessions' },
-            { v: '$0', l: 'External funding' },
-            { v: '1', l: 'People on the programme' },
-            { v: '100%', l: 'IP ownership' },
+            { v: '14–16 hrs', l: 'A normal working day' },
+            { v: '28', l: 'Days filmed unedited' },
+            { v: '$0', l: 'Outside funding taken' },
+            { v: '1', l: 'Person on the programme' },
+            { v: '100%', l: 'Of the IP, owned' },
           ].map((s, i) => (
             <div key={i} className="os-band-cell">
               <div className="os-band-val">{s.v}</div>
@@ -298,9 +298,9 @@ export default function CVOriginStatement() {
 
         <div style={{ marginTop: '26px' }}>
           <ExpandableSection
-            closedLabel="Open the 28-session work archive and the full technical stack"
+            closedLabel="Open the 28 filmed working days, and every tool behind the three systems"
             hint="Unlisted livestream footage recorded for the Guinness application, plus the complete list of tools, frameworks, and languages behind the three systems."
-            meta={['28 livestreams', 'Guinness application', 'Full technical stack']}
+            meta={['28 unedited days', 'Guinness application', 'Every tool used']}
           >
             <div className="os-detail" style={{ marginBottom: '18px' }}>
               <div className="os-detail-head">Work Archive — November 2024 · 28 Sessions</div>
@@ -367,8 +367,8 @@ export default function CVOriginStatement() {
           <table className="os-needs">
             <thead>
               <tr>
-                <th style={{ width: '32%' }}>What&apos;s Missing</th>
-                <th>Why It&apos;s the Blocker</th>
+                <th style={{ width: '32%' }}>What I do not have</th>
+                <th>What it is costing me</th>
               </tr>
             </thead>
             <tbody>
@@ -393,7 +393,7 @@ export default function CVOriginStatement() {
             The infrastructure for the next phase — Transformer-scale validation, Project Cherry,
             formal peer review of the ISS result — requires exactly the kind of institutional
             environment I have been building without. That is the direct and honest reason I am
-            raising, and it is not for validation. It is for leverage.
+            raising, and it is not for validation. I have had enough of that this year. It is to stop being the only person who can check my own work.
           </p>
         </div>
 

@@ -20,7 +20,7 @@ const lanes = [
     name: 'ORMAS',
     line: 'The architecture itself. 383 experiments, four families, every run reproducible. In review at AAAI 2027.',
     href: '#research',
-    cta: 'Read it',
+    cta: 'The evidence',
     state: 'live' as const,
     external: false,
   },
@@ -38,7 +38,7 @@ const lanes = [
     name: 'Project Cherry',
     line: 'A network that grows its own parts. Written down in full, and deliberately not started yet.',
     href: '#cherry',
-    cta: 'The plan',
+    cta: 'What it would take',
     state: 'pending' as const,
     external: false,
   },
@@ -324,7 +324,7 @@ export default function Hero(_props?: any) {
 
             <div className="hx-res-delta">
               <b>+70.3 pp</b>
-              <span>the gap</span>
+              <span>the gap, on every seed</span>
             </div>
 
             <p className="hx-res-cap">

@@ -141,27 +141,27 @@ export default function CVEducation() {
           
           <div className="edu-grid">
             <div className="edu-card">
-              <h5 className="edu-title">Physics of Complex Systems</h5>
+              <h5 className="edu-title">I learned control theory because the proof would not write itself</h5>
               <p className="edu-desc">The ORMAS stability characterization rests on control theory, and I could not write it while treating the mathematics as symbols on a page. I needed the physical intuition for why a perturbed system settles — or does not.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">Sales Psychology</h5>
+              <h5 className="edu-title">I learned where human trust in a machine runs out</h5>
               <p className="edu-desc">Automating European cold calls showed me exactly where human trust in an autonomous agent runs out. Understanding why it runs out at the transaction, and not before, became a design constraint rather than a curiosity.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">Financial Markets</h5>
+              <h5 className="edu-title">I learned market microstructure at fifteen, to get paid</h5>
               <p className="edu-desc">At 15 I was building stock algorithms that had to account for institutional flow. That is not something you can infer from price data alone — it required learning market micro-structure properly.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">Company Law &amp; AML</h5>
+              <h5 className="edu-title">I learned UK company law because there was no lawyer</h5>
               <p className="edu-desc">Registering Black Bloxie at UK Companies House from Bangladesh meant learning the filing regime, the anti-money-laundering requirements, and the director obligations myself. No lawyer, no agent. The director of record is my father's name — practical, not operational; the company itself, its site, and everything it does runs under mine.</p>
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>Formal Coursework</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>What I actually sat through, and finished</h4>
           <div className="mb--50 p-3 p-md-5" style={{ background: "var(--pf-surface)", borderRadius: "10px", border: "1px solid rgba(var(--pf-ink-rgb), 0.05)" }}>
             <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "25px", fontStyle: "italic" }}>
               Entirely self-taught in machine learning, systems engineering, and theoretical computer science:
@@ -186,7 +186,7 @@ export default function CVEducation() {
               <li><a href="https://coursera.org/verify/specialization/R7SYBBCXR1OY" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Deep Learning Specialization</a></li>
             </ul>
 
-            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>Additional Credentials</h5>
+            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>The certificates, for anyone who counts them</h5>
             <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "15px" }}>
               <strong style={{ color: "var(--pf-ink)" }}>20+ additional certifications</strong> across ML, systems architecture, and applied AI from Google, UC Davis, University of Michigan & Udemy.
             </p>
@@ -222,7 +222,7 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>The Honest Account</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>What learning this way cost me</h4>
 
           {/* Big statement */}
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>

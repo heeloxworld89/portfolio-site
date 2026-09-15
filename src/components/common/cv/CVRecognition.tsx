@@ -365,7 +365,7 @@ export default function CVRecognition() {
               <span className="rec-date">Dec 2026</span>
             </div>
             <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
-            <h3 className="rec-name">I Review for a NeurIPS Workshop</h3>
+            <h3 className="rec-name">At Eighteen, I Am on the Committee Deciding What Gets Into a NeurIPS Workshop</h3>
             <p className="rec-body">
               I sit on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS 2026
               in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
@@ -376,12 +376,12 @@ export default function CVRecognition() {
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">Reviewer</span>
-                <span className="rec-stat-lbl">Programme Committee</span>
+                <span className="rec-stat-val">237</span>
+                <span className="rec-stat-lbl">On a committee of this size</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">Dec 2026</span>
-                <span className="rec-stat-lbl">Paris</span>
+                <span className="rec-stat-val">34%</span>
+                <span className="rec-stat-lbl">Acceptance rate I help set</span>
               </div>
             </div>
           </div>
@@ -405,12 +405,12 @@ export default function CVRecognition() {
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">Highest</span>
-                <span className="rec-stat-lbl">Ranked, Cycle</span>
+                <span className="rec-stat-val">#1</span>
+                <span className="rec-stat-lbl">Of everything they read that cycle</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">Off-Track</span>
-                <span className="rec-stat-lbl">Wrong Round, Right Score</span>
+                <span className="rec-stat-val">$0</span>
+                <span className="rec-stat-lbl">Right score, wrong round</span>
               </div>
             </div>
           </div>
@@ -469,11 +469,11 @@ export default function CVRecognition() {
           <div className="rec-stats">
             <div className="rec-stat">
               <span className="rec-stat-val">12 hrs</span>
-              <span className="rec-stat-lbl">Submit → Call Booked</span>
+              <span className="rec-stat-lbl">Cold submit to booked call</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">15 min</span>
-              <span className="rec-stat-lbl">First Screen · London</span>
+              <span className="rec-stat-lbl">To decide how I think</span>
             </div>
           </div>
         </div>
@@ -529,8 +529,8 @@ export default function CVRecognition() {
           <p className="rec-verdict-body">
             <strong>Cosmos read the work.</strong> Ranked it first, then told me precisely why it still would not
             get funded. A ranking with a reason attached is the single most useful thing a reviewer can give you,
-            and it supports exactly one claim, narrowly: <strong>when people qualified to judge this actually read
-            it, it holds up.</strong>
+            and it supports exactly one claim, narrowly: <strong>when people qualified to judge this read it
+            properly, it holds up.</strong>
           </p>
           <p className="rec-verdict-body">
             <strong>EF read me.</strong> Fifteen minutes in London in August, weighted towards how I think rather
