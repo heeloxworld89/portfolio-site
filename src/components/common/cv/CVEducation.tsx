@@ -8,7 +8,8 @@ export default function CVEducation() {
       title="Nobody taught me any of this."
       lead={
         <>
-          No university, no advisor, no lab, nobody senior to check a derivation before I committed to it.
+          I am eighteen and I have never sat in a computer science lecture. No university, no advisor, no
+          lab, nobody senior to check a derivation before I committed to it.
           I took the coursework when a problem forced me to, and the work kept dragging me into fields
           most programmers never open once. <strong>What it cost me to learn it this way is written out at
           the bottom of this section rather than skipped.</strong>

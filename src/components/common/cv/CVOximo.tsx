@@ -27,8 +27,8 @@ export default function CVOximo() {
       title="40,933 lines of an operating system where the agents hire their own staff."
       lead={
         <>
-          Five businesses had told me the same thing five times over: the limit was never how good I was,
-          it was coordination. So I stopped trying harder and built the answer as a system. Hand it one
+          Five businesses had told me the same thing five times over, all of them before I was seventeen:
+          the limit was never how good I was, it was coordination. So I stopped trying harder and built the answer as a system. Hand it one
           sentence and it works out the org chart itself, then designs and hires a specialist when nobody
           on staff can do the job.{' '}
           <strong>It ran a real company for a year. I have stopped developing it, and I say exactly why

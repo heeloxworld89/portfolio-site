@@ -250,7 +250,7 @@ export default function Hero(_props?: any) {
 
           <div>
             <div className="hx-id">
-              Rokib Al Dhin Raadh <i /> 18 <i /> Dhaka, Bangladesh <i /> Independent
+              Rokib Al Dhin Raadh <i /> 18 years old <i /> Dhaka, Bangladesh <i /> No institution
             </div>
 
             <h1 className="hx-h1">
@@ -272,9 +272,9 @@ export default function Hero(_props?: any) {
             </p>
 
             <p className="hx-trust">
-              383 controlled experiments, one RTX 3090. <b>No university, no lab, no advisor, no funding,
-              nobody else on the project.</b> The paper is public, the code reproduces every run from seed,
-              and the company built on it is live.
+              I am <b>eighteen years old</b>. 383 controlled experiments, one RTX 3090, and no university,
+              no lab, no advisor, no funding and nobody else on the project. The paper is public, the code
+              reproduces every run from seed, and the company built on it is live.
             </p>
 
             <div className="hx-ctas">

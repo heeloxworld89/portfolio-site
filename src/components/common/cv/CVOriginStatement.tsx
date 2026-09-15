@@ -258,7 +258,7 @@ export default function CVOriginStatement() {
 
       <div>
 
-        <p className="os-byline">Dhaka, Bangladesh · 18 · No university, no advisor, no lab.</p>
+        <p className="os-byline">Eighteen years old · Dhaka, Bangladesh · No university, no advisor, no lab.</p>
 
         <div className="os-band">
           {[

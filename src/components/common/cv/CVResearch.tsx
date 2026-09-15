@@ -89,7 +89,8 @@ export default function CVResearch() {
           SHAP, LIME, integrated gradients, attention maps, probing classifiers, circuit discovery. All of
           it works the same way: wait until the model has made up its mind, then stand outside it and
           reconstruct what must have happened. The reconstruction is often good. It is never checkable.{' '}
-          <strong>I built the other thing.</strong> A network where the account is produced by the same
+          <strong>I built the other thing, and I was seventeen when it first worked.</strong> A network
+          where the account is produced by the same
           arithmetic that does the learning, so there is nothing to reconstruct and nothing to take on
           faith. What follows is the entire argument, every number, and the one experiment that went
           against me.

@@ -58,7 +58,7 @@ export default function Footer1(_props?: any) {
                 <div className="ft-inner">
                   <p className="ft-name">Rokib Al Dhin Raadh</p>
                   <p className="ft-role">
-                    Independent AI Researcher &amp; Systems Engineer — Dhaka, Bangladesh
+                    18-year-old independent AI researcher &amp; systems engineer — Dhaka, Bangladesh
                   </p>
 
                   <div className="ft-mails">
