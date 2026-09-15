@@ -124,15 +124,14 @@ export default function Header3() {
         @keyframes sbLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
         .sb-btn--cv {
-          background: rgba(var(--pf-accent-rgb), 0.1);
-          border: 1px solid rgba(var(--pf-accent-rgb), 0.32);
-          color: var(--pf-accent);
-          text-transform: uppercase;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
+          color: var(--pf-ink);
         }
         .sb-btn--cv:hover {
-          background: rgba(var(--pf-accent-rgb), 0.18);
-          border-color: rgba(var(--pf-accent-rgb), 0.6);
-          color: var(--pf-accent-2);
+          background: var(--pf-surface-2);
+          border-color: var(--pf-border-2);
+          color: var(--pf-ink);
           transform: translateY(-1px);
         }
 

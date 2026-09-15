@@ -626,11 +626,32 @@ p { color: var(--pf-ink-2); }
   padding: 26px 24px 24px !important;
 }
 
-/* Avatar: was filling the sidebar width. */
+/* Avatar.
+   The header is `d-flex align-items-start flex-column`, so the logo block
+   was hugging the left edge while the nav pills ran the full column width.
+   That is what made it read as off-centre. Centre the block, and size the
+   portrait against the usable column rather than leaving it small. */
+.header-left-sticky .logo-area {
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+.header-left-sticky .logo-area a {
+  display: block;
+  line-height: 0;
+}
 .header-left-sticky .logo-area a img,
 .header-left-sticky .logo a img {
-  max-width: 132px !important;
-  border-width: 3px !important;
+  width: 156px !important;
+  height: 156px !important;
+  max-width: none !important;
+  object-fit: cover;
+  border: 4px solid var(--pf-surface) !important;
+  box-shadow: 0 0 0 1px var(--pf-border);
+}
+@media (min-width: 1600px) {
+  .header-left-sticky .logo-area a img { width: 168px !important; height: 168px !important; }
 }
 
 .header-left-sticky .mainmenu-nav .primary-menu {
