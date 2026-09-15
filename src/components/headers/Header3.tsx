@@ -88,7 +88,7 @@ const socials: {
 /* Bump on every CV recompile. The filename stays stable so existing links
    keep working; the query string is what stops a browser serving the copy
    it cached the last time somebody opened it. */
-const CV_VERSION = "2026-09-15b";
+const CV_VERSION = "2026-09-15c";
 
 export default function Header3() {
   const [linksOpen, setLinksOpen] = useState(false);
