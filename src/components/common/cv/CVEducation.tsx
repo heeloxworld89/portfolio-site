@@ -26,29 +26,29 @@ export default function CVEducation() {
           .edu-grid { grid-template-columns: 1fr; }
         }
         .edu-card {
-          background: #191b1e;
+          background: var(--pf-surface);
           border-radius: 10px;
           padding: 30px;
-          border: 1px solid #2a2d32;
+          border: 1px solid var(--pf-border);
           position: relative;
           overflow: hidden;
           transition: 0.3s ease;
         }
         .edu-card:hover {
-          background: #1e2024;
-          border-color: rgba(255,255,255,0.1);
+          background: var(--pf-surface-2);
+          border-color: rgba(var(--pf-ink-rgb), 0.1);
         }
 
         .edu-title {
           font-size: 20px;
-          color: #c4cfde;
+          color: var(--pf-ink);
           font-weight: 700;
           margin-bottom: 15px;
         }
         .edu-desc {
           font-size: 15px;
           line-height: 1.7;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0;
         }
         .course-list {
@@ -61,7 +61,7 @@ export default function CVEducation() {
           padding-left: 30px;
           margin-bottom: 20px;
           font-size: 16px;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           line-height: 1.6;
         }
         .course-list li::before {
@@ -69,36 +69,36 @@ export default function CVEducation() {
           position: absolute;
           left: 0;
           top: 2px;
-          color: #838d99;
+          color: var(--pf-ink-3);
           font-size: 14px;
         }
         .course-list strong {
-          color: #fff;
+          color: var(--pf-ink);
           font-weight: 600;
         }
         .truth-box {
-          background: #191b1e;
-          border-left: 2px solid #2a2d32;
+          background: var(--pf-surface);
+          border-left: 2px solid var(--pf-border);
           padding: 35px;
           border-radius: 8px;
         }
         .truth-box p {
           font-size: 18px;
           line-height: 1.8;
-          color: #c4cfde;
+          color: var(--pf-ink);
           margin-bottom: 20px;
         }
         .truth-box p:last-child {
           margin-bottom: 0;
         }
         .highlight-text {
-          color: #fff;
+          color: var(--pf-ink);
           font-weight: 600;
         }
         .fiap-note {
           margin-top: 30px;
-          background: rgba(237,20,91,0.045);
-          border: 1px solid rgba(237,20,91,0.28);
+          background: rgba(var(--pf-accent-rgb), 0.045);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.28);
           border-radius: 10px;
           padding: 30px 32px;
         }
@@ -115,8 +115,8 @@ export default function CVEducation() {
           justify-content: center;
           padding: 9px 16px;
           border-radius: 6px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid #2a2d32;
+          background: rgba(var(--pf-ink-rgb), 0.05);
+          border: 1px solid var(--pf-border);
         }
         .fiap-logo-chip img { display: block; height: 16px; width: auto; }
         .fiap-tag {
@@ -124,17 +124,17 @@ export default function CVEducation() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #838d99;
+          color: var(--pf-ink-3);
         }
       `}</style>
       <div>
         
-        <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(255,255,255,0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(255,255,255,0.1)" }}>
-          <span style={{ color: "#fff", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
+        <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(var(--pf-ink-rgb), 0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(var(--pf-ink-rgb), 0.1)" }}>
+          <span style={{ color: "var(--pf-ink)", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
         </div>
         
         <div className="content">
-          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#9aa4b0", marginBottom: "28px", maxWidth: "700px" }}>
+          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "28px", maxWidth: "700px" }}>
             Self-taught in ML, systems engineering, and theoretical CS. I go after the mechanism rather than the surface, because the surface has never once been enough to finish the thing I was working on. Along the way the work dragged me into fields most programmers never have a reason to open:
           </p>
           
@@ -160,43 +160,43 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "30px" }}>Formal Coursework</h4>
-          <div className="mb--50 p-3 p-md-5" style={{ background: "#191b1e", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)" }}>
-            <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "25px", fontStyle: "italic" }}>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>Formal Coursework</h4>
+          <div className="mb--50 p-3 p-md-5" style={{ background: "var(--pf-surface)", borderRadius: "10px", border: "1px solid rgba(var(--pf-ink-rgb), 0.05)" }}>
+            <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "25px", fontStyle: "italic" }}>
               Entirely self-taught in machine learning, systems engineering, and theoretical computer science:
             </p>
             
-            <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
+            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
             <ul className="course-list">
               <li>
-                <a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>Universal AI Foundational Models</a>
-                <span style={{ color: "#838d99", fontSize: "13px" }}> — accessed via FIAP sponsorship, see below</span>
+                <a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Universal AI Foundational Models</a>
+                <span style={{ color: "var(--pf-ink-3)", fontSize: "13px" }}> — accessed via FIAP sponsorship, see below</span>
               </li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/cc81d799-e745-4f8e-8837-a75d4e1bfd49/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI & Precision Medicine</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/3d1aa3ad-4f07-4f64-aaf8-7dbc720913db/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI and Sustainability: Energy</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI and Sustainability: Transportation</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/31cbd749-a3ca-488e-80ad-10ddb771a12f/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI for Transportation: From Concepts to Implementation</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/c4c84c9c-1c8e-469f-a050-2269b1fe0a3c/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>AI & Entrepreneurship</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/082917c3-0327-4b28-8049-10e588692dc0/" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>Holistic AI in Medicine</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/cc81d799-e745-4f8e-8837-a75d4e1bfd49/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI & Precision Medicine</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/3d1aa3ad-4f07-4f64-aaf8-7dbc720913db/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI and Sustainability: Energy</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI and Sustainability: Transportation</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/31cbd749-a3ca-488e-80ad-10ddb771a12f/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI for Transportation: From Concepts to Implementation</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/c4c84c9c-1c8e-469f-a050-2269b1fe0a3c/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI & Entrepreneurship</a></li>
+              <li><a href="https://mitxonline.mit.edu/records/shared/082917c3-0327-4b28-8049-10e588692dc0/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Holistic AI in Medicine</a></li>
             </ul>
 
-            <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>DeepLearning.AI</h5>
+            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>DeepLearning.AI</h5>
             <ul className="course-list">
-              <li><a href="https://coursera.org/verify/specialization/R7SYBBCXR1OY" target="_blank" rel="noreferrer" style={{ color: "#c4cfde", textDecoration: "underline" }}>Deep Learning Specialization</a></li>
+              <li><a href="https://coursera.org/verify/specialization/R7SYBBCXR1OY" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Deep Learning Specialization</a></li>
             </ul>
 
-            <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>Additional Credentials</h5>
-            <p style={{ fontSize: "16px", color: "#9aa4b0", marginBottom: "15px" }}>
-              <strong style={{ color: "#fff" }}>20+ additional certifications</strong> across ML, systems architecture, and applied AI from Google, UC Davis, University of Michigan & Udemy.
+            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>Additional Credentials</h5>
+            <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "15px" }}>
+              <strong style={{ color: "var(--pf-ink)" }}>20+ additional certifications</strong> across ML, systems architecture, and applied AI from Google, UC Davis, University of Michigan & Udemy.
             </p>
-            <div style={{ background: "rgba(255,255,255,0.02)", borderLeft: "2px solid #2a2d32", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
-              <p style={{ margin: 0, color: "#9aa4b0", fontSize: "14px" }}>
+            <div style={{ background: "rgba(var(--pf-ink-rgb), 0.02)", borderLeft: "2px solid var(--pf-border)", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
+              <p style={{ margin: 0, color: "var(--pf-ink-2)", fontSize: "14px" }}>
                 All certificates verifiable on request — specific shareable credential links for any course available via{' '}
-                <a href="mailto:rokib@blackbloxie.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: '#c4cfde', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
+                <a href="mailto:rokib@blackbloxie.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
               </p>
             </div>
 
-            <h5 style={{ color: "#fff", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>A Note on FIAP</h5>
+            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>A Note on FIAP</h5>
             <div className="fiap-note">
               <div className="fiap-logo-row">
                 <div className="fiap-logo-chip">
@@ -204,10 +204,10 @@ export default function CVEducation() {
                 </div>
                 <span className="fiap-tag">São Paulo, Brazil · Sponsored Access</span>
               </div>
-              <p style={{ fontSize: "17px", fontWeight: 700, color: "#fff", marginBottom: "14px", lineHeight: 1.5 }}>
+              <p style={{ fontSize: "17px", fontWeight: 700, color: "var(--pf-ink)", marginBottom: "14px", lineHeight: 1.5 }}>
                 FIAP doesn't hand this out by default — this was set up specifically for me.
               </p>
-              <p style={{ fontSize: "15px", lineHeight: "1.75", color: "#9aa4b0", margin: 0 }}>
+              <p style={{ fontSize: "15px", lineHeight: "1.75", color: "var(--pf-ink-2)", margin: 0 }}>
                 FIAP is one of Brazil's leading technology-focused institutions, consistently rated among
                 the country's top private schools for computer science and programming. I did enough MIT
                 coursework early on to be offered a place in an in-person MIT scholarship program — I
@@ -221,14 +221,14 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "#c4cfde", marginBottom: "20px" }}>The Honest Account</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>The Honest Account</h4>
 
           {/* Big statement */}
-          <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
-            <p style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4 }}>
+          <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
+            <p style={{ fontSize: '18px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '12px', lineHeight: 1.4 }}>
               I chose research over grades — deliberately.
             </p>
-            <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#9aa4b0', margin: 0 }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink-2)', margin: 0 }}>
               Stability theory for the ISS characterization took priority over exam preparation, and OXIMO development took the class time. I knew what I was trading and I made the trade on purpose. The result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of production code, and a published preprint — and that is the evidence I would rather be judged on.
             </p>
           </div>
@@ -241,9 +241,9 @@ export default function CVEducation() {
               { val: 'AAAI 2027', lbl: 'Paper Under Review' },
               { val: 'UK Ltd', lbl: 'Registered Company' },
             ].map((s, i) => (
-              <div key={i} style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
-                <div style={{ fontSize: '18px', fontWeight: 800, color: '#c4cfde', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
-                <div style={{ fontSize: '11px', color: '#838d99', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+              <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
+                <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
+                <div style={{ fontSize: '11px', color: 'var(--pf-ink-3)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
               </div>
             ))}
           </div>

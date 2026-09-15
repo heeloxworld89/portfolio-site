@@ -36,28 +36,28 @@ export default function ExpandableSection({
           cursor: pointer;
           padding: 20px 24px;
           border-radius: 12px;
-          border: 1px solid #3a4048;
+          border: 1px solid var(--pf-ink-4);
           background:
-            linear-gradient(180deg, rgba(196,207,222,0.075) 0%, rgba(196,207,222,0.03) 100%),
-            #16181c;
+            linear-gradient(180deg, rgba(var(--pf-ink-rgb), 0.075) 0%, rgba(var(--pf-ink-rgb), 0.03) 100%),
+            var(--pf-surface);
           box-shadow:
-            inset 0 1px 0 rgba(255,255,255,0.05),
-            0 6px 22px -14px rgba(0,0,0,0.9);
+            inset 0 1px 0 rgba(var(--pf-ink-rgb), 0.05),
+            0 6px 22px -14px rgba(var(--pf-shadow-rgb), 0.144);
           transition: border-color 0.25s ease, box-shadow 0.25s ease,
                       transform 0.25s ease, background 0.25s ease;
         }
         .xps-toggle:hover {
           transform: translateY(-2px);
-          border-color: rgba(196,207,222,0.55);
+          border-color: rgba(var(--pf-ink-rgb), 0.55);
           box-shadow:
-            inset 0 1px 0 rgba(255,255,255,0.07),
-            0 10px 30px -14px rgba(0,0,0,0.95),
-            0 0 0 3px rgba(196,207,222,0.07);
+            inset 0 1px 0 rgba(var(--pf-ink-rgb), 0.07),
+            0 10px 30px -14px rgba(var(--pf-shadow-rgb), 0.144),
+            0 0 0 3px rgba(var(--pf-ink-rgb), 0.07);
         }
         .xps-toggle:focus-visible {
           outline: none;
-          border-color: #c4cfde;
-          box-shadow: 0 0 0 3px rgba(196,207,222,0.25);
+          border-color: var(--pf-ink);
+          box-shadow: 0 0 0 3px rgba(var(--pf-ink-rgb), 0.25);
         }
 
         /* Light sweep — catches the eye during scroll, then rests */
@@ -69,9 +69,9 @@ export default function ExpandableSection({
           background: linear-gradient(
             105deg,
             transparent 34%,
-            rgba(196,207,222,0.06) 44%,
-            rgba(196,207,222,0.13) 50%,
-            rgba(196,207,222,0.06) 56%,
+            rgba(var(--pf-ink-rgb), 0.06) 44%,
+            rgba(var(--pf-ink-rgb), 0.13) 50%,
+            rgba(var(--pf-ink-rgb), 0.06) 56%,
             transparent 66%
           );
           transform: translateX(-100%);
@@ -90,14 +90,14 @@ export default function ExpandableSection({
           width: 42px; height: 42px;
           display: flex; align-items: center; justify-content: center;
           border-radius: 10px;
-          border: 1px solid rgba(196,207,222,0.28);
-          background: rgba(196,207,222,0.08);
-          color: #c4cfde;
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.28);
+          background: rgba(var(--pf-ink-rgb), 0.08);
+          color: var(--pf-ink);
           transition: background 0.25s ease, border-color 0.25s ease;
         }
         .xps-toggle:hover .xps-icon {
-          background: rgba(196,207,222,0.15);
-          border-color: rgba(196,207,222,0.5);
+          background: rgba(var(--pf-ink-rgb), 0.15);
+          border-color: rgba(var(--pf-ink-rgb), 0.5);
         }
         /* Pulsing dot — signals "there is more here" */
         .xps-icon::before {
@@ -106,8 +106,8 @@ export default function ExpandableSection({
           top: -3px; right: -3px;
           width: 8px; height: 8px;
           border-radius: 50%;
-          background: #c4cfde;
-          box-shadow: 0 0 0 2px #16181c;
+          background: var(--pf-ink);
+          box-shadow: 0 0 0 2px var(--pf-surface);
           animation: xpsPulse 2.4s ease-in-out infinite;
         }
         .xps-toggle.is-open .xps-icon::before { display: none; }
@@ -120,20 +120,20 @@ export default function ExpandableSection({
         .xps-label {
           display: block;
           font-size: 15px; font-weight: 700; letter-spacing: 0.2px;
-          color: #e8edf4; line-height: 1.35; margin-bottom: 4px;
+          color: var(--pf-ink); line-height: 1.35; margin-bottom: 4px;
         }
         .xps-hint {
           display: block;
-          font-size: 12.5px; line-height: 1.6; color: #a6b0bc;
+          font-size: 12.5px; line-height: 1.6; color: var(--pf-ink-2);
         }
 
         .xps-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
         .xps-chip {
           font-size: 10.5px; font-weight: 700; letter-spacing: 0.9px;
           text-transform: uppercase;
-          color: #c4cfde;
-          background: rgba(196,207,222,0.09);
-          border: 1px solid rgba(196,207,222,0.22);
+          color: var(--pf-ink);
+          background: rgba(var(--pf-ink-rgb), 0.09);
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.22);
           border-radius: 999px;
           padding: 4px 11px;
           white-space: nowrap;
@@ -143,7 +143,7 @@ export default function ExpandableSection({
         .xps-action {
           flex-shrink: 0;
           display: flex; align-items: center; gap: 10px;
-          color: #c4cfde;
+          color: var(--pf-ink);
         }
         .xps-action-word {
           font-size: 11px; font-weight: 700; letter-spacing: 1.6px;
@@ -153,13 +153,13 @@ export default function ExpandableSection({
           width: 34px; height: 34px;
           display: flex; align-items: center; justify-content: center;
           border-radius: 50%;
-          border: 1px solid rgba(196,207,222,0.3);
-          background: rgba(196,207,222,0.07);
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.3);
+          background: rgba(var(--pf-ink-rgb), 0.07);
           transition: transform 0.3s ease, background 0.25s ease, border-color 0.25s ease;
         }
         .xps-toggle:hover .xps-chev {
-          background: rgba(196,207,222,0.16);
-          border-color: rgba(196,207,222,0.55);
+          background: rgba(var(--pf-ink-rgb), 0.16);
+          border-color: rgba(var(--pf-ink-rgb), 0.55);
         }
         .xps-chev.is-open { transform: rotate(180deg); }
 

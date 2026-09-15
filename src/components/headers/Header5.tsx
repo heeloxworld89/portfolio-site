@@ -45,7 +45,7 @@ export default function Header5() {
               <button
                 aria-label="Open menu"
                 className="tmp-menu-bars"
-                style={{ background: 'transparent', border: 'none', color: '#c4cfde', fontSize: '24px' }}
+                style={{ background: 'transparent', border: 'none', color: 'var(--pf-ink)', fontSize: '24px' }}
                 onClick={() => openModal("mobileMenu2")}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden="true">

@@ -17,14 +17,14 @@ export default function CVRecognition() {
     >
       <style>{`
         .rec-card {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           border-radius: 10px;
           padding: 28px 30px;
           transition: border-color 0.3s;
           height: 100%;
         }
-        .rec-card:hover { border-color: rgba(255,255,255,0.12); }
+        .rec-card:hover { border-color: rgba(var(--pf-ink-rgb), 0.12); }
         .rec-logo-row {
           display: flex;
           align-items: center;
@@ -37,12 +37,10 @@ export default function CVRecognition() {
           padding: 9px 16px;
           border-radius: 6px;
         }
-        .rec-logo-chip.on-white {
-          background: #fff;
-        }
+        .rec-logo-chip.on-white,
         .rec-logo-chip.on-dark {
-          background: rgba(255,255,255,0.04);
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface-2);
+          border: 1px solid var(--pf-border);
         }
         .rec-logo-chip img { display: block; height: 15px; width: auto; }
         .rec-tag {
@@ -50,31 +48,31 @@ export default function CVRecognition() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #838d99;
+          color: var(--pf-ink-3);
           margin-bottom: 12px;
         }
         .rec-name {
           font-size: 19px;
           font-weight: 700;
-          color: #fff;
+          color: var(--pf-ink);
           margin: 0 0 12px;
           line-height: 1.35;
         }
         .rec-body {
           font-size: 14px;
           line-height: 1.8;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0 0 20px;
         }
-        .rec-body strong { color: #c4cfde; font-weight: 600; }
+        .rec-body strong { color: var(--pf-ink); font-weight: 600; }
         .rec-stats {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
         }
         .rec-stat {
-          background: rgba(255,255,255,0.04);
-          border: 1px solid #2a2d32;
+          background: rgba(var(--pf-ink-rgb), 0.04);
+          border: 1px solid var(--pf-border);
           border-radius: 6px;
           padding: 8px 14px;
           text-align: center;
@@ -83,13 +81,13 @@ export default function CVRecognition() {
         .rec-stat-val {
           font-size: 15px;
           font-weight: 800;
-          color: #c4cfde;
+          color: var(--pf-ink);
           display: block;
           line-height: 1.2;
         }
         .rec-stat-lbl {
           font-size: 10px;
-          color: #838d99;
+          color: var(--pf-ink-3);
           text-transform: uppercase;
           letter-spacing: 0.8px;
           font-weight: 600;
@@ -107,8 +105,8 @@ export default function CVRecognition() {
         .rec-clock {
           display: grid; grid-template-columns: 1fr auto 1fr;
           gap: 14px; align-items: center;
-          background: rgba(255,74,87,0.055);
-          border: 1px solid rgba(255,74,87,0.3);
+          background: rgba(var(--pf-accent-rgb), 0.055);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.3);
           border-radius: 10px; padding: 18px 22px; margin: 0 0 20px;
         }
         @media (max-width: 620px) {
@@ -119,31 +117,31 @@ export default function CVRecognition() {
         @media (max-width: 620px) { .rec-clock-step.is-end { text-align: center; } }
         .rec-clock-k {
           font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #838d99;
+          text-transform: uppercase; color: var(--pf-ink-3);
         }
-        .rec-clock-v { font-size: 14px; font-weight: 700; color: #e8edf4; line-height: 1.35; }
+        .rec-clock-v { font-size: 14px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; }
         .rec-clock-gap { display: flex; align-items: center; gap: 10px; }
         @media (max-width: 620px) { .rec-clock-gap { justify-content: center; } }
-        .rec-clock-line { width: 26px; height: 1px; background: rgba(255,107,118,0.45); }
+        .rec-clock-line { width: 26px; height: 1px; background: rgba(var(--pf-accent-rgb), 0.45); }
         @media (max-width: 620px) { .rec-clock-line { width: 40px; } }
         .rec-clock-num {
-          font-size: 20px; font-weight: 800; color: #ff6b76;
+          font-size: 20px; font-weight: 800; color: var(--pf-accent);
           letter-spacing: -0.3px; white-space: nowrap;
         }
 
         /* ── Quiet status line ── */
         .rec-status {
           display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-          background: rgba(196,207,222,0.035);
-          border: 1px solid #2a2d32;
-          border-left: 2px solid #ff4a57;
+          background: rgba(var(--pf-ink-rgb), 0.035);
+          border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-accent);
           border-radius: 0 8px 8px 0;
           padding: 15px 20px; margin-bottom: 24px;
         }
         .rec-status-logo {
           display: inline-flex; align-items: center; justify-content: center;
           flex-shrink: 0; padding: 9px 14px; border-radius: 6px;
-          background: rgba(255,74,87,0.07); border: 1px solid rgba(255,74,87,0.28);
+          background: var(--pf-surface-2); border: 1px solid var(--pf-border);
         }
         .rec-status-logo img { display: block; height: 15px; width: auto; }
         .rec-status-body {
@@ -152,13 +150,13 @@ export default function CVRecognition() {
         }
         .rec-status-k {
           font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px;
-          text-transform: uppercase; color: #838d99;
+          text-transform: uppercase; color: var(--pf-ink-3);
         }
-        .rec-status-v { font-size: 14.5px; line-height: 1.6; color: #9aa4b0; }
-        .rec-status-v strong { color: #c4cfde; font-weight: 600; }
+        .rec-status-v { font-size: 14.5px; line-height: 1.6; color: var(--pf-ink-2); }
+        .rec-status-v strong { color: var(--pf-ink); font-weight: 600; }
         .rec-status-d {
           font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
-          text-transform: uppercase; color: #7d8794; flex-shrink: 0;
+          text-transform: uppercase; color: var(--pf-ink-3); flex-shrink: 0;
         }
         /* Stage strip — states where the process stands without narrating the wait. */
         .rec-stages { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 9px; }
@@ -166,11 +164,11 @@ export default function CVRecognition() {
           display: inline-flex; align-items: center; gap: 6px;
           font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
           text-transform: uppercase; border-radius: 999px; padding: 4px 11px;
-          color: #a8b3c0; background: rgba(196,207,222,0.07);
-          border: 1px solid rgba(196,207,222,0.2);
+          color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.07);
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.2);
         }
-        .rec-stage.is-done { color: #8fd89c; background: rgba(127,216,143,0.08); border-color: rgba(127,216,143,0.28); }
-        .rec-stage.is-live { color: #ff8189; background: rgba(255,74,87,0.08); border-color: rgba(255,74,87,0.3); }
+        .rec-stage.is-done { color: var(--pf-pos); background: rgba(var(--pf-pos-rgb), 0.08); border-color: rgba(var(--pf-pos-rgb), 0.28); }
+        .rec-stage.is-live { color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.08); border-color: rgba(var(--pf-accent-rgb), 0.3); }
         .rec-stage-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
         .rec-stage.is-live .rec-stage-dot { animation: recStagePulse 2.2s ease-in-out infinite; }
         @keyframes recStagePulse {
@@ -184,18 +182,18 @@ export default function CVRecognition() {
         /* Second entry — same build quality; the category is carried by the label,
            not by making the card look provisional. */
         .rec-secondary {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           border-radius: 10px;
           padding: 28px 30px;
           margin-bottom: 24px;
           transition: border-color 0.3s;
         }
-        .rec-secondary:hover { border-color: rgba(255,255,255,0.12); }
+        .rec-secondary:hover { border-color: rgba(var(--pf-ink-rgb), 0.12); }
         .rec-verdict {
-          background: rgba(196,207,222,0.045);
-          border: 1px solid #2a2d32;
-          border-left: 2px solid #c4cfde;
+          background: rgba(var(--pf-ink-rgb), 0.045);
+          border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-ink);
           border-radius: 0 8px 8px 0;
           padding: 24px 28px;
           margin-bottom: 24px;
@@ -203,22 +201,22 @@ export default function CVRecognition() {
         .rec-verdict-lead {
           font-size: 17px;
           line-height: 1.75;
-          color: #c4cfde;
+          color: var(--pf-ink);
           font-weight: 600;
           margin: 0 0 14px;
         }
         .rec-verdict-body {
           font-size: 15px;
           line-height: 1.85;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0 0 12px;
         }
         .rec-verdict-body:last-child { margin-bottom: 0; }
-        .rec-verdict-body strong { color: #c4cfde; font-weight: 600; }
+        .rec-verdict-body strong { color: var(--pf-ink); font-weight: 600; }
 
         .rec-origin {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           border-radius: 10px;
           padding: 30px 32px;
           margin-bottom: 24px;
@@ -228,51 +226,51 @@ export default function CVRecognition() {
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #838d99;
+          color: var(--pf-ink-3);
           margin-bottom: 14px;
         }
         .rec-origin-body {
           font-size: 16px;
           line-height: 1.85;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0 0 14px;
         }
         .rec-origin-body:last-child { margin-bottom: 0; }
-        .rec-origin-body strong { color: #c4cfde; font-weight: 600; }
+        .rec-origin-body strong { color: var(--pf-ink); font-weight: 600; }
 
         .rec-qa {
-          border: 1px solid #2a2d32;
+          border: 1px solid var(--pf-border);
           border-radius: 8px;
           overflow: hidden;
         }
         .rec-qa-header {
           padding: 10px 22px;
-          background: rgba(255,255,255,0.02);
-          border-bottom: 1px solid #2a2d32;
+          background: rgba(var(--pf-ink-rgb), 0.02);
+          border-bottom: 1px solid var(--pf-border);
           font-size: 10px;
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #838d99;
+          color: var(--pf-ink-3);
         }
         .rec-qa-item {
           padding: 20px 22px;
-          border-bottom: 1px solid rgba(255,255,255,0.04);
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04);
         }
         .rec-qa-item:last-child { border-bottom: none; }
         .rec-qa-q {
           font-size: 14px;
           font-weight: 700;
-          color: #c4cfde;
+          color: var(--pf-ink);
           margin: 0 0 8px;
         }
         .rec-qa-a {
           font-size: 15px;
           line-height: 1.8;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0;
         }
-        .rec-qa-a strong { color: #c4cfde; font-weight: 600; }
+        .rec-qa-a strong { color: var(--pf-ink); font-weight: 600; }
       `}</style>
 
       <div>

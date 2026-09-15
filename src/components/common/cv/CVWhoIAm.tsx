@@ -123,20 +123,20 @@ export default function CVWhoIAm() {
   return (
     <div className="row mb--50" id="who-i-am">
       <style>{`
-        .wi-lead { font-size: 17px; line-height: 1.85; color: #9aa4b0; max-width: 780px; margin: 0 0 12px; }
-        .wi-lead strong { color: #c4cfde; font-weight: 600; }
+        .wi-lead { font-size: 17px; line-height: 1.85; color: var(--pf-ink-2); max-width: 780px; margin: 0 0 12px; }
+        .wi-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         .wi-label {
           font-size: 12px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #c4cfde;
-          margin: 48px 0 18px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+          text-transform: uppercase; color: var(--pf-ink);
+          margin: 48px 0 18px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
 
         /* ── founder video: vertical source gets a vertical frame ── */
         .wi-why {
           display: grid; grid-template-columns: 320px 1fr;
           gap: 34px; align-items: center;
-          background: #121417; border: 1px solid #2a2d32;
+          background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 28px 30px; margin: 6px 0 4px;
         }
         @media (max-width: 860px) {
@@ -147,26 +147,26 @@ export default function CVWhoIAm() {
           position: relative; width: 100%; max-width: 320px;
           aspect-ratio: 9 / 16;
           border-radius: 14px; overflow: hidden;
-          background: #0b0c0e; border: 1px solid #2a2d32;
-          box-shadow: 0 20px 50px -28px rgba(0,0,0,0.95);
+          background: var(--pf-sunk); border: 1px solid var(--pf-border);
+          box-shadow: 0 20px 50px -28px rgba(var(--pf-shadow-rgb), 0.144);
         }
         .wi-why-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
         .wi-why-eyebrow {
           display: inline-flex; align-items: center; gap: 8px;
           font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px;
-          text-transform: uppercase; color: #ff6b76; margin-bottom: 12px;
+          text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px;
         }
         .wi-why-h {
-          font-size: 19px; font-weight: 700; color: #e8edf4;
+          font-size: 19px; font-weight: 700; color: var(--pf-ink);
           margin: 0 0 12px; line-height: 1.35;
         }
-        .wi-why-p { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; margin: 0 0 12px; }
-        .wi-why-p strong { color: #c4cfde; font-weight: 600; }
-        .wi-why-p a { color: #c4cfde; text-decoration: underline; }
-        .wi-why-p a:hover { color: #fff; }
+        .wi-why-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 12px; }
+        .wi-why-p strong { color: var(--pf-ink); font-weight: 600; }
+        .wi-why-p a { color: var(--pf-ink); text-decoration: underline; }
+        .wi-why-p a:hover { color: var(--pf-ink); }
         .wi-why-cap {
-          font-size: 12.5px; line-height: 1.65; color: #838d99;
-          margin: 14px 0 0; padding-top: 13px; border-top: 1px solid #24272c;
+          font-size: 12.5px; line-height: 1.65; color: var(--pf-ink-3);
+          margin: 14px 0 0; padding-top: 13px; border-top: 1px solid var(--pf-border);
         }
 
         /* ── timeline ─────────────────────────────────────── */
@@ -178,34 +178,34 @@ export default function CVWhoIAm() {
         @media (max-width: 620px) { .wi-tl-row { grid-template-columns: 50px 28px 1fr; } }
 
         .wi-tl-age { text-align: right; padding: 16px 14px 0 0; }
-        .wi-tl-a { font-size: 17px; font-weight: 800; color: #c4cfde; line-height: 1; letter-spacing: -0.4px; }
-        .wi-tl-y { font-size: 10px; color: #7d8794; margin-top: 4px; font-family: ui-monospace, Menlo, monospace; }
+        .wi-tl-a { font-size: 17px; font-weight: 800; color: var(--pf-ink); line-height: 1; letter-spacing: -0.4px; }
+        .wi-tl-y { font-size: 10px; color: var(--pf-ink-3); margin-top: 4px; font-family: ui-monospace, Menlo, monospace; }
 
         .wi-tl-spine { position: relative; display: flex; justify-content: center; }
         .wi-tl-line {
-          position: absolute; top: 0; bottom: 0; width: 1px; background: #2a2d32;
+          position: absolute; top: 0; bottom: 0; width: 1px; background: var(--pf-border);
         }
         .wi-tl-row:first-child .wi-tl-line { top: 22px; }
         .wi-tl-row:last-child .wi-tl-line { bottom: auto; height: 22px; }
         .wi-tl-dot {
           position: relative; margin-top: 16px; width: 11px; height: 11px;
-          border-radius: 50%; border: 2px solid #121417; flex-shrink: 0;
+          border-radius: 50%; border: 2px solid var(--pf-bg); flex-shrink: 0;
         }
-        .wi-tl-dot.venture { background: #4a5058; }
-        .wi-tl-dot.build   { background: #c4cfde; }
-        .wi-tl-dot.proof   { background: #ff6b76; box-shadow: 0 0 0 3px rgba(255,74,87,0.16); }
+        .wi-tl-dot.venture { background: var(--pf-ink-4); }
+        .wi-tl-dot.build   { background: var(--pf-ink); }
+        .wi-tl-dot.proof   { background: var(--pf-accent); box-shadow: 0 0 0 3px rgba(var(--pf-accent-rgb), 0.16); }
 
         .wi-tl-body { padding: 12px 0 26px 18px; }
         .wi-tl-row:last-child .wi-tl-body { padding-bottom: 4px; }
-        .wi-tl-t { font-size: 15.5px; font-weight: 700; color: #e8edf4; line-height: 1.35; margin-bottom: 6px; }
-        .wi-tl-row .wi-tl-t.proof { color: #ff8a93; }
-        .wi-tl-d { font-size: 14px; line-height: 1.75; color: #9aa4b0; max-width: 700px; }
+        .wi-tl-t { font-size: 15.5px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; margin-bottom: 6px; }
+        .wi-tl-row .wi-tl-t.proof { color: var(--pf-accent-2); }
+        .wi-tl-d { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); max-width: 700px; }
 
         .wi-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; padding-left: 66px; }
         @media (max-width: 620px) { .wi-legend { padding-left: 0; } }
         .wi-legend span {
           display: inline-flex; align-items: center; gap: 7px;
-          font-size: 11px; color: #838d99; font-weight: 600;
+          font-size: 11px; color: var(--pf-ink-3); font-weight: 600;
           text-transform: uppercase; letter-spacing: 1px;
         }
         .wi-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
@@ -214,35 +214,35 @@ export default function CVWhoIAm() {
         .wi-sys { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); gap: 12px; }
         .wi-sys-card {
           display: flex; flex-direction: column;
-          background: #191b1e; border: 1px solid #2a2d32; border-radius: 10px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px;
           padding: 20px 22px; text-decoration: none;
           transition: border-color .25s, background .25s, transform .25s;
         }
         .wi-sys-card:hover {
-          border-color: rgba(196,207,222,0.45); background: #1d2024; transform: translateY(-2px);
+          border-color: rgba(var(--pf-ink-rgb), 0.45); background: var(--pf-surface-2); transform: translateY(-2px);
         }
-        .wi-sys-card.is-unbuilt { border-color: rgba(255,74,87,0.26); background: rgba(255,74,87,0.035); }
-        .wi-sys-card.is-unbuilt:hover { border-color: rgba(255,74,87,0.5); }
+        .wi-sys-card.is-unbuilt { border-color: rgba(var(--pf-accent-rgb), 0.26); background: rgba(var(--pf-accent-rgb), 0.035); }
+        .wi-sys-card.is-unbuilt:hover { border-color: rgba(var(--pf-accent-rgb), 0.5); }
         .wi-sys-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 3px; }
-        .wi-sys-n { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .wi-sys-n { font-size: 17px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
         .wi-sys-state {
           font-size: 9px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase;
-          color: #7fd88f; background: rgba(127,216,143,0.1);
-          border: 1px solid rgba(127,216,143,0.28); border-radius: 999px; padding: 3px 8px; white-space: nowrap;
+          color: var(--pf-pos); background: rgba(var(--pf-pos-rgb), 0.1);
+          border: 1px solid rgba(var(--pf-pos-rgb), 0.28); border-radius: 999px; padding: 3px 8px; white-space: nowrap;
         }
         .wi-sys-card.is-unbuilt .wi-sys-state {
-          color: #ff6b76; background: rgba(255,74,87,0.1); border-color: rgba(255,74,87,0.3);
+          color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.1); border-color: rgba(var(--pf-accent-rgb), 0.3);
         }
-        .wi-sys-r { font-size: 10.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: #838d99; margin-bottom: 10px; }
-        .wi-sys-l { font-size: 13.5px; line-height: 1.65; color: #9aa4b0; margin-bottom: 16px; flex: 1; }
-        .wi-sys-b { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; }
-        .wi-sys-v { font-size: 18px; font-weight: 800; color: #c4cfde; line-height: 1.1; }
-        .wi-sys-card.is-unbuilt .wi-sys-v { color: #ff8a93; }
-        .wi-sys-sl { font-size: 10.5px; color: #838d99; margin-top: 3px; }
+        .wi-sys-r { font-size: 10.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 10px; }
+        .wi-sys-l { font-size: 13.5px; line-height: 1.65; color: var(--pf-ink-2); margin-bottom: 16px; flex: 1; }
+        .wi-sys-b { border-top: 1px solid rgba(var(--pf-ink-rgb), 0.06); padding-top: 12px; }
+        .wi-sys-v { font-size: 18px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; }
+        .wi-sys-card.is-unbuilt .wi-sys-v { color: var(--pf-accent-2); }
+        .wi-sys-sl { font-size: 10.5px; color: var(--pf-ink-3); margin-top: 3px; }
         .wi-sys-go {
           display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
           font-size: 10.5px; font-weight: 700; letter-spacing: 1.1px;
-          text-transform: uppercase; color: #c4cfde;
+          text-transform: uppercase; color: var(--pf-ink);
         }
         .wi-sys-card:hover .wi-sys-go svg { transform: translateX(3px); }
         .wi-sys-go svg { transition: transform .25s; }
@@ -253,48 +253,48 @@ export default function CVWhoIAm() {
         }
         @media (max-width: 820px) { .wi-standing { grid-template-columns: 1fr; } }
         .wi-standing-cell {
-          background: #191b1e; border: 1px solid #2a2d32; border-radius: 10px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px;
           padding: 20px 22px; display: flex; flex-direction: column;
         }
         .wi-standing-k {
           font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 9px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 9px;
         }
         .wi-standing-v {
-          font-size: 16px; font-weight: 700; color: #e8edf4;
+          font-size: 16px; font-weight: 700; color: var(--pf-ink);
           line-height: 1.35; margin-bottom: 8px;
         }
-        .wi-standing-s { font-size: 13px; line-height: 1.65; color: #9aa4b0; }
+        .wi-standing-s { font-size: 13px; line-height: 1.65; color: var(--pf-ink-2); }
         .wi-standing-note {
-          font-size: 13px; line-height: 1.7; color: #838d99; margin: 14px 0 0;
+          font-size: 13px; line-height: 1.7; color: var(--pf-ink-3); margin: 14px 0 0;
         }
-        .wi-standing-note a { color: #c4cfde; text-decoration: underline; }
-        .wi-standing-note a:hover { color: #fff; }
+        .wi-standing-note a { color: var(--pf-ink); text-decoration: underline; }
+        .wi-standing-note a:hover { color: var(--pf-ink); }
 
         /* ── router ───────────────────────────────────────── */
-        .wi-router { border: 1px solid #2a2d32; border-radius: 10px; overflow: hidden; }
+        .wi-router { border: 1px solid var(--pf-border); border-radius: 10px; overflow: hidden; }
         .wi-router-h {
-          padding: 12px 20px; background: rgba(255,255,255,0.022);
-          border-bottom: 1px solid #2a2d32; font-size: 10.5px; font-weight: 700;
-          letter-spacing: 1.8px; text-transform: uppercase; color: #838d99;
+          padding: 12px 20px; background: rgba(var(--pf-ink-rgb), 0.022);
+          border-bottom: 1px solid var(--pf-border); font-size: 10.5px; font-weight: 700;
+          letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-ink-3);
         }
         .wi-router-row {
           display: grid; grid-template-columns: 200px 1fr 132px; gap: 18px;
-          align-items: center; padding: 16px 20px; background: #191b1e;
-          border-bottom: 1px solid rgba(255,255,255,0.04);
+          align-items: center; padding: 16px 20px; background: var(--pf-surface);
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04);
         }
         .wi-router-row:last-child { border-bottom: none; }
         @media (max-width: 820px) { .wi-router-row { grid-template-columns: 1fr; gap: 7px; } }
-        .wi-router-a { font-size: 13.5px; font-weight: 700; color: #c4cfde; }
-        .wi-router-d { font-size: 13px; line-height: 1.6; color: #9aa4b0; }
+        .wi-router-a { font-size: 13.5px; font-weight: 700; color: var(--pf-ink); }
+        .wi-router-d { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); }
         .wi-router-l {
           display: inline-flex; align-items: center; justify-content: center; gap: 8px;
           padding: 9px 14px; border-radius: 7px; text-decoration: none;
-          background: rgba(196,207,222,0.055); border: 1px solid #343941; color: #c4cfde;
+          background: rgba(var(--pf-ink-rgb), 0.055); border: 1px solid var(--pf-border-2); color: var(--pf-ink);
           font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
           transition: background .22s, border-color .22s, color .22s;
         }
-        .wi-router-l:hover { background: rgba(196,207,222,0.12); border-color: rgba(196,207,222,0.5); color: #fff; }
+        .wi-router-l:hover { background: rgba(var(--pf-ink-rgb), 0.12); border-color: rgba(var(--pf-ink-rgb), 0.5); color: var(--pf-ink); }
         .wi-router-l:hover svg { transform: translateX(3px); }
         .wi-router-l svg { transition: transform .22s; }
 
@@ -304,10 +304,10 @@ export default function CVWhoIAm() {
       `}</style>
 
       <div className="col-12">
-        <span className="subtitle" style={{ color: '#9aa4b0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
+        <span className="subtitle" style={{ color: 'var(--pf-ink-2)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
           Who I Am
         </span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: '#fff' }}>
+        <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
           Everything I have built, and the order it happened in
         </h2>
 
@@ -363,9 +363,9 @@ export default function CVWhoIAm() {
           ))}
         </div>
         <div className="wi-legend">
-          <span><i style={{ background: '#4a5058' }} /> Venture · failed</span>
-          <span><i style={{ background: '#c4cfde' }} /> Built</span>
-          <span><i style={{ background: '#ff6b76' }} /> Verified externally</span>
+          <span><i style={{ background: 'var(--pf-ink-4)' }} /> Venture · failed</span>
+          <span><i style={{ background: 'var(--pf-ink)' }} /> Built</span>
+          <span><i style={{ background: 'var(--pf-accent)' }} /> Verified externally</span>
         </div>
 
         {/* ══ SYSTEMS ════════════════════════════════════════════ */}
@@ -416,7 +416,7 @@ export default function CVWhoIAm() {
         </div>
       </div>
 
-      <div className="col-12"><hr className="my-5" style={{ borderColor: 'rgba(255,255,255,0.05)' }} /></div>
+      <div className="col-12"><hr className="my-5" style={{ borderColor: 'rgba(var(--pf-ink-rgb), 0.05)' }} /></div>
     </div>
   );
 }

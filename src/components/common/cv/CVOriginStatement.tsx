@@ -54,15 +54,15 @@ export default function CVOriginStatement() {
         .os-head { max-width: 760px; margin-bottom: 34px; }
         .os-overline {
           font-size: 11px; font-weight: 700; letter-spacing: 3px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 14px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 14px;
         }
         .os-title {
-          font-size: clamp(27px, 3.2vw, 40px); font-weight: 800; color: #fff;
+          font-size: clamp(27px, 3.2vw, 40px); font-weight: 800; color: var(--pf-ink);
           margin: 0 0 10px; letter-spacing: -0.5px; line-height: 1.14;
         }
-        .os-byline { font-size: 14px; color: #838d99; margin-bottom: 22px; line-height: 1.6; }
-        .os-lead { font-size: 17px; line-height: 1.8; color: #9aa4b0; margin: 0; }
-        .os-lead strong { color: #c4cfde; font-weight: 600; }
+        .os-byline { font-size: 14px; color: var(--pf-ink-3); margin-bottom: 22px; line-height: 1.6; }
+        .os-lead { font-size: 17px; line-height: 1.8; color: var(--pf-ink-2); margin: 0; }
+        .os-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         /* Evidence band */
         .os-band {
@@ -70,57 +70,57 @@ export default function CVOriginStatement() {
           gap: 10px; margin-bottom: 54px;
         }
         .os-band-cell {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 8px; padding: 18px 20px;
         }
         .os-band-val {
-          font-size: 24px; font-weight: 800; color: #c4cfde;
+          font-size: 24px; font-weight: 800; color: var(--pf-ink);
           line-height: 1.1; margin-bottom: 5px;
         }
         .os-band-lbl {
           font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
-          text-transform: uppercase; color: #838d99; line-height: 1.4;
+          text-transform: uppercase; color: var(--pf-ink-3); line-height: 1.4;
         }
 
         /* Act markers */
         .os-act { margin-bottom: 22px; padding-top: 8px; }
         .os-act-num {
           font-size: 11px; font-weight: 700; letter-spacing: 3px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 8px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 8px;
         }
         .os-act-title {
           font-size: clamp(20px, 2.2vw, 25px); font-weight: 700;
-          color: #c4cfde; margin: 0; line-height: 1.25;
+          color: var(--pf-ink); margin: 0; line-height: 1.25;
         }
         .os-rule {
-          border: none; border-top: 1px solid rgba(255,255,255,0.07);
+          border: none; border-top: 1px solid rgba(var(--pf-ink-rgb), 0.07);
           margin: 52px 0 0;
         }
 
         /* Prose */
         .os-body { max-width: 760px; }
         .os-p {
-          font-size: 15.5px; line-height: 1.9; color: #9aa4b0; margin: 0 0 20px;
+          font-size: 15.5px; line-height: 1.9; color: var(--pf-ink-2); margin: 0 0 20px;
         }
-        .os-p strong { color: #c4cfde; font-weight: 600; }
+        .os-p strong { color: var(--pf-ink); font-weight: 600; }
         .os-p:last-child { margin-bottom: 0; }
         .os-pull {
-          font-size: 17px; line-height: 1.7; color: #c4cfde; font-weight: 600;
-          border-left: 2px solid rgba(255,255,255,0.2);
+          font-size: 17px; line-height: 1.7; color: var(--pf-ink); font-weight: 600;
+          border-left: 2px solid rgba(var(--pf-ink-rgb), 0.2);
           padding: 4px 0 4px 22px; margin: 30px 0;
         }
         .os-callout {
-          background: rgba(196,207,222,0.045);
-          border: 1px solid #2a2d32; border-left: 2px solid #c4cfde;
+          background: rgba(var(--pf-ink-rgb), 0.045);
+          border: 1px solid var(--pf-border); border-left: 2px solid var(--pf-ink);
           border-radius: 0 8px 8px 0; padding: 22px 26px; margin: 28px 0;
         }
         .os-callout-lead {
-          font-size: 16px; line-height: 1.7; color: #c4cfde;
+          font-size: 16px; line-height: 1.7; color: var(--pf-ink);
           font-weight: 600; margin: 0 0 11px;
         }
-        .os-callout p { font-size: 14.5px; line-height: 1.8; color: #9aa4b0; margin: 0 0 10px; }
+        .os-callout p { font-size: 14.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 10px; }
         .os-callout p:last-child { margin-bottom: 0; }
-        .os-callout strong { color: #c4cfde; font-weight: 600; }
+        .os-callout strong { color: var(--pf-ink); font-weight: 600; }
 
         /* Foundation cards */
         .os-found {
@@ -128,131 +128,131 @@ export default function CVOriginStatement() {
         }
         @media (max-width: 700px) { .os-found { grid-template-columns: 1fr; } }
         .os-card {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 8px; padding: 22px 24px; transition: border-color 0.25s;
         }
-        .os-card:hover { border-color: rgba(255,255,255,0.12); }
+        .os-card:hover { border-color: rgba(var(--pf-ink-rgb), 0.12); }
         .os-card-tag {
           font-size: 10px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 10px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 10px;
         }
-        .os-card-body { font-size: 14px; line-height: 1.75; color: #9aa4b0; margin: 0; }
-        .os-card-body strong { color: #c4cfde; }
+        .os-card-body { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
+        .os-card-body strong { color: var(--pf-ink); }
 
         /* Ventures */
         .os-venture-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
         .os-venture {
           display: grid; grid-template-columns: 104px 1fr; gap: 18px;
-          background: #191b1e; border: 1px solid #2a2d32; border-radius: 8px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 8px;
           padding: 18px 22px; align-items: start; transition: border-color 0.25s;
         }
-        .os-venture:hover { border-color: rgba(255,255,255,0.1); }
+        .os-venture:hover { border-color: rgba(var(--pf-ink-rgb), 0.1); }
         @media (max-width: 620px) {
           .os-venture { grid-template-columns: 1fr; gap: 7px; }
         }
         .os-venture-age {
           font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #838d99; padding-top: 3px;
+          text-transform: uppercase; color: var(--pf-ink-3); padding-top: 3px;
         }
         .os-venture-title {
-          font-size: 13.5px; font-weight: 700; color: #c4cfde;
+          font-size: 13.5px; font-weight: 700; color: var(--pf-ink);
           margin-bottom: 6px; letter-spacing: 0.2px;
         }
-        .os-venture-lesson { font-size: 13.5px; line-height: 1.72; color: #9aa4b0; }
+        .os-venture-lesson { font-size: 13.5px; line-height: 1.72; color: var(--pf-ink-2); }
 
         /* Problem → architecture map */
-        .os-map { border: 1px solid #2a2d32; border-radius: 8px; overflow: hidden; }
+        .os-map { border: 1px solid var(--pf-border); border-radius: 8px; overflow: hidden; }
         .os-map-head {
-          padding: 10px 18px; background: rgba(255,255,255,0.02);
-          border-bottom: 1px solid #2a2d32; font-size: 10px; font-weight: 700;
-          letter-spacing: 2px; text-transform: uppercase; color: #838d99;
+          padding: 10px 18px; background: rgba(var(--pf-ink-rgb), 0.02);
+          border-bottom: 1px solid var(--pf-border); font-size: 10px; font-weight: 700;
+          letter-spacing: 2px; text-transform: uppercase; color: var(--pf-ink-3);
         }
         .os-map-row {
           display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px;
           align-items: center; padding: 13px 18px;
-          border-bottom: 1px solid rgba(255,255,255,0.04); background: #191b1e;
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); background: var(--pf-surface);
         }
         .os-map-row:last-child { border-bottom: none; }
         @media (max-width: 620px) {
           .os-map-row { grid-template-columns: 1fr; gap: 4px; }
           .os-map-arrow { display: none; }
         }
-        .os-map-from { font-size: 13px; color: #c4cfde; font-weight: 600; }
-        .os-map-arrow { color: #838d99; font-size: 13px; }
-        .os-map-to { font-size: 13px; color: #9aa4b0; }
+        .os-map-from { font-size: 13px; color: var(--pf-ink); font-weight: 600; }
+        .os-map-arrow { color: var(--pf-ink-3); font-size: 13px; }
+        .os-map-to { font-size: 13px; color: var(--pf-ink-2); }
 
         /* Reference tables */
         .os-detail {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 8px; overflow: hidden; margin-bottom: 14px;
         }
         .os-detail-head {
-          padding: 10px 20px; background: rgba(255,255,255,0.02);
-          border-bottom: 1px solid #2a2d32; font-size: 11px; color: #9aa4b0;
+          padding: 10px 20px; background: rgba(var(--pf-ink-rgb), 0.02);
+          border-bottom: 1px solid var(--pf-border); font-size: 11px; color: var(--pf-ink-2);
           text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
         }
         .os-detail-row {
           display: flex; justify-content: space-between; align-items: center;
-          padding: 13px 20px; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 20px;
+          padding: 13px 20px; border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); gap: 20px;
         }
         .os-detail-row:last-child { border-bottom: none; }
-        .os-detail-label { color: #c4cfde; font-weight: 500; font-size: 14px; }
-        .os-detail-value { color: #9aa4b0; font-size: 14px; text-align: right; }
+        .os-detail-label { color: var(--pf-ink); font-weight: 500; font-size: 14px; }
+        .os-detail-value { color: var(--pf-ink-2); font-size: 14px; text-align: right; }
 
         /* Skills */
         .os-skill-block {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 8px; padding: 22px 26px; margin-bottom: 12px;
         }
         .os-skill-label {
           font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
-          color: #9aa4b0; font-weight: 700; margin-bottom: 15px;
+          color: var(--pf-ink-2); font-weight: 700; margin-bottom: 15px;
         }
         .os-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .os-tag {
-          background: rgba(255,255,255,0.04); color: #c4cfde;
+          background: rgba(var(--pf-ink-rgb), 0.04); color: var(--pf-ink);
           padding: 6px 14px; border-radius: 4px; font-size: 13px;
-          font-weight: 500; border: 1px solid #2a2d32;
+          font-weight: 500; border: 1px solid var(--pf-border);
         }
 
         /* Sessions */
         .os-sessions { display: flex; flex-wrap: wrap; gap: 6px; }
         .os-session {
           display: inline-flex; align-items: center; justify-content: center;
-          background: rgba(255,255,255,0.03); border: 1px solid #2a2d32;
-          border-radius: 4px; padding: 8px 12px; color: #c4cfde;
+          background: rgba(var(--pf-ink-rgb), 0.03); border: 1px solid var(--pf-border);
+          border-radius: 4px; padding: 8px 12px; color: var(--pf-ink);
           font-size: 11.5px; font-weight: 600; letter-spacing: 0.8px;
           text-decoration: none; transition: all 0.2s;
         }
         .os-session:hover {
-          background: rgba(255,255,255,0.08); border-color: #c4cfde; color: #fff;
+          background: rgba(var(--pf-ink-rgb), 0.08); border-color: var(--pf-ink); color: var(--pf-ink);
         }
 
         /* Missing table */
         .os-needs { width: 100%; border-collapse: collapse; }
         .os-needs th {
-          padding: 12px 20px; text-align: left; color: #c4cfde; font-size: 11px;
+          padding: 12px 20px; text-align: left; color: var(--pf-ink); font-size: 11px;
           font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-          border-bottom: 1px solid #2a2d32;
+          border-bottom: 1px solid var(--pf-border);
         }
         .os-needs td {
-          padding: 15px 20px; font-size: 14px; color: #9aa4b0; line-height: 1.7;
-          border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top;
+          padding: 15px 20px; font-size: 14px; color: var(--pf-ink-2); line-height: 1.7;
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); vertical-align: top;
         }
-        .os-needs td:first-child { color: #c4cfde; font-weight: 600; }
+        .os-needs td:first-child { color: var(--pf-ink); font-weight: 600; }
         .os-needs tr:last-child td { border-bottom: none; }
 
         .os-close {
-          background: rgba(196,207,222,0.06); border: 1px solid #343941;
+          background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2);
           border-radius: 10px; padding: 26px 30px; margin-top: 26px;
         }
         .os-close p {
-          font-size: 17px; line-height: 1.75; color: #c4cfde;
+          font-size: 17px; line-height: 1.75; color: var(--pf-ink);
           font-weight: 600; margin: 0;
         }
         .os-sign {
-          font-size: 13px; color: #838d99; margin-top: 30px; padding-top: 20px;
-          border-top: 1px solid rgba(255,255,255,0.06); font-style: italic;
+          font-size: 13px; color: var(--pf-ink-3); margin-top: 30px; padding-top: 20px;
+          border-top: 1px solid rgba(var(--pf-ink-rgb), 0.06); font-style: italic;
         }
       `}</style>
 
@@ -305,7 +305,7 @@ export default function CVOriginStatement() {
             <div className="os-detail" style={{ marginBottom: '18px' }}>
               <div className="os-detail-head">Work Archive — November 2024 · 28 Sessions</div>
               <div style={{ padding: '16px 20px' }}>
-                <p style={{ fontSize: '13px', color: '#9aa4b0', marginBottom: '14px', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '13px', color: 'var(--pf-ink-2)', marginBottom: '14px', lineHeight: 1.7 }}>
                   Unlisted livestreams recorded for the Guinness World Record application. Unfiltered
                   daily workflow footage — no editing, no highlights.
                 </p>
@@ -356,14 +356,14 @@ export default function CVOriginStatement() {
           </p>
           <p className="os-p">
             What the company does next is set out at{' '}
-            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: '#c4cfde', textDecoration: 'underline' }}>
+            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
               oxiedo.com
             </a>. This is a different list — not a plan, but the three external things that plan depends
             on. They run in parallel, and none depends on the others.
           </p>
         </div>
 
-        <div style={{ background: '#191b1e', border: '1px solid #2a2d32', borderRadius: '8px', overflowX: 'auto', marginTop: '24px' }}>
+        <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', overflowX: 'auto', marginTop: '24px' }}>
           <table className="os-needs">
             <thead>
               <tr>

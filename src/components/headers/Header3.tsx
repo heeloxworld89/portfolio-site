@@ -109,48 +109,48 @@ export default function Header3() {
         /* Company site — solid fill so it outranks everything else in the dock. */
         .sb-btn--site {
           position: relative; overflow: hidden;
-          background: #d43644; border: 1px solid #ff6b76; color: #fff;
+          background: var(--pf-accent); border: 1px solid var(--pf-accent); color: var(--pf-on-accent);
           text-transform: uppercase;
         }
         .sb-btn--site:hover {
-          background: #bd2734; border-color: #ff8a93; color: #fff;
+          background: var(--pf-accent-2); border-color: var(--pf-accent-2); color: var(--pf-on-accent);
           transform: translateY(-1px);
         }
         .sb-btn--site .sb-live {
           width: 7px; height: 7px; border-radius: 50%;
-          background: #fff; flex-shrink: 0;
+          background: var(--pf-on-accent); flex-shrink: 0;
           animation: sbLive 2.2s ease-in-out infinite;
         }
         @keyframes sbLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
         .sb-btn--cv {
-          background: rgba(255,74,87,0.1);
-          border: 1px solid rgba(255,74,87,0.32);
-          color: #ff6b76;
+          background: rgba(var(--pf-accent-rgb), 0.1);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.32);
+          color: var(--pf-accent);
           text-transform: uppercase;
         }
         .sb-btn--cv:hover {
-          background: rgba(255,74,87,0.18);
-          border-color: rgba(255,74,87,0.6);
-          color: #ff8a93;
+          background: rgba(var(--pf-accent-rgb), 0.18);
+          border-color: rgba(var(--pf-accent-rgb), 0.6);
+          color: var(--pf-accent-2);
           transform: translateY(-1px);
         }
 
         .sb-btn--links {
-          background: rgba(196,207,222,0.06);
-          border: 1px solid #343941;
-          color: #d7dee8;
+          background: rgba(var(--pf-ink-rgb), 0.06);
+          border: 1px solid var(--pf-border-2);
+          color: var(--pf-ink);
         }
         .sb-btn--links:hover {
-          background: rgba(196,207,222,0.12);
-          border-color: rgba(196,207,222,0.5);
-          color: #fff;
+          background: rgba(var(--pf-ink-rgb), 0.12);
+          border-color: rgba(var(--pf-ink-rgb), 0.5);
+          color: var(--pf-ink);
           transform: translateY(-1px);
         }
         .sb-btn--links .sb-count {
-          font-size: 10px; font-weight: 700; color: #a6b0bc;
-          background: rgba(196,207,222,0.1);
-          border: 1px solid rgba(196,207,222,0.2);
+          font-size: 10px; font-weight: 700; color: var(--pf-ink-2);
+          background: rgba(var(--pf-ink-rgb), 0.1);
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.2);
           border-radius: 999px; padding: 2px 7px;
         }
 
@@ -162,33 +162,33 @@ export default function Header3() {
         .sb-social a {
           display: flex; align-items: center; gap: 8px;
           padding: 9px 11px; border-radius: 8px;
-          border: 1px solid #2a2d32;
-          background: rgba(196,207,222,0.04);
-          color: #a6b0bc;
+          border: 1px solid var(--pf-border);
+          background: rgba(var(--pf-ink-rgb), 0.04);
+          color: var(--pf-ink-2);
           font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
           text-decoration: none;
           transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
         }
         .sb-social a:hover {
-          background: rgba(196,207,222,0.12);
-          border-color: rgba(196,207,222,0.45);
-          color: #fff;
+          background: rgba(var(--pf-ink-rgb), 0.12);
+          border-color: rgba(var(--pf-ink-rgb), 0.45);
+          color: var(--pf-ink);
         }
 
         /* ── Scroll affordance on the sidebar itself ──────────── */
-        .header-left-sticky .inner-wrapper { scrollbar-width: thin; scrollbar-color: #3a4048 transparent; }
+        .header-left-sticky .inner-wrapper { scrollbar-width: thin; scrollbar-color: var(--pf-ink-4) transparent; }
         .header-left-sticky .inner-wrapper::-webkit-scrollbar { width: 8px; }
         .header-left-sticky .inner-wrapper::-webkit-scrollbar-track { background: transparent; }
         .header-left-sticky .inner-wrapper::-webkit-scrollbar-thumb {
-          background: #3a4048; border-radius: 4px;
-          border: 2px solid #0e0f13; background-clip: padding-box;
+          background: var(--pf-ink-4); border-radius: 4px;
+          border: 2px solid var(--pf-border-2); background-clip: padding-box;
         }
-        .header-left-sticky .inner-wrapper::-webkit-scrollbar-thumb:hover { background: #565d68; background-clip: padding-box; }
+        .header-left-sticky .inner-wrapper::-webkit-scrollbar-thumb:hover { background: var(--pf-ink-4); background-clip: padding-box; }
         /* NOTE: .header-left-sticky is position:fixed in _left-header.scss.
            Do not set position here — it unpins the sidebar and it scrolls away. */
         .header-left-sticky::after {
           content: ""; position: absolute; left: 0; right: 8px; bottom: 0; height: 40px;
-          background: linear-gradient(180deg, rgba(14,15,19,0) 0%, rgba(14,15,19,0.92) 80%);
+          background: linear-gradient(180deg, rgba(var(--pf-shadow-rgb), 0.0) 0%, rgba(var(--pf-shadow-rgb), 0.144) 80%);
           pointer-events: none; z-index: 2;
         }
 
@@ -196,45 +196,45 @@ export default function Header3() {
         .lk-group + .lk-group { margin-top: 28px; }
         .lk-heading {
           font-size: 11px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #c4cfde;
+          text-transform: uppercase; color: var(--pf-ink);
           padding-bottom: 9px; margin-bottom: 14px;
-          border-bottom: 1px solid #2a2d32;
+          border-bottom: 1px solid var(--pf-border);
         }
         .lk-note {
-          font-size: 13.5px; line-height: 1.7; color: #a6b0bc; margin: -4px 0 14px;
+          font-size: 13.5px; line-height: 1.7; color: var(--pf-ink-2); margin: -4px 0 14px;
         }
         .lk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         @media (max-width: 700px) { .lk-grid { grid-template-columns: 1fr; } }
         .lk-item {
           display: flex; gap: 13px; align-items: flex-start;
           padding: 16px 18px; border-radius: 10px;
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           text-decoration: none;
           transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
         }
         .lk-item:hover {
-          border-color: rgba(196,207,222,0.5);
-          background: #1d2024; transform: translateY(-2px);
+          border-color: rgba(var(--pf-ink-rgb), 0.5);
+          background: var(--pf-surface-2); transform: translateY(-2px);
         }
         .lk-item-icon {
           flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px;
           display: flex; align-items: center; justify-content: center;
-          border: 1px solid rgba(196,207,222,0.22);
-          background: rgba(196,207,222,0.07); color: #c4cfde;
+          border: 1px solid rgba(var(--pf-ink-rgb), 0.22);
+          background: rgba(var(--pf-ink-rgb), 0.07); color: var(--pf-ink);
         }
         .lk-item:hover .lk-item-icon {
-          background: rgba(196,207,222,0.14); border-color: rgba(196,207,222,0.45);
+          background: rgba(var(--pf-ink-rgb), 0.14); border-color: rgba(var(--pf-ink-rgb), 0.45);
         }
         .lk-item-body { min-width: 0; }
         .lk-item-label {
           display: flex; align-items: center; gap: 7px;
-          font-size: 14.5px; font-weight: 700; color: #e8edf4; line-height: 1.3;
+          font-size: 14.5px; font-weight: 700; color: var(--pf-ink); line-height: 1.3;
         }
-        .lk-item-label svg { color: #838d99; transition: color 0.2s ease, transform 0.2s ease; }
-        .lk-item:hover .lk-item-label svg { color: #c4cfde; transform: translate(2px,-2px); }
+        .lk-item-label svg { color: var(--pf-ink-3); transition: color 0.2s ease, transform 0.2s ease; }
+        .lk-item:hover .lk-item-label svg { color: var(--pf-ink); transform: translate(2px,-2px); }
         .lk-item-sub {
           display: block; font-size: 12.5px; line-height: 1.65;
-          color: #a6b0bc; margin-top: 5px;
+          color: var(--pf-ink-2); margin-top: 5px;
         }
         @media (prefers-reduced-motion: reduce) {
           .sb-btn:hover, .lk-item:hover { transform: none; }

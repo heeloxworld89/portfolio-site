@@ -46,7 +46,7 @@ export default function VerticalModal({
           position: fixed;
           inset: 0;
           z-index: 9999;
-          background: rgba(0,0,0,0.82);
+          background: rgba(var(--pf-shadow-rgb), 0.42);
           backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
           display: flex;
@@ -61,9 +61,10 @@ export default function VerticalModal({
           position: relative;
           width: 100%;
           max-width: 920px;
-          background: #121417;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           border-radius: 12px;
+          box-shadow: 0 30px 70px -30px rgba(var(--pf-shadow-rgb), 0.35);
           animation: vmRise 0.25s cubic-bezier(0.2,0.8,0.3,1);
           margin: auto;
         }
@@ -80,131 +81,131 @@ export default function VerticalModal({
           justify-content: space-between;
           gap: 20px;
           padding: 26px 32px 20px;
-          background: #121417;
-          border-bottom: 1px solid #2a2d32;
+          background: var(--pf-bg);
+          border-bottom: 1px solid var(--pf-border);
           border-radius: 12px 12px 0 0;
         }
         .vm-eyebrow {
           font-size: 11px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #ff4a57; margin-bottom: 7px;
+          text-transform: uppercase; color: var(--pf-accent); margin-bottom: 7px;
         }
         .vm-title {
-          font-size: 25px; font-weight: 800; color: #fff;
+          font-size: 25px; font-weight: 800; color: var(--pf-ink);
           margin: 0; line-height: 1.25;
         }
         .vm-close {
           flex-shrink: 0;
           width: 38px; height: 38px;
           display: flex; align-items: center; justify-content: center;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid #2a2d32;
+          background: rgba(var(--pf-ink-rgb), 0.05);
+          border: 1px solid var(--pf-border);
           border-radius: 8px;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           cursor: pointer;
           transition: 0.2s;
         }
         .vm-close:hover {
-          background: rgba(255,74,87,0.12);
-          border-color: #ff4a57;
-          color: #ff4a57;
+          background: rgba(var(--pf-accent-rgb), 0.12);
+          border-color: var(--pf-accent);
+          color: var(--pf-accent);
         }
         .vm-body { padding: 28px 32px 34px; }
 
         /* ── shared content primitives ─────────────────────────── */
         .vm-plain {
-          background: rgba(255,74,87,0.055);
-          border: 1px solid rgba(255,74,87,0.28);
+          background: rgba(var(--pf-accent-rgb), 0.055);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.28);
           border-radius: 10px;
           padding: 22px 26px;
           margin-bottom: 30px;
         }
         .vm-plain-tag {
           font-size: 11px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #ff4a57; margin-bottom: 9px;
+          text-transform: uppercase; color: var(--pf-accent); margin-bottom: 9px;
         }
         .vm-plain p {
-          font-size: 16px; line-height: 1.8; color: #c4cfde; margin: 0 0 12px;
+          font-size: 16px; line-height: 1.8; color: var(--pf-ink); margin: 0 0 12px;
         }
         .vm-plain p:last-child { margin-bottom: 0; }
 
         .vm-h {
           font-size: 12px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #c4cfde;
+          text-transform: uppercase; color: var(--pf-ink);
           margin: 34px 0 14px; padding-bottom: 9px;
-          border-bottom: 1px solid #2a2d32;
+          border-bottom: 1px solid var(--pf-border);
         }
         .vm-h:first-child { margin-top: 0; }
         .vm-p {
-          font-size: 15px; line-height: 1.8; color: #9aa4b0; margin: 0 0 14px;
+          font-size: 15px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 14px;
         }
-        .vm-p strong { color: #c4cfde; font-weight: 600; }
+        .vm-p strong { color: var(--pf-ink); font-weight: 600; }
         .vm-p:last-child { margin-bottom: 0; }
 
         .vm-fig-cap {
-          font-size: 12.5px; color: #838d99; margin: -4px 0 20px; line-height: 1.6;
+          font-size: 12.5px; color: var(--pf-ink-3); margin: -4px 0 20px; line-height: 1.6;
         }
 
         /* ── Diagram: layered stack ────────────────────────────── */
         .vm-stack {
-          border: 1px solid #2a2d32; border-radius: 10px;
+          border: 1px solid var(--pf-border); border-radius: 10px;
           overflow: hidden; margin-bottom: 14px;
         }
         .vm-stack-row {
           display: flex; gap: 18px; align-items: baseline;
-          padding: 16px 20px; background: #191b1e;
-          border-bottom: 1px solid #2a2d32;
+          padding: 16px 20px; background: var(--pf-surface);
+          border-bottom: 1px solid var(--pf-border);
         }
         .vm-stack-row:last-child { border-bottom: none; }
         .vm-stack-row.is-box {
-          background: #0b0c0e;
-          border-top: 1px solid #34383e; border-bottom: 1px solid #34383e;
+          background: var(--pf-sunk);
+          border-top: 1px solid var(--pf-border-2); border-bottom: 1px solid var(--pf-border-2);
         }
         .vm-stack-tag {
           flex: 0 0 116px; font-size: 10.5px; font-weight: 700;
-          letter-spacing: 1.4px; text-transform: uppercase; color: #838d99;
+          letter-spacing: 1.4px; text-transform: uppercase; color: var(--pf-ink-3);
           padding-top: 2px;
         }
-        .vm-stack-row.is-box .vm-stack-tag { color: #ff4a57; }
-        .vm-stack-txt { font-size: 14px; line-height: 1.65; color: #9aa4b0; }
-        .vm-stack-row.is-box .vm-stack-txt { color: #c4cfde; font-weight: 600; }
+        .vm-stack-row.is-box .vm-stack-tag { color: var(--pf-accent); }
+        .vm-stack-txt { font-size: 14px; line-height: 1.65; color: var(--pf-ink-2); }
+        .vm-stack-row.is-box .vm-stack-txt { color: var(--pf-ink); font-weight: 600; }
         .vm-stack-sub {
-          display: block; font-size: 12.5px; color: #838d99;
+          display: block; font-size: 12.5px; color: var(--pf-ink-3);
           font-weight: 400; margin-top: 4px;
         }
 
         /* ── Diagram: vertical flow with connectors ────────────── */
         .vm-flow { margin-bottom: 14px; }
         .vm-flow-step {
-          position: relative; background: #191b1e;
-          border: 1px solid #2a2d32; border-radius: 8px;
-          padding: 13px 18px; font-size: 14px; line-height: 1.6; color: #9aa4b0;
+          position: relative; background: var(--pf-surface);
+          border: 1px solid var(--pf-border); border-radius: 8px;
+          padding: 13px 18px; font-size: 14px; line-height: 1.6; color: var(--pf-ink-2);
         }
-        .vm-flow-step strong { color: #c4cfde; font-weight: 600; }
+        .vm-flow-step strong { color: var(--pf-ink); font-weight: 600; }
         .vm-flow-step + .vm-flow-step { margin-top: 26px; }
         .vm-flow-step + .vm-flow-step::before {
           content: ""; position: absolute; left: 50%; top: -20px;
-          width: 1px; height: 14px; background: #3a3f46;
+          width: 1px; height: 14px; background: var(--pf-border-2);
         }
         .vm-flow-step + .vm-flow-step::after {
           content: ""; position: absolute; left: 50%; top: -8px;
           width: 5px; height: 5px; margin-left: -2.5px;
-          border-right: 1px solid #3a3f46; border-bottom: 1px solid #3a3f46;
+          border-right: 1px solid var(--pf-border-2); border-bottom: 1px solid var(--pf-border-2);
           transform: rotate(45deg);
         }
         .vm-flow-step.is-bad {
-          background: rgba(255,74,87,0.06);
-          border-color: rgba(255,74,87,0.35);
-          color: #c4cfde; font-weight: 600;
+          background: rgba(var(--pf-accent-rgb), 0.06);
+          border-color: rgba(var(--pf-accent-rgb), 0.35);
+          color: var(--pf-ink); font-weight: 600;
         }
         .vm-flow-step.is-good {
-          background: rgba(127,216,143,0.06);
-          border-color: rgba(127,216,143,0.32);
-          color: #c4cfde; font-weight: 600;
+          background: rgba(var(--pf-pos-rgb), 0.06);
+          border-color: rgba(var(--pf-pos-rgb), 0.32);
+          color: var(--pf-ink); font-weight: 600;
         }
 
         /* ── Diagram: labelled bars ────────────────────────────── */
         .vm-bars {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 10px; padding: 20px 22px; margin-bottom: 14px;
         }
         .vm-bar-row {
@@ -212,16 +213,16 @@ export default function VerticalModal({
           gap: 14px; align-items: center;
         }
         .vm-bar-row + .vm-bar-row { margin-top: 12px; }
-        .vm-bar-label { font-size: 13px; color: #c4cfde; font-weight: 600; }
+        .vm-bar-label { font-size: 13px; color: var(--pf-ink); font-weight: 600; }
         .vm-bar-track {
-          height: 8px; background: rgba(255,255,255,0.06);
+          height: 8px; background: rgba(var(--pf-ink-rgb), 0.06);
           border-radius: 4px; overflow: hidden;
         }
-        .vm-bar-fill { height: 100%; border-radius: 4px; background: #838d99; }
-        .vm-bar-fill.is-red { background: #ff4a57; }
-        .vm-bar-fill.is-dim { background: #4a5058; }
+        .vm-bar-fill { height: 100%; border-radius: 4px; background: var(--pf-ink-3); }
+        .vm-bar-fill.is-red { background: var(--pf-accent); }
+        .vm-bar-fill.is-dim { background: var(--pf-ink-4); }
         .vm-bar-note {
-          font-size: 11.5px; color: #838d99; white-space: nowrap;
+          font-size: 11.5px; color: var(--pf-ink-3); white-space: nowrap;
           text-transform: uppercase; letter-spacing: 0.7px; font-weight: 600;
         }
         @media (max-width: 560px) {
@@ -236,18 +237,18 @@ export default function VerticalModal({
         }
         @media (max-width: 560px) { .vm-vs { grid-template-columns: 1fr; } }
         .vm-vs-col {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 10px; padding: 18px 20px;
         }
         .vm-vs-col.is-bad {
-          background: rgba(255,74,87,0.05);
-          border-color: rgba(255,74,87,0.3);
+          background: rgba(var(--pf-accent-rgb), 0.05);
+          border-color: rgba(var(--pf-accent-rgb), 0.3);
         }
         .vm-vs-head {
-          font-size: 13px; font-weight: 700; color: #c4cfde; margin-bottom: 8px;
+          font-size: 13px; font-weight: 700; color: var(--pf-ink); margin-bottom: 8px;
         }
-        .vm-vs-col.is-bad .vm-vs-head { color: #ff4a57; }
-        .vm-vs-body { font-size: 13.5px; line-height: 1.65; color: #9aa4b0; }
+        .vm-vs-col.is-bad .vm-vs-head { color: var(--pf-accent); }
+        .vm-vs-body { font-size: 13.5px; line-height: 1.65; color: var(--pf-ink-2); }
 
         .vm-stats {
           display: grid;
@@ -256,47 +257,47 @@ export default function VerticalModal({
           margin-bottom: 18px;
         }
         .vm-stat {
-          background: #191b1e; border: 1px solid #2a2d32;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
           border-radius: 8px; padding: 15px; text-align: center;
         }
         .vm-stat-v {
-          font-size: 21px; font-weight: 800; color: #c4cfde;
+          font-size: 21px; font-weight: 800; color: var(--pf-ink);
           line-height: 1.1; margin-bottom: 5px;
         }
         .vm-stat-l {
-          font-size: 10px; color: #838d99; text-transform: uppercase;
+          font-size: 10px; color: var(--pf-ink-3); text-transform: uppercase;
           letter-spacing: 1px; font-weight: 600; line-height: 1.4;
         }
 
         .vm-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 14px; }
         .vm-table th {
-          text-align: left; padding: 11px 14px; color: #c4cfde;
+          text-align: left; padding: 11px 14px; color: var(--pf-ink);
           font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
-          text-transform: uppercase; border-bottom: 1px solid #2a2d32;
-          background: rgba(255,255,255,0.02);
+          text-transform: uppercase; border-bottom: 1px solid var(--pf-border);
+          background: rgba(var(--pf-ink-rgb), 0.02);
         }
         .vm-table td {
-          padding: 12px 14px; color: #9aa4b0; line-height: 1.65;
-          border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top;
+          padding: 12px 14px; color: var(--pf-ink-2); line-height: 1.65;
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.05); vertical-align: top;
         }
         .vm-table tr:last-child td { border-bottom: none; }
-        .vm-table td strong { color: #fff; font-weight: 700; }
+        .vm-table td strong { color: var(--pf-ink); font-weight: 700; }
 
         .vm-gap {
-          background: rgba(255,74,87,0.05);
-          border: 1px solid rgba(255,74,87,0.25);
-          border-left: 3px solid #ff4a57;
+          background: rgba(var(--pf-accent-rgb), 0.05);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.25);
+          border-left: 3px solid var(--pf-accent);
           border-radius: 0 8px 8px 0;
           padding: 20px 24px;
           margin-top: 26px;
         }
         .vm-gap-tag {
           font-size: 11px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #ff4a57; margin-bottom: 10px;
+          text-transform: uppercase; color: var(--pf-accent); margin-bottom: 10px;
         }
-        .vm-gap p { font-size: 14px; line-height: 1.8; color: #9aa4b0; margin: 0 0 10px; }
+        .vm-gap p { font-size: 14px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 10px; }
         .vm-gap p:last-child { margin-bottom: 0; }
-        .vm-gap strong { color: #c4cfde; font-weight: 600; }
+        .vm-gap strong { color: var(--pf-ink); font-weight: 600; }
 
         @media (max-width: 640px) {
           .vm-backdrop { padding: 0; }

@@ -47,36 +47,36 @@ export default function CVSection({
           padding: 5px 12px; border-radius: 999px;
         }
         .sx-phase-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-        .sx-phase.is-now    { color: #ff8189; background: rgba(255,74,87,0.1);   border: 1px solid rgba(255,74,87,0.34); }
-        .sx-phase.is-before { color: #9aa4b0; background: rgba(196,207,222,0.06); border: 1px solid #343941; }
-        .sx-phase.is-about  { color: #9aa4b0; background: rgba(196,207,222,0.06); border: 1px solid #343941; }
+        .sx-phase.is-now    { color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.1);   border: 1px solid rgba(var(--pf-accent-rgb), 0.34); }
+        .sx-phase.is-before { color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2); }
+        .sx-phase.is-about  { color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2); }
 
         .sx-eyebrow {
           font-size: 13px; font-weight: 800; letter-spacing: 2.4px;
-          text-transform: uppercase; color: #c4cfde; margin-bottom: 10px;
+          text-transform: uppercase; color: var(--pf-ink); margin-bottom: 10px;
         }
         .sx-title {
-          font-size: clamp(26px, 3.1vw, 38px); font-weight: 800; color: #fff;
+          font-size: clamp(26px, 3.1vw, 38px); font-weight: 800; color: var(--pf-ink);
           letter-spacing: -0.9px; line-height: 1.15; margin: 0 0 16px;
           max-width: 860px;
         }
         .sx-lead {
-          font-size: 17px; line-height: 1.8; color: #9aa4b0;
+          font-size: 17px; line-height: 1.8; color: var(--pf-ink-2);
           max-width: 720px; margin: 0;
         }
-        .sx-lead strong { color: #c4cfde; font-weight: 600; }
+        .sx-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         .sx-meta {
           display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 1px; background: #2a2d32; border: 1px solid #2a2d32;
+          gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border);
           border-radius: 10px; overflow: hidden; margin-top: 26px;
         }
-        .sx-meta-cell { background: #16181c; padding: 15px 18px; }
+        .sx-meta-cell { background: var(--pf-surface); padding: 15px 18px; }
         .sx-meta-k {
           font-size: 9.5px; font-weight: 700; letter-spacing: 1.4px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 6px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 6px;
         }
-        .sx-meta-v { font-size: 15px; font-weight: 700; color: #c4cfde; line-height: 1.35; }
+        .sx-meta-v { font-size: 15px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; }
 
         @media (max-width: 640px) { .sx-head { margin-bottom: 26px; } }
       `}</style>
@@ -107,7 +107,7 @@ export default function CVSection({
 
       {!last ? (
         <div className="col-12">
-          <hr className="my-5" style={{ borderColor: 'rgba(255,255,255,0.05)' }} />
+          <hr className="my-5" style={{ borderColor: 'rgba(var(--pf-ink-rgb), 0.05)' }} />
         </div>
       ) : null}
     </div>

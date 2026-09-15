@@ -54,21 +54,21 @@ export default function CherryVisualization() {
         @media (max-width: 900px) { .cvz-grid { grid-template-columns: 1fr; } }
 
         .cvz-panel {
-          background: #121417; border: 1px solid #2a2d32;
+          background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 20px 20px 16px; overflow: hidden;
         }
-        .cvz-panel.is-cherry { border-color: rgba(255,74,87,0.32); }
+        .cvz-panel.is-cherry { border-color: rgba(var(--pf-accent-rgb), 0.32); }
 
         .cvz-eyebrow {
           font-size: 10px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99; margin-bottom: 5px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 5px;
         }
-        .cvz-panel.is-cherry .cvz-eyebrow { color: #ff6b76; }
+        .cvz-panel.is-cherry .cvz-eyebrow { color: var(--pf-accent); }
         .cvz-title {
-          font-size: 16px; font-weight: 700; color: #e8edf4;
+          font-size: 16px; font-weight: 700; color: var(--pf-ink);
           margin: 0 0 3px; line-height: 1.3;
         }
-        .cvz-sub { font-size: 12.5px; color: #a6b0bc; line-height: 1.55; margin: 0 0 14px; }
+        .cvz-sub { font-size: 12.5px; color: var(--pf-ink-2); line-height: 1.55; margin: 0 0 14px; }
 
         .cvz-svg { width: 100%; height: auto; display: block; }
 
@@ -147,35 +147,35 @@ export default function CherryVisualization() {
         .cvz-new-g { transform-box: fill-box; transform-origin: center; }
 
         .cvz-caption {
-          font-size: 11.5px; line-height: 1.6; color: #838d99;
-          margin-top: 12px; padding-top: 11px; border-top: 1px solid #22252a;
+          font-size: 11.5px; line-height: 1.6; color: var(--pf-ink-3);
+          margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--pf-surface-2);
         }
-        .cvz-caption strong { color: #a6b0bc; font-weight: 600; }
+        .cvz-caption strong { color: var(--pf-ink-2); font-weight: 600; }
 
         /* comparison table */
-        .cvz-table { border: 1px solid #2a2d32; border-radius: 12px; overflow: hidden; }
+        .cvz-table { border: 1px solid var(--pf-border); border-radius: 12px; overflow: hidden; }
         .cvz-tr {
           display: grid; grid-template-columns: 1.05fr 1fr 1fr;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.05);
         }
         .cvz-tr:last-child { border-bottom: none; }
-        .cvz-tr.is-head { background: rgba(255,255,255,0.025); }
+        .cvz-tr.is-head { background: rgba(var(--pf-ink-rgb), 0.025); }
         .cvz-th {
           padding: 12px 18px; font-size: 10px; font-weight: 700;
-          letter-spacing: 1.5px; text-transform: uppercase; color: #838d99;
+          letter-spacing: 1.5px; text-transform: uppercase; color: var(--pf-ink-3);
         }
-        .cvz-th.std { color: #98a2ae; }
-        .cvz-th.chr { color: #ff6b76; }
+        .cvz-th.std { color: var(--pf-ink-2); }
+        .cvz-th.chr { color: var(--pf-accent); }
         .cvz-td { padding: 14px 18px; font-size: 13.5px; line-height: 1.6; }
-        .cvz-td.k { color: #c4cfde; font-weight: 600; background: rgba(255,255,255,0.015); }
-        .cvz-td.std { color: #98a2ae; }
-        .cvz-td.chr { color: #d7dee8; background: rgba(255,74,87,0.045); font-weight: 500; }
+        .cvz-td.k { color: var(--pf-ink); font-weight: 600; background: rgba(var(--pf-ink-rgb), 0.015); }
+        .cvz-td.std { color: var(--pf-ink-2); }
+        .cvz-td.chr { color: var(--pf-ink); background: rgba(var(--pf-accent-rgb), 0.045); font-weight: 500; }
         @media (max-width: 760px) {
           .cvz-tr { grid-template-columns: 1fr; }
           .cvz-tr.is-head { display: none; }
-          .cvz-td.k { border-bottom: 1px solid rgba(255,255,255,0.04); }
-          .cvz-td.std::before { content: "Standard — "; color: #7d8794; font-weight: 700; }
-          .cvz-td.chr::before { content: "Cherry — ";   color: #ff6b76; font-weight: 700; }
+          .cvz-td.k { border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); }
+          .cvz-td.std::before { content: "Standard — "; color: var(--pf-ink-3); font-weight: 700; }
+          .cvz-td.chr::before { content: "Cherry — ";   color: var(--pf-accent); font-weight: 700; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -198,7 +198,7 @@ export default function CherryVisualization() {
                aria-label="A single frozen monolithic model. Every query activates the entire model, and nothing about it changes afterwards.">
             <defs>
               <pattern id="cvzGridA" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="#1b1e22" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
               </pattern>
               <filter id="cvzGlowA" x="-60%" y="-60%" width="220%" height="220%">
                 <feGaussianBlur stdDeviation="3.2" result="b" />
@@ -209,39 +209,39 @@ export default function CherryVisualization() {
             <rect width="460" height="300" fill="url(#cvzGridA)" opacity="0.65" />
 
             {/* input */}
-            <text x="12" y="146" fill="#838d99" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
-            <line x1="58" y1="155" x2="150" y2="155" stroke="#3a4048" strokeWidth="1.5" />
+            <text x="12" y="146" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
+            <line x1="58" y1="155" x2="150" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse">
-              <circle cx="58" cy="155" r="3.5" fill="#c4cfde" filter="url(#cvzGlowA)" />
+              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowA)" />
             </g>
 
             {/* monolith */}
-            <rect x="150" y="88" width="176" height="134" rx="12" fill="#16181c" stroke="#3a4048" strokeWidth="1.5" />
-            <rect className="cvz-mono" x="150" y="88" width="176" height="134" rx="12" fill="#565d68" />
-            <text x="238" y="130" textAnchor="middle" fill="#c4cfde" fontSize="12" fontWeight="700" letterSpacing="0.6">ONE FROZEN MODEL</text>
-            <text x="238" y="151" textAnchor="middle" fill="#98a2ae" fontSize="10">every parameter fires,</text>
-            <text x="238" y="166" textAnchor="middle" fill="#98a2ae" fontSize="10">on every single query</text>
+            <rect x="150" y="88" width="176" height="134" rx="12" fill="var(--pf-surface)" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
+            <rect className="cvz-mono" x="150" y="88" width="176" height="134" rx="12" fill="var(--pf-ink-4)" />
+            <text x="238" y="130" textAnchor="middle" fill="var(--pf-ink)" fontSize="12" fontWeight="700" letterSpacing="0.6">ONE FROZEN MODEL</text>
+            <text x="238" y="151" textAnchor="middle" fill="var(--pf-ink-2)" fontSize="10">every parameter fires,</text>
+            <text x="238" y="166" textAnchor="middle" fill="var(--pf-ink-2)" fontSize="10">on every single query</text>
             {/* padlock */}
             <g transform="translate(230, 182)">
-              <rect x="0" y="5" width="16" height="12" rx="2.5" fill="none" stroke="#7d8794" strokeWidth="1.5" />
-              <path d="M3.5 5V3.2a4.5 4.5 0 0 1 9 0V5" fill="none" stroke="#7d8794" strokeWidth="1.5" />
+              <rect x="0" y="5" width="16" height="12" rx="2.5" fill="none" stroke="var(--pf-ink-3)" strokeWidth="1.5" />
+              <path d="M3.5 5V3.2a4.5 4.5 0 0 1 9 0V5" fill="none" stroke="var(--pf-ink-3)" strokeWidth="1.5" />
             </g>
-            <text x="238" y="212" textAnchor="middle" fill="#7d8794" fontSize="9" fontWeight="700" letterSpacing="1.2">SEALED AT TRAINING CUTOFF</text>
+            <text x="238" y="212" textAnchor="middle" fill="var(--pf-ink-3)" fontSize="9" fontWeight="700" letterSpacing="1.2">SEALED AT TRAINING CUTOFF</text>
 
             {/* output */}
-            <line x1="326" y1="155" x2="414" y2="155" stroke="#3a4048" strokeWidth="1.5" />
+            <line x1="326" y1="155" x2="414" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse-out" transform="translate(326,0)">
-              <circle cx="0" cy="155" r="3.5" fill="#c4cfde" filter="url(#cvzGlowA)" />
+              <circle cx="0" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowA)" />
             </g>
-            <text x="448" y="146" textAnchor="end" fill="#838d99" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
+            <text x="448" y="146" textAnchor="end" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
 
             {/* the absent feedback loop */}
-            <path d="M 400 200 Q 238 282 76 200" fill="none" stroke="#2f343a" strokeWidth="1.5" strokeDasharray="5 5" />
+            <path d="M 400 200 Q 238 282 76 200" fill="none" stroke="var(--pf-border)" strokeWidth="1.5" strokeDasharray="5 5" />
             <g transform="translate(238, 258)">
-              <line x1="-7" y1="-7" x2="7" y2="7" stroke="#7d8794" strokeWidth="2" strokeLinecap="round" />
-              <line x1="7" y1="-7" x2="-7" y2="7" stroke="#7d8794" strokeWidth="2" strokeLinecap="round" />
+              <line x1="-7" y1="-7" x2="7" y2="7" stroke="var(--pf-ink-3)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="7" y1="-7" x2="-7" y2="7" stroke="var(--pf-ink-3)" strokeWidth="2" strokeLinecap="round" />
             </g>
-            <text x="238" y="288" textAnchor="middle" fill="#7d8794" fontSize="9.5">nothing returns — the model is identical afterwards</text>
+            <text x="238" y="288" textAnchor="middle" fill="var(--pf-ink-3)" fontSize="9.5">nothing returns — the model is identical afterwards</text>
           </svg>
 
           <p className="cvz-caption">
@@ -260,7 +260,7 @@ export default function CherryVisualization() {
                aria-label="A router directs each prompt to a few specialised nodes out of many. They collaborate to produce an answer, feed what they learned back into the mesh in real time, and the mesh grows a new node when it meets work it cannot do.">
             <defs>
               <pattern id="cvzGridB" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="#1b1e22" strokeWidth="1" />
+                <path d="M20 0H0V20" fill="none" stroke="var(--pf-surface-2)" strokeWidth="1" />
               </pattern>
               <filter id="cvzGlowB" x="-80%" y="-80%" width="260%" height="260%">
                 <feGaussianBlur stdDeviation="3.6" result="b" />
@@ -268,33 +268,33 @@ export default function CherryVisualization() {
               </filter>
               <marker id="cvzArrow" viewBox="0 0 10 10" refX="8" refY="5"
                       markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                <path d="M0 0 L10 5 L0 10 z" fill="#ff6b76" />
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--pf-accent)" />
               </marker>
             </defs>
 
             <rect width="460" height="300" fill="url(#cvzGridB)" opacity="0.65" />
 
             {/* input */}
-            <text x="12" y="146" fill="#838d99" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
-            <line x1="58" y1="155" x2="92" y2="155" stroke="#3a4048" strokeWidth="1.5" />
+            <text x="12" y="146" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">PROMPT</text>
+            <line x1="58" y1="155" x2="92" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse">
-              <circle cx="58" cy="155" r="3.5" fill="#c4cfde" filter="url(#cvzGlowB)" />
+              <circle cx="58" cy="155" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowB)" />
             </g>
 
             {/* router */}
-            <polygon points="110,140 126,155 110,170 94,155" fill="#16181c" stroke="#c4cfde" strokeWidth="1.5" />
-            <text x="110" y="192" textAnchor="middle" fill="#a6b0bc" fontSize="9" fontWeight="700" letterSpacing="1">ROUTER</text>
-            <text x="110" y="205" textAnchor="middle" fill="#7d8794" fontSize="8.5">picks who wakes</text>
+            <polygon points="110,140 126,155 110,170 94,155" fill="var(--pf-surface)" stroke="var(--pf-ink)" strokeWidth="1.5" />
+            <text x="110" y="192" textAnchor="middle" fill="var(--pf-ink-2)" fontSize="9" fontWeight="700" letterSpacing="1">ROUTER</text>
+            <text x="110" y="205" textAnchor="middle" fill="var(--pf-ink-3)" fontSize="8.5">picks who wakes</text>
 
             {/* router → mesh */}
-            <line x1="126" y1="155" x2="150" y2="132" stroke="#2f343a" strokeWidth="1.2" />
-            <line x1="126" y1="155" x2="152" y2="155" stroke="#2f343a" strokeWidth="1.2" />
-            <line x1="126" y1="155" x2="150" y2="185" stroke="#2f343a" strokeWidth="1.2" />
+            <line x1="126" y1="155" x2="150" y2="132" stroke="var(--pf-border)" strokeWidth="1.2" />
+            <line x1="126" y1="155" x2="152" y2="155" stroke="var(--pf-border)" strokeWidth="1.2" />
+            <line x1="126" y1="155" x2="150" y2="185" stroke="var(--pf-border)" strokeWidth="1.2" />
 
             {/* active mesh edges */}
             {edges.map(([x1, y1, x2, y2], i) => (
               <line key={i} className="cvz-edge" x1={x1} y1={y1} x2={x2} y2={y2}
-                    stroke="#ff6b76" strokeWidth="1.4" strokeLinecap="round"
+                    stroke="var(--pf-accent)" strokeWidth="1.4" strokeLinecap="round"
                     style={{ animationDelay: `${0.3 + i * 0.22}s` }} />
             ))}
 
@@ -304,9 +304,9 @@ export default function CherryVisualization() {
                 return (
                   <g key={i} className="cvz-new-g">
                     <g className="cvz-new">
-                      <circle cx={n.x} cy={n.y} r="13" fill="rgba(127,216,143,0.12)" stroke="#7fd88f" strokeWidth="1.3" strokeDasharray="3 2.5" />
-                      <circle cx={n.x} cy={n.y} r="5.5" fill="#7fd88f" filter="url(#cvzGlowB)" />
-                      <text x={n.x} y={n.y + 30} textAnchor="middle" fill="#7fd88f" fontSize="8.5" fontWeight="700" letterSpacing="0.8">NEW NODE</text>
+                      <circle cx={n.x} cy={n.y} r="13" fill="rgba(var(--pf-pos-rgb), 0.12)" stroke="var(--pf-pos)" strokeWidth="1.3" strokeDasharray="3 2.5" />
+                      <circle cx={n.x} cy={n.y} r="5.5" fill="var(--pf-pos)" filter="url(#cvzGlowB)" />
+                      <text x={n.x} y={n.y + 30} textAnchor="middle" fill="var(--pf-pos)" fontSize="8.5" fontWeight="700" letterSpacing="0.8">NEW NODE</text>
                     </g>
                   </g>
                 );
@@ -314,28 +314,28 @@ export default function CherryVisualization() {
               if (n.state === 'active') {
                 return (
                   <g key={i}>
-                    <circle className="cvz-halo" cx={n.x} cy={n.y} r="11" fill="rgba(255,107,118,0.3)"
+                    <circle className="cvz-halo" cx={n.x} cy={n.y} r="11" fill="rgba(var(--pf-accent-rgb), 0.3)"
                             style={{ animationDelay: `${n.delay}s` }} />
-                    <circle className="cvz-node-active" cx={n.x} cy={n.y} r="7" fill="#ff6b76"
+                    <circle className="cvz-node-active" cx={n.x} cy={n.y} r="7" fill="var(--pf-accent)"
                             filter="url(#cvzGlowB)" style={{ animationDelay: `${n.delay}s` }} />
                   </g>
                 );
               }
-              return <circle key={i} cx={n.x} cy={n.y} r="5.5" fill="#272b31" stroke="#3a4048" strokeWidth="1" />;
+              return <circle key={i} cx={n.x} cy={n.y} r="5.5" fill="var(--pf-surface-2)" stroke="var(--pf-ink-4)" strokeWidth="1" />;
             })}
 
             {/* output */}
-            <line x1="380" y1="140" x2="414" y2="155" stroke="#3a4048" strokeWidth="1.5" />
+            <line x1="380" y1="140" x2="414" y2="155" stroke="var(--pf-ink-4)" strokeWidth="1.5" />
             <g className="cvz-pulse-out" transform="translate(346,0)">
-              <circle cx="34" cy="146" r="3.5" fill="#c4cfde" filter="url(#cvzGlowB)" />
+              <circle cx="34" cy="146" r="3.5" fill="var(--pf-ink)" filter="url(#cvzGlowB)" />
             </g>
-            <text x="448" y="146" textAnchor="end" fill="#838d99" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
+            <text x="448" y="146" textAnchor="end" fill="var(--pf-ink-3)" fontSize="10" fontWeight="700" letterSpacing="1.4">ANSWER</text>
 
             {/* feedback — the whole point */}
             <path className="cvz-feedback" d="M 404 172 Q 240 288 120 196"
-                  fill="none" stroke="#ff6b76" strokeWidth="1.8" strokeLinecap="round"
+                  fill="none" stroke="var(--pf-accent)" strokeWidth="1.8" strokeLinecap="round"
                   markerEnd="url(#cvzArrow)" />
-            <text x="252" y="272" textAnchor="middle" fill="#ff6b76" fontSize="9.5" fontWeight="700">
+            <text x="252" y="272" textAnchor="middle" fill="var(--pf-accent)" fontSize="9.5" fontWeight="700">
               learns from this — now, not next quarter
             </text>
           </svg>

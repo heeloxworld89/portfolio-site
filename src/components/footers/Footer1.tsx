@@ -13,11 +13,11 @@ export default function Footer1(_props?: any) {
       <style>{`
         .ft-inner { text-align: center; max-width: 640px; margin: 0 auto; }
         .ft-name {
-          font-size: 20px; font-weight: 700; color: #e8edf4;
+          font-size: 20px; font-weight: 700; color: var(--pf-ink);
           margin: 0 0 8px; letter-spacing: -0.2px;
         }
         .ft-role {
-          font-size: 14px; color: #a6b0bc; margin: 0 0 22px; line-height: 1.7;
+          font-size: 14px; color: var(--pf-ink-2); margin: 0 0 22px; line-height: 1.7;
         }
         .ft-mails {
           display: flex; flex-wrap: wrap; justify-content: center;
@@ -25,26 +25,26 @@ export default function Footer1(_props?: any) {
         }
         .ft-mail {
           display: inline-flex; align-items: center; gap: 8px;
-          font-size: 14px; color: #c4cfde; text-decoration: none;
+          font-size: 14px; color: var(--pf-ink); text-decoration: none;
           transition: color 0.2s ease;
         }
-        .ft-mail:hover { color: #fff; }
-        .ft-mail svg { color: #838d99; }
+        .ft-mail:hover { color: var(--pf-ink); }
+        .ft-mail svg { color: var(--pf-ink-3); }
 
         .ft-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .ft-link {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 9px 16px; border-radius: 999px;
-          border: 1px solid #2a2d32; background: rgba(196,207,222,0.04);
-          color: #c4cfde; text-decoration: none;
+          border: 1px solid var(--pf-border); background: rgba(var(--pf-ink-rgb), 0.04);
+          color: var(--pf-ink); text-decoration: none;
           font-size: 12.5px; font-weight: 600; letter-spacing: 0.3px;
           transition: background 0.25s ease, border-color 0.25s ease,
                       color 0.25s ease, transform 0.25s ease;
         }
         .ft-link:hover {
-          background: rgba(196,207,222,0.1);
-          border-color: rgba(196,207,222,0.45);
-          color: #fff;
+          background: rgba(var(--pf-ink-rgb), 0.1);
+          border-color: rgba(var(--pf-ink-rgb), 0.45);
+          color: var(--pf-ink);
           transform: translateY(-2px);
         }
         @media (prefers-reduced-motion: reduce) { .ft-link:hover { transform: none; } }

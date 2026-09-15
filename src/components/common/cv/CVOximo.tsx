@@ -44,46 +44,46 @@ export default function CVOximo() {
     >
       <style>{`
         .ox-closed {
-          background: #191b1e; border: 1px solid #2a2d32;
-          border-left: 2px solid #565d68; border-radius: 0 10px 10px 0;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-ink-4); border-radius: 0 10px 10px 0;
           padding: 24px 28px; margin-bottom: 40px;
         }
-        .ox-closed-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #838d99; margin-bottom: 12px; }
-        .ox-closed p { font-size: 15.5px; line-height: 1.8; color: #9aa4b0; margin: 0 0 13px; }
+        .ox-closed-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 12px; }
+        .ox-closed p { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 13px; }
         .ox-closed p:last-child { margin-bottom: 0; }
-        .ox-closed strong { color: #c4cfde; font-weight: 600; }
+        .ox-closed strong { color: var(--pf-ink); font-weight: 600; }
 
         .ox-pull {
-          font-size: 18px; font-weight: 600; font-style: italic; color: #c4cfde;
-          border-left: 2px solid rgba(255,255,255,0.12); padding-left: 20px;
+          font-size: 18px; font-weight: 600; font-style: italic; color: var(--pf-ink);
+          border-left: 2px solid rgba(var(--pf-ink-rgb), 0.12); padding-left: 20px;
           margin: 0 0 32px; line-height: 1.7;
         }
 
         .ox-label {
           font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99;
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+          text-transform: uppercase; color: var(--pf-ink-3);
+          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
-        .ox-p { font-size: 16px; line-height: 1.85; color: #9aa4b0; max-width: 760px; margin: 0 0 22px; }
+        .ox-p { font-size: 16px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 22px; }
 
         .ox-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px; margin-bottom: 40px; }
-        .ox-stat { background: #191b1e; border: 1px solid #2a2d32; border-radius: 8px; padding: 16px; text-align: center; }
-        .ox-stat-v { font-size: 21px; font-weight: 800; color: #c4cfde; line-height: 1.1; margin-bottom: 5px; }
-        .ox-stat-l { font-size: 10.5px; color: #838d99; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .ox-stat { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 8px; padding: 16px; text-align: center; }
+        .ox-stat-v { font-size: 21px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; margin-bottom: 5px; }
+        .ox-stat-l { font-size: 10.5px; color: var(--pf-ink-3); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
-        .ox-link { font-size: 13px; color: #838d99; margin-bottom: 30px; }
-        .ox-link a { color: #c4cfde; text-decoration: underline; display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; }
-        .ox-link a:hover { color: #fff; }
+        .ox-link { font-size: 13px; color: var(--pf-ink-3); margin-bottom: 30px; }
+        .ox-link a { color: var(--pf-ink); text-decoration: underline; display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; }
+        .ox-link a:hover { color: var(--pf-ink); }
 
         .ox-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 30px; }
         @media (max-width: 800px) { .ox-grid2 { grid-template-columns: 1fr; } }
-        .ox-card { background: #191b1e; border-radius: 10px; padding: 22px 24px; border: 1px solid #2a2d32; }
-        .ox-card-h { font-size: 14px; color: #c4cfde; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-        .ox-card-n { background: #2a2d32; color: #fff; width: 27px; height: 27px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 12px; font-weight: 800; flex-shrink: 0; }
-        .ox-mod { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .ox-card { background: var(--pf-surface); border-radius: 10px; padding: 22px 24px; border: 1px solid var(--pf-border); }
+        .ox-card-h { font-size: 14px; color: var(--pf-ink); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .ox-card-n { background: var(--pf-border); color: var(--pf-ink); width: 27px; height: 27px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+        .ox-mod { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); }
         .ox-mod:last-child { border-bottom: none; }
-        .ox-mod-n { font-size: 12.5px; font-family: ui-monospace, Menlo, monospace; color: #9aa4b0; }
-        .ox-mod-d { font-size: 12.5px; color: #838d99; text-align: right; }
+        .ox-mod-n { font-size: 12.5px; font-family: ui-monospace, Menlo, monospace; color: var(--pf-ink-2); }
+        .ox-mod-d { font-size: 12.5px; color: var(--pf-ink-3); text-align: right; }
       `}</style>
 
       <div className="ox-stats">

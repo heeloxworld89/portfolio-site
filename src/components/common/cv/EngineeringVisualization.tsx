@@ -49,11 +49,11 @@ export default function EngineeringVisualization() {
     <div className="evz">
       <style>{`
         .evz-block {
-          background: #121417; border: 1px solid #2a2d32;
+          background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 22px 24px 20px; margin-bottom: 14px;
         }
-        .evz-h { font-size: 15px; font-weight: 700; color: #e8edf4; margin: 0 0 4px; }
-        .evz-s { font-size: 12.5px; color: #a6b0bc; line-height: 1.6; margin: 0 0 18px; max-width: 720px; }
+        .evz-h { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin: 0 0 4px; }
+        .evz-s { font-size: 12.5px; color: var(--pf-ink-2); line-height: 1.6; margin: 0 0 18px; max-width: 720px; }
         .evz-svg { width: 100%; height: auto; display: block; }
 
         /* travelling signal on a straight spine */
@@ -73,58 +73,58 @@ export default function EngineeringVisualization() {
         }
 
         .evz-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(226px, 1fr)); gap: 10px; margin-top: 16px; }
-        .evz-path { background: #191b1e; border: 1px solid #2a2d32; border-radius: 9px; padding: 15px 17px; }
-        .evz-path.is-hire { border-color: rgba(255,74,87,0.32); background: rgba(255,74,87,0.04); }
-        .evz-path-id { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #c4cfde; margin-bottom: 4px; }
-        .evz-path.is-hire .evz-path-id { color: #ff6b76; }
-        .evz-path-cond { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: #838d99; margin-bottom: 8px; }
-        .evz-path-flow { font-size: 12.5px; line-height: 1.6; color: #9aa4b0; }
+        .evz-path { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 9px; padding: 15px 17px; }
+        .evz-path.is-hire { border-color: rgba(var(--pf-accent-rgb), 0.32); background: rgba(var(--pf-accent-rgb), 0.04); }
+        .evz-path-id { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: var(--pf-ink); margin-bottom: 4px; }
+        .evz-path.is-hire .evz-path-id { color: var(--pf-accent); }
+        .evz-path-cond { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 8px; }
+        .evz-path-flow { font-size: 12.5px; line-height: 1.6; color: var(--pf-ink-2); }
 
         .evz-fsm { display: flex; flex-direction: column; gap: 2px; }
         .evz-fsm-step {
           display: grid; grid-template-columns: 30px 158px 1fr; gap: 14px; align-items: baseline;
-          background: #191b1e; border: 1px solid #2a2d32; padding: 13px 18px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 13px 18px;
         }
         .evz-fsm-step:first-child { border-radius: 9px 9px 0 0; }
-        .evz-fsm-step:last-child  { border-radius: 0 0 9px 9px; border-color: rgba(255,74,87,0.28); background: rgba(255,74,87,0.04); }
+        .evz-fsm-step:last-child  { border-radius: 0 0 9px 9px; border-color: rgba(var(--pf-accent-rgb), 0.28); background: rgba(var(--pf-accent-rgb), 0.04); }
         @media (max-width: 700px) { .evz-fsm-step { grid-template-columns: 30px 1fr; } .evz-fsm-d { grid-column: 2; } }
         .evz-fsm-n {
           width: 22px; height: 22px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
-          background: #2a2d32; color: #c4cfde; font-size: 11px; font-weight: 700;
+          background: var(--pf-border); color: var(--pf-ink); font-size: 11px; font-weight: 700;
         }
-        .evz-fsm-step:last-child .evz-fsm-n { background: rgba(255,74,87,0.18); color: #ff6b76; }
-        .evz-fsm-s { font-size: 13px; font-weight: 700; color: #c4cfde; font-family: ui-monospace, Menlo, monospace; }
-        .evz-fsm-d { font-size: 13px; line-height: 1.6; color: #9aa4b0; }
+        .evz-fsm-step:last-child .evz-fsm-n { background: rgba(var(--pf-accent-rgb), 0.18); color: var(--pf-accent); }
+        .evz-fsm-s { font-size: 13px; font-weight: 700; color: var(--pf-ink); font-family: ui-monospace, Menlo, monospace; }
+        .evz-fsm-d { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); }
 
         .evz-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         @media (max-width: 900px) { .evz-two { grid-template-columns: 1fr; } }
 
         .evz-mem-row {
           display: grid; grid-template-columns: 82px 1fr; gap: 14px; align-items: center;
-          background: #191b1e; border: 1px solid #2a2d32; border-radius: 8px; padding: 13px 16px; margin-bottom: 8px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 8px; padding: 13px 16px; margin-bottom: 8px;
         }
         .evz-mem-row:last-child { margin-bottom: 0; }
         .evz-mem-t { font-size: 12.5px; font-weight: 700; }
-        .evz-mem-s { font-size: 10px; color: #7d8794; margin-top: 2px; }
-        .evz-mem-h { font-size: 12.5px; color: #9aa4b0; line-height: 1.55; }
+        .evz-mem-s { font-size: 10px; color: var(--pf-ink-3); margin-top: 2px; }
+        .evz-mem-h { font-size: 12.5px; color: var(--pf-ink-2); line-height: 1.55; }
 
         .evz-cost-row { display: grid; grid-template-columns: 168px 1fr 62px; gap: 12px; align-items: center; margin-bottom: 10px; }
         .evz-cost-row:last-child { margin-bottom: 0; }
-        .evz-cost-n { font-size: 12px; color: #98a2ae; line-height: 1.4; }
-        .evz-cost-row.is-best .evz-cost-n { color: #7fd88f; font-weight: 700; }
-        .evz-cost-track { height: 10px; background: rgba(255,255,255,0.05); border-radius: 5px; overflow: hidden; }
-        .evz-cost-fill { height: 100%; border-radius: 5px; background: #4a5058; }
-        .evz-cost-fill.is-best { background: #7fd88f; }
-        .evz-cost-v { font-size: 12.5px; font-weight: 700; color: #98a2ae; text-align: right; }
-        .evz-cost-row.is-best .evz-cost-v { color: #7fd88f; }
+        .evz-cost-n { font-size: 12px; color: var(--pf-ink-2); line-height: 1.4; }
+        .evz-cost-row.is-best .evz-cost-n { color: var(--pf-pos); font-weight: 700; }
+        .evz-cost-track { height: 10px; background: rgba(var(--pf-ink-rgb), 0.05); border-radius: 5px; overflow: hidden; }
+        .evz-cost-fill { height: 100%; border-radius: 5px; background: var(--pf-ink-4); }
+        .evz-cost-fill.is-best { background: var(--pf-pos); }
+        .evz-cost-v { font-size: 12.5px; font-weight: 700; color: var(--pf-ink-2); text-align: right; }
+        .evz-cost-row.is-best .evz-cost-v { color: var(--pf-pos); }
         @media (max-width: 620px) { .evz-cost-row { grid-template-columns: 1fr 52px; } .evz-cost-track { grid-column: 1 / -1; } }
 
         .evz-note {
-          font-size: 11.5px; line-height: 1.6; color: #838d99;
-          margin-top: 14px; padding-top: 11px; border-top: 1px solid #22252a;
+          font-size: 11.5px; line-height: 1.6; color: var(--pf-ink-3);
+          margin-top: 14px; padding-top: 11px; border-top: 1px solid var(--pf-surface-2);
         }
-        .evz-note strong { color: #a6b0bc; font-weight: 600; }
+        .evz-note strong { color: var(--pf-ink-2); font-weight: 600; }
 
         @media (prefers-reduced-motion: reduce) {
           .evz-run, .evz-ring { animation: none; }
@@ -137,7 +137,7 @@ export default function EngineeringVisualization() {
         <h4 className="evz-h">What Happens to a Task</h4>
         <p className="evz-s">
           A task arrives as one sentence. Nobody has said who should do it, how to split it, or whether the right
-          specialist exists yet. <strong style={{ color: '#c4cfde' }}>An organisation assembles itself around the
+          specialist exists yet. <strong style={{ color: 'var(--pf-ink)' }}>An organisation assembles itself around the
           work</strong> and a validated deliverable comes out the other side.
         </p>
 
@@ -151,27 +151,27 @@ export default function EngineeringVisualization() {
           </defs>
 
           {/* straight spine, entirely behind the boxes */}
-          <line x1="96" y1="62" x2="952" y2="62" stroke="#262a30" strokeWidth="1.4" />
-          <g className="evz-run"><circle cx="96" cy="62" r="4.5" fill="#c4cfde" filter="url(#evzGlow)" /></g>
+          <line x1="96" y1="62" x2="952" y2="62" stroke="var(--pf-border)" strokeWidth="1.4" />
+          <g className="evz-run"><circle cx="96" cy="62" r="4.5" fill="var(--pf-ink)" filter="url(#evzGlow)" /></g>
 
-          <text x="8" y="58" fill="#a6b0bc" fontSize="10" fontWeight="700" letterSpacing="1.2">TASK IN</text>
-          <text x="8" y="72" fill="#7d8794" fontSize="8.5">one sentence</text>
+          <text x="8" y="58" fill="var(--pf-ink-2)" fontSize="10" fontWeight="700" letterSpacing="1.2">TASK IN</text>
+          <text x="8" y="72" fill="var(--pf-ink-3)" fontSize="8.5">one sentence</text>
 
           {stages.map((st, i) => (
             <g key={st.t}>
               <rect x={st.x} y="36" width={STAGE_W} height="52" rx="9"
-                    fill="#191b1e" stroke={st.hot ? 'rgba(255,74,87,0.42)' : '#343941'} strokeWidth="1.3" />
+                    fill="var(--pf-surface)" stroke={st.hot ? 'rgba(var(--pf-accent-rgb), 0.42)' : 'var(--pf-border-2)'} strokeWidth="1.3" />
               <rect className="evz-ring" x={st.x} y="36" width={STAGE_W} height="52" rx="9"
-                    fill="none" stroke={st.hot ? '#ff6b76' : '#c4cfde'} strokeWidth="1.8"
+                    fill="none" stroke={st.hot ? 'var(--pf-accent)' : 'var(--pf-ink)'} strokeWidth="1.8"
                     style={{ animationDelay: `${i * 0.9}s` }} />
-              <text x={st.x + STAGE_W / 2} y="59" textAnchor="middle" fill="#e8edf4" fontSize="11.5" fontWeight="700">{st.t}</text>
-              <text x={st.x + STAGE_W / 2} y="75" textAnchor="middle" fill="#98a2ae" fontSize="9">{st.s}</text>
+              <text x={st.x + STAGE_W / 2} y="59" textAnchor="middle" fill="var(--pf-ink)" fontSize="11.5" fontWeight="700">{st.t}</text>
+              <text x={st.x + STAGE_W / 2} y="75" textAnchor="middle" fill="var(--pf-ink-2)" fontSize="9">{st.s}</text>
             </g>
           ))}
 
           {/* the branch, named once, centred under Execute */}
-          <line x1="452" y1="88" x2="452" y2="104" stroke="rgba(255,74,87,0.42)" strokeWidth="1.2" />
-          <text x="452" y="119" textAnchor="middle" fill="#ff8a93" fontSize="10" fontWeight="700">
+          <line x1="452" y1="88" x2="452" y2="104" stroke="rgba(var(--pf-accent-rgb), 0.42)" strokeWidth="1.2" />
+          <text x="452" y="119" textAnchor="middle" fill="var(--pf-accent-2)" fontSize="10" fontWeight="700">
             A1 · A2 · B1 · B2 — the B-paths hire a specialist mid-task
           </text>
         </svg>
@@ -193,7 +193,7 @@ export default function EngineeringVisualization() {
         <p className="evz-s">
           Every agent framework asks you to define your agents up front. When OXIMO meets work no existing role can
           handle, it designs the role, checks it is not a duplicate, validates it, tests that it produces coherent
-          output, and commits it — <strong style={{ color: '#c4cfde' }}>with no human at any step</strong>. This is the
+          output, and commits it — <strong style={{ color: 'var(--pf-ink)' }}>with no human at any step</strong>. This is the
           orchestration-layer ancestor of Silent Node Injection.
         </p>
         <div className="evz-fsm">
@@ -220,9 +220,9 @@ export default function EngineeringVisualization() {
             strengthens. Agents mature Nascent → Learning → Mature → Expert.
           </p>
           {[
-            { t: 'Working', s: 'In-process deque', h: 'The current session', c: '#7d8794' },
-            { t: 'Episodic', s: 'Database, role-scoped', h: 'Task outcomes and failure lessons', c: '#a6b0bc' },
-            { t: 'Semantic', s: 'Vector store', h: 'Deep knowledge, retrievable across roles', c: '#c4cfde' },
+            { t: 'Working', s: 'In-process deque', h: 'The current session', c: 'var(--pf-ink-3)' },
+            { t: 'Episodic', s: 'Database, role-scoped', h: 'Task outcomes and failure lessons', c: 'var(--pf-ink-2)' },
+            { t: 'Semantic', s: 'Vector store', h: 'Deep knowledge, retrievable across roles', c: 'var(--pf-ink)' },
           ].map((m) => (
             <div className="evz-mem-row" key={m.t}>
               <div>

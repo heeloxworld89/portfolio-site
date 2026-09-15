@@ -58,79 +58,79 @@ export default function CVBlackBloxie() {
     >
       <style>{`
         .bb-note {
-          background: #191b1e; border: 1px solid #2a2d32;
-          border-left: 2px solid #565d68; border-radius: 0 10px 10px 0;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-ink-4); border-radius: 0 10px 10px 0;
           padding: 20px 24px; margin-bottom: 36px;
         }
-        .bb-note p { font-size: 15px; line-height: 1.75; color: #9aa4b0; margin: 0; }
-        .bb-note strong { color: #c4cfde; font-weight: 600; }
+        .bb-note p { font-size: 15px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
+        .bb-note strong { color: var(--pf-ink); font-weight: 600; }
 
         .bb-headline { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; }
         @media (max-width: 700px) { .bb-headline { grid-template-columns: 1fr; } }
-        .bb-hcell { background: #191b1e; border: 1px solid #2a2d32; border-radius: 10px; padding: 24px 26px; }
-        .bb-hcell.down { border-left: 2px solid #ff4a57; border-radius: 0 10px 10px 0; }
-        .bb-hcell.up   { border-left: 2px solid #7fd88f; border-radius: 0 10px 10px 0; }
+        .bb-hcell { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px; padding: 24px 26px; }
+        .bb-hcell.down { border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0; }
+        .bb-hcell.up   { border-left: 2px solid var(--pf-pos); border-radius: 0 10px 10px 0; }
         .bb-hv { font-size: 38px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; margin-bottom: 8px; }
-        .bb-hcell.down .bb-hv { color: #ff6b76; }
-        .bb-hcell.up   .bb-hv { color: #8fd89c; }
-        .bb-hl { font-size: 14px; font-weight: 700; color: #c4cfde; margin-bottom: 4px; }
-        .bb-hs { font-size: 13px; color: #838d99; line-height: 1.6; }
+        .bb-hcell.down .bb-hv { color: var(--pf-accent); }
+        .bb-hcell.up   .bb-hv { color: var(--pf-pos); }
+        .bb-hl { font-size: 14px; font-weight: 700; color: var(--pf-ink); margin-bottom: 4px; }
+        .bb-hs { font-size: 13px; color: var(--pf-ink-3); line-height: 1.6; }
 
         .bb-label {
           font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99;
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+          text-transform: uppercase; color: var(--pf-ink-3);
+          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
 
         .bb-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; }
         @media (max-width: 820px) { .bb-tables { grid-template-columns: 1fr; } }
-        .bb-table { border: 1px solid #2a2d32; border-radius: 10px; overflow: hidden; }
+        .bb-table { border: 1px solid var(--pf-border); border-radius: 10px; overflow: hidden; }
         .bb-table-h {
-          padding: 12px 18px; background: rgba(255,255,255,0.02); border-bottom: 1px solid #2a2d32;
-          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #838d99;
+          padding: 12px 18px; background: rgba(var(--pf-ink-rgb), 0.02); border-bottom: 1px solid var(--pf-border);
+          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pf-ink-3);
         }
-        .bb-tr { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 18px; background: #191b1e; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .bb-tr { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 18px; background: var(--pf-surface); border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); }
         .bb-tr:last-child { border-bottom: none; }
-        .bb-tm { font-size: 13.5px; color: #c4cfde; font-weight: 600; }
-        .bb-tn { font-size: 11.5px; color: #838d99; line-height: 1.5; margin-top: 3px; }
+        .bb-tm { font-size: 13.5px; color: var(--pf-ink); font-weight: 600; }
+        .bb-tn { font-size: 11.5px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 3px; }
         .bb-tp { font-size: 16px; font-weight: 800; font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
-        .bb-table.down .bb-tp { color: #ff6b76; }
-        .bb-table.up   .bb-tp { color: #8fd89c; }
+        .bb-table.down .bb-tp { color: var(--pf-accent); }
+        .bb-table.up   .bb-tp { color: var(--pf-pos); }
 
-        .bb-money { background: #191b1e; border: 1px solid #2a2d32; border-radius: 10px; padding: 24px 26px; margin-bottom: 40px; }
-        .bb-money-h { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .bb-money-p { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; margin: 0 0 18px; }
-        .bb-money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #2a2d32; border: 1px solid #2a2d32; border-radius: 8px; overflow: hidden; }
-        .bb-money-cell { background: #16181c; padding: 16px 18px; }
-        .bb-money-cell.is-hero { background: rgba(255,74,87,0.06); }
-        .bb-money-v { font-size: 20px; font-weight: 800; color: #c4cfde; line-height: 1.1; margin-bottom: 5px; }
-        .bb-money-cell.is-hero .bb-money-v { color: #ff8189; }
-        .bb-money-l { font-size: 12px; font-weight: 700; color: #c4cfde; }
-        .bb-money-s { font-size: 11.5px; color: #838d99; margin-top: 3px; line-height: 1.5; }
-        .bb-money-note { font-size: 14px; line-height: 1.75; color: #9aa4b0; margin: 18px 0 0; }
-        .bb-money-note strong { color: #c4cfde; font-weight: 600; }
+        .bb-money { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px; padding: 24px 26px; margin-bottom: 40px; }
+        .bb-money-h { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin-bottom: 10px; }
+        .bb-money-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 18px; }
+        .bb-money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); border-radius: 8px; overflow: hidden; }
+        .bb-money-cell { background: var(--pf-surface); padding: 16px 18px; }
+        .bb-money-cell.is-hero { background: rgba(var(--pf-accent-rgb), 0.06); }
+        .bb-money-v { font-size: 20px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; margin-bottom: 5px; }
+        .bb-money-cell.is-hero .bb-money-v { color: var(--pf-accent); }
+        .bb-money-l { font-size: 12px; font-weight: 700; color: var(--pf-ink); }
+        .bb-money-s { font-size: 11.5px; color: var(--pf-ink-3); margin-top: 3px; line-height: 1.5; }
+        .bb-money-note { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 18px 0 0; }
+        .bb-money-note strong { color: var(--pf-ink); font-weight: 600; }
 
-        .bb-rung { display: grid; grid-template-columns: 46px 1fr; gap: 18px; background: #191b1e; border: 1px solid #2a2d32; padding: 20px 24px; margin-bottom: 2px; }
-        .bb-rung.is-final { border-color: rgba(255,74,87,0.3); }
+        .bb-rung { display: grid; grid-template-columns: 46px 1fr; gap: 18px; background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 20px 24px; margin-bottom: 2px; }
+        .bb-rung.is-final { border-color: rgba(var(--pf-accent-rgb), 0.3); }
         @media (max-width: 640px) { .bb-rung { grid-template-columns: 1fr; gap: 8px; } }
-        .bb-rung-n { font-size: 20px; font-weight: 800; color: #6b7480; font-family: ui-monospace, Menlo, monospace; line-height: 1; }
-        .bb-rung.is-final .bb-rung-n { color: #ff4a57; }
-        .bb-rung-p { font-size: 10px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: #7d8794; margin-bottom: 7px; }
-        .bb-rung.is-final .bb-rung-p { color: #ff8189; }
-        .bb-rung-q { font-size: 15px; font-weight: 700; color: #c4cfde; margin: 0 0 8px; line-height: 1.5; }
-        .bb-rung-a { font-size: 14px; line-height: 1.75; color: #9aa4b0; margin: 0 0 10px; }
-        .bb-rung-v { font-size: 12.5px; font-weight: 700; color: #8fd89c; margin: 0; }
-        .bb-rung.is-final .bb-rung-v { color: #ff8189; }
+        .bb-rung-n { font-size: 20px; font-weight: 800; color: var(--pf-ink-3); font-family: ui-monospace, Menlo, monospace; line-height: 1; }
+        .bb-rung.is-final .bb-rung-n { color: var(--pf-accent); }
+        .bb-rung-p { font-size: 10px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 7px; }
+        .bb-rung.is-final .bb-rung-p { color: var(--pf-accent); }
+        .bb-rung-q { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; line-height: 1.5; }
+        .bb-rung-a { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 10px; }
+        .bb-rung-v { font-size: 12.5px; font-weight: 700; color: var(--pf-pos); margin: 0; }
+        .bb-rung.is-final .bb-rung-v { color: var(--pf-accent); }
 
         .bb-ceiling {
-          background: #191b1e; border: 1px solid #2a2d32;
-          border-left: 2px solid #ff4a57; border-radius: 0 10px 10px 0;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
           padding: 24px 28px; margin-top: 40px;
         }
-        .bb-ceiling-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #ff8189; margin-bottom: 12px; }
-        .bb-ceiling p { font-size: 15.5px; line-height: 1.8; color: #9aa4b0; margin: 0 0 13px; }
+        .bb-ceiling-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px; }
+        .bb-ceiling p { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 13px; }
         .bb-ceiling p:last-child { margin-bottom: 0; }
-        .bb-ceiling strong { color: #c4cfde; font-weight: 600; }
+        .bb-ceiling strong { color: var(--pf-ink); font-weight: 600; }
       `}</style>
 
       <div className="bb-note">

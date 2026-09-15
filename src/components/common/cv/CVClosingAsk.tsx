@@ -22,48 +22,48 @@ export default function CVClosingAsk() {
         @media (max-width: 900px) { .ask-grid { grid-template-columns: 1fr; } }
 
         .ask-card {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           padding: 28px 26px;
           transition: border-color 0.25s;
         }
-        .ask-card:hover { border-color: rgba(255,255,255,0.12); }
+        .ask-card:hover { border-color: rgba(var(--pf-ink-rgb), 0.12); }
 
         .ask-for {
           font-size: 10px;
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #838d99;
+          color: var(--pf-ink-3);
           margin-bottom: 10px;
         }
         .ask-audience {
           font-size: 16px;
           font-weight: 700;
-          color: #c4cfde;
+          color: var(--pf-ink);
           margin-bottom: 12px;
         }
         .ask-body {
           font-size: 13px;
           line-height: 1.75;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
           margin: 0 0 18px;
         }
         .ask-action {
           font-size: 12px;
           font-weight: 700;
           letter-spacing: 0.8px;
-          color: #c4cfde;
+          color: var(--pf-ink);
           text-decoration: none;
-          border-bottom: 1px solid rgba(196,207,222,0.2);
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.2);
           padding-bottom: 2px;
           transition: border-color 0.2s, color 0.2s;
         }
-        .ask-action:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+        .ask-action:hover { color: var(--pf-ink); border-color: rgba(var(--pf-ink-rgb), 0.5); }
 
         .ask-email-bar {
-          background: #191b1e;
-          border: 1px solid #2a2d32;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
           padding: 22px 28px;
           display: flex;
           align-items: center;
@@ -73,34 +73,34 @@ export default function CVClosingAsk() {
         }
         .ask-email-label {
           font-size: 13px;
-          color: #9aa4b0;
+          color: var(--pf-ink-2);
         }
         .ask-email-link {
           font-size: 15px;
           font-weight: 700;
-          color: #c4cfde;
+          color: var(--pf-ink);
           text-decoration: none;
           letter-spacing: 0.2px;
           transition: color 0.2s;
         }
-        .ask-email-link:hover { color: #fff; }
+        .ask-email-link:hover { color: var(--pf-ink); }
         .ask-email-note {
           font-size: 12px;
-          color: #838d99;
+          color: var(--pf-ink-3);
           font-style: italic;
         }
         .ask-site {
           display: inline-flex; align-items: center; gap: 9px;
           text-decoration: none; padding: 9px 16px; border-radius: 999px;
-          background: rgba(255,74,87,0.1); border: 1px solid rgba(255,74,87,0.42);
-          font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.2px;
+          background: rgba(var(--pf-accent-rgb), 0.1); border: 1px solid rgba(var(--pf-accent-rgb), 0.42);
+          font-size: 13px; font-weight: 700; color: var(--pf-ink); letter-spacing: 0.2px;
           transition: background 0.22s, border-color 0.22s;
         }
         .ask-site:hover {
-          background: rgba(255,74,87,0.19); border-color: rgba(255,74,87,0.75); color: #fff;
+          background: rgba(var(--pf-accent-rgb), 0.19); border-color: rgba(var(--pf-accent-rgb), 0.75); color: var(--pf-ink);
         }
         .ask-site-dot {
-          width: 7px; height: 7px; border-radius: 50%; background: #ff6b76;
+          width: 7px; height: 7px; border-radius: 50%; background: var(--pf-accent);
           animation: askSiteLive 2.2s ease-in-out infinite;
         }
         @keyframes askSiteLive { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }

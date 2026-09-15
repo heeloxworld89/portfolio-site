@@ -42,29 +42,29 @@ export default function CVCherry() {
       <style>{`
         .cy-warn {
           display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-          background: rgba(255,74,87,0.06); border: 1px solid rgba(255,74,87,0.3);
+          background: rgba(var(--pf-accent-rgb), 0.06); border: 1px solid rgba(var(--pf-accent-rgb), 0.3);
           border-radius: 10px; padding: 16px 22px; margin-bottom: 36px;
         }
         .cy-warn-t {
           font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
-          color: #ff8189; background: rgba(255,74,87,0.12);
-          border: 1px solid rgba(255,74,87,0.36); border-radius: 999px; padding: 4px 12px; flex-shrink: 0;
+          color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.12);
+          border: 1px solid rgba(var(--pf-accent-rgb), 0.36); border-radius: 999px; padding: 4px 12px; flex-shrink: 0;
         }
-        .cy-warn-v { font-size: 14.5px; line-height: 1.65; color: #b3bcc7; flex: 1; min-width: 240px; }
+        .cy-warn-v { font-size: 14.5px; line-height: 1.65; color: var(--pf-ink-2); flex: 1; min-width: 240px; }
 
         .cy-label {
           font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99;
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+          text-transform: uppercase; color: var(--pf-ink-3);
+          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
-        .cy-p { font-size: 16px; line-height: 1.85; color: #9aa4b0; max-width: 760px; margin: 0 0 30px; }
-        .cy-p strong { color: #c4cfde; font-weight: 600; }
+        .cy-p { font-size: 16px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 30px; }
+        .cy-p strong { color: var(--pf-ink); font-weight: 600; }
 
         .cy-not { display: flex; flex-direction: column; gap: 2px; }
-        .cy-not-row { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: #191b1e; border: 1px solid #2a2d32; padding: 17px 22px; }
+        .cy-not-row { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 17px 22px; }
         @media (max-width: 700px) { .cy-not-row { grid-template-columns: 1fr; gap: 6px; } }
-        .cy-not-k { font-size: 13.5px; font-weight: 700; color: #c4cfde; }
-        .cy-not-v { font-size: 13.5px; line-height: 1.7; color: #9aa4b0; }
+        .cy-not-k { font-size: 13.5px; font-weight: 700; color: var(--pf-ink); }
+        .cy-not-v { font-size: 13.5px; line-height: 1.7; color: var(--pf-ink-2); }
       `}</style>
 
       <div className="cy-warn">

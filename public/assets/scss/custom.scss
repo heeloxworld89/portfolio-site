@@ -1,3 +1,72 @@
+/* ══════════════════════════════════════════════════════════════════
+   PORTFOLIO PALETTE
+   Adopted from oxiedo.com's own token set so the personal site and the
+   company site read as one brand. Warm paper, ink, and a single indigo
+   accent. No second accent hue — the old red/green/blue-grey mix is the
+   thing that made this look like a hobby project.
+
+   Every component consumes these; there are no raw hex values left in
+   src/components. Change a value here and the whole site follows.
+   ══════════════════════════════════════════════════════════════════ */
+:root {
+  /* surfaces */
+  --pf-bg:          #f3f1ea;   /* page — warm paper, not pure white */
+  --pf-surface:     #ffffff;   /* cards */
+  --pf-surface-2:   #faf9f3;   /* hover / raised / table headers */
+  --pf-sunk:        #eae7dc;   /* wells, code blocks, progress tracks */
+
+  /* rules */
+  --pf-border:      #dedcd0;
+  --pf-border-2:    #c6c3b4;
+
+  /* ink */
+  --pf-ink:         #14151a;   /* headings, emphasis */
+  --pf-ink-2:       #52524b;   /* body */
+  --pf-ink-3:       #66645b;   /* muted, captions */
+  --pf-ink-4:       #7d7a6b;   /* faint, ordinals */
+
+  /* one accent */
+  --pf-accent:      #4338ca;
+  --pf-accent-2:    #3a2fb8;
+  --pf-accent-wash: #eeecfb;
+  --pf-on-accent:   #ffffff;   /* anything sitting on a solid accent fill */
+
+  /* status — used only where a result is genuinely good or bad */
+  --pf-pos:         #15703f;
+  --pf-neg:         #b23b3b;
+  --pf-warn:        #8a5800;
+
+  /* rgb channels for the rgba() forms */
+  --pf-ink-rgb:     20, 21, 26;
+  --pf-accent-rgb:  67, 56, 202;
+  --pf-pos-rgb:     21, 112, 63;
+  --pf-shadow-rgb:  60, 56, 40;
+
+  /* ── theme overrides: the template ships dark ── */
+  --background-color-1: #f3f1ea;
+  --background-color-2: #f3f1ea;
+  --background-color-3: #faf9f3;
+  --background-color-4: #eae7dc;
+  --color-card:         #ffffff;
+  --color-heading:      #14151a;
+  --color-body:         #52524b;
+  --color-subtitle:     #4338ca;
+  --color-border:       #dedcd0;
+  --color-white:        #ffffff;
+}
+
+html, body {
+  background: var(--pf-bg) !important;
+  color: var(--pf-ink-2);
+}
+
+/* Shadows have to be far lighter on paper than they were on black. */
+:root {
+  --pf-shadow-sm: 0 1px 2px rgba(var(--pf-shadow-rgb), 0.05);
+  --pf-shadow-md: 0 2px 8px -2px rgba(var(--pf-shadow-rgb), 0.09);
+  --pf-shadow-lg: 0 12px 32px -18px rgba(var(--pf-shadow-rgb), 0.22);
+}
+
 .typeanimation {
   transition: width 0.58s ease-out !important;
   height: 100% !important;
@@ -94,8 +163,8 @@
 code,
 kbd,
 samp {
-  color: #9aa5b4 !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--pf-ink) !important;
+  background: var(--pf-sunk) !important;
   padding: 2px 6px !important;
   border-radius: 3px !important;
   font-size: 0.875em !important;
@@ -137,10 +206,10 @@ html, body {
   left: 0;
   right: 0;
   z-index: 999;
-  background: rgba(10, 11, 13, 0.97) !important;
+  background: rgba(243, 241, 234, 0.97) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.06);
   padding: 12px 20px !important;
 }
 
@@ -368,7 +437,7 @@ html, body {
    ══════════════════════════════════════════════════════════════ */
 .header-left-sticky .mainmenu-nav .primary-menu li a {
   position: relative;
-  color: #98a2ae !important;
+  color: var(--pf-ink-2) !important;
   border-radius: 8px !important;
   padding: 8px 12px 8px 14px !important;
   transition: color 0.22s ease, background-color 0.22s ease !important;
@@ -383,7 +452,7 @@ html, body {
     width: 2px;
     height: 62%;
     border-radius: 2px;
-    background: #ff4a57;
+    background: var(--pf-accent);
     opacity: 0;
     transition: opacity 0.22s ease, transform 0.22s ease;
   }
@@ -395,15 +464,15 @@ html, body {
   }
 
   &:hover {
-    color: #d7dee8 !important;
-    background-color: rgba(196, 207, 222, 0.06);
+    color: var(--pf-ink) !important;
+    background-color: rgba(var(--pf-ink-rgb), 0.06);
     svg { opacity: 0.9 !important; }
   }
 }
 
 .header-left-sticky .mainmenu-nav .primary-menu li.current a {
-  color: #ffffff !important;
-  background-color: rgba(255, 74, 87, 0.09);
+  color: var(--pf-accent) !important;
+  background-color: var(--pf-accent-wash);
   font-weight: 600;
 
   &::before {
@@ -412,7 +481,7 @@ html, body {
   }
   svg {
     opacity: 1 !important;
-    color: #ff6b76 !important;
+    color: var(--pf-accent) !important;
   }
   /* neutralise the old faint full-bleed wash */
   &::after { opacity: 0 !important; visibility: hidden !important; }
@@ -471,3 +540,30 @@ html {
     scroll-margin-top: 96px;
   }
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   Sidebar and header on paper
+   ══════════════════════════════════════════════════════════════ */
+.header-left-sticky {
+  background: var(--pf-surface) !important;
+  border-right: 1px solid var(--pf-border) !important;
+}
+.header-left-sticky .logo a,
+.header-left-sticky .social-share-style-1 .title {
+  color: var(--pf-ink) !important;
+}
+
+/* Template hangs a few dark washes on section wrappers. */
+.tmp-section-gap,
+.tmp-banner-one-area,
+.page-with-left-header {
+  background: transparent !important;
+}
+
+/* Horizontal rules between sections */
+hr { border-color: var(--pf-border) !important; opacity: 1 !important; }
+
+/* Headings inherited from the dark theme */
+h1, h2, h3, h4, h5, h6, .title { color: var(--pf-ink); }
+p { color: var(--pf-ink-2); }

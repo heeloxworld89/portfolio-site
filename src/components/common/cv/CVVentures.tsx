@@ -72,50 +72,50 @@ export default function CVVentures() {
       <style>{`
         .vn-exit {
           display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center;
-          background: #191b1e; border: 1px solid #2a2d32;
-          border-left: 2px solid #7fd88f; border-radius: 0 10px 10px 0;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-pos); border-radius: 0 10px 10px 0;
           padding: 24px 28px; margin-bottom: 40px;
         }
         @media (max-width: 640px) { .vn-exit { grid-template-columns: 1fr; gap: 14px; } }
-        .vn-exit-v { font-size: 34px; font-weight: 800; color: #8fd89c; line-height: 1; letter-spacing: -1px; }
-        .vn-exit-k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #838d99; margin-top: 8px; }
-        .vn-exit-h { font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 8px; }
-        .vn-exit-p { font-size: 14.5px; line-height: 1.75; color: #9aa4b0; margin: 0; }
-        .vn-exit-p strong { color: #c4cfde; font-weight: 600; }
+        .vn-exit-v { font-size: 34px; font-weight: 800; color: var(--pf-pos); line-height: 1; letter-spacing: -1px; }
+        .vn-exit-k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pf-ink-3); margin-top: 8px; }
+        .vn-exit-h { font-size: 17px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; }
+        .vn-exit-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
+        .vn-exit-p strong { color: var(--pf-ink); font-weight: 600; }
 
         .vn-label {
           font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: #838d99;
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid #2a2d32;
+          text-transform: uppercase; color: var(--pf-ink-3);
+          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
 
         .vn-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
         .vn-row {
           display: grid; grid-template-columns: 44px 1fr; gap: 20px;
-          background: #191b1e; border: 1px solid #2a2d32; padding: 20px 24px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 20px 24px;
         }
-        .vn-num { font-size: 12px; font-weight: 800; color: #565d68; font-family: ui-monospace, Menlo, monospace; padding-top: 3px; }
+        .vn-num { font-size: 12px; font-weight: 800; color: var(--pf-ink-4); font-family: ui-monospace, Menlo, monospace; padding-top: 3px; }
         .vn-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
-        .vn-title { font-size: 15.5px; font-weight: 700; color: #c4cfde; }
-        .vn-age { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7d8794; }
+        .vn-title { font-size: 15.5px; font-weight: 700; color: var(--pf-ink); }
+        .vn-age { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-ink-3); }
         .vn-broke {
           display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 1.2px;
-          text-transform: uppercase; color: #ff8189;
-          background: rgba(255,74,87,0.09); border: 1px solid rgba(255,74,87,0.28);
+          text-transform: uppercase; color: var(--pf-accent);
+          background: rgba(var(--pf-accent-rgb), 0.09); border: 1px solid rgba(var(--pf-accent-rgb), 0.28);
           border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
         }
-        .vn-lesson { font-size: 14px; line-height: 1.75; color: #9aa4b0; margin: 0; }
+        .vn-lesson { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
         @media (max-width: 640px) { .vn-row { grid-template-columns: 1fr; gap: 8px; } .vn-num { display: none; } }
 
         .vn-finding {
-          background: #191b1e; border: 1px solid #2a2d32;
-          border-left: 2px solid #ff4a57; border-radius: 0 10px 10px 0;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
           padding: 26px 30px;
         }
-        .vn-finding-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #ff8189; margin-bottom: 12px; }
-        .vn-finding p { font-size: 16.5px; line-height: 1.8; color: #c4cfde; margin: 0 0 14px; }
+        .vn-finding-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px; }
+        .vn-finding p { font-size: 16.5px; line-height: 1.8; color: var(--pf-ink); margin: 0 0 14px; }
         .vn-finding p:last-child { margin-bottom: 0; }
-        .vn-finding strong { color: #fff; font-weight: 700; }
+        .vn-finding strong { color: var(--pf-ink); font-weight: 700; }
       `}</style>
 
       <div className="vn-exit">
