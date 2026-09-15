@@ -60,13 +60,12 @@ export default function CVBusiness() {
           display: flex; align-items: center; justify-content: space-between;
           gap: 24px; flex-wrap: wrap; text-decoration: none;
           padding: 24px 28px; border-radius: 12px; margin-bottom: 40px;
-          border: 1px solid rgba(var(--pf-accent-rgb), 0.42);
-          background:
-            radial-gradient(120% 180% at 0% 50%, rgba(var(--pf-accent-rgb), 0.14) 0%, rgba(var(--pf-accent-rgb), 0) 62%),
-            var(--pf-surface);
-          transition: border-color .25s, transform .25s;
+          border: 1px solid var(--pf-border);
+          border-left: 3px solid var(--pf-accent);
+          background: var(--pf-surface);
+          transition: border-color .25s, background .25s;
         }
-        .bz-cta:hover { border-color: rgba(var(--pf-accent-rgb), 0.78); transform: translateY(-2px); }
+        .bz-cta:hover { background: var(--pf-surface-2); border-color: var(--pf-border-2); border-left-color: var(--pf-accent); }
         .bz-cta-l { min-width: 240px; flex: 1; }
         .bz-cta-h { font-size: 19px; font-weight: 800; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.3px; }
         .bz-cta-p { font-size: 14px; line-height: 1.6; color: var(--pf-ink-2); margin: 0; }

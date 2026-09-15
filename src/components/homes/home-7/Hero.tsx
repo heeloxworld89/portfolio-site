@@ -55,32 +55,33 @@ export default function Hero(_props?: any) {
         .hx-live-bar {
           display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
           text-decoration: none; margin-bottom: 52px;
-          padding: 11px 18px; border-radius: 10px;
-          border: 1px solid rgba(var(--pf-accent-rgb), 0.36);
-          background: linear-gradient(90deg, rgba(var(--pf-accent-rgb), 0.13) 0%, rgba(var(--pf-accent-rgb), 0.03) 55%, rgba(var(--pf-accent-rgb), 0) 100%), var(--pf-surface);
+          padding: 12px 18px; border-radius: 8px;
+          border: 1px solid var(--pf-border);
+          border-left: 3px solid var(--pf-accent);
+          background: var(--pf-surface);
           transition: border-color .25s, background .25s;
         }
-        .hx-live-bar:hover { border-color: rgba(var(--pf-accent-rgb), 0.7); }
+        .hx-live-bar:hover { background: var(--pf-surface-2); border-color: var(--pf-border-2); border-left-color: var(--pf-accent); }
         .hx-live-tag {
           display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
-          font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
-          color: var(--pf-accent);
+          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
+          color: var(--pf-pos);
         }
         .hx-live-dot {
-          width: 7px; height: 7px; border-radius: 50%; background: var(--pf-accent);
+          width: 7px; height: 7px; border-radius: 50%; background: var(--pf-pos);
           animation: hxPulse 2.4s infinite;
         }
         @keyframes hxPulse {
-          0%   { box-shadow: 0 0 0 0 rgba(var(--pf-accent-rgb), 0.6); }
-          70%  { box-shadow: 0 0 0 8px rgba(var(--pf-accent-rgb), 0); }
-          100% { box-shadow: 0 0 0 0 rgba(var(--pf-accent-rgb), 0); }
+          0%   { box-shadow: 0 0 0 0 rgba(var(--pf-pos-rgb), 0.5); }
+          70%  { box-shadow: 0 0 0 7px rgba(var(--pf-pos-rgb), 0); }
+          100% { box-shadow: 0 0 0 0 rgba(var(--pf-pos-rgb), 0); }
         }
         .hx-live-txt { font-size: 14px; color: var(--pf-ink); flex: 1; min-width: 200px; line-height: 1.5; }
         .hx-live-txt b { color: var(--pf-ink); font-weight: 700; }
         .hx-live-go {
           display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
-          font-size: 12px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
-          color: var(--pf-ink);
+          font-size: 12.5px; font-weight: 700; letter-spacing: 0.2px;
+          color: var(--pf-accent);
         }
 
         /* ── 2 · claim + 3 · result ─────────────────────────── */
@@ -104,6 +105,7 @@ export default function Hero(_props?: any) {
           letter-spacing: -2px; line-height: 1.04; margin: 0 0 18px;
         }
         .hx-h1 span { display: block; color: var(--pf-accent); }
+        .hx-kicker + .hx-lead { margin-top: 0; }
 
         .hx-kicker {
           font-size: clamp(18px, 1.9vw, 23px); font-weight: 700; color: var(--pf-ink);
@@ -136,9 +138,8 @@ export default function Hero(_props?: any) {
 
         /* the result card */
         .hx-res {
-          background: linear-gradient(180deg, var(--pf-surface) 0%, var(--pf-bg) 100%);
-          border: 1px solid var(--pf-border); border-radius: 14px; padding: 28px 30px;
-          box-shadow: 0 24px 60px -32px rgba(var(--pf-shadow-rgb), 0.144);
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border); border-radius: 10px; padding: 30px 32px;
         }
         .hx-res-k {
           font-size: 9.5px; font-weight: 800; letter-spacing: 2px;
@@ -154,15 +155,16 @@ export default function Hero(_props?: any) {
         .hx-bar.is-bad  .hx-bar-v { color: var(--pf-accent); }
         .hx-bar-track { height: 9px; border-radius: 999px; background: var(--pf-sunk); overflow: hidden; }
         .hx-bar-fill { height: 100%; border-radius: 999px; transform-origin: left center; animation: hxGrow 1.1s cubic-bezier(.2,.8,.2,1) both; }
-        .hx-bar.is-good .hx-bar-fill { background: linear-gradient(90deg, var(--pf-pos), var(--pf-pos)); }
-        .hx-bar.is-bad  .hx-bar-fill { background: linear-gradient(90deg, var(--pf-neg), var(--pf-accent)); }
+        .hx-bar.is-good .hx-bar-fill { background: var(--pf-pos); }
+        .hx-bar.is-bad  .hx-bar-fill { background: var(--pf-neg); }
         @keyframes hxGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         .hx-bar-s { font-size: 11.5px; color: var(--pf-ink-3); margin-top: 6px; line-height: 1.5; }
 
         .hx-res-delta {
-          display: inline-flex; align-items: baseline; gap: 9px;
-          background: rgba(var(--pf-pos-rgb), 0.09); border: 1px solid rgba(var(--pf-pos-rgb), 0.3);
-          border-radius: 8px; padding: 9px 15px; margin: 6px 0 18px;
+          display: flex; align-items: baseline; gap: 10px;
+          border-top: 1px solid var(--pf-border);
+          border-bottom: 1px solid var(--pf-border);
+          padding: 13px 0; margin: 4px 0 18px;
         }
         .hx-res-delta b { font-size: 18px; font-weight: 800; color: var(--pf-pos); font-family: ui-monospace, Menlo, monospace; }
         .hx-res-delta span { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-ink-2); }
@@ -240,7 +242,7 @@ export default function Hero(_props?: any) {
           <span className="hx-live-txt">
             <b>OXIEDO is live.</b> The company I built on this research is open for business at oxiedo.com.
           </span>
-          <span className="hx-live-go">Visit <Icon name="externalLink" size={14} /></span>
+          <span className="hx-live-go">oxiedo.com <Icon name="externalLink" size={14} /></span>
         </a>
 
         {/* ══ 2 · the claim ·  3 · the evidence ════════════════ */}

@@ -9,50 +9,54 @@
    src/components. Change a value here and the whole site follows.
    ══════════════════════════════════════════════════════════════════ */
 :root {
-  /* surfaces */
-  --pf-bg:          #f3f1ea;   /* page — warm paper, not pure white */
-  --pf-surface:     #ffffff;   /* cards */
-  --pf-surface-2:   #faf9f3;   /* hover / raised / table headers */
-  --pf-sunk:        #eae7dc;   /* wells, code blocks, progress tracks */
+  /* surfaces — cream paper. Cards are warm off-white, never pure #fff:
+     pure white on cream is what made the first pass read as "bright". */
+  --pf-bg:          #f1eee4;
+  --pf-surface:     #fbf9f2;
+  --pf-surface-2:   #f6f3e9;
+  --pf-sunk:        #e8e3d5;
 
   /* rules */
-  --pf-border:      #dedcd0;
-  --pf-border-2:    #c6c3b4;
+  --pf-border:      #ded8c7;
+  --pf-border-2:    #c4bda8;
 
-  /* ink */
-  --pf-ink:         #14151a;   /* headings, emphasis */
-  --pf-ink-2:       #52524b;   /* body */
-  --pf-ink-3:       #66645b;   /* muted, captions */
-  --pf-ink-4:       #7d7a6b;   /* faint, ordinals */
+  /* ink — warm near-black, not blue-black */
+  --pf-ink:         #211f1b;
+  --pf-ink-2:       #54514a;
+  --pf-ink-3:       #646057;
+  --pf-ink-4:       #7a7466;
 
-  /* one accent */
-  --pf-accent:      #4338ca;
-  --pf-accent-2:    #3a2fb8;
-  --pf-accent-wash: #eeecfb;
-  --pf-on-accent:   #ffffff;   /* anything sitting on a solid accent fill */
+  /* one accent — deep, desaturated indigo. Same family as oxiedo.com,
+     dark enough to read as ink rather than a highlighter. */
+  --pf-accent:      #343b63;
+  --pf-accent-2:    #262c4c;
+  --pf-accent-wash: #eceadf;
+  --pf-on-accent:   #f6f4ec;
 
-  /* status — used only where a result is genuinely good or bad */
-  --pf-pos:         #15703f;
-  --pf-neg:         #b23b3b;
-  --pf-warn:        #8a5800;
+  /* status — muted. Only where a result is genuinely good or adverse. */
+  --pf-pos:         #3f6b4a;
+  --pf-neg:         #8c4a3f;
+  --pf-warn:        #7a5f28;
 
   /* rgb channels for the rgba() forms */
-  --pf-ink-rgb:     20, 21, 26;
-  --pf-accent-rgb:  67, 56, 202;
-  --pf-pos-rgb:     21, 112, 63;
-  --pf-shadow-rgb:  60, 56, 40;
+  --pf-ink-rgb:     33, 31, 27;
+  --pf-accent-rgb:  52, 59, 99;
+  --pf-pos-rgb:     63, 107, 74;
+  --pf-shadow-rgb:  74, 66, 48;
 
   /* ── theme overrides: the template ships dark ── */
-  --background-color-1: #f3f1ea;
-  --background-color-2: #f3f1ea;
-  --background-color-3: #faf9f3;
-  --background-color-4: #eae7dc;
-  --color-card:         #ffffff;
-  --color-heading:      #14151a;
-  --color-body:         #52524b;
-  --color-subtitle:     #4338ca;
-  --color-border:       #dedcd0;
-  --color-white:        #ffffff;
+  --background-color-1: #f1eee4;
+  --background-color-2: #f1eee4;
+  --background-color-3: #f6f3e9;
+  --background-color-4: #e8e3d5;
+  --color-card:         #fbf9f2;
+  --color-heading:      #211f1b;
+  --color-body:         #54514a;
+  --color-subtitle:     #343b63;
+  --color-border:       #ded8c7;
+  --color-white:        #fbf9f2;
+  --color-primary:      #343b63;
+  --color-gray-2:       #f6f3e9;
 }
 
 html, body {
@@ -567,3 +571,31 @@ hr { border-color: var(--pf-border) !important; opacity: 1 !important; }
 /* Headings inherited from the dark theme */
 h1, h2, h3, h4, h5, h6, .title { color: var(--pf-ink); }
 p { color: var(--pf-ink-2); }
+
+
+/* ══════════════════════════════════════════════════════════════
+   Template leftovers that fight a cream page
+   ══════════════════════════════════════════════════════════════ */
+
+/* A 474px blurred --color-primary blob sat bottom-right of the sidebar.
+   On black it read as a glow. On cream it is a pink smudge. */
+.header-left-sticky .inner-wrapper::after { display: none !important; }
+
+/* Footer shipped as a black slab. */
+.footer-area,
+.footer-style-one-wrapper,
+.bg-color-footer {
+  background: var(--pf-surface-2) !important;
+  border-top: 1px solid var(--pf-border);
+}
+.footer-area .copyright-area,
+.footer-area p,
+.footer-area span,
+.footer-area a { color: var(--pf-ink-3) !important; }
+.footer-area hr { border-color: var(--pf-border) !important; }
+
+/* Sidebar sits flush against the page; a hairline is enough separation. */
+.header-left-sticky {
+  border-right: 1px solid var(--pf-border) !important;
+  box-shadow: none !important;
+}
