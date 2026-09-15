@@ -5,13 +5,13 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Outside Signal"
-      title="Two organisations went looking, and neither of them found me by accident."
+      title="Three outside reads, and not one of them found me by accident."
       lead={
         <>
-          Cosmos read the work and ranked it first in their cycle. Entrepreneur First read me and had a
-          call booked inside twelve hours. <strong>Those measure completely different things, and I am not
-          going to pretend otherwise to make the page look better.</strong> So: what each one proves, and
-          what it doesn&apos;t.
+          A NeurIPS workshop put me on its programme committee. Cosmos read the work and ranked it first in
+          their cycle. Entrepreneur First read me and had a call booked inside twelve hours.{' '}
+          <strong>Those three measure completely different things, and I am not going to blur them
+          together to make the page look better.</strong> So: what each one proves, and what it doesn&apos;t.
         </>
       }
     >
@@ -34,15 +34,16 @@ export default function CVRecognition() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 9px 16px;
-          border-radius: 6px;
+          min-height: 58px;
+          padding: 12px 20px;
+          border-radius: 8px;
         }
         .rec-logo-chip.on-white,
         .rec-logo-chip.on-dark {
           background: var(--pf-surface-2);
           border: 1px solid var(--pf-border);
         }
-        .rec-logo-chip img { display: block; height: 15px; width: auto; }
+        .rec-logo-chip img { display: block; height: 34px; width: auto; max-width: 190px; object-fit: contain; }
         .rec-tag {
           font-size: 11px;
           font-weight: 700;
@@ -94,10 +95,11 @@ export default function CVRecognition() {
           display: block;
           margin-top: 3px;
         }
+        @media (max-width: 900px) { .rec-grid { grid-template-columns: 1fr !important; } }
         .rec-grid {
           display: grid;
-          grid-template-columns: 1fr;
-          gap: 20px;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
           margin-bottom: 14px;
         }
 
@@ -130,20 +132,29 @@ export default function CVRecognition() {
         }
 
         /* ── Quiet status line ── */
-        .rec-status {
+        .rec-status-head {
           display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+          margin-bottom: 16px;
+        }
+        .rec-status-meta { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 200px; }
+        .rec-status-t { font-size: 18px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
+        .rec-status p.rec-status-v { margin: 0 0 12px; }
+        .rec-status p.rec-status-v:last-of-type { margin-bottom: 16px; }
+
+        .rec-status {
+          display: block;
           background: rgba(var(--pf-ink-rgb), 0.035);
           border: 1px solid var(--pf-border);
           border-left: 2px solid var(--pf-accent);
-          border-radius: 0 8px 8px 0;
-          padding: 15px 20px; margin-bottom: 24px;
+          border-radius: 0 10px 10px 0;
+          padding: 24px 28px; margin-bottom: 24px;
         }
         .rec-status-logo {
           display: inline-flex; align-items: center; justify-content: center;
-          flex-shrink: 0; padding: 9px 14px; border-radius: 6px;
+          flex-shrink: 0; min-height: 52px; padding: 11px 18px; border-radius: 8px;
           background: var(--pf-surface-2); border: 1px solid var(--pf-border);
         }
-        .rec-status-logo img { display: block; height: 15px; width: auto; }
+        .rec-status-logo img { display: block; height: 26px; width: auto; max-width: 170px; object-fit: contain; }
         .rec-status-body {
           display: flex; flex-direction: column; gap: 4px;
           flex: 1; min-width: 220px;
@@ -152,7 +163,7 @@ export default function CVRecognition() {
           font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px;
           text-transform: uppercase; color: var(--pf-ink-3);
         }
-        .rec-status-v { font-size: 14.5px; line-height: 1.6; color: var(--pf-ink-2); }
+        .rec-status-v { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); }
         .rec-status-v strong { color: var(--pf-ink); font-weight: 600; }
         .rec-status-d {
           font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
@@ -276,6 +287,35 @@ export default function CVRecognition() {
       <div>
 
         <div className="rec-grid">
+          {/* NeurIPS — AI4GOOD workshop programme committee */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <img src="/assets/images/logos/neurips.svg" alt="NeurIPS" />
+              </div>
+            </div>
+            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
+            <h3 className="rec-name">I Review for a NeurIPS Workshop</h3>
+            <p className="rec-body">
+              I sit on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS 2026
+              in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
+              post-deployment monitoring. The same subject I work in, judged from the other side of the
+              desk. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
+              assessed by a committee of 237 reviewers drawn from Oxford, MIT, Toronto, Berkeley, Stanford
+              and Mila.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">Reviewer</span>
+                <span className="rec-stat-lbl">Programme Committee</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">Dec 2026</span>
+                <span className="rec-stat-lbl">Paris</span>
+              </div>
+            </div>
+          </div>
+
           {/* Cosmos Institute */}
           <div className="rec-card">
             <div className="rec-logo-row">
@@ -368,30 +408,46 @@ export default function CVRecognition() {
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
-          <span className="rec-status-logo">
-            <img src="/assets/images/logos/the-bridge.png" alt="The Bridge" />
-          </span>
-          <span className="rec-status-body">
-            <span className="rec-status-k">Current status</span>
-            <span className="rec-status-v">
-              Two interviews into the selection process for <strong>The Bridge</strong> — Entrepreneur
-              First&apos;s eight-week San Francisco residency. Both rounds are behind me and the decision
-              sits with EF. I&apos;ll update this page when it moves.
+          <div className="rec-status-head">
+            <span className="rec-status-logo">
+              <img src="/assets/images/logos/the-bridge.png" alt="The Bridge" />
             </span>
-            <span className="rec-stages">
-              <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
-              <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
-              <span className="rec-stage is-live"><span className="rec-stage-dot" />Decision Pending</span>
+            <span className="rec-status-meta">
+              <span className="rec-status-k">Live · Entrepreneur First</span>
+              <span className="rec-status-t">The Bridge — San Francisco</span>
             </span>
+            <span className="rec-status-d">As of Sep 2026</span>
+          </div>
+
+          <p className="rec-status-v">
+            The Bridge is Entrepreneur First&apos;s <strong>eight-week residency in San Francisco</strong>,
+            where they place a small cohort of technical founders alongside the US investor and operator
+            network and back the ones who come out of it with company-building capital. It is the route EF
+            runs for founders who already have something built rather than an idea to test.
+          </p>
+          <p className="rec-status-v">
+            I am in the selection process. <strong>Two interview rounds are behind me</strong> and the
+            decision sits with EF. I will update this line when it moves, whichever way it goes.
+          </p>
+
+          <span className="rec-stages">
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
+            <span className="rec-stage is-live"><span className="rec-stage-dot" />Decision Pending</span>
           </span>
-          <span className="rec-status-d">Sep 2026</span>
         </div>
 
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            Neither of these is a credential and I am not going to dress them up as one. They are still the two
+            None of these is a degree, and I am not going to dress them up as one. They are still the three
             most useful outside signals I have.
+          </p>
+          <p className="rec-verdict-body">
+            <strong>NeurIPS put me on a programme committee.</strong> That is the one I would point a
+            researcher at. It is not a paper and it is not an award — it is the field deciding I am
+            qualified to judge other people&apos;s work in the exact area I publish in, which is a
+            different kind of statement from anything I could write about myself.
           </p>
           <p className="rec-verdict-body">
             <strong>Cosmos read the work.</strong> Ranked it first, then told me precisely why it still would not

@@ -59,8 +59,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'OXIEDO goes live',
-    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live, submitted to AAAI 2027, and the architecture released in full on publication.',
+    title: 'OXIEDO goes live · reviewing for NeurIPS',
+    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live, submitted to AAAI 2027. In the same year I joined the programme committee of the Trustworthy AI for Good workshop at NeurIPS 2026, reviewing in the field I publish in.',
   },
 ];
 
