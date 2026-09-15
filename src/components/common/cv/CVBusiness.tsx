@@ -67,7 +67,7 @@ export default function CVBusiness() {
         }
         .bz-cta:hover { background: var(--pf-surface-2); border-color: var(--pf-border-2); border-left-color: var(--pf-accent); }
         .bz-cta-l { min-width: 240px; flex: 1; }
-        .bz-cta-h { font-size: 19px; font-weight: 800; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.3px; }
+        .bz-cta-h { font-size: 17px; font-weight: 800; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.3px; }
         .bz-cta-p { font-size: 14px; line-height: 1.6; color: var(--pf-ink-2); margin: 0; }
         .bz-cta-b {
           display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0;
@@ -89,7 +89,7 @@ export default function CVBusiness() {
           border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
           padding: 24px 28px; margin-bottom: 40px;
         }
-        .bz-thesis p { font-size: 16px; line-height: 1.8; color: var(--pf-ink); margin: 0; }
+        .bz-thesis p { font-size: 15px; line-height: 1.8; color: var(--pf-ink); margin: 0; }
         .bz-thesis strong { color: var(--pf-ink); font-weight: 700; }
 
         .bz-sectors { display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }

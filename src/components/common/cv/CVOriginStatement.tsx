@@ -61,7 +61,7 @@ export default function CVOriginStatement() {
           margin: 0 0 10px; letter-spacing: -0.5px; line-height: 1.14;
         }
         .os-byline { font-size: 14px; color: var(--pf-ink-3); margin-bottom: 22px; line-height: 1.6; }
-        .os-lead { font-size: 17px; line-height: 1.8; color: var(--pf-ink-2); margin: 0; }
+        .os-lead { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0; }
         .os-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         /* Evidence band */
@@ -105,7 +105,7 @@ export default function CVOriginStatement() {
         .os-p strong { color: var(--pf-ink); font-weight: 600; }
         .os-p:last-child { margin-bottom: 0; }
         .os-pull {
-          font-size: 17px; line-height: 1.7; color: var(--pf-ink); font-weight: 600;
+          font-size: 15.5px; line-height: 1.7; color: var(--pf-ink); font-weight: 600;
           border-left: 2px solid rgba(var(--pf-ink-rgb), 0.2);
           padding: 4px 0 4px 22px; margin: 30px 0;
         }
@@ -115,7 +115,7 @@ export default function CVOriginStatement() {
           border-radius: 0 8px 8px 0; padding: 22px 26px; margin: 28px 0;
         }
         .os-callout-lead {
-          font-size: 16px; line-height: 1.7; color: var(--pf-ink);
+          font-size: 15px; line-height: 1.7; color: var(--pf-ink);
           font-weight: 600; margin: 0 0 11px;
         }
         .os-callout p { font-size: 14.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 10px; }
@@ -247,7 +247,7 @@ export default function CVOriginStatement() {
           border-radius: 10px; padding: 26px 30px; margin-top: 26px;
         }
         .os-close p {
-          font-size: 17px; line-height: 1.75; color: var(--pf-ink);
+          font-size: 15.5px; line-height: 1.75; color: var(--pf-ink);
           font-weight: 600; margin: 0;
         }
         .os-sign {

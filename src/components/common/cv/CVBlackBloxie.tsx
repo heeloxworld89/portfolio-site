@@ -93,7 +93,7 @@ export default function CVBlackBloxie() {
         .bb-tr:last-child { border-bottom: none; }
         .bb-tm { font-size: 13.5px; color: var(--pf-ink); font-weight: 600; }
         .bb-tn { font-size: 11.5px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 3px; }
-        .bb-tp { font-size: 16px; font-weight: 800; font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
+        .bb-tp { font-size: 15px; font-weight: 800; font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
         .bb-table.down .bb-tp { color: var(--pf-accent); }
         .bb-table.up   .bb-tp { color: var(--pf-pos); }
 

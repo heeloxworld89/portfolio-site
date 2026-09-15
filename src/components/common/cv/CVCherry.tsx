@@ -57,7 +57,7 @@ export default function CVCherry() {
           text-transform: uppercase; color: var(--pf-ink-3);
           margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
-        .cy-p { font-size: 16px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 30px; }
+        .cy-p { font-size: 15px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 30px; }
         .cy-p strong { color: var(--pf-ink); font-weight: 600; }
 
         .cy-not { display: flex; flex-direction: column; gap: 2px; }

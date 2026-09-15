@@ -48,14 +48,14 @@ export default function Hero(_props?: any) {
   return (
     <div className="tmp-banner-one-area" id="home">
       <style>{`
-        .hx { padding: 30px 0 84px; }
-        @media (max-width: 991px) { .hx { padding: 22px 0 60px; } }
+        .hx { padding: 20px 0 40px; }
+        @media (max-width: 991px) { .hx { padding: 18px 0 44px; } }
 
         /* ── 1 · live strip ─────────────────────────────────── */
         .hx-live-bar {
           display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-          text-decoration: none; margin-bottom: 52px;
-          padding: 12px 18px; border-radius: 8px;
+          text-decoration: none; margin-bottom: 24px;
+          padding: 10px 16px; border-radius: 7px;
           border: 1px solid var(--pf-border);
           border-left: 3px solid var(--pf-accent);
           background: var(--pf-surface);
@@ -87,38 +87,38 @@ export default function Hero(_props?: any) {
         /* ── 2 · claim + 3 · result ─────────────────────────── */
         .hx-top {
           display: grid; grid-template-columns: 1.12fr 0.88fr;
-          gap: 60px; align-items: start; margin-bottom: 64px;
+          gap: 44px; align-items: start; margin-bottom: 32px;
         }
-        @media (max-width: 1100px) { .hx-top { grid-template-columns: 1fr; gap: 44px; } }
+        @media (max-width: 1100px) { .hx-top { grid-template-columns: 1fr; gap: 32px; } }
 
         .hx-id {
           display: inline-flex; align-items: center; gap: 11px; flex-wrap: wrap;
-          font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px;
-          text-transform: uppercase; color: var(--pf-ink-2); margin-bottom: 26px;
-          padding: 7px 15px; border-radius: 999px;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
+          text-transform: uppercase; color: var(--pf-ink-2); margin-bottom: 18px;
+          padding: 6px 13px; border-radius: 999px;
           background: rgba(var(--pf-ink-rgb), 0.05); border: 1px solid var(--pf-border);
         }
         .hx-id i { width: 3px; height: 3px; border-radius: 50%; background: var(--pf-ink-4); font-style: normal; }
 
         .hx-h1 {
-          font-size: clamp(34px, 4.7vw, 60px); font-weight: 800; color: var(--pf-ink);
-          letter-spacing: -2px; line-height: 1.04; margin: 0 0 18px;
+          font-size: clamp(30px, 3.1vw, 46px); font-weight: 800; color: var(--pf-ink);
+          letter-spacing: -1.4px; line-height: 1.08; margin: 0 0 14px;
         }
         .hx-h1 span { display: block; color: var(--pf-accent); }
         .hx-kicker + .hx-lead { margin-top: 0; }
 
         .hx-kicker {
-          font-size: clamp(18px, 1.9vw, 23px); font-weight: 700; color: var(--pf-ink);
-          line-height: 1.4; letter-spacing: -0.4px; margin: 0 0 26px;
-          padding-left: 16px; border-left: 3px solid var(--pf-accent);
+          font-size: clamp(16px, 1.25vw, 18.5px); font-weight: 700; color: var(--pf-ink);
+          line-height: 1.45; letter-spacing: -0.2px; margin: 0 0 20px;
+          padding-left: 14px; border-left: 3px solid var(--pf-accent);
         }
 
-        .hx-lead { font-size: 17px; line-height: 1.78; color: var(--pf-ink-2); max-width: 610px; margin: 0 0 16px; }
+        .hx-lead { font-size: 15.5px; line-height: 1.72; color: var(--pf-ink-2); max-width: 585px; margin: 0 0 13px; }
         .hx-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         .hx-trust {
-          font-size: 13px; line-height: 1.75; color: var(--pf-ink-3);
-          max-width: 610px; margin: 0 0 32px;
+          font-size: 12.5px; line-height: 1.7; color: var(--pf-ink-3);
+          max-width: 585px; margin: 0 0 24px;
           padding-left: 15px; border-left: 2px solid var(--pf-border);
         }
         .hx-trust b { color: var(--pf-ink-2); font-weight: 600; }
@@ -126,8 +126,8 @@ export default function Hero(_props?: any) {
         .hx-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
         .hx-cta {
           display: inline-flex; align-items: center; gap: 9px;
-          padding: 14px 22px; border-radius: 8px; text-decoration: none;
-          font-size: 12.5px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase;
+          padding: 12px 19px; border-radius: 7px; text-decoration: none;
+          font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
           transition: background .25s, border-color .25s, transform .25s, color .25s;
         }
         .hx-cta:hover { transform: translateY(-2px); }
@@ -139,18 +139,18 @@ export default function Hero(_props?: any) {
         /* the result card */
         .hx-res {
           background: var(--pf-surface);
-          border: 1px solid var(--pf-border); border-radius: 10px; padding: 30px 32px;
+          border: 1px solid var(--pf-border); border-radius: 10px; padding: 22px 24px;
         }
         .hx-res-k {
           font-size: 9.5px; font-weight: 800; letter-spacing: 2px;
           text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 12px;
         }
-        .hx-res-q { font-size: 16px; font-weight: 700; color: var(--pf-ink); line-height: 1.5; margin: 0 0 24px; }
+        .hx-res-q { font-size: 14.5px; font-weight: 700; color: var(--pf-ink); line-height: 1.5; margin: 0 0 18px; }
 
-        .hx-bar { margin-bottom: 18px; }
+        .hx-bar { margin-bottom: 14px; }
         .hx-bar-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
         .hx-bar-n { font-size: 12.5px; font-weight: 700; color: var(--pf-ink); }
-        .hx-bar-v { font-size: 21px; font-weight: 800; letter-spacing: -0.5px; font-family: ui-monospace, Menlo, monospace; }
+        .hx-bar-v { font-size: 18.5px; font-weight: 800; letter-spacing: -0.5px; font-family: ui-monospace, Menlo, monospace; }
         .hx-bar.is-good .hx-bar-v { color: var(--pf-pos); }
         .hx-bar.is-bad  .hx-bar-v { color: var(--pf-accent); }
         .hx-bar-track { height: 9px; border-radius: 999px; background: var(--pf-sunk); overflow: hidden; }
@@ -164,12 +164,12 @@ export default function Hero(_props?: any) {
           display: flex; align-items: baseline; gap: 10px;
           border-top: 1px solid var(--pf-border);
           border-bottom: 1px solid var(--pf-border);
-          padding: 13px 0; margin: 4px 0 18px;
+          padding: 11px 0; margin: 2px 0 14px;
         }
-        .hx-res-delta b { font-size: 18px; font-weight: 800; color: var(--pf-pos); font-family: ui-monospace, Menlo, monospace; }
+        .hx-res-delta b { font-size: 16.5px; font-weight: 800; color: var(--pf-pos); font-family: ui-monospace, Menlo, monospace; }
         .hx-res-delta span { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-ink-2); }
 
-        .hx-res-cap { font-size: 13px; line-height: 1.7; color: var(--pf-ink-2); margin: 0 0 16px; }
+        .hx-res-cap { font-size: 12.5px; line-height: 1.68; color: var(--pf-ink-2); margin: 0 0 13px; }
         .hx-res-foot {
           font-size: 11.5px; line-height: 1.65; color: var(--pf-ink-3);
           padding-top: 14px; border-top: 1px solid rgba(var(--pf-ink-rgb), 0.06); margin: 0;
@@ -180,12 +180,12 @@ export default function Hero(_props?: any) {
         .hx-lanes {
           display: grid; grid-template-columns: repeat(3, 1fr);
           gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border);
-          border-radius: 12px; overflow: hidden; margin-bottom: 22px;
+          border-radius: 10px; overflow: hidden; margin-bottom: 14px;
         }
         @media (max-width: 860px) { .hx-lanes { grid-template-columns: 1fr; } }
         .hx-lane {
           display: flex; flex-direction: column; gap: 8px;
-          background: var(--pf-surface); padding: 22px 24px; text-decoration: none;
+          background: var(--pf-surface); padding: 17px 19px; text-decoration: none;
           transition: background .25s;
         }
         .hx-lane:hover { background: var(--pf-surface-2); }
@@ -199,8 +199,8 @@ export default function Hero(_props?: any) {
         .hx-lane.is-live .hx-lane-dot { animation: hxBlink 3s ease-in-out infinite; }
         .hx-lane.is-pending .hx-lane-dot { background: transparent; border: 1.5px solid currentColor; }
         @keyframes hxBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
-        .hx-lane-n { font-size: 17px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
-        .hx-lane-l { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); flex: 1; }
+        .hx-lane-n { font-size: 15.5px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
+        .hx-lane-l { font-size: 12.5px; line-height: 1.58; color: var(--pf-ink-2); flex: 1; }
         .hx-lane-go {
           display: inline-flex; align-items: center; gap: 7px; margin-top: 4px;
           font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--pf-ink);
@@ -208,7 +208,7 @@ export default function Hero(_props?: any) {
         .hx-lane:hover .hx-lane-go { color: var(--pf-ink); }
 
         .hx-before {
-          font-size: 13px; line-height: 1.8; color: var(--pf-ink-3); margin: 0 0 40px;
+          font-size: 12.5px; line-height: 1.7; color: var(--pf-ink-3); margin: 0 0 18px;
         }
         .hx-before b { color: var(--pf-ink-2); font-weight: 600; }
         .hx-before a { color: var(--pf-ink-2); text-decoration: none; border-bottom: 1px solid var(--pf-border-2); }
@@ -262,20 +262,19 @@ export default function Hero(_props?: any) {
 
             <p className="hx-lead">
               Every neural network ever shipped has the same blind spot. One error signal touches every
-              parameter at once, so when something inside goes wrong there is no number anywhere in the
-              system that says what. Forty years of interpretability has been people standing outside a
-              finished model, guessing backwards.
+              parameter at once, so when something inside breaks, no number anywhere in the system says
+              what. Forty years of interpretability has been people standing outside a finished model,
+              guessing backwards.
             </p>
             <p className="hx-lead">
-              <strong>I stopped guessing.</strong> Bound the path from each node to the loss at exactly four
-              operations and the guess becomes a measurement — one the network takes about itself, while it
-              trains, and cannot route around.
+              <strong>I stopped guessing.</strong> Bound each node&apos;s path to the loss at four operations
+              and the guess becomes a measurement the network takes about itself, while it trains.
             </p>
 
             <p className="hx-trust">
-              383 controlled experiments. One RTX 3090. <b>No university, no lab, no advisor, no funding,
-              and nobody else on the project.</b> The paper is public, the code reproduces every run from
-              seed, and the company built on it went live this year.
+              383 controlled experiments, one RTX 3090. <b>No university, no lab, no advisor, no funding,
+              nobody else on the project.</b> The paper is public, the code reproduces every run from seed,
+              and the company built on it is live.
             </p>
 
             <div className="hx-ctas">

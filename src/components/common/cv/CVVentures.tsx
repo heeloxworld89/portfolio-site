@@ -79,7 +79,7 @@ export default function CVVentures() {
         @media (max-width: 640px) { .vn-exit { grid-template-columns: 1fr; gap: 14px; } }
         .vn-exit-v { font-size: 34px; font-weight: 800; color: var(--pf-pos); line-height: 1; letter-spacing: -1px; }
         .vn-exit-k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pf-ink-3); margin-top: 8px; }
-        .vn-exit-h { font-size: 17px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; }
+        .vn-exit-h { font-size: 15.5px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; }
         .vn-exit-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
         .vn-exit-p strong { color: var(--pf-ink); font-weight: 600; }
 
@@ -113,7 +113,7 @@ export default function CVVentures() {
           padding: 26px 30px;
         }
         .vn-finding-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px; }
-        .vn-finding p { font-size: 16.5px; line-height: 1.8; color: var(--pf-ink); margin: 0 0 14px; }
+        .vn-finding p { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink); margin: 0 0 14px; }
         .vn-finding p:last-child { margin-bottom: 0; }
         .vn-finding strong { color: var(--pf-ink); font-weight: 700; }
       `}</style>

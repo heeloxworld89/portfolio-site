@@ -599,3 +599,72 @@ p { color: var(--pf-ink-2); }
   border-right: 1px solid var(--pf-border) !important;
   box-shadow: none !important;
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   DENSITY — fit the design to a real 1440–1760px desktop
+   ══════════════════════════════════════════════════════════════
+   The shell was sized for a very wide viewport: a 290px sidebar with a
+   ~270px avatar and 16px nav. At 100% zoom on an ordinary display that
+   consumed a third of the screen and pushed the hero below the fold.
+   Everything below scales the chrome down and tightens vertical rhythm
+   so the whole first screen holds at 100%.
+   ══════════════════════════════════════════════════════════════ */
+
+.header-left-sticky {
+  width: 248px !important;
+}
+.page-with-left-header {
+  margin-left: 248px !important;
+}
+@media (min-width: 1600px) {
+  .header-left-sticky { width: 262px !important; }
+  .page-with-left-header { margin-left: 262px !important; }
+}
+
+.header-left-sticky .inner-wrapper {
+  padding: 26px 24px 24px !important;
+}
+
+/* Avatar: was filling the sidebar width. */
+.header-left-sticky .logo-area a img,
+.header-left-sticky .logo a img {
+  max-width: 132px !important;
+  border-width: 3px !important;
+}
+
+.header-left-sticky .mainmenu-nav .primary-menu {
+  padding: 18px 0 0 0 !important;
+}
+.header-left-sticky .mainmenu-nav .primary-menu li a {
+  font-size: 13.5px !important;
+  margin: 2px 0 !important;
+  padding: 7px 11px 7px 12px !important;
+  gap: 10px;
+}
+.header-left-sticky .mainmenu-nav .primary-menu li a svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* "Find With Me" block */
+.header-left-sticky .social-share-style-1 .title {
+  font-size: 12px !important;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+.header-left-sticky .footer { margin-top: 18px !important; }
+
+/* Section rhythm: the template's gap is tuned for a much taller page. */
+.tmp-section-gap { padding-top: 0 !important; }
+.tmp-section-gap .row.mb--50 { margin-bottom: 26px !important; }
+.tmp-section-gap hr.my-5 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
+
+/* Container: let content breathe without stretching lines past readable. */
+@media (min-width: 1400px) {
+  .page-with-left-header .container { max-width: 1240px; }
+}
+@media (min-width: 1800px) {
+  .page-with-left-header .container { max-width: 1320px; }
+}

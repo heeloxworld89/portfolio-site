@@ -54,7 +54,7 @@ export default function CVOximo() {
         .ox-closed strong { color: var(--pf-ink); font-weight: 600; }
 
         .ox-pull {
-          font-size: 18px; font-weight: 600; font-style: italic; color: var(--pf-ink);
+          font-size: 16.5px; font-weight: 600; font-style: italic; color: var(--pf-ink);
           border-left: 2px solid rgba(var(--pf-ink-rgb), 0.12); padding-left: 20px;
           margin: 0 0 32px; line-height: 1.7;
         }
@@ -64,7 +64,7 @@ export default function CVOximo() {
           text-transform: uppercase; color: var(--pf-ink-3);
           margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
         }
-        .ox-p { font-size: 16px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 22px; }
+        .ox-p { font-size: 15px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 22px; }
 
         .ox-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px; margin-bottom: 40px; }
         .ox-stat { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 8px; padding: 16px; text-align: center; }

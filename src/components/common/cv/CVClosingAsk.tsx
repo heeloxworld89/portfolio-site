@@ -38,7 +38,7 @@ export default function CVClosingAsk() {
           margin-bottom: 10px;
         }
         .ask-audience {
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 700;
           color: var(--pf-ink);
           margin-bottom: 12px;

@@ -52,7 +52,7 @@ export default function CVRecognition() {
           margin-bottom: 12px;
         }
         .rec-name {
-          font-size: 19px;
+          font-size: 17px;
           font-weight: 700;
           color: var(--pf-ink);
           margin: 0 0 12px;
@@ -199,7 +199,7 @@ export default function CVRecognition() {
           margin-bottom: 24px;
         }
         .rec-verdict-lead {
-          font-size: 17px;
+          font-size: 15.5px;
           line-height: 1.75;
           color: var(--pf-ink);
           font-weight: 600;
@@ -230,7 +230,7 @@ export default function CVRecognition() {
           margin-bottom: 14px;
         }
         .rec-origin-body {
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.85;
           color: var(--pf-ink-2);
           margin: 0 0 14px;

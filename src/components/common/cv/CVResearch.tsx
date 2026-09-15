@@ -312,7 +312,7 @@ export default function CVResearch() {
               { val: '<0.8%',   lbl: 'Hyperparameter Sensitivity' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '20px 14px', textAlign: 'center' }}>
-                <div style={{ fontSize: '22px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
+                <div style={{ fontSize: '19px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
                 <div style={{ fontSize: '11px', color: 'var(--pf-ink-3)', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: 700, lineHeight: 1.4 }}>{s.lbl}</div>
               </div>
             ))}
@@ -345,7 +345,7 @@ export default function CVResearch() {
               <div key={i} style={{ display: 'flex', gap: '20px', background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '24px' }}>
                 <div style={{ fontSize: '32px', fontWeight: 800, color: 'transparent', WebkitTextStroke: '1px var(--pf-border)', flexShrink: 0, lineHeight: 1, paddingTop: '4px' }}>{c.n}</div>
                 <div>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '8px' }}>{c.title}</div>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '8px' }}>{c.title}</div>
                   <div style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink-2)' }}>{c.body}</div>
                 </div>
               </div>
@@ -360,10 +360,10 @@ export default function CVResearch() {
             What I needed was a network that could catch corruption while it was training, repair it without stopping, without a human, and come with a formal account of the conditions under which that repair stays stable. Nothing like that existed. ORMAS is what that requirement turned into.
           </p>
 
-          <h4 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '10px' }}>
+          <h4 style={{ fontSize: '19px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '10px' }}>
             The Difference, in One Picture
           </h4>
-          <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', maxWidth: '760px', marginBottom: '22px' }}>
+          <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', maxWidth: '760px', marginBottom: '22px' }}>
             The headline claim of the paper is not accuracy — it is <strong style={{ color: 'var(--pf-ink)' }}>attribution</strong>.
             Here is the same node dying in both architectures. The telemetry on the right is quoted verbatim from the
             supplementary material.
@@ -646,14 +646,14 @@ export default function CVResearch() {
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--pf-ink-3)', marginBottom: '14px' }}>
               Where the Mathematics Came From
             </div>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: '0 0 14px' }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: '0 0 14px' }}>
               In 1989 a mathematician named Eduardo Sontag published a framework called{' '}
               <strong style={{ color: 'var(--pf-ink)' }}>Input-to-State Stability</strong>. It was built for control systems engineering — it is part of how engineers establish that a rocket returns to a stable trajectory after being knocked off it mid-flight, rather than tumbling.
             </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: '0 0 14px' }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: '0 0 14px' }}>
               I read the original paper because I had a problem with the same shape. A self-correcting network is a system being perturbed — by corrupted data, by structural damage, and then by its own corrections — and the question I could not answer was whether the correction mechanism settles or oscillates forever. That is not a machine learning question. It is a control theory question, and control theory had already answered it for a different class of system.
             </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: 0 }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: 0 }}>
               So I adapted the framework: treat each correction as a bounded input disturbance, treat the weight trajectory as the state, and characterize the conditions under which the state stays bounded.{' '}
               <strong style={{ color: 'var(--pf-ink)' }}>That produced the first formal local stability characterization for a self-correcting neural architecture.</strong> I derived it at seventeen. It has not yet been reviewed by a control theorist, and getting it in front of one is the single highest priority I have.
             </p>
@@ -669,14 +669,14 @@ export default function CVResearch() {
             <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--pf-ink)', marginBottom: '10px' }}>
               Why the Bound Is Local — and Why That Is the Design, Not the Compromise
             </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', marginBottom: '12px' }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', marginBottom: '12px' }}>
               A local-only result usually reads as a weaker version of something better. Here it is the opposite, and the
               reason matters more than the bound itself. <strong style={{ color: 'var(--pf-ink)' }}>A global convergence proof is
               defined over a fixed parameter space</strong> <InlineMath math="\theta \in \mathbb{R}^n" />. The moment the
               graph grows a node, <InlineMath math="n" /> changes — and the proof does not weaken, it stops referring to
               anything at all.
             </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', marginBottom: '12px' }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', marginBottom: '12px' }}>
               Locality is what buys the freedom to change topology mid-training. Every node carries its own objective, so a
               newly added node has something to learn from the instant it exists rather than waiting for a global gradient to
               find it. Mean-subtracted initialisation (<InlineMath math="\sum_j w_{\text{new},j} = 0" />) means it enters
@@ -684,7 +684,7 @@ export default function CVResearch() {
               stability bound is stated per node, an injection is simply another bounded perturbation of exactly the class
               the mechanism already absorbs — 22,014 times in a single 200-epoch run.
             </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: 0 }}>
+            <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: 0 }}>
               <strong style={{ color: 'var(--pf-ink)' }}>A globally coupled, globally proven system could not grow. This one
               can.</strong> Global convergence remains open and the preprint says so — but a global proof would have
               foreclosed the architecture rather than strengthened it.
@@ -693,7 +693,7 @@ export default function CVResearch() {
 
           {/* Ablation Study */}
           <h4 className="section-header">Ablation Study — Do All Three Signals Matter?</h4>
-          <p style={{ fontSize: '17px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '20px' }}>
+          <p style={{ fontSize: '15.5px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '20px' }}>
             On the DAG architecture under 30% noise:
           </p>
           <div style={{ background: 'var(--pf-surface)', borderRadius: '8px', border: '1px solid var(--pf-border)', overflowX: 'auto', marginBottom: '20px' }}>

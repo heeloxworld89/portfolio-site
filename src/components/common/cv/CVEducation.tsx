@@ -60,7 +60,7 @@ export default function CVEducation() {
           position: relative;
           padding-left: 30px;
           margin-bottom: 20px;
-          font-size: 16px;
+          font-size: 15px;
           color: var(--pf-ink-2);
           line-height: 1.6;
         }
@@ -83,7 +83,7 @@ export default function CVEducation() {
           border-radius: 8px;
         }
         .truth-box p {
-          font-size: 18px;
+          font-size: 16.5px;
           line-height: 1.8;
           color: var(--pf-ink);
           margin-bottom: 20px;
@@ -225,7 +225,7 @@ export default function CVEducation() {
 
           {/* Big statement */}
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
-            <p style={{ fontSize: '18px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '12px', lineHeight: 1.4 }}>
+            <p style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '12px', lineHeight: 1.4 }}>
               I chose research over grades — deliberately.
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink-2)', margin: 0 }}>
@@ -242,7 +242,7 @@ export default function CVEducation() {
               { val: 'UK Ltd', lbl: 'Registered Company' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
-                <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
+                <div style={{ fontSize: '16.5px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
                 <div style={{ fontSize: '11px', color: 'var(--pf-ink-3)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
               </div>
             ))}

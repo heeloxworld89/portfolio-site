@@ -123,7 +123,7 @@ export default function CVWhoIAm() {
   return (
     <div className="row mb--50" id="who-i-am">
       <style>{`
-        .wi-lead { font-size: 17px; line-height: 1.85; color: var(--pf-ink-2); max-width: 780px; margin: 0 0 12px; }
+        .wi-lead { font-size: 15.5px; line-height: 1.85; color: var(--pf-ink-2); max-width: 780px; margin: 0 0 12px; }
         .wi-lead strong { color: var(--pf-ink); font-weight: 600; }
 
         .wi-label {
@@ -157,7 +157,7 @@ export default function CVWhoIAm() {
           text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px;
         }
         .wi-why-h {
-          font-size: 19px; font-weight: 700; color: var(--pf-ink);
+          font-size: 17px; font-weight: 700; color: var(--pf-ink);
           margin: 0 0 12px; line-height: 1.35;
         }
         .wi-why-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 12px; }
@@ -178,7 +178,7 @@ export default function CVWhoIAm() {
         @media (max-width: 620px) { .wi-tl-row { grid-template-columns: 50px 28px 1fr; } }
 
         .wi-tl-age { text-align: right; padding: 16px 14px 0 0; }
-        .wi-tl-a { font-size: 17px; font-weight: 800; color: var(--pf-ink); line-height: 1; letter-spacing: -0.4px; }
+        .wi-tl-a { font-size: 15.5px; font-weight: 800; color: var(--pf-ink); line-height: 1; letter-spacing: -0.4px; }
         .wi-tl-y { font-size: 10px; color: var(--pf-ink-3); margin-top: 4px; font-family: ui-monospace, Menlo, monospace; }
 
         .wi-tl-spine { position: relative; display: flex; justify-content: center; }
@@ -224,7 +224,7 @@ export default function CVWhoIAm() {
         .wi-sys-card.is-unbuilt { border-color: rgba(var(--pf-accent-rgb), 0.26); background: rgba(var(--pf-accent-rgb), 0.035); }
         .wi-sys-card.is-unbuilt:hover { border-color: rgba(var(--pf-accent-rgb), 0.5); }
         .wi-sys-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 3px; }
-        .wi-sys-n { font-size: 17px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
+        .wi-sys-n { font-size: 15.5px; font-weight: 800; color: var(--pf-ink); letter-spacing: -0.3px; }
         .wi-sys-state {
           font-size: 9px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase;
           color: var(--pf-pos); background: rgba(var(--pf-pos-rgb), 0.1);
@@ -236,7 +236,7 @@ export default function CVWhoIAm() {
         .wi-sys-r { font-size: 10.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 10px; }
         .wi-sys-l { font-size: 13.5px; line-height: 1.65; color: var(--pf-ink-2); margin-bottom: 16px; flex: 1; }
         .wi-sys-b { border-top: 1px solid rgba(var(--pf-ink-rgb), 0.06); padding-top: 12px; }
-        .wi-sys-v { font-size: 18px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; }
+        .wi-sys-v { font-size: 16.5px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; }
         .wi-sys-card.is-unbuilt .wi-sys-v { color: var(--pf-accent-2); }
         .wi-sys-sl { font-size: 10.5px; color: var(--pf-ink-3); margin-top: 3px; }
         .wi-sys-go {
@@ -261,7 +261,7 @@ export default function CVWhoIAm() {
           text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 9px;
         }
         .wi-standing-v {
-          font-size: 16px; font-weight: 700; color: var(--pf-ink);
+          font-size: 15px; font-weight: 700; color: var(--pf-ink);
           line-height: 1.35; margin-bottom: 8px;
         }
         .wi-standing-s { font-size: 13px; line-height: 1.65; color: var(--pf-ink-2); }
