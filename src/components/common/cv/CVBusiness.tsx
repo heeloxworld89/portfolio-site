@@ -4,6 +4,9 @@ import VerticalModal from '@/components/common/VerticalModal';
 import OxidoVisualization from './OxidoVisualization';
 import CVSection from './CVSection';
 
+/* Bump on every deck recompile so browsers refetch rather than serving cache. */
+const DECK_VERSION = '2026-09-16';
+
 /**
  * OXIEDO — the business.
  *
@@ -180,7 +183,7 @@ export default function CVBusiness() {
       <div className="bz-deck">
         <span className="bz-deck-t">
           <strong>Investors —</strong> the round, the six milestones and every risk I know about are laid
-          out at oxiedo.com/invest. If you would rather see it in one pass, the deck opens right here.
+          out at oxiedo.com/invest. If you would rather see it in one pass, the deck opens right here — 13 slides, rebuilt September 2026.
         </span>
         <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
           <Icon name="chart" size={15} />
@@ -195,13 +198,13 @@ export default function CVBusiness() {
         title="The deck, in the page"
       >
         <iframe
-          src="/assets/pdf/oxido_pitch_deck.pdf#view=FitH"
+          src={`/assets/pdf/oxiedo_pitch_deck.pdf?v=${DECK_VERSION}#view=FitH`}
           title="OXIEDO investor pitch deck"
           style={{ width: '100%', height: '70vh', border: '1px solid var(--pf-border)', borderRadius: '8px', background: 'var(--pf-sunk)' }}
         />
         <p style={{ fontSize: '13px', color: 'var(--pf-ink-3)', marginTop: '14px', lineHeight: 1.7 }}>
           If the viewer does not load,{' '}
-          <a href="/assets/pdf/oxido_pitch_deck.pdf" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
+          <a href={`/assets/pdf/oxiedo_pitch_deck.pdf?v=${DECK_VERSION}`} target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
             open the PDF directly
           </a>.
         </p>
