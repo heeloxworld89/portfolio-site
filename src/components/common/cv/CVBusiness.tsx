@@ -5,7 +5,7 @@ import OxidoVisualization from './OxidoVisualization';
 import CVSection from './CVSection';
 
 /* Bump on every deck recompile so browsers refetch rather than serving cache. */
-const DECK_VERSION = '2026-09-16b';
+const DECK_VERSION = '2026-09-17';
 
 /**
  * OXIEDO — the business.
