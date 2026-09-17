@@ -256,39 +256,29 @@ export default function CVRecognition() {
         /* Verification block — the section makes the page's largest claims,
            so it closes by handing the reader the route to check them. */
         .rec-verify {
+          display: flex; align-items: center; justify-content: space-between;
+          gap: 20px; flex-wrap: wrap;
           background: var(--pf-surface);
           border: 1px solid var(--pf-border);
           border-left: 2px solid var(--pf-accent);
           border-radius: 0 10px 10px 0;
-          padding: 24px 28px;
+          padding: 18px 24px;
         }
+        .rec-verify-body { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 280px; }
         .rec-verify-k {
           font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
-          text-transform: uppercase; color: var(--pf-accent); margin-bottom: 11px;
+          text-transform: uppercase; color: var(--pf-accent);
         }
-        .rec-verify-h {
-          font-size: 16.5px; font-weight: 700; color: var(--pf-ink);
-          line-height: 1.5; margin: 0 0 12px;
-        }
-        .rec-verify-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 16px; }
-        .rec-verify-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
-        .rec-verify-row {
-          display: grid; grid-template-columns: 168px 1fr; gap: 16px;
-          padding: 10px 0; border-bottom: 1px solid var(--pf-border);
-        }
-        .rec-verify-row:last-child { border-bottom: none; }
-        .rec-verify-w { font-size: 12.5px; font-weight: 700; color: var(--pf-ink); }
-        .rec-verify-h2 { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); }
-        @media (max-width: 640px) { .rec-verify-row { grid-template-columns: 1fr; gap: 3px; } }
+        .rec-verify-t { font-size: 14px; line-height: 1.7; color: var(--pf-ink-2); }
+        .rec-verify-t strong { color: var(--pf-ink); font-weight: 600; }
         .rec-verify-cta {
-          display: inline-flex; align-items: center; gap: 9px;
-          padding: 11px 18px; border-radius: 7px; text-decoration: none;
-          font-size: 12.5px; font-weight: 700; letter-spacing: 0.3px;
+          display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+          padding: 10px 17px; border-radius: 7px; text-decoration: none;
+          font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
           color: var(--pf-on-accent); background: var(--pf-accent);
           border: 1px solid var(--pf-accent); transition: background .22s;
         }
         .rec-verify-cta:hover { background: var(--pf-accent-2); color: var(--pf-on-accent); }
-        .rec-verify-note { font-size: 12.5px; line-height: 1.7; color: var(--pf-ink-3); margin: 14px 0 0; }
 
         .rec-verdict {
           background: rgba(var(--pf-ink-rgb), 0.045);
@@ -587,51 +577,21 @@ export default function CVRecognition() {
 
         {/* ── Every claim above has a route to check it ─────────────── */}
         <div className="rec-verify">
-          <div className="rec-verify-k">Made to be checked</div>
-          <h3 className="rec-verify-h">
-            These are large claims for an eighteen-year-old to make. Every one of them has a name,
-            a date and somebody who can confirm it.
-          </h3>
-          <p className="rec-verify-p">
-            I would rather you verified this before we talk than discovered halfway through diligence that
-            you had taken it on trust. Nothing on this page needs my permission to check.
-          </p>
-
-          <div className="rec-verify-list">
-            <div className="rec-verify-row">
-              <div className="rec-verify-w">NeurIPS reviewer</div>
-              <div className="rec-verify-h2">The workshop organisers hold the programme committee list. I will put you in touch, or you can write to them directly.</div>
-            </div>
-            <div className="rec-verify-row">
-              <div className="rec-verify-w">Cosmos ranking</div>
-              <div className="rec-verify-h2">Their decision came by email and says what it says. I will forward it in full, including the part where they declined to fund it.</div>
-            </div>
-            <div className="rec-verify-row">
-              <div className="rec-verify-w">Entrepreneur First</div>
-              <div className="rec-verify-h2">Names, dates and the stage I am at. EF can confirm a candidate is in process, and I will tell you exactly who I spoke to.</div>
-            </div>
-            <div className="rec-verify-row">
-              <div className="rec-verify-w">The research</div>
-              <div className="rec-verify-h2">Nobody needs my help here. The preprint is on Zenodo, the codebase reproduces all 383 runs from seed, and the archive is public.</div>
-            </div>
-            <div className="rec-verify-row">
-              <div className="rec-verify-w">Black Bloxie</div>
-              <div className="rec-verify-h2">A registered UK company with filings at Companies House. The ablation dataset, including the SHA-256 reconciliation, is available under a short agreement.</div>
-            </div>
-          </div>
-
+          <span className="rec-verify-body">
+            <span className="rec-verify-k">Made to be checked</span>
+            <span className="rec-verify-t">
+              Every claim here has a name, a date and someone other than me who can confirm it — the Cosmos
+              email, the committee list, the EF stage, the Companies House filings.{' '}
+              <strong>Ask and I will send them, including the parts that do not flatter me.</strong>
+            </span>
+          </span>
           <a
             className="rec-verify-cta"
             href="mailto:raadxbusiness9@gmail.com?subject=Verifying%20a%20claim%20on%20raadh.me"
           >
-            <Icon name="mail" size={15} />
-            Ask me to prove any of it
+            <Icon name="mail" size={14} />
+            Ask me to prove it
           </a>
-
-          <p className="rec-verify-note">
-            If something here turns out to be wrong, I want to hear it before an investor does — and I will
-            correct it on this page rather than only in a reply.
-          </p>
         </div>
 
       </div>
