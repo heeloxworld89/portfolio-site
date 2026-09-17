@@ -8,7 +8,7 @@ export default function CVRecognition() {
       title="All of this happened in the last three months."
       lead={
         <>
-          July: Cosmos ranked the work first in their cycle. August: Entrepreneur First went from cold
+          July: Cosmos ranked the work highest in their cycle. August: Entrepreneur First went from cold
           application to a booked call in twelve hours. September: two rounds into The Bridge in San
           Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
@@ -339,7 +339,7 @@ export default function CVRecognition() {
 
         <div className="rec-run">
           {[
-            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked first in cycle', state: 'done' },
+            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
             { m: 'Sep', y: '2026', who: 'The Bridge · EF', what: 'Two interviews in, decision pending', state: 'live' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
@@ -395,7 +395,7 @@ export default function CVRecognition() {
               <span className="rec-date">Jul 2026</span>
             </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
-            <h3 className="rec-name">They Ranked It First in the Cycle, Then Told Me Why They Still Wouldn’t Fund It</h3>
+            <h3 className="rec-name">They Ranked It Highest in the Cycle, Then Told Me Why They Still Wouldn’t Fund It</h3>
             <p className="rec-body">
               I applied to a Cosmos Institute grant round and got back two things in the same email. My
               application had ranked highest in the cycle, and it was in completely the wrong round —
@@ -405,8 +405,8 @@ export default function CVRecognition() {
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">#1</span>
-                <span className="rec-stat-lbl">Of everything they read that cycle</span>
+                <span className="rec-stat-val">Highest</span>
+                <span className="rec-stat-lbl">Ranked, of that cycle</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">$0</span>
@@ -527,7 +527,7 @@ export default function CVRecognition() {
             different kind of statement from anything I could write about myself.
           </p>
           <p className="rec-verdict-body">
-            <strong>Cosmos read the work.</strong> Ranked it first, then told me precisely why it still would not
+            <strong>Cosmos read the work.</strong> Ranked it highest, then told me precisely why it still would not
             get funded. A ranking with a reason attached is the single most useful thing a reviewer can give you,
             and it supports exactly one claim, narrowly: <strong>when people qualified to judge this read it
             properly, it holds up.</strong>
