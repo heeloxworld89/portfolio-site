@@ -1,0 +1,53 @@
+% ============================================================
+%  main.tex — OXIEDO Pitch Deck (Program-Agnostic Master)
+%  Compiler: lualatex main.tex (run twice)
+%
+%  NO PROGRAM NAME, NO GEOGRAPHY, NO REGIONAL REGULATOR.
+%  Usable as-is for any accelerator, fund, or partner meeting.
+% ============================================================
+\documentclass[aspectratio=169, 10pt, t]{beamer}
+
+\usepackage{oxido_theme}
+
+\title{OXIEDO: The Architecture That Unlocks Locked Data}
+\subtitle{The most valuable data in the world cannot be trained on.\\ORMAS produces the account that changes that, as the model learns it.}
+\author{%
+  \textcolor{oxamber}{\$8.3B model-risk market}%
+  \quad\textbullet\quad%
+  Obligations in law from Dec 2027%
+  \quad\textbullet\quad%
+  Annual licence, on their infrastructure%
+}
+\date{%
+  oxiedo.com%
+  \quad\textbullet\quad%
+  \textcolor{oxamber}{Replay a live training run: oxiedo.com/black-box}%
+}
+
+\begin{document}
+
+{%
+  \setbeamertemplate{footline}{}%
+  \setbeamertemplate{frametitle}{}%
+  \begin{frame}[plain]
+    \titlepage
+  \end{frame}
+}
+
+\input{sections/slide02_problem}
+\input{sections/slide03_solution}
+\input{sections/slide04_why_now}
+\input{sections/slide05_market}
+\input{sections/slide05b_buyer}
+\input{sections/slide06_product}
+\input{sections/slide07_traction}
+\input{sections/slide08_business_model}
+\input{sections/slide09_gtm}
+\input{sections/slide10_competitive}
+\input{sections/slide11_team}
+\input{sections/slide12_financials}
+\input{sections/slide13_vision}
+\input{sections/slide14_ask}
+\input{sections/slideA1_appendix}
+
+\end{document}

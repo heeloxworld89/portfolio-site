@@ -1,0 +1,246 @@
+% ============================================================
+%  oxido_theme.sty — OXIEDO Pitch Deck Theme v3 (compact, clean)
+%  Compiler: LuaLaTeX
+% ============================================================
+\ProvidesPackage{oxido_theme}[2026/08/09 OXIEDO Pitch Deck Theme v3]
+
+% === PACKAGES ===
+\RequirePackage{fontspec}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{array}
+\RequirePackage{microtype}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath,amssymb}
+
+% === FONTS ===
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{FiraSans}[
+  UprightFont=*-Regular, BoldFont=*-SemiBold,
+  ItalicFont=*-Italic, BoldItalicFont=*-SemiBoldItalic]
+\setsansfont{FiraSans}[
+  UprightFont=*-Regular, BoldFont=*-SemiBold, ItalicFont=*-Italic]
+\setmonofont{FiraMono}[UprightFont=*-Regular, BoldFont=*-Bold]
+\newfontfamily\ralewayblack{Raleway}[UprightFont=*-Black, BoldFont=*-Black, ItalicFont=*-BlackItalic]
+\newfontfamily\ralewaybold{Raleway}[UprightFont=*-Bold, BoldFont=*-Bold]
+\newfontfamily\ralewayreg{Raleway}[UprightFont=*-Regular, BoldFont=*-SemiBold]
+
+% === COLORS — deep navy-black base, refined gold accent ===
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+
+\definecolor{oxbg}      {HTML}{101216}   % Deep navy-black
+\definecolor{oxcard}    {HTML}{1A1D24}   % Elevated card surface
+\definecolor{oxborder}  {HTML}{282D38}   % Subtle structural border
+\definecolor{oxrule}    {HTML}{353A48}   % Divider line
+\definecolor{oxamber}   {HTML}{D4A84B}   % Primary accent — refined gold
+\definecolor{oxamberdim}{HTML}{6B5428}   % Dim gold (rules, borders)
+\definecolor{oxamberlo} {HTML}{1E1910}   % Ultra-dim gold tint (row highlight)
+\definecolor{oxwhite}   {HTML}{E4E2DD}   % Primary text — warm cream
+\definecolor{oxgray}    {HTML}{8A8A8A}   % Secondary text
+\definecolor{oxmuted}   {HTML}{505050}   % Footnote text
+\definecolor{oxred}     {HTML}{E05555}   % Negative / danger
+\definecolor{oxgreen}   {HTML}{45B080}   % Positive / confirmed
+\definecolor{oxseriesA} {HTML}{D4A84B}   % Chart — hero series (ORMAS)
+\definecolor{oxseriesB} {HTML}{7C8496}   % Chart — inert control (baseline)
+
+% === BEAMER COLORS ===
+\setbeamercolor{background canvas}{bg=oxbg}
+\setbeamercolor{normal text}{fg=oxwhite, bg=oxbg}
+\setbeamercolor{alerted text}{fg=oxamber}
+\setbeamercolor{structure}{fg=oxamber}
+\setbeamercolor{frametitle}{fg=oxwhite, bg=}
+\setbeamercolor{block title}{fg=oxamber, bg=oxcard}
+\setbeamercolor{block body}{fg=oxwhite, bg=oxcard}
+\setbeamercolor{itemize item}{fg=oxamber}
+\setbeamercolor{itemize subitem}{fg=oxgray}
+\setbeamercolor{enumerate item}{fg=oxamber}
+
+% === REMOVE ALL BEAMER CHROME ===
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+
+% === FRAME TITLE — compact, amber bar accent ===
+\setbeamertemplate{frametitle}{%
+  \vspace{0.1cm}%
+  \hspace{0.12cm}%
+  \tikz[baseline=-0.06cm]{\fill[oxamber](0,0) rectangle (0.06cm,0.32cm);}%
+  \hspace{0.1cm}%
+  {\ralewaybold\fontsize{12}{15}\selectfont\color{oxwhite}\insertframetitle}%
+  \par\vspace{0.04cm}%
+  {\color{oxamberdim}\rule{\textwidth}{0.25pt}}%
+  \par\vspace{0.04cm}%
+}
+\addtobeamertemplate{frametitle}{}{\vspace*{-0.30cm}}
+
+% === FOOTLINE — minimal progress bar + counter ===
+\newlength{\oxpblen}
+\setbeamertemplate{footline}{%
+  \pgfmathsetlength{\oxpblen}{%
+    (\inserttotalframenumber>0)?(\insertframenumber/\inserttotalframenumber*\textwidth):0pt%
+  }%
+  % Reserves the band the pinned \footnotedata occupies (1.12cm up),
+  % so frame content can never grow into it.
+  \vspace{1.12cm}%
+  \makebox[\textwidth][c]{%
+    \fontsize{7}{9}\selectfont\ralewaybold\color{oxmuted}OXIEDO\hspace{0.2cm}\textbullet\hspace{0.2cm}\insertframenumber/\inserttotalframenumber%
+  }%
+  \par\vspace{0.15cm}%
+  {\color{oxamber}\rule{\oxpblen}{1.2pt}}{\color{oxborder}\rule{\dimexpr\textwidth-\oxpblen\relax}{1.2pt}}%
+}
+
+% === ITEMIZE / ENUMERATE ===
+\setbeamertemplate{itemize item}{\tikz[baseline=-0.5ex]\fill[oxamber](0,0)circle(1.5pt);}
+\setbeamertemplate{itemize subitem}{\tikz[baseline=-0.5ex]\draw[oxamber,line width=0.5pt](0,0)circle(1.2pt);}
+\setbeamertemplate{enumerate item}{%
+  \tikz[baseline=-0.5ex]{\fill[oxamber](0,0)circle(5pt);%
+  \node[font=\bfseries\fontsize{5}{5}\selectfont\color{oxbg}]at(0,0){\insertenumlabel};}%
+}
+
+% ═══════════════════════════════════════════════════════════════
+%                    CUSTOM COMMANDS
+% ═══════════════════════════════════════════════════════════════
+
+%% Action headline — Layer 1 (compact)
+\newcommand{\actionheadline}[1]{%
+  {\ralewaybold\fontsize{10}{11.8}\selectfont\color{oxwhite}#1}%
+  \par\vspace{1pt}%
+  {\color{oxrule}\rule{\textwidth}{0.2pt}}%
+  \par\vspace{2pt}%
+}
+
+%% Hero stat — large amber metric
+\newcommand{\herostat}[2]{%
+  \begin{center}%
+    {\ralewayblack\fontsize{42}{46}\selectfont\color{oxamber}#1}\\[2pt]%
+    {\fontsize{8}{10}\selectfont\color{oxgray}#2}%
+  \end{center}%
+}
+
+%% Stat card — medium metric
+\newcommand{\statcard}[2]{%
+  \begin{tikzpicture}%
+    \node[fill=oxcard, rounded corners=2pt,%
+          inner xsep=6pt, inner ysep=3pt, align=center]{%
+      {\ralewaybold\fontsize{18}{22}\selectfont\color{oxamber}#1}\\[1pt]%
+      {\fontsize{6}{8}\selectfont\color{oxgray}#2}};%
+  \end{tikzpicture}%
+}
+
+%% Metric badge — inline
+\newcommand{\metricbadge}[2]{%
+  \begin{tikzpicture}[baseline=(n.base)]%
+    \node[fill=oxamberlo, rounded corners=1.5pt,%
+          inner xsep=4pt, inner ysep=1.5pt](n){%
+      {\ralewaybold\fontsize{8}{10}\selectfont\color{oxamber}#1}%
+      {\fontsize{6.5}{8}\selectfont\color{oxgray}\,#2}};%
+  \end{tikzpicture}%
+}
+
+%% Evidence box — amber-bordered proof card
+\newcommand{\evidencebox}[1]{%
+  \vspace{1pt}%
+  \begin{tikzpicture}%
+    \node[draw=oxamberdim, fill=oxcard, rounded corners=2pt,%
+          inner xsep=5pt, inner ysep=3pt,%
+          text width=\textwidth-12pt]{%
+      \fontsize{6.6}{8.2}\selectfont\color{oxwhite}\raggedright\oxnohyphen #1\par};%
+  \end{tikzpicture}%
+  \vspace{1pt}%
+}
+
+%% Column card — 3-column layouts (COMPACT)
+\newcommand{\colcard}[3][0pt]{%
+  \begin{tikzpicture}%
+    \node[fill=oxcard, rounded corners=3pt,%
+          minimum height=#1, anchor=north west,%
+          inner xsep=9pt, inner ysep=7pt,%
+          text width=\linewidth-22pt, align=left]{%
+      {\fontsize{7.5}{8.6}\selectfont\ralewaybold\color{oxamber}\raggedright #2\par}\vspace{2.5pt}%
+      {\fontsize{7}{8.6}\selectfont\color{oxwhite}\raggedright\oxnohyphen #3\par}};%
+  \end{tikzpicture}%
+}
+
+%% Wide column card — 2-column layouts (COMPACT)
+\newcommand{\widecolcard}[3][0pt]{%
+  \begin{tikzpicture}%
+    \node[fill=oxcard, rounded corners=3pt,%
+          minimum height=#1, anchor=north west,%
+          inner xsep=11pt, inner ysep=8pt,%
+          text width=\linewidth-26pt, align=left]{%
+      {\fontsize{8}{9.4}\selectfont\ralewaybold\color{oxamber}\raggedright #2\par}\vspace{2.5pt}%
+      {\fontsize{7.5}{9.0}\selectfont\color{oxwhite}\raggedright\oxnohyphen #3\par}};%
+  \end{tikzpicture}%
+}
+
+%% Table check / X / partial
+\newcommand{\oxyes}{\textcolor{oxamber}{$\checkmark$}}
+\newcommand{\oxno}{\textcolor{oxmuted}{$\times$}}
+\newcommand{\oxpart}{\textcolor{oxgray}{$\sim$}}
+
+%% Footnote — Layer 4
+% The note under a slide is furniture, not flow content. Left in the flow it
+% competes with beamer's own trailing \vfil (added by the `t` class option),
+% so it settled at a different height on every slide -- floating mid-page on
+% short ones, jammed against the page number on full ones. Pinning it to the
+% page removes the glue negotiation entirely and makes the baseline identical
+% on all fourteen.
+\newcommand{\footnotedata}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west, inner sep=0pt,
+          text width=\textwidth, align=left]
+      at ([xshift=\beamer@leftmargin, yshift=1.12cm]current page.south west)
+      {\fontsize{5.5}{7}\selectfont\color{oxmuted}\itshape\raggedright #1\par};
+  \end{tikzpicture}%
+}
+
+%% Suppress hyphenation inside narrow cards. Safe with \raggedright,
+%% which removes the justification pressure that forces the breaks.
+\newcommand{\oxnohyphen}{\hyphenpenalty=10000\exhyphenpenalty=10000\relax}
+
+%% Color shortcut macros
+\newcommand{\amb}[1]{\textcolor{oxamber}{#1}}
+\newcommand{\pos}[1]{\textcolor{oxgreen}{#1}}
+\newcommand{\oxneg}[1]{\textcolor{oxred}{#1}}
+
+% === TABLE COLUMN TYPES ===
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% === TITLE PAGE (overlay, used only on slide 01) ===
+\defbeamertemplate*{title page}{oxido}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Left gold accent stripe
+    \fill[oxamber]
+      (current page.north west)rectangle++(\paperwidth*0.005,-\paperheight);
+    % Bottom gold rule
+    \fill[oxamberdim]
+      (current page.south west)rectangle++(\paperwidth,1.5pt);
+    % Company name — top left
+    \node[anchor=north west, xshift=0.7cm, yshift=-0.5cm,
+          font=\ralewayblack\fontsize{10}{12}\selectfont, text=oxamber]
+      at(current page.north west){OXIEDO};
+    % Main title
+    \node[anchor=south, yshift=0.3cm,
+          text width=11.5cm, align=center,
+          font=\ralewayblack\fontsize{21}{26}\selectfont, text=oxwhite]
+      at(current page.center){\inserttitle};
+    % Subtitle
+    \node[anchor=north, yshift=-0.2cm,
+          text width=11.5cm, align=center,
+          font=\ralewayreg\fontsize{10}{13}\selectfont, text=oxgray]
+      at(current page.center){\insertsubtitle};
+    % Badge row — anchored to the page bottom, not to the centre, so the
+    % subtitle can wrap freely without ever reaching it.
+    \node[anchor=south, yshift=1.55cm,
+          font=\fontsize{7}{9}\selectfont, text=oxgray]
+      at(current page.south){\insertauthor};
+    % Date / links
+    \node[anchor=south, yshift=0.35cm,
+          font=\fontsize{6}{7}\selectfont, text=oxmuted]
+      at(current page.south){\insertdate};
+  \end{tikzpicture}%
+}

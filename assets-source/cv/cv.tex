@@ -1,0 +1,270 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[top=0.45in, bottom=0.45in, left=0.65in, right=0.65in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{parskip}
+\usepackage{ifthen}
+\usepackage{needspace}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{heading}{HTML}{1A6B7A}
+\definecolor{link}{HTML}{2B6B8A}
+\definecolor{body}{HTML}{1A1A1A}
+
+% ============================================================
+% HYPERLINKS
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=link,
+    urlcolor=link,
+    pdfauthor={Rokib Al Dhin Raadh},
+    pdftitle={CV - Rokib Al Dhin Raadh},
+}
+
+% ============================================================
+% SECTION STYLE
+% ============================================================
+\titleformat{\section}
+  {\large\bfseries\color{heading}}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.6em}{\color{heading}\rule{\textwidth}{0.5pt}}]
+
+\titlespacing{\section}{0pt}{7pt}{2pt}
+
+\pagestyle{empty}
+
+% ============================================================
+% CV ENTRY COMMAND
+% ============================================================
+% A minipage cannot break across a page, so a long entry was thrown whole
+% onto the next page and left a hole behind it. A list environment breaks,
+% and reproduces the same two-column geometry: date in the left gutter,
+% body indented to a fixed margin.
+\newcommand{\cvitem}[3]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.7cm}%
+    \setlength{\labelwidth}{2.4cm}%
+    \setlength{\labelsep}{0.3cm}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+  }%
+  \item[{\makebox[2.4cm][l]{\footnotesize #1}}]%
+  #2
+  #3
+  \end{list}%
+  \vspace{2pt}
+}
+
+% Tight bullet list
+\newlist{bullets}{itemize}{1}
+\setlist[bullets]{leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% Skill row
+\newcommand{\skillrow}[2]{%
+  \noindent
+  \begin{minipage}[t]{2.6cm}
+    \raggedright\footnotesize\textbf{#1}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{\dimexpr\textwidth-2.9cm}
+    #2
+  \end{minipage}
+  \vspace{2pt}
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+\color{body}
+
+% ============================================================
+% HEADER
+% ============================================================
+\begin{center}
+  {\LARGE\bfseries\color{heading} ROKIB AL DHIN RAADH}\\[6pt]
+  {\small
+    \href{mailto:raadxbusiness9@gmail.com}{raadxbusiness9@gmail.com}
+    \quad$|$\quad
+    \href{mailto:rokib@blackbloxie.com}{rokib@blackbloxie.com}
+    \quad$|$\quad
+    \href{https://www.raadh.me}{raadh.me}
+    \quad$|$\quad
+    \href{https://oxiedo.com}{oxiedo.com}
+  }\\[6pt]
+  {\footnotesize\textit{18-year-old independent AI researcher. Founder of Oxiedo, licensing the ORMAS training architecture to institutions whose data is closed to deep learning.}}
+\end{center}
+
+\vspace{-4pt}
+
+
+
+% ============================================================
+% PREPRINTS
+% ============================================================
+\needspace{3\baselineskip}\section*{Publications \& Technical Reports}
+
+\noindent\textbf{R.A.D.\ Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' 2026.
+Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.21730363}.\\
+{\footnotesize Submitted to \textbf{AAAI 2027}, Main Technical Track --- under anonymous review. Not accepted and not published.}
+
+\vspace{4pt}
+
+% ============================================================
+% SERVICE & RECOGNITION
+% ============================================================
+\needspace{3\baselineskip}\section*{Recent Academic Service \& Recognition}
+
+\cvitem{Dec 2026}{%
+  \textbf{Reviewer, Program Committee}\\
+  \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good (AI4GOOD) Workshop} --- \textbf{NeurIPS 2026}, Paris
+}{%
+  \begin{bullets}
+    \item Peer review for the workshop's trustworthy-AI track, covering mechanistic interpretability, attribution, post-deployment monitoring and model auditing.
+    \item The ICML 2026 edition of the workshop drew 539 submissions against a 34\% acceptance rate, assessed by a committee of 237 reviewers.
+  \end{bullets}
+}
+
+\cvitem{Jul 2026}{%
+  \href{https://cosmosgrants.org/}{\textbf{Cosmos Institute}} --- Grants Review
+}{%
+  \\Application ranked \textbf{highest in its cycle}. Not funded: that round backed philosophical work on AI, and ORMAS is a technical architecture. Invited to reapply to a technical track.
+}
+
+\cvitem{Aug--Sep 2026}{%
+  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco
+}{%
+  \\Cold application answered within \textbf{12 hours} with a call booked with an EF investment-team lead; first screen held in London, August 2026. Now in the selection process for \textbf{The Bridge}, EF's eight-week San Francisco residency --- two interview rounds completed, decision pending as of September 2026.
+}
+
+\vspace{2pt}
+
+% ============================================================
+% RESEARCH EXPERIENCE
+% ============================================================
+\needspace{3\baselineskip}\section*{Research Experience}
+
+\cvitem{2024--pres.}{%
+  \textbf{Independent Machine Learning Researcher}\\
+  ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction\\
+  {\footnotesize PyTorch $\cdot$ 10,594 lines $\cdot$ 61 files $\cdot$ Codebase: \href{https://anonymous.4open.science/r/ormas-EB73}{anonymous.4open.science/r/ormas-EB73}}
+}{%
+  \begin{bullets}
+    \item Three-signal training architecture: unmodified global backpropagation, a per-node local loss through a shared 4,715-parameter bottleneck, and a health-gated correction engine with 8 diagnoses, each capped and logged.
+    \item First Input-to-State Stability characterisation for a self-correcting architecture; correction rate decays from 4.2 to 0.05 per epoch, as the bound predicts.
+    \item Recovery from mid-training structural collapse: \textbf{80.3\%} against a parameter-matched baseline stuck at 10.0\% permanently, on every seed ($+$70.3\,pp).
+    \item Retention through sequential task shift with no replay buffer and no task ID: \textbf{94.6\%} against 47.3\% for ResNet-18; 58.8\% zero-shot on unseen combinations against 25\% chance.
+    \item 383 controlled experiments, 4 architecture families, every run reproducible from seed, single RTX~3090. One adverse result published: 1.0\,pp below baseline under adversarial weight injection.
+  \end{bullets}
+}
+
+% ============================================================
+% ENGINEERING
+% ============================================================
+\needspace{3\baselineskip}\section*{Engineering}
+
+\cvitem{2023--pres.}{%
+  \textbf{Sole Architect \& Engineer}\\
+  OXIMO --- Cognitive Multi-Agent Operating System\\
+  {\footnotesize Python $\cdot$ 40,933 lines production $\cdot$ 2,011 tests $\cdot$ Codebase: \href{https://anonymous.4open.science/r/oximo-5C73}{anonymous.4open.science/r/oximo-5C73}}
+}{%
+  \begin{bullets}
+    \item Multi-agent operating system: hierarchical task decomposition, on-demand role creation via a self-hiring pipeline, Graph-of-Thoughts planner, three-tier memory with temporal decay, and a seven-check input safety cascade.
+    \item Rebuilt from a \textbf{106,000-line monolith} to 40,933 lines --- a \textbf{72\% reduction} with all 12 critical algorithms ported and 2,011 tests passing.
+  \end{bullets}
+}
+
+% ============================================================
+% VENTURES & DEPLOYMENT
+% ============================================================
+\needspace{3\baselineskip}\section*{Companies}
+
+\cvitem{2023--pres.}{%
+  \textbf{Founder} \quad \textit{\href{https://oxiedo.com}{Oxiedo} --- \href{https://oxiedo.com}{oxiedo.com}}\\
+  {\footnotesize Licensing ORMAS to institutions holding data they cannot currently train on.}
+}{%
+  \begin{bullets}
+    \item One architecture under one licence, deployed on customer infrastructure. Five sectors in scope: AI training, regulated finance, medical AI, data-deletion obligation, and defence.
+    \item Pre-revenue, no customers, raising a pre-seed round. All results to date are CIFAR-10/100; no regulated data has touched the system.
+  \end{bullets}
+}
+
+\cvitem{2024--2026}{%
+  \textbf{Founder} \quad \textit{Black Bloxie LTD --- UK registered}\\
+  {\footnotesize A live company run as a controlled test environment for OXIMO.}
+}{%
+  \begin{bullets}
+    \item Registered a UK company at 17 from Bangladesh, handling formation, AML compliance and cross-border operations independently.
+    \item Twelve-month ablation, deploy--remove--restore: removing the system cut commercial output \textbf{91\%} and new-customer acquisition 100\%; restoring it recovered \textbf{1,300\%} against the ablated baseline. Zero advertising spend, zero human sales hours.
+  \end{bullets}
+}
+
+\cvitem{2020--2024}{%
+  \textbf{Independent ventures (5)} \quad \textit{Automated sales $\cdot$ AI development $\cdot$ market tools}
+}{%
+  \\Five ventures between 12 and 17, each failing at a different layer. Their shared finding --- that the binding constraint was coordination, not capability --- is what OXIMO was built to answer.
+}
+
+% ============================================================
+% TECHNICAL SKILLS
+% ============================================================
+\needspace{3\baselineskip}\section*{Technical Skills}
+
+\skillrow{ML / AI}{PyTorch, PCGrad gradient surgery, ISS convergence theory, noise-robust training, multi-agent orchestration}
+
+\skillrow{Engineering}{Python (advanced), C++, LaTeX, Docker, FastAPI, SQLAlchemy, ChromaDB, Prometheus, React, TypeScript}
+
+\skillrow{Languages}{English (fluent), Bengali (native)}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\needspace{3\baselineskip}\section*{Education}
+
+\cvitem{Fall 2027}{%
+  \textbf{Prospective Undergraduate}
+}{%
+  \\Seeking admission to pursue research in AI safety, self-correcting neural architectures, and autonomous systems.
+}
+
+\cvitem{2025--2026}{%
+  \textbf{Self-Directed Coursework}
+}{%
+  \begin{bullets}
+    \item Deep Learning Specialization (5 courses), DeepLearning.AI (Andrew Ng). \mbox{\textit{Completed.}}
+    \item MITx AI Programs --- 25 courses across AI foundations, precision medicine, sustainable energy, and transportation. \textit{Certificates in progress.}
+  \end{bullets}
+}
+
+% ============================================================
+% OPEN-SOURCE
+% ============================================================
+\needspace{3\baselineskip}\section*{Open-Source \& Archives}
+
+\skillrow{ORMAS}{\href{https://zenodo.org/records/21730363}{preprint} $\cdot$ \href{https://anonymous.4open.science/r/ormas-EB73}{source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{full archive of 383 experiments}}
+\skillrow{OXIMO}{\href{https://anonymous.4open.science/r/oximo-5C73}{source} \enspace {\footnotesize (anonymous review)}}
+
+\vfill
+\begin{flushright}
+  \small\textit{Last updated September 2026}
+\end{flushright}
+
+\end{document}

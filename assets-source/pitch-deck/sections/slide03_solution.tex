@@ -1,0 +1,52 @@
+\begin{frame}{Kill a Converged Layer. One Architecture Comes Back.}
+\actionheadline{Both Networks Reach 85\%. At Epoch 101 the Feature Layer Is Zeroed. Only One of Them Notices}
+
+\vspace{-2pt}
+\begin{columns}[T]
+  \column{0.62\textwidth}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=7.2cm, height=3.4cm,
+      scale only axis,
+      xmin=0, xmax=205, ymin=0, ymax=100,
+      xlabel={\fontsize{5.5}{6}\selectfont Training epoch}, xlabel style={yshift=2pt},
+      ylabel={\fontsize{5.5}{6}\selectfont Test accuracy (\%)},
+      every axis label/.append style={oxgray},
+      xtick={0,50,100,150,200}, ytick={0,25,50,75,100},
+      tick label style={font=\fontsize{5.5}{6}\selectfont, color=oxgray},
+      axis line style={oxrule, line width=0.4pt},
+      grid=major, grid style={oxrule, line width=0.25pt, dashed},
+      tick style={oxrule},
+      clip=false, axis background/.style={fill=none},
+    ]
+      % lesion marker
+      \draw[oxred, line width=0.5pt, dashed] (axis cs:101,0) -- (axis cs:101,100);
+      \node[oxred, font=\fontsize{5.2}{6}\selectfont, anchor=south, align=center]
+        at (axis cs:101,100) {layer zeroed};
+
+      % inert control — flat at chance, every seed
+      \addplot[oxseriesB, line width=1.1pt] coordinates {
+        (0,10)(10,44)(25,64)(50,75)(75,81.5)(100,85.0)(101,10)
+        (120,10)(150,10)(180,10)(200,10)};
+      \node[oxseriesB, font=\fontsize{5.4}{6}\selectfont, anchor=west]
+        at (axis cs:152,15) {Baseline \textbf{10.0\%}};
+
+      % hero series
+      \addplot[oxseriesA, line width=1.4pt] coordinates {
+        (0,10)(10,45)(25,65)(50,76)(75,82)(100,85.1)(101,10)
+        (110,32)(125,55)(140,68)(160,75)(180,79)(195,80.3)(200,80.3)};
+      \node[oxseriesA, font=\fontsize{5.4}{6}\selectfont, anchor=south east]
+        at (axis cs:200,81) {ORMAS \textbf{80.3\%}};
+    \end{axis}
+  \end{tikzpicture}
+
+  \column{0.36\textwidth}
+  \colcard[2.9cm]{WHAT THE GAP IS}{%
+    \pos{\textbf{+70.3 pp}}\par\vspace{3pt}
+    The baseline sits at chance \textbf{on every seed, permanently} --- zero variance, no recovery.\par\vspace{4pt}
+    ORMAS diagnosed the failure \amb{inside one epoch} and climbed back through \amb{85} individually attributed corrections.\par\vspace{4pt}
+    Each node reads through a \amb{4,416-parameter} bottleneck and fires at \amb{2.5$\sigma$} below its own history.}
+\end{columns}
+
+\footnotedata{CIFAR-10, parameter-matched baseline, three seeds. The stability result is local, not global, and has not been through peer review. Stated here rather than found later.}
+\end{frame}

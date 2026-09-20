@@ -1,0 +1,23 @@
+\begin{frame}{One Decision in 1986. Three Problems Everyone Funds Separately.}
+\actionheadline{A Single Global Error Signal Makes Fault Localization Mathematically Impossible --- Every Downstream Failure Follows From It}
+
+\begin{columns}[T]
+  \column{0.33\textwidth}
+  \colcard[1.87cm]{NOTHING CAN BE LOCATED}{%
+    One error signal spreads across every parameter at once.\par\vspace{3pt}
+    No unit can assess its own state.\par\vspace{3pt}
+    \amb{The loss curve collapses and nothing says which node died.}}
+  \column{0.33\textwidth}
+  \colcard[1.87cm]{NOTHING IS RETAINED}{%
+    New tasks overwrite prior representations indiscriminately.\par\vspace{3pt}
+    ResNet-18 keeps \amb{47.3\%} after a sequential task shift.\par\vspace{3pt}
+    \textit{Every regime change costs what the model knew.}}
+  \column{0.33\textwidth}
+  \colcard[1.87cm]{NOTHING IS REPAIRED}{%
+    Repair requires knowing what is broken.\par\vspace{3pt}
+    Corrupted data is learned silently and confidently.\par\vspace{3pt}
+    \amb{Rollback or full retrain are the only recourse.}}
+\end{columns}
+
+\footnotedata{One cause: the chain rule multiplies every unit's contribution through every other unit's. Unchanged since 1986.}
+\end{frame}

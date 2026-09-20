@@ -25,3 +25,12 @@ ONBOARDING.md
 *.njsproj
 *.sln
 *.sw?
+
+# LaTeX build artefacts from assets-source/
+assets-source/**/*.aux
+assets-source/**/*.log
+assets-source/**/*.nav
+assets-source/**/*.snm
+assets-source/**/*.toc
+assets-source/**/*.out
+assets-source/**/*.pdf
