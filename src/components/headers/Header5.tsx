@@ -35,7 +35,7 @@ export default function Header5() {
         <div className="col-6">
           <div className="logo">
             <Link to={`/`} style={{ textDecoration: 'none' }}>
-              <h2 className="logo-text text-white m-0" style={{ fontWeight: 800 }}>Raadh.</h2>
+              <h2 className="logo-text m-0" style={{ fontWeight: 800, color: 'var(--pf-ink)', fontSize: '20px' }}>Raadh.</h2>
             </Link>
           </div>
         </div>

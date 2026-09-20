@@ -5,6 +5,7 @@ import CVContent from "@/components/common/CVContent";
 import Footer1 from "@/components/footers/Footer1";
 import Copyright from "@/components/footers/Copyright";
 import Header5 from "@/components/headers/Header5";
+import MobileMenu from "@/components/headers/MobileMenu";
 
 import MetaComponent from "@/components/common/Metacomponent";
 
@@ -21,6 +22,7 @@ export default function HomePage7() {
       <div className="index-seven spybody card-1-body">
         <Header3 />
         <Header5 />
+        <MobileMenu />
         
         <div className="page-with-left-header">
           {/* Main Hero remains at the top */}
