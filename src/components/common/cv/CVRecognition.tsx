@@ -361,9 +361,178 @@ export default function CVRecognition() {
           margin: 0;
         }
         .rec-qa-a strong { color: var(--pf-ink); font-weight: 600; }
+
+        /* ── Live diary. The section's newest layer: what is actually in the
+             calendar this week, sitting above the three-month record. ───── */
+        .rec-week {
+          border: 1px solid var(--pf-border);
+          border-radius: 10px;
+          overflow: hidden;
+          background: var(--pf-surface);
+          margin-bottom: 26px;
+        }
+        .rec-week-head {
+          padding: 21px 26px 19px;
+          background: var(--pf-surface-2);
+          border-bottom: 1px solid var(--pf-border);
+        }
+        .rec-week-k {
+          display: inline-flex; align-items: center; gap: 7px;
+          font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
+          text-transform: uppercase; color: var(--pf-pos);
+          margin-bottom: 10px;
+        }
+        .rec-week-t {
+          font-size: 18px; font-weight: 800; letter-spacing: -0.3px;
+          color: var(--pf-ink); margin: 0 0 9px; line-height: 1.3;
+        }
+        .rec-week-l {
+          font-size: 13.5px; line-height: 1.7; color: var(--pf-ink-2); margin: 0;
+        }
+        .rec-week-l strong { color: var(--pf-ink); font-weight: 600; }
+
+        .rec-week-row {
+          display: grid;
+          grid-template-columns: 126px minmax(0, 1fr) auto;
+          gap: 18px; align-items: baseline;
+          padding: 17px 26px;
+          border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.055);
+        }
+        .rec-week-row:last-of-type { border-bottom: none; }
+        .rec-week-when { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+        .rec-week-d {
+          font-size: 11.5px; font-weight: 800; letter-spacing: 1.1px;
+          text-transform: uppercase; color: var(--pf-ink);
+        }
+        .rec-week-h {
+          font-size: 11px; font-weight: 600; letter-spacing: 0.4px; color: var(--pf-ink-4);
+        }
+        .rec-week-body { display: block; min-width: 0; }
+        .rec-week-who {
+          display: block;
+          font-size: 14.5px; font-weight: 700; color: var(--pf-ink);
+          line-height: 1.35; margin-bottom: 5px;
+        }
+        .rec-week-what { display: block; font-size: 13px; line-height: 1.7; color: var(--pf-ink-2); }
+        .rec-week-what strong { color: var(--pf-ink); font-weight: 600; }
+        .rec-week-pill {
+          display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+          font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px;
+          text-transform: uppercase; white-space: nowrap;
+          border-radius: 999px; padding: 5px 11px;
+          color: var(--pf-ink-2); background: var(--pf-surface-2);
+          border: 1px solid var(--pf-border);
+        }
+        .rec-week-pill.is-now {
+          color: var(--pf-pos);
+          background: rgba(var(--pf-pos-rgb), 0.08);
+          border-color: rgba(var(--pf-pos-rgb), 0.32);
+        }
+        .rec-week-foot {
+          padding: 13px 26px;
+          border-top: 1px solid var(--pf-border);
+          background: rgba(var(--pf-ink-rgb), 0.025);
+          font-size: 11px; font-weight: 600; letter-spacing: 0.4px;
+          color: var(--pf-ink-4);
+        }
+        @media (max-width: 700px) {
+          .rec-week-head { padding: 18px 18px 16px; }
+          .rec-week-row {
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 9px 14px; padding: 16px 18px;
+          }
+          /* Date and status share the top line; the entry sits under both,
+             so the title never has to wrap around the pill. */
+          .rec-week-when {
+            grid-column: 1; grid-row: 1;
+            flex-direction: row; align-items: baseline; gap: 9px;
+          }
+          .rec-week-pill { grid-column: 2; grid-row: 1; justify-self: end; }
+          .rec-week-body { grid-column: 1 / -1; grid-row: 2; }
+          .rec-week-foot { padding: 12px 18px; }
+        }
       `}</style>
 
       <div>
+
+        {/* ── The diary. Runs above the three-month record because it is the
+             more current layer: these are live, dated, and named. ──────── */}
+        <div className="rec-week">
+          <div className="rec-week-head">
+            <span className="rec-week-k">
+              <span className="rec-date-dot" aria-hidden="true" />
+              Live &middot; On the calendar
+            </span>
+            <h3 className="rec-week-t">The week of 22 September 2026</h3>
+            <p className="rec-week-l">
+              Four investor processes running at once, and one of these calls is at{' '}
+              <strong>five in the morning Dhaka time</strong> &mdash; because that is when London is
+              awake. None of them came from an introduction. This is what an ordinary week looks like now.
+            </p>
+          </div>
+
+          {[
+            {
+              d: 'Mon 22 Sep',
+              h: '19:00 Dhaka',
+              who: 'Freshmango \u2014 call with Philip Adler',
+              what: <>Twenty minutes on what I am building, where it stands and what is blocking it. <strong>Their diary, their invitation.</strong></>,
+              pill: 'Today',
+              now: true,
+            },
+            {
+              d: 'Mon 22 Sep',
+              h: 'Central London',
+              who: 'Onstage \u00b7 W26 Demo Day \u2014 pre-pitch party',
+              what: <>Held tonight in Central London, ahead of the <strong>top 100</strong> being announced.</>,
+              pill: 'Tonight',
+              now: true,
+            },
+            {
+              d: 'Wed 23 Sep',
+              h: '05:00 Dhaka',
+              who: 'Antler \u2014 first interview',
+              what: <>The investment-process interview for <strong>Antler&rsquo;s Residency</strong>, with Stefan Knight. Their scouting team read the application and put it in the diary.</>,
+              pill: 'Tomorrow',
+              now: true,
+            },
+            {
+              d: 'This week',
+              h: 'Final round',
+              who: '1752vc \u2014 final interview stage',
+              what: <>They placed the application in the <strong>top 5% of everyone who applied</strong> and moved it through to the last round.</>,
+              pill: 'In progress',
+              now: false,
+            },
+            {
+              d: 'Since Sep',
+              h: 'San Francisco',
+              who: 'Entrepreneur First \u00b7 The Bridge',
+              what: <>Two interview rounds done, decision sitting with EF. Full detail further down this page.</>,
+              pill: 'Pending',
+              now: false,
+            },
+          ].map((r) => (
+            <div className="rec-week-row" key={r.who}>
+              <span className="rec-week-when">
+                <span className="rec-week-d">{r.d}</span>
+                <span className="rec-week-h">{r.h}</span>
+              </span>
+              <span className="rec-week-body">
+                <span className="rec-week-who">{r.who}</span>
+                <span className="rec-week-what">{r.what}</span>
+              </span>
+              <span className={`rec-week-pill${r.now ? ' is-now' : ''}`}>
+                {r.now ? <span className="rec-date-dot" aria-hidden="true" /> : null}
+                {r.pill}
+              </span>
+            </div>
+          ))}
+
+          <div className="rec-week-foot">
+            Status as of 22 September 2026 &middot; this list is updated the day anything on it moves
+          </div>
+        </div>
 
         <div className="rec-run">
           {[
