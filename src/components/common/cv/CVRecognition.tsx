@@ -528,14 +528,14 @@ export default function CVRecognition() {
             </div>
 
             <h3 className="rec-week-t">
-              Four investor processes are running at the same time. This is the week.
+              Five live processes are running at the same time. This is the week.
             </h3>
             <p className="rec-week-l">
               <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
               because that is when London is awake. <strong>1752vc</strong> put the application in the
               top 5% of everyone who applied and moved it to a final round. <strong>Freshmango</strong>{' '}
-              booked a call for tonight, and <strong>Entrepreneur First</strong> are sitting on a Bridge
-              decision. Not one of these came from an introduction &mdash; every one started as a cold
+              booked a call for tonight, <strong>Onstage</strong> are ranking me for the W26 cohort, and
+              <strong> Entrepreneur First</strong> are sitting on a Bridge decision. Not one of these came from an introduction &mdash; every one started as a cold
               application from Dhaka, written by an eighteen-year-old.
             </p>
 
@@ -559,16 +559,8 @@ export default function CVRecognition() {
               d: 'Mon 22 Sep',
               h: '19:00 Dhaka',
               who: 'Freshmango \u2014 call with Philip Adler',
-              what: <>Twenty minutes on what I am building, where it stands and what is blocking it. <strong>Their diary, their invitation.</strong></>,
+              what: <>Twenty minutes on what I am building, where it stands and what is blocking it. <strong>They booked it, not me.</strong></>,
               pill: 'Today',
-              now: true,
-            },
-            {
-              d: 'Mon 22 Sep',
-              h: 'Central London',
-              who: 'Onstage \u00b7 W26 Demo Day \u2014 pre-pitch party',
-              what: <>Held tonight in Central London, ahead of the <strong>top 100</strong> being announced.</>,
-              pill: 'Tonight',
               now: true,
             },
             {
@@ -584,6 +576,14 @@ export default function CVRecognition() {
               h: 'Final round',
               who: '1752vc \u2014 final interview stage',
               what: <>They placed the application in the <strong>top 5% of everyone who applied</strong> and moved it through to the last round.</>,
+              pill: 'In progress',
+              now: false,
+            },
+            {
+              d: 'W26 cohort',
+              h: 'Top 100 pending',
+              who: 'Onstage \u00b7 W26 Demo Day',
+              what: <>In the pool for the winter cohort. Onstage rank every application by investor interest across <strong>350 VC partners</strong> &mdash; a16z, Sequoia, Balderton, LocalGlobe &mdash; and the top 100 is named shortly.</>,
               pill: 'In progress',
               now: false,
             },
