@@ -49,10 +49,11 @@ export default function CherryVisualization() {
         .cvz { margin: 8px 0 0; }
 
         .cvz-grid {
-          display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;
+          display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; margin-bottom: 16px;
         }
         @media (max-width: 900px) { .cvz-grid { grid-template-columns: 1fr; } }
 
+                .cvz-panel { min-width: 0; }
         .cvz-panel {
           background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 20px 20px 16px; overflow: hidden;

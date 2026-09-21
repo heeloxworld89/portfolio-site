@@ -29,9 +29,10 @@ export default function ResearchVisualization() {
     <div className="rvz">
       <style>{`
         .rvz { margin: 8px 0 0; }
-        .rvz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        .rvz-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; margin-bottom: 14px; }
         @media (max-width: 900px) { .rvz-grid { grid-template-columns: 1fr; } }
 
+                .rvz-panel { min-width: 0; }
         .rvz-panel {
           background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 20px 20px 16px;

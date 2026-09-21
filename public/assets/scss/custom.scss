@@ -694,3 +694,104 @@ p { color: var(--pf-ink-2); }
 @media (min-width: 1800px) {
   .page-with-left-header .container { max-width: 1320px; }
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE — measured at 390px on a real render, not guessed
+   ══════════════════════════════════════════════════════════════
+   Desktop line-height (1.7–1.8) is correct on a 600px measure and too
+   airy on a 340px one: paragraphs became very tall columns and the hero
+   ran several screens before any content. Tighten the rhythm, shrink the
+   chrome, and let the type scale down a step.
+   ══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+
+  /* Header: the burger was a heavy filled circle and the bar was tall. */
+  .tmp-responsive-header-style { padding: 9px 16px !important; }
+  .tmp-responsive-header-style .logo-text { font-size: 17px !important; }
+  /* The template draws this as a filled circle: border-radius 100%, a 2px
+     accent border, and an ::after that paints the fill. Overriding the
+     button's own background left the ::after in place, which is why it
+     stayed a heavy navy disc. */
+  .tmp-responsive-header-style .tmp-menu-bars {
+    width: 38px !important; height: 38px !important;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 9px !important;
+    border: 1px solid var(--pf-border) !important;
+    background: var(--pf-surface) !important;
+    color: var(--pf-ink) !important;
+  }
+  .tmp-responsive-header-style .tmp-menu-bars::after,
+  .tmp-responsive-header-style .tmp-menu-bars::before {
+    display: none !important;
+  }
+
+  /* Body rhythm */
+  .sx-lead      { font-size: 14.5px !important; line-height: 1.6 !important; }
+  .sx-title     { letter-spacing: -0.5px !important; line-height: 1.15 !important; }
+  .hx-lead      { font-size: 14.5px !important; line-height: 1.6 !important; }
+  .hx-trust     { font-size: 12px !important; line-height: 1.6 !important; }
+  .hx-h1        { letter-spacing: -0.9px !important; line-height: 1.1 !important; }
+  .hx-kicker    { font-size: 16px !important; }
+
+  /* Hero: it ran several screens before anything else appeared. */
+  .hx           { padding: 14px 0 32px !important; }
+  .hx-live-bar  { margin-bottom: 18px !important; padding: 10px 14px !important; }
+  .hx-top       { gap: 26px !important; margin-bottom: 26px !important; }
+  .hx-id {
+    display: block !important;
+    font-size: 9.5px !important; letter-spacing: 1.1px !important;
+    padding: 0 !important; border: none !important; background: none !important;
+    color: var(--pf-ink-3) !important; line-height: 1.7 !important;
+    margin-bottom: 14px !important;
+  }
+  /* The separators are 3px dots, sized for the pill. Without the pill they
+     need to read as punctuation, not vanish — hiding them ran the line
+     together as one string. */
+  .hx-id i {
+    width: auto !important; height: auto !important;
+    background: none !important; border-radius: 0 !important;
+  }
+  .hx-id i::before { content: "·"; margin: 0 5px; color: var(--pf-ink-4); }
+  .hx-res       { padding: 18px 16px !important; }
+  .hx-ctas .hx-cta { flex: 1 1 auto; justify-content: center; }
+
+  /* Section headers */
+  .sx-head      { margin-bottom: 20px !important; }
+  .sx-meta-cell { padding: 10px 12px !important; }
+  .sx-meta-v    { font-size: 12.5px !important; }
+
+  /* Cards and rows carry desktop padding that wastes a narrow screen. */
+  .rec-card, .rec-secondary, .rec-status, .rec-verdict,
+  .bz-cta, .bz-thesis, .vn-exit, .vn-finding,
+  .ox-closed, .bb-money, .bb-ceiling, .cy-warn, .rec-verify {
+    padding: 16px 16px !important;
+  }
+
+  /* Long paragraphs inside components */
+  .rec-body, .rec-verdict-body, .bz-sector-q, .ox-p, .cy-p,
+  .vn-lesson, .bb-rung-a, .os-p {
+    line-height: 1.62 !important;
+  }
+
+  /* Anything that still wants to be wider than the screen scrolls itself
+     rather than pushing the page. */
+  .rvz-grid, .ovz-grid, .cvz-grid, .evz-two,
+  .bb-tables, .bb-headline, .rec-grid, .hx-lanes, .rec-run {
+    grid-template-columns: 1fr !important;
+  }
+  table { max-width: 100%; }
+
+  /* A display formula that is wider than the screen should scroll inside
+     its own box rather than be clipped at the edge. */
+  .katex-display { overflow-x: auto; overflow-y: hidden; padding-bottom: 4px; }
+  .katex-display > .katex { text-align: left !important; }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+  .hx-h1    { font-size: 26px !important; }
+  .sx-title { font-size: 21px !important; }
+  .hx-id    { font-size: 9px !important; }
+}

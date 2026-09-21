@@ -36,9 +36,10 @@ export default function OxidoVisualization() {
     <div className="ovz">
       <style>{`
         .ovz { margin: 8px 0 0; }
-        .ovz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+        .ovz-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; margin-bottom: 16px; }
         @media (max-width: 900px) { .ovz-grid { grid-template-columns: 1fr; } }
 
+                .ovz-panel { min-width: 0; }
         .ovz-panel {
           background: var(--pf-bg); border: 1px solid var(--pf-border);
           border-radius: 12px; padding: 20px 20px 16px;

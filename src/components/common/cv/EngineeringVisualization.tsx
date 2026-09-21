@@ -97,7 +97,7 @@ export default function EngineeringVisualization() {
         .evz-fsm-s { font-size: 13px; font-weight: 700; color: var(--pf-ink); font-family: ui-monospace, Menlo, monospace; }
         .evz-fsm-d { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); }
 
-        .evz-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .evz-two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; }
         @media (max-width: 900px) { .evz-two { grid-template-columns: 1fr; } }
 
         .evz-mem-row {
