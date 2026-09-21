@@ -2,7 +2,6 @@ import Icon, { type IconName } from "@/components/common/Icon";
 
 const links: { icon: IconName; label: string; href: string }[] = [
   { icon: "github", label: "GitHub", href: "https://github.com/raad-x" },
-  { icon: "x", label: "X / Twitter", href: "https://twitter.com/Raad_X_" },
   { icon: "fileText", label: "ORMAS Preprint", href: "https://zenodo.org/records/21730363" },
   { icon: "code", label: "Codebase", href: "https://anonymous.4open.science/r/ormas-EB73/README.md" },
 ];

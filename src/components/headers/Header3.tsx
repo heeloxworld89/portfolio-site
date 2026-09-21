@@ -70,13 +70,6 @@ const socials: {
     href: "mailto:raadxbusiness9@gmail.com",
   },
   {
-    icon: "x",
-    short: "X",
-    label: "@Raad_X_",
-    sub: "Where I post work in progress.",
-    href: "https://twitter.com/Raad_X_",
-  },
-  {
     icon: "github",
     short: "GitHub",
     label: "github.com/raad-x",
@@ -163,6 +156,9 @@ export default function Header3() {
           display: grid; grid-template-columns: 1fr 1fr;
           gap: 6px; margin-top: 2px;
         }
+        /* Three entries in a two-column grid leaves an orphan cell. The last
+           one spans, so the block reads as deliberate rather than short. */
+        .sb-social a:last-child:nth-child(odd) { grid-column: 1 / -1; }
         .sb-social a {
           display: flex; align-items: center; gap: 8px;
           padding: 9px 11px; border-radius: 8px;
