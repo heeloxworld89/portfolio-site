@@ -365,17 +365,20 @@ export default function CVRecognition() {
         /* ── Live diary. The section's newest layer: what is actually in the
              calendar this week, sitting above the three-month record. ───── */
         .rec-week {
-          border: 1px solid var(--pf-border);
+          border: 1px solid var(--pf-border-2);
+          border-top: 3px solid var(--pf-accent);
           border-radius: 10px;
           overflow: hidden;
           background: var(--pf-surface);
+          box-shadow: var(--pf-shadow-lg);
           margin-bottom: 26px;
         }
-        /* Banner head. Deliberately the loudest block in the section — this is
-           the live layer and it should land before anything historical. The
-           accent band is the only inverted surface on the page. */
+        /* Banner head. The loudest block in the section, but the weight comes
+           from the accent rule above it, the type scale and the lift — not from
+           inverting the surface. The page stays one light family throughout. */
         .rec-week-banner {
-          background: var(--pf-accent);
+          background: var(--pf-surface-2);
+          border-bottom: 1px solid var(--pf-border);
           padding: 27px 30px 25px;
         }
         .rec-week-top {
@@ -386,42 +389,55 @@ export default function CVRecognition() {
           display: inline-flex; align-items: center; gap: 8px;
           font-size: 10.5px; font-weight: 800; letter-spacing: 1.8px;
           text-transform: uppercase;
-          color: var(--pf-accent); background: var(--pf-on-accent);
-          border-radius: 999px; padding: 7px 15px;
+          color: var(--pf-pos);
+          background: rgba(var(--pf-pos-rgb), 0.09);
+          border: 1px solid rgba(var(--pf-pos-rgb), 0.32);
+          border-radius: 999px; padding: 6px 14px;
         }
         .rec-week-badge .rec-date-dot { background: var(--pf-pos); }
         .rec-week-stamp {
           font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: rgba(246, 244, 236, 0.6);
+          text-transform: uppercase; color: var(--pf-ink-4);
         }
         .rec-week-t {
           font-size: 25px; font-weight: 800; letter-spacing: -0.5px;
-          line-height: 1.25; color: var(--pf-on-accent); margin: 0 0 13px;
+          line-height: 1.25; color: var(--pf-ink); margin: 0 0 13px;
         }
         .rec-week-l {
           font-size: 14px; line-height: 1.75; max-width: 90ch;
-          color: rgba(246, 244, 236, 0.76); margin: 0 0 22px;
+          color: var(--pf-ink-2); margin: 0 0 22px;
         }
-        .rec-week-l strong { color: var(--pf-on-accent); font-weight: 600; }
+        .rec-week-l strong { color: var(--pf-ink); font-weight: 600; }
 
         /* Logo wall. Marks sit on light chips rather than on the band itself,
            so a dark wordmark and a light one can share a row. */
         .rec-week-wall {
           display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px;
           padding-top: 21px;
-          border-top: 1px solid rgba(246, 244, 236, 0.16);
+          border-top: 1px solid var(--pf-border);
         }
         .rec-week-mark {
           display: inline-flex; align-items: center; justify-content: center;
           min-height: 54px; padding: 12px 20px;
-          background: var(--pf-on-accent); border-radius: 8px;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
+          border-radius: 8px;
         }
         /* Explicit height, not auto: these marks carry a viewBox with no
            intrinsic width/height, so auto resolves to zero. */
+        /* Monochrome wall: one brand colour shouting next to four black marks
+           reads as an ad, not a record. Colour returns on hover. */
         .rec-week-mark img {
           display: block; height: 26px; width: auto;
           max-width: 152px; object-fit: contain;
+          filter: grayscale(1) contrast(1.05);
+          opacity: 0.82;
+          transition: filter 0.25s, opacity 0.25s;
         }
+        .rec-week-mark:hover img { filter: none; opacity: 1; }
+        /* EF's orange desaturates to a mid grey, which reads lighter than the
+           black marks beside it — pulled down to match their weight. */
+        .rec-week-mark.is-bright img { filter: grayscale(1) brightness(0.4) contrast(1.05); }
         /* EF's lockup is ~14:1 — sized by width so it reads at the same
            optical weight as the squarer marks beside it. */
         .rec-week-mark.is-wide img { height: 13px; max-width: 184px; }
@@ -530,7 +546,7 @@ export default function CVRecognition() {
               <span className="rec-week-mark">
                 <img src="/assets/images/logos/1752vc.png" alt="1752vc" />
               </span>
-              <span className="rec-week-mark is-wide">
+              <span className="rec-week-mark is-wide is-bright">
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
               <span className="rec-week-mark is-type">Freshmango</span>
