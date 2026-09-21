@@ -371,25 +371,64 @@ export default function CVRecognition() {
           background: var(--pf-surface);
           margin-bottom: 26px;
         }
-        .rec-week-head {
-          padding: 21px 26px 19px;
-          background: var(--pf-surface-2);
-          border-bottom: 1px solid var(--pf-border);
+        /* Banner head. Deliberately the loudest block in the section — this is
+           the live layer and it should land before anything historical. The
+           accent band is the only inverted surface on the page. */
+        .rec-week-banner {
+          background: var(--pf-accent);
+          padding: 27px 30px 25px;
         }
-        .rec-week-k {
-          display: inline-flex; align-items: center; gap: 7px;
-          font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
-          text-transform: uppercase; color: var(--pf-pos);
-          margin-bottom: 10px;
+        .rec-week-top {
+          display: flex; align-items: center; justify-content: space-between;
+          gap: 14px; flex-wrap: wrap; margin-bottom: 17px;
+        }
+        .rec-week-badge {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10.5px; font-weight: 800; letter-spacing: 1.8px;
+          text-transform: uppercase;
+          color: var(--pf-accent); background: var(--pf-on-accent);
+          border-radius: 999px; padding: 7px 15px;
+        }
+        .rec-week-badge .rec-date-dot { background: var(--pf-pos); }
+        .rec-week-stamp {
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
+          text-transform: uppercase; color: rgba(246, 244, 236, 0.6);
         }
         .rec-week-t {
-          font-size: 18px; font-weight: 800; letter-spacing: -0.3px;
-          color: var(--pf-ink); margin: 0 0 9px; line-height: 1.3;
+          font-size: 25px; font-weight: 800; letter-spacing: -0.5px;
+          line-height: 1.25; color: var(--pf-on-accent); margin: 0 0 13px;
         }
         .rec-week-l {
-          font-size: 13.5px; line-height: 1.7; color: var(--pf-ink-2); margin: 0;
+          font-size: 14px; line-height: 1.75; max-width: 90ch;
+          color: rgba(246, 244, 236, 0.76); margin: 0 0 22px;
         }
-        .rec-week-l strong { color: var(--pf-ink); font-weight: 600; }
+        .rec-week-l strong { color: var(--pf-on-accent); font-weight: 600; }
+
+        /* Logo wall. Marks sit on light chips rather than on the band itself,
+           so a dark wordmark and a light one can share a row. */
+        .rec-week-wall {
+          display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px;
+          padding-top: 21px;
+          border-top: 1px solid rgba(246, 244, 236, 0.16);
+        }
+        .rec-week-mark {
+          display: inline-flex; align-items: center; justify-content: center;
+          min-height: 54px; padding: 12px 20px;
+          background: var(--pf-on-accent); border-radius: 8px;
+        }
+        /* Explicit height, not auto: these marks carry a viewBox with no
+           intrinsic width/height, so auto resolves to zero. */
+        .rec-week-mark img {
+          display: block; height: 26px; width: auto;
+          max-width: 152px; object-fit: contain;
+        }
+        /* EF's lockup is ~14:1 — sized by width so it reads at the same
+           optical weight as the squarer marks beside it. */
+        .rec-week-mark.is-wide img { height: 13px; max-width: 184px; }
+        .rec-week-mark.is-type {
+          font-size: 15.5px; font-weight: 800; letter-spacing: -0.2px;
+          color: var(--pf-ink);
+        }
 
         .rec-week-row {
           display: grid;
@@ -436,7 +475,12 @@ export default function CVRecognition() {
           color: var(--pf-ink-4);
         }
         @media (max-width: 700px) {
-          .rec-week-head { padding: 18px 18px 16px; }
+          .rec-week-banner { padding: 22px 18px 20px; }
+          .rec-week-t { font-size: 21px; }
+          .rec-week-mark { min-height: 46px; padding: 10px 15px; }
+          .rec-week-mark img { height: 21px; max-width: 118px; }
+          .rec-week-mark.is-wide img { height: 11px; max-width: 152px; }
+          .rec-week-mark.is-type { font-size: 13.5px; }
           .rec-week-row {
             grid-template-columns: minmax(0, 1fr) auto;
             gap: 9px 14px; padding: 16px 18px;
@@ -458,17 +502,40 @@ export default function CVRecognition() {
         {/* ── The diary. Runs above the three-month record because it is the
              more current layer: these are live, dated, and named. ──────── */}
         <div className="rec-week">
-          <div className="rec-week-head">
-            <span className="rec-week-k">
-              <span className="rec-date-dot" aria-hidden="true" />
-              Live &middot; On the calendar
-            </span>
-            <h3 className="rec-week-t">The week of 22 September 2026</h3>
+          <div className="rec-week-banner">
+            <div className="rec-week-top">
+              <span className="rec-week-badge">
+                <span className="rec-date-dot" aria-hidden="true" />
+                Ongoing
+              </span>
+              <span className="rec-week-stamp">Week of 22 Sep 2026</span>
+            </div>
+
+            <h3 className="rec-week-t">
+              Four investor processes are running at the same time. This is the week.
+            </h3>
             <p className="rec-week-l">
-              Four investor processes running at once, and one of these calls is at{' '}
-              <strong>five in the morning Dhaka time</strong> &mdash; because that is when London is
-              awake. None of them came from an introduction. This is what an ordinary week looks like now.
+              <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
+              because that is when London is awake. <strong>1752vc</strong> put the application in the
+              top 5% of everyone who applied and moved it to a final round. <strong>Freshmango</strong>{' '}
+              booked a call for tonight, and <strong>Entrepreneur First</strong> are sitting on a Bridge
+              decision. Not one of these came from an introduction &mdash; every one started as a cold
+              application from Dhaka, written by an eighteen-year-old.
             </p>
+
+            <div className="rec-week-wall">
+              <span className="rec-week-mark">
+                <img src="/assets/images/logos/antler.svg" alt="Antler" />
+              </span>
+              <span className="rec-week-mark">
+                <img src="/assets/images/logos/1752vc.png" alt="1752vc" />
+              </span>
+              <span className="rec-week-mark is-wide">
+                <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
+              </span>
+              <span className="rec-week-mark is-type">Freshmango</span>
+              <span className="rec-week-mark is-type">Onstage</span>
+            </div>
           </div>
 
           {[
