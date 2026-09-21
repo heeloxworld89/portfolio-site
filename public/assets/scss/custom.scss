@@ -707,6 +707,17 @@ p { color: var(--pf-ink-2); }
 
 @media (max-width: 767px) {
 
+  /* The template gives containers a 15px gutter, which reads as flush on a
+     390px screen. 20px lets the text breathe without costing a word. */
+  .container, .container-fluid, .container-lg, .container-md,
+  .container-sm, .container-xl, .container-xxl {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* The CV wrapper adds its own 15px on top of the container's, doubling
+     the inset on every section below the hero. */
+  .plr_mobile--15 { padding-left: 0 !important; padding-right: 0 !important; }
+
   /* Header: the burger was a heavy filled circle and the bar was tall. */
   .tmp-responsive-header-style { padding: 9px 16px !important; }
   .tmp-responsive-header-style .logo-text { font-size: 17px !important; }
@@ -736,7 +747,7 @@ p { color: var(--pf-ink-2); }
   .hx-kicker    { font-size: 16px !important; }
 
   /* Hero: it ran several screens before anything else appeared. */
-  .hx           { padding: 14px 0 32px !important; }
+  .hx           { padding-top: 14px !important; padding-bottom: 32px !important; }
   .hx-live-bar  { margin-bottom: 18px !important; padding: 10px 14px !important; }
   .hx-top       { gap: 26px !important; margin-bottom: 26px !important; }
   .hx-id {
@@ -794,4 +805,20 @@ p { color: var(--pf-ink-2); }
   .hx-h1    { font-size: 26px !important; }
   .sx-title { font-size: 21px !important; }
   .hx-id    { font-size: 9px !important; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   The 200px overlap under the hero
+   ══════════════════════════════════════════════════════════════
+   template/_card.scss gives .cv-card-area `margin-top: -200px` at the
+   lg, md and sm breakpoints. That is a card deck pulling itself up over
+   a hero *image*. This hero is text, so the CV content was simply
+   rendering on top of it: measured on a 390px screen, the hero ran to
+   2200px and the Recognition section started at 2000px — the scroll cue
+   and "Everything before that" sat underneath the phase chip and the
+   section heading.
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1199px) {
+  .cv-card-area { margin-top: 0 !important; }
 }

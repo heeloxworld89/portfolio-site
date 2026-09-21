@@ -48,8 +48,8 @@ export default function Hero(_props?: any) {
   return (
     <div className="tmp-banner-one-area" id="home">
       <style>{`
-        .hx { padding: 20px 0 40px; }
-        @media (max-width: 991px) { .hx { padding: 18px 0 44px; } }
+        .hx { padding-top: 20px; padding-bottom: 40px; }
+        @media (max-width: 991px) { .hx { padding-top: 18px; padding-bottom: 44px; } }
 
         /* ── 1 · live strip ─────────────────────────────────── */
         .hx-live-bar {
