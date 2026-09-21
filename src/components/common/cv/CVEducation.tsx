@@ -168,6 +168,31 @@ export default function CVEducation() {
             </p>
             
             <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
+
+            {/* Platform-side issue, not a credential issue — say which, and
+                give the reader a route that does not depend on it. */}
+            <div style={{
+              display: 'flex', alignItems: 'flex-start', gap: '11px',
+              background: 'var(--pf-surface-2)', border: '1px solid var(--pf-border)',
+              borderLeft: '2px solid var(--pf-warn)', borderRadius: '0 8px 8px 0',
+              padding: '13px 16px', marginBottom: '18px',
+            }}>
+              <span style={{ flexShrink: 0, color: 'var(--pf-warn)', marginTop: '1px' }} aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+              </span>
+              <p style={{ margin: 0, fontSize: '13.5px', lineHeight: 1.7, color: 'var(--pf-ink-2)' }}>
+                <strong style={{ color: 'var(--pf-ink)' }}>Note on the MIT records platform.</strong>{' '}
+                MITx Online is currently displaying shared records inconsistently — a link may load
+                incomplete data, or not resolve at all. That is a platform fault on their side, not a
+                question about the coursework. <strong style={{ color: 'var(--pf-ink)' }}>Every record
+                below is held and can be produced in full on request</strong>, including the completion
+                certificates and grade reports, independently of whether these links behave on the day
+                you try them.
+              </p>
+            </div>
+
             <ul className="course-list">
               <li>
                 <a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Universal AI Foundational Models</a>
@@ -188,7 +213,12 @@ export default function CVEducation() {
 
             <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>The certificates, for anyone who counts them</h5>
             <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "15px" }}>
-              <strong style={{ color: "var(--pf-ink)" }}>20+ additional certifications</strong> across ML, systems architecture, and applied AI from Google, UC Davis, University of Michigan & Udemy.
+              <strong style={{ color: "var(--pf-ink)" }}>20+ additional certifications</strong> across ML,
+              systems architecture, and applied AI from{' '}
+              <strong style={{ color: "var(--pf-ink)" }}>Google</strong>,{' '}
+              <strong style={{ color: "var(--pf-ink)" }}>UC Davis</strong>,{' '}
+              <strong style={{ color: "var(--pf-ink)" }}>the University of Michigan</strong>{' '}
+              and Udemy.
             </p>
             <div style={{ background: "rgba(var(--pf-ink-rgb), 0.02)", borderLeft: "2px solid var(--pf-border)", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
               <p style={{ margin: 0, color: "var(--pf-ink-2)", fontSize: "14px" }}>
