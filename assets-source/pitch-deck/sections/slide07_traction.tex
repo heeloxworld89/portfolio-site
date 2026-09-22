@@ -5,19 +5,20 @@
 \begin{columns}[T]
   \column{0.49\textwidth}
   \widecolcard[3.2cm]{LIVE \; \amb{oxiedo.com/black-box}}{%
-    An archived 54-day training run, replayable epoch by epoch, two identical networks side by side.\par\vspace{3pt}
+    An archived training run, replayable epoch by epoch, two identical networks side by side.\par\vspace{3pt}
     \amb{$\bullet$} Step through epochs 0--199 and watch per-component health move before the loss curve does.\par\vspace{2pt}
-    \amb{$\bullet$} Open the correction ledger: step, component, diagnosis, magnitude, declared ceiling.\par\vspace{3pt}
+    \amb{$\bullet$} Open the correction ledger: step, component, diagnosis, magnitude, declared ceiling.\par\vspace{2pt}
+    \amb{$\bullet$} Four scenarios in the selector, including the one where this architecture loses.\par\vspace{3pt}
     \textbf{Seeds on screen. Every run regenerates on a customer's own hardware.}}
   \column{0.49\textwidth}
-  \widecolcard[3.2cm]{CONTROL \; A COMPANY, RUN AS AN EXPERIMENT}{%
-    UK entity, real supplier, customers in \textbf{10 countries}, \textbf{12 months}, \textbf{7 pre-registered tests}.\par\vspace{3pt}
-    \amb{Baseline} \$6,691.68 across 79+ orders, \pos{\$0} ad spend, \pos{0} human sales hours.\par\vspace{2pt}
-    \amb{Remove it} \oxneg{$-$91\%} output, \oxneg{$-$100\%} new customers, all channels the same day, held 4 months.\par\vspace{2pt}
-    \amb{Restore it} \pos{$+$1,300\%}, overshoot \pos{3.3$\times$} on retained memory.\par\vspace{2pt}
-    \amb{Ceiling test} \pos{\$4,386} single order, \pos{\$0.00} CAC, no human in the transaction.}
+  \widecolcard[3.2cm]{MEASURED \; 383 CONTROLLED EXPERIMENTS}{%
+    Four architecture families, 67 archived runs, every one reproducible from seed.\par\vspace{3pt}
+    \amb{Structural collapse} \pos{80.3\%} recovery where a parameter-matched baseline sits at \oxneg{10.0\%} permanently, on every seed.\par\vspace{2pt}
+    \amb{Task shift} \pos{94.6\%} retained against \oxneg{47.3\%}, no replay buffer, no task ID.\par\vspace{2pt}
+    \amb{Zero-shot composition} \pos{58.8\%} on unseen combinations against 25\% chance. Not designed. It emerged.\par\vspace{2pt}
+    \amb{Adversarial injection} \oxneg{$-$1.0 pp} against baseline. The one adverse result, published alongside the rest.}
 \end{columns}
 }
 
-\footnotedata{Tests written before the results, outcomes reported either way. This tested the orchestration layer --- prior work, now closed. The architecture carries its own record: 383 controlled experiments, 4 families, one adverse result published alongside the rest.}
+\footnotedata{All results CIFAR-10 and CIFAR-100. No clinical, financial, biological or defence data has touched this system, and transformers are a stated target rather than a demonstrated result. Both are named on every page where a result appears.}
 \end{frame}

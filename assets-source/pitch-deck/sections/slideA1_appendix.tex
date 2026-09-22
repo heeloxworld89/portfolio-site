@@ -35,16 +35,16 @@
 \footnotedata{The claim is transparency, not state-of-the-art accuracy. The accuracy gap is the evidence for it.}
 \end{frame}
 
-\begin{frame}{A2 --- Falsify This for Under \$50}
-\actionheadline{Four Measurements Decide the Rest of the Programme, and Together They Cost Under Thirty GPU-Hours}
+\begin{frame}{A2 --- What Would Prove This Wrong}
+\actionheadline{Four Measurements, None of Them Run, Each Carrying a Written Prediction Against It}
 
 {\fontsize{6.4}{7.9}\selectfont
 \begin{center}
 \begin{tabular}{L{4.0cm} L{5.4cm} C{2.0cm}}
 \arrayrulecolor{oxrule}\toprule
-\color{oxgray}\textbf{Measurement} & \color{oxgray}\textbf{What a negative result would mean} & \color{oxgray}\textbf{Cost} \\
+\color{oxgray}\textbf{Measurement} & \color{oxgray}\textbf{What a negative result would establish} & \color{oxgray}\textbf{Compute} \\
 \midrule
-Archive analysis        & The weak form of the central question, against 67 archived runs. & \pos{Zero GPU} \\
+Archive analysis        & The weak form of the central question, against 67 archived runs. & \pos{None} \\
 Monitoring lead time    & How early per-component health crosses threshold. Opens or closes a market. & \amb{8.4 GPU-hr} \\
 Wrapper viability       & Whether a model we did not train keeps enough component independence. & \amb{$\sim$1 GPU-day} \\
 Separation study        & Whether component disagreement separates mislabelled from merely hard data. & \amb{$\sim$20 GPU-hr} \\
@@ -53,7 +53,7 @@ Separation study        & Whether component disagreement separates mislabelled f
 \end{center}
 }
 
-\evidencebox{\textbf{None has been run.} A negative result narrows the programme rather than ending it --- the shipping features depend on none of the four. \amb{Run it on your hardware, without us in the room.}}
+\evidencebox{\textbf{A programme that cannot be killed is not a research programme.} Each of these is specified rather than described, the prediction is written down before the run, and the features shipping today depend on none of the four. \amb{Run them on your own hardware, by your own technical partner, without us in the room.}}
 \end{frame}
 
 \begin{frame}{A3 --- Where the Numbers Come From}
@@ -66,7 +66,6 @@ Separation study        & Whether component disagreement separates mislabelled f
 \color{oxgray}\textbf{Figure} & \color{oxgray}\textbf{Source} & \color{oxgray}\textbf{Status} \\
 \midrule
 80.3\% vs 10.0\%, +70.3 pp   & 383 controlled experiments, reproducible from seed & \pos{Measured, replayable} \\
-$-$91\% / $+$1,300\%          & 12-month ablation, Black Bloxie LTD, SHA-256 reconciled & \pos{Measured, prior work} \\
 \$8.3B TAM, 9.7\% CAGR        & SNS Insider, AI model-risk management, 2026 & \amb{Third-party analyst} \\
 $\sim$1,000 institutions      & Our own bottom-up count across four segments & \oxneg{Estimate, unvalidated} \\
 \$250K ACV, \$150K--\$500K    & Benchmarked against model-risk tooling & \oxneg{Zero pricing conversations} \\
