@@ -528,15 +528,16 @@ export default function CVRecognition() {
             </div>
 
             <h3 className="rec-week-t">
-              Five live processes are running at the same time. This is the week.
+              Two offers on the table. Three processes still running. This is the week.
             </h3>
             <p className="rec-week-l">
-              <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
-              because that is when London is awake. <strong>1752vc</strong> put the application in the
-              top 5% of everyone who applied and moved it to a final round. <strong>Freshmango</strong>{' '}
-              booked a call for tonight, <strong>Onstage</strong> are ranking me for the W26 cohort, and
-              <strong> Entrepreneur First</strong> are sitting on a Bridge decision. Not one of these came from an introduction &mdash; every one started as a cold
-              application from Dhaka, written by an eighteen-year-old.
+              <strong>Freshmango</strong> accepted me tonight &mdash; equity-free, a 5,000-founder
+              network, $4M in AI credits, introductions across 160 VCs &mdash; and the founder agreement
+              is sitting unsigned while I weigh it against Onstage. <strong>1752vc</strong> came back
+              with a place in their Ignite cohort. <strong>Antler</strong> interview me on Wednesday at
+              five in the morning Dhaka time, because that is when London is awake. Not one of these
+              came from an introduction &mdash; every one started as a cold application from Dhaka,
+              written by an eighteen-year-old.
             </p>
 
             <div className="rec-week-wall">
@@ -557,10 +558,18 @@ export default function CVRecognition() {
           {[
             {
               d: 'Mon 22 Sep',
-              h: '19:00 Dhaka',
-              who: 'Freshmango \u2014 call with Philip Adler',
-              what: <>Twenty minutes on what I am building, where it stands and what is blocking it.</>,
-              pill: 'Today',
+              h: 'Accepted',
+              who: 'Freshmango \u2014 accepted, agreement unsigned',
+              what: <>Tonight&rsquo;s call with Philip Adler ended in a place. Equity-free, a <strong>5,000-founder network</strong> to find a co-founder in, <strong>$4M in AI credits</strong> and introductions across <strong>160 VCs</strong>. The founder agreement is drafted and I have not signed it &mdash; Onstage may be the better door, and I would rather be right than fast.</>,
+              pill: 'Accepted',
+              now: true,
+            },
+            {
+              d: 'Mon 22 Sep',
+              h: 'Ignite cohort',
+              who: '1752vc \u2014 offered a place',
+              what: <>Top 5% of applicants, then a final round, then an offer of a seat in their <strong>Ignite</strong> cohort &mdash; out of, in their words, thousands of applications.</>,
+              pill: 'Offered',
               now: true,
             },
             {
@@ -570,14 +579,6 @@ export default function CVRecognition() {
               what: <>The investment-process interview for <strong>Antler&rsquo;s Residency</strong>, with Stefan Knight. Their scouting team read the application and put it in the diary.</>,
               pill: 'Tomorrow',
               now: true,
-            },
-            {
-              d: 'This week',
-              h: 'Final round',
-              who: '1752vc \u2014 final interview stage',
-              what: <>They placed the application in the <strong>top 5% of everyone who applied</strong> and moved it through to the last round.</>,
-              pill: 'In progress',
-              now: false,
             },
             {
               d: 'W26 cohort',
