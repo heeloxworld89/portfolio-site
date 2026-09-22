@@ -71,6 +71,29 @@ html, body {
   --pf-shadow-lg: 0 12px 32px -18px rgba(var(--pf-shadow-rgb), 0.22);
 }
 
+/* ── The spike ─────────────────────────────────────────────────────────
+   Age is the single most load-bearing fact on this site, and it competes
+   with ordinary <strong> emphasis in the same paragraphs. So every mention
+   carries one mark of its own: a marker band that scales with the type it
+   sits in, so it works in a 14px paragraph and a 26px heading alike. */
+.age {
+  font-weight: 700;
+  color: var(--pf-accent);
+  white-space: nowrap;
+  padding: 0.08em 0.36em;
+  margin: 0 0.02em;
+  border-radius: 4px;
+  background: rgba(var(--pf-accent-rgb), 0.1);
+  box-shadow: inset 0 0 0 1px rgba(var(--pf-accent-rgb), 0.16);
+}
+/* Inside a heading the box would crowd the line, so there it is just the
+   accent colour doing the work. */
+h1 .age, h2 .age, h3 .age, .sx-title .age, .wi-why-h .age, .rec-name .age {
+  padding: 0; margin: 0; background: none; box-shadow: none;
+  color: var(--pf-accent);
+}
+
+
 .typeanimation {
   transition: width 0.58s ease-out !important;
   height: 100% !important;

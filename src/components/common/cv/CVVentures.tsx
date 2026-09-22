@@ -52,7 +52,7 @@ export default function CVVentures() {
       id="ventures"
       phase="before"
       eyebrow="Ventures · 2020–2025"
-      title="Five businesses and an exit, all of it before I turned eighteen."
+      title={<>Five businesses and an exit, all of it before I turned <span className="age">eighteen</span>.</>}
       lead={
         <>
           I started my first company at twelve. Four more followed and every one of them broke somewhere

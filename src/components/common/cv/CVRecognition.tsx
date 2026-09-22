@@ -544,7 +544,7 @@ export default function CVRecognition() {
               cohort against 350 venture funds. <strong>Entrepreneur First</strong> are sitting on a
               Bridge decision. Two acceptances landed this week as well, recorded below. Not one of
               these came from an introduction &mdash; every one
-              started as a cold application from Dhaka, written by an eighteen-year-old.
+              started as a cold application from Dhaka, written by an <span className="age">eighteen-year-old</span>.
             </p>
 
             <div className="rec-week-wall">
@@ -633,7 +633,7 @@ export default function CVRecognition() {
               <span className="rec-date">Dec 2026</span>
             </div>
             <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
-            <h3 className="rec-name">At Eighteen, I Am on the Committee Deciding What Gets Into a NeurIPS Workshop</h3>
+            <h3 className="rec-name">At <span className="age">Eighteen</span>, I Am on the Committee Deciding What Gets Into a NeurIPS Workshop</h3>
             <p className="rec-body">
               I sit on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS 2026
               in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
@@ -872,7 +872,7 @@ export default function CVRecognition() {
           <p className="rec-verdict-body">
             <strong>EF read me.</strong> Fifteen minutes in London in August, weighted towards how I think rather
             than what I have built, and it opened a conversation that is still going — two rounds into The Bridge
-            in September. All of this happened in a field where a PhD is the baseline and an eighteen-year-old
+            in September. All of this happened in a field where a PhD is the baseline and an <span className="age">eighteen-year-old</span>
             without one is not, and nobody marked the work down for coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">

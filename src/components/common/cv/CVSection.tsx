@@ -22,7 +22,7 @@ interface Props {
   phase: Phase;
   /** Short name of the thing — ORMAS, OXIMO, Black Bloxie. */
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   /** One sentence. What this is and why it is on the page. */
   lead: ReactNode;
   /** Optional hard facts — status, scale, dates. Keep to four. */

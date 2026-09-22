@@ -49,7 +49,7 @@ export default function CVBusiness() {
           what it did with it. <strong>From December 2027, in Europe, refusing stops being a judgement
           call and becomes an obligation.</strong> OXIEDO licenses the architecture that produces the
           answer while the model learns, instead of guessing at it afterwards. I started the company at
-          fifteen and I am eighteen now.
+          fifteen and I am <span className="age">eighteen</span> now.
         </>
       }
       meta={[

@@ -308,7 +308,7 @@ export default function CVWhoIAm() {
           Who I Am
         </span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
-          Everything I have built by eighteen, and the order it happened in
+          Everything I have built by <span className="age">eighteen</span>, and the order it happened in
         </h2>
 
         {/* ── The founder video carries the introduction itself — no filler
@@ -327,7 +327,7 @@ export default function CVWhoIAm() {
               <Icon name="play" size={14} />
               Founder Introduction · 31 sec
             </div>
-            <h3 className="wi-why-h">Rokib Al Dhin Raadh — eighteen years old, Dhaka, Bangladesh.</h3>
+            <h3 className="wi-why-h">Rokib Al Dhin Raadh — <span className="age">eighteen years old</span>, Dhaka, Bangladesh.</h3>
             <p className="wi-why-p">
               I did not go looking for a research problem. I ran five businesses between twelve and seventeen,
               watched all five break, and noticed they were all breaking for the same reason. Everything since has

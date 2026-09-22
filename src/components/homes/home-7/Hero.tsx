@@ -250,7 +250,7 @@ export default function Hero(_props?: any) {
 
           <div>
             <div className="hx-id">
-              Rokib Al Dhin Raadh <i /> 18 years old <i /> Dhaka, Bangladesh <i /> No institution
+              Rokib Al Dhin Raadh <i /> <span className="age">18 years old</span> <i /> Dhaka, Bangladesh <i /> No institution
             </div>
 
             <h1 className="hx-h1">
@@ -272,7 +272,7 @@ export default function Hero(_props?: any) {
             </p>
 
             <p className="hx-trust">
-              I am <b>eighteen years old</b>. 383 controlled experiments, one RTX 3090, and no university,
+              I am <span className="age">eighteen years old</span>. 383 controlled experiments, one RTX 3090, and no university,
               no lab, no advisor, no funding and nobody else on the project. The paper is public, the code
               reproduces every run from seed, and the company built on it is live.
             </p>
@@ -362,7 +362,7 @@ export default function Hero(_props?: any) {
             <b>Everything before that —</b> <a href="#oximo">OXIMO</a>, 40,933 lines of an operating system
             where agents hire their own staff · <a href="#black-bloxie">Black Bloxie LTD</a>, a real company I
             spent twelve months trying to disprove myself with · <a href="#ventures">five businesses and one
-            exit</a>, all of it before I turned eighteen.
+            exit</a>, all of it before I turned <span className="age">eighteen</span>.
           </p>
 
           <a href="#recognition" className="hx-cue">
