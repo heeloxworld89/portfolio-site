@@ -559,7 +559,7 @@ export default function CVRecognition() {
               d: 'Mon 22 Sep',
               h: '19:00 Dhaka',
               who: 'Freshmango \u2014 call with Philip Adler',
-              what: <>Twenty minutes on what I am building, where it stands and what is blocking it. <strong>They booked it, not me.</strong></>,
+              what: <>Twenty minutes on what I am building, where it stands and what is blocking it.</>,
               pill: 'Today',
               now: true,
             },
