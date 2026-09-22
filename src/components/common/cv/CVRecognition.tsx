@@ -10,8 +10,8 @@ export default function CVRecognition() {
       lead={
         <>
           July: Cosmos ranked the work highest in their cycle. August: Entrepreneur First went from cold
-          application to a booked call in twelve hours. September: two offers in, one of them
-          turned down, and two rounds into The Bridge in San Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
+          application to a booked call in twelve hours. September: accepted by two accelerators in
+          one week, and two rounds into The Bridge in San Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
           proves — and, because it matters more, what it doesn&apos;t.
         </>
@@ -542,8 +542,8 @@ export default function CVRecognition() {
               <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
               because that is when London is awake. <strong>Onstage</strong> are ranking me for the W26
               cohort against 350 venture funds. <strong>Entrepreneur First</strong> are sitting on a
-              Bridge decision. Two further offers landed this week and are recorded below &mdash; one
-              held, one turned down. Not one of these came from an introduction &mdash; every one
+              Bridge decision. Two acceptances landed this week as well, recorded below. Not one of
+              these came from an introduction &mdash; every one
               started as a cold application from Dhaka, written by an eighteen-year-old.
             </p>
 
@@ -609,7 +609,7 @@ export default function CVRecognition() {
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc', what: 'Two offers in. One declined.', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc', what: 'Accepted by both, one week.', state: 'live' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
@@ -704,8 +704,8 @@ export default function CVRecognition() {
               they took twenty minutes with me and offered a place in it: a <strong>5,000-founder
               network</strong> to find a co-founder in, <strong>$4M in AI credits</strong>, and
               introductions across <strong>160 venture funds</strong> &mdash; for no equity and no fee.
-              The founder agreement is drafted and sitting with me. <strong>I have not signed it.</strong>{' '}
-              Onstage may open a wider door, and I would rather be right than fast.
+              <strong> Twenty minutes was all it took them to decide</strong>, and the founder agreement
+              followed the same day.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -731,15 +731,14 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted, Then Declined</div>
-            <h3 className="rec-name">Accepted Out of Thousands of Applications. I Turned It Down.</h3>
+            <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted</div>
+            <h3 className="rec-name">Accepted Into Ignite, Out of Thousands of Applications</h3>
             <p className="rec-body">
               1752vc put the application in the <strong>top 5% of everyone who applied</strong>, ran a
-              final round, and came back offering a seat in their <strong>Ignite</strong> cohort &mdash;
-              out of, in their words, thousands of applications. <strong>I said no.</strong> The offer
-              was real and the fit was not: I already had an equity-free place in hand and a wider
-              process running, and taking a seat I did not need would have cost me the one I want. The
-              part worth reporting is not that they said yes. It is that I could afford to say no.
+              final round, and came back with a place in their <strong>Ignite</strong> cohort. They run
+              limited cohorts on purpose, and in their own words the offer came{' '}
+              <strong>after thousands of applications</strong>. Three stages, no introduction behind any
+              of them, and a cold submission out of Dhaka at the front of it.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -747,8 +746,8 @@ export default function CVRecognition() {
                 <span className="rec-stat-lbl">Of every applicant</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">Declined</span>
-                <span className="rec-stat-lbl">My decision, not theirs</span>
+                <span className="rec-stat-val">Accepted</span>
+                <span className="rec-stat-lbl">Into the Ignite cohort</span>
               </div>
             </div>
           </div>
