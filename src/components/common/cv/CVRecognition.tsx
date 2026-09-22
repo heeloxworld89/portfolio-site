@@ -571,8 +571,8 @@ export default function CVRecognition() {
               d: 'W26 cohort',
               h: 'Top 100 pending',
               who: 'Onstage \u00b7 W26 Demo Day',
-              what: <>In the pool for the winter cohort. Onstage rank every application by investor interest across <strong>350 VC partners</strong> &mdash; a16z, Sequoia, Balderton, LocalGlobe &mdash; and the top 100 is named shortly.</>,
-              pill: 'In progress',
+              what: <><strong>Invited to the pre-pitch party</strong> in Central London, and in the pool for the winter cohort. Onstage rank every application by investor interest across <strong>350 VC partners</strong> &mdash; a16z, Sequoia, Balderton, LocalGlobe &mdash; and the top 100 is named shortly.</>,
+              pill: 'Pending',
               now: false,
             },
             {
