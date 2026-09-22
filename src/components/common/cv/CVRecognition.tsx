@@ -10,8 +10,8 @@ export default function CVRecognition() {
       lead={
         <>
           July: Cosmos ranked the work highest in their cycle. August: Entrepreneur First went from cold
-          application to a booked call in twelve hours. September: two rounds into The Bridge in San
-          Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
+          application to a booked call in twelve hours. September: two offers in, one of them
+          turned down, and two rounds into The Bridge in San Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
           proves — and, because it matters more, what it doesn&apos;t.
         </>
@@ -491,6 +491,14 @@ export default function CVRecognition() {
           color: var(--pf-ink-4);
         }
         @media (max-width: 700px) {
+          /* A 190px mark plus the date pill overruns a 390px card, so the
+             chips step down rather than pushing the row wide. */
+          .rec-logo-row { flex-wrap: wrap; gap: 10px; }
+          .rec-logo-chip { min-height: 46px; padding: 10px 14px; }
+          .rec-logo-chip img { height: 24px; max-width: 132px; }
+          .rec-status-logo { min-height: 44px; padding: 9px 13px; }
+          .rec-status-logo img { height: 22px; max-width: 124px; }
+
           .rec-week-banner { padding: 22px 18px 20px; }
           .rec-week-t { font-size: 21px; }
           .rec-week-mark { min-height: 46px; padding: 10px 15px; }
@@ -528,50 +536,29 @@ export default function CVRecognition() {
             </div>
 
             <h3 className="rec-week-t">
-              Two offers on the table. Three processes still running. This is the week.
+              Three processes are live, and one of them interviews me at five in the morning.
             </h3>
             <p className="rec-week-l">
-              <strong>Freshmango</strong> accepted me tonight &mdash; equity-free, a 5,000-founder
-              network, $4M in AI credits, introductions across 160 VCs &mdash; and the founder agreement
-              is sitting unsigned while I weigh it against Onstage. <strong>1752vc</strong> came back
-              with a place in their Ignite cohort. <strong>Antler</strong> interview me on Wednesday at
-              five in the morning Dhaka time, because that is when London is awake. Not one of these
-              came from an introduction &mdash; every one started as a cold application from Dhaka,
-              written by an eighteen-year-old.
+              <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
+              because that is when London is awake. <strong>Onstage</strong> are ranking me for the W26
+              cohort against 350 venture funds. <strong>Entrepreneur First</strong> are sitting on a
+              Bridge decision. Two further offers landed this week and are recorded below &mdash; one
+              held, one turned down. Not one of these came from an introduction &mdash; every one
+              started as a cold application from Dhaka, written by an eighteen-year-old.
             </p>
 
             <div className="rec-week-wall">
               <span className="rec-week-mark">
                 <img src="/assets/images/logos/antler.svg" alt="Antler" />
               </span>
-              <span className="rec-week-mark">
-                <img src="/assets/images/logos/1752vc.png" alt="1752vc" />
-              </span>
               <span className="rec-week-mark is-wide is-bright">
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
-              <span className="rec-week-mark is-type">Freshmango</span>
               <span className="rec-week-mark is-type">Onstage</span>
             </div>
           </div>
 
           {[
-            {
-              d: 'Mon 22 Sep',
-              h: 'Accepted',
-              who: 'Freshmango \u2014 accepted, agreement unsigned',
-              what: <>Tonight&rsquo;s call with Philip Adler ended in a place. Equity-free, a <strong>5,000-founder network</strong> to find a co-founder in, <strong>$4M in AI credits</strong> and introductions across <strong>160 VCs</strong>. The founder agreement is drafted and I have not signed it &mdash; Onstage may be the better door, and I would rather be right than fast.</>,
-              pill: 'Accepted',
-              now: true,
-            },
-            {
-              d: 'Mon 22 Sep',
-              h: 'Ignite cohort',
-              who: '1752vc \u2014 offered a place',
-              what: <>Top 5% of applicants, then a final round, then an offer of a seat in their <strong>Ignite</strong> cohort &mdash; out of, in their words, thousands of applications.</>,
-              pill: 'Offered',
-              now: true,
-            },
             {
               d: 'Wed 23 Sep',
               h: '05:00 Dhaka',
@@ -622,7 +609,7 @@ export default function CVRecognition() {
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'The Bridge · EF', what: 'Two interviews in, decision pending', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc', what: 'Two offers in. One declined.', state: 'live' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
@@ -692,6 +679,76 @@ export default function CVRecognition() {
               <div className="rec-stat">
                 <span className="rec-stat-val">$0</span>
                 <span className="rec-stat-lbl">Right score, wrong round</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* September's two outcomes. Both are decided, so they sit in the record
+            rather than in the live diary above. */}
+        <div className="rec-grid">
+
+          {/* Freshmango — accepted, equity-free, unsigned by choice */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <img src="/assets/images/logos/freshmango.png" alt="Freshmango" />
+              </div>
+              <span className="rec-date">Sep 2026</span>
+            </div>
+            <div className="rec-tag">Freshmango &middot; Equity-Free Accelerator &middot; Accepted</div>
+            <h3 className="rec-name">They Gave Me a Place, and It Costs Me No Equity and No Fee</h3>
+            <p className="rec-body">
+              Freshmango bill themselves as the best equity-free accelerator in the world. On 22 September
+              they took twenty minutes with me and offered a place in it: a <strong>5,000-founder
+              network</strong> to find a co-founder in, <strong>$4M in AI credits</strong>, and
+              introductions across <strong>160 venture funds</strong> &mdash; for no equity and no fee.
+              The founder agreement is drafted and sitting with me. <strong>I have not signed it.</strong>{' '}
+              Onstage may open a wider door, and I would rather be right than fast.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">0%</span>
+                <span className="rec-stat-lbl">Equity they take</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">$4M</span>
+                <span className="rec-stat-lbl">In AI credits</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">160</span>
+                <span className="rec-stat-lbl">Funds on the list</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 1752vc — accepted, then declined */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <img src="/assets/images/logos/1752vc.png" alt="1752vc" />
+              </div>
+              <span className="rec-date">Sep 2026</span>
+            </div>
+            <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted, Then Declined</div>
+            <h3 className="rec-name">Accepted Out of Thousands of Applications. I Turned It Down.</h3>
+            <p className="rec-body">
+              1752vc put the application in the <strong>top 5% of everyone who applied</strong>, ran a
+              final round, and came back offering a seat in their <strong>Ignite</strong> cohort &mdash;
+              out of, in their words, thousands of applications. <strong>I said no.</strong> The offer
+              was real and the fit was not: I already had an equity-free place in hand and a wider
+              process running, and taking a seat I did not need would have cost me the one I want. The
+              part worth reporting is not that they said yes. It is that I could afford to say no.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">Top 5%</span>
+                <span className="rec-stat-lbl">Of every applicant</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">Declined</span>
+                <span className="rec-stat-lbl">My decision, not theirs</span>
               </div>
             </div>
           </div>
