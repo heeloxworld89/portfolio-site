@@ -720,18 +720,19 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted</div>
-            <h3 className="rec-name">Accepted Into Ignite, Out of Thousands of Applications</h3>
+            <h3 className="rec-name">The Top 1% of Thousands of Applications. Accepted Into Ignite.</h3>
             <p className="rec-body">
-              1752vc put the application in the <strong>top 5% of everyone who applied</strong>, ran a
-              final round, and came back with a place in their <strong>Ignite</strong> cohort. They run
-              limited cohorts on purpose, and in their own words the offer came{' '}
-              <strong>after thousands of applications</strong>. Three stages, no introduction behind any
-              of them, and a cold submission out of Dhaka at the front of it.
+              1752vc put the application in the top 5% of everyone who applied, then set a final round
+              to decide, in their words, who belonged in the <strong>top 1%</strong>. I came out of that
+              round with a place in their <strong>Ignite</strong> cohort &mdash; offered, again in their
+              words, <strong>after thousands of applications</strong>. They run limited cohorts on
+              purpose. Three stages, no introduction behind any of them, and a cold submission out of
+              Dhaka at the front of it.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">Top 5%</span>
-                <span className="rec-stat-lbl">Of every applicant</span>
+                <span className="rec-stat-val">Top 1%</span>
+                <span className="rec-stat-lbl">Where the final round landed</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">Accepted</span>
