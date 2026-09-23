@@ -536,21 +536,17 @@ export default function CVRecognition() {
             </div>
 
             <h3 className="rec-week-t">
-              Three processes are live, and one of them interviews me at five in the morning.
+              Two decisions about me are sitting with other people right now.
             </h3>
             <p className="rec-week-l">
-              <strong>Antler</strong> interview me on Wednesday at five in the morning Dhaka time,
-              because that is when London is awake. <strong>Onstage</strong> are ranking me for the W26
-              cohort against 350 venture funds. <strong>Entrepreneur First</strong> are sitting on a
-              Bridge decision. Two acceptances landed this week as well, recorded below. Not one of
-              these came from an introduction &mdash; every one
-              started as a cold application from Dhaka, written by an <span className="age">eighteen-year-old</span>.
+              <strong>Onstage</strong> are ranking me for the W26 cohort against 350 venture funds, and
+              the top 100 is named shortly. <strong>Entrepreneur First</strong> are sitting on a Bridge
+              decision. Two acceptances and one residency bar landed this week as well, all recorded
+              below. Not one of these came from an introduction &mdash; every one started as a cold
+              application from Dhaka, written by an <span className="age">eighteen-year-old</span>.
             </p>
 
             <div className="rec-week-wall">
-              <span className="rec-week-mark">
-                <img src="/assets/images/logos/antler.svg" alt="Antler" />
-              </span>
               <span className="rec-week-mark is-wide is-bright">
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
@@ -559,14 +555,6 @@ export default function CVRecognition() {
           </div>
 
           {[
-            {
-              d: 'Wed 23 Sep',
-              h: '05:00 Dhaka',
-              who: 'Antler \u2014 first interview',
-              what: <>The investment-process interview for <strong>Antler&rsquo;s Residency</strong>, with Stefan Knight. Their scouting team read the application and put it in the diary.</>,
-              pill: 'Tomorrow',
-              now: true,
-            },
             {
               d: 'W26 cohort',
               h: 'Top 100 pending',
@@ -601,7 +589,7 @@ export default function CVRecognition() {
           ))}
 
           <div className="rec-week-foot">
-            Status as of 22 September 2026 &middot; this list is updated the day anything on it moves
+            Status as of 23 September 2026 &middot; this list is updated the day anything on it moves
           </div>
         </div>
 
@@ -752,6 +740,37 @@ export default function CVRecognition() {
             </div>
           </div>
 
+        </div>
+
+        {/* Antler — a mandate boundary, not an assessment. Stated without
+            process detail, because the residency rule is the whole story. */}
+        <div className="rec-secondary">
+          <div className="rec-logo-row">
+            <div className="rec-logo-chip on-white">
+              <img src="/assets/images/logos/antler.svg" alt="Antler" />
+            </div>
+            <span className="rec-date">Sep 2026</span>
+          </div>
+          <div className="rec-tag">Antler &middot; Antler AU &middot; Eligibility</div>
+          <h3 className="rec-name">Antler AU Is Closed to Anyone Without Australian Residency. That Is Where This One Ended.</h3>
+          <p className="rec-body">
+            Antler run one of the largest global investment programmes in venture, and I went through
+            theirs directly with <strong>Stefan Knight, Director of Queensland</strong>. Antler AU works
+            only with Australian citizens or founders holding permanent working rights based in
+            Australia. <strong>I hold neither.</strong> That is the whole of it &mdash; a residency
+            mandate, not a verdict on the work &mdash; and if I secure Australian working rights through
+            the National Innovation Visa route, it reopens.
+          </p>
+          <div className="rec-stats">
+            <div className="rec-stat">
+              <span className="rec-stat-val">Residency</span>
+              <span className="rec-stat-lbl">The constraint, not the work</span>
+            </div>
+            <div className="rec-stat">
+              <span className="rec-stat-val">Citizens only</span>
+              <span className="rec-stat-lbl">Antler AU&rsquo;s stated mandate</span>
+            </div>
+          </div>
         </div>
 
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
