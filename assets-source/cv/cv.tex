@@ -3,7 +3,7 @@
 % ============================================================
 % PACKAGES
 % ============================================================
-\usepackage[top=0.45in, bottom=0.45in, left=0.65in, right=0.65in]{geometry}
+\usepackage[top=0.45in, bottom=0.42in, left=0.65in, right=0.65in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -42,7 +42,7 @@
   {}
   [\vspace{-0.6em}{\color{heading}\rule{\textwidth}{0.5pt}}]
 
-\titlespacing{\section}{0pt}{7pt}{2pt}
+\titlespacing{\section}{0pt}{4.5pt}{2pt}
 
 \pagestyle{empty}
 
@@ -70,7 +70,7 @@
   #2
   #3
   \end{list}%
-  \vspace{2pt}
+  \vspace{1pt}
 }
 
 % Tight bullet list
@@ -126,7 +126,7 @@
 Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.21730363}.\\
 {\footnotesize Submitted to \textbf{AAAI 2027}, Main Technical Track --- under anonymous review. Not accepted and not published.}
 
-\vspace{4pt}
+\vspace{2pt}
 
 % ============================================================
 % SERVICE & RECOGNITION
@@ -149,13 +149,36 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
   \\Application ranked \textbf{highest in its cycle}. Not funded: that round backed philosophical work on AI, and ORMAS is a technical architecture. Invited to reapply to a technical track.
 }
 
-\cvitem{Aug--Sep 2026}{%
-  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco
+\vspace{2pt}
+
+% ============================================================
+% SELECTION
+% ============================================================
+\needspace{3\baselineskip}\section*{Accelerator \& Venture Selection}
+
+\cvitem{Sep 2026}{%
+  \href{https://www.freshmango.ee/}{\textbf{Freshmango}} --- Accelerator, Estonia \quad \textit{Accepted}
 }{%
-  \\Cold application answered within \textbf{12 hours} with a call booked with an EF investment-team lead; first screen held in London, August 2026. Now in the selection process for \textbf{The Bridge}, EF's eight-week San Francisco residency --- two interview rounds completed, decision pending as of September 2026.
+  \\Offered a place after a direct evaluation call with CEO \textbf{Philip Adler} (Forbes 30 Under 30 Europe, 2026). \textbf{No equity, no fee}: 5,000-founder network, \textbf{\$4M} in AI credits, introductions across \textbf{160 venture funds}.
 }
 
-\vspace{2pt}
+\cvitem{Sep 2026}{%
+  \href{https://1752.vc/}{\textbf{1752vc}} --- Ignite Cohort \quad \textit{Accepted}
+}{%
+  \\\textbf{Top 5\%} of the applicant pool, advanced through a final round, offered a place in the Ignite cohort.
+}
+
+\cvitem{Aug--Sep 2026}{%
+  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco \quad \textit{In selection}
+}{%
+  \\Cold application answered in \textbf{12 hours} with a call booked with an EF investment-team lead; first screen in London, August 2026. Two interview rounds completed for \textbf{The Bridge}, EF's eight-week San Francisco residency; decision pending.
+}
+
+\cvitem{Sep 2026}{%
+  \href{https://www.onstage.vc/}{\textbf{Onstage}} --- W26 Demo Day \quad \textit{In selection}
+}{%
+  \\Invited to the pre-pitch event in Central London; in the pool for the W26 cohort, ranked by investor interest across \textbf{350 venture funds} including a16z, Sequoia, Balderton and LocalGlobe.
+}
 
 % ============================================================
 % RESEARCH EXPERIENCE
@@ -213,14 +236,14 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 }{%
   \begin{bullets}
     \item Registered a UK company at 17 from Bangladesh, handling formation, AML compliance and cross-border operations independently.
-    \item Twelve-month ablation, deploy--remove--restore: removing the system cut commercial output \textbf{91\%} and new-customer acquisition 100\%; restoring it recovered \textbf{1,300\%} against the ablated baseline. Zero advertising spend, zero human sales hours.
+    \item Twelve-month deploy--remove--restore ablation on a live company, run to test whether the orchestration layer was load-bearing. Zero advertising spend, zero human sales hours.
   \end{bullets}
 }
 
 \cvitem{2020--2024}{%
   \textbf{Independent ventures (5)} \quad \textit{Automated sales $\cdot$ AI development $\cdot$ market tools}
 }{%
-  \\Five ventures between 12 and 17, each failing at a different layer. Their shared finding --- that the binding constraint was coordination, not capability --- is what OXIMO was built to answer.
+  \\Five ventures between 12 and 17, each failing at a different layer; the shared finding, that the constraint was coordination rather than capability, is what OXIMO was built to answer.
 }
 
 % ============================================================
@@ -242,7 +265,7 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 \cvitem{Fall 2027}{%
   \textbf{Prospective Undergraduate}
 }{%
-  \\Seeking admission to pursue research in AI safety, self-correcting neural architectures, and autonomous systems.
+  \\Seeking admission to pursue research in AI safety and self-correcting neural architectures.
 }
 
 \cvitem{2025--2026}{%
@@ -250,21 +273,21 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 }{%
   \begin{bullets}
     \item Deep Learning Specialization (5 courses), DeepLearning.AI (Andrew Ng). \mbox{\textit{Completed.}}
-    \item MITx AI Programs --- 25 courses across AI foundations, precision medicine, sustainable energy, and transportation. \textit{Certificates in progress.}
+    \item MITx AI Programs --- 25 courses across AI foundations, precision medicine, sustainable energy and transportation. \textit{Certificates in progress.}
   \end{bullets}
 }
 
 % ============================================================
 % OPEN-SOURCE
 % ============================================================
-\needspace{3\baselineskip}\section*{Open-Source \& Archives}
+\section*{Open-Source \& Archives}
 
 \skillrow{ORMAS}{\href{https://zenodo.org/records/21730363}{preprint} $\cdot$ \href{https://anonymous.4open.science/r/ormas-EB73}{source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{full archive of 383 experiments}}
 \skillrow{OXIMO}{\href{https://anonymous.4open.science/r/oximo-5C73}{source} \enspace {\footnotesize (anonymous review)}}
 
 \vfill
 \begin{flushright}
-  \small\textit{Last updated September 2026}
+  \small\textit{Last updated 23 September 2026}
 \end{flushright}
 
 \end{document}
