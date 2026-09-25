@@ -494,7 +494,8 @@ html, body {
   }
 }
 
-.header-left-sticky .mainmenu-nav .primary-menu li.current a {
+.header-left-sticky .mainmenu-nav .primary-menu li.current a,
+.header-left-sticky .mainmenu-nav .primary-menu li a.is-current {
   color: var(--pf-accent) !important;
   background-color: var(--pf-accent-wash);
   font-weight: 600;
