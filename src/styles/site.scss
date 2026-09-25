@@ -279,3 +279,10 @@ a.card-x:hover { border-color: var(--pf-ink-4); transform: translateY(-2px); }
 .logo-chip img[src$="entrepreneur-first.svg"], .rc-logo img[src$="entrepreneur-first.svg"] { width: 170px; max-width: 170px; height: auto; }
 .logo-chip img[src$="neurips.svg"], .rc-logo img[src$="neurips.svg"] { height: 38px; max-height: 38px; width: auto; max-width: 150px; }
 .rvz-chart > svg { max-width: 760px; display: block; margin: 0 auto; }
+
+/* ── typography: Inter everywhere, Fira Code for figures ────────── */
+body, p, li, a, button, input, h1, h2, h3, h4, h5, h6, .title { font-family: var(--font-primary) !important; }
+code, pre, .bar-v, .proof-gap b, .tbl td.num { font-family: 'Fira Code', ui-monospace, monospace !important; }
+body { font-size: 16px; }
+.h1 { letter-spacing: -1.4px; font-weight: 800; }
+.h2 { letter-spacing: -0.7px; }

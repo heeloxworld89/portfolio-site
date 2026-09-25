@@ -54,7 +54,7 @@ export default function Sidebar() {
             <div className="sb-social">
               <a href={links.mail} aria-label={`Email ${person.email}`}><Icon name="mail" size={14} />Email</a>
               <a href={links.github} target="_blank" rel="noreferrer"><Icon name="github" size={14} />GitHub</a>
-              <a href={links.orcid} target="_blank" rel="noreferrer" className="is-wide"><Icon name="link" size={14} />ORCID {person.orcid}</a>
+              <a href={links.orcid} target="_blank" rel="noreferrer" className="is-wide"><Icon name="link" size={14} />ORCID iD</a>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@ const app = (
 );
 
 // Pages are pre-rendered at build time; hydrate them. In dev the root is empty.
-if (container.hasChildNodes()) {
+if (container.firstElementChild) {
   hydrateRoot(container, app);
 } else {
   createRoot(container).render(app);
