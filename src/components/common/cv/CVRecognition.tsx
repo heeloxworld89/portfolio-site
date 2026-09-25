@@ -11,7 +11,8 @@ export default function CVRecognition() {
         <>
           July: Cosmos ranked the work highest in their cycle. August: Entrepreneur First went from cold
           application to a booked call in twelve hours. September: accepted by two accelerators in
-          one week, and two rounds into The Bridge in San Francisco. December: I review for a NeurIPS workshop in Paris.{' '}
+          one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
+          member of Cohere Labs&apos; Open Science Community. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
           proves — and, because it matters more, what it doesn&apos;t.
         </>
@@ -73,6 +74,8 @@ export default function CVRecognition() {
           border: 1px solid var(--pf-border);
         }
         .rec-logo-chip img { display: block; height: 34px; width: auto; max-width: 190px; object-fit: contain; }
+        .rec-logo-chip.on-ink { background: #0b2a5b; border: 1px solid #0b2a5b; }
+        .rec-logo-chip.on-ink img { height: 44px; max-width: 200px; }
         .rec-tag {
           font-size: 11px;
           font-weight: 700;
@@ -597,7 +600,7 @@ export default function CVRecognition() {
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc', what: 'Accepted by both, one week.', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Two acceptances, a final round, a research community.', state: 'live' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
@@ -737,6 +740,76 @@ export default function CVRecognition() {
               <div className="rec-stat">
                 <span className="rec-stat-val">Accepted</span>
                 <span className="rec-stat-lbl">Into the Ignite cohort</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* September, continued: a research competition final and a research
+            community. Both decided, so both sit in the record. */}
+        <div className="rec-grid">
+
+          {/* IARCO 2026 — advanced to the final stage */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-ink">
+                <img src="/assets/images/logos/iarco.png" alt="IARCO — International Academic Research Competition" />
+              </div>
+              <span className="rec-date">Sep 2026</span>
+            </div>
+            <div className="rec-tag">IARCO 2026 &middot; International Academic Research Competition &middot; Final Round</div>
+            <h3 className="rec-name">500+ Submissions From 60+ Countries. Through to the IARCO 2026 Final.</h3>
+            <p className="rec-body">
+              The International Academic Research Competition is hosted by YRJ, sponsored by
+              {' '}<strong>SaveMyExams</strong> with <strong>Domain.ME</strong>, and this year drew
+              {' '}<strong>more than 500 submissions from over 60 countries</strong>. Only <strong>30%</strong> of
+              participants were selected to go on. The work was one of them, and now goes into the final stage
+              {' '}&mdash; a video presentation of the research, due 5 October.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">500+</span>
+                <span className="rec-stat-lbl">Submissions</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">60+</span>
+                <span className="rec-stat-lbl">Countries</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">30%</span>
+                <span className="rec-stat-lbl">Selected for the final</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Cohere Labs — Open Science Community membership */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <img src="/assets/images/logos/cohere.svg" alt="Cohere Labs" />
+              </div>
+              <span className="rec-date">Sep 2026</span>
+            </div>
+            <div className="rec-tag">Cohere Labs &middot; Open Science Community &middot; Member</div>
+            <h3 className="rec-name">A Member of Cohere Labs&apos; Open Science Community — and They Named ORMAS</h3>
+            <p className="rec-body">
+              Cohere Labs is the research lab of <strong>Cohere</strong>, one of the leading foundation-model
+              companies. On 25 September it welcomed me into its <strong>Open Science Community</strong>, and the
+              welcome singled out the work itself: the solo development of ORMAS across 383 controlled experiments
+              {' '}<strong>&ldquo;demonstrates remarkable initiative in ML safety and auditability.&rdquo;</strong>{' '}
+              It pointed to the lab&apos;s <strong>BIRDS</strong> and <strong>Safety &amp; Alignment</strong>
+              {' '}programmes as the place to pressure-test the architecture and carry it to a transformer backbone
+              {' '}&mdash; exactly the next step ORMAS needs.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">Member</span>
+                <span className="rec-stat-lbl">Open Science Community</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">ORMAS</span>
+                <span className="rec-stat-lbl">Named in the welcome</span>
               </div>
             </div>
           </div>
