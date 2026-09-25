@@ -60,7 +60,6 @@
 
 
 /*----Default Css----*/
-
 @import'default/variables';
 @import'default/mixins';
 @import'default/extend';
@@ -68,66 +67,8 @@
 @import'default/reset';
 @import'default/spacing';
 @import'default/forms';
-@import'default/shortcode';
 @import'default/common';
-@import'default/animations';
-/* @import'default/text-animation'; */
-@import'default/sal';
-
-
 /*----Headers Style----*/
 @import'header/header';
 @import'header/nav';
 @import'header/left-header';
-@import'header/popupmenu';
-@import'header/offcanvance';
-
-
-
-/*----Elements Style // @import'elements/button'; ----*/
-@import'elements/animation-custom';
-@import'elements/banner';
-@import'elements/section-title';
-@import'elements/social';
-@import'elements/tmpbutton';
-@import'elements/blog';
-@import'elements/testimonial';
-@import'elements/banner';
-@import'elements/testimonial-swiper';
-@import'elements/error';
-@import'elements/pricing';
-@import'elements/contact';
-@import'elements/breadcrumb';
-@import'elements/back-to-top';
-@import'elements/pre-loader';
-@import'elements/year-of-expariance';
-@import'elements/education-experience';
-@import'elements/latest-portfolio';
-@import'elements/my-skill';
-@import'elements/about-us';
-@import'elements/my-expertise';
-@import'elements/services';
-@import'elements/our-supported-company-area';
-@import'elements/progress-bar';
-@import'elements/resume';
-@import'elements/chatbox';
-@import'elements/progress';
-@import'elements/text-anim';
-@import'elements/left-sticky-personal';
-@import'elements/experience';
-@import'elements/portfolio';
-@import'elements/hov-effect.scss';
-@import'elements/demo';
-
-
-
-/*----Template Style----*/
-@import'template/about';
-@import'template/projects-details';
-@import'template/card';
-
-
-
-/*----Footer Style----*/
-@import'footer/footer';
-@import'template/color-theme';

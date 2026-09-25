@@ -143,7 +143,7 @@ export function PaperCard({ withCite = false }: { withCite?: boolean }) {
     <div>
       <div className="paper">
         <div>
-          <span className="k">Preprint · {paper.status}</span>
+          <span className="k">{paper.status}</span>
           <div className="paper-t">{paper.title}</div>
           <div className="paper-m">
             <span><b>{person.name}</b></span>

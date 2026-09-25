@@ -286,3 +286,16 @@ code, pre, .bar-v, .proof-gap b, .tbl td.num { font-family: 'Fira Code', ui-mono
 body { font-size: 16px; }
 .h1 { letter-spacing: -1.4px; font-weight: 800; }
 .h2 { letter-spacing: -0.7px; }
+
+/* ── phone-width refinements ────────────────────────────────────── */
+.mh-btn { width: auto !important; flex: 0 0 auto; }
+.mh-brand { min-width: 0; margin-right: 12px; }
+.proof-gap { flex-wrap: wrap; row-gap: 4px; }
+@media (max-width: 640px) {
+  .hero-id { border-radius: 12px; font-size: 10.5px; letter-spacing: 1px; }
+  .stat-v { font-size: 20px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .h1 { letter-spacing: -1px; }
+  .btns .btn-x { flex: 1 1 auto; justify-content: center; }
+  .cta-band .btns { flex-direction: column; }
+}

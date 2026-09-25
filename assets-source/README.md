@@ -36,10 +36,9 @@ cp cv.pdf ../../public/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf
 
 ## After rebuilding either one
 
-Bump its version constant in `src/components/headers/Header3.tsx`
-(`CV_VERSION`) or `src/components/common/cv/CVBusiness.tsx`
-(`DECK_VERSION`). The filenames are stable so existing links keep working;
-the query string is what stops a browser serving the copy it cached.
+Bump the `?v=` date on `links.cv` or `links.deck` in `src/data/facts.ts`.
+The filenames stay stable so existing links keep working; the query string is
+what stops a browser serving the copy it cached.
 
 ## Checking the deck before shipping it
 
