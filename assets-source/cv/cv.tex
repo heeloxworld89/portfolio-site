@@ -110,7 +110,7 @@
     \quad$|$\quad
     \href{https://oxiedo.com}{oxiedo.com}
   }\\[6pt]
-  {\footnotesize\textit{18-year-old independent AI researcher. Founder of Oxiedo, licensing the ORMAS training architecture to institutions whose data is closed to deep learning.}}
+  {\footnotesize\textit{Founder \& CEO of OXIEDO. Inventor of ORMAS, a training architecture that diagnoses, attributes and repairs its own failures --- licensed to institutions whose data cannot leave the building.}}
 \end{center}
 
 \vspace{-4pt}
@@ -124,7 +124,7 @@
 
 \noindent\textbf{R.A.D.\ Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' 2026.
 Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.21730363}.\\
-{\footnotesize Submitted to \textbf{AAAI 2027}, Main Technical Track --- under anonymous review. Not accepted and not published.}
+{\footnotesize Open-access preprint (v4, 1 August 2026); under double-blind review.}
 
 \vspace{2pt}
 
@@ -146,7 +146,7 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 \cvitem{Jul 2026}{%
   \href{https://cosmosgrants.org/}{\textbf{Cosmos Institute}} --- Grants Review
 }{%
-  \\Application ranked \textbf{highest in its cycle}. Not funded: that round backed philosophical work on AI, and ORMAS is a technical architecture. Invited to reapply to a technical track.
+  \\Application ranked \textbf{highest in its cycle}. The round was dedicated to philosophical work on AI; invited back for the technical track.
 }
 
 \vspace{2pt}
@@ -159,7 +159,7 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 \cvitem{Sep 2026}{%
   \href{https://www.freshmango.ee/}{\textbf{Freshmango}} --- Accelerator, Estonia \quad \textit{Accepted}
 }{%
-  \\Offered a place after a direct evaluation call with CEO \textbf{Philip Adler} (Forbes 30 Under 30 Europe, 2026). \textbf{No equity, no fee}: 5,000-founder network, \textbf{\$4M} in AI credits, introductions across \textbf{160 venture funds}.
+  \\Offered a place after a twenty-minute interview. \textbf{No equity, no fee}: 5,000-founder network, \textbf{\$4M} in AI credits, introductions across \textbf{160 venture funds}.
 }
 
 \cvitem{Sep 2026}{%
@@ -169,15 +169,15 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 }
 
 \cvitem{Aug--Sep 2026}{%
-  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco \quad \textit{In selection}
+  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco
 }{%
-  \\Cold application answered in \textbf{12 hours} with a call booked with an EF investment-team lead; first screen in London, August 2026. Two interview rounds completed for \textbf{The Bridge}, EF's eight-week San Francisco residency; decision pending.
+  \\First screen with EF's London team, August 2026; advanced through \textbf{two interview rounds} for \textbf{The Bridge}, EF's eight-week San Francisco residency for technical founders.
 }
 
 \cvitem{Sep 2026}{%
-  \href{https://www.onstage.vc/}{\textbf{Onstage}} --- W26 Demo Day \quad \textit{In selection}
+  \href{https://www.antler.co/}{\textbf{Antler}} --- Initial screening passed
 }{%
-  \\Invited to the pre-pitch event in Central London; in the pool for the W26 cohort, ranked by investor interest across \textbf{350 venture funds} including a16z, Sequoia, Balderton and LocalGlobe.
+  \\Process ended on eligibility, not assessment: Antler's Australian programme is limited to Australian citizens and founders with permanent Australian working rights.
 }
 
 % ============================================================
@@ -188,11 +188,11 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 \cvitem{2024--pres.}{%
   \textbf{Independent Machine Learning Researcher}\\
   ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction\\
-  {\footnotesize PyTorch $\cdot$ 10,594 lines $\cdot$ 61 files $\cdot$ Codebase: \href{https://anonymous.4open.science/r/ormas-EB73}{anonymous.4open.science/r/ormas-EB73}}
+  {\footnotesize PyTorch $\cdot$ 37,000 lines of research infrastructure $\cdot$ code available to reviewers on request}
 }{%
   \begin{bullets}
-    \item Three-signal training architecture: unmodified global backpropagation, a per-node local loss through a shared 4,715-parameter bottleneck, and a health-gated correction engine with 8 diagnoses, each capped and logged.
-    \item First Input-to-State Stability characterisation for a self-correcting architecture; correction rate decays from 4.2 to 0.05 per epoch, as the bound predicts.
+    \item Three-signal training architecture: unmodified global backpropagation, a per-node local loss through a shared 4,416-parameter bottleneck, and a health-gated correction engine with 8 diagnoses, each capped and logged.
+    \item First Input-to-State Stability characterisation for a self-correcting architecture; correction rate decays from 4.2 to 0.05 per epoch, consistent with the stability analysis.
     \item Recovery from mid-training structural collapse: \textbf{80.3\%} against a parameter-matched baseline stuck at 10.0\% permanently, on every seed ($+$70.3\,pp).
     \item Retention through sequential task shift with no replay buffer and no task ID: \textbf{94.6\%} against 47.3\% for ResNet-18; 58.8\% zero-shot on unseen combinations against 25\% chance.
     \item 383 controlled experiments, 4 architecture families, every run reproducible from seed, single RTX~3090. One adverse result published: 1.0\,pp below baseline under adversarial weight injection.
@@ -204,14 +204,14 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 % ============================================================
 \needspace{3\baselineskip}\section*{Engineering}
 
-\cvitem{2023--pres.}{%
+\cvitem{2023--2025}{%
   \textbf{Sole Architect \& Engineer}\\
   OXIMO --- Cognitive Multi-Agent Operating System\\
-  {\footnotesize Python $\cdot$ 40,933 lines production $\cdot$ 2,011 tests $\cdot$ Codebase: \href{https://anonymous.4open.science/r/oximo-5C73}{anonymous.4open.science/r/oximo-5C73}}
+  {\footnotesize Python $\cdot$ 40,933 lines production $\cdot$ 2,069 tests}
 }{%
   \begin{bullets}
     \item Multi-agent operating system: hierarchical task decomposition, on-demand role creation via a self-hiring pipeline, Graph-of-Thoughts planner, three-tier memory with temporal decay, and a seven-check input safety cascade.
-    \item Rebuilt from a \textbf{106,000-line monolith} to 40,933 lines --- a \textbf{72\% reduction} with all 12 critical algorithms ported and 2,011 tests passing.
+    \item Rebuilt from a \textbf{106,000-line monolith} to 40,933 lines --- a \textbf{72\% reduction} with all 12 critical algorithms ported and 2,069 tests passing.
   \end{bullets}
 }
 
@@ -221,12 +221,12 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 \needspace{3\baselineskip}\section*{Companies}
 
 \cvitem{2023--pres.}{%
-  \textbf{Founder} \quad \textit{\href{https://oxiedo.com}{Oxiedo} --- \href{https://oxiedo.com}{oxiedo.com}}\\
+  \textbf{Founder \& CEO} \quad \textit{\href{https://oxiedo.com}{OXIEDO} --- \href{https://oxiedo.com}{oxiedo.com}}\\
   {\footnotesize Licensing ORMAS to institutions holding data they cannot currently train on.}
 }{%
   \begin{bullets}
     \item One architecture under one licence, deployed on customer infrastructure. Five sectors in scope: AI training, regulated finance, medical AI, data-deletion obligation, and defence.
-    \item Pre-revenue, no customers, raising a pre-seed round. All results to date are CIFAR-10/100; no regulated data has touched the system.
+    \item Pre-seed. Incorporating as a Delaware C-corporation, headquarters moving to San Francisco. Accepted into 1752vc Ignite and Freshmango.
   \end{bullets}
 }
 
@@ -236,11 +236,11 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 }{%
   \begin{bullets}
     \item Registered a UK company at 17 from Bangladesh, handling formation, AML compliance and cross-border operations independently.
-    \item Twelve-month deploy--remove--restore ablation on a live company, run to test whether the orchestration layer was load-bearing. Zero advertising spend, zero human sales hours.
+    \item Twelve-month deploy--remove--restore ablation on a live company: output fell \textbf{91\%} on removal and recovered on restoration. \textbf{396 paying customers} in 10 countries; zero advertising spend, zero human sales hours.
   \end{bullets}
 }
 
-\cvitem{2020--2024}{%
+\cvitem{2020--2025}{%
   \textbf{Independent ventures (5)} \quad \textit{Automated sales $\cdot$ AI development $\cdot$ market tools}
 }{%
   \\Five ventures between 12 and 17, each failing at a different layer; the shared finding, that the constraint was coordination rather than capability, is what OXIMO was built to answer.
@@ -282,12 +282,12 @@ Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.
 % ============================================================
 \section*{Open-Source \& Archives}
 
-\skillrow{ORMAS}{\href{https://zenodo.org/records/21730363}{preprint} $\cdot$ \href{https://anonymous.4open.science/r/ormas-EB73}{source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{full archive of 383 experiments}}
-\skillrow{OXIMO}{\href{https://anonymous.4open.science/r/oximo-5C73}{source} \enspace {\footnotesize (anonymous review)}}
+\skillrow{ORMAS}{\href{https://doi.org/10.5281/zenodo.21730363}{preprint (DOI)} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{full archive of 383 experiments}}
+\skillrow{Profiles}{\href{https://orcid.org/0009-0003-1178-5296}{ORCID 0009-0003-1178-5296} $\cdot$ \href{https://github.com/raad-x}{github.com/raad-x}}
 
 \vfill
 \begin{flushright}
-  \small\textit{Last updated 23 September 2026}
+  \small\textit{Last updated 25 September 2026}
 \end{flushright}
 
 \end{document}

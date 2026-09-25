@@ -1,6 +1,5 @@
-import Icon from '@/components/common/Icon';
 import EngineeringVisualization from '@/components/viz/EngineeringVisualization';
-import { blackBloxie, links, oximo, ventures } from '@/data/facts';
+import { blackBloxie, oximo, ventures } from '@/data/facts';
 import { ContactBand, PageHead, SecHead, Stats, Timeline } from '@/components/site/blocks';
 
 const rungs = [
@@ -71,10 +70,7 @@ export default function Work() {
           <div className="kv-row"><div className="kv-k">What it tests</div><div className="kv-v">OXIMO, the orchestration layer. ORMAS has its own, separate evidence.</div></div>
           <div className="kv-row"><div className="kv-k">Commercial record</div><div className="kv-v">{blackBloxie.customers} paying customers · {blackBloxie.orders} orders · {blackBloxie.revenue} verified revenue · largest single order {blackBloxie.largestOrder} at $0 acquisition cost</div></div>
           <div className="kv-row"><div className="kv-k">Scale</div><div className="kv-v">Research-scale by design: no jurisdiction yet assigns commercial liability to an autonomous agent, so the study was capped deliberately.</div></div>
-          <div className="kv-row"><div className="kv-k">Reports</div><div className="kv-v">
-            <a className="lnk" href={links.bbCommercial} target="_blank" rel="noreferrer">Commercial evidence report <Icon name="externalLink" size={12} /></a>{' · '}
-            <a className="lnk" href={links.bbTechnical} target="_blank" rel="noreferrer">System architecture paper <Icon name="externalLink" size={12} /></a>
-          </div></div>
+          <div className="kv-row"><div className="kv-k">Reports</div><div className="kv-v">A commercial evidence report and a system architecture paper document the full twelve-month record — available on request.</div></div>
         </div>
 
         <details className="dz">

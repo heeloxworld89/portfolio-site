@@ -33,8 +33,6 @@ export const links = {
   telemetry: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view',
   cv: '/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=2026-09-25a',
   deck: '/assets/pdf/oxiedo_pitch_deck.pdf?v=2026-09-25a',
-  bbCommercial: '/assets/pdf/oxido_investor_whitepaper.pdf',
-  bbTechnical: '/assets/pdf/oxido_academic_research_paper.pdf',
   videoFounder: 'https://www.loom.com/embed/c30a0509fdc442b5b6f6ea47213798c9',
   videoResearch: 'https://www.loom.com/embed/59caaa73445443cb8d345b4d594a8347',
   mail: 'mailto:raadxbusiness9@gmail.com',
