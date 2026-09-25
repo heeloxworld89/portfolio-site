@@ -1,50 +1,54 @@
-# raadh.me
+# React + TypeScript + Vite
 
-Personal site of Rokib Al Dhin Raadh, Founder & CEO of OXIEDO.
-React + TypeScript + Vite, pre-rendered to static HTML at build time, deployed on Vercel.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Pages
+Currently, two official plugins are available:
 
-| Route | File | Purpose |
-|---|---|---|
-| `/` | `src/pages/Home.tsx` | The 30-second read: company, research, recognition, track record |
-| `/research` | `src/pages/Research.tsx` | ORMAS: preprint, cite, plain-English summary, reviewer tables |
-| `/recognition` | `src/pages/Recognition.tsx` | Every decided outcome |
-| `/work` | `src/pages/Work.tsx` | OXIMO, Black Bloxie, the five ventures |
-| `/about` | `src/pages/About.tsx` | Biography, education, certificates |
-| `/press` | `src/pages/Press.tsx` | Bios in three lengths, key facts, downloads |
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Where things live
+## Expanding the ESLint configuration
 
-- **`src/data/facts.ts` — every name, number, date and link.** Change a figure here and
-  every page, the structured data, `llms.txt` and the press kit follow. Research figures
-  must match the ORMAS preprint.
-- `src/data/routes.ts` — page titles, descriptions, preview images and JSON-LD.
-- `src/components/site/blocks.tsx` — shared building blocks (section headers, stat tiles,
-  recognition cards, timeline, paper card, contact band).
-- `src/components/layout/` — sidebar, mobile menu, footer.
-- `src/components/viz/` — the three diagrams.
-- `src/styles/site.scss` — site styles; the colour palette is in `public/assets/scss/custom.scss`.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Commands
-
-```sh
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # type-check, client build, server build, pre-render
-npm run lint
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-`npm run build` renders every route to `dist/<route>.html` with its own title, meta tags and
-JSON-LD, and generates `robots.txt`, `sitemap.xml`, `llms.txt` and `llms-full.txt` from the
-facts file (`scripts/prerender.mjs`).
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## Link-preview images
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-`public/og/*.png` are 1200×630 cards. After changing headline facts, regenerate them with
-`node scripts/og-images.cjs` (needs Playwright; see the note at the top of the script).
-
-## CV and deck
-
-LaTeX sources are in `assets-source/`; see `assets-source/README.md`. After recompiling,
-bump the `?v=` date on `links.cv` or `links.deck` in `src/data/facts.ts`.
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```

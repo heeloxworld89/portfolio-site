@@ -1,0 +1,115 @@
+import type { ReactNode } from 'react';
+
+/**
+ * One header shell for every section on the page.
+ *
+ * The site previously gave each section its own header treatment, which is the
+ * main reason it read as a pile of documents rather than one portfolio. Every
+ * section now declares the same three things in the same place: which phase of
+ * the work it belongs to, what it is, and one sentence on why it is here.
+ */
+
+export type Phase = 'now' | 'before' | 'about';
+
+const phaseLabel: Record<Phase, string> = {
+  now: 'Now',
+  before: 'Before This',
+  about: 'About',
+};
+
+interface Props {
+  id: string;
+  phase: Phase;
+  /** Short name of the thing — ORMAS, OXIMO, Black Bloxie. */
+  eyebrow: string;
+  title: ReactNode;
+  /** One sentence. What this is and why it is on the page. */
+  lead: ReactNode;
+  /** Optional hard facts — status, scale, dates. Keep to four. */
+  meta?: { k: string; v: string }[];
+  children: ReactNode;
+  /** Last section on the page omits the closing rule. */
+  last?: boolean;
+}
+
+export default function CVSection({
+  id, phase, eyebrow, title, lead, meta, children, last,
+}: Props) {
+  return (
+    <div className="row mb--50" id={id}>
+      <style>{`
+        .sx-head { margin-bottom: 26px; }
+
+        .sx-phase {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10px; font-weight: 800; letter-spacing: 2px;
+          text-transform: uppercase; margin-bottom: 13px;
+          padding: 4px 11px; border-radius: 999px;
+        }
+        .sx-phase-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+        .sx-phase.is-now    { color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.1);   border: 1px solid rgba(var(--pf-accent-rgb), 0.34); }
+        .sx-phase.is-before { color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2); }
+        .sx-phase.is-about  { color: var(--pf-ink-2); background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2); }
+
+        .sx-eyebrow {
+          font-size: 11.5px; font-weight: 800; letter-spacing: 2.2px;
+          text-transform: uppercase; color: var(--pf-ink); margin-bottom: 9px;
+        }
+        .sx-title {
+          font-size: clamp(23px, 2.15vw, 31px); font-weight: 800; color: var(--pf-ink);
+          letter-spacing: -0.7px; line-height: 1.18; margin: 0 0 13px;
+          max-width: 820px;
+        }
+        .sx-lead {
+          font-size: 15.5px; line-height: 1.72; color: var(--pf-ink-2);
+          max-width: 700px; margin: 0;
+        }
+        .sx-lead strong { color: var(--pf-ink); font-weight: 600; }
+
+        .sx-meta {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border);
+          border-radius: 8px; overflow: hidden; margin-top: 20px;
+        }
+        .sx-meta-cell { background: var(--pf-surface); padding: 12px 15px; }
+        .sx-meta-k {
+          font-size: 9.5px; font-weight: 700; letter-spacing: 1.4px;
+          text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 6px;
+        }
+        .sx-meta-v { font-size: 13.5px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; }
+
+        @media (max-width: 640px) { .sx-head { margin-bottom: 26px; } }
+      `}</style>
+
+      <div className="col-12">
+        <div className="sx-head">
+          <div className={`sx-phase is-${phase}`}>
+            <span className="sx-phase-dot" aria-hidden="true" />
+            {phaseLabel[phase]}
+          </div>
+          <div className="sx-eyebrow">{eyebrow}</div>
+          <h2 className="sx-title">{title}</h2>
+          <p className="sx-lead">{lead}</p>
+          {meta && meta.length > 0 ? (
+            <div className="sx-meta">
+              {meta.map((m) => (
+                <div className="sx-meta-cell" key={m.k}>
+                  <div className="sx-meta-k">{m.k}</div>
+                  <div className="sx-meta-v">{m.v}</div>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        {children}
+      </div>
+
+      {!last ? (
+        <div className="col-12">
+          <hr className="my-5" style={{ borderColor: 'rgba(var(--pf-ink-rgb), 0.05)' }} />
+        </div>
+      ) : null}
+    </div>
+  );
+}

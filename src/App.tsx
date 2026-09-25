@@ -1,39 +1,78 @@
 import "../public/assets/scss/main.scss";
-import "./styles/site.scss";
+import "odometer/themes/odometer-theme-default.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import SiteLayout from "./components/layout/SiteLayout";
-import Home from "./pages/Home";
-import Research from "./pages/Research";
-import Recognition from "./pages/Recognition";
-import Work from "./pages/Work";
-import About from "./pages/About";
-import Press from "./pages/Press";
-import NotFound from "./pages/NotFound";
 
-function Fallback() {
-  return (
-    <div className="container" style={{ padding: "120px 0", textAlign: "center" }}>
-      <h1 className="h2">Something went wrong loading this page.</h1>
-      <p className="p">Please refresh. If it keeps happening, email raadxbusiness9@gmail.com.</p>
-    </div>
-  );
-}
+// Only loading index-07
+const HomePage7 = lazy(() => import("./pages/homes/index-07"));
 
-export default function App() {
+import ScrollTopBehaviour from "./components/common/ScrollToTopBehaviour";
+import GlobaleffectProvider from "./components/common/GlobaleffectProvider";
+import { ModalUIProvider } from "./context/ModalUIContext";
+
+function App() {
   return (
-    <SiteLayout>
-      <ErrorBoundary FallbackComponent={Fallback}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/recognition" element={<Recognition />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/press" element={<Press />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+    <>
+      <ToastContainer
+        position="bottom-left"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ErrorBoundary
+        fallbackRender={({ error, resetErrorBoundary }: { error: any; resetErrorBoundary: () => void }) => (
+          <div
+            className="d-flex flex-column align-items-center justify-content-center"
+            style={{ height: "100vh" }}
+          >
+            <h2>Something went wrong.</h2>
+            <pre style={{ color: "red" }}>{error.message}</pre>
+            <button
+              className="btn btn-primary mt-3"
+              onClick={resetErrorBoundary}
+            >
+              Try again
+            </button>
+          </div>
+        )}
+      >
+        <Suspense
+          fallback={
+            <div
+              className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-black"
+              style={{ zIndex: 1050 }}
+            >
+              <div
+                className="spinner-border text-primary"
+                role="status"
+                style={{ width: "3rem", height: "3rem" }}
+              >
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          }
+        >
+          <ModalUIProvider>
+            <Routes>
+              <Route path="/">
+                <Route index element={<HomePage7 />} />
+              </Route>
+            </Routes>
+          </ModalUIProvider>
+        </Suspense>
+
+        <ScrollTopBehaviour />
+        <GlobaleffectProvider />
       </ErrorBoundary>
-    </SiteLayout>
+    </>
   );
 }
+
+export default App;

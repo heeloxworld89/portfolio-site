@@ -9,10 +9,6 @@
    src/components. Change a value here and the whole site follows.
    ══════════════════════════════════════════════════════════════════ */
 :root {
-  /* type — one family for text, one for figures */
-  --font-primary:   'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-secondary: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-
   /* surfaces — cream paper. Cards are warm off-white, never pure #fff:
      pure white on cream is what made the first pass read as "bright". */
   --pf-bg:          #f1eee4;
@@ -498,8 +494,7 @@ html, body {
   }
 }
 
-.header-left-sticky .mainmenu-nav .primary-menu li.current a,
-.header-left-sticky .mainmenu-nav .primary-menu li a.is-current {
+.header-left-sticky .mainmenu-nav .primary-menu li.current a {
   color: var(--pf-accent) !important;
   background-color: var(--pf-accent-wash);
   font-weight: 600;

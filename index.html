@@ -3,21 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f1eee4" />
-    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon/favicon-96x96.png" sizes="96x96" type="image/png" />
-    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
-    <!--app-head-->
+    
+    <!-- Meta Tags -->
+    <title>Rokib Al Dhin Raadh — 18-Year-Old Independent AI Researcher</title>
+    <meta name="description" content="I am 18. I built ORMAS, a neural network architecture that accounts for what it learned — 383 experiments on one GPU, no university and no lab — and founded OXIEDO on it. Live at oxiedo.com." />
+    <link rel="canonical" href="https://raadh.me/" />
+
+    <!-- Cache Busting for Mobile Safari / Aggressive Browsers -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Open Graph / Link Previews -->
+    <meta property="og:title" content="Rokib Al Dhin Raadh — 18-Year-Old Independent AI Researcher" />
+    <meta property="og:description" content="I am 18. I built ORMAS, a neural network architecture that accounts for what it learned — 383 experiments on one GPU, no university and no lab — and founded OXIEDO on it. Live at oxiedo.com." />
+    <meta property="og:url" content="https://raadh.me/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rokib Al Dhin Raadh — Independent AI Researcher" />
+    <meta name="twitter:description" content="I am 18. I built ORMAS, a neural network architecture that accounts for what it learned — 383 experiments on one GPU, no university and no lab — and founded OXIEDO on it. Live at oxiedo.com." />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rokib Al Dhin Raadh",
+      "url": "https://raadh.me/",
+      "jobTitle": "Independent AI Researcher",
+      "sameAs": [
+        "https://twitter.com/Raad_X_"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rokib Al Dhin Raadh Portfolio",
+      "url": "https://raadh.me/"
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Fira+Code:wght@500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preconnect to Loom CDN (embedded video in hero) -->
+    <link rel="preconnect" href="https://cdn.loom.com" crossorigin="" />
+
+    <!-- Preload critical Font Awesome woff2 files — prevents icon blank-out on slow connections -->
+    <link rel="preload" href="/assets/fonts/fa-solid-900.woff2"       as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/fa-sharp-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/fa-regular-400.woff2"     as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- Override font-display:block on icon fonts → swap prevents invisible icons on slow connections -->
+    <style>
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url("/assets/fonts/fa-solid-900.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("/assets/fonts/fa-regular-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Font Awesome 6 Sharp";
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url("/assets/fonts/fa-sharp-solid-900.woff2") format("woff2");
+      }
+    </style>
   </head>
   <body>
-    <div id="root"><!--app-html--></div>
+    <style>
+      #root:empty {
+        background: #13141a;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #root:empty::after {
+        content: '';
+        width: 32px;
+        height: 32px;
+        border: 2px solid rgba(255,255,255,0.08);
+        border-top-color: rgba(196,207,222,0.5);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
