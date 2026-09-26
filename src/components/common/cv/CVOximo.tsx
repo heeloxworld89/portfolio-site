@@ -38,7 +38,7 @@ export default function CVOximo() {
       meta={[
         { k: 'Status', v: 'Closed by choice' },
         { k: 'Scale', v: '40,933 lines, alone' },
-        { k: 'Tests', v: '2,011 · 0 failures' },
+        { k: 'Tests', v: '2,069 · 0 failures' },
         { k: 'Rebuild', v: '106k → 41k lines' },
       ]}
     >
@@ -89,7 +89,7 @@ export default function CVOximo() {
       <div className="ox-stats">
         {[
           { v: '40,933', l: 'Lines in production' },
-          { v: '2,011', l: 'Tests, none failing' },
+          { v: '2,069', l: 'Tests, none failing' },
           { v: '11', l: 'Independently deployable repos' },
           { v: '72%', l: 'Smaller after the rebuild' },
           { v: '12/12', l: 'Algorithms ported intact' },

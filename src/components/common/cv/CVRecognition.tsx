@@ -5,12 +5,12 @@ export default function CVRecognition() {
     <CVSection
       id="recognition"
       phase="now"
-      eyebrow="Recent · Jul – Dec 2026"
-      title="All of this happened in the last three months."
+      eyebrow="Recent · 2026"
+      title="All of this happened since July."
       lead={
         <>
-          July: Cosmos ranked the work highest in their cycle. August: Entrepreneur First went from cold
-          application to a booked call in twelve hours. September: accepted by two accelerators in
+          July: Cosmos ranked the work highest in their cycle. August: a cold application to Entrepreneur First
+          turned into a first-round call. September: accepted by two accelerators in
           one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
           member of Cohere Labs&apos; Open Science Community. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
@@ -158,7 +158,7 @@ export default function CVRecognition() {
           margin-bottom: 14px;
         }
 
-        /* Application → 12 hrs → call booked */
+        /* Application → first-round call */
         .rec-clock {
           display: grid; grid-template-columns: 1fr auto 1fr;
           gap: 14px; align-items: center;
@@ -599,7 +599,7 @@ export default function CVRecognition() {
         <div className="rec-run">
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
-            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → call in 12 hrs', state: 'done' },
+            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
             { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Two acceptances, a final round, a research community.', state: 'live' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
@@ -816,8 +816,8 @@ export default function CVRecognition() {
 
         </div>
 
-        {/* Antler — a mandate boundary, not an assessment. Stated without
-            process detail, because the residency rule is the whole story. */}
+        {/* Antler — accepted; not proceeding because the programme cannot
+            support the visa. A logistics boundary, not an assessment. */}
         <div className="rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-white">
@@ -825,24 +825,22 @@ export default function CVRecognition() {
             </div>
             <span className="rec-date">Sep 2026</span>
           </div>
-          <div className="rec-tag">Antler &middot; Antler AU &middot; Eligibility</div>
-          <h3 className="rec-name">Antler AU Is Closed to Anyone Without Australian Residency. That Is Where This One Ended.</h3>
+          <div className="rec-tag">Antler &middot; Accepted &middot; Visa</div>
+          <h3 className="rec-name">Antler Said Yes. The Programme Couldn&rsquo;t Support the Visa, So I&rsquo;m Not Proceeding.</h3>
           <p className="rec-body">
-            Antler run one of the largest global investment programmes in venture, and I went through
-            theirs directly with <strong>Stefan Knight, Director of Queensland</strong>. Antler AU works
-            only with Australian citizens or founders holding permanent working rights based in
-            Australia. <strong>I hold neither.</strong> That is the whole of it &mdash; a residency
-            mandate, not a verdict on the work &mdash; and if I secure Australian working rights through
-            the National Innovation Visa route, it reopens.
+            Antler run one of the largest early-stage investment programmes in the world, and they
+            <strong> accepted me</strong>. In the conversations that followed, we found the programme could
+            not support the visa and work permit I would need to take part. That is the whole of it
+            &mdash; a logistics boundary, not a verdict on the work.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
-              <span className="rec-stat-val">Residency</span>
-              <span className="rec-stat-lbl">The constraint, not the work</span>
+              <span className="rec-stat-val">Accepted</span>
+              <span className="rec-stat-lbl">By Antler</span>
             </div>
             <div className="rec-stat">
-              <span className="rec-stat-val">Citizens only</span>
-              <span className="rec-stat-lbl">Antler AU&rsquo;s stated mandate</span>
+              <span className="rec-stat-val">Visa</span>
+              <span className="rec-stat-lbl">The constraint, not the work</span>
             </div>
           </div>
         </div>
@@ -856,7 +854,7 @@ export default function CVRecognition() {
             <span className="rec-date">Aug 2026</span>
           </div>
           <div className="rec-tag">Entrepreneur First · London · First Screen</div>
-          <h3 className="rec-name">I Hit Submit. Twelve Hours Later I Had a Call Booked With Nick Sopuch.</h3>
+          <h3 className="rec-name">A Cold Application to Entrepreneur First. A First-Round Call With Their London Team.</h3>
 
           <div className="rec-clock">
             <div className="rec-clock-step">
@@ -865,32 +863,25 @@ export default function CVRecognition() {
             </div>
             <div className="rec-clock-gap">
               <span className="rec-clock-line" />
-              <span className="rec-clock-num">12 hrs</span>
+              <span className="rec-clock-num">Gate 1</span>
               <span className="rec-clock-line" />
             </div>
             <div className="rec-clock-step is-end">
               <span className="rec-clock-k">Response</span>
-              <span className="rec-clock-v">Call booked with Nick Sopuch</span>
+              <span className="rec-clock-v">First-round call booked</span>
             </div>
           </div>
 
           <p className="rec-body">
             No introduction, no warm path, nobody vouching for me. A cold application out of Dhaka into one of the
-            most aggressive sourcing operations in European venture. <strong>Twelve hours later their talent team
-            came back to put a call in the diary.</strong> It was with <strong>Nick Sopuch</strong>, who runs one of
-            EF&apos;s investment teams and their San Francisco bridge programme, scouts for Ada Ventures, and is Head
-            of Operations at Axiom Therapeutics. Halfway through he reached for a comparison: a founder who joined EF
-            at seventeen, raised over $100M, then built a second company that turned into a unicorn inside their own
-            portfolio. That was the set he was putting me in.
+            most aggressive sourcing operations in European venture. <strong>Their talent team came back and put a
+            first-round call in the diary.</strong>
           </p>
           <p className="rec-body">
             Fifteen minutes, by design. EF are explicit that a first screen is not about the idea — it is about how
             somebody thinks. We covered why the black box is an architecture problem rather than a tooling one, the
-            three signals, and where I want to take it. He asked whether I planned to finish university, and the
-            answer I gave him is the one on this page: I have already done the coursework, MITx and Coursera and
-            fifty-five programme certificates of it, and if I ever go it will be for the people rather than the
-            material. <strong>Money changes how fast this gets built. It does not change whether it gets
-            built.</strong>
+            three signals, and where I want to take it. <strong>Money changes how fast this gets built. It does not
+            change whether it gets built.</strong>
           </p>
           <p className="rec-body">
             It was a first conversation and it did what a first conversation does. The one below is where it went
@@ -898,8 +889,8 @@ export default function CVRecognition() {
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
-              <span className="rec-stat-val">12 hrs</span>
-              <span className="rec-stat-lbl">Cold submit to booked call</span>
+              <span className="rec-stat-val">Cold</span>
+              <span className="rec-stat-lbl">No introduction behind it</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">15 min</span>
@@ -947,8 +938,8 @@ export default function CVRecognition() {
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            None of these is a degree, and I am not going to dress them up as one. They are still the three
-            most useful outside signals I have.
+            None of these is a degree, and I am not going to dress them up as one. They are still the outside
+            signals I weight most.
           </p>
           <p className="rec-verdict-body">
             <strong>NeurIPS put me on a programme committee.</strong> That is the one I would point a
@@ -969,11 +960,11 @@ export default function CVRecognition() {
             without one is not, and nobody marked the work down for coming out of Dhaka.
           </p>
           <p className="rec-verdict-body">
-            Now what they do not establish. No funding, no offer, no advisor. An open process is not an
-            outcome and I am not going to write it up as one. Cosmos is a remote grant and EF admits
-            internationally on purpose, so neither tells you anything about the filters that are actually
-            bound to geography. Two results weighted accurately beat one result inflated, and that
-            weighting is the reason you should believe the rest of this page.
+            Now what they do not establish. No funding yet and no advisor; the accelerator offers are open,
+            not signed, and an open process is not an outcome, so I am not going to write it up as one.
+            Cosmos is a remote grant and EF admits internationally on purpose, so neither tells you anything
+            about the filters that are actually bound to geography. A result weighted accurately beats one
+            inflated, and that weighting is the reason you should believe the rest of this page.
           </p>
         </div>
 

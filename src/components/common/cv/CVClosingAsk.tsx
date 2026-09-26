@@ -114,7 +114,7 @@ export default function CVClosingAsk() {
             <div className="ask-for">If you review papers</div>
             <div className="ask-audience">Try to break the stability bound</div>
             <p className="ask-body">
-              The preprint is on Zenodo and the codebase reproduces all 383 runs in under an hour on one GPU. The place I most want someone looking is the ISS stability result. If there is an error in it, or a tighter bound available, I would far rather hear it from you now than find out from a reviewer in six months.
+              The preprint is on Zenodo, and the codebase reproduces the core claims in under an hour on one GPU. The place I most want someone looking is the ISS stability result. If there is an error in it, or a tighter bound available, I would far rather hear it from you now than find out from a reviewer in six months.
             </p>
             <a className="ask-action" href="https://zenodo.org/records/21730363" target="_blank" rel="noreferrer">
               Read the Preprint
@@ -136,7 +136,7 @@ export default function CVClosingAsk() {
 
           <div className="ask-card">
             <div className="ask-for">If you trust code over claims</div>
-            <div className="ask-audience">Run it yourself in under an hour</div>
+            <div className="ask-audience">Reproduce the core claims in under an hour</div>
             <p className="ask-body">
               One script, reproduce.sh, runs every experiment in the paper. Build on it, extend it, or go hunting for the flaw. The code is sitting there and either the numbers come out or they do not.
             </p>

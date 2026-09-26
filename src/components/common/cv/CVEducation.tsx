@@ -269,7 +269,7 @@ export default function CVEducation() {
             {[
               { val: '383', lbl: 'GPU Experiments' },
               { val: '40,933', lbl: 'Lines of Code' },
-              { val: 'AAAI 2027', lbl: 'Paper Under Review' },
+              { val: 'Preprint', lbl: 'Under Peer Review' },
               { val: 'UK Ltd', lbl: 'Registered Company' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>

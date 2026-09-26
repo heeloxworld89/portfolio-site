@@ -18,7 +18,7 @@ const lanes = [
   {
     tag: 'Research',
     name: 'ORMAS',
-    line: 'The architecture itself. 383 experiments, four families, every run reproducible. In review at AAAI 2027.',
+    line: 'The architecture itself. 383 experiments, four families, every run reproducible. Under peer review.',
     href: '#research',
     cta: 'The evidence',
     state: 'live' as const,
