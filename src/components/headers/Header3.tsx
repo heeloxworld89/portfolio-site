@@ -38,13 +38,13 @@ const artifacts: {
     icon: "chart",
     label: "Commercial Evidence Report",
     sub: "The 12-month Black Bloxie ablation study, written for operators and investors.",
-    href: "/assets/pdf/oxido_investor_whitepaper.pdf",
+    href: "/assets/pdf/oxiedo_investor_whitepaper.pdf",
   },
   {
     icon: "fileText",
     label: "System Architecture Paper",
     sub: "The same 12-month record, written for technical evaluators.",
-    href: "/assets/pdf/oxido_academic_research_paper.pdf",
+    href: "/assets/pdf/oxiedo_academic_research_paper.pdf",
   },
 ];
 
