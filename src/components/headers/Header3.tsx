@@ -19,13 +19,13 @@ const artifacts: {
   {
     icon: "code",
     label: "ORMAS Codebase",
-    sub: "One script reproduces all 383 experiments in under an hour on a single GPU.",
+    sub: "One script regenerates every experiment from seed; the core claims reproduce in under an hour on a single GPU.",
     href: "https://anonymous.4open.science/r/ormas-EB73/README.md",
   },
   {
     icon: "code",
     label: "OXIMO Codebase",
-    sub: "40,933 lines, 2,011 passing tests. Architecture is complete; the code is production research infrastructure, not a polished demo.",
+    sub: "40,933 lines, 2,069 passing tests. Architecture is complete; the code is production research infrastructure, not a polished demo.",
     href: "https://anonymous.4open.science/r/oximo-5C73/README.md",
   },
   {
@@ -81,7 +81,7 @@ const socials: {
 /* Bump on every CV recompile. The filename stays stable so existing links
    keep working; the query string is what stops a browser serving the copy
    it cached the last time somebody opened it. */
-const CV_VERSION = "2026-09-23b";
+const CV_VERSION = "2026-09-26a";
 
 export default function Header3() {
   const [linksOpen, setLinksOpen] = useState(false);

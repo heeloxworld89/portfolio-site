@@ -39,7 +39,7 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     year: '2023–25',
     kind: 'build',
     title: 'OXIMO — the structural answer to coordination',
-    body: 'Agents that decompose work and hire a specialist when none exists. Rebuilt from a 106,000-line monolith to 40,933 lines with every algorithm ported and 2,011 tests green. Closed now, and on this page as prior work.',
+    body: 'Agents that decompose work and hire a specialist when none exists. Rebuilt from a 106,000-line monolith to 40,933 lines with every algorithm ported and 2,069 tests green. Closed now, and on this page as prior work.',
   },
   {
     age: '17',
@@ -60,7 +60,7 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     year: '2026',
     kind: 'proof',
     title: 'OXIEDO goes live · reviewing for NeurIPS',
-    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live, submitted to AAAI 2027. In the same year I joined the programme committee of the Trustworthy AI for Good workshop at NeurIPS 2026, reviewing in the field I publish in.',
+    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live and under peer review. In the same year I joined the programme committee of the Trustworthy AI for Good workshop at NeurIPS 2026, reviewing in the field I publish in.',
   },
 ];
 
@@ -88,7 +88,7 @@ const systems = [
     role: 'Prior work',
     line: 'Hand it a sentence; it builds the org chart and hires what it does not have.',
     stat: '40,933',
-    statLbl: 'lines · 2,011 tests green',
+    statLbl: 'lines · 2,069 tests green',
     href: '#oximo',
     state: 'Closed',
   },
@@ -115,7 +115,7 @@ const systems = [
 const router = [
   { a: 'You review papers', d: 'The ISS derivation, all 383 runs, the telemetry design, and the table where the baseline beats me. Attack the stability bound first — that is where I most want to be wrong early.', h: '#research', l: 'The research' },
   { a: 'You write cheques', d: 'What it sells, who is obliged to buy it and by when, and the whole risk register volunteered before anybody asks for it.', h: '#oxiedo', l: 'The company' },
-  { a: 'You read code before opinions', d: '40,933 lines, 2,011 tests, and a system handed one sentence that works out its own org chart and hires what it lacks.', h: '#oximo', l: 'The codebase' },
+  { a: 'You read code before opinions', d: '40,933 lines, 2,069 tests, and a system handed one sentence that works out its own org chart and hires what it lacks.', h: '#oximo', l: 'The codebase' },
   { a: 'You have heard this before', d: 'Twelve months spent trying to kill my own thesis on a live company with real customers, and every pound it ever took, stated so it cannot be read generously.', h: '#black-bloxie', l: 'The experiment' },
 ];
 

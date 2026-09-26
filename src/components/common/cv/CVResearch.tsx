@@ -24,7 +24,7 @@ export default function CVResearch() {
   ];
 
   const recoveryRows = [
-    { sigma: 'σ = 0.1', postBlast: '84.2% → 85.7%', ormas: '85.7%', std: '82.1%', gap: '+3.6pp' },
+    { sigma: 'σ = 0.1', postBlast: '77.1% → 80.2%', ormas: '80.2%', std: '82.1%', gap: '−1.9pp' },
     { sigma: 'σ = 0.5', postBlast: '66.9% → 78.6%', ormas: '78.6%', std: '74.8%', gap: '+3.8pp' },
     { sigma: 'σ = 1.0', postBlast: '41.4% → 75.4%', ormas: '75.4%', std: '59.0%', gap: '+16.4pp' },
     { sigma: 'σ = 2.0', postBlast: '10.0% → 62.1%', ormas: '62.1%', std: '38.2%', gap: '+23.9pp' },
@@ -32,7 +32,7 @@ export default function CVResearch() {
 
   // Asymmetric noise full table (from supplementary)
   const asymNoiseRows = [
-    { noise: 'Sym 40% (final)', ormas: '77.5% ±0.7%', std: '75.6% ±1.4%', mixup: '36.5%', note: 'Peak decay: ORMAS 2.5pp vs CNN 7.8pp' },
+    { noise: 'Sym 40% (final)', ormas: '75.6% ±0.8%', std: '69.6% ±0.9%', mixup: '36.5%', note: 'Peak decay: ORMAS 2.5pp vs CNN 7.8pp' },
     { noise: 'Asym 20%', ormas: '84.3% ±0.3%', std: '83.3% ±0.4%', mixup: '53.6%', note: '' },
     { noise: 'Asym 30%', ormas: '83.1% ±0.1%', std: '81.5% ±0.6%', mixup: '52.0%', note: '' },
     { noise: 'Asym 40%', ormas: '80.6% ±0.3%', std: '78.0% ±0.2%', mixup: '50.0%', note: 'Mixup collapses — ORMAS +2.6pp' },
@@ -42,8 +42,8 @@ export default function CVResearch() {
   // Full Table 2 from the paper — Extreme Scenarios
   const extremeScenarios = [
     { scenario: 'Simultaneous Full-Hierarchy Lesion', standard: '10.0% ± 0.0%', ormas: '70.8% ± 2.2%', gap: '+60.8pp', note: 'All 3 conv layers zeroed at epoch 100' },
-    { scenario: 'Compounded Structural + 40% Noise', standard: '10.0% ± 0.0%', ormas: 'Bifurcated: 82.1 / 77.2 / 18.9%', gap: 'Edge-of-chaos', note: 'Dual attack: noise + lesion simultaneously' },
-    { scenario: 'High-Cardinality (CIFAR-100)', standard: '1.0% ± 0.0%', ormas: 'Bifurcated: 31.0 / 27.2 / 2.1%', gap: 'Boundary found', note: '100-class partial failure — honest scope limit' },
+    { scenario: 'Compounded Structural + 40% Noise', standard: '10.0% ± 0.0%', ormas: 'Per seed: 31.8 / 76.9 / 69.4%', gap: 'Edge-of-chaos', note: 'Dual attack: noise + lesion simultaneously' },
+    { scenario: 'High-Cardinality (CIFAR-100)', standard: '1.0% ± 0.0%', ormas: 'Per seed: 7.4 / 25.8 / 27.1%', gap: 'Boundary found', note: '100-class partial failure — honest scope limit' },
     { scenario: 'Adversarial Weight Injection', standard: '84.1% ± 0.3%', ormas: '83.1% ± 0.3%', gap: '−1.0pp', note: 'Expected scope boundary — crafted to evade diagnostics' },
     { scenario: 'Weight Explosion (100×)', standard: '86.0% ± 0.1%', ormas: '85.1% ± 0.4%', gap: '−0.9pp', note: 'System does not overcorrect on mild damage' },
   ];
@@ -263,13 +263,13 @@ export default function CVResearch() {
         <div className="res-venue">
           <span className="res-venue-tag">Submitted · Under Review</span>
           <span className="res-venue-txt">
-            <strong>AAAI 2027 — Main Technical Track.</strong> Anonymous submission, currently under review. Not
-            accepted, not published there, and I will say so until a decision exists. The preprint is live on Zenodo
+            <strong>Under peer review.</strong> Not accepted and not published yet, and I will say so until a
+            decision exists. The preprint is live on Zenodo
             with a DOI so the work can be read and attacked now rather than after a committee gets to it.
           </span>
         </div>
         <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: '20px' }}>
-          <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 10,594 lines · 61 files</strong><br />
+          <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 16,316 lines · 85 files</strong><br />
           383 controlled experiments. One RTX 3090. Four architectures. The first formal local stability characterization for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
         </p>
 
@@ -335,7 +335,7 @@ export default function CVResearch() {
               {
                 n: '03',
                 title: 'Noise robustness without running a second network',
-                body: 'Under 40% symmetric label noise across 200 epochs, the standard CNN decayed 7.8pp from its peak. ORMAS decayed 2.5pp and settled at 77.5% ± 0.7%. No co-training, no second network, no specialised noisy-label objective. Heavy Dropout (p=0.5) matches ORMAS on label noise — and then collapses permanently to chance the moment a layer is lesioned. Regularisation can mask noise. It cannot diagnose and repair physical damage. That distinction is the whole point.'
+                body: 'Under 40% symmetric label noise across 200 epochs, the standard CNN decayed 7.8pp from its peak. ORMAS decayed 2.5pp and settled at 75.6% ± 0.8%. No co-training, no second network, no specialised noisy-label objective. Heavy Dropout (p=0.5) matches ORMAS on label noise — and then collapses permanently to chance the moment a layer is lesioned. Regularisation can mask noise. It cannot diagnose and repair physical damage. That distinction is the whole point.'
               },
               {
                 n: '04',
@@ -392,7 +392,7 @@ export default function CVResearch() {
           <BlockMath math="w_{t+1}^{(i)} = w_t^{(i)} - \underbrace{\eta_i \nabla \mathcal{L}_{\text{global}}}_{\text{Signal 1}} - \underbrace{\eta_i \beta(t) \tilde{\nabla} \mathcal{L}_{\text{local}}^{(i)}}_{\text{Signal 2 (PCGrad-projected)}} + \underbrace{\Delta_{\text{corr}}^{(i)}}_{\text{Signal 3}}" />
 
           {/* Pathology Diagnostic Table */}
-          <h4 className="section-header">Eight Ways a Component Can Break, and the Repair for Each</h4>
+          <h4 className="section-header">Seven Ways a Component Can Break, and the Repair for Each</h4>
           <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
             ORMAS detects and treats 7 distinct node pathologies in real-time during training. <strong style={{ color: "var(--pf-ink)" }}>Defense-in-depth:</strong> PCGrad operates at the gradient level (before weight updates); self-correction operates at the weight level (after updates). Any unmodeled pathology ultimately manifests as gradient death, triggering the fallback Kaiming reinitialization — graceful degradation without requiring learned policies.
           </p>
@@ -422,7 +422,7 @@ export default function CVResearch() {
             Traditional neural networks fail <strong>silently</strong>. ORMAS reverses this with the <strong>Loud Failure Paradigm</strong>. GlassBox emits a <strong>5-layer causal audit trail</strong> per node: (1) health status and goodness score, (2) correction traces with pathology diagnosis, (3) gradient conflict measurement (cosine similarity between global and local gradients), (4) topology census (active/suppressed routing per input region), (5) training pulse timeline.
           </p>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "16px" }}>
-            In a single CNN training run under 40% noise, ORMAS emits <strong style={{ color: "var(--pf-ink)" }}>23,721 Algorithmic Distress Signals</strong>. On the 50-node fully-connected DAG under 30% continuous noise — a maximally dense graph where uncorrected architectures collapse to NaN — ORMAS maintained numerical stability across 200 epochs via <strong style={{ color: "var(--pf-ink)" }}>22,014 autonomous corrections</strong>. Every correction is tagged with its pathology, node ID, and diagnostic evidence.
+            A single ORMAS DAG training run emitted up to <strong style={{ color: "var(--pf-ink)" }}>23,227 autonomous correction events</strong> over 200 epochs. On the 50-node fully-connected DAG under 30% continuous noise — a maximally dense graph where uncorrected architectures collapse to NaN — ORMAS maintained numerical stability across 200 epochs via <strong style={{ color: "var(--pf-ink)" }}>22,014 autonomous corrections</strong> per run (mean of 3 seeds). Every correction is tagged with its pathology, node ID, and diagnostic evidence.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px', marginBottom: '40px' }}>
             {[
@@ -491,10 +491,7 @@ export default function CVResearch() {
           </div>
           <p style={{ fontSize: '12px', color: 'var(--pf-ink-3)', marginBottom: '40px', lineHeight: '1.6' }}>All results CIFAR-10 unless noted. Equal-compute (200 epochs, same hardware). Framing note: every accuracy result is proof the mechanism functions — not a competitive accuracy benchmark.</p>
           <div className="honest-gap-box" style={{ marginBottom: '40px' }}>
-            <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Note — Early Stopping & Heavy Dropout</h5>
-            <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', margin: '0 0 10px' }}>
-              Stopped at its oracle-optimal epoch (~39), the standard CNN hits 77.6% — within 0.5pp of the best ORMAS result. That is a real caveat, with one catch: knowing where to stop requires a clean validation oracle, and under label corruption you do not have one. ORMAS reaches comparable peak accuracy <strong style={{ color: 'var(--pf-ink)' }}>without needing to know when to stop</strong>.
-            </p>
+            <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Honest Note — Heavy Dropout</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', margin: 0 }}>
               Heavy Dropout (p=0.5) also matches ORMAS on label noise — then collapses permanently to chance under a dead-layer attack. <strong style={{ color: 'var(--pf-ink)' }}>Regularisation masks noise. Structural transparency diagnoses and repairs it.</strong> Those are different capabilities, not different amounts of the same one.
             </p>
@@ -539,12 +536,12 @@ export default function CVResearch() {
           <div className="honest-gap-box" style={{ marginBottom: '20px' }}>
             <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Where the Diagnostic Advantage Shows Up, and Where It Does Not</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', margin: 0 }}>
-              At σ=1.0 the standard CNN partially recovers to 59.0% via blind relearning; ORMAS reaches 75.4% via targeted correction — a +16.4pp gap, and the baseline still has no idea what broke. At σ=0.1, ORMAS recovers <strong style={{ color: 'var(--pf-ink)' }}>99.1%</strong>, and the gap widens monotonically as damage gets worse: +3.6pp at σ=0.1 to +23.9pp at σ=2.0. Targeted repair beats undirected gradient descent at every perturbation scale tested.
+              At σ=1.0 the standard CNN partially recovers to 59.0% via blind relearning; ORMAS reaches 75.4% via targeted correction — a +16.4pp gap, and the baseline still has no idea what broke. At σ=0.1 the damage is mild and the standard CNN finishes slightly ahead (82.1% against 80.2%) — from there the gap widens monotonically as damage gets worse, to +23.9pp at σ=2.0. Measured as recovery from the post-blast low, ORMAS recovers more at every scale tested: +3.1pp against +2.7pp at σ=0.1, and <strong style={{ color: 'var(--pf-ink)' }}>+52.1pp against +28.2pp at σ=2.0</strong>.
             </p>
           </div>
 
           <p style={{ fontSize: "15px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
-            <strong style={{ color: "var(--pf-ink)" }}>The Baldwin Effect:</strong> Under 40% noise, ORMAS triggers an average of 67.6 surgical self-corrections per run. Epochs 0–50: 4.2 corrections/epoch. Epochs 100–200: 0.05 corrections/epoch. The network learns to not need correction — architectural immunity as an emergent property.
+            <strong style={{ color: "var(--pf-ink)" }}>The Baldwin Effect:</strong> Under 40% noise, ORMAS triggers an average of 67.6 surgical self-corrections per run. Epochs 0–50: a peak of 4.2 corrections/epoch, 1.35 on average. Epochs 50–200: zero. The network learns to not need correction — architectural immunity as an emergent property.
           </p>
 
           {/* Baldwin Effect Decay Table */}
@@ -557,9 +554,9 @@ export default function CVResearch() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Epochs 0–50</td><td>4.2 / epoch</td></tr>
-                <tr><td>Epochs 50–100</td><td>1.1 / epoch</td></tr>
-                <tr><td>Epochs 100–200</td><td>0.05 / epoch</td></tr>
+                <tr><td>Epochs 0–50</td><td>1.35 / epoch (peak 4.2)</td></tr>
+                <tr><td>Epochs 50–100</td><td>0 / epoch</td></tr>
+                <tr><td>Epochs 100–200</td><td>0 / epoch</td></tr>
               </tbody>
             </table>
           </div>
@@ -572,7 +569,7 @@ export default function CVResearch() {
           <div className="bifurcation-callout" style={{ marginBottom: '20px' }}>
             <strong style={{ color: 'var(--pf-accent)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>Bifurcation — Edge of Chaos</strong>
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink)', marginTop: '8px', marginBottom: 0 }}>
-              Under the compound attack (40% noise + full-hierarchy lesion), ORMAS seed outcomes: <strong>82.1%, 77.2%, 18.9%</strong>. The variance reflects a topological bifurcation in the loss landscape — not implementation instability. Under the same attack, Standard CNN is deterministically dead at 10.0% ± 0.0% across all seeds. One architecture has a 2-in-3 chance of surviving an attack that kills every other architecture outright.
+              Under the compound attack (40% noise + full-hierarchy lesion), ORMAS seed outcomes: <strong>31.8%, 76.9%, 69.4%</strong>. Recovery from the most severe compound damage depends on the seed, so it is reported per run rather than averaged. Under the same attack, the standard CNN is deterministically dead at 10.0% ± 0.0% across all seeds.
             </p>
           </div>
           <div style={{ background: 'var(--pf-surface)', borderRadius: '8px', border: '1px solid var(--pf-border)', overflowX: 'auto', marginBottom: '40px' }}>
@@ -709,24 +706,24 @@ export default function CVResearch() {
               <tbody>
                 <tr>
                   <td>Full ORMAS</td>
-                  <td>49.9%</td>
+                  <td>40.1% (best 49.9%)</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <td>Remove Self-Correction (Signal 3)</td>
-                  <td>39.7%</td>
-                  <td style={{ color: 'var(--pf-ink-2)' }}>−10.2 pp</td>
+                  <td>NaN (best 14.2%)</td>
+                  <td style={{ color: 'var(--pf-ink-2)' }}>Training collapsed</td>
                 </tr>
                 <tr>
-                  <td>Remove PCGrad (Signal 2)</td>
-                  <td>41.0%</td>
-                  <td style={{ color: 'var(--pf-ink-2)' }}>−8.9 pp</td>
+                  <td>Remove PCGrad</td>
+                  <td>NaN (best 12.1%)</td>
+                  <td style={{ color: 'var(--pf-ink-2)' }}>Training collapsed</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '14px' }}>
-            On CNN: Removing PCGrad does not reduce accuracy (80.0% vs 80.0%) but increases correction frequency by 15% (74 vs 64 corrections). The redundant defense architecture means disabling one mechanism triggers proportional activation of the other. This is the intended behavior — two independent defense layers.
+            On the DAG, removing either mechanism collapses training outright. On the CNN, removing PCGrad leaves accuracy unchanged (78.1% final) but forces the self-correction mechanism to work far harder — disabling one defense layer triggers proportional activation of the other. This is the intended behavior: two independent defense layers.
           </p>
           <div className="bifurcation-callout" style={{ marginBottom: '20px' }}>
             <strong style={{ color: 'var(--pf-accent)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>PCGrad Removal — The Correction Explosion</strong>
@@ -740,7 +737,7 @@ export default function CVResearch() {
             <li style={{ marginBottom: "10px" }}>Tiered experiment infrastructure: 383+ configurations with automated seed sweeps.</li>
             <li style={{ marginBottom: "10px" }}>Shipped an interactive <code>reproduce.sh</code> — one command reproduces every experiment. Core claims reproducible in under one hour.</li>
             <li style={{ marginBottom: "10px" }}>10-step training pipeline (<code>ORMASTrainer</code>), multi-round forward loop with selective rollback tracking. After each correction, a verification forward pass runs; if both global and node-local loss worsen by more than 2%, that node's weights selectively roll back — typically affecting fewer than 30% of corrected nodes.</li>
-            <li style={{ marginBottom: "10px" }}>All 383 experiments on a single RTX 3090 (24 GB VRAM, 30 GB RAM, 8 vCPU). Consumer hardware. 37,000 lines of custom infrastructure.</li>
+            <li style={{ marginBottom: "10px" }}>All 383 experiments on a single RTX 3090 (24 GB VRAM, 30 GB RAM, 8 vCPU). Consumer hardware. 16,316 lines of research code.</li>
           </ul>
 
           {/* Hyperparameter Robustness — NOT on website */}

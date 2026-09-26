@@ -145,7 +145,7 @@ export default function MobileMenu() {
         <a className="mm-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
           oxiedo.com <Icon name="externalLink" size={14} />
         </a>
-        <a className="mm-cta is-quiet" href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf" target="_blank" rel="noreferrer">
+        <a className="mm-cta is-quiet" href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=2026-09-26a" target="_blank" rel="noreferrer">
           <Icon name="download" size={14} /> Download CV
         </a>
         <p className="mm-foot">18 · Dhaka, Bangladesh · Independent AI researcher</p>
