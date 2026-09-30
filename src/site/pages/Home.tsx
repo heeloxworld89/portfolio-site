@@ -10,8 +10,8 @@ const marks: Mark[] = [
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Programme Committee", note: "Invited to review for the Trustworthy AI for Good workshop" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "The top-ranked application of its grant cycle" },
   { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Chosen for the Ignite cohort from the top 1% of applicants" },
-  { name: "Antler", logo: L + "antler.svg", tag: "Paused · Work Permit", note: "In the programme process until Australian work-permit logistics stopped it" },
-  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Final Round", note: "Through two interview rounds to final selection" },
+  { name: "Antler Australia", logo: L + "antler.svg", tag: "Cancelled · Work Permit", note: "In the programme process until it was cancelled over Australian work-permit logistics" },
+  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Holding · Final Round", note: "Two interview rounds done; holding in the final round" },
   { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by the talent team for a first-round interview in London" },
   { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after interview" },
   { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "Finalist, International Academic Research Competition" },
@@ -160,6 +160,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── company + earlier work ───────────────────────────────────── */}
+      <section className="rx-sec" id="work">
+        <div className="rx-wrap">
+          <h2 className="rx-label">Work</h2>
+
+          <article className="rx-work-hero">
+            <div className="rx-work-hero-copy">
+              <div className="k">Company · founded 2023</div>
+              <h3>OXIEDO</h3>
+              <p>
+                Licenses ORMAS on-premise to regulated industries, producing a tamper-evident record of what a model
+                learned during training, for model-risk teams and the EU AI Act&rsquo;s high-risk obligations.
+              </p>
+              <div className="rx-btns">
+                <a className="rx-btn is-light" href={links.oxiedo} target="_blank" rel="noreferrer">oxiedo.com <Arrow /></a>
+                <a className="rx-btn is-outline-light" href={links.deck} target="_blank" rel="noreferrer">Investor deck <Arrow /></a>
+              </div>
+            </div>
+            <div className="rx-work-hero-stats">
+              <div><b>ORMAS</b><span>On-premise licence</span></div>
+              <div><b>Dec 2027</b><span>EU AI Act high-risk obligations</span></div>
+              <div><b>+70.3pp</b><span>Recovery after a layer is destroyed</span></div>
+            </div>
+          </article>
+
+          <div className="rx-work-pair">
+            <article className="rx-work-card">
+              <div className="k">System · 2023–2025</div>
+              <div className="rx-work-num">40,933<small>lines</small></div>
+              <h3>OXIMO</h3>
+              <p>
+                A 40,933-line multi-agent operating system that turns a one-sentence brief into an organisation and
+                creates the specialist roles it lacks. 2,069 passing tests.
+              </p>
+              <Link className="more" to="/work">Details →</Link>
+            </article>
+            <article className="rx-work-card">
+              <div className="k">Field study · 2025–2026</div>
+              <div className="rx-work-num">−91%<small>output without OXIMO</small></div>
+              <h3>Black Bloxie LTD</h3>
+              <p>
+                A twelve-month controlled study on a live UK company: removing OXIMO cut output by 91%, and restoring it
+                brought output back above its original level.
+              </p>
+              <Link className="more" to="/work">Details →</Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* ── news ─────────────────────────────────────────────────────── */}
       <section className="rx-sec" id="news">
         <div className="rx-wrap">
@@ -269,42 +319,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── company + earlier work ───────────────────────────────────── */}
-      <section className="rx-sec" id="work">
-        <div className="rx-wrap">
-          <h2 className="rx-label">Work</h2>
-          <div className="rx-grid">
-            <div className="rx-cell">
-              <div className="k">Company · founded 2023</div>
-              <h3>OXIEDO</h3>
-              <p>
-                Licenses ORMAS on-premise to regulated industries, producing a tamper-evident record of what a model
-                learned during training, for model-risk teams and the EU AI Act&rsquo;s high-risk obligations.
-              </p>
-              <a className="more" href={links.oxiedo} target="_blank" rel="noreferrer">oxiedo.com ↗</a>
-            </div>
-            <div className="rx-cell">
-              <div className="k">System · 2023–2025</div>
-              <h3>OXIMO</h3>
-              <p>
-                A 40,933-line multi-agent operating system that turns a one-sentence brief into an organisation and
-                creates the specialist roles it lacks. 2,069 passing tests.
-              </p>
-              <Link className="more" to="/work">Details →</Link>
-            </div>
-            <div className="rx-cell">
-              <div className="k">Field study · 2025–2026</div>
-              <h3>Black Bloxie LTD</h3>
-              <p>
-                A twelve-month controlled study on a live UK company: removing OXIMO cut output by 91%, and restoring it
-                brought output back above its original level.
-              </p>
-              <Link className="more" to="/work">Details →</Link>
-            </div>
           </div>
         </div>
       </section>
