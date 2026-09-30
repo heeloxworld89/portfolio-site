@@ -372,7 +372,7 @@ export default function CVWhoIAm() {
         <div className="wi-sys">
           {systems.map((s) => (
             <a
-              className={`wi-sys-card${s.state === 'Not built' ? ' is-unbuilt' : ''}`}
+              className={`wi-sys-card is-${s.state.toLowerCase().replace(/\s+/g, '-')}${s.state === 'Not built' ? ' is-unbuilt' : ''}`}
               href={s.href}
               key={s.name}
             >
