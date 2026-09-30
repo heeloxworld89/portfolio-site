@@ -48,6 +48,11 @@ for (const r of routes) {
   html = setMeta(html, "property", "og:url", url);
   html = setMeta(html, "name", "twitter:title", meta.title);
   html = setMeta(html, "name", "twitter:description", meta.description);
+  const image = SITE + meta.image;
+  html = setMeta(html, "property", "og:image", image);
+  html = setMeta(html, "property", "og:image:alt", meta.imageAlt);
+  html = setMeta(html, "name", "twitter:image", image);
+  html = setMeta(html, "name", "twitter:image:alt", meta.imageAlt);
   html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`);
   fs.writeFileSync(path.join(dist, r.file), html);
   console.log(`prerender: ${r.path} -> ${r.file} (${(appHtml.length / 1024).toFixed(0)} KB)`);
