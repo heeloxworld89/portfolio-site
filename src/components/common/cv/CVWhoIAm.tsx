@@ -71,7 +71,7 @@ const systems = [
     line: 'Identifies, names and repairs its own failing components during training.',
     stat: '80.3%',
     statLbl: 'recovery · baseline 10.0%',
-    href: '#research',
+    href: '/research',
     state: 'Current work',
   },
   {
@@ -80,7 +80,7 @@ const systems = [
     line: 'Licensing the architecture to institutions that cannot yet train on their own regulated data.',
     stat: 'Live',
     statLbl: 'oxiedo.com · five sectors',
-    href: '#oxiedo',
+    href: '/work#oxiedo',
     state: 'Live',
   },
   {
@@ -89,7 +89,7 @@ const systems = [
     line: 'Turns a one-sentence brief into an organisation, creating the roles it lacks.',
     stat: '40,933',
     statLbl: 'lines · 2,069 passing tests',
-    href: '#oximo',
+    href: '/work#oximo',
     state: 'Closed',
   },
   {
@@ -98,7 +98,7 @@ const systems = [
     line: 'A live UK company run for twelve months to measure the system’s causal effect.',
     stat: '−91% / +1,300%',
     statLbl: '12-month lesion study',
-    href: '#black-bloxie',
+    href: '/work#black-bloxie',
     state: 'Closed',
   },
   {
@@ -107,16 +107,16 @@ const systems = [
     line: 'A network that grows its own components. Fully specified; not yet built.',
     stat: '—',
     statLbl: 'specification stage',
-    href: '#cherry',
+    href: '/research#cherry',
     state: 'Not built',
   },
 ];
 
 const router = [
-  { a: 'Researchers', d: 'The ISS derivation, all 383 runs, the telemetry design and the adverse results. Scrutiny of the stability bound is especially welcome.', h: '#research', l: 'The research' },
-  { a: 'Investors', d: 'The product, the regulatory drivers and timeline, and a full risk register.', h: '#oxiedo', l: 'The company' },
-  { a: 'Engineers', d: '40,933 lines and 2,069 tests: a system that turns one sentence into a working organisation.', h: '#oximo', l: 'The codebase' },
-  { a: 'Sceptics', d: 'A twelve-month controlled study on a live company with real customers, with every figure disclosed.', h: '#black-bloxie', l: 'The experiment' },
+  { a: 'Researchers', d: 'The ISS derivation, all 383 runs, the telemetry design and the adverse results. Scrutiny of the stability bound is especially welcome.', h: '/research', l: 'The research' },
+  { a: 'Investors', d: 'The product, the regulatory drivers and timeline, and a full risk register.', h: '/work#oxiedo', l: 'The company' },
+  { a: 'Engineers', d: '40,933 lines and 2,069 tests: a system that turns one sentence into a working organisation.', h: '/work#oximo', l: 'The codebase' },
+  { a: 'Sceptics', d: 'A twelve-month controlled study on a live company with real customers, with every figure disclosed.', h: '/work#black-bloxie', l: 'The experiment' },
 ];
 
 export default function CVWhoIAm() {
@@ -395,7 +395,7 @@ export default function CVWhoIAm() {
 
         <p className="wi-standing-note">
           Recent milestones are in <a href="#recognition">Recent</a>. The five ventures are covered in{' '}
-          <a href="#ventures">Ventures</a>, and credentials in <a href="#education">Education</a>.
+          <a href="/work#ventures">Ventures</a>, and credentials in <a href="#education">Education</a>.
         </p>
 
         {/* ══ ROUTER ═════════════════════════════════════════════ */}

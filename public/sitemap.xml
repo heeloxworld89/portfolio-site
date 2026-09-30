@@ -14,6 +14,24 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.raadh.me/research</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.raadh.me/work</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.raadh.me/about</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.raadh.me/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>

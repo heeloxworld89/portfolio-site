@@ -113,5 +113,6 @@
       "destination": "/assets/pdf/oxiedo_academic_research_paper.pdf",
       "permanent": true
     }
-  ]
+  ],
+  "cleanUrls": true
 }
