@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import { links, news, publications } from "../data";
 
-type Mark = { name: string; logo?: string; word?: string; verb: "Reviewed" | "Selected" | "Interviewed"; note: string; href?: string };
+type Mark = { name: string; logo?: string; word?: string; tag: string; note: string };
 
 const L = "/assets/images/logos/";
 const marks: Mark[] = [
-  { name: "DeepMath 2026", word: "DeepMath", verb: "Reviewed", note: "Paper accepted after double-blind review", href: "https://deepmath-conference.com/" },
-  { name: "NeurIPS 2026", word: "NeurIPS", verb: "Selected", note: "Workshop programme committee" },
-  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", verb: "Reviewed", note: "Ranked highest in its grant cycle" },
-  { name: "1752vc", logo: L + "1752vc.png", verb: "Selected", note: "Ignite cohort, top 1% of applicants" },
-  { name: "Antler", logo: L + "antler.svg", verb: "Selected", note: "Offered a place" },
-  { name: "The Bridge", logo: L + "the-bridge.png", verb: "Interviewed", note: "Two rounds, final selection" },
-  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", verb: "Interviewed", note: "First-round interview, London" },
-  { name: "Freshmango", logo: L + "freshmango.png", verb: "Interviewed", note: "Accepted after interview" },
-  { name: "IARCO 2026", logo: L + "iarco-dark.png", verb: "Reviewed", note: "Finalist" },
-  { name: "Cohere Labs", logo: L + "cohere.svg", verb: "Selected", note: "Open Science Community" },
+  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-Reviewed", note: "Stability paper selected for poster presentation at Ohio State" },
+  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Programme Committee", note: "Invited to review for the Trustworthy AI for Good workshop" },
+  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "The top-ranked application of its grant cycle" },
+  { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Chosen for the Ignite cohort from the top 1% of applicants" },
+  { name: "Antler", logo: L + "antler.svg", tag: "Offer Extended", note: "Offered a place in one of the world’s largest early-stage programmes" },
+  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Final Round", note: "Through two interview rounds to final selection" },
+  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by the talent team for a first-round interview in London" },
+  { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after interview" },
+  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "Finalist, International Academic Research Competition" },
+  { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Research Community", note: "Member of the Open Science Community" },
 ];
 
 const Arrow = () => (
@@ -53,23 +53,18 @@ export default function Home() {
           <figure className="rx-h3-visual">
             <svg viewBox="0 0 700 760" role="img" aria-label="Portrait of Rokib Al Dhin Raadh">
               <defs>
-                <radialGradient id="rx-disc" cx="62%" cy="30%" r="80%">
-                  <stop offset="0" stopColor="#d8ee96" />
-                  <stop offset=".45" stopColor="#98e0a0" />
-                  <stop offset="1" stopColor="#64c3d3" />
-                </radialGradient>
-                <clipPath id="rx-cut">
-                  <path d="M-40,-40 H740 V390 H670 A320,320 0 0 1 30,390 H-40 Z" />
+                <clipPath id="rx-disc-clip">
+                  <circle cx="350" cy="390" r="320" />
                 </clipPath>
               </defs>
               <circle className="rx-h3-ring" cx="350" cy="390" r="346" />
-              <circle cx="350" cy="390" r="320" fill="url(#rx-disc)" />
-              <image
-                href="/assets/images/portrait-cut.webp"
-                x="0" y="20" width="700" height="700"
-                clipPath="url(#rx-cut)"
-                preserveAspectRatio="xMidYMid meet"
-              />
+              <g clipPath="url(#rx-disc-clip)">
+                <image
+                  href="/assets/images/portrait.webp"
+                  x="20" y="60" width="660" height="660"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </g>
             </svg>
             <figcaption>
               <span>Rokib Al Dhin Raadh</span>
@@ -83,18 +78,21 @@ export default function Home() {
       <section className="rx-sel" aria-labelledby="rx-sel-h">
         <div className="rx-wrap">
           <div className="rx-sel-head">
-            <h2 id="rx-sel-h">
-              Selected. Reviewed. <em>Interviewed.</em>
-            </h2>
+            <div>
+              <p className="rx-sel-eb">Recognition · 2026</p>
+              <h2 id="rx-sel-h">
+                Vetted by the rooms <em>that are hardest to enter.</em>
+              </h2>
+            </div>
             <p>
-              Ten programmes, review panels and committees across research and venture, all in 2026 and all before
-              his nineteenth birthday.
+              Double-blind peer review, a NeurIPS programme committee and the most selective accelerators in venture:
+              ten independent panels, one year.
             </p>
           </div>
           <ul className="rx-logos">
             {marks.map((m) => (
               <li key={m.name} className={m.logo ? undefined : "is-word"}>
-                <span className="rx-logo-verb">{m.verb}</span>
+                <span className="rx-logo-verb">{m.tag}</span>
                 <span className="rx-logo-img">
                   {m.logo ? (
                     <img src={m.logo} alt={m.name} loading="lazy" />
@@ -106,7 +104,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link className="rx-sel-more" to="/about">The full record <Arrow /></Link>
+          <Link className="rx-sel-more" to="/about">Read the full record <Arrow /></Link>
         </div>
       </section>
 
@@ -144,19 +142,19 @@ export default function Home() {
           <div className="rx-figs" role="list">
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v is-age">18</div>
-              <div className="rx-fig-k">years old · founder &amp; CEO</div>
+              <div className="rx-fig-k">Founder and CEO at eighteen</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">383</div>
-              <div className="rx-fig-k">controlled experiments, one GPU</div>
+              <div className="rx-fig-k">Controlled experiments on a single GPU</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">+70.3</div>
-              <div className="rx-fig-k">pp recovery after a layer is destroyed</div>
+              <div className="rx-fig-k">Percentage-point recovery after a layer is destroyed</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">2026</div>
-              <div className="rx-fig-k">DeepMath · NeurIPS programme committee</div>
+              <div className="rx-fig-k">DeepMath acceptance and NeurIPS committee seat</div>
             </div>
           </div>
         </div>
