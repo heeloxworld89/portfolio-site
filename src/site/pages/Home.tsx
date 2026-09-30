@@ -75,36 +75,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── DeepMath: the peer-reviewed result ───────────────────────── */}
-      <section className="rx-dm" aria-labelledby="rx-dm-h">
-        <div className="rx-wrap">
-          <div className="rx-dm-card">
-            <div className="rx-dm-main">
-              <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Accepted · Double-blind review · Poster</p>
-              <h2 id="rx-dm-h">
-                The mathematics behind ORMAS passed blind review at <em>DeepMath&nbsp;2026.</em>
-              </h2>
-              <p className="rx-dm-lede">
-                DeepMath, the Conference on the Mathematical Theory of Deep Neural Networks, takes theory only and
-                reviews it double-blind. Specialists judged the proof without knowing who wrote it, or that he is
-                eighteen and self-taught. This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
-                <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
-                editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
-                presents on 29–30 October.
-              </p>
-              <p className="rx-dm-paper">
-                &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
-                Dynamics&rdquo;
-              </p>
-              <div className="rx-btns">
-                <a className="rx-btn is-light" href={links.deepmath} target="_blank" rel="noreferrer">Conference site <Arrow /></a>
-                <a className="rx-btn is-outline-light" href={links.preprint} target="_blank" rel="noreferrer">ORMAS preprint <Arrow /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── selected / reviewed / interviewed ────────────────────────── */}
       <section className="rx-sel" aria-labelledby="rx-sel-h">
         <div className="rx-wrap">
@@ -246,22 +216,29 @@ export default function Home() {
         <div className="rx-wrap">
           <h2 className="rx-label">News <small>updated 30 September 2026</small></h2>
 
-          <article className="rx-feature">
-            <div className="rx-feature-visual">
-              <div className="k">Accepted · Poster · Double-blind</div>
-              <div className="v">DeepMath<br />2026</div>
-              <div className="s">Conference on the Mathematical Theory of Deep Neural Networks · Ohio State University · 29–30 October</div>
-            </div>
-            <div>
+          <article className="rx-dm-card">
+            <div className="rx-dm-main">
+              <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Accepted · Double-blind review · Poster</p>
               <h3>
-                <a href={featured.href} target="_blank" rel="noreferrer">{featured.title}</a>
+                The mathematics behind ORMAS passed blind review at <em>DeepMath&nbsp;2026.</em>
               </h3>
-              <p>{featured.body}</p>
-              <p>
-                The paper formalises the stability guarantee underneath ORMAS: each self-correction is treated as a
-                bounded disturbance, and the weight trajectory is shown to remain bounded under it.
+              <p className="rx-dm-lede">
+                DeepMath, the Conference on the Mathematical Theory of Deep Neural Networks, takes theory only and
+                reviews it double-blind. Specialists judged the proof without knowing who wrote it, or that he is
+                eighteen and self-taught. This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
+                <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
+                editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
+                presents on 29–30 October.
+              </p>
+              <p className="rx-dm-paper">
+                &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+                Dynamics&rdquo;
               </p>
               <div className="rx-meta">Date: <b>{featured.date}</b> &nbsp;·&nbsp; By: <b>Rokib Al Dhin Raadh</b></div>
+              <div className="rx-btns">
+                <a className="rx-btn is-light" href={links.deepmath} target="_blank" rel="noreferrer">Conference site <Arrow /></a>
+                <a className="rx-btn is-outline-light" href={links.preprint} target="_blank" rel="noreferrer">ORMAS preprint <Arrow /></a>
+              </div>
             </div>
           </article>
 
