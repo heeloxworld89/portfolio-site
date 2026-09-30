@@ -33,8 +33,8 @@ export const news: NewsItem[] = [
     href: links.deepmath,
   },
   {
-    date: "Sep 2026", kind: "Service",
-    title: "Programme committee, NeurIPS 2026 Trustworthy AI for Good",
+    date: "Sep 2026", kind: "Reviewer",
+    title: "Reviewer, NeurIPS 2026 Trustworthy AI for Good",
     body: "Reviewing submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring for the NeurIPS 2026 workshop in Paris.",
     href: links.neurips,
   },

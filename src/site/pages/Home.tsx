@@ -7,7 +7,7 @@ type Mark = { name: string; logo?: string; word?: string; tag: string; note: str
 const L = "/assets/images/logos/";
 const marks: Mark[] = [
   { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-Reviewed", note: "Stability paper selected for poster presentation at Ohio State" },
-  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Programme Committee", note: "Invited to review for the Trustworthy AI for Good workshop" },
+  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Invited to review for the Trustworthy AI for Good workshop" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "The top-ranked application of its grant cycle" },
   { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Chosen for the Ignite cohort from the top 1% of applicants" },
   { name: "Antler Australia", logo: L + "antler.svg", tag: "Cancelled · Work Permit", note: "In the programme process until it was cancelled over Australian work-permit logistics" },
@@ -86,7 +86,7 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Double-blind peer review, a NeurIPS programme committee and the most selective accelerators in venture:
+              Double-blind peer review, a NeurIPS reviewer role and the most selective accelerators in venture:
               ten independent panels, one year.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function Home() {
               <Link to="/research">ORMAS</Link>, a neural network architecture that identifies, repairs and records its
               own failures while it trains. His stability analysis of self-correcting training was accepted at{" "}
               <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath 2026</a> after double-blind review. He
-              serves on the programme committee of the{" "}
+              is a reviewer for the{" "}
               <a href={links.neurips} target="_blank" rel="noreferrer">NeurIPS 2026 Trustworthy AI for Good</a> workshop
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">2026</div>
-              <div className="rx-fig-k">DeepMath acceptance and NeurIPS committee seat</div>
+              <div className="rx-fig-k">DeepMath acceptance and NeurIPS reviewer</div>
             </div>
           </div>
         </div>

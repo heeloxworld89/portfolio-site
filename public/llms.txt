@@ -6,7 +6,7 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxb
 
 ## Key facts
 
-- **Roles:** Founder & CEO, OXIEDO (founded 2023); independent AI researcher; programme committee member, NeurIPS 2026 Trustworthy AI for Good workshop.
+- **Roles:** Founder & CEO, OXIEDO (founded 2023); independent AI researcher; reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.
 - **Research, ORMAS:** a three-signal training architecture: global backpropagation, a per-node local loss through a shared bottleneck readout, and health-gated autonomous self-correction. It detects structural failures during training, repairs them without stopping, and logs every correction with its cause.
 - **Headline result:** after a trained convolutional layer is destroyed mid-training (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at chance (10.0%): a +70.3 percentage-point gap.
 - **Other results:** 94.6% task retention versus 47.3% for ResNet-18 in sequential learning; 58.8% zero-shot compositional accuracy (25% chance); 2.5pp versus 7.8pp accuracy decay under 40% label noise.
@@ -15,7 +15,24 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxb
 - **Company, OXIEDO:** licenses ORMAS on-premise to regulated industries (AI training, regulated finance, medical AI, data obligation, defence) so institutions can train on data they cannot currently use, with an auditable training record relevant to SR 26-2 model-risk guidance and the EU AI Act high-risk obligations from December 2027. Pre-revenue.
 - **Earlier work:** OXIMO, a 40,933-line multi-agent operating system with 2,069 passing tests; Black Bloxie LTD (incorporated in England & Wales on 11 September 2025), a twelve-month controlled field study of OXIMO on a live e-commerce company; five ventures between ages 12 and 17, including a stock-prediction system sold for about $10,000 at 15.
 - **Education:** final year of secondary school, self-taught; completed seven MIT Open Learning (MITx) courses in foundation models, AI in medicine, energy, transport and entrepreneurship; offered a 40% scholarship on a further MIT programme after an admissions call, which he could not take up for financial and logistical reasons; sponsored by FIAP into MIT Open Learning's Universal AI programme; completed Andrew Ng's Deep Learning Specialization (DeepLearning.AI).
-- **Recognition (2026):** DeepMath 2026 paper accepted (poster); NeurIPS 2026 workshop programme committee; Cohere Labs Open Science Community member; IARCO 2026 finalist; ranked highest in the Cosmos Institute grant cycle; accepted by Freshmango and 1752vc Ignite; in the Antler Australia programme process until it was cancelled over Australian work-permit logistics; holding in the final round of The Bridge (San Francisco).
+- **Recognition (2026):** DeepMath 2026 paper accepted (poster); reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop; Cohere Labs Open Science Community member; IARCO 2026 finalist; ranked highest in the Cosmos Institute grant cycle; accepted by Freshmango and 1752vc Ignite; in the Antler Australia programme process until it was cancelled over Australian work-permit logistics; holding in the final round of The Bridge (San Francisco).
+
+## Verification
+
+Every claim on raadh.me can be checked against a primary source:
+
+| Claim | Where to verify |
+|---|---|
+| Author of the ORMAS preprint (1 Aug 2026) | Zenodo record, DOI [10.5281/zenodo.21730363](https://doi.org/10.5281/zenodo.21730363) |
+| All 383 experiments are reproducible | [Anonymised code archive](https://anonymous.4open.science/r/ormas-EB73/README.md) |
+| Researcher identity | ORCID [0009-0003-1178-5296](https://orcid.org/0009-0003-1178-5296) |
+| DeepMath 2026 acceptance (poster, double-blind) | [DeepMath 2026](https://deepmath-conference.com/), hosted by Ohio State University, 29–30 Oct 2026; acceptance email available on request |
+| Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop | [Workshop site](https://trustworthy-ai-for-good.github.io/); reviewer assignment available on request |
+| Seven MIT Open Learning (MITx) courses | Shared MITx Online records linked on [raadh.me/about](https://www.raadh.me/about#education) |
+| Deep Learning Specialization (DeepLearning.AI) | [Coursera verification](https://coursera.org/verify/specialization/R7SYBBCXR1OY) |
+| OXIEDO, founded 2023 | [oxiedo.com](https://oxiedo.com) |
+| Black Bloxie LTD, incorporated 11 Sep 2025 | UK Companies House (England and Wales) |
+| Cosmos Institute ranking; 1752vc, Freshmango and Antler Australia outcomes; The Bridge final round | Correspondence available on request: raadxbusiness9@gmail.com |
 
 ## Scope and limitations
 
@@ -51,3 +68,8 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxb
 - ORCID: https://orcid.org/0009-0003-1178-5296
 - X: https://x.com/Raad_X_
 - GitHub: https://github.com/raad-x
+
+## How to cite
+
+- Raadh, R. A. D. (2026). *ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.* Preprint, Zenodo. https://doi.org/10.5281/zenodo.21730363
+- Raadh, R. A. D. (2026). *Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.* DeepMath 2026 (poster), Ohio State University.

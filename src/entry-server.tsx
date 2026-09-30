@@ -5,6 +5,7 @@ import { prerenderToNodeStream } from "react-dom/static";
 import { StaticRouter } from "react-router";
 import App from "./App";
 export { pages } from "./site/data";
+export { schemaFor } from "./site/schema";
 
 export async function render(url: string): Promise<string> {
   const { prelude } = await prerenderToNodeStream(

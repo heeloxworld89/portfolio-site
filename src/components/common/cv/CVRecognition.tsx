@@ -633,7 +633,7 @@ export default function CVRecognition() {
         </div>
 
         <div className="rec-grid">
-          {/* NeurIPS — AI4GOOD workshop programme committee */}
+          {/* NeurIPS — AI4GOOD workshop reviewer */}
           <div className="rec-card">
             <div className="rec-logo-row">
               <div className="rec-logo-chip on-white">
@@ -641,11 +641,11 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Dec 2026</span>
             </div>
-            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
-            <h3 className="rec-name">Programme Committee Member, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
+            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Reviewer</div>
+            <h3 className="rec-name">Reviewer, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
             <p className="rec-body">
-              Raadh serves on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS
-              2026 in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
+              Raadh is a reviewer for <strong>Trustworthy AI for Good</strong> at NeurIPS
+              2026 in Paris, reviewing submitted papers on mechanistic interpretability, attribution, auditing and
               post-deployment monitoring. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
               assessed by a committee of 237 reviewers drawn from Oxford, MIT, Toronto, Berkeley, Stanford
               and Mila.
@@ -947,8 +947,8 @@ export default function CVRecognition() {
             proceedings.
           </p>
           <p className="rec-verdict-body">
-            <strong>Standing in the field.</strong> NeurIPS 2026 appointed Raadh to the programme committee of
-            the Trustworthy AI for Good workshop, reviewing work in interpretability and model auditing, the
+            <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for
+            the Trustworthy AI for Good workshop, reviewing papers in interpretability and model auditing, the
             area his own research addresses.
           </p>
           <p className="rec-verdict-body">
