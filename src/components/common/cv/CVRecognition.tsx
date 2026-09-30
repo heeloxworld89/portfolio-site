@@ -551,7 +551,7 @@ export default function CVRecognition() {
             </p>
             <p className="rec-week-l">
               Two further decisions are pending: <strong>Onstage</strong> is ranking its W26 cohort by interest
-              from 350 venture funds, and <strong>Entrepreneur First</strong> is holding him in the final round of The Bridge.
+              from 350 venture funds, and <strong>The Bridge</strong> is holding him in its final round.
             </p>
 
             <div className="rec-week-wall">
@@ -952,7 +952,7 @@ export default function CVRecognition() {
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
             Freshmango and 1752vc each offered places after competitive selection, Antler&rsquo;s programme
-            process was paused only over an Australian work permit, and Entrepreneur First is holding him in the final round of The Bridge in San Francisco. Every one began as an unsolicited application.
+            process was paused only over an Australian work permit, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
           </p>
           <p className="rec-verdict-body">
             <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator

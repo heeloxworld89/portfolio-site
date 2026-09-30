@@ -51,7 +51,7 @@ export const news: NewsItem[] = [
   {
     date: "Sep 2026", kind: "Company",
     title: "OXIEDO accepted to 1752vc Ignite and Freshmango",
-    body: "A place in 1752vc’s Ignite cohort from the top 1% of applicants, and an offer from the equity-free Freshmango programme. He is holding in the final round of Entrepreneur First’s The Bridge (San Francisco).",
+    body: "A place in 1752vc’s Ignite cohort from the top 1% of applicants, and an offer from the equity-free Freshmango programme. He is holding in the final round of The Bridge (San Francisco).",
   },
   {
     date: "1 Aug 2026", kind: "Publication",
