@@ -5,9 +5,25 @@ import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { isChunkLoadError, isReloading, recoverFromStaleChunk, untilReload } from "./utils/chunkRecovery";
 
-// Only loading index-07
-const HomePage7 = lazy(() => import("./pages/homes/index-07"));
+// If the page chunk fails to load, Vite's preload helper (after our
+// vite:preloadError handler) resolves the import to undefined. Wait for the
+// recovery reload if one is running; otherwise fail with a readable message
+// rather than "Cannot read properties of undefined (reading 'default')".
+const PAGE_LOAD_FAILED = "This page could not finish loading. Please reload.";
+const HomePage7 = lazy(() =>
+  import("./pages/homes/index-07")
+    .then((mod) => {
+      if (mod) return mod;
+      if (isReloading()) return untilReload<never>();
+      throw new Error(PAGE_LOAD_FAILED);
+    })
+    .catch((err) => {
+      if (isChunkLoadError(err) && recoverFromStaleChunk(String(err))) return untilReload<never>();
+      throw err;
+    })
+);
 
 import ScrollTopBehaviour from "./components/common/ScrollToTopBehaviour";
 import GlobaleffectProvider from "./components/common/GlobaleffectProvider";
@@ -27,18 +43,18 @@ function App() {
         pauseOnHover
       />
       <ErrorBoundary
-        fallbackRender={({ error, resetErrorBoundary }: { error: any; resetErrorBoundary: () => void }) => (
+        fallbackRender={({ error }: { error: unknown }) => (
           <div
             className="d-flex flex-column align-items-center justify-content-center"
             style={{ height: "100vh" }}
           >
             <h2>Something went wrong.</h2>
-            <pre style={{ color: "red" }}>{error.message}</pre>
+            <pre style={{ color: "red" }}>{error instanceof Error ? error.message : String(error)}</pre>
             <button
               className="btn btn-primary mt-3"
-              onClick={resetErrorBoundary}
+              onClick={() => window.location.reload()}
             >
-              Try again
+              Reload
             </button>
           </div>
         )}
