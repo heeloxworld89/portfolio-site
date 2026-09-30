@@ -13,21 +13,70 @@ export default function Home() {
   return (
     <SiteLayout>
       {/* ── hero ─────────────────────────────────────────────────────── */}
-      <section className="rx-hero" id="home">
+      <section className="rx-hero2" id="home">
         <div className="rx-field is-hero" aria-hidden="true" />
-        <div className="rx-wrap rx-hero-grid">
-          <div className="rx-portrait">
-            <img
-              src="/assets/images/banner/header-left-user.jpg"
-              alt="Portrait of Rokib Al Dhin Raadh"
-              width={700}
-              height={700}
-              fetchPriority="high"
-            />
+        <div className="rx-wrap rx-h2-grid">
+          <div className="rx-h2-copy">
+            <p className="rx-h2-eb">
+              <span className="dot" aria-hidden="true" /> Founder &amp; CEO, OXIEDO <i /> AI researcher <i className="rx-h2-hide" /> <span className="rx-h2-hide">Dhaka</span>
+            </p>
+            <h1>
+              Building neural networks that can account for what they learned.
+              <span className="rx-h2-age">Peer-reviewed at <em>eighteen.</em></span>
+            </h1>
+            <p className="rx-h2-sub">
+              Author of ORMAS, the self-correcting architecture accepted at DeepMath 2026, and founder of the company
+              licensing it to regulated industries.
+            </p>
+            <div className="rx-btns">
+              <Link className="rx-btn" to="/research">Read the research <Arrow /></Link>
+              <a className="rx-btn is-ghost" href={links.cv} target="_blank" rel="noreferrer">Download CV <Arrow /></a>
+            </div>
           </div>
-          <h1>
-            Founder of OXIEDO and peer-reviewed AI&nbsp;researcher, at <span className="rx-age">eighteen</span>
-          </h1>
+
+          <div className="rx-h2-visual">
+            <div className="rx-arch">
+              <img
+                src="/assets/images/portrait-arch.jpg"
+                alt="Portrait of Rokib Al Dhin Raadh"
+                width={840}
+                height={1050}
+                fetchPriority="high"
+              />
+            </div>
+            <div className="rx-stamp" aria-label="Age eighteen">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                  <path id="rx-stamp-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
+                </defs>
+                <text>
+                  <textPath href="#rx-stamp-circle" textLength="284" lengthAdjust="spacing">FOUNDER · RESEARCHER · AGE EIGHTEEN · </textPath>
+                </text>
+              </svg>
+              <b>18</b>
+            </div>
+            <a className="rx-glass" href={links.deepmath} target="_blank" rel="noreferrer">
+              <span className="live" aria-hidden="true" />
+              <span>
+                <small>Accepted · Poster · Double-blind</small>
+                DeepMath 2026
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div className="rx-marquee" aria-label="Recognition">
+          <div className="rx-marquee-track">
+            {[0, 1].map((k) => (
+              <span className="rx-marquee-set" key={k} aria-hidden={k === 1 ? true : undefined}>
+                {["DeepMath 2026 · Accepted", "NeurIPS 2026 · Programme Committee", "Cohere Labs · Open Science",
+                  "IARCO 2026 · Finalist", "Cosmos Institute · Ranked first", "1752vc Ignite · Top 1%",
+                  "Antler · Accepted", "Entrepreneur First · The Bridge", "383 experiments · 1 GPU"].map((t) => (
+                  <span key={t}>{t}<i aria-hidden="true">✦</i></span>
+                ))}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
