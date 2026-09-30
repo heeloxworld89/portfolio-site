@@ -1,12 +1,12 @@
 # Rokib Al Dhin Raadh
 
-> Rokib Al Dhin Raadh is the founder and CEO of OXIEDO and the author of ORMAS, a self-correcting neural network architecture that records what each of its components learned during training. The ORMAS stability result, "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics", was accepted after double-blind review for poster presentation at DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026). He is 18 and based in Dhaka, Bangladesh.
+> Rokib Al Dhin Raadh is an 18-year-old deep-tech founder, the founder and CEO of OXIEDO, a company building AI that can prove what it learned. He invented ORMAS, the self-correcting neural network technology OXIEDO is built on: it finds, repairs and records its own failures while it trains. The mathematics behind ORMAS, "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics", passed double-blind peer review and was accepted for poster presentation at DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026). He is a reviewer for NeurIPS 2026 and is based in Dhaka, Bangladesh.
 
 Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxbusiness9@gmail.com
 
 ## Key facts
 
-- **Roles:** Founder & CEO, OXIEDO (founded 2023); independent AI researcher; programme committee member, NeurIPS 2026 Trustworthy AI for Good workshop.
+- **Roles:** Founder & CEO, OXIEDO (deep-tech AI, founded 2023); inventor of ORMAS; reviewer for NeurIPS 2026 (reviewed submitted papers for the Trustworthy AI for Good workshop).
 - **Research, ORMAS:** a three-signal training architecture: global backpropagation, a per-node local loss through a shared bottleneck readout, and health-gated autonomous self-correction. It detects structural failures during training, repairs them without stopping, and logs every correction with its cause.
 - **Headline result:** after a trained convolutional layer is destroyed mid-training (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at chance (10.0%): a +70.3 percentage-point gap.
 - **Other results:** 94.6% task retention versus 47.3% for ResNet-18 in sequential learning; 58.8% zero-shot compositional accuracy (25% chance); 2.5pp versus 7.8pp accuracy decay under 40% label noise.
@@ -14,7 +14,7 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxb
 - **Theory:** the first formal local stability characterization of a self-correcting neural architecture, adapted from Sontag's Input-to-State Stability framework. Accepted at DeepMath 2026; DeepMath publishes no proceedings.
 - **Company, OXIEDO:** licenses ORMAS on-premise to regulated industries (AI training, regulated finance, medical AI, data obligation, defence) so institutions can train on data they cannot currently use, with an auditable training record relevant to SR 26-2 model-risk guidance and the EU AI Act high-risk obligations from December 2027. Pre-revenue.
 - **Earlier work:** OXIMO, a 40,933-line multi-agent operating system with 2,069 passing tests; Black Bloxie LTD (incorporated in England & Wales on 11 September 2025), a twelve-month controlled field study of OXIMO on a live e-commerce company; five ventures between ages 12 and 17, including a stock-prediction system sold for about $10,000 at 15.
-- **Recognition (2026):** DeepMath 2026 paper accepted (poster); NeurIPS 2026 workshop programme committee; Cohere Labs Open Science Community member; IARCO 2026 finalist; ranked highest in the Cosmos Institute grant cycle; accepted by Freshmango and 1752vc Ignite; in the Antler programme process until it was paused over Australian work-permit logistics; Entrepreneur First The Bridge final selection round.
+- **Recognition (2026):** DeepMath 2026 paper accepted (poster); reviewer for NeurIPS 2026 (Trustworthy AI for Good workshop); Cohere Labs Open Science Community member; IARCO 2026 finalist; ranked highest in the Cosmos Institute grant cycle; accepted by Freshmango and 1752vc Ignite; in the Antler programme process until it was paused over Australian work-permit logistics; Entrepreneur First The Bridge final selection round.
 
 ## Scope and limitations
 
@@ -25,15 +25,15 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxb
 
 ## Frequently asked
 
-- **Who is Rokib Al Dhin Raadh?** Founder and CEO of OXIEDO and author of the ORMAS self-correcting neural network architecture, based in Dhaka, Bangladesh.
+- **Who is Rokib Al Dhin Raadh?** An 18-year-old deep-tech founder: founder and CEO of OXIEDO and inventor of ORMAS, the self-correcting neural network technology behind it, based in Dhaka, Bangladesh.
 - **What is ORMAS?** A neural network architecture that identifies, repairs and records its own failing components during training, instead of relying on post-hoc interpretability.
 - **Is the work peer reviewed?** The stability result was accepted after double-blind review at DeepMath 2026 (poster). The full ORMAS paper is a public preprint on Zenodo (DOI 10.5281/zenodo.21730363).
 - **What does OXIEDO sell?** One on-premise annual licence for ORMAS, with the Model Change Record (a tamper-evident log of every weight change in a training run) as the lead product.
 
 ## Primary sources
 
-- [Research](https://www.raadh.me/research): ORMAS method, all results, stability derivation, ablations, Project Cherry
-- [Work](https://www.raadh.me/work): OXIEDO, OXIMO, the Black Bloxie field study, earlier ventures
+- [Technology](https://www.raadh.me/research): ORMAS method, all results, stability derivation, ablations, Project Cherry
+- [Company](https://www.raadh.me/work): OXIEDO, OXIMO, the Black Bloxie field study, earlier ventures
 - [About](https://www.raadh.me/about): recognition, timeline, personal statement, education, contact
 - [Full site text](https://www.raadh.me/llms-full.txt): the complete content of raadh.me as plain text
 - [ORMAS preprint (Zenodo, DOI 10.5281/zenodo.21730363)](https://zenodo.org/records/21730363): full paper with 36-page supplementary

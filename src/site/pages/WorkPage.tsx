@@ -10,9 +10,9 @@ export default function WorkPage() {
       <section className="rx-page-head">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
-          <h2 className="rx-label">Work</h2>
-          <h1>OXIEDO, and the work that led to it.</h1>
-          <p>The company built on ORMAS, then the systems and ventures that produced the research question: OXIMO, the Black Bloxie field study, and five earlier ventures.</p>
+          <h2 className="rx-label">Company</h2>
+          <h1>OXIEDO: AI that can prove what it learned.</h1>
+          <p>What OXIEDO sells, who buys it and why now, followed by the track record behind the founder: OXIMO, the Black Bloxie live test, and five ventures started between the ages of twelve and seventeen.</p>
         </div>
       </section>
       <div className="rx-deep">
