@@ -371,7 +371,7 @@ export default function Hero(_props?: any) {
                 <ul className="hx-by18-l">
                   <li><b>Founder &amp; CEO</b> of OXIEDO</li>
                   <li><b>Peer-reviewed</b> at DeepMath 2026</li>
-                  <li><b>Reviewer</b>, NeurIPS 2026 workshop</li>
+                  <li><b>Programme committee</b>, NeurIPS 2026 workshop</li>
                   <li><b>383 experiments</b>, one GPU, no lab</li>
                 </ul>
               </div>

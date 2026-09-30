@@ -8,9 +8,9 @@ export default function ResearchPage() {
       <section className="rx-page-head">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
-          <h2 className="rx-label">Technology</h2>
-          <h1>ORMAS: the neural network that repairs itself, and proves it.</h1>
-          <p>The complete record: the architecture, all 383 experiments, the stability proof accepted at DeepMath 2026, every limit it hit, and Project Cherry, what comes next.</p>
+          <h2 className="rx-label">Research</h2>
+          <h1>ORMAS: neural networks that identify, repair and record their own failures.</h1>
+          <p>The full research record: method, all 383 experiments, the stability derivation, ablations and adverse results, followed by Project Cherry, the planned next architecture.</p>
         </div>
       </section>
       <div className="rx-deep">

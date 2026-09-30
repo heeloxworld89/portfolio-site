@@ -631,7 +631,7 @@ export default function CVRecognition() {
         </div>
 
         <div className="rec-grid">
-          {/* NeurIPS — reviewer, AI4GOOD workshop */}
+          {/* NeurIPS — AI4GOOD workshop programme committee */}
           <div className="rec-card">
             <div className="rec-logo-row">
               <div className="rec-logo-chip on-white">
@@ -639,19 +639,19 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Dec 2026</span>
             </div>
-            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Reviewer</div>
-            <h3 className="rec-name">Reviewer, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
+            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
+            <h3 className="rec-name">Programme Committee Member, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
             <p className="rec-body">
-              Raadh is a <strong>reviewer for NeurIPS 2026</strong>, the largest AI research conference in the world. He
-              reviewed submitted papers for the <strong>Trustworthy AI for Good</strong> workshop in Paris, on
-              interpretability, auditing and monitoring AI after deployment. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
+              Raadh serves on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS
+              2026 in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
+              post-deployment monitoring. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
               assessed by a committee of 237 reviewers drawn from Oxford, MIT, Toronto, Berkeley, Stanford
               and Mila.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
                 <span className="rec-stat-val">237</span>
-                <span className="rec-stat-lbl">Reviewers, ICML edition</span>
+                <span className="rec-stat-lbl">Reviewers on the committee</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">34%</span>
@@ -945,9 +945,9 @@ export default function CVRecognition() {
             proceedings.
           </p>
           <p className="rec-verdict-body">
-            <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for the Trustworthy AI
-            for Good workshop, where he reviewed papers on interpretability and model auditing, the area his
-            own work addresses.
+            <strong>Standing in the field.</strong> NeurIPS 2026 appointed Raadh to the programme committee of
+            the Trustworthy AI for Good workshop, reviewing work in interpretability and model auditing, the
+            area his own research addresses.
           </p>
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.

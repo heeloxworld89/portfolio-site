@@ -3,11 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { links, pages, type PagePath } from "./data";
 
 const nav: { to: string; label: string; external?: boolean }[] = [
-  { to: "/work", label: "Company" },
-  { to: "/research", label: "Technology" },
+  { to: "/research", label: "Research" },
+  { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: links.cv, label: "CV", external: true },
-  { to: links.invest, label: "Invest ↗", external: true },
+  { to: links.oxiedo, label: "OXIEDO ↗", external: true },
 ];
 
 /** Keeps the tab title and description in step with the route on the client;

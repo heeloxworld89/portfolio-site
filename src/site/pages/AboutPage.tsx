@@ -12,8 +12,8 @@ export default function AboutPage() {
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
           <h2 className="rx-label">About</h2>
-          <h1>Self-taught. Solo. Eighteen.</h1>
-          <p>Every selection, review and offer from 2026, the path from a first venture at twelve to OXIEDO, and how to reach him.</p>
+          <h1>Recognition, profile and statement.</h1>
+          <p>External recognition in 2026, a timeline of the work, a personal statement, education, and how to get in touch.</p>
         </div>
       </section>
       <div className="rx-deep">
