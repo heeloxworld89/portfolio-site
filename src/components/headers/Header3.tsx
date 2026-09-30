@@ -238,13 +238,13 @@ export default function Header3() {
         }
         .sb-accept {
           display: flex; align-items: center; justify-content: center; gap: 8px;
-          margin: 4px 0 18px; padding: 9px 10px; border-radius: 999px; white-space: nowrap;
-          font-size: 10.5px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
-          color: #fff; background: var(--pf-pos); text-decoration: none;
-          box-shadow: 0 8px 20px -10px rgba(var(--pf-pos-rgb), 0.8);
-          transition: transform .2s;
+          margin: 2px 0 18px; padding: 9px 12px; border-radius: 9px; white-space: nowrap;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.4px;
+          color: var(--pf-accent); background: var(--pf-surface);
+          border: 1px solid var(--pf-border); text-decoration: none;
+          transition: background .22s, border-color .22s;
         }
-        .sb-accept:hover { color: #fff; transform: translateY(-1px); }
+        .sb-accept:hover { color: var(--pf-accent); background: var(--pf-surface-2); border-color: var(--pf-border-2); }
         @media (prefers-reduced-motion: reduce) {
           .sb-btn:hover, .lk-item:hover { transform: none; }
           .sb-btn--site .sb-live { animation: none; }
@@ -267,7 +267,7 @@ export default function Header3() {
 
           <a className="sb-accept" href="#recognition">
             <Icon name="check" size={13} />
-            <span>Accepted &middot; DeepMath 2026</span>
+            <span>Accepted at DeepMath 2026</span>
           </a>
 
           <nav id="sideNavs" className="mainmenu-nav navbar-example2 onepagenav">

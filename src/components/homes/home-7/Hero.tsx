@@ -84,57 +84,47 @@ export default function Hero(_props?: any) {
           color: var(--pf-accent);
         }
 
-        /* ── 0 · the acceptance — the loudest thing on the page ─ */
+        /* ── 0 · the acceptance. Same card family as the rest of the hero;
+             the weight comes from position and type, not from colour. ── */
         .hx-accept {
-          position: relative; overflow: hidden;
-          display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
-          align-items: center; gap: 22px;
-          text-decoration: none; margin-bottom: 14px;
-          padding: 22px 26px; border-radius: 12px;
-          border: 1px solid rgba(var(--pf-pos-rgb), 0.38);
-          border-top: 4px solid var(--pf-pos);
-          background:
-            radial-gradient(120% 140% at 0% 0%, rgba(var(--pf-pos-rgb), 0.16), transparent 60%),
-            var(--pf-surface);
-          box-shadow: 0 14px 40px -18px rgba(var(--pf-pos-rgb), 0.55);
-          transition: transform .25s, box-shadow .25s;
+          display: grid; grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center; gap: 28px;
+          text-decoration: none; margin-bottom: 12px;
+          padding: 20px 24px; border-radius: 10px;
+          background: var(--pf-surface);
+          border: 1px solid var(--pf-border);
+          border-left: 3px solid var(--pf-accent);
+          transition: background .25s, border-color .25s;
         }
-        .hx-accept:hover { transform: translateY(-2px); box-shadow: 0 20px 48px -18px rgba(var(--pf-pos-rgb), 0.65); }
-        .hx-seal {
-          width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0;
-          display: flex; flex-direction: column; align-items: center; justify-content: center;
-          color: #fff; background: var(--pf-pos);
-          box-shadow: 0 0 0 5px rgba(var(--pf-pos-rgb), 0.18), 0 0 0 10px rgba(var(--pf-pos-rgb), 0.08);
-          animation: hxSeal 2.8s infinite;
-        }
-        .hx-seal-k { font-size: 8.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; margin-top: 3px; }
-        @keyframes hxSeal {
-          0%   { box-shadow: 0 0 0 5px rgba(var(--pf-pos-rgb), 0.18), 0 0 0 10px rgba(var(--pf-pos-rgb), 0.08); }
-          50%  { box-shadow: 0 0 0 8px rgba(var(--pf-pos-rgb), 0.14), 0 0 0 16px rgba(var(--pf-pos-rgb), 0.04); }
-          100% { box-shadow: 0 0 0 5px rgba(var(--pf-pos-rgb), 0.18), 0 0 0 10px rgba(var(--pf-pos-rgb), 0.08); }
-        }
+        .hx-accept:hover { background: var(--pf-surface-2); border-color: var(--pf-border-2); border-left-color: var(--pf-accent); }
         .hx-accept-eb {
-          font-size: 10.5px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
-          color: var(--pf-pos); margin-bottom: 6px;
+          display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+          font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+          color: var(--pf-accent); margin-bottom: 9px;
         }
+        .hx-accept-eb i { width: 1px; height: 10px; background: var(--pf-border-2); }
+        .hx-accept-eb .is-quiet { color: var(--pf-ink-3); }
         .hx-accept-t {
-          font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; letter-spacing: -0.6px;
-          line-height: 1.12; color: var(--pf-ink); margin: 0 0 8px;
+          display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+          font-size: 21px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.25;
+          color: var(--pf-ink); margin-bottom: 7px;
         }
-        .hx-accept-t span { color: var(--pf-pos); }
-        .hx-accept-l { font-size: 14px; line-height: 1.6; color: var(--pf-ink-2); margin: 0; }
-        .hx-accept-l em { color: var(--pf-ink); font-style: italic; }
+        .hx-accept-tag {
+          font-size: 9.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+          color: var(--pf-accent); border: 1px solid rgba(var(--pf-accent-rgb), 0.34);
+          border-radius: 999px; padding: 3px 10px;
+        }
+        .hx-accept-p { display: block; font-size: 14px; line-height: 1.55; color: var(--pf-ink-2); }
+        .hx-accept-p em { color: var(--pf-ink); }
+        .hx-accept-m { display: block; font-size: 12.5px; line-height: 1.5; color: var(--pf-ink-3); margin-top: 5px; }
         .hx-accept-go {
-          display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
-          font-size: 12.5px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
-          color: #fff; background: var(--pf-pos); border-radius: 999px; padding: 11px 18px;
+          display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+          font-size: 12.5px; font-weight: 700; letter-spacing: 0.2px; color: var(--pf-accent);
         }
-        @media (max-width: 860px) {
-          .hx-accept { grid-template-columns: auto minmax(0, 1fr); padding: 18px; gap: 16px; }
-          .hx-accept-go { grid-column: 1 / -1; justify-self: start; }
-          .hx-seal { width: 64px; height: 64px; }
+        @media (max-width: 760px) {
+          .hx-accept { grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+          .hx-accept-t { font-size: 19px; }
         }
-        @media (prefers-reduced-motion: reduce) { .hx-seal { animation: none; } .hx-accept:hover { transform: none; } }
 
         /* ── 2 · claim + 3 · result ─────────────────────────── */
         .hx-top {
@@ -290,20 +280,22 @@ export default function Hero(_props?: any) {
 
         {/* ══ 1 · the company is live ═══════════════════════════ */}
         <a className="hx-accept" href="#recognition">
-          <span className="hx-seal" aria-hidden="true">
-            <Icon name="check" size={30} />
-            <span className="hx-seal-k">Accepted</span>
-          </span>
           <span>
-            <span className="hx-accept-eb" style={{ display: 'block' }}>Peer reviewed &middot; double-blind &middot; 30 Sep 2026</span>
-            <span className="hx-accept-t" style={{ display: 'block' }}>My paper is <span>accepted at DeepMath 2026.</span></span>
-            <span className="hx-accept-l" style={{ display: 'block' }}>
-              <em>Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics</em>
-              {' '}&mdash; the mathematics under ORMAS &mdash; accepted at the Conference on the Mathematical Theory of Deep
-              Neural Networks. Poster, Ohio State University, 29&ndash;30 October 2026.
+            <span className="hx-accept-eb">
+              <Icon name="check" size={12} /> Peer reviewed <i /> <span className="is-quiet">Double-blind</span> <i /> <span className="is-quiet">30 Sep 2026</span>
+            </span>
+            <span className="hx-accept-t">
+              Accepted at DeepMath 2026 <span className="hx-accept-tag">Poster</span>
+            </span>
+            <span className="hx-accept-p">
+              <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+              Dynamics&rdquo;</em> &mdash; the mathematics under ORMAS.
+            </span>
+            <span className="hx-accept-m">
+              Conference on the Mathematical Theory of Deep Neural Networks &middot; Ohio State University &middot; 29&ndash;30 October 2026
             </span>
           </span>
-          <span className="hx-accept-go">The story <Icon name="arrowRight" size={14} /></span>
+          <span className="hx-accept-go">Details <Icon name="arrowRight" size={14} /></span>
         </a>
 
         <a className="hx-live-bar" href="https://oxiedo.com" target="_blank" rel="noreferrer">
