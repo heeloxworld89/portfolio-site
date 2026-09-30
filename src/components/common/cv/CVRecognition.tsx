@@ -6,7 +6,7 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Recent · 2026"
-      title="Three months of external recognition."
+      title={<>Three months of external recognition, at <span className="age">18</span>.</>}
       lead={
         <>
           July: Cosmos Institute ranked the work highest in its cycle. August: an unsolicited application to

@@ -8,7 +8,7 @@ export default function CVEducation() {
       title="Self-taught across machine learning, systems and theory."
       lead={
         <>
-          Raadh is completing his final year of secondary school and has learned his field independently,
+          At <span className="age">18</span>, Raadh is completing his final year of secondary school and has learned his field independently,
           without a university or advisor. He studies what each problem requires, and the work has taken him
           into control theory, market microstructure and company law alongside machine learning.
         </>

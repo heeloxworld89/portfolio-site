@@ -308,7 +308,7 @@ export default function CVWhoIAm() {
           Profile
         </span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
-          Founder, researcher and engineer: six years of work, in order
+          Founder, researcher and engineer, at <span className="age">18</span>
         </h2>
 
         {/* ── The founder video carries the introduction itself — no filler
@@ -329,7 +329,7 @@ export default function CVWhoIAm() {
             </div>
             <h3 className="wi-why-h">Rokib Al Dhin Raadh: founder of OXIEDO, author of ORMAS.</h3>
             <p className="wi-why-p">
-              Raadh, 18, is based in Dhaka, Bangladesh. He founded five ventures between the ages of twelve and
+              Raadh, <span className="age">18</span>, is based in Dhaka, Bangladesh. He founded five ventures between the ages of twelve and
               seventeen and found they all failed for the same structural reason. Following that finding led him
               from multi-agent systems to a new neural network architecture, and then to a company built on it.
             </p>
