@@ -10,7 +10,7 @@ const marks: Mark[] = [
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Programme Committee", note: "Invited to review for the Trustworthy AI for Good workshop" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "The top-ranked application of its grant cycle" },
   { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Chosen for the Ignite cohort from the top 1% of applicants" },
-  { name: "Antler", logo: L + "antler.svg", tag: "Paused · Work Permit", note: "In the programme process until Australian work-permit logistics stopped it" },
+  { name: "Antler Australia", logo: L + "antler.svg", tag: "Cancelled · Work Permit", note: "In the programme process until it was cancelled over Australian work-permit logistics" },
   { name: "The Bridge", logo: L + "the-bridge.png", tag: "Holding · Final Round", note: "Two interview rounds done; holding in the final round" },
   { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by the talent team for a first-round interview in London" },
   { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after interview" },

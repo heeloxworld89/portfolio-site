@@ -821,30 +821,30 @@ export default function CVRecognition() {
 
         </div>
 
-        {/* Antler — in the programme process; paused because participation
+        {/* Antler Australia — in the programme process; cancelled because participation
             needs an Australian work permit. A logistics boundary, not an assessment. */}
         <div className="rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-white">
-              <img src="/assets/images/logos/antler.svg" alt="Antler" />
+              <img src="/assets/images/logos/antler.svg" alt="Antler Australia" />
             </div>
             <span className="rec-date">Sep 2026</span>
           </div>
-          <div className="rec-tag">Antler &middot; Programme Process &middot; Work Permit</div>
-          <h3 className="rec-name">Antler: Programme Process Paused Over Australian Work-Permit Logistics</h3>
+          <div className="rec-tag">Antler Australia &middot; Programme Process &middot; Work Permit</div>
+          <h3 className="rec-name">Antler Australia: Programme Process Cancelled Over Work-Permit Logistics</h3>
           <p className="rec-body">
-            Raadh was <strong>in the programme process</strong> with Antler, one of the largest early-stage
+            Raadh was <strong>in the programme process</strong> with Antler Australia, part of Antler, one of the largest early-stage
             investment programmes in the world. Taking part required an Australian work permit he does not yet
-            hold, so the process was stopped for logistical reasons, not on the merits of the work.
+            hold, so the process was cancelled for logistical reasons, not on the merits of the work.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
               <span className="rec-stat-val">In process</span>
-              <span className="rec-stat-lbl">Antler programme</span>
+              <span className="rec-stat-lbl">Antler Australia programme</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">Work permit</span>
-              <span className="rec-stat-lbl">Why it was paused</span>
+              <span className="rec-stat-lbl">Why it was cancelled</span>
             </div>
           </div>
         </div>
@@ -951,8 +951,8 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
-            Freshmango and 1752vc each offered places after competitive selection, Antler&rsquo;s programme
-            process was paused only over an Australian work permit, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
+            Freshmango and 1752vc each offered places after competitive selection, Antler Australia&rsquo;s programme
+            process was cancelled only over an Australian work permit, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
           </p>
           <p className="rec-verdict-body">
             <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator
