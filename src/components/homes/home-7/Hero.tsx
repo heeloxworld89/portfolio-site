@@ -158,6 +158,37 @@ export default function Hero(_props?: any) {
         .hx-lead { font-size: 15.5px; line-height: 1.72; color: var(--pf-ink-2); max-width: 585px; margin: 0 0 13px; }
         .hx-lead strong { color: var(--pf-ink); font-weight: 600; }
 
+        /* ── "By 18": the age as the page's signature fact. Same card family
+             as the rest of the hero; the weight comes from one large numeral. */
+        .hx-by18 {
+          display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 22px;
+          max-width: 585px; margin: 4px 0 24px; padding: 16px 20px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-left: 3px solid var(--pf-accent); border-radius: 10px;
+        }
+        .hx-by18-n { display: flex; flex-direction: column; align-items: center; line-height: 1; padding-right: 20px; border-right: 1px solid var(--pf-border); }
+        .hx-by18-n b {
+          font-size: 58px; font-weight: 800; letter-spacing: -2.5px; color: var(--pf-accent);
+          font-variant-numeric: tabular-nums;
+        }
+        .hx-by18-n small {
+          font-size: 9.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
+          color: var(--pf-ink-3); margin-top: 6px;
+        }
+        .hx-by18-k {
+          font-size: 9.5px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+          color: var(--pf-accent); margin: 0 0 8px;
+        }
+        .hx-by18-l { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+        .hx-by18-l li { font-size: 12.5px; line-height: 1.45; color: var(--pf-ink-2); padding-left: 12px; position: relative; margin: 0; }
+        .hx-by18-l li:before { content: ""; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--pf-accent); }
+        .hx-by18-l b { color: var(--pf-ink); font-weight: 700; }
+        @media (max-width: 560px) {
+          .hx-by18 { grid-template-columns: 1fr; gap: 12px; }
+          .hx-by18-n { flex-direction: row; align-items: baseline; gap: 10px; border-right: 0; padding-right: 0; }
+          .hx-by18-l { grid-template-columns: 1fr; }
+        }
+
         .hx-trust {
           font-size: 12.5px; line-height: 1.7; color: var(--pf-ink-3);
           max-width: 585px; margin: 0 0 24px;
@@ -311,7 +342,7 @@ export default function Hero(_props?: any) {
 
           <div>
             <div className="hx-id">
-              Rokib Al Dhin Raadh <i /> Founder &amp; CEO, OXIEDO <i /> AI Researcher
+              Rokib Al Dhin Raadh <i /> <span className="age">Age 18</span> <i /> Founder &amp; CEO, OXIEDO <i /> AI Researcher
             </div>
 
             <h1 className="hx-h1">
@@ -320,7 +351,7 @@ export default function Hero(_props?: any) {
               <span>It was one decision, made in 1986.</span>
             </h1>
 
-            <p className="hx-kicker">Rokib Al Dhin Raadh built the alternative, and a company on top of it.</p>
+            <p className="hx-kicker">At <span className="age">18</span>, Rokib Al Dhin Raadh has built the alternative, and a company on top of it.</p>
 
             <p className="hx-lead">
               Every neural network in production shares one blind spot. A single error signal updates every
@@ -333,11 +364,18 @@ export default function Hero(_props?: any) {
               at four operations, the network records which of its parts changed, and why, while it trains.
             </p>
 
-            <p className="hx-trust">
-              Developed independently at <span className="age">17</span>: 383 controlled experiments on a single GPU,
-              a public preprint, a peer-reviewed stability result at DeepMath 2026, and every run reproducible
-              from seed. OXIEDO now licenses the architecture to regulated industries.
-            </p>
+            <div className="hx-by18">
+              <div className="hx-by18-n"><b>18</b><small>Years old</small></div>
+              <div>
+                <p className="hx-by18-k">By eighteen</p>
+                <ul className="hx-by18-l">
+                  <li><b>Founder &amp; CEO</b> of OXIEDO</li>
+                  <li><b>Peer-reviewed</b> at DeepMath 2026</li>
+                  <li><b>Programme committee</b>, NeurIPS 2026 workshop</li>
+                  <li><b>383 experiments</b>, one GPU, no lab</li>
+                </ul>
+              </div>
+            </div>
 
             <div className="hx-ctas">
               <a className="hx-cta hx-cta-p" href="https://oxiedo.com" target="_blank" rel="noreferrer">

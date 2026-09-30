@@ -1,29 +1,38 @@
 import "../public/assets/scss/main.scss";
 import "odometer/themes/odometer-theme-default.css";
 import "react-toastify/dist/ReactToastify.css";
+// In the entry bundle (not a lazy chunk) so the prerendered HTML is styled on first paint.
+import "./site/site.css";
 import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ComponentType } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { isChunkLoadError, isReloading, recoverFromStaleChunk, untilReload } from "./utils/chunkRecovery";
 
-// If the page chunk fails to load, Vite's preload helper (after our
+// If a page chunk fails to load, Vite's preload helper (after our
 // vite:preloadError handler) resolves the import to undefined. Wait for the
 // recovery reload if one is running; otherwise fail with a readable message
 // rather than "Cannot read properties of undefined (reading 'default')".
 const PAGE_LOAD_FAILED = "This page could not finish loading. Please reload.";
-const HomePage7 = lazy(() =>
-  import("./pages/homes/index-07")
-    .then((mod) => {
-      if (mod) return mod;
-      if (isReloading()) return untilReload<never>();
-      throw new Error(PAGE_LOAD_FAILED);
-    })
-    .catch((err) => {
-      if (isChunkLoadError(err) && recoverFromStaleChunk(String(err))) return untilReload<never>();
-      throw err;
-    })
-);
+function lazyPage<T extends ComponentType>(load: () => Promise<{ default: T }>) {
+  return lazy(() =>
+    load()
+      .then((mod) => {
+        if (mod) return mod;
+        if (isReloading()) return untilReload<never>();
+        throw new Error(PAGE_LOAD_FAILED);
+      })
+      .catch((err) => {
+        if (isChunkLoadError(err) && recoverFromStaleChunk(String(err))) return untilReload<never>();
+        throw err;
+      })
+  );
+}
+
+const Home = lazyPage(() => import("./site/pages/Home"));
+const ResearchPage = lazyPage(() => import("./site/pages/ResearchPage"));
+const WorkPage = lazyPage(() => import("./site/pages/WorkPage"));
+const AboutPage = lazyPage(() => import("./site/pages/AboutPage"));
 
 import ScrollTopBehaviour from "./components/common/ScrollToTopBehaviour";
 import GlobaleffectProvider from "./components/common/GlobaleffectProvider";
@@ -62,7 +71,7 @@ function App() {
         <Suspense
           fallback={
             <div
-              className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-black"
+              className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
               style={{ zIndex: 1050 }}
             >
               <div
@@ -77,9 +86,11 @@ function App() {
         >
           <ModalUIProvider>
             <Routes>
-              <Route path="/">
-                <Route index element={<HomePage7 />} />
-              </Route>
+              <Route path="/" element={<Home />} />
+              <Route path="/research" element={<ResearchPage />} />
+              <Route path="/work" element={<WorkPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="*" element={<Home />} />
             </Routes>
           </ModalUIProvider>
         </Suspense>

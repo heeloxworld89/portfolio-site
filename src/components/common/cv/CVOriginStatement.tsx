@@ -256,7 +256,7 @@ export default function CVOriginStatement() {
 
       <div>
 
-        <p className="os-byline">Rokib Al Dhin Raadh · Founder &amp; CEO, OXIEDO · Dhaka, Bangladesh</p>
+        <p className="os-byline">Rokib Al Dhin Raadh · <span className="age">Age 18</span> · Founder &amp; CEO, OXIEDO · Dhaka, Bangladesh</p>
 
         <div className="os-band">
           {[
