@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
@@ -109,10 +109,20 @@ reportWebVitals((metric) => {
   console.log(metric);
 });
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root")!;
+const app = (
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
 );
+
+// The page is rendered to static HTML at build time (scripts/prerender.mjs), so
+// crawlers and link previews get real content. In the browser, hydrate that
+// HTML instead of replacing it; fall back to a fresh render in dev.
+if (rootEl.hasChildNodes()) {
+  hydrateRoot(rootEl, app);
+} else {
+  createRoot(rootEl).render(app);
+}

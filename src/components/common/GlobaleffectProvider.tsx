@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import WOW from "wow.js";
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
 import { SplitText } from "gsap/SplitText";
@@ -358,11 +357,11 @@ export default function GlobaleffectProvider() {
     };
   }, [pathname]);
   useEffect(() => {
-    const wow = new WOW({
-      mobile: false,
-      live: false,
+    // wow.js touches window when imported, so load it only in the browser
+    // (the page is also rendered to static HTML at build time).
+    import("wow.js").then(({ default: WOW }) => {
+      new WOW({ mobile: false, live: false }).init();
     });
-    wow.init();
   }, [pathname]);
   return <></>;
 }

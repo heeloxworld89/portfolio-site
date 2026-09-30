@@ -315,6 +315,7 @@ export default function Hero(_props?: any) {
             </div>
 
             <h1 className="hx-h1">
+              <span className="visually-hidden">Rokib Al Dhin Raadh, Founder &amp; CEO of OXIEDO and AI researcher. </span>
               The black box was never a law of nature.
               <span>It was one decision, made in 1986.</span>
             </h1>
