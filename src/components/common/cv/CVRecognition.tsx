@@ -11,7 +11,7 @@ export default function CVRecognition() {
         <>
           July: Cosmos Institute ranked the work highest in its cycle. August: an unsolicited application to
           Entrepreneur First led to a first-round interview. September: the stability result accepted at
-          DeepMath 2026 after double-blind review, offers from two accelerators in one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
+          DeepMath 2026 after double-blind review, offers from two accelerators in one week, holding in the final round of The Bridge in San Francisco, through to the IARCO 2026 final round, and a
           membership of Cohere Labs&apos; Open Science Community. December: reviewing for a NeurIPS workshop in
           Paris.
         </>
@@ -551,7 +551,7 @@ export default function CVRecognition() {
             </p>
             <p className="rec-week-l">
               Two further decisions are pending: <strong>Onstage</strong> is ranking its W26 cohort by interest
-              from 350 venture funds, and <strong>Entrepreneur First</strong> is deciding on The Bridge.
+              from 350 venture funds, and <strong>Entrepreneur First</strong> is holding him in the final round of The Bridge.
             </p>
 
             <div className="rec-week-wall">
@@ -585,8 +585,8 @@ export default function CVRecognition() {
               d: 'Since Sep',
               h: 'San Francisco',
               who: 'Entrepreneur First \u00b7 The Bridge',
-              what: <>Two interview rounds completed; decision pending. Details below.</>,
-              pill: 'Pending',
+              what: <>Two interview rounds completed; holding in the final round. Details below.</>,
+              pill: 'Holding',
               now: false,
             },
           ].map((r) => (
@@ -913,7 +913,7 @@ export default function CVRecognition() {
             </span>
             <span className="rec-date is-live">
               <span className="rec-date-dot" aria-hidden="true" />
-              Sep 2026 · In Progress
+              Sep 2026 · Holding in Final Round
             </span>
           </div>
 
@@ -924,13 +924,13 @@ export default function CVRecognition() {
             for founders who have already built something.
           </p>
           <p className="rec-status-v">
-            Raadh has <strong>completed two interview rounds</strong>; EF&apos;s decision is pending.
+            Raadh has <strong>completed two interview rounds</strong> and is <strong>holding in the final round</strong>.
           </p>
 
           <span className="rec-stages">
             <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
             <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
-            <span className="rec-stage is-live"><span className="rec-stage-dot" />Decision Pending</span>
+            <span className="rec-stage is-live"><span className="rec-stage-dot" />Holding · Final Round</span>
           </span>
         </div>
 
@@ -952,7 +952,7 @@ export default function CVRecognition() {
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
             Freshmango and 1752vc each offered places after competitive selection, Antler&rsquo;s programme
-            process was paused only over an Australian work permit, and Entrepreneur First advanced him to The Bridge in San Francisco. Every one began as an unsolicited application.
+            process was paused only over an Australian work permit, and Entrepreneur First is holding him in the final round of The Bridge in San Francisco. Every one began as an unsolicited application.
           </p>
           <p className="rec-verdict-body">
             <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator
