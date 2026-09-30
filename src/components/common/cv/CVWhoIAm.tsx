@@ -18,49 +18,49 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     year: '2020',
     kind: 'venture',
     title: 'First line of code',
-    body: 'Every project after this was built slightly past what I already knew how to do. That habit was fixed before I had any formal exposure to computer science.',
+    body: 'Self-taught from the start, building each project just beyond his current skills: a habit formed before any formal computer science.',
   },
   {
     age: '12–17',
     year: '2020–25',
     kind: 'venture',
-    title: 'Five ventures. Five different failure modes.',
-    body: 'Software services, cold-call automation, digital marketing, e-commerce, automation tooling. Each broke at a structurally different layer and handed back the same finding: the bottleneck was never individual capability, it was coordination.',
+    title: 'Five ventures, five distinct failure modes',
+    body: 'Software services, cold-call automation, digital marketing, e-commerce and automation tooling. Each failed at a different layer, and together they pointed to one finding: the constraint was coordination, not individual capability.',
   },
   {
     age: '15',
     year: '2023',
     kind: 'proof',
     title: 'Built and sold a stock-prediction system',
-    body: 'The first time someone outside my own head priced the work — around $10,000. The money bought the RTX 3090 that later ran all 383 ORMAS experiments.',
+    body: 'Sold for roughly $10,000. The proceeds funded the RTX 3090 that later ran all 383 ORMAS experiments.',
   },
   {
     age: '16–17',
     year: '2023–25',
     kind: 'build',
-    title: 'OXIMO — the structural answer to coordination',
-    body: 'Agents that decompose work and hire a specialist when none exists. Rebuilt from a 106,000-line monolith to 40,933 lines with every algorithm ported and 2,069 tests green. Closed now, and on this page as prior work.',
+    title: 'OXIMO: a structural answer to coordination',
+    body: 'A multi-agent system that decomposes work and creates specialist roles on demand. Rebuilt from a 106,000-line monolith to 40,933 lines with 2,069 passing tests. Now concluded.',
   },
   {
     age: '17',
     year: '2025–26',
     kind: 'build',
-    title: 'Black Bloxie LTD — twelve months of trying to disprove it',
-    body: 'A real UK company built to be a test environment rather than a business. Remove the system, measure. Put it back, measure. −91% and +1,300%. It also found the wall: the models underneath could not handle the company’s own messy data.',
+    title: 'Black Bloxie LTD: a twelve-month field study',
+    body: 'A UK company operated as a controlled test of OXIMO: the system was removed and restored to measure its causal effect (−91%, then +1,300%). The study also exposed the limit that led to ORMAS: the underlying models could not learn from noisy production data.',
   },
   {
     age: '17–18',
     year: '2025–26',
     kind: 'build',
-    title: 'ORMAS — 383 experiments on one GPU',
-    body: 'The wall turned into the research. Four architecture families, six noise regimes. A network that diagnoses its own damage mid-training and repairs it: 80.3% recovery where parameter-matched baselines flatline at 10.0% permanently.',
+    title: 'ORMAS: 383 experiments on one GPU',
+    body: 'A network that diagnoses and repairs its own damage during training, tested across four architectures and six noise regimes: 80.3% recovery where parameter-matched baselines remain at 10.0%.',
   },
   {
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'OXIEDO goes live · reviewing for NeurIPS',
-    body: 'The research becomes a company with a product, a licence and five sectors that pay for it. Preprint live, and its stability result accepted at DeepMath 2026 after double-blind review. In the same year I joined the programme committee of the Trustworthy AI for Good workshop at NeurIPS 2026, reviewing in the field I publish in.',
+    title: 'OXIEDO launches · DeepMath 2026 · NeurIPS committee',
+    body: 'The research becomes a company, licensing ORMAS to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh joins the programme committee of the NeurIPS 2026 Trustworthy AI for Good workshop.',
   },
 ];
 
@@ -68,7 +68,7 @@ const systems = [
   {
     name: 'ORMAS',
     role: 'The research',
-    line: 'It finds its own broken component mid-training, names it, and repairs it.',
+    line: 'Identifies, names and repairs its own failing components during training.',
     stat: '80.3%',
     statLbl: 'recovery · baseline 10.0%',
     href: '#research',
@@ -77,7 +77,7 @@ const systems = [
   {
     name: 'OXIEDO',
     role: 'The business',
-    line: 'Licensing it to the institutions legally barred from training on their own data.',
+    line: 'Licensing the architecture to institutions that cannot yet train on their own regulated data.',
     stat: 'Live',
     statLbl: 'oxiedo.com · five sectors',
     href: '#oxiedo',
@@ -86,16 +86,16 @@ const systems = [
   {
     name: 'OXIMO',
     role: 'Prior work',
-    line: 'Hand it a sentence; it builds the org chart and hires what it does not have.',
+    line: 'Turns a one-sentence brief into an organisation, creating the roles it lacks.',
     stat: '40,933',
-    statLbl: 'lines · 2,069 tests green',
+    statLbl: 'lines · 2,069 passing tests',
     href: '#oximo',
     state: 'Closed',
   },
   {
     name: 'Black Bloxie',
     role: 'The experiment on OXIMO',
-    line: 'A real UK company I ran for a year purely to find out if the system was the cause.',
+    line: 'A live UK company run for twelve months to measure the system’s causal effect.',
     stat: '−91% / +1,300%',
     statLbl: '12-month lesion study',
     href: '#black-bloxie',
@@ -104,19 +104,19 @@ const systems = [
   {
     name: 'Project Cherry',
     role: 'Planned',
-    line: 'A network that grows its own components. Fully specified, deliberately unstarted.',
+    line: 'A network that grows its own components. Fully specified; not yet built.',
     stat: '—',
-    statLbl: 'zero experiments, and I say so',
+    statLbl: 'specification stage',
     href: '#cherry',
     state: 'Not built',
   },
 ];
 
 const router = [
-  { a: 'You review papers', d: 'The ISS derivation, all 383 runs, the telemetry design, and the table where the baseline beats me. Attack the stability bound first — that is where I most want to be wrong early.', h: '#research', l: 'The research' },
-  { a: 'You write cheques', d: 'What it sells, who is obliged to buy it and by when, and the whole risk register volunteered before anybody asks for it.', h: '#oxiedo', l: 'The company' },
-  { a: 'You read code before opinions', d: '40,933 lines, 2,069 tests, and a system handed one sentence that works out its own org chart and hires what it lacks.', h: '#oximo', l: 'The codebase' },
-  { a: 'You have heard this before', d: 'Twelve months spent trying to kill my own thesis on a live company with real customers, and every pound it ever took, stated so it cannot be read generously.', h: '#black-bloxie', l: 'The experiment' },
+  { a: 'Researchers', d: 'The ISS derivation, all 383 runs, the telemetry design and the adverse results. Scrutiny of the stability bound is especially welcome.', h: '#research', l: 'The research' },
+  { a: 'Investors', d: 'The product, the regulatory drivers and timeline, and a full risk register.', h: '#oxiedo', l: 'The company' },
+  { a: 'Engineers', d: '40,933 lines and 2,069 tests: a system that turns one sentence into a working organisation.', h: '#oximo', l: 'The codebase' },
+  { a: 'Sceptics', d: 'A twelve-month controlled study on a live company with real customers, with every figure disclosed.', h: '#black-bloxie', l: 'The experiment' },
 ];
 
 export default function CVWhoIAm() {
@@ -305,10 +305,10 @@ export default function CVWhoIAm() {
 
       <div className="col-12">
         <span className="subtitle" style={{ color: 'var(--pf-ink-2)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
-          Who I Am
+          Profile
         </span>
         <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
-          Everything I have built by <span className="age">eighteen</span>, and the order it happened in
+          Founder, researcher and engineer: six years of work, in order
         </h2>
 
         {/* ── The founder video carries the introduction itself — no filler
@@ -327,23 +327,22 @@ export default function CVWhoIAm() {
               <Icon name="play" size={14} />
               Founder Introduction · 31 sec
             </div>
-            <h3 className="wi-why-h">Rokib Al Dhin Raadh — <span className="age">eighteen years old</span>, Dhaka, Bangladesh.</h3>
+            <h3 className="wi-why-h">Rokib Al Dhin Raadh: founder of OXIEDO, author of ORMAS.</h3>
             <p className="wi-why-p">
-              I did not go looking for a research problem. I ran five businesses between twelve and seventeen,
-              watched all five break, and noticed they were all breaking for the same reason. Everything since has
-              been me chasing that one sentence further down than the last person bothered to.
+              Raadh, 18, is based in Dhaka, Bangladesh. He founded five ventures between the ages of twelve and
+              seventeen and found they all failed for the same structural reason. Following that finding led him
+              from multi-agent systems to a new neural network architecture, and then to a company built on it.
             </p>
             <p className="wi-why-p">
-              <strong>Two of these are live. Two are finished. One does not exist yet.</strong> I would rather you
-              knew which was which in the first thirty seconds than work it out halfway down the page.
+              Two of the projects below are active, two are concluded and one is in specification.
             </p>
             <p className="wi-why-cap">
-              In the video: who this is for, why nothing on the market does it today, and what ORMAS is.
+              In the video: who ORMAS is for, the gap it fills, and how it works.
             </p>
           </div>
         </div>
 
-        <div className="wi-label">Six Years, In Order</div>
+        <div className="wi-label">Timeline</div>
         <div className="wi-tl">
           {timeline.map((t) => (
             <div className="wi-tl-row" key={t.title}>
@@ -369,7 +368,7 @@ export default function CVWhoIAm() {
         </div>
 
         {/* ══ SYSTEMS ════════════════════════════════════════════ */}
-        <div className="wi-label">The Five Things, and Where Each One Stands</div>
+        <div className="wi-label">Current Status</div>
         <div className="wi-sys">
           {systems.map((s) => (
             <a
@@ -395,15 +394,14 @@ export default function CVWhoIAm() {
         </div>
 
         <p className="wi-standing-note">
-          The last three months are in <a href="#recognition">Recent</a>, directly above. The five ventures
-          are in <a href="#ventures">Ventures</a>; credentials and the honest account of what I traded away are in{' '}
-          <a href="#education">Education</a>.
+          Recent milestones are in <a href="#recognition">Recent</a>. The five ventures are covered in{' '}
+          <a href="#ventures">Ventures</a>, and credentials in <a href="#education">Education</a>.
         </p>
 
         {/* ══ ROUTER ═════════════════════════════════════════════ */}
         <div className="wi-label">Where to Start</div>
         <div className="wi-router">
-          <div className="wi-router-h">Four ways in. Pick the one that matches why you opened this.</div>
+          <div className="wi-router-h">Suggested starting points</div>
           {router.map((r) => (
             <div className="wi-router-row" key={r.a}>
               <div className="wi-router-a">{r.a}</div>

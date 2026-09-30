@@ -186,9 +186,9 @@ export default function OxidoVisualization() {
           </svg>
 
           <p className="ovz-caption">
-            For a hospital, a fund, or a defence programme this is <span className="bad">disqualified at the first
-            request</span> — before anyone asks how accurate it is. The framework is inside the wall. The intelligence
-            never was.
+            For a hospital, a fund or a defence programme, sending data off-site is often{' '}
+            <span className="bad">ruled out before accuracy is even considered</span>. The framework sits inside the
+            perimeter, but the intelligence does not.
           </p>
         </div>
 
@@ -245,9 +245,9 @@ export default function OxidoVisualization() {
           </svg>
 
           <p className="ovz-caption">
-            Same wall, everything inside it. That is not a privacy feature bolted on — it is{' '}
-            <span className="good">the only configuration these buyers can legally deploy</span>, and it is the
-            reason the account has to be produced during training rather than recovered afterwards.
+            Everything stays inside the perimeter. For these buyers this is{' '}
+            <span className="good">often the only deployable configuration</span>, and it is why the record is
+            produced during training rather than recovered afterwards.
           </p>
         </div>
       </div>

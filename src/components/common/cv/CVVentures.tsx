@@ -13,36 +13,36 @@ const ventures = [
     n: '01',
     title: 'Software Services',
     age: 'Age 12–14',
-    broke: 'Nobody would take the meeting',
-    lesson: 'I could build the thing. I could not get it in front of anyone. Distribution without institutional credibility is not a technical problem, and enterprise procurement does not route on technical merit alone.',
+    broke: 'Distribution without credibility',
+    lesson: 'The product could be built; reaching buyers was the obstacle. Enterprise procurement does not route on technical merit alone, and distribution without institutional credibility is not a technical problem.',
   },
   {
     n: '02',
-    title: 'Cold-Call Automation — European Markets',
+    title: 'Cold-Call Automation, European Markets',
     age: 'Age 14–15',
-    broke: 'Trust ran out at the close',
-    lesson: 'Automation handled 90% of the sales cycle reliably. The last 10% — the close — needed a human in the room every time. Trust in an autonomous agent has a hard ceiling at the transaction, and that ceiling became a design constraint I carried into everything after.',
+    broke: 'Trust limits at the close',
+    lesson: 'Automation reliably handled 90% of the sales cycle, but every close required a human. Trust in autonomous agents stops at the transaction, a constraint that shaped all of his later work.',
   },
   {
     n: '03',
     title: 'US-Targeted Digital Marketing',
     age: 'Age 15',
-    broke: 'I solved the wrong problem',
-    lesson: 'I assumed the bottleneck was distribution. It was production. I did not need something that could move content around; I needed something that could make it at volume.',
+    broke: 'The wrong bottleneck',
+    lesson: 'The assumed bottleneck was distribution; the real one was production. The need was not to move content but to create it at volume.',
   },
   {
     n: '04',
     title: 'Organic E-Commerce',
     age: 'Age 15–16',
-    broke: 'One person is not a system',
-    lesson: 'Optimising pricing, or listings, or marketing individually buys a few percent. The real problem is coordinating research, listing, pricing, fulfilment and service at once. One person cannot be the whole system, however hard they work.',
+    broke: 'Coordination at scale',
+    lesson: 'Optimising pricing, listings or marketing individually yields a few percent. The real challenge was coordinating research, listing, pricing, fulfilment and service at once, which no single operator can sustain.',
   },
   {
     n: '05',
     title: 'Automation Tooling',
     age: 'Age 16–17',
-    broke: 'Same wall, fifth time',
-    lesson: 'The last one confirmed what the previous four had been saying. The bottleneck was never individual capability. It was always coordination.',
+    broke: 'Confirmation of the pattern',
+    lesson: 'The fifth venture confirmed the pattern: the constraint was coordination, not individual capability.',
   },
 ];
 
@@ -52,21 +52,20 @@ export default function CVVentures() {
       id="ventures"
       phase="before"
       eyebrow="Ventures · 2020–2025"
-      title={<>Five businesses and an exit, all of it before I turned <span className="age">eighteen</span>.</>}
+      title={<>Five ventures and one exit, between the ages of 12 and 17.</>}
       lead={
         <>
-          I started my first company at twelve. Four more followed and every one of them broke somewhere
-          different. Somewhere in the middle I built a stock-prediction system good enough that somebody
-          paid me around ten thousand dollars for it, at fifteen.{' '}
-          <strong>The five failures all pointed at the same thing, and that one sentence is the reason
-          the rest of this page exists.</strong>
+          Raadh started his first company at twelve and founded four more by seventeen, each failing at a
+          different layer. At fifteen he built and sold a stock-prediction system for about $10,000.{' '}
+          <strong>Together, the five ventures pointed to a single finding that shaped all of his later
+          work.</strong>
         </>
       }
       meta={[
         { k: 'Companies', v: 'Five, ages 12–17' },
         { k: 'Exit', v: '~$10,000 at fifteen' },
-        { k: 'What it bought', v: 'The RTX 3090' },
-        { k: 'What they taught', v: 'One sentence' },
+        { k: 'Reinvested in', v: 'The RTX 3090' },
+        { k: 'Key finding', v: 'Coordination' },
       ]}
     >
       <style>{`
@@ -126,15 +125,14 @@ export default function CVVentures() {
         <div>
           <h3 className="vn-exit-h">A stock-prediction system, built and sold at fifteen</h3>
           <p className="vn-exit-p">
-            The first time anybody outside my own head put a number on the work. It matters for a reason
-            that has nothing to do with the money itself:{' '}
-            <strong>I spent it on the RTX 3090 that ran all 383 ORMAS experiments.</strong> Every result on
-            this page was paid for by something I built and sold before I could drive.
+            His first exit, at around $10,000.{' '}
+            <strong>The proceeds funded the RTX 3090 that ran all 383 ORMAS experiments</strong>, so every
+            research result on this page was financed by work he built and sold himself.
           </p>
         </div>
       </div>
 
-      <p className="vn-label">Five companies, five different ways to break</p>
+      <p className="vn-label">Five ventures, five failure modes</p>
       <div className="vn-list">
         {ventures.map((v) => (
           <div className="vn-row" key={v.n}>
@@ -144,7 +142,7 @@ export default function CVVentures() {
                 <span className="vn-title">{v.title}</span>
                 <span className="vn-age">{v.age}</span>
               </div>
-              <span className="vn-broke">Broke at: {v.broke}</span>
+              <span className="vn-broke">Failure point: {v.broke}</span>
               <p className="vn-lesson">{v.lesson}</p>
             </div>
           </div>
@@ -152,15 +150,14 @@ export default function CVVentures() {
       </div>
 
       <div className="vn-finding">
-        <div className="vn-finding-k">What all five were telling me</div>
+        <div className="vn-finding-k">The common finding</div>
         <p>
-          Every one broke in a different place. Every one broke for the same reason.{' '}
-          <strong>The limit was never how capable I was. It was always coordination.</strong>
+          Each venture failed at a different point, and all for the same reason.{' '}
+          <strong>The constraint was coordination, not individual capability.</strong>
         </p>
         <p>
-          Which means working harder was never going to fix it. A structural problem needs a structural
-          answer, and that realisation is where OXIMO came from — and OXIMO, eventually, is where the
-          research came from.
+          A structural problem needed a structural answer. That conclusion led to OXIMO, and OXIMO led to
+          the research.
         </p>
       </div>
     </CVSection>

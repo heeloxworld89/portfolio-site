@@ -6,15 +6,14 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Recent · 2026"
-      title="All of this happened since July."
+      title="Three months of external recognition."
       lead={
         <>
-          July: Cosmos ranked the work highest in their cycle. August: a cold application to Entrepreneur First
-          turned into a first-round call. September: the stability result accepted at DeepMath 2026 after
-          double-blind review, accepted by two accelerators in one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
-          member of Cohere Labs&apos; Open Science Community. December: I review for a NeurIPS workshop in Paris.{' '}
-          <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
-          proves — and, because it matters more, what it doesn&apos;t.
+          July: Cosmos Institute ranked the work highest in its cycle. August: an unsolicited application to
+          Entrepreneur First led to a first-round interview. September: the stability result accepted at
+          DeepMath 2026 after double-blind review, offers from two accelerators in one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
+          membership of Cohere Labs&apos; Open Science Community. December: reviewing for a NeurIPS workshop in
+          Paris.
         </>
       }
     >
@@ -539,23 +538,20 @@ export default function CVRecognition() {
             </div>
 
             <h3 className="rec-week-t">
-              Peer review, passed. The stability result is accepted at DeepMath 2026.
+              Stability result accepted at DeepMath 2026.
             </h3>
             <p className="rec-week-l">
               <strong>DeepMath</strong> is the Conference on the Mathematical Theory of Deep Neural Networks,
               this year hosted by <strong>Ohio State University</strong> in Columbus on 29&ndash;30 October, with an
               organising committee drawn from Johns Hopkins, Michigan and Ohio State. It takes theory only, and
-              reviews it <strong>double-blind</strong>: nobody judging the paper knew who I was, where I was, or
-              that I have no degree. My submission, <em>&ldquo;Self-Repair as a Bounded Disturbance:
-              Input-to-State Stability of Neural Network Training Dynamics&rdquo;</em>, came back{' '}
-              <strong>Accept (Poster)</strong>. It is the mathematics under ORMAS, and the first time it has been
-              through formal review. DeepMath publishes no proceedings, so this is an acceptance, not a publication.
+              reviews it <strong>double-blind</strong>, so reviewers assessed the work without knowledge of
+              his background. The paper, <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State
+              Stability of Neural Network Training Dynamics&rdquo;</em>, was accepted for poster presentation.
+              It formalises the stability guarantee underlying ORMAS. DeepMath does not publish proceedings.
             </p>
             <p className="rec-week-l">
-              Two more decisions are sitting with other people: <strong>Onstage</strong> are ranking the W26
-              cohort against 350 venture funds, and <strong>Entrepreneur First</strong> are deciding on The Bridge.
-              Not one of these came from an introduction &mdash; every one started as a cold application from
-              Dhaka, written by an <span className="age">eighteen-year-old</span>.
+              Two further decisions are pending: <strong>Onstage</strong> is ranking its W26 cohort by interest
+              from 350 venture funds, and <strong>Entrepreneur First</strong> is deciding on The Bridge.
             </p>
 
             <div className="rec-week-wall">
@@ -581,7 +577,7 @@ export default function CVRecognition() {
               d: 'W26 cohort',
               h: 'Top 100 pending',
               who: 'Onstage \u00b7 W26 Demo Day',
-              what: <><strong>Invited to the pre-pitch party</strong> in Central London, and in the pool for the winter cohort. Onstage rank every application by investor interest across <strong>350 VC partners</strong> &mdash; a16z, Sequoia, Balderton, LocalGlobe &mdash; and the top 100 is named shortly.</>,
+              what: <><strong>Invited to the pre-pitch event</strong> in Central London and shortlisted for the winter cohort. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
               pill: 'Pending',
               now: false,
             },
@@ -589,7 +585,7 @@ export default function CVRecognition() {
               d: 'Since Sep',
               h: 'San Francisco',
               who: 'Entrepreneur First \u00b7 The Bridge',
-              what: <>Two interview rounds done, decision sitting with EF. Full detail further down this page.</>,
+              what: <>Two interview rounds completed; decision pending. Details below.</>,
               pill: 'Pending',
               now: false,
             },
@@ -611,7 +607,7 @@ export default function CVRecognition() {
           ))}
 
           <div className="rec-week-foot">
-            Status as of 30 September 2026 &middot; this list is updated the day anything on it moves
+            Status as of 30 September 2026
           </div>
         </div>
 
@@ -644,23 +640,22 @@ export default function CVRecognition() {
               <span className="rec-date">Dec 2026</span>
             </div>
             <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Programme Committee</div>
-            <h3 className="rec-name">At <span className="age">Eighteen</span>, I Am on the Committee Deciding What Gets Into a NeurIPS Workshop</h3>
+            <h3 className="rec-name">Programme Committee Member, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
             <p className="rec-body">
-              I sit on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS 2026
-              in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
-              post-deployment monitoring. The same subject I work in, judged from the other side of the
-              desk. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
+              Raadh serves on the programme committee of <strong>Trustworthy AI for Good</strong> at NeurIPS
+              2026 in Paris, reviewing submissions on mechanistic interpretability, attribution, auditing and
+              post-deployment monitoring. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
               assessed by a committee of 237 reviewers drawn from Oxford, MIT, Toronto, Berkeley, Stanford
               and Mila.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
                 <span className="rec-stat-val">237</span>
-                <span className="rec-stat-lbl">On a committee of this size</span>
+                <span className="rec-stat-lbl">Reviewers on the committee</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">34%</span>
-                <span className="rec-stat-lbl">Acceptance rate I help set</span>
+                <span className="rec-stat-lbl">Acceptance rate, ICML edition</span>
               </div>
             </div>
           </div>
@@ -674,22 +669,20 @@ export default function CVRecognition() {
               <span className="rec-date">Jul 2026</span>
             </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
-            <h3 className="rec-name">They Ranked It Highest in the Cycle, Then Told Me Why They Still Wouldn’t Fund It</h3>
+            <h3 className="rec-name">Ranked Highest in the Cosmos Institute Grant Cycle</h3>
             <p className="rec-body">
-              I applied to a Cosmos Institute grant round and got back two things in the same email. My
-              application had ranked highest in the cycle, and it was in completely the wrong round —
-              that one funded philosophical work on AI, and ORMAS is an architecture. No money, and an
-              instruction to come back when they open a technical track. A ranking with a reason attached
-              is worth more to me than the grant would have been.
+              Cosmos Institute ranked the ORMAS application highest in its grant cycle. The round funded
+              philosophical work on AI rather than technical architectures, so no award was made; Cosmos
+              invited Raadh to reapply when it opens a technical track.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
                 <span className="rec-stat-val">Highest</span>
-                <span className="rec-stat-lbl">Ranked, of that cycle</span>
+                <span className="rec-stat-lbl">Rank in the cycle</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">$0</span>
-                <span className="rec-stat-lbl">Right score, wrong round</span>
+                <span className="rec-stat-val">Invited</span>
+                <span className="rec-stat-lbl">To reapply, technical track</span>
               </div>
             </div>
           </div>
@@ -709,19 +702,16 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">Freshmango &middot; Equity-Free Accelerator &middot; Accepted</div>
-            <h3 className="rec-name">They Gave Me a Place, and It Costs Me No Equity and No Fee</h3>
+            <h3 className="rec-name">Accepted to Freshmango, the Equity-Free Accelerator</h3>
             <p className="rec-body">
-              Freshmango bill themselves as the best equity-free accelerator in the world. On 22 September
-              they took twenty minutes with me and offered a place in it: a <strong>5,000-founder
-              network</strong> to find a co-founder in, <strong>$4M in AI credits</strong>, and
-              introductions across <strong>160 venture funds</strong> &mdash; for no equity and no fee.
-              <strong> Twenty minutes was all it took them to decide</strong>, and the founder agreement
-              followed the same day.
+              On 22 September Freshmango offered OXIEDO a place in its equity-free programme after a single
+              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>
+              and introductions across <strong>160 venture funds</strong>, with no equity or fees.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
                 <span className="rec-stat-val">0%</span>
-                <span className="rec-stat-lbl">Equity they take</span>
+                <span className="rec-stat-lbl">Equity taken</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">$4M</span>
@@ -729,7 +719,7 @@ export default function CVRecognition() {
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">160</span>
-                <span className="rec-stat-lbl">Funds on the list</span>
+                <span className="rec-stat-lbl">Venture funds</span>
               </div>
             </div>
           </div>
@@ -743,23 +733,20 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted</div>
-            <h3 className="rec-name">The Top 1% of Thousands of Applications. Accepted Into Ignite.</h3>
+            <h3 className="rec-name">Accepted to 1752vc Ignite from the Top 1% of Applicants</h3>
             <p className="rec-body">
-              1752vc put the application in the top 5% of everyone who applied, then set a final round
-              to decide, in their words, who belonged in the <strong>top 1%</strong>. I came out of that
-              round with a place in their <strong>Ignite</strong> cohort &mdash; offered, again in their
-              words, <strong>after thousands of applications</strong>. They run limited cohorts on
-              purpose. Three stages, no introduction behind any of them, and a cold submission out of
-              Dhaka at the front of it.
+              1752vc placed the application in the top 5% of its intake, then held a final round to select
+              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>
+              cohort, chosen from <strong>thousands of applications</strong> across three stages.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
                 <span className="rec-stat-val">Top 1%</span>
-                <span className="rec-stat-lbl">Where the final round landed</span>
+                <span className="rec-stat-lbl">Final-round selection</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">Accepted</span>
-                <span className="rec-stat-lbl">Into the Ignite cohort</span>
+                <span className="rec-stat-lbl">Ignite cohort</span>
               </div>
             </div>
           </div>
@@ -779,13 +766,12 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">IARCO 2026 &middot; International Academic Research Competition &middot; Final Round</div>
-            <h3 className="rec-name">500+ Submissions From 60+ Countries. Through to the IARCO 2026 Final.</h3>
+            <h3 className="rec-name">Finalist, IARCO 2026 International Academic Research Competition</h3>
             <p className="rec-body">
               The International Academic Research Competition is hosted by YRJ, sponsored by
               {' '}<strong>SaveMyExams</strong> with <strong>Domain.ME</strong>, and this year drew
               {' '}<strong>more than 500 submissions from over 60 countries</strong>. Only <strong>30%</strong> of
-              participants were selected to go on. The work was one of them, and now goes into the final stage
-              {' '}&mdash; a video presentation of the research, due 5 October.
+              participants advanced. ORMAS was selected for the final stage, a recorded research presentation.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -812,15 +798,14 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">Cohere Labs &middot; Open Science Community &middot; Member</div>
-            <h3 className="rec-name">A Member of Cohere Labs&apos; Open Science Community — and They Named ORMAS</h3>
+            <h3 className="rec-name">Member, Cohere Labs Open Science Community</h3>
             <p className="rec-body">
               Cohere Labs is the research lab of <strong>Cohere</strong>, one of the leading foundation-model
-              companies. On 25 September it welcomed me into its <strong>Open Science Community</strong>, and the
-              welcome singled out the work itself: the solo development of ORMAS across 383 controlled experiments
+              companies. On 25 September it welcomed Raadh into its <strong>Open Science Community</strong>, noting
+              that the solo development of ORMAS across 383 controlled experiments
               {' '}<strong>&ldquo;demonstrates remarkable initiative in ML safety and auditability.&rdquo;</strong>{' '}
-              It pointed to the lab&apos;s <strong>BIRDS</strong> and <strong>Safety &amp; Alignment</strong>
-              {' '}programmes as the place to pressure-test the architecture and carry it to a transformer backbone
-              {' '}&mdash; exactly the next step ORMAS needs.
+              The lab pointed to its <strong>BIRDS</strong> and <strong>Safety &amp; Alignment</strong>
+              {' '}programmes as a route to extending the architecture to a transformer backbone.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -829,7 +814,7 @@ export default function CVRecognition() {
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">ORMAS</span>
-                <span className="rec-stat-lbl">Named in the welcome</span>
+                <span className="rec-stat-lbl">Cited in the welcome</span>
               </div>
             </div>
           </div>
@@ -846,21 +831,20 @@ export default function CVRecognition() {
             <span className="rec-date">Sep 2026</span>
           </div>
           <div className="rec-tag">Antler &middot; Accepted &middot; Visa</div>
-          <h3 className="rec-name">Antler Said Yes. The Programme Couldn&rsquo;t Support the Visa, So I&rsquo;m Not Proceeding.</h3>
+          <h3 className="rec-name">Accepted by Antler; Not Proceeding Due to Visa Constraints</h3>
           <p className="rec-body">
-            Antler run one of the largest early-stage investment programmes in the world, and they
-            <strong> accepted me</strong>. In the conversations that followed, we found the programme could
-            not support the visa and work permit I would need to take part. That is the whole of it
-            &mdash; a logistics boundary, not a verdict on the work.
+            Antler, one of the largest early-stage investment programmes in the world,
+            <strong> accepted Raadh</strong>. The programme could not support the visa and work permit
+            required to participate, so he is not proceeding.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
               <span className="rec-stat-val">Accepted</span>
-              <span className="rec-stat-lbl">By Antler</span>
+              <span className="rec-stat-lbl">Antler offer</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">Visa</span>
-              <span className="rec-stat-lbl">The constraint, not the work</span>
+              <span className="rec-stat-lbl">Reason not proceeding</span>
             </div>
           </div>
         </div>
@@ -874,7 +858,7 @@ export default function CVRecognition() {
             <span className="rec-date">Aug 2026</span>
           </div>
           <div className="rec-tag">Entrepreneur First · London · First Screen</div>
-          <h3 className="rec-name">A Cold Application to Entrepreneur First. A First-Round Call With Their London Team.</h3>
+          <h3 className="rec-name">Entrepreneur First: First-Round Interview, London</h3>
 
           <div className="rec-clock">
             <div className="rec-clock-step">
@@ -893,28 +877,25 @@ export default function CVRecognition() {
           </div>
 
           <p className="rec-body">
-            No introduction, no warm path, nobody vouching for me. A cold application out of Dhaka into one of the
-            most aggressive sourcing operations in European venture. <strong>Their talent team came back and put a
-            first-round call in the diary.</strong>
+            An unsolicited application to one of European venture&apos;s most selective sourcing programmes led
+            EF&apos;s talent team to invite Raadh to a first-round interview.
           </p>
           <p className="rec-body">
-            Fifteen minutes, by design. EF are explicit that a first screen is not about the idea — it is about how
-            somebody thinks. We covered why the black box is an architecture problem rather than a tooling one, the
-            three signals, and where I want to take it. <strong>Money changes how fast this gets built. It does not
-            change whether it gets built.</strong>
+            EF&apos;s first screen assesses how a founder thinks rather than the idea itself. The conversation
+            covered why interpretability is an architecture problem rather than a tooling one, and where ORMAS
+            goes next.
           </p>
           <p className="rec-body">
-            It was a first conversation and it did what a first conversation does. The one below is where it went
-            next.
+            It led to The Bridge, below.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
               <span className="rec-stat-val">Cold</span>
-              <span className="rec-stat-lbl">No introduction behind it</span>
+              <span className="rec-stat-lbl">Unsolicited application</span>
             </div>
             <div className="rec-stat">
               <span className="rec-stat-val">15 min</span>
-              <span className="rec-stat-lbl">To decide how I think</span>
+              <span className="rec-stat-lbl">First-round interview</span>
             </div>
           </div>
         </div>
@@ -939,13 +920,11 @@ export default function CVRecognition() {
           <p className="rec-status-v">
             The Bridge is Entrepreneur First&apos;s <strong>eight-week residency in San Francisco</strong>,
             where they place a small cohort of technical founders alongside the US investor and operator
-            network and back the ones who come out of it with company-building capital. It is the route EF
-            runs for founders who already have something built rather than an idea to test.
+            network, and back those who come through it with company-building capital. It is EF&apos;s route
+            for founders who have already built something.
           </p>
           <p className="rec-status-v">
-            This one is happening right now. <strong>Two interview rounds are behind me</strong>, EF have the
-            decision, and nothing has come back yet. That is the whole of it as of September 2026 — this
-            line gets updated the day it moves.
+            Raadh has <strong>completed two interview rounds</strong>; EF&apos;s decision is pending.
           </p>
 
           <span className="rec-stages">
@@ -958,40 +937,26 @@ export default function CVRecognition() {
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            None of these is a degree, and I am not going to dress them up as one. They are still the outside
-            signals I weight most.
+            What these signals establish, and what they do not.
           </p>
           <p className="rec-verdict-body">
-            <strong>DeepMath accepted the mathematics.</strong> This is the one that answers the obvious doubt about
-            self-taught theory. The review was double-blind, by people who work on the theory of deep learning, and
-            the stability result came back accepted. It is a poster, not a proceedings paper, and DeepMath publishes
-            none, so I will not call it a publication. It is still the first time the ISS characterization has been
-            judged by strangers qualified to reject it, and they did not.
+            <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind
+            review by specialists in deep-learning theory. It is a poster acceptance; the conference publishes no
+            proceedings.
           </p>
           <p className="rec-verdict-body">
-            <strong>NeurIPS put me on a programme committee.</strong> That is the one I would point a
-            researcher at. It is not a paper and it is not an award — it is the field deciding I am
-            qualified to judge other people&apos;s work in the exact area I publish in, which is a
-            different kind of statement from anything I could write about myself.
+            <strong>Standing in the field.</strong> NeurIPS 2026 appointed Raadh to the programme committee of
+            the Trustworthy AI for Good workshop, reviewing work in interpretability and model auditing, the
+            area his own research addresses.
           </p>
           <p className="rec-verdict-body">
-            <strong>Cosmos read the work.</strong> Ranked it highest, then told me precisely why it still would not
-            get funded. A ranking with a reason attached is the single most useful thing a reviewer can give you,
-            and it supports exactly one claim, narrowly: <strong>when people qualified to judge this read it
-            properly, it holds up.</strong>
+            <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
+            Freshmango, 1752vc and Antler each offered places after competitive selection, and Entrepreneur
+            First advanced him to The Bridge in San Francisco. Every one began as an unsolicited application.
           </p>
           <p className="rec-verdict-body">
-            <strong>EF read me.</strong> Fifteen minutes in London in August, weighted towards how I think rather
-            than what I have built, and it opened a conversation that is still going — two rounds into The Bridge
-            in September. All of this happened in a field where a PhD is the baseline and an <span className="age">eighteen-year-old</span>
-            without one is not, and nobody marked the work down for coming out of Dhaka.
-          </p>
-          <p className="rec-verdict-body">
-            Now what they do not establish. No funding yet and no advisor; the accelerator offers are open,
-            not signed, and an open process is not an outcome, so I am not going to write it up as one.
-            Cosmos is a remote grant and EF admits internationally on purpose, so neither tells you anything
-            about the filters that are actually bound to geography. A result weighted accurately beats one
-            inflated, and that weighting is the reason you should believe the rest of this page.
+            <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator
+            agreement has been signed. Those remain open.
           </p>
         </div>
 
@@ -1000,9 +965,8 @@ export default function CVRecognition() {
           <span className="rec-verify-body">
             <span className="rec-verify-k">Made to be checked</span>
             <span className="rec-verify-t">
-              Every claim here has a name, a date and someone other than me who can confirm it — the Cosmos
-              email, the committee list, the EF stage, the Companies House filings.{' '}
-              <strong>Ask and I will send them, including the parts that do not flatter me.</strong>
+              Each item above has a named source and a date: the Cosmos correspondence, the committee list, the
+              EF stage records, the Companies House filings. Documentation is available on request.
             </span>
           </span>
           <a
@@ -1010,7 +974,7 @@ export default function CVRecognition() {
             href="mailto:raadxbusiness9@gmail.com?subject=Verifying%20a%20claim%20on%20raadh.me"
           >
             <Icon name="mail" size={14} />
-            Ask me to prove it
+            Request documentation
           </a>
         </div>
 

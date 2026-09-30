@@ -24,12 +24,12 @@ const recovery = [
 ];
 
 const rungs = [
-  { n: '01', phase: 'Phase 1 · Aug–Oct 2025 · Cold start', q: 'Can an autonomous system originate commercial demand at all?', a: 'The hardest starting condition available: a brand-new UK entity, zero domain authority, zero brand equity, zero advertising budget, no human in the acquisition loop. The store went live cold. Customers arrived, every one through LLM-referred channels.', v: 'Yes. Demand originated where there was none.' },
-  { n: '02', phase: 'Phase 1 · Baseline established', q: 'How much can it sell, and at what unit economics?', a: 'A capability claim is worthless without a cost structure. The pipeline produced a complete 12-asset product suite for $0.0043 against a $50–$150 human benchmark. Baseline output was locked across all channels as the control condition.', v: 'The marginal cost of output collapses to near zero.' },
-  { n: '03', phase: 'Phase 2 · Nov 2025–Feb 2026 · The lesion', q: 'Strip the system out. Was it ever the architecture, or was it the market?', a: 'The rung the whole study exists for. Every generated asset was removed and the store reverted to bare platform defaults — same products, same prices, same supplier, same category, same seasonality. One variable withdrawn.', v: 'The architecture was the causal variable, not the market.' },
-  { n: '04', phase: 'Phase 2 · Dead zone', q: 'What does total system death look like?', a: 'Not decay. Cessation. Acquisition went to zero and stayed there for four months. The collapse landed across every channel on the same day rather than tapering channel by channel — the specific signature that rules out seasonality and macro conditions.', v: '−100% acquisition. Simultaneous, not gradual.' },
-  { n: '05', phase: 'Phase 3 · Mar–Jul 2026 · Re-injection', q: 'Is the collapse reversible?', a: 'A one-directional result is half a proof. If the system caused the output, restoring it should restore the output — and if it does not, the causal claim fails from the other side. Redeployed into the same dead entity with no other change.', v: 'Yes. The dead zone was a lesion, not a wound.' },
-  { n: '06', phase: 'Phase 3 · Recovery ablation', q: 'Does it return to baseline, or past it?', a: 'It overshot, and the overshoot is the most interesting result in the study. The knowledge graph had retained everything learned in Phase 1, so the system restarted with twelve months of accumulated memory instead of starting cold. It came back knowing things it did not know the first time.', v: 'Recovery compounds. Institutional memory survives.' },
+  { n: '01', phase: 'Phase 1 · Aug–Oct 2025 · Cold start', q: 'Can an autonomous system originate commercial demand at all?', a: 'The hardest available starting point: a brand-new store (incorporated as Black Bloxie LTD on 11 September 2025), zero domain authority, zero brand equity, zero advertising budget, no human in the acquisition loop. The store went live cold. Customers arrived, every one through LLM-referred channels.', v: 'Yes. Demand originated where there was none.' },
+  { n: '02', phase: 'Phase 1 · Baseline established', q: 'How much can it sell, and at what unit economics?', a: 'A capability claim needs a cost structure. The pipeline produced a complete 12-asset product suite for $0.0043 against a $50–$150 human benchmark. Baseline output was locked across all channels as the control condition.', v: 'The marginal cost of output collapses to near zero.' },
+  { n: '03', phase: 'Phase 2 · Nov 2025–Feb 2026 · The lesion', q: 'Strip the system out. Was it ever the architecture, or was it the market?', a: 'The central test of the study. Every generated asset was removed and the store reverted to bare platform defaults — same products, same prices, same supplier, same category, same seasonality. One variable withdrawn.', v: 'The architecture was the causal variable, not the market.' },
+  { n: '04', phase: 'Phase 2 · Dead zone', q: 'What does complete system removal look like?', a: 'Not decay. Cessation. Acquisition went to zero and stayed there for four months. The collapse landed across every channel on the same day rather than tapering channel by channel — the specific signature that rules out seasonality and macro conditions.', v: '−100% acquisition. Simultaneous, not gradual.' },
+  { n: '05', phase: 'Phase 3 · Mar–Jul 2026 · Re-injection', q: 'Is the collapse reversible?', a: 'A one-directional result is only half a proof. If the system caused the output, restoring it should restore the output — and if it does not, the causal claim fails from the other side. Redeployed into the same entity with no other change.', v: 'Yes. The dead zone was a lesion, not a wound.' },
+  { n: '06', phase: 'Phase 3 · Recovery ablation', q: 'Does it return to baseline, or past it?', a: 'It overshot: the study’s most significant result. The knowledge graph had retained everything learned in Phase 1, so the system restarted with twelve months of accumulated memory instead of starting cold. It came back knowing things it did not know the first time.', v: 'Recovery compounds. Institutional memory survives.' },
   { n: '07', phase: 'Phase 4 · 13 Aug 2026 · High-value test', q: 'Can it close a high-value transaction, or does trust break at the price point?', a: 'The residual objection: low-consideration purchases are easy. So the final phase listed high-value inventory and let the architecture run the entire funnel unassisted — discovery, positioning, objection handling, close.', v: 'A $4,386 order closed at $0.00 acquisition cost.' },
 ];
 
@@ -39,21 +39,21 @@ export default function CVBlackBloxie() {
       id="black-bloxie"
       phase="before"
       eyebrow="Black Bloxie LTD · 2025–2026"
-      title="I spent a year trying to prove my own system didn’t work."
+      title="A twelve-month controlled study on a live company."
       lead={
         <>
-          Anybody can run an AI system and post the revenue. It proves nothing, because you never find out
-          whether the market would have done it anyway. So I registered a real company in the UK, let
-          OXIMO run it with a real supplier and real customers in ten countries, and then{' '}
-          <strong>tore the system out to see whether the business died.</strong> It died. Then I put it
-          back to see whether it would come alive again. It came back bigger than before.
+          Revenue from an AI system proves little on its own, because it cannot show whether the market
+          would have delivered the same result anyway. Raadh therefore ran OXIMO on a live UK company, with a
+          real supplier and customers in ten countries, then{' '}
+          <strong>removed the system to measure the effect.</strong> Output collapsed. When the system was
+          restored, output recovered and exceeded its original level.
         </>
       }
       meta={[
-        { k: 'What it tests', v: 'OXIMO. Not ORMAS.' },
-        { k: 'Duration', v: '12 months, 7 rungs' },
+        { k: 'What it tests', v: 'OXIMO (not ORMAS)' },
+        { k: 'Duration', v: '12 months, 7 tests' },
         { k: 'On removal', v: '−91% output' },
-        { k: 'On restoration', v: '+1,300% back' },
+        { k: 'On restoration', v: '+1,300%' },
       ]}
     >
       <style>{`
@@ -135,10 +135,8 @@ export default function CVBlackBloxie() {
 
       <div className="bb-note">
         <p>
-          <strong>Read this carefully before you credit me with too much.</strong> What got tested here is
-          OXIMO, an orchestration layer sitting on top of models somebody else trained. It proves nothing
-          whatsoever about ORMAS, which is separate work with its own separate evidence. It would be very
-          easy to blur those two together on a page like this. I am not going to.
+          <strong>Scope.</strong> This study tests OXIMO, an orchestration layer built on third-party models.
+          It makes no claim about ORMAS, which is separate work with its own evidence.
         </p>
       </div>
 
@@ -157,7 +155,7 @@ export default function CVBlackBloxie() {
 
       <div className="bb-tables">
         <div className="bb-table down">
-          <div className="bb-table-h">Phase 2 · I took the system out</div>
+          <div className="bb-table-h">Phase 2 · System removed</div>
           {removal.map((r) => (
             <div className="bb-tr" key={r.m}>
               <div><div className="bb-tm">{r.m}</div><div className="bb-tn">{r.n}</div></div>
@@ -166,7 +164,7 @@ export default function CVBlackBloxie() {
           ))}
         </div>
         <div className="bb-table up">
-          <div className="bb-table-h">Phase 3 · I put it back</div>
+          <div className="bb-table-h">Phase 3 · System restored</div>
           {recovery.map((r) => (
             <div className="bb-tr" key={r.m}>
               <div><div className="bb-tm">{r.m}</div><div className="bb-tn">{r.n}</div></div>
@@ -177,10 +175,9 @@ export default function CVBlackBloxie() {
       </div>
 
       <div className="bb-money">
-        <div className="bb-money-h">Now the money, before you go looking for it</div>
+        <div className="bb-money-h">Full revenue disclosure</div>
         <p className="bb-money-p">
-          People get this wrong in both directions. Half assume the big number is the total and half assume
-          the total is a rounding error. So here is every pound the company ever took.
+          The complete revenue record for the twelve-month study.
         </p>
         <div className="bb-money-grid">
           {[
@@ -197,11 +194,9 @@ export default function CVBlackBloxie() {
           ))}
         </div>
         <p className="bb-money-note">
-          <strong>One order is 65% of everything that company ever earned.</strong> That was the whole
-          purpose of it. I wanted to know whether an autonomous system could carry somebody through a
-          genuinely expensive decision, so I set one up and it did. The honest total is{' '}
-          <strong>under seven thousand dollars</strong>, and it is small because I held it there
-          deliberately.
+          <strong>A single order accounts for 65% of total revenue.</strong> It was the study&apos;s final
+          test: whether an autonomous system could carry a customer through a high-value purchase. Total
+          revenue is <strong>under $7,000</strong>, deliberately capped for the duration of the study.
         </p>
       </div>
 
@@ -224,18 +219,16 @@ export default function CVBlackBloxie() {
       </ExpandableSection>
 
       <div className="bb-ceiling">
-        <div className="bb-ceiling-k">Why I stopped it, and where it sent me</div>
+        <div className="bb-ceiling-k">Why the study ended, and what followed</div>
         <p>
-          I capped the study on purpose. No country has decided yet who is liable when an autonomous agent
-          signs a contract, and I would rather keep a clean experiment than discover that boundary from the
-          wrong side of it.
+          The study was capped deliberately. No jurisdiction has yet settled who is liable when an autonomous
+          agent enters a contract, and a clean experiment was preferable to testing that boundary.
         </p>
         <p>
-          The technical reason mattered more. Rung 6 overshot because the system had built up a year of
-          real memory, and the obvious next move was to let it learn from the company&apos;s own data.
-          That data was a mess: mislabelled, contradictory, half of it corrupted. Which is what production
-          data always is. I tried every published method for it and watched all of them fail.{' '}
-          <strong>That wall is the whole reason the next thing I built was research and not another
+          The technical reason was more important. The natural next step was to let the system learn from
+          the company&apos;s own data, which, like all production data, was mislabelled, contradictory and
+          partly corrupted. Every established method for handling it failed.{' '}
+          <strong>That limitation is why Raadh&apos;s next project was research rather than another
           product.</strong>
         </p>
       </div>

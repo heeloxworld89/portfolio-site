@@ -18,7 +18,7 @@ const lanes = [
   {
     tag: 'Research',
     name: 'ORMAS',
-    line: 'The architecture itself. 383 experiments, four families, every run reproducible. Stability result accepted at DeepMath 2026.',
+    line: 'The self-correcting architecture. 383 controlled experiments, fully reproducible; stability result peer-reviewed at DeepMath 2026.',
     href: '#research',
     cta: 'The evidence',
     state: 'live' as const,
@@ -27,7 +27,7 @@ const lanes = [
   {
     tag: 'Business',
     name: 'OXIEDO',
-    line: 'The company. One licence, five sectors, and a market that has to buy this by law before 2028.',
+    line: 'The company. One on-premise licence for five regulated sectors facing audit obligations from 2027.',
     href: 'https://oxiedo.com',
     cta: 'oxiedo.com',
     state: 'live' as const,
@@ -36,9 +36,9 @@ const lanes = [
   {
     tag: 'Next',
     name: 'Project Cherry',
-    line: 'A network that grows its own parts. Written down in full, and deliberately not started yet.',
+    line: 'A network that grows its own components. Fully specified; development begins with multi-node compute.',
     href: '#cherry',
-    cta: 'What it would take',
+    cta: 'The plan',
     state: 'pending' as const,
     external: false,
   },
@@ -301,7 +301,7 @@ export default function Hero(_props?: any) {
         <a className="hx-live-bar" href="https://oxiedo.com" target="_blank" rel="noreferrer">
           <span className="hx-live-tag"><span className="hx-live-dot" />Now Live</span>
           <span className="hx-live-txt">
-            <b>OXIEDO is live.</b> The company I built on this research is open for business at oxiedo.com.
+            <b>OXIEDO is live.</b> The company built on this research is now licensing the architecture.
           </span>
           <span className="hx-live-go">oxiedo.com <Icon name="externalLink" size={14} /></span>
         </a>
@@ -311,7 +311,7 @@ export default function Hero(_props?: any) {
 
           <div>
             <div className="hx-id">
-              Rokib Al Dhin Raadh <i /> <span className="age">18 years old</span> <i /> Dhaka, Bangladesh <i /> No institution
+              Rokib Al Dhin Raadh <i /> Founder &amp; CEO, OXIEDO <i /> AI Researcher
             </div>
 
             <h1 className="hx-h1">
@@ -319,23 +319,23 @@ export default function Hero(_props?: any) {
               <span>It was one decision, made in 1986.</span>
             </h1>
 
-            <p className="hx-kicker">I went back and changed it. I was seventeen.</p>
+            <p className="hx-kicker">Rokib Al Dhin Raadh built the alternative, and a company on top of it.</p>
 
             <p className="hx-lead">
-              Every neural network ever shipped has the same blind spot. One error signal touches every
-              parameter at once, so when something inside breaks, no number anywhere in the system says
-              what. Forty years of interpretability has been people standing outside a finished model,
-              guessing backwards.
+              Every neural network in production shares one blind spot. A single error signal updates every
+              parameter at once, so when something inside fails, nothing in the system can say what. Four
+              decades of interpretability research have worked from the outside, reconstructing a finished
+              model&apos;s behaviour after the fact.
             </p>
             <p className="hx-lead">
-              <strong>I stopped guessing.</strong> Bound each node&apos;s path to the loss at four operations
-              and the guess becomes a measurement the network takes about itself, while it trains.
+              <strong>ORMAS measures instead of estimating.</strong> By bounding each node&apos;s path to the loss
+              at four operations, the network records which of its parts changed, and why, while it trains.
             </p>
 
             <p className="hx-trust">
-              I am <span className="age">eighteen years old</span>. 383 controlled experiments, one RTX 3090, and no university,
-              no lab, no advisor, no funding and nobody else on the project. The paper is public, the code
-              reproduces every run from seed, and the company built on it is live.
+              Developed independently at <span className="age">17</span>: 383 controlled experiments on a single GPU,
+              a public preprint, a peer-reviewed stability result at DeepMath 2026, and every run reproducible
+              from seed. OXIEDO now licenses the architecture to regulated industries.
             </p>
 
             <div className="hx-ctas">
@@ -358,7 +358,7 @@ export default function Hero(_props?: any) {
           <div className="hx-res">
             <div className="hx-res-k">One experiment, and what it settles</div>
             <p className="hx-res-q">
-              I killed a layer. Mid-training, on a network that had already reached 85%, on purpose.
+              A trained layer is deliberately destroyed mid-training, after the network reaches 85%.
             </p>
 
             <div className="hx-bar is-good">
@@ -369,7 +369,7 @@ export default function Hero(_props?: any) {
               <div className="hx-bar-track">
                 <div className="hx-bar-fill" style={{ width: '80.3%' }} />
               </div>
-              <div className="hx-bar-s">Found the damage inside one epoch. Climbed back through 85 repairs, each one logged with its cause.</div>
+              <div className="hx-bar-s">Locates the damage within one epoch and recovers through 85 repairs, each logged with its cause.</div>
             </div>
 
             <div className="hx-bar is-bad">
@@ -380,7 +380,7 @@ export default function Hero(_props?: any) {
               <div className="hx-bar-track">
                 <div className="hx-bar-fill" style={{ width: '10%', animationDelay: '0.15s' }} />
               </div>
-              <div className="hx-bar-s">Chance. It never comes back. Not on any seed, not ever.</div>
+              <div className="hx-bar-s">Falls to chance and never recovers, on any seed.</div>
             </div>
 
             <div className="hx-res-delta">
@@ -389,12 +389,12 @@ export default function Hero(_props?: any) {
             </div>
 
             <p className="hx-res-cap">
-              The ordinary network doesn&apos;t fail to find the damage. It has nothing to look at. Nobody
-              ever computed a number that would tell it which part died.
+              A standard network cannot locate the damage: it computes no signal that identifies which
+              component failed.
             </p>
             <p className="hx-res-foot">
               <b>Conditions:</b> CIFAR-10, 85.1% before the lesion, three seeds, parameter-matched baseline.
-              Error bars, the full table and the one result that went against me are in the research section.
+              Error bars, full tables and adverse results are in the research section.
             </p>
           </div>
         </div>
@@ -420,14 +420,13 @@ export default function Hero(_props?: any) {
           </div>
 
           <p className="hx-before">
-            <b>Everything before that —</b> <a href="#oximo">OXIMO</a>, 40,933 lines of an operating system
-            where agents hire their own staff · <a href="#black-bloxie">Black Bloxie LTD</a>, a real company I
-            spent twelve months trying to disprove myself with · <a href="#ventures">five businesses and one
-            exit</a>, all of it before I turned <span className="age">eighteen</span>.
+            <b>Earlier work —</b> <a href="#oximo">OXIMO</a>, a 40,933-line multi-agent operating system ·
+            {' '}<a href="#black-bloxie">Black Bloxie LTD</a>, a twelve-month controlled field study on a live UK
+            company · <a href="#ventures">five ventures and one exit</a>, between ages 12 and 17.
           </p>
 
           <a href="#recognition" className="hx-cue">
-            Start with the last three months
+            Recent milestones
             <span className="hx-cue-i"><Icon name="arrowDown" size={15} /></span>
           </a>
         </div>

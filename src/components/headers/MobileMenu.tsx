@@ -13,7 +13,7 @@ import Icon from "@/components/common/Icon";
 
 const items: { href: string; label: string; phase: string }[] = [
   { href: "#recognition",  label: "Recent",        phase: "now" },
-  { href: "#who-i-am",     label: "Who I Am",      phase: "now" },
+  { href: "#who-i-am",     label: "Profile",       phase: "now" },
   { href: "#research",     label: "Research",      phase: "now" },
   { href: "#oxiedo",       label: "Business",      phase: "now" },
   { href: "#cherry",       label: "What’s Next",   phase: "now" },
