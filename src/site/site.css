@@ -462,3 +462,34 @@ body:has(.rx) { background: #e7e7e2; }
 .rx .rx-dm-lede b { color: #fbfbf9; font-weight: 700; }
 .rx-dm-card .rx-meta { color: rgba(240, 247, 245, .75); margin-top: 16px; }
 .rx-dm-card .rx-meta b { color: #fbfbf9; }
+
+/* ── education: MIT Open Learning card ────────────────────────────────── */
+.rx .mit-card { position: relative; overflow: hidden; background: linear-gradient(135deg, #082f39 0%, #0b404d 55%, #155e5a 100%); color: #eef6f3; padding: 40px 44px 0; margin: 10px 0 18px; }
+.rx .mit-card::before { content: ""; position: absolute; right: -200px; top: -240px; width: 640px; height: 520px; background: radial-gradient(closest-side, rgba(152, 224, 160, .26), transparent); pointer-events: none; }
+.rx .mit-k { position: relative; font-family: var(--rx-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #d8ee96; margin: 0 0 14px; }
+.rx .rx-deep .mit-h { position: relative; font-family: var(--rx-serif) !important; font-weight: 400 !important; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.04; letter-spacing: -0.02em; color: #fbfbf9 !important; margin: 0 0 18px; max-width: 900px; }
+.rx .mit-h em { font-style: italic; color: #d8ee96; }
+.rx .mit-lede { position: relative; font-size: 16.5px; line-height: 1.7; color: rgba(240, 247, 245, .92); max-width: 820px; margin: 0 0 30px; }
+.rx .mit-stats { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 -44px; border-top: 1px solid rgba(240, 247, 245, .18); }
+.rx .mit-stats > div { padding: 22px 28px 26px 44px; border-right: 1px solid rgba(240, 247, 245, .18); display: flex; flex-direction: column; gap: 6px; }
+.rx .mit-stats > div:last-child { border-right: 0; }
+.rx .mit-stats b { font-family: var(--rx-serif); font-weight: 400; font-size: 40px; line-height: 1; color: #fbfbf9; }
+.rx .mit-stats span { font-size: 14px; line-height: 1.45; color: rgba(240, 247, 245, .88); }
+.rx .mit-courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.rx .rx-deep a.mit-course { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; background: var(--rx-white); border: 1px solid var(--rx-line-soft); border-top: 3px solid var(--rx-teal); text-decoration: none; color: var(--rx-ink); transition: transform .25s, box-shadow .25s; }
+.rx .rx-deep a.mit-course:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(11, 64, 77, .5); }
+.rx .mit-course-k { font-family: var(--rx-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--rx-ink-3); }
+.rx .mit-course-t { font-size: 17px; font-weight: 700; line-height: 1.3; color: var(--rx-ink); }
+.rx .mit-course-go { margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--rx-teal); }
+.rx .mit-note { font-size: 13px; color: var(--rx-ink-3); margin: 12px 0 26px; }
+.rx .mit-more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 50px; }
+.rx .mit-more > div { background: var(--rx-white); border: 1px solid var(--rx-line-soft); padding: 20px 22px; }
+.rx .mit-more p { font-size: 15px; line-height: 1.6; color: var(--rx-ink-2); margin: 8px 0 0; }
+.rx .mit-more a { color: var(--rx-teal); }
+@media (max-width: 900px) {
+  .rx .mit-card { padding: 28px 22px 0; }
+  .rx .mit-stats { grid-template-columns: 1fr; margin: 0 -22px; }
+  .rx .mit-stats > div { padding: 18px 22px; border-right: 0; border-bottom: 1px solid rgba(240, 247, 245, .18); }
+  .rx .mit-stats > div:last-child { border-bottom: 0; }
+  .rx .mit-more { grid-template-columns: 1fr; }
+}
