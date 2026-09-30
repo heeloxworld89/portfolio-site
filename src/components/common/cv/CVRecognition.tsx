@@ -547,7 +547,9 @@ export default function CVRecognition() {
               reviews it <strong>double-blind</strong>, so reviewers assessed the work without knowledge of
               his background. The paper, <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State
               Stability of Neural Network Training Dynamics&rdquo;</em>, was accepted for poster presentation.
-              It formalises the stability guarantee underlying ORMAS. DeepMath does not publish proceedings.
+              It formalises the stability guarantee underlying ORMAS. The 2026 invited speakers come from Stanford,
+              Michigan, UPenn and the University of Washington, and past editions have been supported by the
+              National Science Foundation and the Simons Foundation. DeepMath does not publish proceedings.
             </p>
             <p className="rec-week-l">
               Two further decisions are pending: <strong>Onstage</strong> is ranking its W26 cohort by interest
