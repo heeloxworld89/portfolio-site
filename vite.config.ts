@@ -3,10 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     react(),
-    VitePWA({
+    // The SSR build only renders HTML at build time; it needs no service worker.
+    !isSsrBuild && VitePWA({
       registerType: "autoUpdate",
       injectRegister: false, // We register manually in main.tsx with updateViaCache:'none'
       includeAssets: ["favicon/favicon.svg", "favicon/apple-touch-icon.png"],
@@ -94,7 +95,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      output: {
+      output: isSsrBuild ? {} : {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-charts': ['recharts'],
@@ -106,6 +107,9 @@ export default defineConfig({
       },
     },
   },
+  // Bundle dependencies into the SSR build: several are CommonJS packages
+  // whose named exports Node's ESM loader cannot see (e.g. react-katex).
+  ssr: { noExternal: true },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -118,4 +122,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
