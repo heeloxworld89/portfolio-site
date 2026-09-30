@@ -10,8 +10,8 @@ export default function CVRecognition() {
       lead={
         <>
           July: Cosmos ranked the work highest in their cycle. August: a cold application to Entrepreneur First
-          turned into a first-round call. September: accepted by two accelerators in
-          one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
+          turned into a first-round call. September: the stability result accepted at DeepMath 2026 after
+          double-blind review, accepted by two accelerators in one week, two rounds into The Bridge in San Francisco, through to the IARCO 2026 final round, and a
           member of Cohere Labs&apos; Open Science Community. December: I review for a NeurIPS workshop in Paris.{' '}
           <strong>None of it was asked for, and none of it has stopped.</strong> Here is what each one
           proves — and, because it matters more, what it doesn&apos;t.
@@ -131,7 +131,7 @@ export default function CVRecognition() {
         /* Run of months — the section's argument is momentum, so show it
            before any of the individual entries. */
         .rec-run {
-          display: grid; grid-template-columns: repeat(4, 1fr);
+          display: grid; grid-template-columns: repeat(5, 1fr);
           gap: 1px; background: var(--pf-border);
           border: 1px solid var(--pf-border);
           border-radius: 10px; overflow: hidden; margin-bottom: 26px;
@@ -533,23 +533,34 @@ export default function CVRecognition() {
             <div className="rec-week-top">
               <span className="rec-week-badge">
                 <span className="rec-date-dot" aria-hidden="true" />
-                Ongoing
+                Accepted
               </span>
-              <span className="rec-week-stamp">Week of 22 Sep 2026</span>
+              <span className="rec-week-stamp">30 Sep 2026</span>
             </div>
 
             <h3 className="rec-week-t">
-              Two decisions about me are sitting with other people right now.
+              Peer review, passed. The stability result is accepted at DeepMath 2026.
             </h3>
             <p className="rec-week-l">
-              <strong>Onstage</strong> are ranking me for the W26 cohort against 350 venture funds, and
-              the top 100 is named shortly. <strong>Entrepreneur First</strong> are sitting on a Bridge
-              decision. Two acceptances and one residency bar landed this week as well, all recorded
-              below. Not one of these came from an introduction &mdash; every one started as a cold
-              application from Dhaka, written by an <span className="age">eighteen-year-old</span>.
+              <strong>DeepMath</strong> is the Conference on the Mathematical Theory of Deep Neural Networks,
+              this year hosted by <strong>Ohio State University</strong> in Columbus on 29&ndash;30 October, with an
+              organising committee drawn from Johns Hopkins, Michigan and Ohio State. It takes theory only, and
+              reviews it <strong>double-blind</strong>: nobody judging the paper knew who I was, where I was, or
+              that I have no degree. My submission, <em>&ldquo;Self-Repair as a Bounded Disturbance:
+              Input-to-State Stability of Neural Network Training Dynamics&rdquo;</em>, came back{' '}
+              <strong>Accept (Poster)</strong>. It is the mathematics under ORMAS, and the first time it has been
+              through formal review. DeepMath publishes no proceedings, so this is an acceptance, not a publication.
+            </p>
+            <p className="rec-week-l">
+              Two more decisions are sitting with other people: <strong>Onstage</strong> are ranking the W26
+              cohort against 350 venture funds, and <strong>Entrepreneur First</strong> are deciding on The Bridge.
+              Not one of these came from an introduction &mdash; every one started as a cold application from
+              Dhaka, written by an <span className="age">eighteen-year-old</span>.
             </p>
 
             <div className="rec-week-wall">
+              <span className="rec-week-mark is-type">DeepMath 2026</span>
+              <span className="rec-week-mark is-type">Ohio State University</span>
               <span className="rec-week-mark is-wide is-bright">
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
@@ -558,6 +569,14 @@ export default function CVRecognition() {
           </div>
 
           {[
+            {
+              d: '30 Sep',
+              h: 'Columbus, Ohio',
+              who: 'DeepMath 2026 \u00b7 Mathematical Theory of Deep Neural Networks',
+              what: <><strong>Accept (Poster)</strong> after double-blind review. The input-to-state stability result behind ORMAS, presented at Ohio State on 29&ndash;30 October.</>,
+              pill: 'Accepted',
+              now: true,
+            },
             {
               d: 'W26 cohort',
               h: 'Top 100 pending',
@@ -592,7 +611,7 @@ export default function CVRecognition() {
           ))}
 
           <div className="rec-week-foot">
-            Status as of 23 September 2026 &middot; this list is updated the day anything on it moves
+            Status as of 30 September 2026 &middot; this list is updated the day anything on it moves
           </div>
         </div>
 
@@ -600,7 +619,8 @@ export default function CVRecognition() {
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Two acceptances, a final round, a research community.', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'A peer-reviewed acceptance, two accelerators, a final round, a research community.', state: 'live' },
+            { m: 'Oct', y: '2026', who: 'DeepMath 2026', what: 'Poster, Ohio State, Columbus', state: 'ahead' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
@@ -940,6 +960,13 @@ export default function CVRecognition() {
           <p className="rec-verdict-lead">
             None of these is a degree, and I am not going to dress them up as one. They are still the outside
             signals I weight most.
+          </p>
+          <p className="rec-verdict-body">
+            <strong>DeepMath accepted the mathematics.</strong> This is the one that answers the obvious doubt about
+            self-taught theory. The review was double-blind, by people who work on the theory of deep learning, and
+            the stability result came back accepted. It is a poster, not a proceedings paper, and DeepMath publishes
+            none, so I will not call it a publication. It is still the first time the ISS characterization has been
+            judged by strangers qualified to reject it, and they did not.
           </p>
           <p className="rec-verdict-body">
             <strong>NeurIPS put me on a programme committee.</strong> That is the one I would point a

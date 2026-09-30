@@ -382,7 +382,7 @@ export default function CVOriginStatement() {
               </tr>
               <tr>
                 <td>A control theorist</td>
-                <td>The ISS characterization needs someone qualified trying to break it before I submit it anywhere, not after.</td>
+                <td>The ISS characterization passed double-blind review at DeepMath 2026. That is a theory-of-deep-learning panel, not control theory, and it now needs a control theorist trying to break it.</td>
               </tr>
             </tbody>
           </table>
@@ -391,7 +391,7 @@ export default function CVOriginStatement() {
         <div className="os-close">
           <p>
             The infrastructure for the next phase — Transformer-scale validation, Project Cherry,
-            formal peer review of the ISS result — requires exactly the kind of institutional
+            review of the ISS result by control theorists — requires exactly the kind of institutional
             environment I have been building without. That is the direct and honest reason I am
             raising, and it is not for validation. I have had enough of that this year. It is to stop being the only person who can check my own work.
           </p>

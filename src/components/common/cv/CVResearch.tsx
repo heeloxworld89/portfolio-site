@@ -261,16 +261,20 @@ export default function CVResearch() {
         </div>
 
         <div className="res-venue">
-          <span className="res-venue-tag">Submitted · Under Review</span>
+          <span className="res-venue-tag">Accepted · DeepMath 2026 · Poster</span>
           <span className="res-venue-txt">
-            <strong>Under peer review.</strong> Not accepted and not published yet, and I will say so until a
-            decision exists. The preprint is live on Zenodo
-            with a DOI so the work can be read and attacked now rather than after a committee gets to it.
+            <strong>The stability result passed peer review.</strong> Submitted as{' '}
+            <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+            Dynamics&rdquo;</em>, it was accepted after double-blind review at DeepMath 2026, the Conference on the
+            Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus, 29&ndash;30 October 2026).
+            DeepMath publishes no proceedings, so this is an acceptance, not a publication, and I will describe it
+            exactly that way. The full ORMAS preprint is live on Zenodo with a DOI, so the rest of the work can be
+            read and attacked now.
           </span>
         </div>
         <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: '20px' }}>
           <strong>Principal Researcher (Solo, Unaffiliated) | 2024 – Present | PyTorch · 16,316 lines · 85 files</strong><br />
-          383 controlled experiments. One RTX 3090. Four architectures. The first formal local stability characterization for any self-correcting architecture — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
+          383 controlled experiments. One RTX 3090. Four architectures. The first formal local stability characterization for any self-correcting architecture, accepted at DeepMath 2026 — global convergence remains open, and the preprint says so. Full 36-page supplementary, reproducible codebase, and the complete results archive are all linked below.
         </p>
 
         {/* Action Link Bar */}

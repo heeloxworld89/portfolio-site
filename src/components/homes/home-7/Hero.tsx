@@ -18,7 +18,7 @@ const lanes = [
   {
     tag: 'Research',
     name: 'ORMAS',
-    line: 'The architecture itself. 383 experiments, four families, every run reproducible. Under peer review.',
+    line: 'The architecture itself. 383 experiments, four families, every run reproducible. Stability result accepted at DeepMath 2026.',
     href: '#research',
     cta: 'The evidence',
     state: 'live' as const,
@@ -237,6 +237,15 @@ export default function Hero(_props?: any) {
       <div className="container hx">
 
         {/* ══ 1 · the company is live ═══════════════════════════ */}
+        <a className="hx-live-bar" href="#research">
+          <span className="hx-live-tag"><span className="hx-live-dot" />Accepted</span>
+          <span className="hx-live-txt">
+            <b>Accepted at DeepMath 2026.</b> The stability result behind ORMAS passed double-blind review at the
+            Conference on the Mathematical Theory of Deep Neural Networks. Poster, Ohio State, 29&ndash;30 October.
+          </span>
+          <span className="hx-live-go">The paper <Icon name="arrowRight" size={14} /></span>
+        </a>
+
         <a className="hx-live-bar" href="https://oxiedo.com" target="_blank" rel="noreferrer">
           <span className="hx-live-tag"><span className="hx-live-dot" />Now Live</span>
           <span className="hx-live-txt">
