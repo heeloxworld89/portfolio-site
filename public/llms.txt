@@ -68,7 +68,7 @@ Every claim on raadh.me can be checked against a primary source:
 - ORCID: https://orcid.org/0009-0003-1178-5296
 - X: https://x.com/Raad_X_
 - GitHub: https://github.com/raad-x
-- Substack (writing): https://substack.com/@rokibraadh
+- Substack (writing): https://rokibraadh.substack.com/
 - YouTube: https://www.youtube.com/@rokibraadh
 
 ## How to cite

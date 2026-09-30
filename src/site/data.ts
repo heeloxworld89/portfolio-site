@@ -18,7 +18,7 @@ export const links = {
   orcid: "https://orcid.org/0009-0003-1178-5296",
   github: "https://github.com/raad-x",
   x: "https://x.com/Raad_X_",
-  substack: "https://substack.com/@rokibraadh",
+  substack: "https://rokibraadh.substack.com/",
   youtube: "https://www.youtube.com/@rokibraadh",
   email: "raadxbusiness9@gmail.com",
   companyEmail: "rokib@blackbloxie.com",
