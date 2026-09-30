@@ -75,6 +75,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── DeepMath: the peer-reviewed result ───────────────────────── */}
+      <section className="rx-dm" aria-labelledby="rx-dm-h">
+        <div className="rx-wrap">
+          <div className="rx-dm-card">
+            <div className="rx-dm-main">
+              <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Accepted · Double-blind review · Poster</p>
+              <h2 id="rx-dm-h">
+                The mathematics behind ORMAS passed blind review at <em>DeepMath&nbsp;2026.</em>
+              </h2>
+              <p className="rx-dm-lede">
+                DeepMath, the Conference on the Mathematical Theory of Deep Neural Networks, takes theory only and
+                reviews it double-blind. Specialists judged the proof without knowing who wrote it, or that he is
+                eighteen and self-taught.
+              </p>
+              <p className="rx-dm-paper">
+                &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+                Dynamics&rdquo;
+              </p>
+              <div className="rx-btns">
+                <a className="rx-btn is-light" href={links.deepmath} target="_blank" rel="noreferrer">Conference site <Arrow /></a>
+                <a className="rx-btn is-outline-light" href={links.preprint} target="_blank" rel="noreferrer">ORMAS preprint <Arrow /></a>
+              </div>
+            </div>
+            <dl className="rx-dm-facts">
+              <div><dt>Host, 2026</dt><dd>Ohio State University, Columbus</dd></div>
+              <div><dt>Organising committee</dt><dd>Johns Hopkins · Michigan · Ohio State · Konstanz</dd></div>
+              <div><dt>Invited speakers, 2026</dt><dd>Stanford · UPenn · Michigan · University of Washington</dd></div>
+              <div><dt>Past organisers</dt><dd>Princeton · NYU · UC San Diego · Google Brain</dd></div>
+              <div><dt>Past support</dt><dd>National Science Foundation · Simons Foundation</dd></div>
+              <div><dt>Presenting</dt><dd>29–30 October 2026</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       {/* ── selected / reviewed / interviewed ────────────────────────── */}
       <section className="rx-sel" aria-labelledby="rx-sel-h">
         <div className="rx-wrap">
