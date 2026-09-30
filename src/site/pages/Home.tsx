@@ -137,6 +137,8 @@ export default function Home() {
               <a href={links.orcid} target="_blank" rel="noreferrer">ORCID <Arrow /></a>
               <a href={links.github} target="_blank" rel="noreferrer">GitHub <Arrow /></a>
               <a href={links.x} target="_blank" rel="noreferrer">X <Arrow /></a>
+              <a href={links.substack} target="_blank" rel="noreferrer">Substack <Arrow /></a>
+              <a href={links.youtube} target="_blank" rel="noreferrer">YouTube <Arrow /></a>
             </div>
           </div>
 
@@ -351,7 +353,9 @@ export default function Home() {
               <p>
                 <a href={links.orcid} target="_blank" rel="noreferrer">ORCID</a> ·{" "}
                 <a href={links.github} target="_blank" rel="noreferrer">GitHub</a> ·{" "}
-                <a href={links.x} target="_blank" rel="noreferrer">X</a>
+                <a href={links.x} target="_blank" rel="noreferrer">X</a> ·{" "}
+                <a href={links.substack} target="_blank" rel="noreferrer">Substack</a> ·{" "}
+                <a href={links.youtube} target="_blank" rel="noreferrer">YouTube</a>
               </p>
               <p>Dhaka, Bangladesh</p>
             </div>

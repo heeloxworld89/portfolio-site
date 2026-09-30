@@ -83,7 +83,7 @@ const person = {
   identifier: [
     { "@type": "PropertyValue", propertyID: "ORCID", value: "0009-0003-1178-5296", url: links.orcid },
   ],
-  sameAs: [links.orcid, links.github, links.x],
+  sameAs: [links.orcid, links.github, links.x, links.substack, links.youtube],
   subjectOf: [ref("ormas-preprint"), ref("deepmath-paper")],
 };
 
