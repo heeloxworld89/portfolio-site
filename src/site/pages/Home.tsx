@@ -6,16 +6,16 @@ type Mark = { name: string; logo?: string; word?: string; tag: string; note: str
 
 const L = "/assets/images/logos/";
 const marks: Mark[] = [
-  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-Reviewed", note: "His paper passed double-blind review; presenting at Ohio State" },
-  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Reviewed papers for the world’s largest AI conference" },
-  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked #1", note: "Top-ranked application in its grant round" },
-  { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Won a place open only to the top 1% of applicants" },
-  { name: "Antler", logo: L + "antler.svg", tag: "Paused · Work Permit", note: "In the programme process until Australian work-permit logistics stopped it" },
-  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Final Round", note: "Through two interview rounds to the final selection" },
-  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by the talent team for an interview in London" },
-  { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer", note: "Offered a place in the equity-free accelerator after interview" },
-  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "Finalist from 500+ entries across 60 countries" },
-  { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited Member", note: "Joined the Open Science research community" },
+  { name: "DeepMath 2026", word: "DeepMath", tag: "Accepted Blind", note: "Anonymous reviewers accepted the proof. Presenting at Ohio State, 29 October." },
+  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Reviews papers for the largest AI conference in the world." },
+  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked #1", note: "First out of every application in its grant round." },
+  { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Cleared the top-1% cut into the Ignite cohort." },
+  { name: "Antler", logo: L + "antler.svg", tag: "Paused · Work Permit", note: "In the programme process until Australian work-permit logistics stopped it." },
+  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Final Round", note: "Two interviews deep. Final selection, San Francisco." },
+  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by EF’s talent team for interview in London." },
+  { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer", note: "An offer after a single interview." },
+  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "Final stage, from 500+ entries across 60 countries." },
+  { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited Member", note: "Welcomed for “remarkable initiative in ML safety.”" },
 ];
 
 const Arrow = () => (
@@ -34,16 +34,16 @@ export default function Home() {
         <div className="rx-wrap rx-h2-grid">
           <div className="rx-h2-copy">
             <p className="rx-h2-eb">
-              <span className="dot" aria-hidden="true" /> Founder &amp; CEO, OXIEDO <i /> Deep-tech AI <i className="rx-h2-hide" /> <span className="rx-h2-hide">Dhaka</span>
+              <span className="dot" aria-hidden="true" /> Founder &amp; CEO, OXIEDO <i className="rx-h2-hide" /> <span className="rx-h2-hide">Inventor of ORMAS</span> <i className="rx-h2-hide" /> <span className="rx-h2-hide">Dhaka</span>
             </p>
             <h1>
-              Building AI that can prove what it learned.
-              <span className="rx-h2-age">Founder and CEO at <em>eighteen.</em></span>
+              He built the neural network that repairs itself.
+              <span className="rx-h2-age">Alone. On one GPU. <span className="rx-nw">At <em>eighteen.</em></span></span>
             </h1>
             <p className="rx-h2-sub">
-              Rokib Al Dhin Raadh founded <b>OXIEDO</b> to give banks, hospitals and other regulated teams AI they can
-              audit: models that find, fix and record their own mistakes while they train. He invented the technology
-              himself, and it has passed double-blind peer review.
+              Rokib Al Dhin Raadh is the founder and CEO of <b>OXIEDO</b> and the inventor of <b>ORMAS</b>: the first
+              self-repairing neural network with a formal stability proof, accepted after double-blind review. No lab.
+              No team. No outside capital. OXIEDO takes it to the industries that cannot run AI they cannot audit.
             </p>
             <div className="rx-btns">
               <Link className="rx-btn" to="/work">See the company <Arrow /></Link>
@@ -82,12 +82,12 @@ export default function Home() {
             <div>
               <p className="rx-sel-eb">Recognition · 2026</p>
               <h2 id="rx-sel-h">
-                Picked by the programmes <em>that turn almost everyone down.</em>
+                Ten rooms. Ten cold applications. <em>One year.</em>
               </h2>
             </div>
             <p>
-              Top 1% at 1752vc. Ranked first at Cosmos Institute. Peer-reviewed at DeepMath. A reviewer for NeurIPS.
-              Ten independent selections in a single year.
+              No introductions. No network. 1752vc put him in its top 1%. Cosmos ranked him first. DeepMath accepted
+              him blind. NeurIPS made him a reviewer.
             </p>
           </div>
           <ul className="rx-logos">
@@ -114,23 +114,23 @@ export default function Home() {
         <div className="rx-wrap">
           <div className="rx-bio-inner">
             <p className="rx-bio-lead">
-              <strong>Rokib Al Dhin Raadh</strong> is an 18-year-old deep-tech founder. He is the founder and CEO of{" "}
-              <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a> and the inventor of{" "}
-              <Link to="/research">ORMAS</Link>, the technology the company is built on.
+              Every neural network in production shares one flaw: it cannot tell you which part of it failed.{" "}
+              <strong>Rokib Al Dhin Raadh</strong> built one that can, working alone from Dhaka, and founded{" "}
+              <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a> to sell it.
             </p>
             <div className="rx-bio-cols">
               <p>
-                ORMAS trains neural networks that spot their own broken parts, repair them without stopping, and keep a
-                record of every fix that cannot be quietly changed. Banks, hospitals and defence teams need that record
-                before they can trust AI with their most sensitive data, and new rules such as the EU AI Act will soon
-                require it.
+                <Link to="/research">ORMAS</Link> is a new way to train neural networks. Every part carries its own
+                health signal, so when one fails the network finds it, repairs it mid-training and writes the repair
+                into a permanent record. Destroy a trained layer and ORMAS climbs back to <b>80.3%</b> accuracy. A
+                standard network of the same size stays at <b>10.0%</b>: pure chance.
               </p>
               <p>
-                He built it alone from Dhaka, Bangladesh: 383 experiments on a single graphics card, with all the code
-                public. The work passed double-blind peer review at{" "}
-                <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath 2026</a>, and he reviews papers for{" "}
-                <a href={links.neurips} target="_blank" rel="noreferrer">NeurIPS 2026</a>. He started his first venture
-                at twelve and sold a stock-prediction system he built for about $10,000 at fifteen.
+                He proved it the hard way: 383 controlled experiments, 16,316 lines of PyTorch, one RTX 3090, every run
+                reproducible from seed. The mathematics passed double-blind review at{" "}
+                <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath 2026</a>, and{" "}
+                <a href={links.neurips} target="_blank" rel="noreferrer">NeurIPS 2026</a> made him a reviewer. He started
+                his first venture at twelve and sold a stock-prediction engine for about $10,000 at fifteen.
               </p>
             </div>
             <div className="rx-links">
@@ -145,19 +145,19 @@ export default function Home() {
           <div className="rx-figs" role="list">
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v is-age">18</div>
-              <div className="rx-fig-k">Founder and CEO of a deep-tech AI company</div>
+              <div className="rx-fig-k">Founder and CEO of OXIEDO. Inventor of ORMAS.</div>
+            </div>
+            <div className="rx-fig" role="listitem">
+              <div className="rx-fig-v">383</div>
+              <div className="rx-fig-k">Controlled experiments, run alone on a single GPU</div>
+            </div>
+            <div className="rx-fig" role="listitem">
+              <div className="rx-fig-v">+70.3</div>
+              <div className="rx-fig-k">Accuracy points recovered after a layer is destroyed. Standard networks recover none.</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">12</div>
               <div className="rx-fig-k">His age when he started his first venture</div>
-            </div>
-            <div className="rx-fig" role="listitem">
-              <div className="rx-fig-v">$10K</div>
-              <div className="rx-fig-k">Software he built and sold at fifteen</div>
-            </div>
-            <div className="rx-fig" role="listitem">
-              <div className="rx-fig-v">+70.3</div>
-              <div className="rx-fig-k">Accuracy points ORMAS wins back after part of the network is destroyed</div>
             </div>
           </div>
         </div>
@@ -172,8 +172,9 @@ export default function Home() {
               <p className="rx-co-k">OXIEDO</p>
               <h3>Every AI model, with a receipt for what it learned.</h3>
               <p className="rx-co-lede">
-                Regulated companies sit on data they are not allowed to train AI on, because nobody can show what a model
-                took from it. OXIEDO fixes that.
+                Banks, hospitals and defence teams hold the data that would build the best models, and they cannot
+                touch it, because no one can prove what a model took from it. ORMAS writes that proof while the model
+                trains. OXIEDO licenses it.
               </p>
             </div>
             <div className="rx-co-grid">
@@ -181,24 +182,24 @@ export default function Home() {
                 <span className="n">01</span>
                 <h4>The problem</h4>
                 <p>
-                  AI models are black boxes. When one goes wrong, nobody can say which part failed or what it learned, so
-                  banks and hospitals keep their best data out of reach.
+                  Every model in production is a black box. When it fails, no one can say which part broke or what it
+                  learned. Regulators have noticed.
                 </p>
               </div>
               <div>
                 <span className="n">02</span>
                 <h4>The product</h4>
                 <p>
-                  ORMAS, installed on the customer’s own servers, plus the Model Change Record: a tamper-evident log of
-                  every change a model makes while it trains.
+                  ORMAS on the customer’s own servers, plus the Model Change Record: a tamper-evident ledger of every
+                  weight change in a training run.
                 </p>
               </div>
               <div>
                 <span className="n">03</span>
                 <h4>Why now</h4>
                 <p>
-                  US model-risk guidance (SR 26-2) and the EU AI Act’s high-risk rules, which apply from December 2027,
-                  both ask for exactly this kind of audit trail.
+                  US model-risk guidance SR 26-2 and the EU AI Act’s high-risk rules, which bite in December 2027,
+                  both demand the audit trail ORMAS produces by default.
                 </p>
               </div>
             </div>
@@ -215,8 +216,8 @@ export default function Home() {
               <div className="k">Ages 12–17</div>
               <h3>Five ventures</h3>
               <p>
-                His first venture at twelve, and a stock-prediction system sold for about $10,000 at fifteen. Five
-                ventures before he turned eighteen.
+                First venture at twelve. A stock-prediction engine sold for about $10,000 at fifteen. Five ventures
+                before eighteen.
               </p>
               <Link className="more" to="/work">The full story →</Link>
             </div>
@@ -224,8 +225,8 @@ export default function Home() {
               <div className="k">2023–2025</div>
               <h3>OXIMO</h3>
               <p>
-                An AI system of 40,933 lines that turns a one-sentence brief into a working team of AI agents, and hires
-                the roles it is missing. 2,069 passing tests.
+                A 40,933-line multi-agent operating system. Give it one sentence; it assembles an organisation and
+                creates the roles it lacks. 2,069 passing tests.
               </p>
               <Link className="more" to="/work">How it works →</Link>
             </div>
@@ -233,8 +234,8 @@ export default function Home() {
               <div className="k">2025–2026</div>
               <h3>Black Bloxie LTD</h3>
               <p>
-                A UK company run on OXIMO for twelve months as a live test. Switching OXIMO off cut output by 91%;
-                switching it back on beat the original level.
+                Twelve months running a live UK company on OXIMO. Pull OXIMO out: output falls 91%. Put it back: output
+                beats the original.
               </p>
               <Link className="more" to="/work">See the results →</Link>
             </div>
@@ -258,9 +259,8 @@ export default function Home() {
                 <a href={featured.href} target="_blank" rel="noreferrer">{featured.title}</a>
               </h3>
               <p>
-                Reviewers who did not know who wrote it accepted his paper proving that ORMAS stays stable while it
-                repairs itself. That proof is what lets OXIEDO promise customers a model that fixes itself without
-                going off the rails.
+                Anonymous reviewers accepted his proof that ORMAS stays stable while it repairs itself: every repair is
+                a bounded disturbance, so training cannot run away. It is the mathematical guarantee OXIEDO sells on.
               </p>
               <p className="rx-feature-cite">
                 “Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics”
@@ -293,16 +293,20 @@ export default function Home() {
           <div className="rx-split">
             <div>
               <p className="rx-split-lead">
-                Today’s AI cannot tell you which part of it broke. ORMAS can, and it fixes the part while it keeps
-                training.
+                A network that finds its own broken parts, fixes them mid-training, and logs every repair.
               </p>
               <p>
-                A normal neural network learns from one error signal spread across millions of parts at once, so when
-                something goes wrong, nobody can point to the cause. ORMAS gives every part its own health check.
+                A standard network learns from one error signal smeared across millions of parameters, so a failure stays
+                invisible until the output goes wrong. ORMAS gives every node a short, direct line to the loss and its
+                own health score.
               </p>
               <p>
-                When a part starts failing, ORMAS finds it, repairs it without stopping, and writes down what broke and
-                why. The math that proves this repair process stays stable is the paper accepted at DeepMath 2026.
+                When a node fails, ORMAS diagnoses it, repairs it without pausing training, and logs the cause. Its
+                stability is proven with Sontag’s Input-to-State Stability framework: the first formal stability
+                guarantee for a self-repairing network.
+              </p>
+              <p>
+                Under sequential learning it keeps <b>94.6%</b> of earlier tasks. ResNet-18 keeps 47.3%.
               </p>
               <div className="rx-btns">
                 <Link className="rx-btn" to="/research">How ORMAS works <Arrow /></Link>

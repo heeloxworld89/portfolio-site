@@ -9,8 +9,8 @@ export default function ResearchPage() {
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
           <h2 className="rx-label">Technology</h2>
-          <h1>ORMAS: the technology behind OXIEDO.</h1>
-          <p>Neural networks that find, fix and record their own failures while they train. Everything is here: how it works, all 383 experiments, the peer-reviewed math, the honest limits, and Project Cherry, the next version.</p>
+          <h1>ORMAS: the neural network that repairs itself, and proves it.</h1>
+          <p>The complete record: the architecture, all 383 experiments, the stability proof accepted at DeepMath 2026, every limit it hit, and Project Cherry, what comes next.</p>
         </div>
       </section>
       <div className="rx-deep">

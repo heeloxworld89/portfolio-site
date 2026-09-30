@@ -428,3 +428,4 @@ body:has(.rx) { background: #e7e7e2; }
   .rx .rx-bio-cols p { font-size: 16.5px; }
   .rx .rx-split-lead { font-size: 21px !important; }
 }
+.rx-nw { white-space: nowrap; }

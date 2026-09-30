@@ -98,7 +98,7 @@ export const pages = {
   "/": {
     title: "Rokib Al Dhin Raadh — 18-Year-Old Deep-Tech Founder & CEO of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, is the deep-tech founder and CEO of OXIEDO, building AI that can prove what it learned. He invented ORMAS, the technology behind it, which passed peer review at DeepMath 2026.",
+      "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS, the first self-repairing neural network with a formal stability proof, accepted at DeepMath 2026. Built alone, on one GPU.",
   },
   "/research": {
     title: "Technology: ORMAS, the AI behind OXIEDO — Rokib Al Dhin Raadh",
