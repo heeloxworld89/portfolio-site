@@ -59,8 +59,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'OXIEDO launches · DeepMath 2026 · NeurIPS committee',
-    body: 'The research becomes a company, licensing ORMAS to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh joins the programme committee of the NeurIPS 2026 Trustworthy AI for Good workshop.',
+    title: 'OXIEDO launches · DeepMath 2026 · NeurIPS reviewer',
+    body: 'The research becomes a company, licensing ORMAS to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.',
   },
 ];
 

@@ -1,0 +1,259 @@
+// schema.org JSON-LD for every prerendered page. One connected graph: the
+// person, the companies, the papers, the code, the conference, credentials and
+// recognition, each pointing at an independent source (DOI, ORCID, conference
+// site, code archive, course record) so search engines and AI systems can
+// corroborate every claim instead of taking the site's word for it.
+import { links, pages } from "./data";
+
+const SITE = "https://www.raadh.me";
+const id = (frag: string) => `${SITE}/#${frag}`;
+const ref = (frag: string) => ({ "@id": id(frag) });
+const wiki = (name: string, slug: string) => ({ "@type": "Thing", name, sameAs: `https://en.wikipedia.org/wiki/${slug}` });
+
+const person = {
+  "@type": "Person",
+  "@id": id("person"),
+  name: "Rokib Al Dhin Raadh",
+  givenName: "Rokib Al Dhin",
+  familyName: "Raadh",
+  alternateName: ["Raadh", "Rokib Raadh", "R. A. D. Raadh"],
+  url: `${SITE}/`,
+  image: {
+    "@type": "ImageObject",
+    url: `${SITE}/assets/images/banner/header-left-user.jpg`,
+    caption: "Rokib Al Dhin Raadh",
+  },
+  description:
+    "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network architecture. His stability proof for ORMAS was accepted after double-blind review at DeepMath 2026.",
+  jobTitle: "Founder & CEO, OXIEDO",
+  hasOccupation: [
+    { "@type": "Occupation", name: "Founder & Chief Executive Officer", occupationLocation: { "@type": "City", name: "Dhaka" } },
+    { "@type": "Occupation", name: "AI researcher" },
+  ],
+  worksFor: ref("oxiedo"),
+  homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Dhaka", addressCountry: "BD" } },
+  nationality: { "@type": "Country", name: "Bangladesh" },
+  email: `mailto:${links.email}`,
+  knowsAbout: [
+    wiki("Neural networks", "Neural_network_(machine_learning)"),
+    wiki("Deep learning", "Deep_learning"),
+    wiki("Explainable artificial intelligence", "Explainable_artificial_intelligence"),
+    wiki("Input-to-state stability", "Input-to-state_stability"),
+    wiki("Control theory", "Control_theory"),
+    wiki("Model risk", "Model_risk"),
+    wiki("Multi-agent system", "Multi-agent_system"),
+    wiki("PyTorch", "PyTorch"),
+    "Self-correcting neural networks",
+    "Auditable AI training",
+  ],
+  award: [
+    "DeepMath 2026: paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks",
+    "Cosmos Institute: application ranked highest in its 2026 grant cycle",
+    "1752vc Ignite: accepted from the top 1% of applicants (2026)",
+    "Freshmango: offered a place in the equity-free accelerator (2026)",
+    "IARCO 2026: finalist, International Academic Research Competition",
+  ],
+  memberOf: [
+    { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
+  ],
+  hasCredential: [
+    ...[
+      ["Universal AI Foundational Models", "776b490f-67be-46a2-8ddc-86d3b86bb9c0"],
+      ["AI & Precision Medicine", "cc81d799-e745-4f8e-8837-a75d4e1bfd49"],
+      ["Holistic AI in Medicine", "082917c3-0327-4b28-8049-10e588692dc0"],
+      ["AI and Sustainability: Energy", "3d1aa3ad-4f07-4f64-aaf8-7dbc720913db"],
+      ["AI and Sustainability: Transportation", "ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb"],
+      ["AI for Transportation: From Concepts to Implementation", "31cbd749-a3ca-488e-80ad-10ddb771a12f"],
+      ["AI & Entrepreneurship", "c4c84c9c-1c8e-469f-a050-2269b1fe0a3c"],
+    ].map(([name, rec]) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: `MITx: ${name}`,
+      credentialCategory: "certificate",
+      url: `https://mitxonline.mit.edu/records/shared/${rec}/`,
+      recognizedBy: { "@type": "Organization", name: "MIT Open Learning", url: "https://openlearning.mit.edu/" },
+    })),
+    {
+      "@type": "EducationalOccupationalCredential",
+      name: "Deep Learning Specialization",
+      credentialCategory: "certificate",
+      url: "https://coursera.org/verify/specialization/R7SYBBCXR1OY",
+      recognizedBy: { "@type": "Organization", name: "DeepLearning.AI", url: "https://www.deeplearning.ai/" },
+    },
+  ],
+  identifier: [
+    { "@type": "PropertyValue", propertyID: "ORCID", value: "0009-0003-1178-5296", url: links.orcid },
+  ],
+  sameAs: [links.orcid, links.github, links.x, links.substack, links.youtube],
+  subjectOf: [ref("ormas-preprint"), ref("deepmath-paper")],
+};
+
+const oxiedo = {
+  "@type": "Organization",
+  "@id": id("oxiedo"),
+  name: "OXIEDO",
+  url: links.oxiedo,
+  foundingDate: "2023",
+  founder: ref("person"),
+  employee: ref("person"),
+  description:
+    "OXIEDO licenses ORMAS on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
+  knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-correcting neural networks"],
+  makesOffer: {
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Product",
+      name: "ORMAS on-premise licence with the Model Change Record",
+      description: "Annual on-premise licence for the ORMAS training architecture and a tamper-evident record of every weight change during training.",
+      brand: { "@id": id("oxiedo") },
+    },
+  },
+  sameAs: [links.oxiedo],
+};
+
+const blackBloxie = {
+  "@type": "Organization",
+  "@id": id("black-bloxie"),
+  name: "Black Bloxie LTD",
+  legalName: "Black Bloxie LTD",
+  foundingDate: "2025-09-11",
+  foundingLocation: { "@type": "Place", name: "England and Wales" },
+  founder: ref("person"),
+  description:
+    "UK company incorporated in England and Wales, run on the OXIMO multi-agent system for a twelve-month controlled field study.",
+};
+
+const deepmath = {
+  "@type": "Event",
+  "@id": id("deepmath-2026"),
+  name: "DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks",
+  startDate: "2026-10-29",
+  endDate: "2026-10-30",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  url: links.deepmath,
+  location: {
+    "@type": "Place",
+    name: "The Ohio State University",
+    sameAs: "https://en.wikipedia.org/wiki/Ohio_State_University",
+    address: { "@type": "PostalAddress", addressLocality: "Columbus", addressRegion: "OH", addressCountry: "US" },
+  },
+  workFeatured: ref("deepmath-paper"),
+  performer: ref("person"),
+};
+
+const deepmathPaper = {
+  "@type": "ScholarlyArticle",
+  "@id": id("deepmath-paper"),
+  headline: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
+  name: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
+  author: ref("person"),
+  inLanguage: "en",
+  dateCreated: "2026-09",
+  creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
+  description:
+    "Formal local stability characterisation of a self-correcting neural network: each self-repair is treated as a bounded disturbance under Sontag's Input-to-State Stability framework. Accepted after double-blind review for poster presentation at DeepMath 2026, Ohio State University, 29–30 October 2026. DeepMath publishes no proceedings.",
+  about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Deep learning", "Deep_learning")],
+  isBasedOn: ref("ormas-preprint"),
+  subjectOf: ref("deepmath-2026"),
+};
+
+const ormasPreprint = {
+  "@type": "ScholarlyArticle",
+  "@id": id("ormas-preprint"),
+  headline: "ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction",
+  name: "ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction",
+  author: ref("person"),
+  inLanguage: "en",
+  datePublished: "2026-08-01",
+  genre: "Preprint",
+  url: links.preprint,
+  sameAs: links.doi,
+  identifier: { "@type": "PropertyValue", propertyID: "DOI", value: "10.5281/zenodo.21730363", url: links.doi },
+  publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org/" },
+  isAccessibleForFree: true,
+  description:
+    "A neural network architecture that identifies, repairs and records its own failing components during training. After a trained convolutional layer is destroyed (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. 383 controlled experiments across four architectures on a single RTX 3090.",
+  about: [wiki("Neural networks", "Neural_network_(machine_learning)"), wiki("Explainable artificial intelligence", "Explainable_artificial_intelligence")],
+  hasPart: ref("ormas-code"),
+};
+
+const ormasCode = {
+  "@type": "SoftwareSourceCode",
+  "@id": id("ormas-code"),
+  name: "ORMAS reference implementation",
+  description: "PyTorch code reproducing all 383 ORMAS experiments; every run reproducible from seed.",
+  codeRepository: links.code,
+  programmingLanguage: "Python",
+  runtimePlatform: "PyTorch",
+  author: ref("person"),
+  isPartOf: ref("ormas-preprint"),
+};
+
+const oximo = {
+  "@type": "SoftwareSourceCode",
+  "@id": id("oximo"),
+  name: "OXIMO",
+  description: "A 40,933-line multi-agent operating system that turns a one-sentence brief into an organisation and creates the roles it lacks; 2,069 passing tests.",
+  codeRepository: links.oximoCode,
+  programmingLanguage: "Python",
+  author: ref("person"),
+};
+
+const oximoReport = {
+  "@type": "Report",
+  "@id": id("oximo-report"),
+  name: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A twelve-month controlled ablation study",
+  author: ref("person"),
+  datePublished: "2026",
+  url: `${SITE}${links.techPaper}`,
+  about: [ref("oximo"), ref("black-bloxie")],
+};
+
+const website = {
+  "@type": "WebSite",
+  "@id": id("website"),
+  url: `${SITE}/`,
+  name: "Rokib Al Dhin Raadh",
+  alternateName: "raadh.me",
+  inLanguage: "en",
+  publisher: ref("person"),
+  about: ref("person"),
+};
+
+type PageKey = keyof typeof pages;
+const pageMeta: Record<PageKey, { type: string; name: string; main: string; about: string[] }> = {
+  "/": { type: "ProfilePage", name: "Home", main: "person", about: ["person", "oxiedo"] },
+  "/research": { type: "WebPage", name: "Technology: ORMAS", main: "ormas-preprint", about: ["ormas-preprint", "deepmath-paper", "ormas-code"] },
+  "/work": { type: "WebPage", name: "Company: OXIEDO", main: "oxiedo", about: ["oxiedo", "oximo", "black-bloxie"] },
+  "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
+};
+
+export function schemaFor(path: string): string {
+  const key = (path in pages ? path : "/") as PageKey;
+  const meta = pages[key];
+  const m = pageMeta[key];
+  const url = SITE + (key === "/" ? "/" : key);
+  const page = {
+    "@type": m.type,
+    "@id": `${url}#webpage`,
+    url,
+    name: meta.title,
+    description: meta.description,
+    inLanguage: "en",
+    isPartOf: ref("website"),
+    mainEntity: ref(m.main),
+    about: m.about.map(ref),
+    author: ref("person"),
+    primaryImageOfPage: { "@type": "ImageObject", url: SITE + meta.image, width: 1200, height: 630, caption: meta.imageAlt },
+    dateModified: "2026-09-30",
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Rokib Al Dhin Raadh", item: `${SITE}/` },
+        ...(key === "/" ? [] : [{ "@type": "ListItem", position: 2, name: m.name, item: url }]),
+      ],
+    },
+  };
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, ormasCode, oximo, oximoReport];
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
+}

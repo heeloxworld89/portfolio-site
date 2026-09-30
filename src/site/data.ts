@@ -18,6 +18,8 @@ export const links = {
   orcid: "https://orcid.org/0009-0003-1178-5296",
   github: "https://github.com/raad-x",
   x: "https://x.com/Raad_X_",
+  substack: "https://substack.com/@rokibraadh",
+  youtube: "https://www.youtube.com/@rokibraadh",
   email: "raadxbusiness9@gmail.com",
   companyEmail: "rokib@blackbloxie.com",
   neurips: "https://trustworthy-ai-for-good.github.io/",
@@ -33,8 +35,8 @@ export const news: NewsItem[] = [
     href: links.deepmath,
   },
   {
-    date: "Sep 2026", kind: "Service",
-    title: "Programme committee, NeurIPS 2026 Trustworthy AI for Good",
+    date: "Sep 2026", kind: "Reviewer",
+    title: "Reviewer, NeurIPS 2026 Trustworthy AI for Good",
     body: "Reviewing submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring for the NeurIPS 2026 workshop in Paris.",
     href: links.neurips,
   },
@@ -94,26 +96,36 @@ export const publications = [
   },
 ];
 
+// title/description drive the tab, search results and link previews; image is
+// the share card rendered by assets-source/og/make.cjs.
 export const pages = {
   "/": {
-    title: "Rokib Al Dhin Raadh — 18-Year-Old Founder & CEO of OXIEDO · AI Researcher",
+    title: "Rokib Al Dhin Raadh — 18-Year-Old Founder & CEO of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the author of ORMAS, a self-correcting neural network architecture whose stability result was accepted at DeepMath 2026.",
+      "Founder of OXIEDO and inventor of ORMAS, the self-repairing neural network. Stability proof accepted at DeepMath 2026; top 1% at 1752vc; ranked #1 by Cosmos Institute.",
+    image: "/og/home-v2.jpg",
+    imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
-    title: "Research: ORMAS, self-correcting neural networks — Rokib Al Dhin Raadh",
+    title: "ORMAS: the neural network that repairs itself — Rokib Al Dhin Raadh",
     description:
-      "ORMAS, a neural network architecture that identifies, repairs and records its own failures during training: 383 controlled experiments, a +70.3pp recovery gap, and an Input-to-State Stability result accepted at DeepMath 2026.",
+      "ORMAS finds, fixes and records its own failures during training: 80.3% recovery after a layer is destroyed, against 10.0% for a standard network. Stability proof accepted at DeepMath 2026.",
+    image: "/og/research-v2.jpg",
+    imageAlt: "ORMAS recovers to 80.3% after a layer is destroyed; a standard network stays at 10.0%",
   },
   "/work": {
-    title: "Work: OXIEDO, OXIMO and Black Bloxie — Rokib Al Dhin Raadh",
+    title: "OXIEDO: an audit trail for what AI learned — Rokib Al Dhin Raadh",
     description:
-      "OXIEDO, the company licensing ORMAS to regulated industries; OXIMO, a 40,933-line multi-agent operating system; Black Bloxie, a twelve-month controlled field study; and five earlier ventures.",
+      "OXIEDO licenses ORMAS to banks, hospitals and other regulated teams, with a tamper-evident record of every change a model makes in training. Plus OXIMO and the Black Bloxie study.",
+    image: "/og/work-v2.jpg",
+    imageAlt: "OXIEDO and the Model Change Record, a tamper-evident log of every weight change in training",
   },
   "/about": {
-    title: "About Rokib Al Dhin Raadh — recognition, statement and education",
+    title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Recognition, timeline, personal statement and education of Rokib Al Dhin Raadh, 18-year-old founder of OXIEDO and author of ORMAS.",
+      "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year. Recognition, story, MIT coursework and contact.",
+    image: "/og/about-v2.jpg",
+    imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO",
   },
 } as const;
 

@@ -21,7 +21,7 @@ const routes = [
   { path: "/work", file: "work.html", mustContain: 'id="oximo"' },
   { path: "/about", file: "about.html", mustContain: 'id="recognition"' },
 ];
-const { pages } = await import(pathToFileURL(path.join(root, "dist-ssr/entry-server.js")).href);
+const { pages, schemaFor } = await import(pathToFileURL(path.join(root, "dist-ssr/entry-server.js")).href);
 
 const shell = fs.readFileSync(indexPath, "utf8");
 const marker = '<div id="root"></div>';
@@ -48,7 +48,17 @@ for (const r of routes) {
   html = setMeta(html, "property", "og:url", url);
   html = setMeta(html, "name", "twitter:title", meta.title);
   html = setMeta(html, "name", "twitter:description", meta.description);
+  const image = SITE + meta.image;
+  html = setMeta(html, "property", "og:image", image);
+  html = setMeta(html, "property", "og:image:alt", meta.imageAlt);
+  html = setMeta(html, "name", "twitter:image", image);
+  html = setMeta(html, "name", "twitter:image:alt", meta.imageAlt);
   html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`);
+  // Per-page structured data (src/site/schema.ts) replaces the shell's default graph.
+  html = html.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+    () => `<script type="application/ld+json">${schemaFor(r.path)}</script>`,
+  );
   fs.writeFileSync(path.join(dist, r.file), html);
   console.log(`prerender: ${r.path} -> ${r.file} (${(appHtml.length / 1024).toFixed(0)} KB)`);
 }
