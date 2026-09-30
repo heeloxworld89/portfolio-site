@@ -159,90 +159,70 @@ export default function CVEducation() {
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>Coursework and certifications</h4>
-          <div className="mb--50 p-3 p-md-5" style={{ background: "var(--pf-surface)", borderRadius: "10px", border: "1px solid rgba(var(--pf-ink-rgb), 0.05)" }}>
-            <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "25px", fontStyle: "italic" }}>
-              Completed coursework in machine learning, systems engineering and theoretical computer science:
+          {/* MIT Open Learning: the strongest external marks on his education, stated exactly. */}
+          <div className="mit-card">
+            <p className="mit-k">MIT Open Learning · MITx</p>
+            <h4 className="mit-h">Seven MIT courses. <em>Before finishing school.</em></h4>
+            <p className="mit-lede">
+              While still in his final year of secondary school, Raadh completed seven courses from MIT Open Learning,
+              covering foundation models, AI in medicine, energy and transport, and AI entrepreneurship: the same
+              regulated sectors OXIEDO now sells into. After an admissions call about his work, he was offered a 40%
+              scholarship on a further MIT programme, which he could not take up for financial and logistical
+              reasons.
             </p>
-            
-            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
-
-            {/* Platform-side issue, not a credential issue — say which, and
-                give the reader a route that does not depend on it. */}
-            <div style={{
-              display: 'flex', alignItems: 'flex-start', gap: '11px',
-              background: 'var(--pf-surface-2)', border: '1px solid var(--pf-border)',
-              borderLeft: '2px solid var(--pf-warn)', borderRadius: '0 8px 8px 0',
-              padding: '13px 16px', marginBottom: '18px',
-            }}>
-              <span style={{ flexShrink: 0, color: 'var(--pf-warn)', marginTop: '1px' }} aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" />
-                </svg>
-              </span>
-              <p style={{ margin: 0, fontSize: '13.5px', lineHeight: 1.7, color: 'var(--pf-ink-2)' }}>
-                <strong style={{ color: 'var(--pf-ink)' }}>Note on the MIT records platform.</strong>{' '}
-                MITx Online currently displays shared records inconsistently, and some links may not load.{' '}
-                <strong style={{ color: 'var(--pf-ink)' }}>Full records, completion certificates and grade
-                reports are available on request.</strong>
-              </p>
-            </div>
-
-            <ul className="course-list">
-              <li>
-                <a href="https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Universal AI Foundational Models</a>
-                <span style={{ color: "var(--pf-ink-3)", fontSize: "13px" }}> — accessed via FIAP sponsorship, see below</span>
-              </li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/cc81d799-e745-4f8e-8837-a75d4e1bfd49/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI & Precision Medicine</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/3d1aa3ad-4f07-4f64-aaf8-7dbc720913db/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI and Sustainability: Energy</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI and Sustainability: Transportation</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/31cbd749-a3ca-488e-80ad-10ddb771a12f/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI for Transportation: From Concepts to Implementation</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/c4c84c9c-1c8e-469f-a050-2269b1fe0a3c/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>AI & Entrepreneurship</a></li>
-              <li><a href="https://mitxonline.mit.edu/records/shared/082917c3-0327-4b28-8049-10e588692dc0/" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Holistic AI in Medicine</a></li>
-            </ul>
-
-            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>DeepLearning.AI</h5>
-            <ul className="course-list">
-              <li><a href="https://coursera.org/verify/specialization/R7SYBBCXR1OY" target="_blank" rel="noreferrer" style={{ color: "var(--pf-ink)", textDecoration: "underline" }}>Deep Learning Specialization</a></li>
-            </ul>
-
-            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>The certificates, for anyone who counts them</h5>
-            <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "15px" }}>
-              <strong style={{ color: "var(--pf-ink)" }}>20+ additional certifications</strong> across ML,
-              systems architecture, and applied AI from{' '}
-              <strong style={{ color: "var(--pf-ink)" }}>Google</strong>,{' '}
-              <strong style={{ color: "var(--pf-ink)" }}>UC Davis</strong>,{' '}
-              <strong style={{ color: "var(--pf-ink)" }}>the University of Michigan</strong>{' '}
-              and Udemy.
-            </p>
-            <div style={{ background: "rgba(var(--pf-ink-rgb), 0.02)", borderLeft: "2px solid var(--pf-border)", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
-              <p style={{ margin: 0, color: "var(--pf-ink-2)", fontSize: "14px" }}>
-                All certificates are verifiable on request; credential links for any course are available from{' '}
-                <a href="mailto:rokib@blackbloxie.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
-              </p>
-            </div>
-
-            <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "30px" }}>A Note on FIAP</h5>
-            <div className="fiap-note">
-              <div className="fiap-logo-row">
-                <div className="fiap-logo-chip">
-                  <img src="/assets/images/logos/fiap.svg" alt="FIAP" />
-                </div>
-                <span className="fiap-tag">São Paulo, Brazil · Sponsored Access</span>
-              </div>
-              <p style={{ fontSize: "17px", fontWeight: 700, color: "var(--pf-ink)", marginBottom: "14px", lineHeight: 1.5 }}>
-                Sponsored access to MIT Open Learning through FIAP.
-              </p>
-              <p style={{ fontSize: "15px", lineHeight: "1.75", color: "var(--pf-ink-2)", margin: 0 }}>
-                FIAP is one of Brazil&apos;s leading technology institutions, consistently ranked among the
-                country&apos;s top private schools for computer science. Raadh&apos;s early MIT coursework earned
-                him an offer to an in-person MIT scholarship programme, which he could not take up for financial
-                reasons. In early 2026 FIAP made him a member and sponsored his access to MIT Open Learning&apos;s
-                Universal AI programme, the source of the Universal AI Foundational Models credit above.
-              </p>
+            <div className="mit-stats">
+              <div><b>7</b><span>MIT courses completed</span></div>
+              <div><b>40%</b><span>Scholarship offered on a further MIT programme</span></div>
+              <div><b>Sponsored</b><span>Into MIT Open Learning&apos;s Universal AI programme by FIAP</span></div>
             </div>
           </div>
 
+          <div className="mit-courses">
+            {[
+              ["Universal AI Foundational Models", "https://mitxonline.mit.edu/records/shared/776b490f-67be-46a2-8ddc-86d3b86bb9c0/", "Foundation models"],
+              ["AI & Precision Medicine", "https://mitxonline.mit.edu/records/shared/cc81d799-e745-4f8e-8837-a75d4e1bfd49/", "Medicine"],
+              ["Holistic AI in Medicine", "https://mitxonline.mit.edu/records/shared/082917c3-0327-4b28-8049-10e588692dc0/", "Medicine"],
+              ["AI and Sustainability: Energy", "https://mitxonline.mit.edu/records/shared/3d1aa3ad-4f07-4f64-aaf8-7dbc720913db/", "Energy"],
+              ["AI and Sustainability: Transportation", "https://mitxonline.mit.edu/records/shared/ed8f94b2-2fb0-43fb-b5ab-9052d6e777fb/", "Transport"],
+              ["AI for Transportation: From Concepts to Implementation", "https://mitxonline.mit.edu/records/shared/31cbd749-a3ca-488e-80ad-10ddb771a12f/", "Transport"],
+              ["AI & Entrepreneurship", "https://mitxonline.mit.edu/records/shared/c4c84c9c-1c8e-469f-a050-2269b1fe0a3c/", "Venture"],
+            ].map(([t, href, k]) => (
+              <a key={t} className="mit-course" href={href} target="_blank" rel="noreferrer">
+                <span className="mit-course-k">MITx · {k}</span>
+                <span className="mit-course-t">{t}</span>
+                <span className="mit-course-go">View record ↗</span>
+              </a>
+            ))}
+          </div>
+          <p className="mit-note">
+            MITx Online sometimes fails to load shared records; full records, certificates and grade reports are
+            available on request.
+          </p>
+
+          <div className="mit-more">
+            <div>
+              <span className="mit-course-k">DeepLearning.AI</span>
+              <p>
+                <a href="https://coursera.org/verify/specialization/R7SYBBCXR1OY" target="_blank" rel="noreferrer">Andrew Ng&apos;s Deep Learning Specialization</a>,
+                the five-course programme from the co-founder of Google Brain and Coursera.
+              </p>
+            </div>
+            <div>
+              <span className="mit-course-k">20+ further certifications</span>
+              <p>
+                Machine learning, systems architecture and applied AI from <b>Google</b>, <b>UC Davis</b> and the{" "}
+                <b>University of Michigan</b>. Verifiable on request from{" "}
+                <a href="mailto:rokib@blackbloxie.com">rokib@blackbloxie.com</a>.
+              </p>
+            </div>
+            <div>
+              <span className="mit-course-k">FIAP · São Paulo</span>
+              <p>
+                One of Brazil&apos;s leading technology schools made him a member in early 2026 and sponsored his place in
+                MIT Open Learning&apos;s Universal AI programme.
+              </p>
+            </div>
+          </div>
           <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>Research over grades</h4>
 
           {/* Big statement */}
