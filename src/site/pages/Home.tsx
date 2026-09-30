@@ -87,7 +87,10 @@ export default function Home() {
               <p className="rx-dm-lede">
                 DeepMath, the Conference on the Mathematical Theory of Deep Neural Networks, takes theory only and
                 reviews it double-blind. Specialists judged the proof without knowing who wrote it, or that he is
-                eighteen and self-taught.
+                eighteen and self-taught. This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
+                <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
+                editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
+                presents on 29–30 October.
               </p>
               <p className="rx-dm-paper">
                 &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
@@ -98,14 +101,6 @@ export default function Home() {
                 <a className="rx-btn is-outline-light" href={links.preprint} target="_blank" rel="noreferrer">ORMAS preprint <Arrow /></a>
               </div>
             </div>
-            <dl className="rx-dm-facts">
-              <div><dt>Host, 2026</dt><dd>Ohio State University, Columbus</dd></div>
-              <div><dt>Organising committee</dt><dd>Johns Hopkins · Michigan · Ohio State · Konstanz</dd></div>
-              <div><dt>Invited speakers, 2026</dt><dd>Stanford · UPenn · Michigan · University of Washington</dd></div>
-              <div><dt>Past organisers</dt><dd>Princeton · NYU · UC San Diego · Google Brain</dd></div>
-              <div><dt>Past support</dt><dd>National Science Foundation · Simons Foundation</dd></div>
-              <div><dt>Presenting</dt><dd>29–30 October 2026</dd></div>
-            </dl>
           </div>
         </div>
       </section>
