@@ -154,6 +154,14 @@ export default function CVResearch() {
           background: rgba(var(--pf-accent-rgb), 0.1); border: 1px solid rgba(var(--pf-accent-rgb), 0.34);
           border-radius: 999px; padding: 5px 12px; white-space: nowrap; margin-top: 2px;
         }
+        .res-venue.is-accepted {
+          border: 1px solid rgba(var(--pf-pos-rgb), 0.4) !important;
+          border-left: 4px solid var(--pf-pos) !important;
+          background: rgba(var(--pf-pos-rgb), 0.07) !important;
+        }
+        .res-venue.is-accepted .res-venue-tag {
+          color: #fff; background: var(--pf-pos); border-color: var(--pf-pos);
+        }
         .res-venue-txt { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); }
         .res-venue-txt strong { color: var(--pf-ink); font-weight: 700; }
         .res-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
@@ -260,7 +268,7 @@ export default function CVResearch() {
           </div>
         </div>
 
-        <div className="res-venue">
+        <div className="res-venue is-accepted">
           <span className="res-venue-tag">Accepted · DeepMath 2026 · Poster</span>
           <span className="res-venue-txt">
             <strong>The stability result passed peer review.</strong> Submitted as{' '}

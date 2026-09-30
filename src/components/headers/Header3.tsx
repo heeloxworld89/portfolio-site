@@ -236,6 +236,15 @@ export default function Header3() {
           display: block; font-size: 12.5px; line-height: 1.65;
           color: var(--pf-ink-2); margin-top: 5px;
         }
+        .sb-accept {
+          display: flex; align-items: center; justify-content: center; gap: 8px;
+          margin: 4px 0 18px; padding: 9px 10px; border-radius: 999px; white-space: nowrap;
+          font-size: 10.5px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+          color: #fff; background: var(--pf-pos); text-decoration: none;
+          box-shadow: 0 8px 20px -10px rgba(var(--pf-pos-rgb), 0.8);
+          transition: transform .2s;
+        }
+        .sb-accept:hover { color: #fff; transform: translateY(-1px); }
         @media (prefers-reduced-motion: reduce) {
           .sb-btn:hover, .lk-item:hover { transform: none; }
           .sb-btn--site .sb-live { animation: none; }
@@ -255,6 +264,11 @@ export default function Header3() {
               />
             </Link>
           </div>
+
+          <a className="sb-accept" href="#recognition">
+            <Icon name="check" size={13} />
+            <span>Accepted &middot; DeepMath 2026</span>
+          </a>
 
           <nav id="sideNavs" className="mainmenu-nav navbar-example2 onepagenav">
             <ul className="primary-menu nav nav-pills">
