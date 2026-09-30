@@ -821,8 +821,8 @@ export default function CVRecognition() {
 
         </div>
 
-        {/* Antler — accepted; not proceeding because the programme cannot
-            support the visa. A logistics boundary, not an assessment. */}
+        {/* Antler — in the programme process; paused because participation
+            needs an Australian work permit. A logistics boundary, not an assessment. */}
         <div className="rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-white">
@@ -830,21 +830,21 @@ export default function CVRecognition() {
             </div>
             <span className="rec-date">Sep 2026</span>
           </div>
-          <div className="rec-tag">Antler &middot; Accepted &middot; Visa</div>
-          <h3 className="rec-name">Accepted by Antler; Not Proceeding Due to Visa Constraints</h3>
+          <div className="rec-tag">Antler &middot; Programme Process &middot; Work Permit</div>
+          <h3 className="rec-name">Antler: Programme Process Paused Over Australian Work-Permit Logistics</h3>
           <p className="rec-body">
-            Antler, one of the largest early-stage investment programmes in the world,
-            <strong> accepted Raadh</strong>. The programme could not support the visa and work permit
-            required to participate, so he is not proceeding.
+            Raadh was <strong>in the programme process</strong> with Antler, one of the largest early-stage
+            investment programmes in the world. Taking part required an Australian work permit he does not yet
+            hold, so the process was stopped for logistical reasons, not on the merits of the work.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
-              <span className="rec-stat-val">Accepted</span>
-              <span className="rec-stat-lbl">Antler offer</span>
+              <span className="rec-stat-val">In process</span>
+              <span className="rec-stat-lbl">Antler programme</span>
             </div>
             <div className="rec-stat">
-              <span className="rec-stat-val">Visa</span>
-              <span className="rec-stat-lbl">Reason not proceeding</span>
+              <span className="rec-stat-val">Work permit</span>
+              <span className="rec-stat-lbl">Why it was paused</span>
             </div>
           </div>
         </div>
@@ -951,8 +951,8 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
-            Freshmango, 1752vc and Antler each offered places after competitive selection, and Entrepreneur
-            First advanced him to The Bridge in San Francisco. Every one began as an unsolicited application.
+            Freshmango and 1752vc each offered places after competitive selection, Antler&rsquo;s programme
+            process was paused only over an Australian work permit, and Entrepreneur First advanced him to The Bridge in San Francisco. Every one began as an unsolicited application.
           </p>
           <p className="rec-verdict-body">
             <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator
