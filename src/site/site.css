@@ -339,11 +339,17 @@ body:has(.rx) { background: #e7e7e2; }
 
 /* ── bigger rhythm across the page ─────────────────────────────────────── */
 .rx-bio { padding: 90px 0 30px; }
-.rx-bio-inner { max-width: 1000px; margin-left: 0; }
-.rx-bio p:first-child { font-family: var(--rx-serif); font-size: clamp(28px, 2.7vw, 38px); line-height: 1.22; letter-spacing: -0.012em; color: var(--rx-ink); margin-bottom: 28px; }
-.rx-bio p:first-child strong { font-weight: 400; color: var(--rx-teal); }
-.rx-bio p:first-child a { text-decoration-thickness: 1px; }
-.rx-bio p + p { font-size: 18px; max-width: 800px; color: var(--rx-ink-2); }
+.rx-bio-inner { max-width: 880px; margin-left: 0; }
+/* Bio reads as running text: sans-serif, a comfortable measure, generous leading. */
+.rx .rx-bio p:first-child { font-family: var(--rx-sans); font-size: clamp(19px, 1.6vw, 23px); font-weight: 400; line-height: 1.62; letter-spacing: -0.003em; color: var(--rx-ink); max-width: 68ch; margin: 0 0 26px; }
+.rx .rx-bio p:first-child strong { font-weight: 700; color: var(--rx-ink); }
+.rx .rx-bio p a { color: var(--rx-teal); font-weight: 500; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: rgba(11, 64, 77, .35); }
+.rx .rx-bio p a:hover { text-decoration-color: var(--rx-teal); }
+.rx .rx-bio p + p { font-family: var(--rx-sans); font-size: 17px; line-height: 1.8; color: #2c3538; max-width: 72ch; margin: 0; }
+@media (max-width: 760px) {
+  .rx .rx-bio p:first-child { font-size: 18px; line-height: 1.6; }
+  .rx .rx-bio p + p { font-size: 16px; line-height: 1.75; }
+}
 
 .rx-figs { margin: 70px 0 10px; border: 0; background: var(--rx-teal); color: #eaf4f2; position: relative; overflow: hidden; }
 .rx-figs::after { content: ""; position: absolute; right: -160px; top: -200px; width: 560px; height: 460px; background: radial-gradient(closest-side, rgba(152, 224, 160, .35), transparent); pointer-events: none; }
