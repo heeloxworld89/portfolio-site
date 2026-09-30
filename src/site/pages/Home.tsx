@@ -2,6 +2,22 @@ import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import { links, news, publications } from "../data";
 
+type Mark = { name: string; logo?: string; word?: string; verb: "Reviewed" | "Selected" | "Interviewed"; note: string; href?: string };
+
+const L = "/assets/images/logos/";
+const marks: Mark[] = [
+  { name: "DeepMath 2026", word: "DeepMath", verb: "Reviewed", note: "Paper accepted after double-blind review", href: "https://deepmath-conference.com/" },
+  { name: "NeurIPS 2026", word: "NeurIPS", verb: "Selected", note: "Workshop programme committee" },
+  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", verb: "Reviewed", note: "Ranked highest in its grant cycle" },
+  { name: "1752vc", logo: L + "1752vc.png", verb: "Selected", note: "Ignite cohort, top 1% of applicants" },
+  { name: "Antler", logo: L + "antler.svg", verb: "Selected", note: "Offered a place" },
+  { name: "The Bridge", logo: L + "the-bridge.png", verb: "Interviewed", note: "Two rounds, final selection" },
+  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", verb: "Interviewed", note: "First-round interview, London" },
+  { name: "Freshmango", logo: L + "freshmango.png", verb: "Interviewed", note: "Accepted after interview" },
+  { name: "IARCO 2026", logo: L + "iarco-dark.png", verb: "Reviewed", note: "Finalist" },
+  { name: "Cohere Labs", logo: L + "cohere.svg", verb: "Selected", note: "Open Science Community" },
+];
+
 const Arrow = () => (
   <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
     <path d="M3 9L9 3M4 3h5v5" fill="none" stroke="currentColor" strokeWidth="1.3" />
@@ -13,7 +29,7 @@ export default function Home() {
   return (
     <SiteLayout>
       {/* ── hero ─────────────────────────────────────────────────────── */}
-      <section className="rx-hero2" id="home">
+      <section className="rx-hero2 rx-hero3" id="home">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap rx-h2-grid">
           <div className="rx-h2-copy">
@@ -34,49 +50,63 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rx-h2-visual">
-            <div className="rx-arch">
-              <img
-                src="/assets/images/portrait-arch.jpg"
-                alt="Portrait of Rokib Al Dhin Raadh"
-                width={840}
-                height={1050}
-                fetchPriority="high"
+          <figure className="rx-h3-visual">
+            <svg viewBox="0 0 700 760" role="img" aria-label="Portrait of Rokib Al Dhin Raadh">
+              <defs>
+                <radialGradient id="rx-disc" cx="62%" cy="30%" r="80%">
+                  <stop offset="0" stopColor="#d8ee96" />
+                  <stop offset=".45" stopColor="#98e0a0" />
+                  <stop offset="1" stopColor="#64c3d3" />
+                </radialGradient>
+                <clipPath id="rx-cut">
+                  <path d="M-40,-40 H740 V390 H670 A320,320 0 0 1 30,390 H-40 Z" />
+                </clipPath>
+              </defs>
+              <circle className="rx-h3-ring" cx="350" cy="390" r="346" />
+              <circle cx="350" cy="390" r="320" fill="url(#rx-disc)" />
+              <image
+                href="/assets/images/portrait-cut.webp"
+                x="0" y="20" width="700" height="700"
+                clipPath="url(#rx-cut)"
+                preserveAspectRatio="xMidYMid meet"
               />
-            </div>
-            <div className="rx-stamp" aria-label="Age eighteen">
-              <svg viewBox="0 0 120 120" aria-hidden="true">
-                <defs>
-                  <path id="rx-stamp-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
-                </defs>
-                <text>
-                  <textPath href="#rx-stamp-circle" textLength="284" lengthAdjust="spacing">FOUNDER · RESEARCHER · AGE EIGHTEEN · </textPath>
-                </text>
-              </svg>
-              <b>18</b>
-            </div>
-            <a className="rx-glass" href={links.deepmath} target="_blank" rel="noreferrer">
-              <span className="live" aria-hidden="true" />
-              <span>
-                <small>Accepted · Poster · Double-blind</small>
-                DeepMath 2026
-              </span>
-            </a>
-          </div>
+            </svg>
+            <figcaption>
+              <span>Rokib Al Dhin Raadh</span>
+              <span>Dhaka · 2026</span>
+            </figcaption>
+          </figure>
         </div>
+      </section>
 
-        <div className="rx-marquee" aria-label="Recognition">
-          <div className="rx-marquee-track">
-            {[0, 1].map((k) => (
-              <span className="rx-marquee-set" key={k} aria-hidden={k === 1 ? true : undefined}>
-                {["DeepMath 2026 · Accepted", "NeurIPS 2026 · Programme Committee", "Cohere Labs · Open Science",
-                  "IARCO 2026 · Finalist", "Cosmos Institute · Ranked first", "1752vc Ignite · Top 1%",
-                  "Antler · Accepted", "Entrepreneur First · The Bridge", "383 experiments · 1 GPU"].map((t) => (
-                  <span key={t}>{t}<i aria-hidden="true">✦</i></span>
-                ))}
-              </span>
-            ))}
+      {/* ── selected / reviewed / interviewed ────────────────────────── */}
+      <section className="rx-sel" aria-labelledby="rx-sel-h">
+        <div className="rx-wrap">
+          <div className="rx-sel-head">
+            <h2 id="rx-sel-h">
+              Selected. Reviewed. <em>Interviewed.</em>
+            </h2>
+            <p>
+              Ten programmes, review panels and committees across research and venture, all in 2026 and all before
+              his nineteenth birthday.
+            </p>
           </div>
+          <ul className="rx-logos">
+            {marks.map((m) => (
+              <li key={m.name} className={m.logo ? undefined : "is-word"}>
+                <span className="rx-logo-verb">{m.verb}</span>
+                <span className="rx-logo-img">
+                  {m.logo ? (
+                    <img src={m.logo} alt={m.name} loading="lazy" />
+                  ) : (
+                    <span className="rx-logo-word">{m.word}<i>2026</i></span>
+                  )}
+                </span>
+                <span className="rx-logo-note"><b>{m.name}</b>{m.note}</span>
+              </li>
+            ))}
+          </ul>
+          <Link className="rx-sel-more" to="/about">The full record <Arrow /></Link>
         </div>
       </section>
 
