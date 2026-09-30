@@ -41,12 +41,13 @@ export default function Home() {
               <span className="rx-h2-age">Peer-reviewed at <em>eighteen.</em></span>
             </h1>
             <p className="rx-h2-sub">
-              Author of ORMAS, the self-correcting architecture accepted at DeepMath 2026, and founder of the company
-              licensing it to regulated industries.
+              Every AI model on earth is a black box. <b>OXIEDO</b> is ending that. Its engine, ORMAS, finds its own
+              broken parts, repairs them mid-training and writes a tamper-evident record of every change, so banks,
+              hospitals and defence teams can finally train AI on the data they have been locked out of.
             </p>
             <div className="rx-btns">
-              <Link className="rx-btn" to="/research">Read the research <Arrow /></Link>
-              <a className="rx-btn is-ghost" href={links.cv} target="_blank" rel="noreferrer">Download CV <Arrow /></a>
+              <a className="rx-btn is-cta" href={links.oxiedo} target="_blank" rel="noreferrer">Enter OXIEDO <Arrow /></a>
+              <Link className="rx-btn is-ghost" to="/research">Read the research <Arrow /></Link>
             </div>
           </div>
 
