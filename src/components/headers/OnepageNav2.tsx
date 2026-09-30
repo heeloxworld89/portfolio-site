@@ -16,7 +16,7 @@ const navItems = [
   {
     id: 1,
     href: "#who-i-am",
-    text: "Who I Am",
+    text: "Profile",
     isCurrent: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none"

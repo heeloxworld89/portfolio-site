@@ -185,7 +185,7 @@ export default function EngineeringVisualization() {
 
       {/* ══ SELF-HIRING ═════════════════════════════════════════════ */}
       <div className="evz-block">
-        <h4 className="evz-h">The Branch Nobody Else Has — Hiring, Mid-Task</h4>
+        <h4 className="evz-h">Creating New Roles Mid-Task</h4>
         <p className="evz-s">
           Every agent framework asks you to define your agents up front. When OXIMO meets work no existing role can
           handle, it designs the role, checks it is not a duplicate, validates it, tests that it produces coherent
@@ -210,7 +210,7 @@ export default function EngineeringVisualization() {
       {/* ══ MEMORY + COST ═══════════════════════════════════════════ */}
       <div className="evz-two">
         <div className="evz-block" style={{ marginBottom: 0 }}>
-          <h4 className="evz-h">Why It Gets Better Where It Sits</h4>
+          <h4 className="evz-h">Persistent, Compounding Memory</h4>
           <p className="evz-s" style={{ marginBottom: '14px' }}>
             Three memory tiers, plus an Ebbinghaus decay curve so unused knowledge fades and reinforced knowledge
             strengthens. Agents mature Nascent → Learning → Mature → Expert.
@@ -235,7 +235,7 @@ export default function EngineeringVisualization() {
         </div>
 
         <div className="evz-block" style={{ marginBottom: 0 }}>
-          <h4 className="evz-h">Why It Is Affordable to Run</h4>
+          <h4 className="evz-h">Cost Efficiency</h4>
           <p className="evz-s" style={{ marginBottom: '18px' }}>
             OXIMO does not call one expensive frontier model. It cascades cheaper specialised models across six stages,
             each tuned to one kind of work — for equivalent output quality.

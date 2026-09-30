@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { isChunkLoadError, recoverFromStaleChunk } from "./utils/chunkRecovery";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Service Worker — manual registration with iOS Safari fixes
@@ -86,22 +87,10 @@ if ("serviceWorker" in navigator) {
 // itself is broken, an unguarded reload loops forever and the site is dead.
 // One attempt per tab, then let the error surface.
 // ─────────────────────────────────────────────────────────────────────────────
-const RELOAD_KEY = "chunk-reload-attempted";
-
-function recoverFromStaleChunk(reason: string) {
-  if (sessionStorage.getItem(RELOAD_KEY)) {
-    console.error("Chunk load failed again after reload — not retrying.", reason);
-    return;
-  }
-  try {
-    sessionStorage.setItem(RELOAD_KEY, "1");
-  } catch {
-    /* private mode — reload once anyway rather than leaving a broken page */
-  }
-  window.location.reload();
-}
-
 window.addEventListener("vite:preloadError", (event) => {
+  // Preventing this makes Vite carry on: a failed stylesheet still lets the
+  // page render, and a failed page chunk resolves to undefined, which App.tsx
+  // turns into "wait for the reload" or a clear error instead of a crash.
   event.preventDefault();
   recoverFromStaleChunk("vite:preloadError");
 });
@@ -110,22 +99,10 @@ window.addEventListener("vite:preloadError", (event) => {
 // vite:preloadError (a rejected import inside React.lazy can surface as a
 // plain unhandled rejection).
 window.addEventListener("unhandledrejection", (event) => {
-  const message = String(event.reason?.message ?? event.reason ?? "");
-  if (/dynamically imported module|Importing a module script failed|error loading dynamically imported/i.test(message)) {
+  if (isChunkLoadError(event.reason)) {
     event.preventDefault();
-    recoverFromStaleChunk(message);
+    recoverFromStaleChunk(String(event.reason));
   }
-});
-
-// Clear the guard once the app has actually mounted and run for a moment.
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    try {
-      sessionStorage.removeItem(RELOAD_KEY);
-    } catch {
-      /* ignore */
-    }
-  }, 5_000);
 });
 
 reportWebVitals((metric) => {

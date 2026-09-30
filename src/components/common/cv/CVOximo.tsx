@@ -24,20 +24,19 @@ export default function CVOximo() {
       id="oximo"
       phase="before"
       eyebrow="OXIMO · 2023–2025"
-      title="40,933 lines of an operating system where the agents hire their own staff."
+      title="OXIMO: a multi-agent operating system that staffs itself."
       lead={
         <>
-          Five businesses had told me the same thing five times over, all of them before I was seventeen:
-          the limit was never how good I was, it was coordination. So I stopped trying harder and built the answer as a system. Hand it one
-          sentence and it works out the org chart itself, then designs and hires a specialist when nobody
-          on staff can do the job.{' '}
-          <strong>It ran a real company for a year. I have stopped developing it, and I say exactly why
-          further down.</strong>
+          Five ventures had pointed Raadh to the same constraint: coordination, not individual capability.
+          OXIMO was his structural answer. Given a single-sentence brief, it designs the organisation needed to
+          deliver it and creates specialist roles when none exist.{' '}
+          <strong>It operated a live company for twelve months and is now concluded; the reasons are set out
+          below.</strong>
         </>
       }
       meta={[
-        { k: 'Status', v: 'Closed by choice' },
-        { k: 'Scale', v: '40,933 lines, alone' },
+        { k: 'Status', v: 'Concluded' },
+        { k: 'Scale', v: '40,933 lines, solo' },
         { k: 'Tests', v: '2,069 · 0 failures' },
         { k: 'Rebuild', v: '106k → 41k lines' },
       ]}
@@ -103,17 +102,17 @@ export default function CVOximo() {
       </div>
 
       <p className="ox-p">
-        Every multi-agent framework I studied needed a human in the middle — someone to frame each task,
-        prompt each model, carry the output to the next step. I wanted agents that break work apart
-        themselves, remember what happened last session, hire other agents, and run like a company.
+        Existing multi-agent frameworks require a human in the loop to frame each task, prompt each model
+        and pass outputs between steps. OXIMO&apos;s agents decompose work themselves, retain memory across
+        sessions, create new roles and operate as an organisation.
       </p>
 
-      <p className="ox-pull">Not a chatbot. A full organizational structure that assembles itself.</p>
+      <p className="ox-pull">Not a chatbot: an organisational structure that assembles itself.</p>
 
       <p className="ox-p">
-        I rebuilt it from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact, not
-        one test failing at the end. The rebuild was never housekeeping. It was the experiment showing
-        the architecture underneath was sound enough to survive complete reconstruction.
+        Raadh rebuilt OXIMO from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact
+        and all tests passing. The rebuild demonstrated that the underlying architecture could survive a
+        complete reconstruction.
       </p>
 
       <p className="ox-link">
@@ -121,35 +120,29 @@ export default function CVOximo() {
           View the codebase
           <Icon name="externalLink" size={13} />
         </a>
-        {' '}&nbsp;·&nbsp; This had to run a live company, not a demo. The code shows it.
+        {' '}&nbsp;·&nbsp; Production code, built to operate a live company.
       </p>
 
       <div className="ox-closed">
-        <div className="ox-closed-k">Why I stopped</div>
+        <div className="ox-closed-k">Why development concluded</div>
         <p>
-          Every agent in OXIMO is, underneath, a wrapper around somebody else&apos;s model that nobody can
-          see inside. That was fine while the work was clean. It ran a real company for a year, which is
-          the next section.
+          Each OXIMO agent is built on a third-party model whose internals cannot be inspected. That was
+          workable on clean inputs, and the system operated a live company for a year (see Black Bloxie).
         </p>
         <p>
-          Then I tried to train on the company&apos;s own data. Real production data is mislabelled,
-          contradictory and half corrupted, and I watched every published method for handling it fail in
-          turn. DivideMix, ProMix, CoDE. None of them helped, and it took me a while to accept why: I was
-          trying to fix a coordination problem that was not a coordination problem.{' '}
-          <strong>The failure was one floor down, inside the model, and no amount of better orchestration
-          was ever going to reach it.</strong>
+          Training on the company&apos;s own data changed that. Production data is mislabelled, contradictory
+          and partly corrupted, and the established methods for handling it (DivideMix, ProMix, CoDE) all
+          failed.{' '}<strong>The problem sat inside the model, beyond the reach of better orchestration.</strong>
         </p>
         <p>
-          So I went down a floor and stayed there. OXIMO is the project that handed me the question. ORMAS
-          is the answer, and it is where all of my time goes now.
+          OXIMO posed the question; ORMAS is the answer, and it is now Raadh&apos;s full-time focus.
         </p>
       </div>
 
-      <p className="ox-label">Watch a sentence turn into a company</p>
+      <p className="ox-label">From one sentence to an organisation</p>
       <p className="ox-p">
-        Every other agent framework makes you define the agents up front. This one was handed a sentence
-        and worked out the org chart on its own, hiring a specialist that did not exist when the job
-        started.
+        Other agent frameworks require agents to be defined in advance. OXIMO derives the organisation from
+        the brief and creates specialists that did not exist when the task began.
       </p>
       <EngineeringVisualization />
 
@@ -157,7 +150,7 @@ export default function CVOximo() {
 
       <ExpandableSection
         closedLabel="Open the architecture detail"
-        hint="The four-layer module breakdown across eleven mini-repos, for anyone who wants to see how it was put together."
+        hint="The four-layer module structure across eleven repositories."
         meta={['4 layers', '11 mini-repos', 'Constructor injection']}
       >
         <p className="ox-p">

@@ -5,14 +5,12 @@ export default function CVEducation() {
       id="education"
       phase="about"
       eyebrow="Education"
-      title="Nobody taught me any of this."
+      title="Self-taught across machine learning, systems and theory."
       lead={
         <>
-          I am <span className="age">eighteen</span> and I have never sat in a computer science lecture. No university, no advisor, no
-          lab, nobody senior to check a derivation before I committed to it.
-          I took the coursework when a problem forced me to, and the work kept dragging me into fields
-          most programmers never open once. <strong>What it cost me to learn it this way is written out at
-          the bottom of this section rather than skipped.</strong>
+          Raadh is completing his final year of secondary school and has learned his field independently,
+          without a university or advisor. He studies what each problem requires, and the work has taken him
+          into control theory, market microstructure and company law alongside machine learning.
         </>
       }
     >
@@ -136,35 +134,35 @@ export default function CVEducation() {
         
         <div className="content">
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "28px", maxWidth: "700px" }}>
-            Self-taught in ML, systems engineering, and theoretical CS. I go after the mechanism rather than the surface, because the surface has never once been enough to finish the thing I was working on. Along the way the work dragged me into fields most programmers never have a reason to open:
+            Self-taught in machine learning, systems engineering and theoretical computer science, with a focus on underlying mechanisms. The work has also required expertise well beyond software:
           </p>
           
           <div className="edu-grid">
             <div className="edu-card">
-              <h5 className="edu-title">I learned control theory because the proof would not write itself</h5>
-              <p className="edu-desc">The ORMAS stability characterization rests on control theory, and I could not write it while treating the mathematics as symbols on a page. I needed the physical intuition for why a perturbed system settles — or does not.</p>
+              <h5 className="edu-title">Control theory, for the stability proof</h5>
+              <p className="edu-desc">The ORMAS stability characterization rests on control theory, which required a working intuition for why a perturbed system settles, or fails to.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">I learned where human trust in a machine runs out</h5>
-              <p className="edu-desc">Automating European cold calls showed me exactly where human trust in an autonomous agent runs out. Understanding why it runs out at the transaction, and not before, became a design constraint rather than a curiosity.</p>
+              <h5 className="edu-title">The limits of trust in automation</h5>
+              <p className="edu-desc">Automating European cold calls showed precisely where human trust in an autonomous agent ends: at the transaction. That boundary became a design constraint in his later systems.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">I learned market microstructure at fifteen, to get paid</h5>
-              <p className="edu-desc">At 15 I was building stock algorithms that had to account for institutional flow. That is not something you can infer from price data alone — it required learning market micro-structure properly.</p>
+              <h5 className="edu-title">Market microstructure, at fifteen</h5>
+              <p className="edu-desc">The stock-prediction system he built and sold at 15 had to account for institutional order flow, which cannot be inferred from price data alone.</p>
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">I learned UK company law because there was no lawyer</h5>
-              <p className="edu-desc">Registering Black Bloxie at UK Companies House from Bangladesh meant learning the filing regime, the anti-money-laundering requirements, and the director obligations myself. No lawyer, no agent. The director of record is my father's name — practical, not operational; the company itself, its site, and everything it does runs under mine.</p>
+              <h5 className="edu-title">UK company law</h5>
+              <p className="edu-desc">Incorporating Black Bloxie LTD at UK Companies House from Bangladesh, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>What I actually sat through, and finished</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "30px" }}>Coursework and certifications</h4>
           <div className="mb--50 p-3 p-md-5" style={{ background: "var(--pf-surface)", borderRadius: "10px", border: "1px solid rgba(var(--pf-ink-rgb), 0.05)" }}>
             <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "25px", fontStyle: "italic" }}>
-              Entirely self-taught in machine learning, systems engineering, and theoretical computer science:
+              Completed coursework in machine learning, systems engineering and theoretical computer science:
             </p>
             
             <h5 style={{ color: "var(--pf-ink)", fontSize: "20px", marginBottom: "15px", marginTop: "10px" }}>MITx</h5>
@@ -184,12 +182,9 @@ export default function CVEducation() {
               </span>
               <p style={{ margin: 0, fontSize: '13.5px', lineHeight: 1.7, color: 'var(--pf-ink-2)' }}>
                 <strong style={{ color: 'var(--pf-ink)' }}>Note on the MIT records platform.</strong>{' '}
-                MITx Online is currently displaying shared records inconsistently — a link may load
-                incomplete data, or not resolve at all. That is a platform fault on their side, not a
-                question about the coursework. <strong style={{ color: 'var(--pf-ink)' }}>Every record
-                below is held and can be produced in full on request</strong>, including the completion
-                certificates and grade reports, independently of whether these links behave on the day
-                you try them.
+                MITx Online currently displays shared records inconsistently, and some links may not load.{' '}
+                <strong style={{ color: 'var(--pf-ink)' }}>Full records, completion certificates and grade
+                reports are available on request.</strong>
               </p>
             </div>
 
@@ -222,7 +217,7 @@ export default function CVEducation() {
             </p>
             <div style={{ background: "rgba(var(--pf-ink-rgb), 0.02)", borderLeft: "2px solid var(--pf-border)", padding: "15px", borderRadius: "0 8px 8px 0", marginTop: "20px" }}>
               <p style={{ margin: 0, color: "var(--pf-ink-2)", fontSize: "14px" }}>
-                All certificates verifiable on request — specific shareable credential links for any course available via{' '}
+                All certificates are verifiable on request; credential links for any course are available from{' '}
                 <a href="mailto:rokib@blackbloxie.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>rokib@blackbloxie.com</a>{' · '}<a href="mailto:raadxbusiness9@gmail.com" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>raadxbusiness9@gmail.com</a>.
               </p>
             </div>
@@ -236,31 +231,27 @@ export default function CVEducation() {
                 <span className="fiap-tag">São Paulo, Brazil · Sponsored Access</span>
               </div>
               <p style={{ fontSize: "17px", fontWeight: 700, color: "var(--pf-ink)", marginBottom: "14px", lineHeight: 1.5 }}>
-                FIAP doesn't hand this out by default — this was set up specifically for me.
+                Sponsored access to MIT Open Learning through FIAP.
               </p>
               <p style={{ fontSize: "15px", lineHeight: "1.75", color: "var(--pf-ink-2)", margin: 0 }}>
-                FIAP is one of Brazil's leading technology-focused institutions, consistently rated among
-                the country's top private schools for computer science and programming. I did enough MIT
-                coursework early on to be offered a place in an in-person MIT scholarship program — I
-                couldn't attend, for financial reasons, not academic ones. In early 2026, FIAP made me a
-                member and gave me sponsored access to MIT Open Learning's Universal AI program on the MIT
-                Learn platform — as far as I understand it, not something they hand out as standard
-                practice. That's where the Universal AI Foundational Models credit above actually came
-                from, and it's the reason I could keep taking MIT-level courses without the tuition behind
-                them. FIAP helped, and I'm grateful for it.
+                FIAP is one of Brazil&apos;s leading technology institutions, consistently ranked among the
+                country&apos;s top private schools for computer science. Raadh&apos;s early MIT coursework earned
+                him an offer to an in-person MIT scholarship programme, which he could not take up for financial
+                reasons. In early 2026 FIAP made him a member and sponsored his access to MIT Open Learning&apos;s
+                Universal AI programme, the source of the Universal AI Foundational Models credit above.
               </p>
             </div>
           </div>
 
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>What learning this way cost me</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>Research over grades</h4>
 
           {/* Big statement */}
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
             <p style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '12px', lineHeight: 1.4 }}>
-              I chose research over grades — deliberately.
+              A deliberate choice to prioritise research.
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink-2)', margin: 0 }}>
-              Stability theory for the ISS characterization took priority over exam preparation, and OXIMO development took the class time. I knew what I was trading and I made the trade on purpose. The result is not recorded in a transcript. It is recorded in 383 experiments, 40,933 lines of production code, and a published preprint — and that is the evidence I would rather be judged on.
+              Work on the ISS characterization and OXIMO took priority over exam preparation. The results are recorded not in a transcript but in 383 experiments, 40,933 lines of production code, a public preprint and a peer-reviewed DeepMath 2026 acceptance.
             </p>
           </div>
 
@@ -269,7 +260,7 @@ export default function CVEducation() {
             {[
               { val: '383', lbl: 'GPU Experiments' },
               { val: '40,933', lbl: 'Lines of Code' },
-              { val: 'Preprint', lbl: 'Under Peer Review' },
+              { val: 'DeepMath 2026', lbl: 'Accepted · Poster' },
               { val: 'UK Ltd', lbl: 'Registered Company' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>

@@ -26,10 +26,10 @@ const sectors = [
 ];
 
 const position = [
-  { k: 'Stage',     v: 'Pre-revenue. No customers, no pilot, and not one customer conversation yet.' },
-  { k: 'Entity',    v: 'A research company in formation. Delaware C-corporation being established; contracting meanwhile through an existing UK-registered company.' },
-  { k: 'Evidence',  v: 'Every result is CIFAR-10 or CIFAR-100. No clinical, financial, biological or defence data has ever touched the system, and no amount of compute fixes that — it needs a custodian to say yes.' },
-  { k: 'Team',      v: 'Me. All of it. That is the first thing the round gets spent on fixing.' },
+  { k: 'Stage',     v: 'Pre-revenue. Early conversations with model-risk and compliance teams are under way; no pilots signed.' },
+  { k: 'Entity',    v: 'Delaware C-corporation in formation; the ORMAS IP is held by the founder and will be assigned to it.' },
+  { k: 'Evidence',  v: 'All results to date are on CIFAR-10 and CIFAR-100. Validation on clinical, financial or defence data requires a data-custodian partner.' },
+  { k: 'Team',      v: 'Founder-led. Building the team is the first use of funds, starting with a research engineer.' },
 ];
 
 export default function CVBusiness() {
@@ -40,16 +40,15 @@ export default function CVBusiness() {
       id="oxiedo"
       phase="now"
       eyebrow="OXIEDO · The Business"
-      title="I turned it into a company, and the market has a legal deadline."
+      title="OXIEDO: auditable AI training for regulated industries."
       lead={
         <>
-          Hospital records. Bank ledgers. Assay runs. Licensed corpora. The best data in the world is
-          sitting in buildings where nobody is allowed to train on it, and the people holding it are
-          right to refuse — you cannot hand your data to something that will never be able to tell you
-          what it did with it. <strong>From December 2027, in Europe, refusing stops being a judgement
-          call and becomes an obligation.</strong> OXIEDO licenses the architecture that produces the
-          answer while the model learns, instead of guessing at it afterwards. I started the company at
-          fifteen and I am <span className="age">eighteen</span> now.
+          Hospital records, bank ledgers, assay runs and licensed corpora are among the most valuable data
+          in existence, and much of it cannot be used for training, because conventional models cannot
+          account for what they learned from it.{' '}<strong>From December 2027, the EU AI Act requires
+          high-risk AI to keep records and survive validation.</strong> OXIEDO licenses ORMAS, which
+          produces that record during training rather than reconstructing it afterwards. Raadh founded the
+          company in 2023.
         </>
       }
       meta={[
@@ -130,10 +129,10 @@ export default function CVBusiness() {
 
       <a className="bz-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
         <span className="bz-cta-l">
-          <h3 className="bz-cta-h">The company has its own site. Go and read it.</h3>
+          <h3 className="bz-cta-h">Full company details at oxiedo.com</h3>
           <p className="bz-cta-p">
-            The product, the licence, the pricing logic, the five sectors and the full risk register are
-            all over there, in far more detail than belongs on a personal page. This one is about me.
+            The product, licensing, pricing, sector coverage and full risk register are published on the
+            company site.
           </p>
         </span>
         <span className="bz-cta-b">
@@ -144,15 +143,14 @@ export default function CVBusiness() {
 
       <div className="bz-thesis">
         <p>
-          Nobody has ever wanted an audit trail. What a hospital wants is to train on its own patient
-          records without ending up in front of a regulator. <strong>Transparency is just the mechanism.
-          What I sell is access to data these institutions already own and still cannot
-          touch.</strong> Getting that the wrong way round is how every interpretability company so far
-          has ended up with a tool nobody buys.
+          Institutions do not buy audit trails for their own sake. A hospital wants to train on its own
+          patient records without regulatory exposure. <strong>Transparency is the mechanism; the value is
+          access to data these institutions already own but cannot yet use.</strong> That distinction is
+          where many interpretability tools have struggled to find buyers.
         </p>
       </div>
 
-      <p className="bz-label">The same question, in five industries that pay differently</p>
+      <p className="bz-label">One question, five industries</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -165,12 +163,12 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label">Why it has to run inside their building</p>
+      <p className="bz-label">Why deployment is on-premise</p>
       <OxidoVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="bz-label">What I would tell you in diligence, without being asked</p>
+      <p className="bz-label">Current position</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>
@@ -182,8 +180,8 @@ export default function CVBusiness() {
 
       <div className="bz-deck">
         <span className="bz-deck-t">
-          <strong>Investors —</strong> the round, the six milestones and every risk I know about are laid
-          out at oxiedo.com/invest. If you would rather see it in one pass, the deck opens right here — 15 slides plus appendix, rebuilt September 2026.
+          <strong>Investors:</strong> the round, the six milestones and the full risk register are at
+          oxiedo.com/invest. The investor deck (15 slides plus appendix, September 2026) opens here.
         </span>
         <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
           <Icon name="chart" size={15} />

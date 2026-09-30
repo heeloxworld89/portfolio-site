@@ -75,5 +75,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/assets/pdf/oxido_investor_whitepaper.pdf",
+      "destination": "/assets/pdf/oxiedo_investor_whitepaper.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/assets/pdf/oxido_academic_research_paper.pdf",
+      "destination": "/assets/pdf/oxiedo_academic_research_paper.pdf",
+      "permanent": true
+    }
   ]
 }

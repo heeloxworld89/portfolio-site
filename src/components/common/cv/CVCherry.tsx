@@ -12,7 +12,7 @@ import CVSection from './CVSection';
 const notThis = [
   { k: 'Not fine-tuning',    v: 'Fine-tuning is a discrete event against a frozen base, and it forgets. There is no frozen base here and no discrete event.' },
   { k: 'Not LoRA or adapters', v: 'Adapters need a task ID at inference — you must already know which one to load. Here, which parts activate is the result of routing, not an input to it.' },
-  { k: 'Not Mixture-of-Experts', v: 'The closest existing thing, and the difference is instructive. MoE fixes the expert count before training and monitors nothing per expert. This grows on demand, and every part is independently monitored and repairable.' },
+  { k: 'Not Mixture-of-Experts', v: 'The closest existing approach. MoE fixes the number of experts before training and does not monitor them individually. Cherry grows components on demand, and each is independently monitored and repairable.' },
 ];
 
 export default function CVCherry() {
@@ -21,22 +21,20 @@ export default function CVCherry() {
       id="cherry"
       phase="now"
       eyebrow="Project Cherry · Planned"
-      title="The next one. Written down completely, and deliberately not started."
+      title="A network that grows its own components."
       lead={
         <>
-          Once a network can tell you which of its parts is failing and by how much, you can do something
-          nobody currently does: let it <strong>grow a new part on demand</strong>, and retire one that has
-          stopped earning its place. Fixed capacity is the ceiling on every number in the research section
-          above, and this is how it comes off.{' '}
-          <strong>I have written the whole thing and built none of it.</strong> It is here because I would
-          rather show you where this goes than have you find out later.
+          Once a network can report which of its parts is failing and by how much, it can be allowed to{' '}
+          <strong>grow new components on demand</strong> and retire those that no longer contribute. Project
+          Cherry removes the fixed-capacity ceiling that limits every result in the research section. It is
+          fully specified; development will begin once multi-node compute is in place.
         </>
       }
       meta={[
-        { k: 'Status', v: 'Not started' },
+        { k: 'Status', v: 'Specification complete' },
         { k: 'Written', v: 'Full specification' },
         { k: 'Gated on', v: 'Multi-node H100 access' },
-        { k: 'Evidence', v: 'None. Zero runs.' },
+        { k: 'Experiments', v: 'None yet' },
       ]}
     >
       <style>{`
@@ -68,28 +66,26 @@ export default function CVCherry() {
       `}</style>
 
       <div className="cy-warn">
-        <span className="cy-warn-t">Nothing measured</span>
+        <span className="cy-warn-t">Planned work</span>
         <span className="cy-warn-v">
-          Every number elsewhere on this page came out of an experiment I ran. There are none here,
-          because there is nothing built yet to run them on. Read this as intent.
+          Every other figure on this page comes from a completed experiment. This section describes planned
+          work, so it contains no results.
         </span>
       </div>
 
       <p className="cy-p">
-        ORMAS already supplies the hard part. A network that knows which of its components is dying, and
-        by how much, is a network you can tell to grow a replacement. The new part can be slipped in
-        with zero net effect on anything the network currently does, so nothing that already works gets
-        disturbed while the new part learns its job.{' '}
-        <strong>Fixed capacity is what holds down every number in the research section. This is how it
-        comes off.</strong>
+        ORMAS already provides the difficult part: a network that knows which components are failing, and by
+        how much, can be instructed to grow replacements. New components are introduced with zero net effect
+        on current behaviour, so existing capabilities are undisturbed while they learn.{' '}
+        <strong>This is how the fixed-capacity ceiling is removed.</strong>
       </p>
 
-      <p className="cy-label">What it would look like</p>
+      <p className="cy-label">How it would work</p>
       <CherryVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="cy-label">Things people will assume this is, and why it isn’t</p>
+      <p className="cy-label">How it differs from existing methods</p>
       <div className="cy-not">
         {notThis.map((n) => (
           <div className="cy-not-row" key={n.k}>

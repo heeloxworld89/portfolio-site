@@ -39,12 +39,10 @@ export default function CVOriginStatement() {
       id="statement"
       phase="about"
       eyebrow="Personal Statement"
-      title="How this actually gets done, and the three things it is missing."
+      title="How the work is done, and what comes next."
       lead={
         <>
-          The work is above. This is the conditions it was made under, and what I do not have.{' '}
-          <strong>I have never once been short of motivation, and I would rather tell you where the real
-          gap is than put it somewhere more flattering.</strong>
+          In his own words: the conditions behind the work, and the three resources the next phase requires.
         </>
       }
     >
@@ -258,15 +256,15 @@ export default function CVOriginStatement() {
 
       <div>
 
-        <p className="os-byline"><span className="age">Eighteen years old</span> · Dhaka, Bangladesh · No university, no advisor, no lab.</p>
+        <p className="os-byline">Rokib Al Dhin Raadh · Founder &amp; CEO, OXIEDO · Dhaka, Bangladesh</p>
 
         <div className="os-band">
           {[
             { v: '14–16 hrs', l: 'A normal working day' },
-            { v: '28', l: 'Days filmed unedited' },
-            { v: '$0', l: 'Outside funding taken' },
-            { v: '1', l: 'Person on the programme' },
-            { v: '100%', l: 'Of the IP, owned' },
+            { v: '28', l: 'Working days livestreamed' },
+            { v: '$0', l: 'External funding to date' },
+            { v: 'Solo', l: 'Research programme' },
+            { v: '100%', l: 'IP ownership' },
           ].map((s, i) => (
             <div key={i} className="os-band-cell">
               <div className="os-band-val">{s.v}</div>
@@ -278,36 +276,34 @@ export default function CVOriginStatement() {
         {/* ══ ACT IV ══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
           <div className="os-act-num">Part One</div>
-          <h3 className="os-act-title">How the Work Actually Gets Done</h3>
+          <h3 className="os-act-title">How the Work Is Done</h3>
         </div>
 
         <div className="os-body">
           <p className="os-p">
-            No university framework. No research group. No advisor. No external funding. Every experiment
-            ran on hardware I bought myself, and every architectural decision in this programme was made by
-            one person at a desk in Dhaka.
+            I have built this work independently, without a university, research group, advisor or external
+            funding. Every experiment ran on hardware I paid for, and every architectural decision was my own.
           </p>
           <p className="os-p">
-            I work fourteen to sixteen hours a day and always have. At some point I got curious about
-            whether other people actually did that or only said it, so I documented mine properly. For two
-            weeks in November 2024 I livestreamed the entire working day, every day, and came out with{' '}
-            <strong>28 sessions of live footage filed as a Guinness World Record application</strong>.
-            None of it is edited. All of it is linked below.
+            I work fourteen to sixteen hours a day. In November 2024 I livestreamed every working session
+            for two weeks, producing{' '}
+            <strong>28 sessions of unedited footage, submitted as a Guinness World Record application</strong>.
+            The full archive is linked below.
           </p>
         </div>
 
         <div style={{ marginTop: '26px' }}>
           <ExpandableSection
-            closedLabel="Open the 28 filmed working days, and every tool behind the three systems"
-            hint="Unlisted livestream footage recorded for the Guinness application, plus the complete list of tools, frameworks, and languages behind the three systems."
+            closedLabel="Work archive and technical toolkit"
+            hint="The 28 livestreamed working sessions, and the tools, frameworks and languages behind the three systems."
             meta={['28 unedited days', 'Guinness application', 'Every tool used']}
           >
             <div className="os-detail" style={{ marginBottom: '18px' }}>
               <div className="os-detail-head">Work Archive — November 2024 · 28 Sessions</div>
               <div style={{ padding: '16px 20px' }}>
                 <p style={{ fontSize: '13px', color: 'var(--pf-ink-2)', marginBottom: '14px', lineHeight: 1.7 }}>
-                  Unlisted livestreams recorded for the Guinness World Record application. Unfiltered
-                  daily workflow footage — no editing, no highlights.
+                  Unlisted livestreams recorded for the Guinness World Record application: complete,
+                  unedited working sessions.
                 </p>
                 <div className="os-sessions">
                   {sessions.map((id, i) => (
@@ -340,26 +336,23 @@ export default function CVOriginStatement() {
         {/* ══ ACT V ═══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
           <div className="os-act-num">Part Two</div>
-          <h3 className="os-act-title">What Is Still Missing</h3>
+          <h3 className="os-act-title">What the Next Phase Requires</h3>
         </div>
 
         <div className="os-body">
           <p className="os-p">
-            Two years ago I would have said all of this out loud and sounded delusional. There was only
-            one way to close that gap and it was not by talking. The code runs. The experiments are
-            finished. The architecture is public, and anybody who wants to attack it now can.
+            The foundations are in place: the code runs, the experiments are complete, the architecture is
+            public and its stability result has passed peer review.
           </p>
           <p className="os-p">
-            What I am not going to pretend is that working this way scales. The thing I am short of has
-            never been drive. It is calibration: colleagues, an advisor, reviewers, the people who halve an
-            iteration cycle and catch a mistake before it has three months of work stacked on top of it.
+            Working alone does not scale. What the next phase needs is not drive but calibration:
+            colleagues, advisors and reviewers who shorten iteration cycles and catch errors early.
           </p>
           <p className="os-p">
             What the company does next is set out at{' '}
             <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
               oxiedo.com
-            </a>. This is a different list — not a plan, but the three external things that plan depends
-            on. They run in parallel, and none depends on the others.
+            </a>. The table below lists the three external resources that plan depends on.
           </p>
         </div>
 
@@ -367,22 +360,22 @@ export default function CVOriginStatement() {
           <table className="os-needs">
             <thead>
               <tr>
-                <th style={{ width: '32%' }}>What I do not have</th>
-                <th>What it is costing me</th>
+                <th style={{ width: '32%' }}>Resource</th>
+                <th>Why it matters</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Multi-node compute</td>
-                <td>The ORMAS protocol carries over to Transformers unchanged — the mathematics is architecture-agnostic. What&apos;s missing isn&apos;t a research result, it&apos;s H100/A100 access at multi-node scale.</td>
+                <td>The ORMAS protocol transfers to Transformers unchanged, as the mathematics is architecture-agnostic. Validation at that scale requires multi-node H100/A100 access.</td>
               </tr>
               <tr>
-                <td>A reason to train Cherry</td>
-                <td>Pre-training a language model on the three-signal architecture from scratch means structural correction happens during pre-training instead of being bolted on afterward as RLHF. That&apos;s a compute-heavy bet I&apos;m not going to make alone on a single GPU.</td>
+                <td>Capacity to train Cherry</td>
+                <td>Pre-training a language model on the three-signal architecture builds structural correction into pre-training rather than adding it afterwards through RLHF. It is a compute-intensive programme beyond a single GPU.</td>
               </tr>
               <tr>
                 <td>A control theorist</td>
-                <td>The ISS characterization needs someone qualified trying to break it before I submit it anywhere, not after.</td>
+                <td>The ISS characterization passed double-blind review at DeepMath 2026 by deep-learning theorists. The next step is scrutiny from control theory.</td>
               </tr>
             </tbody>
           </table>
@@ -390,10 +383,9 @@ export default function CVOriginStatement() {
 
         <div className="os-close">
           <p>
-            The infrastructure for the next phase — Transformer-scale validation, Project Cherry,
-            formal peer review of the ISS result — requires exactly the kind of institutional
-            environment I have been building without. That is the direct and honest reason I am
-            raising, and it is not for validation. I have had enough of that this year. It is to stop being the only person who can check my own work.
+            Transformer-scale validation, Project Cherry and control-theory review of the ISS result all
+            require an institutional environment I have so far worked without. That is why I am raising
+            capital: to build a team, so the work no longer depends on one person to check it.
           </p>
         </div>
 

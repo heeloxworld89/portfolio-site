@@ -13,7 +13,7 @@ import Icon from "@/components/common/Icon";
 
 const items: { href: string; label: string; phase: string }[] = [
   { href: "#recognition",  label: "Recent",        phase: "now" },
-  { href: "#who-i-am",     label: "Who I Am",      phase: "now" },
+  { href: "#who-i-am",     label: "Profile",       phase: "now" },
   { href: "#research",     label: "Research",      phase: "now" },
   { href: "#oxiedo",       label: "Business",      phase: "now" },
   { href: "#cherry",       label: "What’s Next",   phase: "now" },
@@ -145,7 +145,7 @@ export default function MobileMenu() {
         <a className="mm-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
           oxiedo.com <Icon name="externalLink" size={14} />
         </a>
-        <a className="mm-cta is-quiet" href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=2026-09-26a" target="_blank" rel="noreferrer">
+        <a className="mm-cta is-quiet" href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=2026-09-30a" target="_blank" rel="noreferrer">
           <Icon name="download" size={14} /> Download CV
         </a>
         <p className="mm-foot">18 · Dhaka, Bangladesh · Independent AI researcher</p>

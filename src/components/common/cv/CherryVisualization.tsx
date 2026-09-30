@@ -193,7 +193,7 @@ export default function CherryVisualization() {
         <div className="cvz-panel">
           <div className="cvz-eyebrow">How it works today</div>
           <h4 className="cvz-title">The Standard Model</h4>
-          <p className="cvz-sub">One enormous brain. All of it thinks about everything.</p>
+          <p className="cvz-sub">One large model; every parameter handles every query.</p>
 
           <svg className="cvz-svg" viewBox="0 0 460 300" role="img"
                aria-label="A single frozen monolithic model. Every query activates the entire model, and nothing about it changes afterwards.">
@@ -242,8 +242,8 @@ export default function CherryVisualization() {
           </svg>
 
           <p className="cvz-caption">
-            Watch it as long as you like. <strong>It ends in exactly the state it started.</strong> To teach it anything
-            you stop the world, retrain, and freeze it again.
+            <strong>The model is unchanged after every query.</strong> Teaching it anything new requires stopping,
+            retraining and freezing it again.
           </p>
         </div>
 
@@ -251,7 +251,7 @@ export default function CherryVisualization() {
         <div className="cvz-panel is-cherry">
           <div className="cvz-eyebrow">What Cherry does instead</div>
           <h4 className="cvz-title">A Mesh That Learns While It Works</h4>
-          <p className="cvz-sub">Many small specialists. Only the right ones wake up.</p>
+          <p className="cvz-sub">Many small specialists; only the relevant ones activate.</p>
 
           <svg className="cvz-svg" viewBox="0 0 460 300" role="img"
                aria-label="A router directs each prompt to a few specialised nodes out of many. They collaborate to produce an answer, feed what they learned back into the mesh in real time, and the mesh grows a new node when it meets work it cannot do.">
