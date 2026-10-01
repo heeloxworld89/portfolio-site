@@ -251,6 +251,7 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/research": { type: "WebPage", name: "Technology: ORMAS", main: "ormas-preprint", about: ["ormas-preprint", "deepmath-paper", "ormas-code"] },
   "/work": { type: "WebPage", name: "Company: OXIEDO", main: "oxiedo", about: ["oxiedo", "oximo", "black-bloxie"] },
   "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
+  "/evidence": { type: "WebPage", name: "Evidence", main: "person", about: ["person", "ormas-preprint", "deepmath-paper", "oxiedo"] },
 };
 
 export function schemaFor(path: string): string {

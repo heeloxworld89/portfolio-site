@@ -181,3 +181,6 @@
   /* no hover on touch: logos stay in colour */
   .rx .ux-home .rx-logo-img img { filter: none; opacity: 1; }
 }
+
+/* Age as the lead signal in the hero eyebrow */
+.rx .ux-home .ux-age { font-weight: 600; color: var(--rx-teal); background: #d8ee96; padding: 3px 8px; letter-spacing: .08em; }

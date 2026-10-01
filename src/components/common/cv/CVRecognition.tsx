@@ -14,7 +14,7 @@ export default function CVRecognition() {
           after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
           Cosmos Institute ranked the work highest in its grant cycle, IARCO 2026 named him a finalist, and
           Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
-          1%) offered OXIEDO places, Onstage shortlisted it for its W26 cohort, Entrepreneur First interviewed
+          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event (demo-day decision pending), Entrepreneur First interviewed
           him in London, and The Bridge in San Francisco is holding him in its final round.
         </>
       }
@@ -582,7 +582,7 @@ export default function CVRecognition() {
               d: 'W26 cohort',
               h: 'Top 100 pending',
               who: 'Onstage \u00b7 W26 Demo Day',
-              what: <><strong>Invited to the pre-pitch event</strong> in Central London and shortlisted for the winter cohort. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
+              what: <><strong>Invited to the pre-pitch event</strong> in Central London; the W26 demo-day decision is still pending. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
               pill: 'Pending',
               now: false,
             },
@@ -978,7 +978,7 @@ export default function CVRecognition() {
             <span className="rec-verify-k">Made to be checked</span>
             <span className="rec-verify-t">
               Each item above has a named source and a date: the Cosmos correspondence, the NeurIPS reviewer assignment, the
-              EF stage records, the Companies House filings. Documentation is available on request.
+              EF stage records, the Companies House filings. Documentation is available on request, and every claim is listed with its source on the <a href="/evidence">Evidence page</a>.
             </span>
           </span>
           <a

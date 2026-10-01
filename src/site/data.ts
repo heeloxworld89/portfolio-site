@@ -100,7 +100,7 @@ export const publications = [
 // the share card rendered by assets-source/og/make.cjs.
 export const pages = {
   "/": {
-    title: "Rokib Al Dhin Raadh — Founder & CEO of OXIEDO, Inventor of ORMAS",
+    title: "Rokib Al Dhin Raadh, 18 — Founder of OXIEDO, Inventor of ORMAS",
     description:
       "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. DeepMath 2026 paper; NeurIPS 2026 reviewer.",
     image: "/og/home-v3.jpg",
@@ -124,6 +124,13 @@ export const pages = {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
       "Rokib Al Dhin Raadh, 18, self-taught founder of OXIEDO. DeepMath 2026 paper, NeurIPS 2026 reviewer, 1752vc top 1%, seven MIT Open Learning programmes.",
+    image: "/og/about-v3.jpg",
+    imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
+  },
+  "/evidence": {
+    title: "Evidence: every claim, with its source — Rokib Al Dhin Raadh",
+    description:
+      "Each claim about Rokib Al Dhin Raadh, 18, founder of OXIEDO and inventor of ORMAS, with its source: DOI, ORCID, code, MITx records, and documents on request.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },

@@ -36,7 +36,7 @@ export default function Home() {
         <div className="rx-wrap rx-h2-grid">
           <div className="rx-h2-copy">
             <p className="rx-h2-eb">
-              <span className="dot" aria-hidden="true" /> Founder &amp; CEO, OXIEDO <i /> Inventor of ORMAS <i className="rx-h2-hide" /> <span className="rx-h2-hide">Dhaka</span>
+              <span className="dot" aria-hidden="true" /> <b className="ux-age">18 years old</b> <i /> Founder &amp; CEO, OXIEDO <i className="rx-h2-hide" /> <span className="rx-h2-hide">Inventor of ORMAS</span>
             </p>
             <h1>
               Building neural networks that can account for what they learned.

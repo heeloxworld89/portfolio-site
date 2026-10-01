@@ -109,6 +109,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                     )}
                   </li>
                 ))}
+                <li><Link to="/evidence">Evidence</Link></li>
               </ul>
             </nav>
             <div className="rx-foot-col">

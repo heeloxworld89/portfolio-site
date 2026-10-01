@@ -61,6 +61,7 @@ Every claim on raadh.me can be checked against a primary source:
 
 - [Research](https://www.raadh.me/research): ORMAS method, all results, stability derivation, ablations, Project Cherry
 - [Work](https://www.raadh.me/work): OXIEDO, OXIMO, the Black Bloxie field study, earlier ventures
+- [Evidence](https://www.raadh.me/evidence): every claim on the site with its source, public record or on request
 - [About](https://www.raadh.me/about): recognition, timeline, personal statement, education, contact
 - [Full site text](https://www.raadh.me/llms-full.txt): the complete content of raadh.me as plain text
 - [ORMAS preprint (Zenodo, DOI 10.5281/zenodo.21730363)](https://zenodo.org/records/21730363): full paper with 36-page supplementary
