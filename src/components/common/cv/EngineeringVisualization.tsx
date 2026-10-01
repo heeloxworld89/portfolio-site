@@ -212,7 +212,7 @@ export default function EngineeringVisualization() {
       <div className="evz-block">
         <h4 className="evz-h">Creating New Roles Mid-Task</h4>
         <p className="evz-s">
-          Every agent framework asks you to define your agents up front. When OXIMO meets work no existing role can
+          Most agent frameworks ask you to define your agents up front. When OXIMO meets work no existing role can
           handle, it designs the role, checks it is not a duplicate, validates it, tests that it produces coherent
           output, and commits it — <strong style={{ color: 'var(--pf-ink)' }}>with no human at any step</strong>. This is the
           orchestration-layer ancestor of Silent Node Injection.
@@ -255,7 +255,7 @@ export default function EngineeringVisualization() {
           ))}
           <p className="evz-note">
             This is what the ablation measured. Removing an embedded system does not migrate it —{' '}
-            <strong>it discards twelve months of accumulated memory, and output fell 91%.</strong>
+            <strong>it discards everything the system had learned, and output fell 91%.</strong>
           </p>
         </div>
 
@@ -263,7 +263,8 @@ export default function EngineeringVisualization() {
           <h4 className="evz-h">Cost Efficiency</h4>
           <p className="evz-s" style={{ marginBottom: '18px' }}>
             OXIMO does not call one expensive frontier model. It cascades cheaper specialised models across six stages,
-            each tuned to one kind of work — for equivalent output quality.
+            each tuned to one kind of work — for equivalent output quality. Costs per task at model prices during
+            OXIMO&rsquo;s development (2024–2025).
           </p>
           {costs.map((c) => (
             <div className={`evz-cost-row${c.best ? ' is-best' : ''}`} key={c.n}>

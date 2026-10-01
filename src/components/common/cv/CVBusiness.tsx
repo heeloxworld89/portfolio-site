@@ -18,7 +18,7 @@ const DECK_VERSION = '2026-09-22a';
  */
 
 const sectors = [
-  { n: 'AI Training',               q: 'Is this run failing, and which component?', w: 'A lab burning $15M on a run that stopped 419 times' },
+  { n: 'AI Training',               q: 'Is this run failing, and which component?', w: 'A lab whose long training run keeps failing, with no way to say which component broke' },
   { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A bank whose model cannot clear SR 26-2 validation' },
   { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital whose approved model may never be updated' },
   { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A controller facing erasure against trained weights' },
