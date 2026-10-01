@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-10-01b";
+export const CV_VERSION = "2026-10-01c";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -103,28 +103,28 @@ export const pages = {
     title: "Rokib Al Dhin Raadh — 18-Year-Old Founder & CEO of OXIEDO",
     description:
       "Founder of OXIEDO and inventor of ORMAS, the self-repairing neural network. Stability proof accepted at DeepMath 2026; top 1% at 1752vc; ranked #1 by Cosmos Institute.",
-    image: "/og/home-v2.jpg",
+    image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
     title: "ORMAS: the neural network that repairs itself — Rokib Al Dhin Raadh",
     description:
       "ORMAS finds, fixes and records its own failures during training: 80.3% recovery after a layer is destroyed, against 10.0% for a standard network. Stability proof accepted at DeepMath 2026.",
-    image: "/og/research-v2.jpg",
+    image: "/og/research-v3.jpg",
     imageAlt: "ORMAS recovers to 80.3% after a layer is destroyed; a standard network stays at 10.0%",
   },
   "/work": {
     title: "OXIEDO: an audit trail for what AI learned — Rokib Al Dhin Raadh",
     description:
       "OXIEDO licenses ORMAS to banks, hospitals and other regulated teams, with a tamper-evident record of every change a model makes in training. Plus OXIMO and the Black Bloxie study.",
-    image: "/og/work-v2.jpg",
+    image: "/og/work-v3.jpg",
     imageAlt: "OXIEDO and the Model Change Record, a tamper-evident log of every weight change in training",
   },
   "/about": {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year. Recognition, story, MIT coursework and contact.",
-    image: "/og/about-v2.jpg",
+      "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year. Recognition, story, MIT programmes and contact.",
+    image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO",
   },
 } as const;

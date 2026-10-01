@@ -967,7 +967,7 @@ export default function CVRecognition() {
           <span className="rec-verify-body">
             <span className="rec-verify-k">Made to be checked</span>
             <span className="rec-verify-t">
-              Each item above has a named source and a date: the Cosmos correspondence, the committee list, the
+              Each item above has a named source and a date: the Cosmos correspondence, the NeurIPS reviewer assignment, the
               EF stage records, the Companies House filings. Documentation is available on request.
             </span>
           </span>

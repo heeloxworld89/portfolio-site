@@ -162,16 +162,16 @@ export default function CVEducation() {
           {/* MIT Open Learning: the strongest external marks on his education, stated exactly. */}
           <div className="mit-card">
             <p className="mit-k">MIT Open Learning · MITx</p>
-            <h4 className="mit-h">Seven MIT courses. <em>Before finishing school.</em></h4>
+            <h4 className="mit-h">Seven MIT programmes. <em>Before finishing school.</em></h4>
             <p className="mit-lede">
-              While still in his final year of secondary school, Raadh completed seven courses from MIT Open Learning,
+              While still in his final year of secondary school, Raadh completed seven programmes from MIT Open Learning,
               covering foundation models, AI in medicine, energy and transport, and AI entrepreneurship: the same
               regulated sectors OXIEDO now sells into. After an admissions call about his work, he was offered a 40%
               scholarship on a further MIT programme, which he could not take up for financial and logistical
               reasons.
             </p>
             <div className="mit-stats">
-              <div><b>7</b><span>MIT courses completed</span></div>
+              <div><b>7</b><span>MIT programmes completed</span></div>
               <div><b>40%</b><span>Scholarship offered on a further MIT programme</span></div>
               <div><b>Sponsored</b><span>Into MIT Open Learning&apos;s Universal AI programme by FIAP</span></div>
             </div>

@@ -6,7 +6,7 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 
-const VERSION = "v2";
+const VERSION = "v3";
 const dir = __dirname;
 const b64 = (f) => fs.readFileSync(path.join(dir, f)).toString("base64");
 const portrait = "data:image/webp;base64," + fs.readFileSync("public/assets/images/portrait.webp").toString("base64");
@@ -45,7 +45,7 @@ const cards = {
     k: "About · Founder & CEO, OXIEDO",
     name: true,
     t: "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year.",
-    chips: [["7", "MIT courses"], ["10", "selections in 2026"], ["Age 12", "first venture"]],
+    chips: [["7", "MIT programmes"], ["10", "selections in 2026"], ["Age 12", "first venture"]],
     right: "portrait",
   },
 };
