@@ -528,3 +528,8 @@ body:has(.rx) { background: #e7e7e2; }
 @media (min-width: 761px) and (max-width: 1180px) { .rx .rx-deep a.wi-sys-card.is-unbuilt { grid-column: span 2; } }
 .rx .rx-deep .is-live .wi-sys-state::before { box-shadow: none; animation: none; }
 .rx .rx-deep .wi-sys-top { flex-direction: column-reverse; align-items: flex-start; gap: 12px; }
+
+/* About: "Request documentation" button (the global link colour hid its text) */
+.rx .rx-deep a.rec-verify-cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 22px; background: var(--rx-teal); border: 1px solid var(--rx-teal); color: #fff; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
+.rx .rx-deep a.rec-verify-cta:hover { background: #d8ee96; border-color: #d8ee96; color: var(--rx-teal); }
+.rx .rx-deep a.rec-verify-cta svg { flex-shrink: 0; }
