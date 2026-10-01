@@ -1,0 +1,183 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Homepage clarity pass. Every rule is scoped to .ux-home (inside .rx) so it
+   only refines the homepage and never leaks into other pages.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.rx .ux-home { scroll-behavior: smooth; }
+.rx .ux-home section[id] { scroll-margin-top: 24px; }
+
+/* ── hero: keep both CTAs above the fold at 1440×900 ─────────────────── */
+.rx .ux-home .rx-hero2 h1 { font-size: clamp(48px, 5.7vw, 88px) !important; margin-bottom: 26px; }
+.rx .ux-home .rx-h2-eb { margin-bottom: 26px; }
+.rx .ux-home .rx-h2-sub { font-size: 19px; line-height: 1.6; max-width: 58ch; }
+.rx .ux-home .rx-hero2 .rx-btns { margin-top: 32px; }
+
+/* "On this page" jump row */
+.rx .ux-home .ux-jump {
+  position: relative; z-index: 1;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px;
+  margin-top: 56px; padding: 6px 0; border-top: 1px solid var(--rx-line-soft); border-bottom: 1px solid var(--rx-line-soft);
+}
+.rx .ux-home .ux-jump-k { font-family: var(--rx-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--rx-ink-3); margin-right: 4px; }
+.rx .ux-home .ux-jump a {
+  display: inline-flex; align-items: center; min-height: 40px;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rx-ink); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.rx .ux-home .ux-jump a:hover { color: var(--rx-teal); border-bottom-color: var(--rx-teal); }
+
+/* ── logo wall: aligned rows (tag · logo · note) and legible logos ───── */
+.rx .ux-home .rx-sel { padding-top: 96px; }
+.rx .ux-home .rx-sel-head > p { max-width: 400px; }
+.rx .ux-home .rx-logos li {
+  display: grid; grid-template-rows: auto 64px auto; align-content: start;
+  justify-content: stretch; gap: 16px; min-height: 0; padding: 20px 20px 24px;
+}
+@supports (grid-template-rows: subgrid) {
+  .rx .ux-home .rx-logos li { grid-row: span 3; grid-template-rows: subgrid; }
+}
+.rx .ux-home .rx-logo-verb {
+  justify-self: start; align-self: start; max-width: 100%; white-space: normal; line-height: 1.45;
+  font-size: 11px; letter-spacing: .05em; color: var(--rx-teal-2); padding: 0; border: 0; background: none;
+}
+.rx .ux-home .rx-logos li:hover .rx-logo-verb { color: var(--rx-teal); }
+.rx .ux-home .rx-logo-verb::before { flex: none; }
+.rx .ux-home .rx-logo-img img { filter: grayscale(1) contrast(1.1) brightness(.45); opacity: .85; }
+.rx .ux-home .rx-logo-word { color: var(--rx-ink); }
+.rx .ux-home .rx-logo-note { min-height: 0; font-size: 13.5px; line-height: 1.5; }
+.rx .ux-home .rx-logo-note b { margin-bottom: 4px; }
+.rx .ux-home .rx-sel-more { min-height: 40px; margin-top: 16px; }
+
+/* ── bio + figures ────────────────────────────────────────────────────── */
+.rx .ux-home .rx-bio { padding-top: 72px; }
+.rx .ux-home .rx-bio-inner { border-top: 1px solid var(--rx-line); padding-top: 40px; }
+.rx .ux-home .rx-bio p + p { max-width: 68ch; }
+.rx .ux-home .rx-links { gap: 0 26px; }
+.rx .ux-home .rx-links a { min-height: 40px; }
+.rx .ux-home .rx-fig-k { font-size: 12.5px; line-height: 1.55; letter-spacing: .02em; color: rgba(234, 244, 242, .86); max-width: 30ch; }
+
+/* ── section rhythm ───────────────────────────────────────────────────── */
+.rx .ux-home .rx-sec { padding-top: 120px; }
+
+/* ── work: three cards, one family ────────────────────────────────────── */
+.rx .ux-home .rx-work-hero { border-top: 3px solid #d8ee96; }
+.rx .ux-home .rx-work-card { display: flex; flex-direction: column; }
+.rx .ux-home .rx-work-card p { max-width: 60ch; }
+.rx .ux-home .rx-work-card a.more { display: inline-flex; align-items: center; min-height: 40px; margin-top: auto; align-self: flex-start; }
+.rx .ux-home .rx-work-card:hover { transform: none; box-shadow: 0 24px 50px -30px rgba(11, 64, 77, .45); }
+
+/* ── news: DeepMath feature ───────────────────────────────────────────── */
+.rx .ux-home .rx-dm-main { padding: 44px 48px 40px; }
+.rx .ux-home .rx-dm-card h3 { margin-bottom: 20px; }
+.rx .ux-home .rx-dm-lede { font-size: 16.5px; line-height: 1.7; max-width: 70ch; margin-bottom: 16px; }
+.rx .ux-home .rx-dm-paper { display: block; margin-top: 8px; font-size: 18px; max-width: 70ch; }
+.rx .ux-home .rx-dm-card .rx-meta { font-size: 12px; }
+
+/* news list: date | item | arrow, hairlines only */
+.rx .ux-home .ux-news-rows { margin-top: 32px; border-top: 1px solid var(--rx-line); }
+.rx .ux-home .ux-news-rows .rx-row {
+  grid-template-columns: 150px minmax(0, 1fr) 40px; gap: 32px;
+  padding: 28px 16px 30px; border: 0; border-bottom: 1px solid var(--rx-line-soft);
+  transition: background .2s;
+}
+.rx .ux-home .ux-news-rows .rx-row:last-child { border-bottom-color: var(--rx-line); }
+.rx .ux-home .ux-news-rows .rx-row:hover { background: rgba(251, 251, 249, .7); }
+.rx .ux-home .ux-news-rows .rx-row-date { padding-top: 5px; font-size: 12.5px; color: var(--rx-ink); }
+.rx .ux-home .ux-news-rows .rx-row-date span { margin-top: 6px; font-size: 11px; color: var(--rx-teal-2); letter-spacing: .1em; }
+.rx .ux-home .ux-news-rows .rx-row h3 { font-size: clamp(24px, 2.1vw, 29px); line-height: 1.15; margin-bottom: 10px; max-width: 30em; }
+.rx .ux-home .ux-news-rows .rx-row p { font-size: 15.5px; line-height: 1.65; max-width: 70ch; }
+.rx .ux-home .ux-news-rows .rx-row-go { width: 40px; height: 40px; margin-top: 0; border: 1px solid var(--rx-line-soft); background: transparent; color: var(--rx-teal); transition: background .2s, color .2s; }
+.rx .ux-home .ux-news-rows .rx-row-go:hover { background: var(--rx-teal); color: #fff; }
+
+/* ── research ─────────────────────────────────────────────────────────── */
+.rx .ux-home .rx-split { gap: 64px; }
+.rx .ux-home .rx-split p { max-width: 64ch; }
+.rx .ux-home .rx-result { border-top: 3px solid var(--rx-teal); position: sticky; top: 24px; }
+.rx .ux-home .rx-result .k { font-size: 11.5px; line-height: 1.6; color: var(--rx-ink-2); }
+.rx .ux-home .rx-result .foot { font-size: 14px; color: var(--rx-ink-2); }
+.rx .ux-home .rx-bar-top span { font-size: 14px; }
+
+/* ── publications ─────────────────────────────────────────────────────── */
+.rx .ux-home .rx-pub { grid-template-columns: 90px minmax(0, 1fr); gap: 24px; padding: 30px 0; }
+.rx .ux-home .rx-pub-y { color: var(--rx-ink-2); }
+.rx .ux-home .rx-pub h3 { margin-bottom: 8px; max-width: 34em; }
+.rx .ux-home .rx-pub .v { max-width: 78ch; line-height: 1.6; margin-bottom: 14px; }
+.rx .ux-home .rx-pub .l a { display: inline-flex; align-items: center; min-height: 34px; padding: 6px 12px; font-size: 12px; }
+
+/* ── contact ──────────────────────────────────────────────────────────── */
+.rx .ux-home #contact .rx-grid { gap: 16px; border: 0; }
+.rx .ux-home #contact .rx-cell { background: var(--rx-white); border: 1px solid var(--rx-line-soft); border-top: 3px solid var(--rx-teal); }
+.rx .ux-home #contact .rx-cell h4 { margin-bottom: 12px; }
+.rx .ux-home #contact .rx-cell p { line-height: 1.6; }
+.rx .ux-home #contact .rx-cell p a { overflow-wrap: anywhere; display: inline-block; padding: 9px 0; line-height: 1.4; }
+.rx .ux-home #contact .rx-cell p { margin-bottom: 6px; }
+.rx .ux-home .ux-top {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; margin-top: 28px;
+  font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rx-ink); text-decoration: none;
+}
+.rx .ux-home .ux-top:hover { color: var(--rx-teal); }
+
+/* ── tablet ───────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .rx .ux-home .rx-split { gap: 40px; }
+}
+@media (max-width: 900px) {
+  .rx .ux-home .rx-result { position: static; }
+  .rx .ux-home .rx-dm-main { padding: 28px 22px 26px; }
+  .rx .ux-home .rx-dm-paper { font-size: 16px; }
+}
+
+/* ── phone ────────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .rx .ux-home .rx-sec { padding-top: 88px; }
+  .rx .ux-home .rx-bio { padding-top: 56px; }
+  .rx .ux-home .rx-bio-inner { padding-top: 28px; }
+
+  /* logo wall: an even 2 × 5 grid, no orphan */
+  .rx .ux-home .rx-logos li:first-child { grid-column: auto; }
+  .rx .ux-home .rx-logos li { padding: 16px 14px 20px; gap: 12px; grid-template-rows: auto 52px auto; }
+  .rx .ux-home .rx-logo-verb { font-size: 11px; letter-spacing: .03em; gap: 6px; }
+  .rx .ux-home .rx-logo-word { font-size: 28px; }
+  .rx .ux-home .rx-logo-note { font-size: 13px; }
+
+  /* news rows: date and kind on one line */
+  .rx .ux-home .ux-news-rows .rx-row { grid-template-columns: 1fr; gap: 10px; padding: 24px 4px 26px; }
+  .rx .ux-home .ux-news-rows .rx-row:hover { background: transparent; }
+  .rx .ux-home .ux-news-rows .rx-row-date { padding-top: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  .rx .ux-home .ux-news-rows .rx-row-date span { margin-top: 0; }
+  .rx .ux-home .ux-news-rows .rx-row h3 { font-size: 25px; }
+  .rx .ux-home .ux-news-rows .rx-row p { font-size: 15.5px; }
+
+  .rx .ux-home .rx-pub .l a { min-height: 40px; }
+}
+@media (max-width: 600px) {
+  .rx .ux-home .rx-pub { grid-template-columns: 1fr; gap: 6px; padding: 26px 0; }
+  .rx .ux-home .rx-sec .rx-label small { line-height: 1.5; }
+  .rx .ux-home #contact .rx-grid { gap: 12px; }
+}
+@media (max-width: 560px) {
+  .rx .ux-home .rx-hero2 h1 { font-size: 44px !important; }
+  .rx .ux-home .rx-h2-sub { font-size: 17px; }
+  .rx .ux-home .rx-h2-eb i { width: 4px; height: 4px; border-radius: 50%; background: var(--rx-ink-3); }
+  .rx .ux-home .rx-h2-eb { gap: 6px 12px; }
+  .rx .ux-home .rx-hero2 .rx-btns { flex-direction: column; }
+  .rx .ux-home .rx-hero2 .rx-btn { justify-content: center; }
+  .rx .ux-home .rx-h3-visual { max-width: 300px; }
+  .rx .ux-home .ux-jump { margin-top: 40px; gap: 0 20px; }
+  .rx .ux-home .ux-jump-k { flex-basis: 100%; padding-top: 8px; }
+  .rx .ux-home .rx-btns .rx-btn { min-height: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rx .ux-home { scroll-behavior: auto; }
+  .rx .ux-home .ux-news-rows .rx-row, .rx .ux-home .ux-news-rows .rx-row-go { transition: none; }
+}
+
+/* logo tags: keep the status dot on the first line when a tag wraps */
+.rx .ux-home .rx-logo-verb { align-items: flex-start; }
+.rx .ux-home .rx-logo-verb::before { margin-top: .5em; }
+@media (max-width: 760px) {
+  /* no hover on touch: logos stay in colour */
+  .rx .ux-home .rx-logo-img img { filter: none; opacity: 1; }
+}

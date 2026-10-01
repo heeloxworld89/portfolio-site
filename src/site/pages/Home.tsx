@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import { links, news, publications } from "../data";
+import "../ux/home.css";
 
 type Mark = { name: string; logo?: string; word?: string; tag: string; note: string };
 
@@ -28,6 +29,7 @@ export default function Home() {
   const [featured, ...rest] = news;
   return (
     <SiteLayout>
+      <div className="ux-home">
       {/* ── hero ─────────────────────────────────────────────────────── */}
       <section className="rx-hero2 rx-hero3" id="home">
         <div className="rx-field is-hero" aria-hidden="true" />
@@ -72,6 +74,16 @@ export default function Home() {
               <span>Dhaka · 2026</span>
             </figcaption>
           </figure>
+        </div>
+        <div className="rx-wrap">
+          <nav className="ux-jump" aria-label="On this page">
+            <span className="ux-jump-k">On this page</span>
+            <a href="#work">Work</a>
+            <a href="#news">News</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
       </section>
 
@@ -230,7 +242,10 @@ export default function Home() {
                 Raadh&rsquo;s stability result for ORMAS, the self-repairing neural network, was accepted for poster
                 presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks.
                 DeepMath takes theory only and reviews it double-blind: specialists judged the proof without knowing
-                who wrote it, or that he is eighteen and self-taught. This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
+                who wrote it, or that he is eighteen and self-taught.
+              </p>
+              <p className="rx-dm-lede">
+                This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
                 <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
                 editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
                 presents his poster at the conference on 29–30 October.
@@ -247,7 +262,7 @@ export default function Home() {
             </div>
           </article>
 
-          <div className="rx-rows" style={{ marginTop: 40 }}>
+          <div className="rx-rows ux-news-rows">
             {rest.map((n) => (
               <article className="rx-row" key={n.title}>
                 <div className="rx-row-date">{n.date}<span>{n.kind}</span></div>
@@ -367,8 +382,10 @@ export default function Home() {
               <p>Dhaka, Bangladesh</p>
             </div>
           </div>
+          <a className="ux-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </section>
+      </div>
     </SiteLayout>
   );
 }
