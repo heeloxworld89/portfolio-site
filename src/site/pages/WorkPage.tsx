@@ -53,7 +53,8 @@ export default function WorkPage() {
         </section>
 
         <nav className="uw-chapters" aria-label="Sections on this page">
-          <div className="rx-wrap">
+          <div className="rx-wrap uw-ch-in">
+            <span className="uw-ch-k">On this page</span>
             <ol>
               {chapters.map((c) => (
                 <li key={c.id}>
@@ -61,6 +62,7 @@ export default function WorkPage() {
                     href={`#${c.id}`}
                     className={`is-${c.tone}${active === c.id ? " is-active" : ""}`}
                     aria-current={active === c.id ? "location" : undefined}
+                    title={c.status}
                   >
                     <span className="uw-ch-n">{c.n}</span>
                     <span className="uw-ch-t">{c.name}</span>

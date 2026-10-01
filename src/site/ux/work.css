@@ -14,57 +14,53 @@
   --pf-shadow-rgb: 11, 64, 77;
 }
 
-/* ── chapter bar ──────────────────────────────────────────────────────── */
+/* ── chapter bar: one slim row, same pattern as the About page ───────── */
 .ux-work .uw-chapters {
-  position: sticky; top: 0; z-index: 4;
-  background: var(--rx-bg); box-shadow: 0 8px 18px -14px rgba(11, 64, 77, .35);
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 20;
+  background: var(--rx-bg);
   border-top: 1px solid var(--rx-line-soft);
   border-bottom: 1px solid var(--rx-line-soft);
   margin-bottom: 64px;
 }
-.ux-work .uw-chapters ol {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+.ux-work .uw-ch-in { display: flex; align-items: center; gap: 28px; min-height: 54px; }
+.ux-work .uw-ch-k {
+  flex-shrink: 0; font-family: var(--rx-mono); font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--rx-ink-3);
 }
-.ux-work .uw-chapters li { min-width: 0; margin: 0; }
+.ux-work .uw-chapters ol {
+  display: flex; align-items: stretch; gap: 4px; list-style: none; margin: 0; padding: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.ux-work .uw-chapters ol::-webkit-scrollbar { display: none; }
+.ux-work .uw-chapters li { flex-shrink: 0; margin: 0; }
 .rx .ux-work .uw-chapters a {
-  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 1px; align-items: baseline;
-  height: 100%; padding: 14px 18px 13px 0;
-  color: var(--rx-ink-2); text-decoration: none;
-  border-top: 3px solid transparent; margin-top: -1px;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 54px; padding: 0 14px;
+  font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--rx-ink-2); text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
   transition: color .2s, border-color .2s;
 }
-.ux-work .uw-chapters li + li a { padding-left: 18px; border-left: 1px solid var(--rx-line-soft); }
-.ux-work .uw-ch-n { font-family: var(--rx-mono); font-size: 12px; color: var(--rx-ink-3); }
-.ux-work .uw-ch-t { font-size: 15px; font-weight: 700; color: var(--rx-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.ux-work .uw-ch-s {
-  grid-column: 2; font-family: var(--rx-mono); font-size: 11px; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--rx-ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.ux-work .uw-chapters a.is-now .uw-ch-s { color: #1f6b43; }
-.ux-work .uw-chapters a.is-now .uw-ch-s::before {
+.ux-work .uw-ch-n { font-family: var(--rx-mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0; color: var(--rx-ink-3); }
+.ux-work .uw-ch-t { color: inherit; }
+.ux-work .uw-ch-s { display: none; }
+.ux-work .uw-chapters a.is-now .uw-ch-t::after {
   content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-  background: #3e9b62; margin-right: 6px; vertical-align: 1px;
+  background: #3e9b62; margin-left: 8px; vertical-align: 2px;
 }
 .rx .ux-work .uw-chapters a:hover { color: var(--rx-teal); }
-.rx .ux-work .uw-chapters a:hover .uw-ch-t { color: var(--rx-teal); }
-.rx .ux-work .uw-chapters a.is-active { border-top-color: var(--rx-teal); }
-.rx .ux-work .uw-chapters a.is-active .uw-ch-n,
-.rx .ux-work .uw-chapters a.is-active .uw-ch-t { color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active { color: var(--rx-teal); border-bottom-color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active .uw-ch-n { color: var(--rx-teal); }
 
-@media (max-width: 760px) {
-  .ux-work .uw-chapters { margin-bottom: 44px; }
-  .ux-work .uw-chapters .rx-wrap { padding: 0 16px; }
-  .ux-work .uw-ch-s { display: none; }
-  .ux-work .uw-chapters ol { display: flex; overflow-x: auto; scrollbar-width: none; }
-  .ux-work .uw-chapters ol::-webkit-scrollbar { display: none; }
-  .ux-work .uw-chapters li { flex: 1 0 auto; }
-  .rx .ux-work .uw-chapters a { display: flex; flex-direction: column; gap: 0; padding: 9px 10px 9px 0; min-height: 50px; justify-content: center; }
-  .ux-work .uw-chapters li + li a { padding-left: 10px; }
-  .ux-work .uw-ch-t { overflow: visible; }
-  .ux-work .uw-ch-n { font-size: 11px; }
-  .ux-work .uw-ch-t { font-size: 13.5px; }
+@media (max-width: 860px) {
+  .ux-work .uw-chapters { margin-bottom: 40px; }
+  .ux-work .uw-ch-k, .ux-work .uw-ch-n { display: none; }
+  .ux-work .uw-ch-in { min-height: 48px; padding-left: 0; padding-right: 0; }
+  .ux-work .uw-chapters ol {
+    padding: 0 8px;
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+  .rx .ux-work .uw-chapters a { min-height: 48px; padding: 0 10px; font-size: 14px; text-transform: none; letter-spacing: 0; }
 }
 
 /* ── section heads: numbered chapters, one meta strip treatment ──────── */
