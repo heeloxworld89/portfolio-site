@@ -104,7 +104,7 @@ const systems = [
   {
     name: 'Project Cherry',
     role: 'Planned',
-    line: 'A network that grows its own components. Fully specified; not yet built.',
+    line: 'A network that grows its own components. Fully specified; next to be built.',
     stat: '—',
     statLbl: 'specification stage',
     href: '/research#cherry',

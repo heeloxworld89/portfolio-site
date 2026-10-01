@@ -25,7 +25,6 @@ const TOC: TocItem[] = [
       { id: "research-stability", label: "Stability result (ISS)" },
       { id: "research-ablations", label: "Ablations" },
       { id: "research-reproducibility", label: "Reproducibility" },
-      { id: "research-limits", label: "Stated limits" },
       { id: "research-roadmap", label: "Research roadmap" },
     ],
   },
@@ -114,7 +113,7 @@ export default function ResearchPage() {
             mid-training, while a parameter-matched baseline stays at chance (10.0%). Its stability result, the first
             formal local stability characterisation of a self-correcting neural architecture, was accepted after
             double-blind review at DeepMath 2026 (poster). Below: the method, all 383 reproducible experiments, the
-            Input-to-State Stability derivation, ablations and stated limits, then Project Cherry, the next architecture.
+            Input-to-State Stability derivation and ablations, then Project Cherry, the next architecture.
           </p>
         </div>
       </section>

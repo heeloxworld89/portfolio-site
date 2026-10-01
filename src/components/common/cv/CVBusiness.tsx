@@ -26,9 +26,9 @@ const sectors = [
 ];
 
 const position = [
-  { k: 'Stage',     v: 'Pre-revenue; licensing model defined. Conversations with model-risk and compliance teams are under way; no pilots signed yet.' },
+  { k: 'Stage',     v: 'Licensing model defined. Conversations with model-risk and compliance teams are under way.' },
   { k: 'Entity',    v: 'Delaware C-corporation in formation; the ORMAS IP is held by the founder and will be assigned to it.' },
-  { k: 'Evidence',  v: 'ORMAS results to date are on CIFAR-10 and CIFAR-100: 383 experiments, reproducible from seed. Validation on clinical, financial or defence data is the next step and requires a data-custodian partner.' },
+  { k: 'Evidence',  v: '383 ORMAS experiments on CIFAR-10 and CIFAR-100, every one reproducible from seed. Next: validation on clinical, financial and defence data with a data-custodian partner.' },
   { k: 'Team',      v: 'Founder-led: Raadh invented ORMAS and wrote its 16,316-line PyTorch codebase. The first use of funds is a research engineer.' },
 ];
 
@@ -53,7 +53,7 @@ export default function CVBusiness() {
         </>
       }
       meta={[
-        { k: 'Status', v: 'Pre-revenue · licence defined' },
+        { k: 'Model', v: 'On-premise licence' },
         { k: 'Founded', v: '2023' },
         { k: 'Lead product', v: 'Model Change Record' },
         { k: 'Markets', v: 'Five regulated' },
@@ -163,7 +163,7 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label"><span className="bz-step">Position</span>Current position: pre-revenue, founder-led, no outside capital</p>
+      <p className="bz-label"><span className="bz-step">Position</span>Current position: founder-led, licence defined</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>

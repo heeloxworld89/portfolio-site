@@ -68,8 +68,7 @@ export default function EvidencePage() {
             <p>
               Figures on the{" "}
               <Link to="/research">Research</Link>, <Link to="/work">Work</Link> and <Link to="/about">About</Link> pages
-              are taken from the sources above. When a status changes, for example a decision that is still pending,
-              this page and the claim are updated together. The same list is published as machine-readable
+              are taken from the sources above. When a status changes, this page and the claim are updated together. The same list is published as machine-readable
               JSON at <a href="/evidence.json">/evidence.json</a>.
             </p>
           </section>

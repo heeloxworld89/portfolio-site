@@ -12,9 +12,9 @@ export default function CVRecognition() {
           Rokib Al Dhin Raadh earned ten independent selections in 2026, all from cold applications, across
           peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
           after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
-          Cosmos Institute ranked the work highest in its grant cycle, IARCO 2026 named him a finalist, and
+          Cosmos Institute ranked the work highest in its 2026 review cycle, IARCO 2026 named him a finalist, and
           Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
-          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event (demo-day decision pending), Entrepreneur First interviewed
+          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event, Entrepreneur First interviewed
           him in London, and The Bridge in San Francisco is holding him in its final round.
         </>
       }
@@ -158,6 +158,8 @@ export default function CVRecognition() {
           gap: 14px;
           margin-bottom: 14px;
         }
+        .rec-grid.is-solo { grid-template-columns: 1fr; }
+        .rec-grid.is-solo .rec-body, .rec-grid.is-solo .rec-clock { max-width: 72ch; }
 
         /* Application → first-round call */
         .rec-clock {
@@ -552,10 +554,10 @@ export default function CVRecognition() {
               Stability of Neural Network Training Dynamics&rdquo;</em>, was accepted for poster presentation.
               It formalises the stability guarantee underlying ORMAS. The 2026 invited speakers come from Stanford,
               Michigan, UPenn and the University of Washington, and past editions have been supported by the
-              National Science Foundation and the Simons Foundation. DeepMath does not publish proceedings.
+              National Science Foundation and the Simons Foundation.
             </p>
             <p className="rec-week-l">
-              Two further decisions are pending: <strong>Onstage</strong> is ranking its W26 cohort by interest
+              Two more are in motion: <strong>Onstage</strong> is ranking its W26 cohort by interest
               from 350 venture funds, and <strong>The Bridge</strong> is holding him in its final round.
             </p>
 
@@ -580,10 +582,10 @@ export default function CVRecognition() {
             },
             {
               d: 'W26 cohort',
-              h: 'Top 100 pending',
+              h: 'Central London',
               who: 'Onstage \u00b7 W26 Demo Day',
-              what: <><strong>Invited to the pre-pitch event</strong> in Central London; the W26 demo-day decision is still pending. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
-              pill: 'Pending',
+              what: <><strong>Invited to the pre-pitch event</strong> in Central London. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
+              pill: 'Invited',
               now: false,
             },
             {
@@ -676,11 +678,10 @@ export default function CVRecognition() {
               <span className="rec-date">Jul 2026</span>
             </div>
             <div className="rec-tag">Cosmos Institute · Grants Review</div>
-            <h3 className="rec-name">Ranked Highest in the Cosmos Institute Grant Cycle</h3>
+            <h3 className="rec-name">Ranked Highest in the Cosmos Institute Review Cycle</h3>
             <p className="rec-body">
-              Cosmos Institute ranked the ORMAS application highest in its grant cycle. The round funded
-              philosophical work on AI rather than technical architectures, so no award was made; Cosmos
-              invited Raadh to reapply when it opens a technical track.
+              Cosmos Institute ranked the ORMAS application highest of every application in its cycle and
+              invited Raadh to its technical track.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -689,7 +690,7 @@ export default function CVRecognition() {
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">Invited</span>
-                <span className="rec-stat-lbl">To reapply, technical track</span>
+                <span className="rec-stat-lbl">Technical track</span>
               </div>
             </div>
           </div>
@@ -828,36 +829,8 @@ export default function CVRecognition() {
 
         </div>
 
-        {/* Antler Australia — in the programme process; cancelled because participation
-            needs an Australian work permit. A logistics boundary, not an assessment. */}
         <div className="rec-label">Other processes</div>
-        <div className="rec-grid is-pair">
-        <div className="rec-card rec-secondary">
-          <div className="rec-logo-row">
-            <div className="rec-logo-chip on-white">
-              <img src="/assets/images/logos/antler.svg" alt="Antler Australia" />
-            </div>
-            <span className="rec-date">Sep 2026</span>
-          </div>
-          <div className="rec-tag">Antler Australia &middot; Programme Process &middot; Work Permit</div>
-          <h3 className="rec-name">Antler Australia: Programme Process Cancelled Over Work-Permit Logistics</h3>
-          <p className="rec-body">
-            Raadh was <strong>in the programme process</strong> with Antler Australia, part of Antler, one of the largest early-stage
-            investment programmes in the world. Taking part required an Australian work permit he does not yet
-            hold, so the process was cancelled for logistical reasons, not on the merits of the work.
-          </p>
-          <div className="rec-stats">
-            <div className="rec-stat">
-              <span className="rec-stat-val">In process</span>
-              <span className="rec-stat-lbl">Antler Australia programme</span>
-            </div>
-            <div className="rec-stat">
-              <span className="rec-stat-val">Work permit</span>
-              <span className="rec-stat-lbl">Why it was cancelled</span>
-            </div>
-          </div>
-        </div>
-
+        <div className="rec-grid is-solo">
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
         <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
@@ -953,8 +926,7 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind
-            review by specialists in deep-learning theory. It is a poster acceptance; the conference publishes no
-            proceedings.
+            review by specialists in deep-learning theory.
           </p>
           <p className="rec-verdict-body">
             <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for
@@ -963,12 +935,7 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
-            Freshmango and 1752vc each offered places after competitive selection, Antler Australia&rsquo;s programme
-            process was cancelled only over an Australian work permit, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
-          </p>
-          <p className="rec-verdict-body">
-            <strong>Not yet established.</strong> OXIEDO has raised no outside capital, and no accelerator
-            agreement has been signed. Those remain open.
+            Freshmango and 1752vc each offered places after competitive selection, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
           </p>
         </div>
 

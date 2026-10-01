@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-10-01c";
+export const CV_VERSION = "2026-10-01d";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -63,8 +63,8 @@ export const news: NewsItem[] = [
   },
   {
     date: "Jul 2026", kind: "Recognition",
-    title: "ORMAS ranked first in the Cosmos Institute grant cycle",
-    body: "The ORMAS application ranked highest of every application in its cycle; Cosmos invited a resubmission to its forthcoming technical track.",
+    title: "ORMAS ranked first in the Cosmos Institute review cycle",
+    body: "The ORMAS application ranked highest of every application in its cycle; Cosmos invited it to its technical track.",
   },
 ];
 

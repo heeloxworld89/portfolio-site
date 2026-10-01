@@ -48,7 +48,7 @@ export const groups: Group[] = [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
         detail:
-          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind; DeepMath publishes no proceedings. The submission record is on OpenReview, where access may be limited to the conference community; the acceptance email is available on request.",
+          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. The submission record is on OpenReview, where access may be limited to the conference community; the acceptance email is available on request.",
         source: [
           { label: "OpenReview submission record", href: "https://openreview.net/forum?id=kowltBZEIv" },
           { label: "DeepMath 2026", href: links.deepmath },
@@ -69,7 +69,7 @@ export const groups: Group[] = [
     rows: [
       {
         claim: "Founder and CEO of OXIEDO (founded 2023)",
-        detail: "OXIEDO licenses ORMAS on-premise to regulated industries. Pre-revenue; no outside capital raised.",
+        detail: "OXIEDO licenses ORMAS on-premise to regulated industries.",
         source: [{ label: "oxiedo.com", href: links.oxiedo }],
         status: "Public record",
       },
@@ -110,12 +110,11 @@ export const groups: Group[] = [
     title: "Selection and recognition, 2026",
     rows: [
       { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Cosmos Institute: ranked highest in its grant cycle", detail: "Correspondence from Cosmos Institute. No grant was awarded in that cycle; Cosmos invited a resubmission to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Cosmos Institute: ranked highest in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Freshmango: offered a place after a single interview", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "The Bridge (Entrepreneur First, San Francisco): holding in the final round", detail: "Interview records from two completed rounds.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London. The demo-day decision is pending.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Antler Australia: programme process cancelled over work-permit logistics", detail: "Correspondence from Antler Australia.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
     ],
@@ -146,7 +145,7 @@ export const groups: Group[] = [
       },
       {
         claim: "40% scholarship offered on a further MIT programme",
-        detail: "Offered after an admissions call; not taken up for financial and logistical reasons.",
+        detail: "Offered after an admissions call about his work.",
         status: "On request",
       },
     ],
