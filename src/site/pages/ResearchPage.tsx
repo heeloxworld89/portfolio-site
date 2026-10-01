@@ -9,7 +9,7 @@ export default function ResearchPage() {
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
           <h2 className="rx-label">Research · ORMAS</h2>
-          <h1>ORMAS: a self-repairing neural network that identifies, repairs and records its own failures.</h1>
+          <h1>ORMAS: the self-repairing neural network.</h1>
           <p>
             ORMAS, invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a trained layer is destroyed
             mid-training, while a parameter-matched baseline stays at chance (10.0%). Its stability result, the first
