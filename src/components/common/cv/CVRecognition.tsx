@@ -5,15 +5,17 @@ export default function CVRecognition() {
     <CVSection
       id="recognition"
       phase="now"
-      eyebrow="Recent · 2026"
-      title={<>Three months of external recognition, at <span className="age">18</span>.</>}
+      eyebrow="Recognition · 2026"
+      title={<>Ten independent selections in 2026, at <span className="age">18</span>.</>}
       lead={
         <>
-          July: Cosmos Institute ranked the work highest in its cycle. August: an unsolicited application to
-          Entrepreneur First led to a first-round interview. September: the stability result accepted at
-          DeepMath 2026 after double-blind review, offers from two accelerators in one week, holding in the final round of The Bridge in San Francisco, through to the IARCO 2026 final round, and a
-          membership of Cohere Labs&apos; Open Science Community. December: reviewing for a NeurIPS workshop in
-          Paris.
+          Rokib Al Dhin Raadh earned ten independent selections in 2026, all from cold applications, across
+          peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
+          after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
+          Cosmos Institute ranked the work highest in its grant cycle, IARCO 2026 named him a finalist, and
+          Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
+          1%) offered OXIEDO places, Onstage shortlisted it for its W26 cohort, Entrepreneur First interviewed
+          him in London, and The Bridge in San Francisco is holding him in its final round.
         </>
       }
     >
@@ -617,7 +619,7 @@ export default function CVRecognition() {
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'A peer-reviewed acceptance, two accelerators, a final round, a research community.', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Peer-reviewed acceptance, two accelerator places, a research-competition final, Cohere Labs membership.', state: 'live' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026', what: 'Poster, Ohio State, Columbus', state: 'ahead' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
@@ -939,7 +941,7 @@ export default function CVRecognition() {
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            What these signals establish, and what they do not.
+            What the 2026 record establishes, and what it does not.
           </p>
           <p className="rec-verdict-body">
             <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind

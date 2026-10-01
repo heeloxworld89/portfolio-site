@@ -5,12 +5,13 @@ export default function CVEducation() {
       id="education"
       phase="about"
       eyebrow="Education"
-      title="Self-taught across machine learning, systems and theory."
+      title="Self-directed by design: seven MIT programmes and a DeepMath 2026 acceptance before leaving school."
       lead={
         <>
-          At <span className="age">18</span>, Raadh is completing his final year of secondary school and has learned his field independently,
-          without a university or advisor. He studies what each problem requires, and the work has taken him
-          into control theory, market microstructure and company law alongside machine learning.
+          Rokib Al Dhin Raadh, <span className="age">18</span>, is in his final year of secondary school and chose to learn his field
+          independently, without a university or advisor. He completed seven MIT Open Learning (MITx) programmes
+          and Andrew Ng&apos;s Deep Learning Specialization, and learned whatever each problem required: control
+          theory for the ORMAS stability proof, market microstructure and UK company law alongside machine learning.
         </>
       }
     >
@@ -129,12 +130,12 @@ export default function CVEducation() {
       <div>
         
         <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(var(--pf-ink-rgb), 0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(var(--pf-ink-rgb), 0.1)" }}>
-          <span style={{ color: "var(--pf-ink)", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year)</span>
+          <span style={{ color: "var(--pf-ink)", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year) · Self-directed</span>
         </div>
         
         <div className="content">
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "28px", maxWidth: "700px" }}>
-            Self-taught in machine learning, systems engineering and theoretical computer science, with a focus on underlying mechanisms. The work has also required expertise well beyond software:
+            Self-taught in machine learning, systems engineering and theoretical computer science, with a focus on underlying mechanisms. Each subject was learned because the work demanded it, including four well beyond software:
           </p>
           
           <div className="edu-grid">
@@ -144,7 +145,7 @@ export default function CVEducation() {
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">The limits of trust in automation</h5>
+              <h5 className="edu-title">Where trust in automation ends</h5>
               <p className="edu-desc">Automating European cold calls showed precisely where human trust in an autonomous agent ends: at the transaction. That boundary became a design constraint in his later systems.</p>
             </div>
 
@@ -154,7 +155,7 @@ export default function CVEducation() {
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">UK company law</h5>
+              <h5 className="edu-title">UK company law, without a lawyer</h5>
               <p className="edu-desc">Incorporating Black Bloxie LTD at UK Companies House from Bangladesh, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
             </div>
           </div>
@@ -223,7 +224,7 @@ export default function CVEducation() {
               </p>
             </div>
           </div>
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>Research over grades</h4>
+          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>Research over exam preparation, by choice</h4>
 
           {/* Big statement */}
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
@@ -238,10 +239,10 @@ export default function CVEducation() {
           {/* Evidence stat strip */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', marginBottom: '40px' }}>
             {[
-              { val: '383', lbl: 'GPU Experiments' },
-              { val: '40,933', lbl: 'Lines of Code' },
+              { val: '383', lbl: 'Controlled experiments' },
+              { val: '40,933', lbl: 'Lines of production code' },
               { val: 'DeepMath 2026', lbl: 'Accepted · Poster' },
-              { val: 'UK Ltd', lbl: 'Registered Company' },
+              { val: 'UK Ltd', lbl: 'Incorporated, England & Wales' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
                 <div style={{ fontSize: '16.5px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>

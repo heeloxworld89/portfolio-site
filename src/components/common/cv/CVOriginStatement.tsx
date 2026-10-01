@@ -39,10 +39,12 @@ export default function CVOriginStatement() {
       id="statement"
       phase="about"
       eyebrow="Personal Statement"
-      title="How the work is done, and what comes next."
+      title="Personal statement: from a first venture at 12 to DeepMath 2026 at 18."
       lead={
         <>
-          In his own words: the conditions behind the work, and the three resources the next phase requires.
+          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and self-funded,
+          and the three resources the next phase requires: multi-node compute, capacity to train Project Cherry,
+          and a control theorist.
         </>
       }
     >
@@ -262,8 +264,8 @@ export default function CVOriginStatement() {
           {[
             { v: '14–16 hrs', l: 'A normal working day' },
             { v: '28', l: 'Working days livestreamed' },
-            { v: '$0', l: 'External funding to date' },
-            { v: 'Solo', l: 'Research programme' },
+            { v: 'Self-funded', l: '$0 outside capital to date' },
+            { v: 'Solo', l: 'Sole author of ORMAS' },
             { v: '100%', l: 'IP ownership' },
           ].map((s, i) => (
             <div key={i} className="os-band-cell">
@@ -276,10 +278,19 @@ export default function CVOriginStatement() {
         {/* ══ ACT IV ══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
           <div className="os-act-num">Part One</div>
-          <h3 className="os-act-title">How the Work Is Done</h3>
+          <h3 className="os-act-title">Built Alone, Self-Funded and on the Record</h3>
         </div>
 
         <div className="os-body">
+          <p className="os-p">
+            I started my first venture at 12 and ran five by 17. Each failed at a different layer, and together
+            they showed me the constraint was coordination, not individual capability. At 15 I built and sold a
+            stock-prediction system for about $10,000; that money bought the RTX 3090 that later ran every ORMAS
+            experiment. OXIMO was my answer to coordination. Running it on a live UK company for twelve months
+            showed that the models underneath could not learn from noisy production data, and ORMAS was my answer
+            to that. OXIEDO is the company that licenses it. At 18, its stability result was accepted at
+            DeepMath 2026.
+          </p>
           <p className="os-p">
             I have built this work independently, without a university, research group, advisor or external
             funding. Every experiment ran on hardware I paid for, and every architectural decision was my own.
@@ -336,7 +347,7 @@ export default function CVOriginStatement() {
         {/* ══ ACT V ═══════════════════════════════════════════════ */}
         <div className="os-act" style={{ marginTop: '40px' }}>
           <div className="os-act-num">Part Two</div>
-          <h3 className="os-act-title">What the Next Phase Requires</h3>
+          <h3 className="os-act-title">Three Resources the Next Phase Requires</h3>
         </div>
 
         <div className="os-body">
@@ -367,7 +378,7 @@ export default function CVOriginStatement() {
             <tbody>
               <tr>
                 <td>Multi-node compute</td>
-                <td>The ORMAS protocol transfers to Transformers unchanged, as the mathematics is architecture-agnostic. Validation at that scale requires multi-node H100/A100 access.</td>
+                <td>The ORMAS protocol is designed to transfer to Transformers unchanged, as the mathematics is architecture-agnostic. Demonstrating that at scale requires multi-node H100/A100 access.</td>
               </tr>
               <tr>
                 <td>Capacity to train Cherry</td>
