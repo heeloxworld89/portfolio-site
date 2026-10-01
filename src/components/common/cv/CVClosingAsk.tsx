@@ -149,7 +149,7 @@ export default function CVClosingAsk() {
 
         <div className="ask-email-bar">
           <span className="ask-email-label">Direct contact</span>
-          <a className="ask-email-link" href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>
+          <a className="ask-email-link" href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>
           <span className="ask-email-note">Replies are typically sent within one working day.</span>
           <a className="ask-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
             <span className="ask-site-dot" aria-hidden="true" />

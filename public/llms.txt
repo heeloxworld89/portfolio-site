@@ -2,7 +2,7 @@
 
 > Rokib Al Dhin Raadh is the founder and CEO of OXIEDO and the author of ORMAS, a self-correcting neural network architecture that records what each of its components learned during training. The ORMAS stability result, "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics", was accepted after double-blind review for poster presentation at DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026). He is 18 and based in Dhaka, Bangladesh.
 
-Website: https://www.raadh.me/ · Company: https://oxiedo.com · Contact: raadxbusiness9@gmail.com
+Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@oxiedo.com · General: raadxbusiness9@gmail.com
 
 ## Key facts
 
@@ -32,7 +32,7 @@ Every claim on raadh.me can be checked against a primary source:
 | Deep Learning Specialization (DeepLearning.AI) | [Coursera verification](https://coursera.org/verify/specialization/R7SYBBCXR1OY) |
 | OXIEDO, founded 2023 | [oxiedo.com](https://oxiedo.com) |
 | Black Bloxie LTD, incorporated 11 Sep 2025 | UK Companies House (England and Wales) |
-| Cosmos Institute ranking; 1752vc, Freshmango and Antler Australia outcomes; The Bridge final round | Correspondence available on request: raadxbusiness9@gmail.com |
+| Cosmos Institute ranking; 1752vc, Freshmango and Antler Australia outcomes; The Bridge final round | Correspondence available on request: raadh@oxiedo.com |
 
 ## Scope and limitations
 
