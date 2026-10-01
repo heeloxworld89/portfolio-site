@@ -516,3 +516,7 @@ body:has(.ux-about) { overflow-x: clip !important; overflow-y: visible !importan
   .ux-about .ask-email-bar { grid-template-columns: 1fr; grid-template-areas: "label" "email" "note" "site"; padding: 26px 20px; }
   .rx .ux-about .rx-deep a.ask-site { justify-self: start; margin-top: 12px; }
 }
+@media (min-width: 901px) and (max-width: 1180px) {
+  .ux-about .ask-card { padding: 24px 22px 26px; }
+  .rx .ux-about .rx-deep a.ask-action { white-space: nowrap; padding: 0 14px; font-size: 12px; letter-spacing: .06em; }
+}
