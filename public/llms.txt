@@ -23,6 +23,8 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@
 
 ## Verification
 
+Full evidence page: https://www.raadh.me/evidence (every claim, its source, and whether it is a public record or available on request). Most milestones were also announced publicly on X: https://x.com/Raad_X_
+
 Every claim on raadh.me can be checked against a primary source:
 
 | Claim | Where to verify |
@@ -30,12 +32,12 @@ Every claim on raadh.me can be checked against a primary source:
 | Author of the ORMAS preprint (1 Aug 2026) | Zenodo record, DOI [10.5281/zenodo.21730363](https://doi.org/10.5281/zenodo.21730363) |
 | All 383 experiments are reproducible | [Anonymised code archive](https://anonymous.4open.science/r/ormas-EB73/README.md) |
 | Researcher identity | ORCID [0009-0003-1178-5296](https://orcid.org/0009-0003-1178-5296) |
-| DeepMath 2026 acceptance (poster, double-blind) | [DeepMath 2026](https://deepmath-conference.com/), hosted by Ohio State University, 29–30 Oct 2026; acceptance email available on request |
+| DeepMath 2026 acceptance (poster, double-blind) | [DeepMath 2026](https://deepmath-conference.com/), hosted by Ohio State University, 29–30 Oct 2026; acceptance email available on request; [OpenReview submission record](https://openreview.net/forum?id=kowltBZEIv) (access may be limited to the conference community) |
 | Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop | [Workshop site](https://trustworthy-ai-for-good.github.io/); reviewer assignment available on request |
 | Seven MIT Open Learning (MITx) programmes | Shared MITx Online records linked on [raadh.me/about](https://www.raadh.me/about#education) |
 | Deep Learning Specialization (DeepLearning.AI) | [Coursera verification](https://coursera.org/verify/specialization/R7SYBBCXR1OY) |
 | OXIEDO, founded 2023 | [oxiedo.com](https://oxiedo.com) |
-| Black Bloxie LTD, incorporated 11 Sep 2025 | UK Companies House (England and Wales) |
+| Founder and CEO of Black Bloxie LTD, incorporated 11 Sep 2025 | [Black Bloxie leadership page](https://www.blackbloxie.com/pages/leadership) names Raadh as founder and CEO; [Companies House no. 16711223](https://find-and-update.company-information.service.gov.uk/company/16711223) lists his father as registered director, because Raadh was a minor at incorporation |
 | OXIMO: 40,933 lines, 2,069 passing tests | [Anonymised OXIMO code archive](https://anonymous.4open.science/r/oximo-5C73/README.md) |
 | Cosmos Institute ranking; 1752vc, Freshmango and Antler Australia outcomes; The Bridge final round | Correspondence available on request: raadh@oxiedo.com |
 

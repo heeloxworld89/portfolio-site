@@ -50,8 +50,11 @@ const groups: Group[] = [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
         detail:
-          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind; DeepMath publishes no proceedings.",
-        source: [{ label: "DeepMath 2026", href: links.deepmath }],
+          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind; DeepMath publishes no proceedings. The submission record is on OpenReview, where access may be limited to the conference community; the acceptance email is available on request.",
+        source: [
+          { label: "OpenReview submission record", href: "https://openreview.net/forum?id=kowltBZEIv" },
+          { label: "DeepMath 2026", href: links.deepmath },
+        ],
         status: "On request",
       },
       {
@@ -79,6 +82,16 @@ const groups: Group[] = [
         status: "Public record",
       },
       {
+        claim: "Founder and CEO of Black Bloxie LTD (England & Wales, company no. 16711223)",
+        detail:
+          "Incorporated on 11 September 2025. The company's leadership page names Raadh as founder and CEO. He was a minor at incorporation, so his father is the registered director and shareholder at Companies House.",
+        source: [
+          { label: "Black Bloxie leadership page", href: "https://www.blackbloxie.com/pages/leadership" },
+          { label: "Companies House record", href: "https://find-and-update.company-information.service.gov.uk/company/16711223" },
+        ],
+        status: "Public record",
+      },
+      {
         claim: "OXIMO / Black Bloxie twelve-month field study",
         detail: "Technical report and commercial whitepaper with the full method and figures.",
         source: [
@@ -98,15 +111,15 @@ const groups: Group[] = [
     id: "selection",
     title: "Selection and recognition, 2026",
     rows: [
-      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc.", status: "On request" },
-      { claim: "Cosmos Institute: ranked highest in its grant cycle", detail: "Correspondence from Cosmos Institute. No grant was awarded in that cycle; Cosmos invited a resubmission to its technical track.", status: "On request" },
-      { claim: "Freshmango: offered a place after a single interview", detail: "Offer correspondence from Freshmango.", status: "On request" },
-      { claim: "The Bridge (Entrepreneur First, San Francisco): holding in the final round", detail: "Interview records from two completed rounds.", status: "On request" },
-      { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", status: "On request" },
-      { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London. The demo-day decision is pending.", status: "On request" },
-      { claim: "Antler Australia: programme process cancelled over work-permit logistics", detail: "Correspondence from Antler Australia.", status: "On request" },
-      { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition.", status: "On request" },
-      { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", status: "On request" },
+      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Cosmos Institute: ranked highest in its grant cycle", detail: "Correspondence from Cosmos Institute. No grant was awarded in that cycle; Cosmos invited a resubmission to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Freshmango: offered a place after a single interview", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "The Bridge (Entrepreneur First, San Francisco): holding in the final round", detail: "Interview records from two completed rounds.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London. The demo-day decision is pending.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Antler Australia: programme process cancelled over work-permit logistics", detail: "Correspondence from Antler Australia.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
     ],
   },
   {
@@ -159,7 +172,8 @@ export default function EvidencePage() {
               claim made on raadh.me and its source: {publicCount} of {total} link to a public record anyone can open,
               and the rest are backed by correspondence available on request from{" "}
               <a href={`mailto:${links.founderEmail}?subject=Verifying%20a%20claim%20on%20raadh.me`}>{links.founderEmail}</a>.
-              Last checked 1 October 2026.
+              Most milestones were also announced publicly on{" "}
+              <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked 1 October 2026.
             </p>
           </div>
         </section>
@@ -183,13 +197,12 @@ export default function EvidencePage() {
                       <p>{r.detail}</p>
                     </div>
                     <div className="ev-src">
-                      {r.source ? (
-                        r.source.map((s) => (
-                          <a key={s.href} href={s.href} target={s.href.startsWith("/") ? undefined : "_blank"} rel="noreferrer">
-                            {s.label} ↗
-                          </a>
-                        ))
-                      ) : (
+                      {r.source?.map((s) => (
+                        <a key={s.href} href={s.href} target={s.href.startsWith("/") ? undefined : "_blank"} rel="noreferrer">
+                          {s.label} ↗
+                        </a>
+                      ))}
+                      {r.status === "On request" && (
                         <a href={`mailto:${links.founderEmail}?subject=${encodeURIComponent("Documentation: " + r.claim)}`}>
                           Request the document ↗
                         </a>

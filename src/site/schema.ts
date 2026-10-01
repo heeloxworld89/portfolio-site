@@ -136,6 +136,9 @@ const blackBloxie = {
   foundingDate: "2025-09-11",
   foundingLocation: { "@type": "Place", name: "England and Wales" },
   founder: ref("person"),
+  url: "https://www.blackbloxie.com/",
+  identifier: { "@type": "PropertyValue", propertyID: "Companies House company number", value: "16711223", url: "https://find-and-update.company-information.service.gov.uk/company/16711223" },
+  sameAs: ["https://www.blackbloxie.com/pages/leadership", "https://find-and-update.company-information.service.gov.uk/company/16711223"],
   description:
     "UK company incorporated in England and Wales on 11 September 2025 and run on the OXIMO multi-agent system for a twelve-month controlled field study; removing OXIMO cut output by 91%.",
 };
