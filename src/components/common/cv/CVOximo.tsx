@@ -64,7 +64,7 @@ export default function CVOximo() {
         .ox-label {
           font-size: 12px; font-weight: 800; letter-spacing: 1.6px;
           text-transform: uppercase; color: var(--pf-ink-2);
-          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
+          margin: 0 0 14px;
         }
         .ox-p { font-size: 16.5px; line-height: 1.7; color: var(--pf-ink-2); max-width: 72ch; margin: 0 0 22px; }
 

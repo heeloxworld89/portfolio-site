@@ -142,3 +142,9 @@
 @media (prefers-reduced-motion: reduce) {
   .rx .ux-work .uw-chapters a { transition: none; }
 }
+
+/* The legacy theme sets body { overflow-x: hidden; overflow-y: auto }, which
+   makes <body> a (never-scrolling) scroll container and silently breaks every
+   position: sticky inside it. On this page only, clip instead: same visual
+   result, no scroll container, so the chapter bar can stick. */
+body:has(.ux-work) { overflow-x: clip; overflow-y: visible; }
