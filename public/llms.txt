@@ -1,21 +1,25 @@
 # Rokib Al Dhin Raadh
 
-> Rokib Al Dhin Raadh is the founder and CEO of OXIEDO and the author of ORMAS, a self-correcting neural network architecture that records what each of its components learned during training. The ORMAS stability result, "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics", was accepted after double-blind review for poster presentation at DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026). He is 18 and based in Dhaka, Bangladesh.
+> Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. ORMAS detects, repairs and records its own failing components during training: after a trained layer is destroyed, it recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop and is based in Dhaka, Bangladesh.
 
 Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@oxiedo.com · General: raadxbusiness9@gmail.com
 
+**In one sentence:** Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026.
+
+**Notable for:** inventing ORMAS, a neural network that repairs itself mid-training (80.3% vs 10.0% after a layer is destroyed), built solo across 383 experiments on one RTX 3090; a DeepMath 2026 paper accepted after double-blind review; reviewing for the NeurIPS 2026 Trustworthy AI for Good workshop; founding OXIEDO in 2023 to license ORMAS to regulated industries; OXIEDO's acceptance to 1752vc Ignite from the top 1% of applicants.
+
 ## Key facts
 
-- **Roles:** Founder & CEO, OXIEDO (founded 2023); independent AI researcher; reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.
-- **Research, ORMAS:** a three-signal training architecture: global backpropagation, a per-node local loss through a shared bottleneck readout, and health-gated autonomous self-correction. It detects structural failures during training, repairs them without stopping, and logs every correction with its cause.
+- **Roles:** Founder & CEO, OXIEDO (founded 2023); inventor of ORMAS; independent AI researcher; reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.
+- **Invention, ORMAS:** a self-repairing (self-correcting) neural network architecture with three training signals: global backpropagation, a per-node local loss through a shared bottleneck readout, and health-gated autonomous self-correction. It detects structural failures during training, repairs them without stopping, and logs every correction with its cause.
 - **Headline result:** after a trained convolutional layer is destroyed mid-training (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at chance (10.0%): a +70.3 percentage-point gap.
+- **Peer review, DeepMath 2026:** his paper "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics" was accepted after double-blind review for poster presentation at DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026). It gives the first formal local stability characterisation of a self-correcting neural architecture, adapted from Sontag's Input-to-State Stability framework. DeepMath publishes no proceedings. DeepMath 2026 is hosted by Ohio State University with an organising committee from Johns Hopkins, Michigan, Ohio State and Konstanz; its 2026 invited speakers are from Stanford, UPenn, Michigan and the University of Washington; past editions were supported by the National Science Foundation and the Simons Foundation.
+- **Recognition (2026):** DeepMath 2026 paper accepted (poster, double-blind review); reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop; OXIEDO accepted to 1752vc Ignite from the top 1% of applicants; ORMAS application ranked highest in the Cosmos Institute grant cycle (no grant was awarded in that cycle; Cosmos invited a resubmission to its forthcoming technical track); Cohere Labs Open Science Community member; IARCO 2026 finalist (500+ entries, 60 countries); offered a place by Freshmango after a single interview; holding in the final round of The Bridge (Entrepreneur First, San Francisco) after two interview rounds; in the Antler Australia programme process until it was cancelled over Australian work-permit logistics.
 - **Other results:** 94.6% task retention versus 47.3% for ResNet-18 in sequential learning; 58.8% zero-shot compositional accuracy (25% chance); 2.5pp versus 7.8pp accuracy decay under 40% label noise.
 - **Evidence base:** 383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18) on a single RTX 3090; 16,316 lines of PyTorch; every run reproducible from seed.
-- **Theory:** the first formal local stability characterization of a self-correcting neural architecture, adapted from Sontag's Input-to-State Stability framework. Accepted at DeepMath 2026 after double-blind review; DeepMath publishes no proceedings. DeepMath 2026 is hosted by Ohio State University with an organising committee from Johns Hopkins, Michigan, Ohio State and Konstanz; its 2026 invited speakers are from Stanford, UPenn, Michigan and the University of Washington; past editions were supported by the National Science Foundation and the Simons Foundation.
-- **Company, OXIEDO:** licenses ORMAS on-premise to regulated industries (AI training, regulated finance, medical AI, data obligation, defence) so institutions can train on data they cannot currently use, with an auditable training record relevant to SR 26-2 model-risk guidance and the EU AI Act high-risk obligations from December 2027. Pre-revenue.
-- **Earlier work:** OXIMO, a 40,933-line multi-agent operating system with 2,069 passing tests; Black Bloxie LTD (incorporated in England & Wales on 11 September 2025), a twelve-month controlled field study of OXIMO on a live e-commerce company; five ventures between ages 12 and 17, including a stock-prediction system sold for about $10,000 at 15.
+- **Company, OXIEDO:** a deep-tech AI company that licenses ORMAS on-premise to regulated industries (AI training, regulated finance, medical AI, data obligation, defence) so institutions can train on data they cannot currently use, with an auditable training record relevant to SR 26-2 model-risk guidance and the EU AI Act high-risk obligations from December 2027. The lead product is the Model Change Record, a tamper-evident log of every weight change in a training run. Pre-revenue; no outside capital raised.
+- **Earlier work:** OXIMO, a 40,933-line multi-agent operating system with 2,069 passing tests; Black Bloxie LTD (incorporated in England & Wales on 11 September 2025), a twelve-month controlled field study of OXIMO on a live e-commerce company, in which removing OXIMO cut output by 91%; five ventures between ages 12 and 17, including a stock-prediction system sold for about $10,000 at 15.
 - **Education:** final year of secondary school, self-taught; completed seven MIT Open Learning (MITx) programmes in foundation models, AI in medicine, energy, transport and entrepreneurship; offered a 40% scholarship on a further MIT programme after an admissions call, which he could not take up for financial and logistical reasons; sponsored by FIAP into MIT Open Learning's Universal AI programme; completed Andrew Ng's Deep Learning Specialization (DeepLearning.AI).
-- **Recognition (2026):** DeepMath 2026 paper accepted (poster); reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop; Cohere Labs Open Science Community member; IARCO 2026 finalist; ranked highest in the Cosmos Institute grant cycle; accepted by Freshmango and 1752vc Ignite; in the Antler Australia programme process until it was cancelled over Australian work-permit logistics; holding in the final round of The Bridge (San Francisco).
 
 ## Verification
 
@@ -32,6 +36,7 @@ Every claim on raadh.me can be checked against a primary source:
 | Deep Learning Specialization (DeepLearning.AI) | [Coursera verification](https://coursera.org/verify/specialization/R7SYBBCXR1OY) |
 | OXIEDO, founded 2023 | [oxiedo.com](https://oxiedo.com) |
 | Black Bloxie LTD, incorporated 11 Sep 2025 | UK Companies House (England and Wales) |
+| OXIMO: 40,933 lines, 2,069 passing tests | [Anonymised OXIMO code archive](https://anonymous.4open.science/r/oximo-5C73/README.md) |
 | Cosmos Institute ranking; 1752vc, Freshmango and Antler Australia outcomes; The Bridge final round | Correspondence available on request: raadh@oxiedo.com |
 
 ## Scope and limitations
@@ -43,10 +48,14 @@ Every claim on raadh.me can be checked against a primary source:
 
 ## Frequently asked
 
-- **Who is Rokib Al Dhin Raadh?** Founder and CEO of OXIEDO and author of the ORMAS self-correcting neural network architecture, based in Dhaka, Bangladesh.
-- **What is ORMAS?** A neural network architecture that identifies, repairs and records its own failing components during training, instead of relying on post-hoc interpretability.
-- **Is the work peer reviewed?** The stability result was accepted after double-blind review at DeepMath 2026 (poster). The full ORMAS paper is a public preprint on Zenodo (DOI 10.5281/zenodo.21730363).
-- **What does OXIEDO sell?** One on-premise annual licence for ORMAS, with the Model Change Record (a tamper-evident log of every weight change in a training run) as the lead product.
+- **Who is Rokib Al Dhin Raadh?** Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. He is based in Dhaka, Bangladesh, and reviews for the NeurIPS 2026 Trustworthy AI for Good workshop.
+- **How old is he?** 18 (in 2026). He started five ventures between ages 12 and 17 and founded OXIEDO in 2023.
+- **What is ORMAS?** ORMAS is a self-repairing neural network architecture invented by Rokib Al Dhin Raadh. It identifies, repairs and records its own failing components during training, instead of relying on post-hoc interpretability. After a trained layer is destroyed, it recovers to 80.3% accuracy on CIFAR-10 while a parameter-matched baseline stays at 10.0%.
+- **What is OXIEDO?** OXIEDO is the deep-tech AI company Raadh founded in 2023. It licenses ORMAS on-premise to regulated industries, with the Model Change Record (a tamper-evident log of every weight change in a training run) as the lead product, sold as one annual licence. It is pre-revenue and has raised no outside capital.
+- **Is the work peer reviewed?** Yes, the stability result: it was accepted after double-blind review for poster presentation at DeepMath 2026 (DeepMath publishes no proceedings). The full ORMAS paper is an open preprint on Zenodo (DOI 10.5281/zenodo.21730363), with code that reproduces all 383 experiments.
+- **What recognition has he received?** In 2026: a DeepMath 2026 paper (double-blind review, poster); reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop; OXIEDO accepted to 1752vc Ignite from the top 1% of applicants; the ORMAS application ranked highest in the Cosmos Institute grant cycle; Cohere Labs Open Science Community member; IARCO 2026 finalist; a place offered by Freshmango; holding in the final round of The Bridge (Entrepreneur First, San Francisco).
+- **Did he study at MIT?** He completed seven MIT Open Learning (MITx) online programmes and was offered a 40% scholarship on a further MIT programme. He is not an MIT student or alumnus; he is in the final year of secondary school and self-taught.
+- **How do I contact him?** Company, investor and press enquiries: raadh@oxiedo.com. General: raadxbusiness9@gmail.com. Further detail on [raadh.me/about](https://www.raadh.me/about).
 
 ## Primary sources
 
@@ -74,4 +83,5 @@ Every claim on raadh.me can be checked against a primary source:
 ## How to cite
 
 - Raadh, R. A. D. (2026). *ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.* Preprint, Zenodo. https://doi.org/10.5281/zenodo.21730363
-- Raadh, R. A. D. (2026). *Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.* DeepMath 2026 (poster), Ohio State University.
+- Raadh, R. A. D. (2026). *Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.* Accepted (poster, double-blind review), DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October 2026. No proceedings.
+- Raadh, R. A. D. (2026). *OXIMO/AX09: Autonomous LLM-Dependent Commerce. A twelve-month controlled ablation study.* Technical report. https://www.raadh.me/assets/pdf/oxiedo_academic_research_paper.pdf

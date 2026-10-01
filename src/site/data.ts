@@ -30,41 +30,41 @@ export type NewsItem = { date: string; kind: string; title: string; body: string
 export const news: NewsItem[] = [
   {
     date: "30 Sep 2026", kind: "Peer review",
-    title: "Stability paper accepted at DeepMath 2026",
-    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review for poster presentation at the Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October.",
+    title: "ORMAS stability paper accepted at DeepMath 2026 after double-blind review",
+    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review for poster presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October.",
     href: links.deepmath,
   },
   {
     date: "Sep 2026", kind: "Reviewer",
-    title: "Reviewer, NeurIPS 2026 Trustworthy AI for Good",
-    body: "Reviewing submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring for the NeurIPS 2026 workshop in Paris.",
+    title: "Named a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop",
+    body: "Raadh reviews submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring, the problems ORMAS was built to address, for the NeurIPS 2026 workshop in Paris.",
     href: links.neurips,
   },
   {
+    date: "Sep 2026", kind: "Company",
+    title: "OXIEDO accepted to 1752vc Ignite from the top 1% of applicants",
+    body: "1752vc placed OXIEDO in its Ignite cohort from the top 1% of applicants, and the equity-free Freshmango programme offered a place after a single interview. Raadh is holding in the final round of The Bridge (Entrepreneur First, San Francisco) after two interview rounds.",
+  },
+  {
     date: "25 Sep 2026", kind: "Community",
-    title: "Joins Cohere Labs’ Open Science Community",
-    body: "Welcomed into the community of Cohere’s research lab, which cited the solo development of ORMAS across 383 experiments as “remarkable initiative in ML safety and auditability.”",
+    title: "Joins Cohere Labs’ Open Science Community, cited for “remarkable initiative in ML safety and auditability”",
+    body: "Cohere’s research lab welcomed him into its Open Science Community, citing his solo development of ORMAS across 383 experiments.",
   },
   {
     date: "Sep 2026", kind: "Competition",
-    title: "Finalist, IARCO 2026",
+    title: "IARCO 2026 finalist, from 500+ submissions across 60 countries",
     body: "Selected for the final stage of the International Academic Research Competition from more than 500 submissions across 60 countries.",
   },
   {
-    date: "Sep 2026", kind: "Company",
-    title: "OXIEDO accepted to 1752vc Ignite and Freshmango",
-    body: "A place in 1752vc’s Ignite cohort from the top 1% of applicants, and an offer from the equity-free Freshmango programme. He is holding in the final round of The Bridge (San Francisco).",
-  },
-  {
     date: "1 Aug 2026", kind: "Publication",
-    title: "ORMAS preprint released",
-    body: "The full paper, a 36-page supplementary and code reproducing all 383 experiments, published openly on Zenodo.",
+    title: "Full ORMAS paper and code released openly",
+    body: "The full paper and a 36-page supplementary are public on Zenodo (DOI 10.5281/zenodo.21730363), with code that reproduces all 383 experiments, including the 80.3% vs 10.0% recovery after a layer is destroyed.",
     href: links.preprint,
   },
   {
     date: "Jul 2026", kind: "Recognition",
-    title: "Ranked highest in the Cosmos Institute grant cycle",
-    body: "The ORMAS application ranked first in its cycle; Cosmos invited a resubmission to its forthcoming technical track.",
+    title: "ORMAS ranked first in the Cosmos Institute grant cycle",
+    body: "The ORMAS application ranked highest of every application in its cycle; Cosmos invited a resubmission to its forthcoming technical track.",
   },
 ];
 
@@ -72,14 +72,14 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
-    venue: "DeepMath 2026, Conference on the Mathematical Theory of Deep Neural Networks. Accepted (poster), double-blind review.",
+    venue: "Accepted after double-blind review, DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 Oct 2026. Poster.",
     year: "2026",
     links: [{ label: "Conference", href: links.deepmath }],
   },
   {
     authors: "R. A. D. Raadh",
     title: "ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction",
-    venue: "Preprint, Zenodo. DOI 10.5281/zenodo.21730363.",
+    venue: "Preprint, Zenodo, 1 Aug 2026. Full paper, 36-page supplementary and code reproducing all 383 experiments. DOI 10.5281/zenodo.21730363.",
     year: "2026",
     links: [
       { label: "Paper", href: links.preprint },
@@ -90,7 +90,7 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A twelve-month controlled ablation study",
-    venue: "Technical report, 2026.",
+    venue: "Technical report, 2026. Twelve-month controlled field study on a live UK company (Black Bloxie LTD): removing OXIMO cut output by 91%.",
     year: "2026",
     links: [{ label: "PDF", href: links.techPaper }, { label: "Whitepaper", href: links.whitepaper }],
   },
@@ -100,32 +100,32 @@ export const publications = [
 // the share card rendered by assets-source/og/make.cjs.
 export const pages = {
   "/": {
-    title: "Rokib Al Dhin Raadh — 18-Year-Old Founder & CEO of OXIEDO",
+    title: "Rokib Al Dhin Raadh — Founder & CEO of OXIEDO, Inventor of ORMAS",
     description:
-      "Founder of OXIEDO and inventor of ORMAS, the self-repairing neural network. Stability proof accepted at DeepMath 2026; top 1% at 1752vc; ranked #1 by Cosmos Institute.",
+      "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. DeepMath 2026 paper; NeurIPS 2026 reviewer.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
-    title: "ORMAS: the neural network that repairs itself — Rokib Al Dhin Raadh",
+    title: "ORMAS: The Self-Repairing Neural Network — Rokib Al Dhin Raadh",
     description:
-      "ORMAS finds, fixes and records its own failures during training: 80.3% recovery after a layer is destroyed, against 10.0% for a standard network. Stability proof accepted at DeepMath 2026.",
+      "ORMAS repairs its own failures in training: 80.3% accuracy after a layer is destroyed vs 10.0% for a baseline. Stability paper accepted at DeepMath 2026.",
     image: "/og/research-v3.jpg",
-    imageAlt: "ORMAS recovers to 80.3% after a layer is destroyed; a standard network stays at 10.0%",
+    imageAlt: "ORMAS, the self-repairing neural network, recovers to 80.3% after a layer is destroyed; a parameter-matched baseline stays at 10.0%",
   },
   "/work": {
-    title: "OXIEDO: an audit trail for what AI learned — Rokib Al Dhin Raadh",
+    title: "OXIEDO: Auditable AI Training — Founded by Rokib Al Dhin Raadh",
     description:
-      "OXIEDO licenses ORMAS to banks, hospitals and other regulated teams, with a tamper-evident record of every change a model makes in training. Plus OXIMO and the Black Bloxie study.",
+      "OXIEDO, founded 2023 by Rokib Al Dhin Raadh, licenses ORMAS on-premise to regulated industries with a tamper-evident record of every weight change in training.",
     image: "/og/work-v3.jpg",
-    imageAlt: "OXIEDO and the Model Change Record, a tamper-evident log of every weight change in training",
+    imageAlt: "OXIEDO, founded by Rokib Al Dhin Raadh, and the Model Change Record: a tamper-evident log of every weight change in training",
   },
   "/about": {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year. Recognition, story, MIT programmes and contact.",
+      "Rokib Al Dhin Raadh, 18, self-taught founder of OXIEDO. DeepMath 2026 paper, NeurIPS 2026 reviewer, 1752vc top 1%, seven MIT Open Learning programmes.",
     image: "/og/about-v3.jpg",
-    imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO",
+    imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
 } as const;
 

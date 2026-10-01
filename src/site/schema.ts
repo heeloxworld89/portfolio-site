@@ -8,6 +8,10 @@ import { links, pages } from "./data";
 const SITE = "https://www.raadh.me";
 const id = (frag: string) => `${SITE}/#${frag}`;
 const ref = (frag: string) => ({ "@id": id(frag) });
+// The one-sentence entity definition, repeated verbatim in the page meta,
+// public/llms.txt and here so every system that summarises him converges on it.
+const DEFINITION =
+  "Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026.";
 const wiki = (name: string, slug: string) => ({ "@type": "Thing", name, sameAs: `https://en.wikipedia.org/wiki/${slug}` });
 
 const person = {
@@ -23,17 +27,22 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description:
-    "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network architecture. His stability proof for ORMAS was accepted after double-blind review at DeepMath 2026.",
+  description: `${DEFINITION} He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop and is based in Dhaka, Bangladesh. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
+  disambiguatingDescription: "Dhaka-based AI founder, 18: founder and CEO of OXIEDO and inventor of the ORMAS self-repairing neural network.",
   jobTitle: "Founder & CEO, OXIEDO",
   hasOccupation: [
     { "@type": "Occupation", name: "Founder & Chief Executive Officer", occupationLocation: { "@type": "City", name: "Dhaka" } },
-    { "@type": "Occupation", name: "AI researcher" },
+    { "@type": "Occupation", name: "Inventor of ORMAS, a self-repairing neural network" },
+    { "@type": "Occupation", name: "Independent AI researcher" },
   ],
   worksFor: ref("oxiedo"),
   homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Dhaka", addressCountry: "BD" } },
   nationality: { "@type": "Country", name: "Bangladesh" },
   email: `mailto:${links.founderEmail}`,
+  contactPoint: [
+    { "@type": "ContactPoint", contactType: "founder, investor and press enquiries", email: links.founderEmail },
+    { "@type": "ContactPoint", contactType: "general enquiries", email: links.email },
+  ],
   knowsAbout: [
     wiki("Neural networks", "Neural_network_(machine_learning)"),
     wiki("Deep learning", "Deep_learning"),
@@ -41,20 +50,28 @@ const person = {
     wiki("Input-to-state stability", "Input-to-state_stability"),
     wiki("Control theory", "Control_theory"),
     wiki("Model risk", "Model_risk"),
+    wiki("Catastrophic interference", "Catastrophic_interference"),
     wiki("Multi-agent system", "Multi-agent_system"),
     wiki("PyTorch", "PyTorch"),
-    "Self-correcting neural networks",
+    "Self-repairing neural networks",
     "Auditable AI training",
+    "Mathematical theory of deep learning",
   ],
   award: [
-    "DeepMath 2026: paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks",
-    "Cosmos Institute: application ranked highest in its 2026 grant cycle",
-    "1752vc Ignite: accepted from the top 1% of applicants (2026)",
-    "Freshmango: offered a place in the equity-free accelerator (2026)",
-    "IARCO 2026: finalist, International Academic Research Competition",
+    "DeepMath 2026: stability paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University",
+    "1752vc Ignite: OXIEDO accepted from the top 1% of applicants (2026)",
+    "Cosmos Institute: ORMAS application ranked highest in its 2026 grant cycle",
+    "IARCO 2026: finalist, International Academic Research Competition (500+ entries, 60 countries)",
+    "Freshmango: OXIEDO offered a place in the equity-free accelerator after a single interview (2026)",
   ],
   memberOf: [
     { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
+    {
+      "@type": "OrganizationRole",
+      roleName: "Reviewer",
+      startDate: "2026",
+      memberOf: { "@type": "Organization", name: "NeurIPS 2026 Workshop: Trustworthy AI for Good", url: links.neurips },
+    },
   ],
   hasCredential: [
     ...[
@@ -84,7 +101,6 @@ const person = {
     { "@type": "PropertyValue", propertyID: "ORCID", value: "0009-0003-1178-5296", url: links.orcid },
   ],
   sameAs: [links.orcid, links.github, links.x, links.substack, links.youtube],
-  subjectOf: [ref("ormas-preprint"), ref("deepmath-paper")],
 };
 
 const oxiedo = {
@@ -98,8 +114,8 @@ const oxiedo = {
   founder: ref("person"),
   employee: ref("person"),
   description:
-    "OXIEDO licenses ORMAS on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
-  knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-correcting neural networks"],
+    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations. Pre-revenue.",
+  knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-repairing neural networks"],
   makesOffer: {
     "@type": "Offer",
     itemOffered: {
@@ -121,7 +137,7 @@ const blackBloxie = {
   foundingLocation: { "@type": "Place", name: "England and Wales" },
   founder: ref("person"),
   description:
-    "UK company incorporated in England and Wales, run on the OXIMO multi-agent system for a twelve-month controlled field study.",
+    "UK company incorporated in England and Wales on 11 September 2025 and run on the OXIMO multi-agent system for a twelve-month controlled field study; removing OXIMO cut output by 91%.",
 };
 
 const deepmath = {
@@ -139,6 +155,8 @@ const deepmath = {
     sameAs: "https://en.wikipedia.org/wiki/Ohio_State_University",
     address: { "@type": "PostalAddress", addressLocality: "Columbus", addressRegion: "OH", addressCountry: "US" },
   },
+  description:
+    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review; DeepMath publishes no proceedings.",
   workFeatured: ref("deepmath-paper"),
   performer: ref("person"),
 };
@@ -151,7 +169,10 @@ const deepmathPaper = {
   author: ref("person"),
   inLanguage: "en",
   dateCreated: "2026-09",
+  genre: "Conference poster",
+  url: `${SITE}/research`,
   creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
+  keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "ORMAS"],
   description:
     "Formal local stability characterisation of a self-correcting neural network: each self-repair is treated as a bounded disturbance under Sontag's Input-to-State Stability framework. Accepted after double-blind review for poster presentation at DeepMath 2026, Ohio State University, 29–30 October 2026. DeepMath publishes no proceedings.",
   about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Deep learning", "Deep_learning")],
@@ -173,6 +194,7 @@ const ormasPreprint = {
   identifier: { "@type": "PropertyValue", propertyID: "DOI", value: "10.5281/zenodo.21730363", url: links.doi },
   publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org/" },
   isAccessibleForFree: true,
+  keywords: ["ORMAS", "self-repairing neural networks", "self-correcting neural networks", "auditable AI training", "interpretability"],
   description:
     "A neural network architecture that identifies, repairs and records its own failing components during training. After a trained convolutional layer is destroyed (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. 383 controlled experiments across four architectures on a single RTX 3090.",
   about: [wiki("Neural networks", "Neural_network_(machine_learning)"), wiki("Explainable artificial intelligence", "Explainable_artificial_intelligence")],
@@ -217,6 +239,7 @@ const website = {
   url: `${SITE}/`,
   name: "Rokib Al Dhin Raadh",
   alternateName: "raadh.me",
+  description: DEFINITION,
   inLanguage: "en",
   publisher: ref("person"),
   about: ref("person"),
