@@ -64,6 +64,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           </small>
           <Link className="rx-mark" to="/">Rokib Al Dhin Raadh</Link>
           <small className="r">
+            <a href={`mailto:${links.founderEmail}`}>{links.founderEmail}</a><br />
             <a href={`mailto:${links.email}`}>{links.email}</a><br />
             <a href={links.orcid} target="_blank" rel="me noreferrer">ORCID</a> · <a href={links.github} target="_blank" rel="me noreferrer">GitHub</a> · <a href={links.x} target="_blank" rel="me noreferrer">X</a><br />
             <a href={links.substack} target="_blank" rel="me noreferrer">Substack</a> · <a href={links.youtube} target="_blank" rel="me noreferrer">YouTube</a>

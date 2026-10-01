@@ -973,7 +973,7 @@ export default function CVRecognition() {
           </span>
           <a
             className="rec-verify-cta"
-            href="mailto:raadxbusiness9@gmail.com?subject=Verifying%20a%20claim%20on%20raadh.me"
+            href="mailto:raadh@oxiedo.com?subject=Verifying%20a%20claim%20on%20raadh.me"
           >
             <Icon name="mail" size={14} />
             Request documentation

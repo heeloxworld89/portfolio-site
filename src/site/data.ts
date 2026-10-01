@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-09-30c";
+export const CV_VERSION = "2026-10-01a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -20,8 +20,8 @@ export const links = {
   x: "https://x.com/Raad_X_",
   substack: "https://rokibraadh.substack.com/",
   youtube: "https://www.youtube.com/@rokibraadh",
+  founderEmail: "raadh@oxiedo.com",
   email: "raadxbusiness9@gmail.com",
-  companyEmail: "rokib@blackbloxie.com",
   neurips: "https://trustworthy-ai-for-good.github.io/",
 };
 

@@ -345,7 +345,7 @@ export default function Home() {
             </div>
             <div className="rx-cell">
               <h4>OXIEDO and investors</h4>
-              <p><a href={`mailto:${links.companyEmail}`}>{links.companyEmail}</a></p>
+              <p><a href={`mailto:${links.founderEmail}`}>{links.founderEmail}</a></p>
               <p><a href={links.invest} target="_blank" rel="noreferrer">oxiedo.com/invest</a> · <a href={links.deck} target="_blank" rel="noreferrer">Investor deck (PDF)</a></p>
             </div>
             <div className="rx-cell">

@@ -33,7 +33,7 @@ const person = {
   worksFor: ref("oxiedo"),
   homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Dhaka", addressCountry: "BD" } },
   nationality: { "@type": "Country", name: "Bangladesh" },
-  email: `mailto:${links.email}`,
+  email: `mailto:${links.founderEmail}`,
   knowsAbout: [
     wiki("Neural networks", "Neural_network_(machine_learning)"),
     wiki("Deep learning", "Deep_learning"),
@@ -92,6 +92,8 @@ const oxiedo = {
   "@id": id("oxiedo"),
   name: "OXIEDO",
   url: links.oxiedo,
+  email: `mailto:${links.founderEmail}`,
+  contactPoint: { "@type": "ContactPoint", contactType: "founder", name: "Rokib Al Dhin Raadh", email: links.founderEmail, url: links.invest },
   foundingDate: "2023",
   founder: ref("person"),
   employee: ref("person"),

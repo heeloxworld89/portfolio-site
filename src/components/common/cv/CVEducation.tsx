@@ -212,7 +212,7 @@ export default function CVEducation() {
               <p>
                 Machine learning, systems architecture and applied AI from <b>Google</b>, <b>UC Davis</b> and the{" "}
                 <b>University of Michigan</b>. Verifiable on request from{" "}
-                <a href="mailto:rokib@blackbloxie.com">rokib@blackbloxie.com</a>.
+                <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>.
               </p>
             </div>
             <div>
