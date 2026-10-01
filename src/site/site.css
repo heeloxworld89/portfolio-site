@@ -619,3 +619,8 @@ body:has(.rx) { background: #e7e7e2; }
   .rx .rx-deep .sx-title { font-size: 30px !important; }
   .rx .rx-page-head h1 { font-size: 38px !important; }
 }
+
+/* The legacy theme sets body { overflow-x:hidden }, which makes <body> a scroll
+   container and silently disables every position:sticky on the site. Clip
+   instead, so horizontal overflow stays hidden and sticky elements work. */
+html:has(.rx), body:has(.rx) { overflow-x: clip; overflow-y: visible; }
