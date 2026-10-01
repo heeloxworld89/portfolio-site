@@ -262,7 +262,7 @@ epoch 43  loss 2.910 → 3.221
 
       {/* ══ BALDWIN EFFECT ══════════════════════════════════════════ */}
       <div className="rvz-chart">
-        <h4 className="rvz-chart-title">Corrections Decline to Zero</h4>
+        <h4 className="rvz-chart-title">ORMAS corrections decline to zero by epoch 50</h4>
         <p className="rvz-chart-sub">
           A regulariser such as dropout acts at a constant rate. ORMAS corrections instead peak early, decay and reach{' '}
           <strong style={{ color: 'var(--pf-pos)' }}>exactly zero</strong>: the network adapts structurally rather than

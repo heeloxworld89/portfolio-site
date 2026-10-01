@@ -14,7 +14,7 @@ export default function CVResearch() {
   ];
 
   const pathologies = [
-    { name: 'Dead Neuron',    symptom: 'Output permanently near zero',  treatment: 'Kaiming reinitialization' },
+    { name: 'Dead Neuron',    symptom: 'Output permanently near zero',  treatment: 'Kaiming reinitialisation' },
     { name: 'Exploded',       symptom: 'Activations > 500.0',           treatment: '90% Anti-Hebbian scale reduction' },
     { name: 'Saturated',      symptom: 'Outputs stuck at max',           treatment: 'Self-referential magnitude dampening' },
     { name: 'Oscillating',    symptom: 'Weights swinging wildly',        treatment: 'Momentum-based directional fixing' },
@@ -82,22 +82,23 @@ export default function CVResearch() {
     <CVSection
       id="research"
       phase="now"
-      eyebrow="ORMAS · The Research"
-      title="ORMAS: a neural network that identifies and repairs its own failures."
+      eyebrow="ORMAS · Self-repairing neural network"
+      title="ORMAS: a self-repairing neural network that rebuilds a destroyed layer to 80.3% accuracy while a standard network stays at chance."
       lead={
         <>
-          Existing interpretability methods (SHAP, LIME, integrated gradients, attention maps, probing
-          classifiers, circuit discovery) all analyse a model from the outside, after training, and
-          reconstruct what probably happened. Those reconstructions cannot be verified.{' '}
-          <strong>ORMAS takes the opposite approach:</strong> the record of what each component learned is
-          produced by the same computation that performs the learning, so it is measured rather than
-          inferred. This section presents the method, the full results and the adverse findings.
+          ORMAS, invented by Rokib Al Dhin Raadh, is a neural network architecture that detects its own
+          failing components during training, repairs them without stopping, and logs every correction with
+          its cause. Existing interpretability methods (SHAP, LIME, integrated gradients, attention maps,
+          probing classifiers, circuit discovery) analyse a model from the outside, after training, and
+          reconstruct what probably happened; those reconstructions cannot be verified.{' '}
+          <strong>In ORMAS the record is produced by the same computation that performs the learning</strong>,
+          so it is measured rather than inferred.
         </>
       }
       meta={[
-        { k: 'Experiments', v: '383 controlled' },
-        { k: 'Hardware', v: 'One RTX 3090' },
-        { k: 'Families', v: 'Four architectures' },
+        { k: 'Peer review', v: 'DeepMath 2026 · poster' },
+        { k: 'Experiments', v: '383 · reproducible from seed' },
+        { k: 'Architectures', v: 'Four, on one RTX 3090' },
         { k: 'Data', v: 'CIFAR-10 / 100 only' },
       ]}
     >
@@ -229,7 +230,42 @@ export default function CVResearch() {
         .honest-gap-box { background: rgba(var(--pf-ink-rgb), 0.045); border: 1px solid var(--pf-border); border-left: 2px solid var(--pf-ink); border-radius: 0 8px 8px 0; padding: 20px 24px; margin-bottom: 30px; }
       `}</style>
       <div>
-        {/* ── The section's own overview video, before any of the detail ── */}
+        <div className="res-venue">
+          <span className="res-venue-tag">Accepted · DeepMath 2026 · Poster</span>
+          <span className="res-venue-txt">
+            <strong>Peer-reviewed: the first formal local stability characterisation of a self-correcting neural
+            architecture.</strong> Raadh&apos;s paper{' '}
+            <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+            Dynamics&rdquo;</em> was accepted after double-blind review for poster presentation at DeepMath 2026, the
+            Conference on the Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus,
+            29&ndash;30 October 2026). DeepMath publishes no proceedings; the complete ORMAS preprint is public on
+            Zenodo (DOI 10.5281/zenodo.21730363).
+          </span>
+        </div>
+        <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: '20px' }}>
+          <strong>Inventor and principal researcher, independent | 2024 – present | PyTorch · 16,316 lines · 85 files</strong><br />
+          383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local; global convergence is stated as open. The paper, the codebase that reproduces all 383 runs and the full results archive are linked below.
+        </p>
+
+        {/* Action Link Bar */}
+        <div className="res-links">
+          {([
+            { icon: 'fileText', label: 'Paper', sub: 'Preprint · Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
+            { icon: 'flask', label: 'Codebase', sub: 'Reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
+            { icon: 'archive', label: 'Results Archive', sub: 'All experiment logs', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
+          ] as const).map((link, i) => (
+            <a key={i} href={link.href} target="_blank" rel="noreferrer" className="res-link">
+              <span className="res-link-icon"><Icon name={link.icon} size={17} /></span>
+              <span className="res-link-text">
+                <span className="res-link-label">{link.label}</span>
+                <span className="res-link-sub">{link.sub}</span>
+              </span>
+              <span className="res-link-out"><Icon name="externalLink" size={14} /></span>
+            </a>
+          ))}
+        </div>
+
+        {/* ── The section's own overview video, after the headline facts ── */}
         <div className="rv-video">
           <div className="rv-video-side">
             <div className="rv-video-eyebrow">
@@ -257,39 +293,6 @@ export default function CVResearch() {
           </div>
         </div>
 
-        <div className="res-venue">
-          <span className="res-venue-tag">Accepted · DeepMath 2026 · Poster</span>
-          <span className="res-venue-txt">
-            <strong>Peer-reviewed stability result.</strong> The paper{' '}
-            <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
-            Dynamics&rdquo;</em> was accepted after double-blind review at DeepMath 2026, the Conference on the
-            Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus, 29&ndash;30 October 2026).
-            DeepMath does not publish proceedings. The complete ORMAS preprint is available on Zenodo with a DOI.
-          </span>
-        </div>
-        <p className="disc" style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: '20px' }}>
-          <strong>Principal Researcher, independent | 2024 – Present | PyTorch · 16,316 lines · 85 files</strong><br />
-          383 controlled experiments across four architectures on a single RTX 3090. The work includes the first formal local stability characterization of a self-correcting architecture, accepted at DeepMath 2026; global convergence remains an open question. The 36-page supplementary, reproducible codebase and full results archive are linked below.
-        </p>
-
-        {/* Action Link Bar */}
-        <div className="res-links">
-          {([
-            { icon: 'fileText', label: 'Paper', sub: 'Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
-            { icon: 'flask', label: 'Codebase', sub: 'Reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
-            { icon: 'archive', label: 'Results Archive', sub: 'All experiment logs', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
-          ] as const).map((link, i) => (
-            <a key={i} href={link.href} target="_blank" rel="noreferrer" className="res-link">
-              <span className="res-link-icon"><Icon name={link.icon} size={17} /></span>
-              <span className="res-link-text">
-                <span className="res-link-label">{link.label}</span>
-                <span className="res-link-sub">{link.sub}</span>
-              </span>
-              <span className="res-link-out"><Icon name="externalLink" size={14} /></span>
-            </a>
-          ))}
-        </div>
-
         <div className="content mt--30">
 
           {/* KEY RESULTS STAT STRIP — 10 cards, forced 5-col layout */}
@@ -300,16 +303,16 @@ export default function CVResearch() {
           `}</style>
           <div className="stat-strip">
             {[
-              { val: '383',     lbl: 'Controlled Experiments' },
-              { val: '+70.3pp', lbl: 'Dead-Layer Recovery' },
-              { val: '+60.8pp', lbl: 'Total Annihilation' },
-              { val: '+52.1pp', lbl: 'σ=2.0 Blast Recovery' },
-              { val: '80.3%',   lbl: 'Autonomous Recovery' },
-              { val: '58.8%',   lbl: 'Zero-Shot Generalization' },
-              { val: '94.6%',   lbl: 'Shape Memory Retained' },
-              { val: '4.5×',    lbl: 'Weight Variance Reduction' },
-              { val: '22,014',  lbl: 'DAG Autonomous Corrections' },
-              { val: '<0.8%',   lbl: 'Hyperparameter Sensitivity' },
+              { val: '80.3%',   lbl: 'Recovered after a layer is destroyed (baseline 10.0%)' },
+              { val: '+70.3pp', lbl: 'Gap over a parameter-matched baseline' },
+              { val: '94.6%',   lbl: 'Task retention (ResNet-18: 47.3%)' },
+              { val: '+60.8pp', lbl: 'Gap with all three layers destroyed' },
+              { val: '58.8%',   lbl: 'Zero-shot compositional (chance 25%)' },
+              { val: '383',     lbl: 'Experiments, reproducible from seed' },
+              { val: '+52.1pp', lbl: 'Recovery from a σ = 2.0 weight shock' },
+              { val: '4.5×',    lbl: 'Lower late-stage weight variance' },
+              { val: '22,014',  lbl: 'Autonomous corrections per DAG run' },
+              { val: '<0.8%',   lbl: 'Accuracy variance, 16× bottleneck sweep' },
             ].map((s, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '20px 14px', textAlign: 'center' }}>
                 <div style={{ fontSize: '19px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '6px' }}>{s.val}</div>
@@ -323,23 +326,23 @@ export default function CVResearch() {
             {[
               {
                 n: '01',
-                title: 'Autonomous structural repair: dead-layer lesion',
-                body: 'A convolutional layer is zeroed at epoch 100, after convergence. The standard CNN falls to chance (10.0% ± 0.0%) on all three seeds and does not recover. ORMAS applies 85 targeted corrections between epochs 100 and 110 and returns to 80.3%, a +70.3pp gap. A checkpoint rollback can also restore accuracy, but it discards all learning since the checkpoint and gives no account of what failed or why.'
+                title: 'A destroyed layer, rebuilt: 80.3% versus 10.0% (+70.3pp)',
+                body: 'After a converged convolutional layer is zeroed at epoch 100, ORMAS recovers to 80.3% accuracy while the standard CNN stays at chance (10.0% ± 0.0%) on all three seeds: a +70.3pp gap. ORMAS gets there with 85 targeted corrections between epochs 100 and 110. A checkpoint rollback can also restore accuracy, but it discards all learning since the checkpoint and gives no account of what failed or why.'
               },
               {
                 n: '02',
-                title: 'Full-hierarchy lesion: all three layers destroyed',
-                body: 'All three convolutional layers are zeroed at epoch 100, removing every learned representation. The standard CNN remains at 10.0% ± 0.0% on every seed. ORMAS recovers to 70.8% ± 2.2% across three seeds, a +60.8pp gap; one run logged 72 corrections (54 oscillating, 18 dead) and reached 72.9%. Recovery is lower than in the single-layer case, as expected when every stage must be rebuilt at once.'
+                title: 'All three layers destroyed: 70.8% versus 10.0% (+60.8pp)',
+                body: 'With every convolutional layer zeroed at epoch 100, removing every learned representation, ORMAS recovers to 70.8% ± 2.2% across three seeds while the standard CNN remains at 10.0% ± 0.0%: a +60.8pp gap. One run logged 72 corrections (54 oscillating, 18 dead) and reached 72.9%. Recovery is lower than in the single-layer case, as expected when every stage must be rebuilt at once.'
               },
               {
                 n: '03',
-                title: 'Noise robustness without a second network',
-                body: 'Under 40% symmetric label noise over 200 epochs, the standard CNN decays 7.8pp from its peak; ORMAS decays 2.5pp and settles at 75.6% ± 0.8%, with no co-training, second network or specialised objective. Heavy dropout (p = 0.5) matches ORMAS on label noise but collapses to chance when a layer is lesioned: regularisation can mask noise, but it cannot diagnose and repair structural damage.'
+                title: 'Label noise: 2.5pp decay versus 7.8pp, with no second network',
+                body: 'Under 40% symmetric label noise over 200 epochs, ORMAS decays 2.5pp from its peak and settles at 75.6% ± 0.8%, while the standard CNN decays 7.8pp, with no co-training, second network or specialised objective. Heavy dropout (p = 0.5) matches ORMAS on label noise but collapses to chance when a layer is lesioned: regularisation can mask noise, but it cannot diagnose and repair structural damage.'
               },
               {
                 n: '04',
-                title: 'Emergent zero-shot compositional generalization',
-                body: 'Shape is taught first and colour second. A standard ResNet-18 forgets the first task, retaining 47.3% on shape. ORMAS retains both (94.6% shape, 96.5% colour) and scores 58.8% zero-shot on unseen shape–colour pairings, +33.8pp above chance. The PCGrad ablation reaches 59.1% ± 3.6%, statistically indistinguishable, isolating self-correction as the driver. The behaviour was not designed; it emerged from the health gate.'
+                title: 'Sequential learning: 94.6% retention versus 47.3% for ResNet-18, and 58.8% zero-shot',
+                body: 'Taught shape first and colour second, ORMAS retains 94.6% on shape while a standard ResNet-18 retains 47.3%. ORMAS keeps both tasks (94.6% shape, 96.5% colour) and scores 58.8% zero-shot on unseen shape–colour pairings, +33.8pp above chance. The PCGrad ablation reaches 59.1% ± 3.6%, statistically indistinguishable, isolating self-correction as the driver. The behaviour was not designed; it emerged from the health gate.'
               },
             ].map((c, i) => (
               <div key={i} style={{ display: 'flex', gap: '20px', background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '24px' }}>
@@ -352,7 +355,7 @@ export default function CVResearch() {
             ))}
           </div>
 
-          <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "12px", color: "var(--pf-ink)" }}>Why This Exists</h4>
+          <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "12px", color: "var(--pf-ink)" }}>Why Raadh built ORMAS: agents learning from corrupted production data</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "14px" }}>
             ORMAS grew out of <strong style={{ color: 'var(--pf-ink)' }}>OXIMO</strong>, Raadh&apos;s multi-agent system for autonomous business operations (<a href="https://anonymous.4open.science/r/oximo-5C73/README.md" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>codebase</a>). Its agents had to learn from real production data, with corrupted labels, adversarial inputs and contradictory signals. Every noise-robust method he tested was an external filter applied to a network that remained blind to its own internal state.
           </p>
@@ -361,29 +364,29 @@ export default function CVResearch() {
           </p>
 
           <h4 style={{ fontSize: '19px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '10px' }}>
-            The Difference, Illustrated
+            Standard backpropagation versus ORMAS: the same node failure, side by side
           </h4>
           <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', maxWidth: '760px', marginBottom: '22px' }}>
-            The headline claim of the paper is not accuracy — it is <strong style={{ color: 'var(--pf-ink)' }}>attribution</strong>.
-            The same node failure is shown in both architectures; the telemetry on the right is quoted verbatim from
-            the supplementary material.
+            The central claim of ORMAS is not accuracy but <strong style={{ color: 'var(--pf-ink)' }}>attribution</strong>: every
+            failure is named, diagnosed and logged with its cause. The same node failure is shown in both architectures; the
+            telemetry on the right is quoted verbatim from the supplementary material.
           </p>
           <ResearchVisualization />
 
           <div style={{ marginBottom: '50px' }} />
 
           <ExpandableSection
-            closedLabel="View Full Technical Detail"
-            hint="The three-signal math, every experimental table, the ISS derivation, ablations, and scope boundaries — for reviewers and engineers."
-            meta={['383 experiments', 'ISS derivation', 'Ablation tables', 'Scope boundaries']}
+            closedLabel="View the full technical record"
+            hint="The three-signal mathematics, every experimental table, the Input-to-State Stability derivation, ablations and stated limits, for reviewers and engineers."
+            meta={['383 experiments', 'ISS stability derivation', 'Ablation tables', 'Stated limits']}
           >
-          <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "var(--pf-ink)" }}>The Three-Signal Architecture</h4>
+          <h4 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "var(--pf-ink)" }}>How ORMAS works: three simultaneous learning signals</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
             ORMAS replaces the single-signal paradigm with three simultaneous learning signals:
           </p>
           <ul style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", listStyleType: "disc", paddingLeft: "20px", marginBottom: "20px" }}>
             <li style={{ marginBottom: "12px" }}><strong style={{ color: "var(--pf-ink)" }}>Signal 1 — Global Backpropagation:</strong> The standard cross-entropy loss backpropagated through the entire network. This is what every neural network already does.</li>
-            <li style={{ marginBottom: "12px" }}><strong style={{ color: "var(--pf-ink)" }}>Signal 2 — Per-Node Local Loss (The Intrinsic Anchor):</strong> Each node gets its own independent assessment computed through a <strong>shared bottleneck readout</strong> (4,416 parameters, <InlineMath math="d_b = 32 \ll d_{\max} = 128" />) that classifies the input using only that node's local features. It cannot memorize noise — it is forced to learn structural features.</li>
+            <li style={{ marginBottom: "12px" }}><strong style={{ color: "var(--pf-ink)" }}>Signal 2 — Per-Node Local Loss (The Intrinsic Anchor):</strong> Each node gets its own independent assessment computed through a <strong>shared bottleneck readout</strong> (4,416 parameters, <InlineMath math="d_b = 32 \ll d_{\max} = 128" />) that classifies the input using only that node's local features. It cannot memorise noise, so it is forced to learn structural features.</li>
             <li style={{ marginBottom: "12px" }}><strong style={{ color: "var(--pf-ink)" }}>Signal 3 — Health-Gated Autonomous Self-Correction:</strong> Each node continuously computes a Multiplicative Bottleneck Goodness Score. When it drops below its own historical average by 2.5 standard deviations, the system diagnoses the specific pathology and applies the targeted treatment. A 0.3 gate floor prevents the dead-ReLU trap.</li>
           </ul>
 
@@ -391,9 +394,9 @@ export default function CVResearch() {
           <BlockMath math="w_{t+1}^{(i)} = w_t^{(i)} - \underbrace{\eta_i \nabla \mathcal{L}_{\text{global}}}_{\text{Signal 1}} - \underbrace{\eta_i \beta(t) \tilde{\nabla} \mathcal{L}_{\text{local}}^{(i)}}_{\text{Signal 2 (PCGrad-projected)}} + \underbrace{\Delta_{\text{corr}}^{(i)}}_{\text{Signal 3}}" />
 
           {/* Pathology Diagnostic Table */}
-          <h4 className="section-header">Seven Ways a Component Can Break, and the Repair for Each</h4>
+          <h4 className="section-header">Seven failure modes ORMAS detects and repairs during training</h4>
           <p style={{ fontSize: "16px", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
-            ORMAS detects and treats 7 distinct node pathologies in real-time during training. <strong style={{ color: "var(--pf-ink)" }}>Defense-in-depth:</strong> PCGrad operates at the gradient level (before weight updates); self-correction operates at the weight level (after updates). Any unmodeled pathology ultimately manifests as gradient death, triggering the fallback Kaiming reinitialization — graceful degradation without requiring learned policies.
+            ORMAS detects and treats seven distinct node pathologies in real time during training. <strong style={{ color: "var(--pf-ink)" }}>Defence in depth:</strong> PCGrad operates at the gradient level (before weight updates); self-correction operates at the weight level (after updates). Any unmodelled pathology ultimately manifests as gradient death, triggering the fallback Kaiming reinitialisation: graceful degradation without requiring learned policies.
           </p>
           <div style={{ background: 'var(--pf-surface)', borderRadius: '8px', border: '1px solid var(--pf-border)', overflowX: 'auto', marginBottom: '30px' }}>
             <table className="research-table">
@@ -416,7 +419,7 @@ export default function CVResearch() {
             </table>
           </div>
 
-          <h4 className="section-header">Five Layers of Telemetry the Network Computes About Itself Anyway</h4>
+          <h4 className="section-header">GlassBox: five layers of per-node telemetry, emitted during training</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "16px" }}>
             Traditional neural networks fail <strong>silently</strong>. ORMAS reverses this with the <strong>Loud Failure Paradigm</strong>. GlassBox emits a <strong>5-layer causal audit trail</strong> per node: (1) health status and goodness score, (2) correction traces with pathology diagnosis, (3) gradient conflict measurement (cosine similarity between global and local gradients), (4) topology census (active/suppressed routing per input region), (5) training pulse timeline.
           </p>
@@ -426,7 +429,7 @@ export default function CVResearch() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px', marginBottom: '40px' }}>
             {[
               { label: 'What it tells you', val: 'Per-node health, correction trigger, EMA baseline, cosine gradient conflict, spatial routing map' },
-              { label: 'What it does NOT tell you', val: 'What visual concept a failing node encoded, or whether post-repair it encodes the same concept' },
+              { label: 'What it does not yet show', val: 'What visual concept a failing node encoded, or whether post-repair it encodes the same concept' },
               { label: 'Why that matters', val: 'Structural telemetry ≠ semantic interpretability. The gap between the two is the primary extension direction.' },
             ].map((item, i) => (
               <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '18px' }}>
@@ -436,13 +439,13 @@ export default function CVResearch() {
             ))}
           </div>
 
-          <h4 className="section-header">383 Experiments, and the Conditions on Every One</h4>
+          <h4 className="section-header">383 controlled experiments against compute- and parameter-matched baselines</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "25px" }}>
             All baselines are strictly compute- and parameter-matched. 383 experiments on a single RTX 3090. 4 architectures (FC-DAG, CNN, Fat CNN 11.24M, ResNet-18). 6 noise regimes. 10 baselines. All trained for 200 epochs.
           </p>
 
           {/* Bar Chart — Noise Robustness */}
-          <h5 style={{ fontSize: "16px", fontWeight: "700", color: "var(--pf-ink)", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Training Under 40% Label Noise</h5>
+          <h5 style={{ fontSize: "16px", fontWeight: "700", color: "var(--pf-ink)", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>40% label noise: ORMAS ends at 75.6%, the standard CNN at 69.6%</h5>
           <p style={{ fontSize: "14px", color: "var(--pf-ink-2)", marginBottom: "20px" }}>Best accuracy vs. final accuracy after 200 epochs of training under label noise.</p>
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '24px 24px 16px', marginBottom: '20px', position: 'relative', minWidth: 0, boxSizing: 'border-box' }}>
             <ResponsiveContainer width="100%" height={300}>
@@ -488,18 +491,18 @@ export default function CVResearch() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: '12px', color: 'var(--pf-ink-3)', marginBottom: '40px', lineHeight: '1.6' }}>All results CIFAR-10 unless noted. Equal-compute (200 epochs, same hardware). Framing note: every accuracy result is proof the mechanism functions — not a competitive accuracy benchmark.</p>
+          <p style={{ fontSize: '12px', color: 'var(--pf-ink-3)', marginBottom: '40px', lineHeight: '1.6' }}>All results CIFAR-10 unless noted. Equal-compute (200 epochs, same hardware). Framing note: each accuracy result shows that the mechanism works; none is offered as a competitive accuracy benchmark.</p>
           <div className="honest-gap-box" style={{ marginBottom: '40px' }}>
-            <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Note — Heavy Dropout</h5>
+            <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Why heavy dropout is not the same capability</h5>
             <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', margin: 0 }}>
               Heavy Dropout (p=0.5) also matches ORMAS on label noise — then collapses permanently to chance under a dead-layer attack. <strong style={{ color: 'var(--pf-ink)' }}>Regularisation masks noise. Structural transparency diagnoses and repairs it.</strong> Those are different capabilities, not different amounts of the same one.
             </p>
           </div>
 
           {/* Recovery Table */}
-          <h5 style={{ fontSize: "16px", fontWeight: "700", color: "var(--pf-ink)", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>A Converged Layer Destroyed, Then Rebuilt</h5>
+          <h5 style={{ fontSize: "16px", fontWeight: "700", color: "var(--pf-ink)", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>Gaussian weight shock: the ORMAS advantage grows with the damage, to +23.9pp</h5>
           <p style={{ fontSize: "15px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
-            We inject σ-Gaussian weight perturbation at training step 1,000 — destroying all learned representations. Mixup permanently collapses to 33.3%. ORMAS recovers autonomously.
+            A σ-Gaussian weight perturbation is injected at training step 1,000, destroying all learned representations. ORMAS recovers autonomously; Mixup collapses permanently to 33.3%.
           </p>
           <div style={{ background: 'var(--pf-surface)', borderRadius: '8px', border: '1px solid var(--pf-border)', overflowX: 'auto', marginBottom: '14px' }}>
             <table className="recovery-table">
@@ -530,7 +533,7 @@ export default function CVResearch() {
             <strong style={{ color: 'var(--pf-ink)' }}>Scaling:</strong> The 11.24M-parameter Fat CNN also recovers from catastrophic weight explosion: 88.9% → crash to 22.7% → recovery to 69.3%. The three-signal mechanism scales from 637K to 11M parameters.
           </p>
           <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '10px' }}>
-            <strong style={{ color: 'var(--pf-ink)' }}>ResNet-18 Scale:</strong> Stages 2+3 killed at epoch 100. ORMAS-ResNet: 264 corrections → 91.7%. Vanilla ResNet-18: 92.6% (blind recovery). The accuracy gap is −0.9pp. But the blind baseline has no audit trail — it cannot tell the operator which nodes failed, when, why, or with what pathway. An accuracy number tells you a network recovered. The telemetry tells you how, and proves it will recover predictably.
+            <strong style={{ color: 'var(--pf-ink)' }}>ResNet-18 Scale:</strong> Stages 2+3 killed at epoch 100. ORMAS-ResNet: 264 corrections → 91.7%. Vanilla ResNet-18: 92.6% (blind recovery). The accuracy gap is −0.9pp. But the blind baseline has no audit trail — it cannot tell the operator which nodes failed, when, why, or with what pathway. An accuracy number tells you a network recovered. The telemetry tells you how, which makes the recovery auditable.
           </p>
           <div className="honest-gap-box" style={{ marginBottom: '20px' }}>
             <h5 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Where the Diagnostic Advantage Shows Up, and Where It Does Not</h5>
@@ -561,9 +564,9 @@ export default function CVResearch() {
           </div>
 
           {/* EXTREME SCENARIOS — Full Table 2 */}
-          <h4 className="section-header">Deliberate Destruction Tests</h4>
+          <h4 className="section-header">Stress tests: five extreme failure scenarios, every result reported</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "16px" }}>
-            Beyond single-layer ablations: five simultaneous extreme perturbations. The bifurcated results are not measurement error — they are a physical phenomenon. Under compounded structural-noise perturbation, the network sits at the edge of a topological bifurcation: small initialization differences determine whether the self-correction mechanism achieves stable recovery or collapses. This is the honest edge of the capability.
+            With all three layers destroyed at once, ORMAS recovers to 70.8% while the standard CNN stays at 10.0%; the compound and 100-class scenarios mark where recovery becomes seed-dependent or partial. The bifurcated results are not measurement error — they are a physical phenomenon. Under compounded structural-noise perturbation, the network sits at the edge of a topological bifurcation: small initialisation differences determine whether the self-correction mechanism achieves stable recovery or collapses. This is the honest edge of the capability.
           </p>
           <div className="bifurcation-callout" style={{ marginBottom: '20px' }}>
             <strong style={{ color: 'var(--pf-accent)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>Bifurcation — Edge of Chaos</strong>
@@ -598,9 +601,9 @@ export default function CVResearch() {
           </div>
 
           {/* Zero-Shot Compositional Generalization — Full Table 3 */}
-          <h4 className="section-header">It Answered Questions About Combinations It Was Never Shown</h4>
+          <h4 className="section-header">Zero-shot compositional generalisation: 94.6% retention and 58.8% on unseen combinations</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "16px" }}>
-            Sequential training: Phase 1 → Shape classification. Phase 2 → Color classification. The test: accuracy on novel Shape+Color combinations never seen. Standard ResNet-18 catastrophically forgets Shape while learning Color. ORMAS holds both — and generalizes to novel combinations.
+            ORMAS holds both tasks in sequential training and generalises to shape–colour combinations it was never shown; a standard ResNet-18 catastrophically forgets shape while learning colour. Phase 1: shape classification. Phase 2: colour classification. Test: accuracy on novel shape + colour combinations.
           </p>
           <div style={{ background: 'var(--pf-surface)', borderRadius: '8px', border: '1px solid var(--pf-border)', overflowX: 'auto', marginBottom: '20px' }}>
             <table className="zero-shot-table">
@@ -608,7 +611,7 @@ export default function CVResearch() {
                 <tr>
                   <th>Model</th>
                   <th>Phase 1 Shape</th>
-                  <th>Phase 2 Color</th>
+                  <th>Phase 2 Colour</th>
                   <th>Shape Retention</th>
                   <th>Zero-Shot 4-way</th>
                   <th>vs. Chance</th>
@@ -637,7 +640,7 @@ export default function CVResearch() {
             The ceiling is 91.3% (statistical independence: 0.946 × 0.965). ORMAS reaches 58.8% — strong but incomplete spatial separation. An emergent structural bias, not strict orthogonality. PCGrad ablation (remove Signal 2, retain Signal 3): 59.1% ± 3.6% — statistically indistinguishable. <strong style={{ color: 'var(--pf-ink)' }}>Self-correction is the necessary and sufficient driver.</strong>
           </p>
 
-          <h4 className="section-header">The Stability Proof and Its Scope</h4>
+          <h4 className="section-header">The stability result: Input-to-State Stability for a self-correcting network, accepted at DeepMath 2026</h4>
 
           <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '24px 28px', marginBottom: '24px' }}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--pf-ink-3)', marginBottom: '14px' }}>
@@ -652,12 +655,12 @@ export default function CVResearch() {
             </p>
             <p style={{ fontSize: '15px', lineHeight: '1.85', color: 'var(--pf-ink-2)', margin: 0 }}>
               Raadh adapted the framework by treating each correction as a bounded input disturbance and the weight trajectory as the state, then characterising the conditions under which the state remains bounded.{' '}
-              <strong style={{ color: 'var(--pf-ink)' }}>The result is the first formal local stability characterization of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review. Review by control theorists is the next priority.
+              <strong style={{ color: 'var(--pf-ink)' }}>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review. Review by control theorists is the next priority.
             </p>
           </div>
 
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "20px" }}>
-            <strong style={{ color: "var(--pf-ink)" }}>Local Stability Characterization — the first for any self-correcting architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
+            <strong style={{ color: "var(--pf-ink)" }}>Local stability characterisation, the first for a self-correcting neural architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
           </p>
           <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />
 
@@ -689,7 +692,7 @@ export default function CVResearch() {
           </div>
 
           {/* Ablation Study */}
-          <h4 className="section-header">Ablations: Removing Each Signal in Turn</h4>
+          <h4 className="section-header">Ablations: on the DAG, removing either mechanism collapses training</h4>
           <p style={{ fontSize: '15.5px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '20px' }}>
             On the DAG architecture under 30% noise:
           </p>
@@ -722,7 +725,7 @@ export default function CVResearch() {
             </table>
           </div>
           <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '14px' }}>
-            On the DAG, removing either mechanism collapses training outright. On the CNN, removing PCGrad leaves accuracy unchanged (78.1% final) but forces the self-correction mechanism to work far harder — disabling one defense layer triggers proportional activation of the other. This is the intended behavior: two independent defense layers.
+            On the DAG, removing either mechanism collapses training outright. On the CNN, removing PCGrad leaves accuracy unchanged (78.1% final) but forces the self-correction mechanism to work far harder — disabling one defence layer triggers proportional activation of the other. This is the intended behaviour: two independent defence layers.
           </p>
           <div className="bifurcation-callout" style={{ marginBottom: '20px' }}>
             <strong style={{ color: 'var(--pf-accent)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>PCGrad Removal — The Correction Explosion</strong>
@@ -731,7 +734,7 @@ export default function CVResearch() {
             </p>
           </div>
 
-          <h4 className="section-header">Everything Here Regenerates From Seed on One GPU</h4>
+          <h4 className="section-header">Reproducibility: all 383 experiments regenerate from seed on one RTX 3090</h4>
           <ul style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", listStyleType: "disc", paddingLeft: "20px", marginBottom: "20px" }}>
             <li style={{ marginBottom: "10px" }}>Tiered experiment infrastructure: 383+ configurations with automated seed sweeps.</li>
             <li style={{ marginBottom: "10px" }}>Shipped an interactive <code>reproduce.sh</code> — one command reproduces every experiment. Core claims reproducible in under one hour.</li>
@@ -740,7 +743,7 @@ export default function CVResearch() {
           </ul>
 
           {/* Hyperparameter Robustness — NOT on website */}
-          <h5 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>The One Knob That Could Have Been Cheating, Swept 16×</h5>
+          <h5 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>Hyperparameter robustness: under 0.8% accuracy variance across a 16× sweep</h5>
           <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--pf-ink-2)', marginBottom: '14px' }}>ORMAS's accuracy is nearly insensitive to its own hyperparameters — a strong indicator of mechanistic robustness, not overfitting to a narrow configuration:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px', marginBottom: '40px' }}>
             {[
@@ -758,7 +761,7 @@ export default function CVResearch() {
           </div>
 
           {/* Expert Immunity System — NOT on website */}
-          <h5 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>Why a Component That Is Working Never Gets Touched</h5>
+          <h5 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--pf-ink)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>Safeguards: healthy components are never touched</h5>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '30px' }}>
             {[
               { label: 'Expert Immunity', desc: 'Nodes achieving EMA confidence ≥ 0.55 OR local loss < 0.20 become "experts" — immune from convergence penalties. Prevents disruption of already-converged features.' },
@@ -773,9 +776,9 @@ export default function CVResearch() {
             ))}
           </div>
 
-          <h4 className="section-header">Scope & Current Boundaries</h4>
+          <h4 className="section-header">Stated limits: what ORMAS does not yet show</h4>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "14px" }}>
-            Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. The proof gives a local stability guarantee. Global convergence stays open — as it does for every architecture in existence today.
+            Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. Transformers are a stated next step, not a demonstrated result. The proof gives a local stability guarantee; global convergence remains open, and review by control theorists is pending. GlassBox telemetry is structural, not semantic, interpretability.
           </p>
           <p style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "14px" }}>
             The overhead is real. PCGrad runs two backward passes, which sets a permanent <strong style={{ color: 'var(--pf-ink)' }}>1.35× algorithmic floor</strong>. The 2.16× wall-clock figure on CNNs is Python loop latency and can be optimised away; the 1.35× cannot. On networks deep enough that silent failure is a genuine production risk, that is what structural transparency costs.
@@ -787,7 +790,7 @@ export default function CVResearch() {
             ORMAS addresses training-time weight-space pathologies. Running the same telemetry at inference to catch distribution shift is a direct generalisation of the idea, and it is out of scope for this work.
           </p>
 
-          <h4 className="section-header">Next Four Experiments</h4>
+          <h4 className="section-header">Research roadmap: the next four experiments</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '50px' }}>
             {[
               { title: 'Preemptive Immune Filtering', body: 'V1 is reactive: damage happens, then it gets repaired. V2 uses local loss disagreement as a per-sample gate, stopping corrupted samples before they ever reach the gradient path. Repair becomes immunity.' },
@@ -804,7 +807,7 @@ export default function CVResearch() {
 
           </ExpandableSection>
 
-          <h4 className="section-header">One Architectural Decision. Three Results.</h4>
+          <h4 className="section-header">One architectural decision, three results: repair, noise robustness and zero-shot generalisation</h4>
           <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "14px" }}>
             Structural recovery, noise robustness, zero-shot generalisation — these are not three findings. They are one structural property showing up three times. Bounding the local gradient chain produces an attribution signal. The attribution signal makes the health gate possible. The health gate delivers both the repair and the spatial separation of competing representations.
           </p>

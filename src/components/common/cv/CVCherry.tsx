@@ -20,21 +20,21 @@ export default function CVCherry() {
     <CVSection
       id="cherry"
       phase="now"
-      eyebrow="Project Cherry · Planned"
-      title="A network that grows its own components."
+      eyebrow="Project Cherry · Next architecture · Fully specified"
+      title="Project Cherry: the next architecture after ORMAS, a network that grows its own components."
       lead={
         <>
-          Once a network can report which of its parts is failing and by how much, it can be allowed to{' '}
-          <strong>grow new components on demand</strong> and retire those that no longer contribute. Project
-          Cherry removes the fixed-capacity ceiling that limits every result in the research section. It is
-          fully specified; development will begin once multi-node compute is in place.
+          Project Cherry is Raadh&apos;s fully specified next architecture: a network, built on ORMAS, that{' '}
+          <strong>grows new components on demand</strong> and retires those that no longer contribute. It is
+          designed to remove the fixed-capacity ceiling that bounds every ORMAS result above. Development begins
+          once multi-node compute is in place.
         </>
       }
       meta={[
         { k: 'Status', v: 'Specification complete' },
-        { k: 'Written', v: 'Full specification' },
-        { k: 'Gated on', v: 'Multi-node H100 access' },
-        { k: 'Experiments', v: 'None yet' },
+        { k: 'Builds on', v: 'ORMAS self-correction' },
+        { k: 'Next milestone', v: 'Multi-node H100 access' },
+        { k: 'Results', v: 'None claimed until built' },
       ]}
     >
       <style>{`
@@ -66,10 +66,10 @@ export default function CVCherry() {
       `}</style>
 
       <div className="cy-warn">
-        <span className="cy-warn-t">Planned work</span>
+        <span className="cy-warn-t">Roadmap</span>
         <span className="cy-warn-v">
-          Every other figure on this page comes from a completed experiment. This section describes planned
-          work, so it contains no results.
+          Every other figure on this page comes from a completed experiment. Project Cherry is a specified
+          design, so it reports no results of its own; the numbers it builds on are ORMAS&apos;s.
         </span>
       </div>
 
@@ -80,12 +80,12 @@ export default function CVCherry() {
         <strong>This is how the fixed-capacity ceiling is removed.</strong>
       </p>
 
-      <p className="cy-label">How it would work</p>
+      <p className="cy-label">How Project Cherry is designed to work</p>
       <CherryVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="cy-label">How it differs from existing methods</p>
+      <p className="cy-label">How it differs from fine-tuning, LoRA and Mixture-of-Experts</p>
       <div className="cy-not">
         {notThis.map((n) => (
           <div className="cy-not-row" key={n.k}>
