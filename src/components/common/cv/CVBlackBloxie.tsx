@@ -39,14 +39,14 @@ export default function CVBlackBloxie() {
       id="black-bloxie"
       phase="before"
       eyebrow="Black Bloxie LTD · 2025–2026"
-      title="A twelve-month controlled study on a live company."
+      title="Removing OXIMO from a live UK company cut its output 91%."
       lead={
         <>
-          Revenue from an AI system proves little on its own, because it cannot show whether the market
-          would have delivered the same result anyway. Raadh therefore ran OXIMO on a live UK company, with a
-          real supplier and customers in ten countries, then{' '}
-          <strong>removed the system to measure the effect.</strong> Output collapsed. When the system was
-          restored, output recovered and exceeded its original level.
+          Black Bloxie LTD, incorporated in England and Wales on 11 September 2025, was Raadh&apos;s
+          twelve-month controlled field study of OXIMO on a live e-commerce company, with a real supplier and
+          customers in ten countries.{' '}<strong>When he removed the system, output fell 91%; when he
+          restored it, output recovered and overshot its original level.</strong> Revenue alone cannot show
+          whether the market would have delivered the same result. A removal test can.
         </>
       }
       meta={[
@@ -219,7 +219,7 @@ export default function CVBlackBloxie() {
       </ExpandableSection>
 
       <div className="bb-ceiling">
-        <div className="bb-ceiling-k">Why the study ended, and what followed</div>
+        <div className="bb-ceiling-k">Why the study ended, and how it led to ORMAS</div>
         <p>
           The study was capped deliberately. No jurisdiction has yet settled who is liable when an autonomous
           agent enters a contract, and a clean experiment was preferable to testing that boundary.
@@ -228,8 +228,8 @@ export default function CVBlackBloxie() {
           The technical reason was more important. The natural next step was to let the system learn from
           the company&apos;s own data, which, like all production data, was mislabelled, contradictory and
           partly corrupted. Every established method for handling it failed.{' '}
-          <strong>That limitation is why Raadh&apos;s next project was research rather than another
-          product.</strong>
+          <strong>That limitation is why Raadh&apos;s next project was ORMAS, a self-repairing neural
+          network, rather than another product.</strong>
         </p>
       </div>
     </CVSection>

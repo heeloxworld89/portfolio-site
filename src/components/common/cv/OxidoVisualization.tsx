@@ -24,8 +24,8 @@ const delivered = [
   },
   {
     n: '03',
-    name: 'The record',
-    what: 'Every change training made: which component, at which step, under which diagnosis, by how much, inside what declared limit. Signed, and diffable against the last approved version.',
+    name: 'Model Change Record',
+    what: 'Every weight change training made: which component, at which step, under which diagnosis, by how much, inside what declared limit. Signed, tamper-evident and diffable against the last approved version.',
     removes: 'The estimate. An auditor gets a log instead of somebody’s reconstruction.',
     status: 'built',
   },
@@ -220,7 +220,7 @@ export default function OxidoVisualization() {
             {[
               { y: 66,  n: 'ORMAS',  s: 'trains on it, in your building',  c: 'var(--pf-ink)' },
               { y: 126, n: 'THE MODEL', s: 'yours, same cost as ever',      c: 'var(--pf-ink)' },
-              { y: 186, n: 'THE RECORD', s: 'the account, signed',          c: 'var(--pf-pos)' },
+              { y: 186, n: 'THE RECORD', s: 'Model Change Record, signed', c: 'var(--pf-pos)' },
             ].map((l) => (
               <g key={l.n}>
                 <rect className="ovz-layerglow" x="186.5" y={l.y - 1.5} width="167" height="47" rx="8" fill="none" stroke={l.c} strokeWidth="1.5" />

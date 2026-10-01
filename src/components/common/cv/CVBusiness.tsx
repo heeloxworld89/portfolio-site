@@ -22,14 +22,14 @@ const sectors = [
   { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A bank whose model cannot clear SR 26-2 validation' },
   { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital whose approved model may never be updated' },
   { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A controller facing erasure against trained weights' },
-  { n: 'Defense & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
+  { n: 'Defence & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
 ];
 
 const position = [
-  { k: 'Stage',     v: 'Pre-revenue. Early conversations with model-risk and compliance teams are under way; no pilots signed.' },
+  { k: 'Stage',     v: 'Pre-revenue; licensing model defined. Conversations with model-risk and compliance teams are under way; no pilots signed yet.' },
   { k: 'Entity',    v: 'Delaware C-corporation in formation; the ORMAS IP is held by the founder and will be assigned to it.' },
-  { k: 'Evidence',  v: 'All results to date are on CIFAR-10 and CIFAR-100. Validation on clinical, financial or defence data requires a data-custodian partner.' },
-  { k: 'Team',      v: 'Founder-led. Building the team is the first use of funds, starting with a research engineer.' },
+  { k: 'Evidence',  v: 'ORMAS results to date are on CIFAR-10 and CIFAR-100: 383 experiments, reproducible from seed. Validation on clinical, financial or defence data is the next step and requires a data-custodian partner.' },
+  { k: 'Team',      v: 'Founder-led: Raadh invented ORMAS and wrote its 16,316-line PyTorch codebase. The first use of funds is a research engineer.' },
 ];
 
 export default function CVBusiness() {
@@ -40,22 +40,23 @@ export default function CVBusiness() {
       id="oxiedo"
       phase="now"
       eyebrow="OXIEDO · The Business"
-      title="OXIEDO: auditable AI training for regulated industries."
+      title="OXIEDO lets regulated industries train AI on data they already own."
       lead={
         <>
-          Hospital records, bank ledgers, assay runs and licensed corpora are among the most valuable data
-          in existence, and much of it cannot be used for training, because conventional models cannot
-          account for what they learned from it.{' '}<strong>From December 2027, the EU AI Act requires
-          high-risk AI to keep records and survive validation.</strong> OXIEDO licenses ORMAS, which
-          produces that record during training rather than reconstructing it afterwards. Raadh founded the
-          company in 2023.
+          OXIEDO, founded by Raadh in 2023, licenses ORMAS on-premise to banks, hospitals and other
+          regulated institutions. Their records are among the most valuable training data in existence, and
+          most of it sits unused, because conventional models cannot account for what they learned from it.
+          ORMAS writes that account during training: the <strong>Model Change Record</strong>, a
+          tamper-evident log of every weight change in a run.{' '}<strong>It is built for SR 26-2 model-risk
+          validation and for the EU AI Act&apos;s high-risk record-keeping obligations, which apply from
+          December 2027.</strong>
         </>
       }
       meta={[
-        { k: 'Status', v: 'Live · oxiedo.com' },
+        { k: 'Status', v: 'Pre-revenue · licence defined' },
         { k: 'Founded', v: '2023' },
-        { k: 'Product', v: 'One licence' },
-        { k: 'Sectors', v: 'Five' },
+        { k: 'Lead product', v: 'Model Change Record' },
+        { k: 'Markets', v: 'Five regulated' },
       ]}
     >
       <style>{`
@@ -129,10 +130,10 @@ export default function CVBusiness() {
 
       <a className="bz-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
         <span className="bz-cta-l">
-          <h3 className="bz-cta-h">Full company details at oxiedo.com</h3>
+          <h3 className="bz-cta-h">Product, licensing and pricing at oxiedo.com</h3>
           <p className="bz-cta-p">
-            The product, licensing, pricing, sector coverage and full risk register are published on the
-            company site.
+            OXIEDO&apos;s one on-premise ORMAS licence, sector coverage and full risk register are published on
+            the company site.
           </p>
         </span>
         <span className="bz-cta-b">
@@ -144,13 +145,14 @@ export default function CVBusiness() {
       <div className="bz-thesis">
         <p>
           Institutions do not buy audit trails for their own sake. A hospital wants to train on its own
-          patient records without regulatory exposure. <strong>Transparency is the mechanism; the value is
-          access to data these institutions already own but cannot yet use.</strong> That distinction is
-          where many interpretability tools have struggled to find buyers.
+          patient records without regulatory exposure; a bank wants a model its validators can sign off.{' '}
+          <strong>Transparency is the mechanism; the value is access to data these institutions already own
+          but cannot yet use.</strong> Interpretability tools sell an explanation after the fact; OXIEDO
+          licenses the ability to train on that data in the first place.
         </p>
       </div>
 
-      <p className="bz-label">One question, five industries</p>
+      <p className="bz-label">Five regulated markets, one question regulators ask</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -163,12 +165,12 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label">Why deployment is on-premise</p>
+      <p className="bz-label">On-premise by design: the data never leaves the building</p>
       <OxidoVisualization />
 
       <div style={{ marginBottom: '40px' }} />
 
-      <p className="bz-label">Current position</p>
+      <p className="bz-label">Current position: pre-revenue, founder-led, no outside capital</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>

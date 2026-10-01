@@ -24,18 +24,18 @@ export default function CVOximo() {
       id="oximo"
       phase="before"
       eyebrow="OXIMO · 2023–2025"
-      title="OXIMO: a multi-agent operating system that staffs itself."
+      title="OXIMO: a 40,933-line multi-agent operating system that ran a live company for a year."
       lead={
         <>
-          Five ventures had pointed Raadh to the same constraint: coordination, not individual capability.
-          OXIMO was his structural answer. Given a single-sentence brief, it designs the organisation needed to
-          deliver it and creates specialist roles when none exist.{' '}
-          <strong>It operated a live company for twelve months and is now concluded; the reasons are set out
-          below.</strong>
+          OXIMO is the multi-agent operating system Raadh built alone after five ventures showed him the same
+          constraint: coordination, not individual capability. Given a one-sentence brief, it designs the
+          organisation needed to deliver it and creates specialist roles when none exist.{' '}
+          <strong>It ran Black Bloxie LTD, a live UK company, for twelve months. Its limit on real-world data
+          is the problem ORMAS was built to solve.</strong>
         </>
       }
       meta={[
-        { k: 'Status', v: 'Concluded' },
+        { k: 'Status', v: 'Concluded · led to ORMAS' },
         { k: 'Scale', v: '40,933 lines, solo' },
         { k: 'Tests', v: '2,069 · 0 failures' },
         { k: 'Rebuild', v: '106k → 41k lines' },
@@ -102,7 +102,7 @@ export default function CVOximo() {
       </div>
 
       <p className="ox-p">
-        Existing multi-agent frameworks require a human in the loop to frame each task, prompt each model
+        Most multi-agent frameworks require a human in the loop to frame each task, prompt each model
         and pass outputs between steps. OXIMO&apos;s agents decompose work themselves, retain memory across
         sessions, create new roles and operate as an organisation.
       </p>
@@ -110,9 +110,9 @@ export default function CVOximo() {
       <p className="ox-pull">Not a chatbot: an organisational structure that assembles itself.</p>
 
       <p className="ox-p">
-        Raadh rebuilt OXIMO from a 106,000-line monolith: 72% fewer lines, every critical algorithm intact
-        and all tests passing. The rebuild demonstrated that the underlying architecture could survive a
-        complete reconstruction.
+        Raadh rebuilt OXIMO from a 106,000-line monolith into 40,933 lines across 11 independently
+        deployable repositories: 72% smaller, all 12 critical algorithms intact, all 2,069 tests passing.
+        The architecture survived a complete reconstruction.
       </p>
 
       <p className="ox-link">
@@ -124,7 +124,7 @@ export default function CVOximo() {
       </p>
 
       <div className="ox-closed">
-        <div className="ox-closed-k">Why development concluded</div>
+        <div className="ox-closed-k">Why OXIMO concluded, and how it led to ORMAS</div>
         <p>
           Each OXIMO agent is built on a third-party model whose internals cannot be inspected. That was
           workable on clean inputs, and the system operated a live company for a year (see Black Bloxie).
@@ -135,13 +135,14 @@ export default function CVOximo() {
           failed.{' '}<strong>The problem sat inside the model, beyond the reach of better orchestration.</strong>
         </p>
         <p>
-          OXIMO posed the question; ORMAS is the answer, and it is now Raadh&apos;s full-time focus.
+          OXIMO posed the question; ORMAS, the self-repairing neural network Raadh then invented, is his
+          answer. It is now his full-time focus, and the technology OXIEDO licenses.
         </p>
       </div>
 
       <p className="ox-label">From one sentence to an organisation</p>
       <p className="ox-p">
-        Other agent frameworks require agents to be defined in advance. OXIMO derives the organisation from
+        Most agent frameworks require agents to be defined in advance. OXIMO derives the organisation from
         the brief and creates specialists that did not exist when the task began.
       </p>
       <EngineeringVisualization />

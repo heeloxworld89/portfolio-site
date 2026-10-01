@@ -21,7 +21,7 @@ const ventures = [
     title: 'Cold-Call Automation, European Markets',
     age: 'Age 14–15',
     broke: 'Trust limits at the close',
-    lesson: 'Automation reliably handled 90% of the sales cycle, but every close required a human. Trust in autonomous agents stops at the transaction, a constraint that shaped all of his later work.',
+    lesson: 'Automation reliably handled 90% of the sales cycle, but every close required a human. Trust in autonomous agents stops at the transaction, a constraint the Black Bloxie study later tested directly with a $4,386 order closed with no human involved.',
   },
   {
     n: '03',
@@ -42,7 +42,7 @@ const ventures = [
     title: 'Automation Tooling',
     age: 'Age 16–17',
     broke: 'Confirmation of the pattern',
-    lesson: 'The fifth venture confirmed the pattern: the constraint was coordination, not individual capability.',
+    lesson: 'The fifth venture confirmed the pattern: the constraint was coordination, not individual capability. That finding became the design brief for OXIMO.',
   },
 ];
 
@@ -52,20 +52,20 @@ export default function CVVentures() {
       id="ventures"
       phase="before"
       eyebrow="Ventures · 2020–2025"
-      title={<>Five ventures and one exit, between the ages of 12 and 17.</>}
+      title={<>Five ventures from age 12, and a ~$10,000 sale at 15.</>}
       lead={
         <>
-          Raadh started his first company at twelve and founded four more by seventeen, each failing at a
-          different layer. At fifteen he built and sold a stock-prediction system for about $10,000.{' '}
-          <strong>Together, the five ventures pointed to a single finding that shaped all of his later
-          work.</strong>
+          Raadh founded his first company at 12 and four more by 17, and at 15 he built and sold a
+          stock-prediction system for about $10,000. Each venture hit a different limit.{' '}
+          <strong>Together they identified the constraint every later system was built to remove:
+          coordination, not individual capability.</strong>
         </>
       }
       meta={[
         { k: 'Companies', v: 'Five, ages 12–17' },
         { k: 'Exit', v: '~$10,000 at fifteen' },
         { k: 'Reinvested in', v: 'The RTX 3090' },
-        { k: 'Key finding', v: 'Coordination' },
+        { k: 'Key finding', v: 'Coordination → OXIMO' },
       ]}
     >
       <style>{`
@@ -125,14 +125,14 @@ export default function CVVentures() {
         <div>
           <h3 className="vn-exit-h">A stock-prediction system, built and sold at fifteen</h3>
           <p className="vn-exit-p">
-            His first exit, at around $10,000.{' '}
-            <strong>The proceeds funded the RTX 3090 that ran all 383 ORMAS experiments</strong>, so every
-            research result on this page was financed by work he built and sold himself.
+            His first exit, at about $10,000.{' '}
+            <strong>The proceeds funded the RTX 3090 that ran all 383 ORMAS experiments</strong>, so the
+            research behind OXIEDO was financed by a product he built and sold himself.
           </p>
         </div>
       </div>
 
-      <p className="vn-label">Five ventures, five failure modes</p>
+      <p className="vn-label">Five ventures, five limits found</p>
       <div className="vn-list">
         {ventures.map((v) => (
           <div className="vn-row" key={v.n}>
@@ -142,7 +142,7 @@ export default function CVVentures() {
                 <span className="vn-title">{v.title}</span>
                 <span className="vn-age">{v.age}</span>
               </div>
-              <span className="vn-broke">Failure point: {v.broke}</span>
+              <span className="vn-broke">Limit found: {v.broke}</span>
               <p className="vn-lesson">{v.lesson}</p>
             </div>
           </div>
@@ -150,14 +150,14 @@ export default function CVVentures() {
       </div>
 
       <div className="vn-finding">
-        <div className="vn-finding-k">The common finding</div>
+        <div className="vn-finding-k">What five ventures taught him</div>
         <p>
           Each venture failed at a different point, and all for the same reason.{' '}
           <strong>The constraint was coordination, not individual capability.</strong>
         </p>
         <p>
-          A structural problem needed a structural answer. That conclusion led to OXIMO, and OXIMO led to
-          the research.
+          A structural problem needed a structural answer. That conclusion produced OXIMO; OXIMO&apos;s limit
+          on real-world data produced ORMAS; ORMAS is the technology OXIEDO licenses.
         </p>
       </div>
     </CVSection>
