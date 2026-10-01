@@ -33,6 +33,7 @@ const Home = lazyPage(() => import("./site/pages/Home"));
 const ResearchPage = lazyPage(() => import("./site/pages/ResearchPage"));
 const WorkPage = lazyPage(() => import("./site/pages/WorkPage"));
 const AboutPage = lazyPage(() => import("./site/pages/AboutPage"));
+const EvidencePage = lazyPage(() => import("./site/pages/EvidencePage"));
 
 import ScrollTopBehaviour from "./components/common/ScrollToTopBehaviour";
 import GlobaleffectProvider from "./components/common/GlobaleffectProvider";
@@ -90,6 +91,7 @@ function App() {
               <Route path="/research" element={<ResearchPage />} />
               <Route path="/work" element={<WorkPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/evidence" element={<EvidencePage />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </ModalUIProvider>

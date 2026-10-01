@@ -5,15 +5,17 @@ export default function CVRecognition() {
     <CVSection
       id="recognition"
       phase="now"
-      eyebrow="Recent · 2026"
-      title={<>Three months of external recognition, at <span className="age">18</span>.</>}
+      eyebrow="Recognition · 2026"
+      title={<>Ten independent selections in 2026, at <span className="age">18</span>.</>}
       lead={
         <>
-          July: Cosmos Institute ranked the work highest in its cycle. August: an unsolicited application to
-          Entrepreneur First led to a first-round interview. September: the stability result accepted at
-          DeepMath 2026 after double-blind review, offers from two accelerators in one week, holding in the final round of The Bridge in San Francisco, through to the IARCO 2026 final round, and a
-          membership of Cohere Labs&apos; Open Science Community. December: reviewing for a NeurIPS workshop in
-          Paris.
+          Rokib Al Dhin Raadh earned ten independent selections in 2026, all from cold applications, across
+          peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
+          after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
+          Cosmos Institute ranked the work highest in its grant cycle, IARCO 2026 named him a finalist, and
+          Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
+          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event (demo-day decision pending), Entrepreneur First interviewed
+          him in London, and The Bridge in San Francisco is holding him in its final round.
         </>
       }
     >
@@ -527,6 +529,7 @@ export default function CVRecognition() {
 
         {/* ── The diary. Runs above the three-month record because it is the
              more current layer: these are live, dated, and named. ──────── */}
+        <div className="rec-label">Latest decision</div>
         <div className="rec-week">
           <div className="rec-week-banner">
             <div className="rec-week-top">
@@ -579,7 +582,7 @@ export default function CVRecognition() {
               d: 'W26 cohort',
               h: 'Top 100 pending',
               who: 'Onstage \u00b7 W26 Demo Day',
-              what: <><strong>Invited to the pre-pitch event</strong> in Central London and shortlisted for the winter cohort. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
+              what: <><strong>Invited to the pre-pitch event</strong> in Central London; the W26 demo-day decision is still pending. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
               pill: 'Pending',
               now: false,
             },
@@ -613,11 +616,12 @@ export default function CVRecognition() {
           </div>
         </div>
 
+        <div className="rec-label">2026, month by month</div>
         <div className="rec-run">
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'A peer-reviewed acceptance, two accelerators, a final round, a research community.', state: 'live' },
+            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Peer-reviewed acceptance, two accelerator places, a research-competition final, Cohere Labs membership.', state: 'live' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026', what: 'Poster, Ohio State, Columbus', state: 'ahead' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
@@ -632,6 +636,7 @@ export default function CVRecognition() {
           ))}
         </div>
 
+        <div className="rec-label">The selections</div>
         <div className="rec-grid">
           {/* NeurIPS — AI4GOOD workshop reviewer */}
           <div className="rec-card">
@@ -707,7 +712,7 @@ export default function CVRecognition() {
             <h3 className="rec-name">Accepted to Freshmango, the Equity-Free Accelerator</h3>
             <p className="rec-body">
               On 22 September Freshmango offered OXIEDO a place in its equity-free programme after a single
-              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>
+              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>{' '}
               and introductions across <strong>160 venture funds</strong>, with no equity or fees.
             </p>
             <div className="rec-stats">
@@ -738,7 +743,7 @@ export default function CVRecognition() {
             <h3 className="rec-name">Accepted to 1752vc Ignite from the Top 1% of Applicants</h3>
             <p className="rec-body">
               1752vc placed the application in the top 5% of its intake, then held a final round to select
-              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>
+              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>{' '}
               cohort, chosen from <strong>thousands of applications</strong> across three stages.
             </p>
             <div className="rec-stats">
@@ -825,7 +830,9 @@ export default function CVRecognition() {
 
         {/* Antler Australia — in the programme process; cancelled because participation
             needs an Australian work permit. A logistics boundary, not an assessment. */}
-        <div className="rec-secondary">
+        <div className="rec-label">Other processes</div>
+        <div className="rec-grid is-pair">
+        <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-white">
               <img src="/assets/images/logos/antler.svg" alt="Antler Australia" />
@@ -852,7 +859,7 @@ export default function CVRecognition() {
         </div>
 
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
-        <div className="rec-secondary">
+        <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-dark">
               <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
@@ -901,7 +908,9 @@ export default function CVRecognition() {
             </div>
           </div>
         </div>
+        </div>
 
+        <div className="rec-label">In the final round</div>
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
@@ -936,10 +945,11 @@ export default function CVRecognition() {
           </span>
         </div>
 
+        <div className="rec-label">What it adds up to</div>
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            What these signals establish, and what they do not.
+            What the 2026 record establishes, and what it does not.
           </p>
           <p className="rec-verdict-body">
             <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind
@@ -968,7 +978,7 @@ export default function CVRecognition() {
             <span className="rec-verify-k">Made to be checked</span>
             <span className="rec-verify-t">
               Each item above has a named source and a date: the Cosmos correspondence, the NeurIPS reviewer assignment, the
-              EF stage records, the Companies House filings. Documentation is available on request.
+              EF stage records, the Companies House filings. Documentation is available on request, and every claim is listed with its source on the <a href="/evidence">Evidence page</a>.
             </span>
           </span>
           <a

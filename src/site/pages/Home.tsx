@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import { links, news, publications } from "../data";
+import "../ux/home.css";
 
 type Mark = { name: string; logo?: string; word?: string; tag: string; note: string };
 
 const L = "/assets/images/logos/";
 const marks: Mark[] = [
-  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-Reviewed", note: "Stability paper selected for poster presentation at Ohio State" },
-  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Invited to review for the Trustworthy AI for Good workshop" },
-  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "The top-ranked application of its grant cycle" },
-  { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "Chosen for the Ignite cohort from the top 1% of applicants" },
+  { name: "DeepMath 2026", word: "DeepMath", tag: "Accepted · Double-Blind", note: "Stability paper on self-repairing neural networks accepted after double-blind review; poster at Ohio State" },
+  { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Reviewer for the Trustworthy AI for Good workshop, invited to judge submissions on AI auditing" },
+  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "ORMAS was the highest-ranked application in its grant cycle" },
+  { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "OXIEDO accepted to the Ignite cohort from the top 1% of applicants" },
   { name: "Antler Australia", logo: L + "antler.svg", tag: "Cancelled · Work Permit", note: "In the programme process until it was cancelled over Australian work-permit logistics" },
-  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Holding · Final Round", note: "Two interview rounds done; holding in the final round" },
-  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Called in by the talent team for a first-round interview in London" },
-  { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after interview" },
-  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "Finalist, International Academic Research Competition" },
-  { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Research Community", note: "Member of the Open Science Community" },
+  { name: "The Bridge", logo: L + "the-bridge.png", tag: "Holding · Final Round", note: "Entrepreneur First's San Francisco programme: through two interview rounds, holding in the final round" },
+  { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Invited by the talent team to a first-round interview in London" },
+  { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after a single interview" },
+  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "International Academic Research Competition finalist, from 500+ entries across 60 countries" },
+  { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Research Community", note: "Open Science Community member; Cohere cited his solo work on ORMAS for “remarkable initiative in ML safety and auditability”" },
 ];
 
 const Arrow = () => (
@@ -28,13 +29,14 @@ export default function Home() {
   const [featured, ...rest] = news;
   return (
     <SiteLayout>
+      <div className="ux-home">
       {/* ── hero ─────────────────────────────────────────────────────── */}
       <section className="rx-hero2 rx-hero3" id="home">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap rx-h2-grid">
           <div className="rx-h2-copy">
             <p className="rx-h2-eb">
-              <span className="dot" aria-hidden="true" /> Founder &amp; CEO, OXIEDO <i /> AI researcher <i className="rx-h2-hide" /> <span className="rx-h2-hide">Dhaka</span>
+              <span className="dot" aria-hidden="true" /> <b className="ux-age">18 years old</b> <i /> Founder &amp; CEO, OXIEDO <i className="rx-h2-hide" /> <span className="rx-h2-hide">Inventor of ORMAS</span>
             </p>
             <h1>
               Building neural networks that can account for what they learned.
@@ -73,6 +75,16 @@ export default function Home() {
             </figcaption>
           </figure>
         </div>
+        <div className="rx-wrap">
+          <nav className="ux-jump" aria-label="On this page">
+            <span className="ux-jump-k">On this page</span>
+            <a href="#work">Work</a>
+            <a href="#news">News</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </section>
 
       {/* ── selected / reviewed / interviewed ────────────────────────── */}
@@ -86,8 +98,8 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Double-blind peer review, a NeurIPS reviewer role and the most selective accelerators in venture:
-              ten independent panels, one year.
+              Accepted at DeepMath after double-blind review, a reviewer for NeurIPS 2026, ranked first by the Cosmos
+              Institute and taken into 1752vc Ignite from the top 1% of applicants: ten independent panels, one year.
             </p>
           </div>
           <ul className="rx-logos">
@@ -114,21 +126,22 @@ export default function Home() {
         <div className="rx-wrap">
           <div className="rx-bio-inner">
             <p>
-              <strong>Rokib Al Dhin Raadh</strong> is the Founder and CEO of{" "}
-              <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a> and the author of{" "}
-              <Link to="/research">ORMAS</Link>, a neural network architecture that identifies, repairs and records its
-              own failures while it trains. His stability analysis of self-correcting training was accepted at{" "}
+              <strong>Rokib Al Dhin Raadh</strong> is the 18-year-old founder and CEO of{" "}
+              <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a> and the inventor of{" "}
+              <Link to="/research">ORMAS</Link>, a self-repairing neural network that identifies, repairs and records its
+              own failures while it trains. His stability result for self-repairing training was accepted at{" "}
               <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath 2026</a> after double-blind review. He
               is a reviewer for the{" "}
               <a href={links.neurips} target="_blank" rel="noreferrer">NeurIPS 2026 Trustworthy AI for Good</a> workshop
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
             <p>
-              Self-taught and working independently from Dhaka, Bangladesh, he ran 383 controlled experiments on a
-              single GPU, released the full work as an open preprint with reproducible code, and founded OXIEDO to
-              license the architecture to regulated industries that need an auditable record of what their models
-              learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent operating system, and founded five
-              ventures between the ages of twelve and seventeen.
+              Self-taught and based in Dhaka, Bangladesh, he built ORMAS alone: 16,316 lines of PyTorch and 383
+              controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
+              result. OXIEDO, which he founded in 2023, licenses the architecture to regulated industries that need an
+              auditable record of what their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent
+              operating system with 2,069 passing tests, and founded five ventures between the ages of twelve and
+              seventeen, selling a stock-prediction system for about $10,000 at fifteen.
             </p>
             <div className="rx-links">
               <a href={links.cv} target="_blank" rel="noreferrer">CV <Arrow /></a>
@@ -145,19 +158,19 @@ export default function Home() {
           <div className="rx-figs" role="list">
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v is-age">18</div>
-              <div className="rx-fig-k">Founder and CEO at eighteen</div>
+              <div className="rx-fig-k">Founder and CEO of OXIEDO, inventor of ORMAS</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">383</div>
-              <div className="rx-fig-k">Controlled experiments on a single GPU</div>
+              <div className="rx-fig-k">Controlled experiments, run solo on one GPU</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">+70.3</div>
-              <div className="rx-fig-k">Percentage-point recovery after a layer is destroyed</div>
+              <div className="rx-fig-k">Percentage points over the baseline after a layer is destroyed (80.3% vs 10.0%)</div>
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">2026</div>
-              <div className="rx-fig-k">DeepMath acceptance and NeurIPS reviewer</div>
+              <div className="rx-fig-k">Accepted at DeepMath after double-blind review; NeurIPS reviewer</div>
             </div>
           </div>
         </div>
@@ -166,15 +179,16 @@ export default function Home() {
       {/* ── company + earlier work ───────────────────────────────────── */}
       <section className="rx-sec" id="work">
         <div className="rx-wrap">
-          <h2 className="rx-label">Work</h2>
+          <h2 className="rx-label">Work <small>OXIEDO · OXIMO · Black Bloxie</small></h2>
 
           <article className="rx-work-hero">
             <div className="rx-work-hero-copy">
-              <div className="k">Company · founded 2023</div>
+              <div className="k">Deep-tech AI company · founded 2023 · Founder &amp; CEO</div>
               <h3>OXIEDO</h3>
               <p>
-                Licenses ORMAS on-premise to regulated industries, producing a tamper-evident record of what a model
-                learned during training, for model-risk teams and the EU AI Act&rsquo;s high-risk obligations.
+                OXIEDO licenses ORMAS, the self-repairing neural network Raadh invented, on-premise to regulated
+                industries. Every training run produces a tamper-evident record of what the model learned: evidence
+                for model-risk teams and the EU AI Act&rsquo;s high-risk obligations.
               </p>
               <div className="rx-btns">
                 <a className="rx-btn is-light" href={links.oxiedo} target="_blank" rel="noreferrer">oxiedo.com <Arrow /></a>
@@ -184,7 +198,7 @@ export default function Home() {
             <div className="rx-work-hero-stats">
               <div><b>ORMAS</b><span>On-premise licence</span></div>
               <div><b>Dec 2027</b><span>EU AI Act high-risk obligations</span></div>
-              <div><b>+70.3pp</b><span>Recovery after a layer is destroyed</span></div>
+              <div><b>+70.3pp</b><span>Over the baseline after a layer is destroyed</span></div>
             </div>
           </article>
 
@@ -194,20 +208,20 @@ export default function Home() {
               <div className="rx-work-num">40,933<small>lines</small></div>
               <h3>OXIMO</h3>
               <p>
-                A 40,933-line multi-agent operating system that turns a one-sentence brief into an organisation and
-                creates the specialist roles it lacks. 2,069 passing tests.
+                A 40,933-line multi-agent operating system with 2,069 passing tests. It turns a one-sentence brief into
+                a working organisation and creates the specialist roles it lacks.
               </p>
-              <Link className="more" to="/work">Details →</Link>
+              <Link className="more" to="/work">How OXIMO works →</Link>
             </article>
             <article className="rx-work-card">
               <div className="k">Field study · 2025–2026</div>
               <div className="rx-work-num">−91%<small>output without OXIMO</small></div>
               <h3>Black Bloxie LTD</h3>
               <p>
-                A twelve-month controlled study on a live UK company: removing OXIMO cut output by 91%, and restoring it
-                brought output back above its original level.
+                Removing OXIMO cut output by 91%; restoring it took output above its original level. A twelve-month
+                controlled study on a live UK e-commerce company.
               </p>
-              <Link className="more" to="/work">Details →</Link>
+              <Link className="more" to="/work">Read the field study →</Link>
             </article>
           </div>
         </div>
@@ -225,12 +239,16 @@ export default function Home() {
                 The mathematics behind ORMAS passed blind review at <em>DeepMath&nbsp;2026.</em>
               </h3>
               <p className="rx-dm-lede">
-                DeepMath, the Conference on the Mathematical Theory of Deep Neural Networks, takes theory only and
-                reviews it double-blind. Specialists judged the proof without knowing who wrote it, or that he is
-                eighteen and self-taught. This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
+                Raadh&rsquo;s stability result for ORMAS, the self-repairing neural network, was accepted for poster
+                presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks.
+                DeepMath takes theory only and reviews it double-blind: specialists judged the proof without knowing
+                who wrote it, or that he is eighteen and self-taught.
+              </p>
+              <p className="rx-dm-lede">
+                This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
                 <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
                 editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
-                presents on 29–30 October.
+                presents his poster at the conference on 29–30 October.
               </p>
               <p className="rx-dm-paper">
                 &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
@@ -244,7 +262,7 @@ export default function Home() {
             </div>
           </article>
 
-          <div className="rx-rows" style={{ marginTop: 40 }}>
+          <div className="rx-rows ux-news-rows">
             {rest.map((n) => (
               <article className="rx-row" key={n.title}>
                 <div className="rx-row-date">{n.date}<span>{n.kind}</span></div>
@@ -259,7 +277,7 @@ export default function Home() {
             ))}
           </div>
           <div className="rx-btns">
-            <Link className="rx-btn" to="/about">All recognition <Arrow /></Link>
+            <Link className="rx-btn" to="/about">Full recognition record <Arrow /></Link>
           </div>
         </div>
       </section>
@@ -267,23 +285,27 @@ export default function Home() {
       {/* ── research ─────────────────────────────────────────────────── */}
       <section className="rx-sec" id="research">
         <div className="rx-wrap">
-          <h2 className="rx-label">Research</h2>
+          <h2 className="rx-label">Research <small>ORMAS · self-repairing neural networks</small></h2>
           <div className="rx-split">
             <div>
               <p>
-                <strong>Neural networks cannot say which of their parts failed.</strong> A single error signal updates
-                every parameter at once, so interpretability has worked from the outside, reconstructing a finished
-                model&rsquo;s behaviour after the fact.
+                <strong>ORMAS is a self-repairing neural network architecture: it finds its own failing components
+                during training, repairs them without stopping, and logs every repair with its cause.</strong> Standard
+                networks cannot say which of their parts failed. A single error signal updates every parameter at
+                once, so interpretability has worked from the outside, reconstructing a finished model&rsquo;s
+                behaviour after the fact.
               </p>
               <p>
-                ORMAS takes the opposite approach. It bounds each node&rsquo;s path to the loss at four operations, so
-                every component can be measured while the network trains. Three signals run together: global
+                ORMAS works from the inside. It bounds each node&rsquo;s path to the loss at four operations, so every
+                component can be measured while the network trains. Three signals run together: global
                 backpropagation, a per-node local loss through a shared bottleneck, and health-gated self-correction
                 that diagnoses a failing node, repairs it, and logs the repair with its cause.
               </p>
               <p>
-                The stability of that process is characterised with Sontag&rsquo;s Input-to-State Stability framework,
-                the first formal local stability result for a self-correcting architecture.
+                Raadh&rsquo;s analysis of that process, adapted from Sontag&rsquo;s Input-to-State Stability framework, is
+                the first formal local stability result for a self-correcting neural architecture, and was accepted at
+                DeepMath 2026 after double-blind review. The evidence base is 383 controlled experiments across four
+                architectures, every run reproducible from seed.
               </p>
               <div className="rx-btns">
                 <Link className="rx-btn" to="/research">Read the research <Arrow /></Link>
@@ -291,7 +313,7 @@ export default function Home() {
               </div>
             </div>
             <div className="rx-result">
-              <div className="k">One layer destroyed at epoch 100 · CIFAR-10 · 3 seeds</div>
+              <div className="k">Recovery after one layer is destroyed at epoch 100 · CIFAR-10 · 3 seeds</div>
               <div className="rx-bar">
                 <div className="rx-bar-top"><span>ORMAS</span><b>80.3%</b></div>
                 <div className="rx-bar-track"><div className="rx-bar-fill" style={{ width: "80.3%" }} /></div>
@@ -302,7 +324,7 @@ export default function Home() {
               </div>
               <div className="foot">
                 ORMAS locates the damage within one epoch and recovers through 85 logged repairs; the baseline stays at
-                chance on every seed. Full tables, ablations and adverse results are on the research page.
+                chance on every seed. Full tables, ablations and stated limits are on the research page.
               </div>
             </div>
           </div>
@@ -312,7 +334,7 @@ export default function Home() {
       {/* ── publications ─────────────────────────────────────────────── */}
       <section className="rx-sec" id="publications">
         <div className="rx-wrap">
-          <h2 className="rx-label">Publications</h2>
+          <h2 className="rx-label">Publications <small>Peer-reviewed paper · preprint · technical report</small></h2>
           <div className="rx-pubs">
             {publications.map((p) => (
               <div className="rx-pub" key={p.title}>
@@ -336,15 +358,15 @@ export default function Home() {
       {/* ── contact ──────────────────────────────────────────────────── */}
       <section className="rx-sec" id="contact">
         <div className="rx-wrap">
-          <h2 className="rx-label">Contact</h2>
+          <h2 className="rx-label">Contact <small>Press · research · investors</small></h2>
           <div className="rx-grid">
             <div className="rx-cell">
-              <h4>Research and press</h4>
+              <h4>Press, interviews and research</h4>
               <p><a href={`mailto:${links.email}`}>{links.email}</a></p>
               <p>Replies are typically sent within one working day.</p>
             </div>
             <div className="rx-cell">
-              <h4>OXIEDO and investors</h4>
+              <h4>Founder: OXIEDO and investors</h4>
               <p><a href={`mailto:${links.founderEmail}`}>{links.founderEmail}</a></p>
               <p><a href={links.invest} target="_blank" rel="noreferrer">oxiedo.com/invest</a> · <a href={links.deck} target="_blank" rel="noreferrer">Investor deck (PDF)</a></p>
             </div>
@@ -360,8 +382,10 @@ export default function Home() {
               <p>Dhaka, Bangladesh</p>
             </div>
           </div>
+          <a className="ux-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </section>
+      </div>
     </SiteLayout>
   );
 }

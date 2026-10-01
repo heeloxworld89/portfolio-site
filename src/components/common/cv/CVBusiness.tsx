@@ -22,14 +22,14 @@ const sectors = [
   { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A bank whose model cannot clear SR 26-2 validation' },
   { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital whose approved model may never be updated' },
   { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A controller facing erasure against trained weights' },
-  { n: 'Defense & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
+  { n: 'Defence & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
 ];
 
 const position = [
-  { k: 'Stage',     v: 'Pre-revenue. Early conversations with model-risk and compliance teams are under way; no pilots signed.' },
+  { k: 'Stage',     v: 'Pre-revenue; licensing model defined. Conversations with model-risk and compliance teams are under way; no pilots signed yet.' },
   { k: 'Entity',    v: 'Delaware C-corporation in formation; the ORMAS IP is held by the founder and will be assigned to it.' },
-  { k: 'Evidence',  v: 'All results to date are on CIFAR-10 and CIFAR-100. Validation on clinical, financial or defence data requires a data-custodian partner.' },
-  { k: 'Team',      v: 'Founder-led. Building the team is the first use of funds, starting with a research engineer.' },
+  { k: 'Evidence',  v: 'ORMAS results to date are on CIFAR-10 and CIFAR-100: 383 experiments, reproducible from seed. Validation on clinical, financial or defence data is the next step and requires a data-custodian partner.' },
+  { k: 'Team',      v: 'Founder-led: Raadh invented ORMAS and wrote its 16,316-line PyTorch codebase. The first use of funds is a research engineer.' },
 ];
 
 export default function CVBusiness() {
@@ -40,117 +40,117 @@ export default function CVBusiness() {
       id="oxiedo"
       phase="now"
       eyebrow="OXIEDO · The Business"
-      title="OXIEDO: auditable AI training for regulated industries."
+      title="OXIEDO lets regulated industries train AI on data they already own."
       lead={
         <>
-          Hospital records, bank ledgers, assay runs and licensed corpora are among the most valuable data
-          in existence, and much of it cannot be used for training, because conventional models cannot
-          account for what they learned from it.{' '}<strong>From December 2027, the EU AI Act requires
-          high-risk AI to keep records and survive validation.</strong> OXIEDO licenses ORMAS, which
-          produces that record during training rather than reconstructing it afterwards. Raadh founded the
-          company in 2023.
+          OXIEDO, founded by Raadh in 2023, licenses ORMAS on-premise to banks, hospitals and other
+          regulated institutions. Their records are among the most valuable training data in existence, and
+          most of it sits unused, because conventional models cannot account for what they learned from it.
+          ORMAS writes that account during training: the <strong>Model Change Record</strong>, a
+          tamper-evident log of every weight change in a run.{' '}<strong>It is built for SR 26-2 model-risk
+          validation and for the EU AI Act&apos;s high-risk record-keeping obligations, which apply from
+          December 2027.</strong>
         </>
       }
       meta={[
-        { k: 'Status', v: 'Live · oxiedo.com' },
+        { k: 'Status', v: 'Pre-revenue · licence defined' },
         { k: 'Founded', v: '2023' },
-        { k: 'Product', v: 'One licence' },
-        { k: 'Sectors', v: 'Five' },
+        { k: 'Lead product', v: 'Model Change Record' },
+        { k: 'Markets', v: 'Five regulated' },
       ]}
     >
       <style>{`
-        .bz-cta {
-          display: flex; align-items: center; justify-content: space-between;
-          gap: 24px; flex-wrap: wrap; text-decoration: none;
-          padding: 24px 28px; border-radius: 12px; margin-bottom: 40px;
-          border: 1px solid var(--pf-border);
-          border-left: 3px solid var(--pf-accent);
-          background: var(--pf-surface);
-          transition: border-color .25s, background .25s;
-        }
-        .bz-cta:hover { background: var(--pf-surface-2); border-color: var(--pf-border-2); border-left-color: var(--pf-accent); }
-        .bz-cta-l { min-width: 240px; flex: 1; }
-        .bz-cta-h { font-size: 17px; font-weight: 800; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.3px; }
-        .bz-cta-p { font-size: 14px; line-height: 1.6; color: var(--pf-ink-2); margin: 0; }
-        .bz-cta-b {
-          display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0;
-          padding: 14px 22px; border-radius: 8px;
-          font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
-          color: var(--pf-on-accent); background: var(--pf-accent); border: 1px solid var(--pf-accent);
-          transition: background .25s;
-        }
-        .bz-cta:hover .bz-cta-b { background: var(--pf-accent-2); }
-
         .bz-label {
-          font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: var(--pf-ink-3);
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
+          display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px;
+          font-size: 12px; font-weight: 800; letter-spacing: 1.6px; line-height: 1.5;
+          text-transform: uppercase; color: var(--pf-ink-2);
+          margin: 0 0 14px;
         }
+        .bz-step {
+          font-family: var(--rx-mono, ui-monospace, monospace); font-weight: 500;
+          font-size: 11px; letter-spacing: .08em; color: #fff; background: var(--pf-accent); padding: 3px 8px;
+        }
+        .bz-gap { height: 48px; }
 
         .bz-thesis {
           background: var(--pf-surface); border: 1px solid var(--pf-border);
-          border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
-          padding: 24px 28px; margin-bottom: 40px;
+          border-top: 3px solid var(--pf-accent);
+          padding: 26px 30px; margin-bottom: 48px;
         }
-        .bz-thesis p { font-size: 15px; line-height: 1.8; color: var(--pf-ink); margin: 0; }
+        .bz-thesis p { font-size: 17px; line-height: 1.7; color: var(--pf-ink-2); margin: 0; max-width: 72ch; }
         .bz-thesis strong { color: var(--pf-ink); font-weight: 700; }
 
-        .bz-sectors { display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
-        .bz-sector { display: grid; grid-template-columns: 220px 1fr; gap: 18px; background: var(--pf-surface); padding: 15px 20px; }
-        .bz-sector-n { font-size: 14px; font-weight: 700; color: var(--pf-ink); }
-        .bz-sector-q { font-size: 14px; color: var(--pf-ink-2); line-height: 1.6; }
-        .bz-sector-w { font-size: 12px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 3px; }
-        @media (max-width: 640px) { .bz-sector { grid-template-columns: 1fr; gap: 4px; } }
+        .bz-sectors { display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); margin-bottom: 48px; }
+        .bz-sector { display: grid; grid-template-columns: 240px 1fr; gap: 24px; background: var(--pf-surface); padding: 16px 22px; }
+        .bz-sector-n { font-size: 15px; font-weight: 700; color: var(--pf-ink); }
+        .bz-sector-q { font-size: 16px; color: var(--pf-ink); line-height: 1.55; }
+        .bz-sector-w { font-size: 14px; color: var(--pf-ink-3); line-height: 1.55; margin-top: 3px; }
+        @media (max-width: 640px) { .bz-sector { grid-template-columns: 1fr; gap: 4px; padding: 16px 18px; } }
 
-        .bz-pos { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
-        .bz-pos-row { display: grid; grid-template-columns: 150px 1fr; gap: 20px; background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 16px 22px; }
-        .bz-pos-k { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pf-ink-3); padding-top: 2px; }
-        .bz-pos-v { font-size: 14px; line-height: 1.7; color: var(--pf-ink-2); }
-        @media (max-width: 640px) { .bz-pos-row { grid-template-columns: 1fr; gap: 6px; } }
+        .bz-pos { display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); margin-bottom: 32px; }
+        .bz-pos-row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; background: var(--pf-surface); padding: 16px 22px; }
+        .bz-pos-k {
+          font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; font-weight: 500;
+          letter-spacing: .08em; text-transform: uppercase; color: var(--pf-accent); padding-top: 3px;
+        }
+        .bz-pos-v { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); max-width: 75ch; }
+        @media (max-width: 640px) { .bz-pos-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; } }
+
+        .bz-next { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; }
+        @media (max-width: 900px) { .bz-next { grid-template-columns: 1fr; } }
 
         .bz-deck {
-          display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px;
-          padding: 18px 22px;
+          display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
+          background: linear-gradient(135deg, #082f39, #0b404d 55%, #155e5a);
+          padding: 26px 28px;
         }
-        .bz-deck-t { font-size: 14px; color: var(--pf-ink-2); flex: 1; min-width: 220px; line-height: 1.6; }
-        .bz-deck-t strong { color: var(--pf-ink); font-weight: 600; }
-        .bz-deck-b {
-          display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-          padding: 11px 18px; border-radius: 7px;
-          font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
-          color: var(--pf-ink); background: rgba(var(--pf-ink-rgb), 0.06); border: 1px solid var(--pf-border-2);
-          transition: background .22s, border-color .22s, color .22s;
+        .bz-deck-t { font-size: 16px; color: rgba(251, 251, 249, .86); line-height: 1.65; }
+        .bz-deck-t strong { color: #fbfbf9; font-weight: 700; }
+        .rx .bz-deck .bz-deck-b {
+          display: inline-flex; width: auto; align-self: flex-start; align-items: center; gap: 10px; cursor: pointer; min-height: 46px;
+          padding: 12px 22px; border: 1px solid #d8ee96; background: #d8ee96; color: #0b404d;
+          font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+          transition: background .2s, color .2s;
         }
-        .bz-deck-b:hover { background: rgba(var(--pf-ink-rgb), 0.13); border-color: rgba(var(--pf-ink-rgb), 0.5); color: var(--pf-ink); }
+        .rx .bz-deck .bz-deck-b:hover { background: transparent; color: #d8ee96; }
 
-        @media (prefers-reduced-motion: reduce) { .bz-cta:hover { transform: none; } }
+        .rx a.bz-cta, .bz-cta {
+          display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
+          gap: 18px; text-decoration: none; color: var(--pf-ink);
+          padding: 26px 28px; background: var(--pf-surface);
+          border: 1px solid var(--pf-border); border-top: 3px solid var(--pf-accent);
+          transition: border-color .2s, background .2s;
+        }
+        .rx a.bz-cta:hover { background: #fff; border-color: var(--pf-border-2); border-top-color: var(--pf-accent); color: var(--pf-ink); }
+        .bz-cta-l { display: block; }
+        .bz-cta-h { display: block; font-size: 18px; font-weight: 800; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.2px; }
+        .bz-cta-p { display: block; font-size: 15px; line-height: 1.6; color: var(--pf-ink-2); }
+        .bz-cta-b {
+          display: inline-flex; align-items: center; gap: 9px; min-height: 46px;
+          padding: 12px 20px; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+          color: #fff; background: var(--pf-accent); border: 1px solid var(--pf-accent);
+          transition: background .2s;
+        }
+        .bz-cta:hover .bz-cta-b { background: var(--rx-teal-2, #146273); }
       `}</style>
 
-      <a className="bz-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
-        <span className="bz-cta-l">
-          <h3 className="bz-cta-h">Full company details at oxiedo.com</h3>
-          <p className="bz-cta-p">
-            The product, licensing, pricing, sector coverage and full risk register are published on the
-            company site.
-          </p>
-        </span>
-        <span className="bz-cta-b">
-          oxiedo.com
-          <Icon name="externalLink" size={15} />
-        </span>
-      </a>
-
+      <p className="bz-label"><span className="bz-step">Problem</span></p>
       <div className="bz-thesis">
         <p>
           Institutions do not buy audit trails for their own sake. A hospital wants to train on its own
-          patient records without regulatory exposure. <strong>Transparency is the mechanism; the value is
-          access to data these institutions already own but cannot yet use.</strong> That distinction is
-          where many interpretability tools have struggled to find buyers.
+          patient records without regulatory exposure; a bank wants a model its validators can sign off.{' '}
+          <strong>Transparency is the mechanism; the value is access to data these institutions already own
+          but cannot yet use.</strong> Interpretability tools sell an explanation after the fact; OXIEDO
+          licenses the ability to train on that data in the first place.
         </p>
       </div>
 
-      <p className="bz-label">One question, five industries</p>
+      <p className="bz-label"><span className="bz-step">Product</span>On-premise by design: the data never leaves the building</p>
+      <OxidoVisualization />
+
+      <div className="bz-gap" />
+
+      <p className="bz-label"><span className="bz-step">Markets</span>Five regulated markets, one question regulators ask</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -163,12 +163,7 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label">Why deployment is on-premise</p>
-      <OxidoVisualization />
-
-      <div style={{ marginBottom: '40px' }} />
-
-      <p className="bz-label">Current position</p>
+      <p className="bz-label"><span className="bz-step">Position</span>Current position: pre-revenue, founder-led, no outside capital</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>
@@ -178,15 +173,31 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <div className="bz-deck">
-        <span className="bz-deck-t">
-          <strong>Investors:</strong> the round, the six milestones and the full risk register are at
-          oxiedo.com/invest. The investor deck (15 slides plus appendix, September 2026) opens here.
-        </span>
-        <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
-          <Icon name="chart" size={15} />
-          Read the deck
-        </button>
+      <div className="bz-next">
+        <div className="bz-deck">
+          <span className="bz-deck-t">
+            <strong>Investors:</strong> the round, the six milestones and the full risk register are at
+            oxiedo.com/invest. The investor deck (15 slides plus appendix, September 2026) opens here.
+          </span>
+          <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
+            <Icon name="fileText" size={15} />
+            Read the deck
+          </button>
+        </div>
+
+        <a className="bz-cta" href="https://oxiedo.com" target="_blank" rel="noreferrer">
+          <span className="bz-cta-l">
+            <span className="bz-cta-h">Product, licensing and pricing at oxiedo.com</span>
+            <span className="bz-cta-p">
+              OXIEDO&apos;s one on-premise ORMAS licence, sector coverage and full risk register are published on
+              the company site.
+            </span>
+          </span>
+          <span className="bz-cta-b">
+            oxiedo.com
+            <Icon name="externalLink" size={15} />
+          </span>
+        </a>
       </div>
 
       <VerticalModal

@@ -1,0 +1,20 @@
+/* Evidence page: a calm, scannable ledger of claims and sources. */
+.rx .ux-evidence .ev-jump { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 0 0 56px; }
+.rx .ux-evidence .ev-jump a { font-family: var(--rx-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--rx-teal); border: 1px solid var(--rx-line); padding: 10px 14px; min-height: 40px; display: inline-flex; align-items: center; }
+.rx .ux-evidence .ev-jump a:hover { background: var(--rx-teal); color: #fff; }
+.rx .ux-evidence .ev-group { margin: 0 0 72px; scroll-margin-top: 88px; }
+.rx .ux-evidence .ev-group > h2 { font-family: var(--rx-serif); font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; letter-spacing: -0.02em; color: var(--rx-ink); margin: 0 0 20px; padding-top: 18px; border-top: 1px solid var(--rx-line); }
+.rx .ux-evidence .ev-rows { list-style: none; margin: 0; padding: 0; }
+.rx .ux-evidence .ev-row { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; padding: 22px 0; border-bottom: 1px solid var(--rx-line-soft); margin: 0; }
+.rx .ux-evidence .ev-claim h3 { font-family: var(--rx-sans); font-weight: 700; font-size: 18px; line-height: 1.35; letter-spacing: 0; color: var(--rx-ink); margin: 8px 0 6px; }
+.rx .ux-evidence .ev-claim p { font-size: 15.5px; line-height: 1.65; color: var(--rx-ink-2); margin: 0; max-width: 64ch; }
+.rx .ux-evidence .ev-status { display: inline-block; font-family: var(--rx-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 8px; border: 1px solid var(--rx-line-soft); color: var(--rx-ink-2); }
+.rx .ux-evidence .ev-status.is-public { color: #1f6b43; background: rgba(62, 155, 98, .1); border-color: rgba(62, 155, 98, .4); }
+.rx .ux-evidence .ev-src { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 30px; }
+.rx .ux-evidence .ev-src a { font-size: 15px; font-weight: 600; color: var(--rx-teal); text-decoration: none; border-bottom: 1px solid var(--rx-line); padding: 6px 0; overflow-wrap: anywhere; }
+.rx .ux-evidence .ev-src a:hover { border-bottom-color: var(--rx-teal); }
+.rx .ux-evidence .ev-policy p { font-size: 16.5px; line-height: 1.7; color: var(--rx-ink-2); max-width: 70ch; margin: 0; }
+@media (max-width: 760px) {
+  .rx .ux-evidence .ev-row { grid-template-columns: 1fr; gap: 6px; }
+  .rx .ux-evidence .ev-src { padding-top: 4px; }
+}

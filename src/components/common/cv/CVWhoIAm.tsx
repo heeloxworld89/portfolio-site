@@ -17,22 +17,22 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '12',
     year: '2020',
     kind: 'venture',
-    title: 'First line of code',
-    body: 'Self-taught from the start, building each project just beyond his current skills: a habit formed before any formal computer science.',
+    title: 'Self-taught from age 12',
+    body: 'Self-taught from the start, building each project a step beyond his current skills: a habit formed before any formal computer science.',
   },
   {
     age: '12–17',
     year: '2020–25',
     kind: 'venture',
-    title: 'Five ventures, five distinct failure modes',
+    title: 'Five ventures between 12 and 17',
     body: 'Software services, cold-call automation, digital marketing, e-commerce and automation tooling. Each failed at a different layer, and together they pointed to one finding: the constraint was coordination, not individual capability.',
   },
   {
     age: '15',
     year: '2023',
     kind: 'proof',
-    title: 'Built and sold a stock-prediction system',
-    body: 'Sold for roughly $10,000. The proceeds funded the RTX 3090 that later ran all 383 ORMAS experiments.',
+    title: 'Sold a stock-prediction system for about $10,000',
+    body: 'Built and sold at 15. The proceeds funded the RTX 3090 that later ran all 383 ORMAS experiments.',
   },
   {
     age: '16–17',
@@ -59,8 +59,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'OXIEDO launches · DeepMath 2026 · NeurIPS reviewer',
-    body: 'The research becomes a company, licensing ORMAS to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.',
+    title: 'ORMAS breakthrough · DeepMath 2026 · NeurIPS reviewer',
+    body: 'OXIEDO, founded in 2023, gets its core technology: ORMAS, licensed to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.',
   },
 ];
 
@@ -304,12 +304,12 @@ export default function CVWhoIAm() {
       `}</style>
 
       <div className="col-12">
-        <span className="subtitle" style={{ color: 'var(--pf-ink-2)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
-          Profile
-        </span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
-          Founder, researcher and engineer, at <span className="age">18</span>
-        </h2>
+        <div className="sx-head">
+          <div className="sx-eyebrow">Profile</div>
+          <h2 className="sx-title">
+            Founder first: from a first venture at 12 to OXIEDO at <span className="age">18</span>
+          </h2>
+        </div>
 
         {/* ── The founder video carries the introduction itself — no filler
              copy beside it, and no separate lead paragraph above it. ── */}
@@ -327,11 +327,13 @@ export default function CVWhoIAm() {
               <Icon name="play" size={14} />
               Founder Introduction · 31 sec
             </div>
-            <h3 className="wi-why-h">Rokib Al Dhin Raadh: founder of OXIEDO, author of ORMAS.</h3>
+            <h3 className="wi-why-h">Five ventures, a new neural network architecture, and the company built on it.</h3>
             <p className="wi-why-p">
-              Raadh, <span className="age">18</span>, is based in Dhaka, Bangladesh. He founded five ventures between the ages of twelve and
-              seventeen and found they all failed for the same structural reason. Following that finding led him
-              from multi-agent systems to a new neural network architecture, and then to a company built on it.
+              Rokib Al Dhin Raadh, <span className="age">18</span>, is the founder and CEO of OXIEDO and the inventor of ORMAS, a
+              self-repairing neural network. Based in Dhaka, Bangladesh, he ran five ventures between the ages of 12
+              and 17 and sold a stock-prediction system for about $10,000 at 15. Tracing one structural cause across
+              those ventures led him to multi-agent systems (OXIMO), then to a new neural network architecture
+              (ORMAS), and then to a company built on it (OXIEDO).
             </p>
             <p className="wi-why-p">
               Two of the projects below are active, two are concluded and one is in specification.
@@ -394,7 +396,7 @@ export default function CVWhoIAm() {
         </div>
 
         <p className="wi-standing-note">
-          Recent milestones are in <a href="#recognition">Recent</a>. The five ventures are covered in{' '}
+          The ten 2026 selections are in <a href="#recognition">Recognition</a>. The five ventures are covered in{' '}
           <a href="/work#ventures">Ventures</a>, and credentials in <a href="#education">Education</a>.
         </p>
 

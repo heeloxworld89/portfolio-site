@@ -1,0 +1,146 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   /work: page-level layer. Everything is scoped to .ux-work.
+   The page is one arc (OXIEDO → OXIMO → Black Bloxie → Ventures), so the
+   job here is wayfinding and consistency across the four legacy sections.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Legacy tokens the .rx layer does not remap: pull them onto the palette. */
+.rx .ux-work {
+  --pf-ink-4: #8a9396;
+  --pf-accent-2: var(--rx-teal-2);
+  --pf-on-accent: #fff;
+  --pf-pos: #2f7f50;
+  --pf-pos-rgb: 47, 127, 80;
+  --pf-shadow-rgb: 11, 64, 77;
+}
+
+/* ── chapter bar: one slim row, same pattern as the About page ───────── */
+.ux-work .uw-chapters {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--rx-bg);
+  border-top: 1px solid var(--rx-line-soft);
+  border-bottom: 1px solid var(--rx-line-soft);
+  margin-bottom: 64px;
+}
+.ux-work .uw-ch-in { display: flex; align-items: center; gap: 28px; min-height: 54px; }
+.ux-work .uw-ch-k {
+  flex-shrink: 0; font-family: var(--rx-mono); font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--rx-ink-3);
+}
+.ux-work .uw-chapters ol {
+  display: flex; align-items: stretch; gap: 4px; list-style: none; margin: 0; padding: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.ux-work .uw-chapters ol::-webkit-scrollbar { display: none; }
+.ux-work .uw-chapters li { flex-shrink: 0; margin: 0; }
+.rx .ux-work .uw-chapters a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 54px; padding: 0 14px;
+  font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--rx-ink-2); text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color .2s, border-color .2s;
+}
+.ux-work .uw-ch-n { font-family: var(--rx-mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0; color: var(--rx-ink-3); }
+.ux-work .uw-ch-t { color: inherit; }
+.ux-work .uw-ch-s { display: none; }
+.ux-work .uw-chapters a.is-now .uw-ch-t::after {
+  content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: #3e9b62; margin-left: 8px; vertical-align: 2px;
+}
+.rx .ux-work .uw-chapters a:hover { color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active { color: var(--rx-teal); border-bottom-color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active .uw-ch-n { color: var(--rx-teal); }
+
+@media (max-width: 860px) {
+  .ux-work .uw-chapters { margin-bottom: 40px; }
+  .ux-work .uw-ch-k, .ux-work .uw-ch-n { display: none; }
+  .ux-work .uw-ch-in { min-height: 48px; padding-left: 0; padding-right: 0; }
+  .ux-work .uw-chapters ol {
+    padding: 0 8px;
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+  .rx .ux-work .uw-chapters a { min-height: 48px; padding: 0 10px; font-size: 14px; text-transform: none; letter-spacing: 0; }
+}
+
+/* ── section heads: numbered chapters, one meta strip treatment ──────── */
+.ux-work .rx-deep > .rx-wrap { counter-reset: uwch; }
+.ux-work .rx-deep > .rx-wrap > .row {
+  counter-increment: uwch;
+  scroll-margin-top: 84px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rx-line);
+}
+.ux-work .rx-deep > .rx-wrap > .row > .col-12 > hr { display: none; }
+.ux-work .rx-deep > .rx-wrap > .row:first-child { border-top: 0; padding-top: 0; }
+.rx .ux-work .rx-deep .mb--50 { margin-bottom: 104px !important; }
+
+.rx .ux-work .rx-deep .sx-eyebrow {
+  display: flex; align-items: baseline; gap: 14px;
+  font-family: var(--rx-mono); font-weight: 400; font-size: 12.5px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--rx-ink-2); margin-bottom: 18px;
+}
+.rx .ux-work .rx-deep .sx-eyebrow::before {
+  content: counter(uwch, decimal-leading-zero);
+  color: var(--rx-teal); font-weight: 600;
+}
+.rx .ux-work .rx-deep .sx-title { margin-bottom: 18px; }
+.rx .ux-work .rx-deep .sx-lead { font-size: 17.5px; line-height: 1.7; max-width: 70ch; color: var(--rx-ink-2); }
+.rx .ux-work .rx-deep .sx-head { margin-bottom: 40px; }
+
+.rx .ux-work .rx-deep .sx-meta {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px; background: var(--rx-line-soft); border: 1px solid var(--rx-line-soft);
+}
+.rx .ux-work .rx-deep .sx-meta-cell { padding: 14px 18px; }
+.rx .ux-work .rx-deep .sx-meta-k {
+  font-family: var(--rx-mono); font-weight: 400; font-size: 11px; letter-spacing: .08em; color: var(--rx-ink-3);
+}
+.rx .ux-work .rx-deep .sx-meta-v { font-size: 15.5px; font-weight: 700; line-height: 1.35; }
+/* the status cell reads as a status, the same way in every section that has one */
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v::before,
+.rx .ux-work #oximo .sx-meta-cell:first-child .sx-meta-v::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  margin-right: 8px; vertical-align: 2px;
+}
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v { color: #1f6b43; }
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v::before { background: #3e9b62; }
+.rx .ux-work #oximo .sx-meta-cell:first-child .sx-meta-v::before { background: transparent; border: 1.5px solid var(--rx-ink-3); }
+@media (max-width: 900px) {
+  .rx .ux-work .rx-deep .sx-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .rx .ux-work .rx-deep .sx-lead { font-size: 16.5px; }
+  .rx .ux-work .rx-deep .sx-meta-cell { padding: 12px 14px; }
+  .rx .ux-work .rx-deep .sx-meta-v { font-size: 14.5px; }
+}
+
+/* OXIEDO is the section investors come for: give it the clearest frame */
+.rx .ux-work #oxiedo .sx-meta { border-top: 3px solid var(--rx-teal); }
+
+/* ── ExpandableSection on this page: calm, square, no idle animation ─── */
+.ux-work .xps-toggle {
+  background: var(--rx-white); border: 1px solid var(--rx-line-soft);
+  border-top: 3px solid var(--rx-teal); box-shadow: none; padding: 20px 24px;
+}
+.ux-work .xps-toggle:hover { transform: none; box-shadow: none; border-color: var(--rx-line); border-top-color: var(--rx-teal); background: #fff; }
+.ux-work .xps-toggle::after, .ux-work .xps-icon::before { display: none; animation: none; }
+.ux-work .xps-icon { background: transparent; border-color: var(--rx-line-soft); color: var(--rx-teal); }
+.ux-work .xps-label { font-size: 17px; }
+.ux-work .xps-hint { font-size: 15px; }
+.ux-work .xps-chip {
+  font-family: var(--rx-mono); font-weight: 400; font-size: 11px; letter-spacing: .06em;
+  background: transparent; border-color: var(--rx-line-soft); color: var(--rx-ink-2);
+}
+.ux-work .xps-chev { border-color: var(--rx-line-soft); background: transparent; color: var(--rx-teal); }
+.ux-work .xps-action-word { font-family: var(--rx-mono); font-weight: 400; font-size: 11.5px; color: var(--rx-teal); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rx .ux-work .uw-chapters a { transition: none; }
+}
+
+/* The legacy theme sets body { overflow-x: hidden; overflow-y: auto }, which
+   makes <body> a (never-scrolling) scroll container and silently breaks every
+   position: sticky inside it. On this page only, clip instead: same visual
+   result, no scroll container, so the chapter bar can stick. */
+body:has(.ux-work) { overflow-x: clip; overflow-y: visible; }

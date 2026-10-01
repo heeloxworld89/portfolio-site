@@ -49,12 +49,33 @@ export default function EngineeringVisualization() {
     <div className="evz">
       <style>{`
         .evz-block {
-          background: var(--pf-bg); border: 1px solid var(--pf-border);
-          border-radius: 12px; padding: 22px 24px 20px; margin-bottom: 14px;
+          background: var(--pf-surface); border: 1px solid var(--pf-border);
+          border-top: 3px solid var(--pf-accent); padding: 24px 26px 22px; margin-bottom: 14px;
         }
-        .evz-h { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin: 0 0 4px; }
-        .evz-s { font-size: 12.5px; color: var(--pf-ink-2); line-height: 1.6; margin: 0 0 18px; max-width: 720px; }
+        .evz-h { font-family: var(--rx-sans, system-ui, sans-serif) !important; font-size: 19px; font-weight: 700; color: var(--pf-ink); margin: 0 0 6px; letter-spacing: -0.2px; }
+        .evz-s { font-size: 16px; color: var(--pf-ink-2); line-height: 1.65; margin: 0 0 20px; max-width: 72ch; }
         .evz-svg { width: 100%; height: auto; display: block; }
+
+        /* mobile: the spine becomes a numbered list, because 980px of SVG at 350px is unreadable */
+        .evz-stages-m { display: none; list-style: none; margin: 0; padding: 0; counter-reset: evz; }
+        .evz-stages-m li {
+          counter-increment: evz; margin: 0; display: grid; grid-template-columns: 34px 1fr; gap: 2px 10px;
+          padding: 11px 0; border-bottom: 1px solid var(--pf-border);
+        }
+        .evz-stages-m li::before {
+          content: counter(evz, decimal-leading-zero); grid-row: span 2;
+          font-family: var(--rx-mono, ui-monospace, monospace); font-size: 12px; color: var(--pf-ink-3); padding-top: 2px;
+        }
+        .evz-stages-m b { font-size: 15.5px; color: var(--pf-ink); }
+        .evz-stages-m span { font-size: 14px; color: var(--pf-ink-2); }
+        .evz-stages-m li.is-hot::before, .evz-stages-m li.is-hot b { color: var(--pf-accent); }
+        .evz-branch-m { display: none; font-size: 14px; font-weight: 700; color: var(--pf-accent); margin: 12px 0 0; }
+        @media (max-width: 700px) {
+          .evz-svg { display: none; }
+          .evz-stages-m, .evz-branch-m { display: block; }
+          .evz-stages-m li { display: grid; }
+          .evz-block { padding: 20px 18px 18px; }
+        }
 
         /* travelling signal on a straight spine */
         .evz-run { animation: evzRun 7s cubic-bezier(.45,0,.55,1) infinite; }
@@ -65,66 +86,62 @@ export default function EngineeringVisualization() {
           97%  { opacity: 0; }
           100% { transform: translateX(860px); opacity: 0; }
         }
-        /* current stage: a moving STROKE, never a fill over the label */
         .evz-ring { animation: evzRing 7s ease-out infinite; opacity: 0; }
         @keyframes evzRing {
           0%, 100% { opacity: 0; }
           6%, 17%  { opacity: 1; }
         }
 
-        .evz-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(226px, 1fr)); gap: 10px; margin-top: 16px; }
-        .evz-path { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 9px; padding: 15px 17px; }
-        .evz-path.is-hire { border-color: rgba(var(--pf-accent-rgb), 0.32); background: rgba(var(--pf-accent-rgb), 0.04); }
-        .evz-path-id { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: var(--pf-ink); margin-bottom: 4px; }
+        .evz-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(226px, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); margin-top: 18px; }
+        .evz-path { background: var(--pf-surface); padding: 16px 18px; }
+        .evz-path.is-hire { background: var(--pf-surface-2); box-shadow: inset 0 3px 0 var(--pf-accent); }
+        .evz-path-id { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 13px; font-weight: 600; color: var(--pf-ink); margin-bottom: 4px; }
         .evz-path.is-hire .evz-path-id { color: var(--pf-accent); }
-        .evz-path-cond { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 8px; }
-        .evz-path-flow { font-size: 12.5px; line-height: 1.6; color: var(--pf-ink-2); }
+        .evz-path-cond { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 8px; }
+        .evz-path-flow { font-size: 15px; line-height: 1.55; color: var(--pf-ink-2); }
 
-        .evz-fsm { display: flex; flex-direction: column; gap: 2px; }
+        .evz-fsm { display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); }
         .evz-fsm-step {
-          display: grid; grid-template-columns: 30px 158px 1fr; gap: 14px; align-items: baseline;
-          background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 13px 18px;
+          display: grid; grid-template-columns: 30px 170px 1fr; gap: 14px; align-items: baseline;
+          background: var(--pf-surface); padding: 13px 18px;
         }
-        .evz-fsm-step:first-child { border-radius: 9px 9px 0 0; }
-        .evz-fsm-step:last-child  { border-radius: 0 0 9px 9px; border-color: rgba(var(--pf-accent-rgb), 0.28); background: rgba(var(--pf-accent-rgb), 0.04); }
-        @media (max-width: 700px) { .evz-fsm-step { grid-template-columns: 30px 1fr; } .evz-fsm-d { grid-column: 2; } }
-        .evz-fsm-n {
-          width: 22px; height: 22px; border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          background: var(--pf-border); color: var(--pf-ink); font-size: 11px; font-weight: 700;
+        .evz-fsm-step:last-child { background: var(--pf-surface-2); box-shadow: inset 3px 0 0 var(--pf-accent); }
+        @media (max-width: 700px) {
+          .evz-fsm-step { grid-template-columns: 30px 1fr; gap: 2px 12px; padding: 12px 14px; }
+          .evz-fsm-d { grid-column: 2; }
         }
-        .evz-fsm-step:last-child .evz-fsm-n { background: rgba(var(--pf-accent-rgb), 0.18); color: var(--pf-accent); }
-        .evz-fsm-s { font-size: 13px; font-weight: 700; color: var(--pf-ink); font-family: ui-monospace, Menlo, monospace; }
-        .evz-fsm-d { font-size: 13px; line-height: 1.6; color: var(--pf-ink-2); }
+        .evz-fsm-n { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 12px; color: var(--pf-ink-3); }
+        .evz-fsm-step:last-child .evz-fsm-n { color: var(--pf-accent); }
+        .evz-fsm-s { font-size: 14px; font-weight: 600; color: var(--pf-ink); font-family: var(--rx-mono, ui-monospace, monospace); overflow-wrap: anywhere; }
+        .evz-fsm-d { font-size: 15px; line-height: 1.6; color: var(--pf-ink-2); }
 
         .evz-two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; }
         @media (max-width: 900px) { .evz-two { grid-template-columns: 1fr; } }
 
         .evz-mem-row {
-          display: grid; grid-template-columns: 82px 1fr; gap: 14px; align-items: center;
-          background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 8px; padding: 13px 16px; margin-bottom: 8px;
+          display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: center;
+          border-top: 1px solid var(--pf-border); padding: 12px 0;
         }
-        .evz-mem-row:last-child { margin-bottom: 0; }
-        .evz-mem-t { font-size: 12.5px; font-weight: 700; }
-        .evz-mem-s { font-size: 10px; color: var(--pf-ink-3); margin-top: 2px; }
-        .evz-mem-h { font-size: 12.5px; color: var(--pf-ink-2); line-height: 1.55; }
+        .evz-mem-row:last-of-type { border-bottom: 1px solid var(--pf-border); }
+        .evz-mem-t { font-size: 15px; font-weight: 700; }
+        .evz-mem-s { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11px; color: var(--pf-ink-3); margin-top: 2px; }
+        .evz-mem-h { font-size: 15px; color: var(--pf-ink-2); line-height: 1.55; }
 
-        .evz-cost-row { display: grid; grid-template-columns: 168px 1fr 62px; gap: 12px; align-items: center; margin-bottom: 10px; }
-        .evz-cost-row:last-child { margin-bottom: 0; }
-        .evz-cost-n { font-size: 12px; color: var(--pf-ink-2); line-height: 1.4; }
-        .evz-cost-row.is-best .evz-cost-n { color: var(--pf-pos); font-weight: 700; }
-        .evz-cost-track { height: 10px; background: rgba(var(--pf-ink-rgb), 0.05); border-radius: 5px; overflow: hidden; }
-        .evz-cost-fill { height: 100%; border-radius: 5px; background: var(--pf-ink-4); }
-        .evz-cost-fill.is-best { background: var(--pf-pos); }
-        .evz-cost-v { font-size: 12.5px; font-weight: 700; color: var(--pf-ink-2); text-align: right; }
-        .evz-cost-row.is-best .evz-cost-v { color: var(--pf-pos); }
-        @media (max-width: 620px) { .evz-cost-row { grid-template-columns: 1fr 52px; } .evz-cost-track { grid-column: 1 / -1; } }
+        .evz-cost-row { display: grid; grid-template-columns: 190px 1fr 64px; gap: 12px; align-items: center; margin-bottom: 12px; }
+        .evz-cost-n { font-size: 14px; color: var(--pf-ink-2); line-height: 1.4; }
+        .evz-cost-row.is-best .evz-cost-n { color: var(--pf-accent); font-weight: 700; }
+        .evz-cost-track { height: 10px; background: rgba(var(--pf-ink-rgb), 0.06); overflow: hidden; }
+        .evz-cost-fill { height: 100%; background: var(--pf-ink-3); }
+        .evz-cost-fill.is-best { background: var(--pf-accent); }
+        .evz-cost-v { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 13px; color: var(--pf-ink-2); text-align: right; }
+        .evz-cost-row.is-best .evz-cost-v { color: var(--pf-accent); font-weight: 700; }
+        @media (max-width: 620px) { .evz-cost-row { grid-template-columns: 1fr 60px; } .evz-cost-track { grid-column: 1 / -1; } }
 
         .evz-note {
-          font-size: 11.5px; line-height: 1.6; color: var(--pf-ink-3);
-          margin-top: 14px; padding-top: 11px; border-top: 1px solid var(--pf-surface-2);
+          font-size: 14.5px; line-height: 1.6; color: var(--pf-ink-2);
+          margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--pf-border);
         }
-        .evz-note strong { color: var(--pf-ink-2); font-weight: 600; }
+        .evz-note strong { color: var(--pf-ink); font-weight: 700; }
 
         @media (prefers-reduced-motion: reduce) {
           .evz-run, .evz-ring { animation: none; }
@@ -155,9 +172,9 @@ export default function EngineeringVisualization() {
 
           {stages.map((st, i) => (
             <g key={st.t}>
-              <rect x={st.x} y="36" width={STAGE_W} height="52" rx="9"
+              <rect x={st.x} y="36" width={STAGE_W} height="52" rx="0"
                     fill="var(--pf-surface)" stroke={st.hot ? 'rgba(var(--pf-accent-rgb), 0.42)' : 'var(--pf-border-2)'} strokeWidth="1.3" />
-              <rect className="evz-ring" x={st.x} y="36" width={STAGE_W} height="52" rx="9"
+              <rect className="evz-ring" x={st.x} y="36" width={STAGE_W} height="52" rx="0"
                     fill="none" stroke={st.hot ? 'var(--pf-accent)' : 'var(--pf-ink)'} strokeWidth="1.8"
                     style={{ animationDelay: `${i * 0.9}s` }} />
               <text x={st.x + STAGE_W / 2} y="59" textAnchor="middle" fill="var(--pf-ink)" fontSize="11.5" fontWeight="700">{st.t}</text>
@@ -167,10 +184,18 @@ export default function EngineeringVisualization() {
 
           {/* the branch, named once, centred under Execute */}
           <line x1="452" y1="88" x2="452" y2="104" stroke="rgba(var(--pf-accent-rgb), 0.42)" strokeWidth="1.2" />
-          <text x="452" y="119" textAnchor="middle" fill="var(--pf-accent-2)" fontSize="10" fontWeight="700">
+          <text x="452" y="119" textAnchor="middle" fill="var(--pf-accent)" fontSize="10" fontWeight="700">
             A1 · A2 · B1 · B2 — the B-paths hire a specialist mid-task
           </text>
         </svg>
+
+        <ol className="evz-stages-m">
+          <li><b>Task in</b><span>one sentence</span></li>
+          {stages.map((st) => (
+            <li key={st.t} className={st.hot ? 'is-hot' : undefined}><b>{st.t}</b><span>{st.s}</span></li>
+          ))}
+        </ol>
+        <p className="evz-branch-m">A1 · A2 · B1 · B2 — the B-paths hire a specialist mid-task</p>
 
         <div className="evz-paths">
           {paths.map((p) => (

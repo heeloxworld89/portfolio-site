@@ -39,10 +39,12 @@ export default function CVOriginStatement() {
       id="statement"
       phase="about"
       eyebrow="Personal Statement"
-      title="How the work is done, and what comes next."
+      title="Personal statement: from a first venture at 12 to DeepMath 2026 at 18."
       lead={
         <>
-          In his own words: the conditions behind the work, and the three resources the next phase requires.
+          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and self-funded,
+          and the three resources the next phase requires: multi-node compute, capacity to train Project Cherry,
+          and a control theorist.
         </>
       }
     >
@@ -262,8 +264,8 @@ export default function CVOriginStatement() {
           {[
             { v: '14–16 hrs', l: 'A normal working day' },
             { v: '28', l: 'Working days livestreamed' },
-            { v: '$0', l: 'External funding to date' },
-            { v: 'Solo', l: 'Research programme' },
+            { v: 'Self-funded', l: '$0 outside capital to date' },
+            { v: 'Solo', l: 'Sole author of ORMAS' },
             { v: '100%', l: 'IP ownership' },
           ].map((s, i) => (
             <div key={i} className="os-band-cell">
@@ -274,12 +276,21 @@ export default function CVOriginStatement() {
         </div>
 
         {/* ══ ACT IV ══════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
+        <div className="os-act">
           <div className="os-act-num">Part One</div>
-          <h3 className="os-act-title">How the Work Is Done</h3>
+          <h3 className="os-act-title">Built Alone, Self-Funded and on the Record</h3>
         </div>
 
         <div className="os-body">
+          <p className="os-p">
+            I started my first venture at 12 and ran five by 17. Each failed at a different layer, and together
+            they showed me the constraint was coordination, not individual capability. At 15 I built and sold a
+            stock-prediction system for about $10,000; that money bought the RTX 3090 that later ran every ORMAS
+            experiment. OXIMO was my answer to coordination. Running it on a live UK company for twelve months
+            showed that the models underneath could not learn from noisy production data, and ORMAS was my answer
+            to that. OXIEDO is the company that licenses it. At 18, its stability result was accepted at
+            DeepMath 2026.
+          </p>
           <p className="os-p">
             I have built this work independently, without a university, research group, advisor or external
             funding. Every experiment ran on hardware I paid for, and every architectural decision was my own.
@@ -292,7 +303,7 @@ export default function CVOriginStatement() {
           </p>
         </div>
 
-        <div style={{ marginTop: '26px' }}>
+        <div className="os-archive">
           <ExpandableSection
             closedLabel="Work archive and technical toolkit"
             hint="The 28 livestreamed working sessions, and the tools, frameworks and languages behind the three systems."
@@ -334,9 +345,9 @@ export default function CVOriginStatement() {
         <hr className="os-rule" />
 
         {/* ══ ACT V ═══════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
+        <div className="os-act">
           <div className="os-act-num">Part Two</div>
-          <h3 className="os-act-title">What the Next Phase Requires</h3>
+          <h3 className="os-act-title">Three Resources the Next Phase Requires</h3>
         </div>
 
         <div className="os-body">
@@ -350,32 +361,32 @@ export default function CVOriginStatement() {
           </p>
           <p className="os-p">
             What the company does next is set out at{' '}
-            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
+            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer">
               oxiedo.com
             </a>. The table below lists the three external resources that plan depends on.
           </p>
         </div>
 
-        <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', overflowX: 'auto', marginTop: '24px' }}>
+        <div className="os-needs-wrap">
           <table className="os-needs">
             <thead>
               <tr>
-                <th style={{ width: '32%' }}>Resource</th>
+                <th className="os-needs-c1">Resource</th>
                 <th>Why it matters</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Multi-node compute</td>
-                <td>The ORMAS protocol transfers to Transformers unchanged, as the mathematics is architecture-agnostic. Validation at that scale requires multi-node H100/A100 access.</td>
+                <td data-label="Why it matters">The ORMAS protocol is designed to transfer to Transformers unchanged, as the mathematics is architecture-agnostic. Demonstrating that at scale requires multi-node H100/A100 access.</td>
               </tr>
               <tr>
                 <td>Capacity to train Cherry</td>
-                <td>Pre-training a language model on the three-signal architecture builds structural correction into pre-training rather than adding it afterwards through RLHF. It is a compute-intensive programme beyond a single GPU.</td>
+                <td data-label="Why it matters">Pre-training a language model on the three-signal architecture builds structural correction into pre-training rather than adding it afterwards through RLHF. It is a compute-intensive programme beyond a single GPU.</td>
               </tr>
               <tr>
                 <td>A control theorist</td>
-                <td>The ISS characterization passed double-blind review at DeepMath 2026 by deep-learning theorists. The next step is scrutiny from control theory.</td>
+                <td data-label="Why it matters">The ISS characterization passed double-blind review at DeepMath 2026 by deep-learning theorists. The next step is scrutiny from control theory.</td>
               </tr>
             </tbody>
           </table>

@@ -35,9 +35,9 @@ const edges = [
 
 const compare: { k: string; std: string; cherry: string }[] = [
   { k: 'Parameters firing per query', std: 'All of them, every time', cherry: 'Only the specialists the router selects' },
-  { k: 'Learning after deployment', std: 'None — frozen at the cutoff', cherry: 'Continuous, in real time' },
+  { k: 'Learning after deployment', std: 'None — frozen at the cutoff', cherry: 'Continuous, by design' },
   { k: 'Gaining a new capability', std: 'Retrain the whole model', cherry: 'Grows a node — zero net perturbation' },
-  { k: 'What it forgets when it learns', std: '47.3% of the prior task retained', cherry: '94.6% retained' },
+  { k: 'What it forgets when it learns', std: '47.3% of the prior task retained', cherry: 'Built on ORMAS, which retains 94.6%' },
   { k: 'Where your data has to go', std: 'Out to somebody else’s servers', cherry: 'Never leaves your infrastructure' },
   { k: 'Seeing inside it', std: 'Approximated afterwards, if at all', cherry: 'Five telemetry layers, emitted natively' },
 ];
@@ -249,7 +249,7 @@ export default function CherryVisualization() {
 
         {/* ══ CHERRY ═════════════════════════════════════════════════ */}
         <div className="cvz-panel is-cherry">
-          <div className="cvz-eyebrow">What Cherry does instead</div>
+          <div className="cvz-eyebrow">What Cherry is designed to do</div>
           <h4 className="cvz-title">A Mesh That Learns While It Works</h4>
           <p className="cvz-sub">Many small specialists; only the relevant ones activate.</p>
 
@@ -345,7 +345,7 @@ export default function CherryVisualization() {
         <div className="cvz-tr is-head">
           <div className="cvz-th" />
           <div className="cvz-th std">Standard model</div>
-          <div className="cvz-th chr">Project Cherry</div>
+          <div className="cvz-th chr">Project Cherry (as specified)</div>
         </div>
         {compare.map((r) => (
           <div className="cvz-tr" key={r.k}>

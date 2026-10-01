@@ -6,8 +6,8 @@ export default function CVClosingAsk() {
       id="contact"
       phase="about"
       eyebrow="Contact"
-      title="Get in touch."
-      lead="Raadh welcomes enquiries from researchers, investors and engineers. Suggested starting points for each are below."
+      title="Review the research, reproduce the results, or discuss OXIEDO."
+      lead="Rokib Al Dhin Raadh, founder and CEO of OXIEDO, takes direct enquiries from researchers reviewing the ORMAS stability result, investors and partners in compute and regulated data, and engineers reproducing the 383 experiments. Each has a starting point below."
       last
     >
       <style>{`
@@ -112,7 +112,7 @@ export default function CVClosingAsk() {
         <div className="ask-grid">
           <div className="ask-card">
             <div className="ask-for">Researchers</div>
-            <div className="ask-audience">Review the stability result</div>
+            <div className="ask-audience">Stress-test the DeepMath 2026 stability result</div>
             <p className="ask-body">
               The preprint is on Zenodo, and the codebase reproduces the core claims in under an hour on a single GPU. Feedback on the ISS stability result, including potential errors or tighter bounds, is particularly welcome.
             </p>
@@ -124,7 +124,7 @@ export default function CVClosingAsk() {
 
           <div className="ask-card">
             <div className="ask-for">Investors and partners</div>
-            <div className="ask-audience">Compute and data partnerships</div>
+            <div className="ask-audience">Fund the next phase: compute and regulated data</div>
             <p className="ask-body">
               The next phase requires multi-node compute for Transformer-scale validation and a data partner with regulated data. The round, milestones and risk register are set out on the company site.
             </p>
@@ -148,7 +148,7 @@ export default function CVClosingAsk() {
         </div>
 
         <div className="ask-email-bar">
-          <span className="ask-email-label">Direct contact</span>
+          <span className="ask-email-label">Write to the founder directly</span>
           <a className="ask-email-link" href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>
           <span className="ask-email-note">Replies are typically sent within one working day.</span>
           <a className="ask-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
