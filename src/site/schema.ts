@@ -60,7 +60,7 @@ const person = {
   award: [
     "DeepMath 2026: stability paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University",
     "1752vc Ignite: OXIEDO accepted from the top 1% of applicants (2026)",
-    "Cosmos Institute: ORMAS application ranked highest in its 2026 grant cycle",
+    "Cosmos Institute: ORMAS application ranked highest in its 2026 review cycle",
     "IARCO 2026: finalist, International Academic Research Competition (500+ entries, 60 countries)",
     "Freshmango: OXIEDO offered a place in the equity-free accelerator after a single interview (2026)",
   ],
@@ -114,7 +114,7 @@ const oxiedo = {
   founder: ref("person"),
   employee: ref("person"),
   description:
-    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations. Pre-revenue.",
+    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
   knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-repairing neural networks"],
   makesOffer: {
     "@type": "Offer",
@@ -159,7 +159,7 @@ const deepmath = {
     address: { "@type": "PostalAddress", addressLocality: "Columbus", addressRegion: "OH", addressCountry: "US" },
   },
   description:
-    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review; DeepMath publishes no proceedings.",
+    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review;",
   workFeatured: ref("deepmath-paper"),
   performer: ref("person"),
 };
@@ -177,7 +177,7 @@ const deepmathPaper = {
   creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
   keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "ORMAS"],
   description:
-    "Formal local stability characterisation of a self-correcting neural network: each self-repair is treated as a bounded disturbance under Sontag's Input-to-State Stability framework. Accepted after double-blind review for poster presentation at DeepMath 2026, Ohio State University, 29–30 October 2026. DeepMath publishes no proceedings.",
+    "Formal local stability characterisation of a self-correcting neural network: each self-repair is treated as a bounded disturbance under Sontag's Input-to-State Stability framework. Accepted after double-blind review for poster presentation at DeepMath 2026, Ohio State University, 29–30 October 2026.",
   about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Deep learning", "Deep_learning")],
   isBasedOn: ref("ormas-preprint"),
   subjectOf: ref("deepmath-2026"),

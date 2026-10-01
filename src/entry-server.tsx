@@ -19,3 +19,4 @@ export async function render(url: string): Promise<string> {
   for await (const chunk of prelude) chunks.push(Buffer.from(chunk));
   return Buffer.concat(chunks).toString("utf8");
 }
+export { groups as evidence, evidenceChecked } from "./site/evidence";

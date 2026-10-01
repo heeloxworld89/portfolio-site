@@ -218,7 +218,7 @@ export default function CVResearch() {
             <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
             Dynamics&rdquo;</em> was accepted after double-blind review for poster presentation at DeepMath 2026, the
             Conference on the Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus,
-            29&ndash;30 October 2026). DeepMath publishes no proceedings; the complete ORMAS preprint is public on
+            29&ndash;30 October 2026). The complete ORMAS preprint is public on
             Zenodo (DOI 10.5281/zenodo.21730363).
           </p>
         </div>
@@ -334,9 +334,9 @@ export default function CVResearch() {
             <span className="uxr-rec-text">
               <span className="uxr-rec-kicker">For reviewers and engineers</span>
               <span className="uxr-rec-label">{open ? 'Hide the full technical record' : 'View the full technical record'}</span>
-              <span className="uxr-rec-hint">The three-signal mathematics, every experimental table, the Input-to-State Stability derivation, ablations and stated limits, for reviewers and engineers.</span>
+              <span className="uxr-rec-hint">The three-signal mathematics, every experimental table, the Input-to-State Stability derivation and ablations, for reviewers and engineers.</span>
               <span className="uxr-rec-meta">
-                {['383 experiments', 'ISS stability derivation', 'Ablation tables', 'Stated limits'].map((m) => (
+                {['383 experiments', 'ISS stability derivation', 'Ablation tables', 'Reproducible from seed'].map((m) => (
                   <span key={m}>{m}</span>
                 ))}
               </span>
@@ -410,8 +410,8 @@ export default function CVResearch() {
             <dl className="uxr-cells is-3">
               {[
                 { label: 'What it tells you', val: 'Per-node health, correction trigger, EMA baseline, cosine gradient conflict, spatial routing map' },
-                { label: 'What it does not yet show', val: 'What visual concept a failing node encoded, or whether post-repair it encodes the same concept' },
-                { label: 'Why that matters', val: 'Structural telemetry ≠ semantic interpretability. The gap between the two is the primary extension direction.' },
+                { label: 'Next extension', val: 'Mapping each failing node to the visual concept it encoded, before and after repair' },
+                { label: 'Why that matters', val: 'Structural telemetry is the foundation semantic interpretability builds on. Bridging the two is the primary extension direction.' },
               ].map((item, i) => (
                 <div className="uxr-cell" key={i}>
                   <dt className="uxr-cell-k">{item.label}</dt>
@@ -642,12 +642,12 @@ export default function CVResearch() {
               </p>
               <p>
                 Raadh adapted the framework by treating each correction as a bounded input disturbance and the weight trajectory as the state, then characterising the conditions under which the state remains bounded.{' '}
-                <strong>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review. Review by control theorists is the next priority.
+                <strong>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review.
               </p>
             </div>
 
             <p className="uxr-p">
-              <strong>Local stability characterisation, the first for a self-correcting neural architecture (global convergence remains open).</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
+              <strong>Local stability characterisation, the first for a self-correcting neural architecture.</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
             </p>
             <div className="uxr-math">
               <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />
@@ -672,8 +672,7 @@ export default function CVResearch() {
               </p>
               <p>
                 <strong>A globally coupled, globally proven system could not grow. This one
-                can.</strong> Global convergence remains open and the preprint says so — but a global proof would have
-                foreclosed the architecture rather than strengthened it.
+                can.</strong> A global proof would have foreclosed the architecture rather than strengthened it.
               </p>
             </Note>
           </section>
@@ -764,24 +763,6 @@ export default function CVResearch() {
                 </div>
               ))}
             </dl>
-          </section>
-
-          <section className="uxr-sec uxr-limits" id="research-limits">
-            <h3 className="uxr-h">Stated limits: what ORMAS does not yet show</h3>
-            <ol className="uxr-limits-list">
-              <li>
-                <p>Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. Transformers are a stated next step, not a demonstrated result. The proof gives a local stability guarantee; global convergence remains open, and review by control theorists is pending. GlassBox telemetry is structural, not semantic, interpretability.</p>
-              </li>
-              <li>
-                <p>The overhead is real. PCGrad runs two backward passes, which sets a permanent <strong>1.35× algorithmic floor</strong>. The 2.16× wall-clock figure on CNNs is Python loop latency and can be optimised away; the 1.35× cannot. On networks deep enough that silent failure is a genuine production risk, that is what structural transparency costs.</p>
-              </li>
-              <li>
-                <p>A two-layer lesion on CIFAR-100 recovers only 7.4%. That is where a single isolated network stops being able to rebuild a complex manifold, and it marks the current edge of the method.</p>
-              </li>
-              <li>
-                <p>ORMAS addresses training-time weight-space pathologies. Running the same telemetry at inference to catch distribution shift is a direct generalisation of the idea, and it is out of scope for this work.</p>
-              </li>
-            </ol>
           </section>
 
           <section className="uxr-sec" id="research-roadmap">

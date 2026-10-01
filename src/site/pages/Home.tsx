@@ -3,16 +3,16 @@ import SiteLayout from "../SiteLayout";
 import { links, news, publications } from "../data";
 import "../ux/home.css";
 
-type Mark = { name: string; logo?: string; word?: string; tag: string; note: string };
+type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: string; note: string };
 
 const L = "/assets/images/logos/";
 const marks: Mark[] = [
   { name: "DeepMath 2026", word: "DeepMath", tag: "Accepted · Double-Blind", note: "Stability paper on self-repairing neural networks accepted after double-blind review; poster at Ohio State" },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Reviewer for the Trustworthy AI for Good workshop, invited to judge submissions on AI auditing" },
-  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "ORMAS was the highest-ranked application in its grant cycle" },
+  { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Ranked First", note: "ORMAS was the highest-ranked application in its cycle" },
   { name: "1752vc Ignite", logo: L + "1752vc.png", tag: "Top 1%", note: "OXIEDO accepted to the Ignite cohort from the top 1% of applicants" },
-  { name: "Antler Australia", logo: L + "antler.svg", tag: "Cancelled · Work Permit", note: "In the programme process until it was cancelled over Australian work-permit logistics" },
   { name: "The Bridge", logo: L + "the-bridge.png", tag: "Holding · Final Round", note: "Entrepreneur First's San Francisco programme: through two interview rounds, holding in the final round" },
+  { name: "Onstage W26", word: "Onstage", sup: "W26", tag: "Invited · Pre-Pitch", note: "Invited to the W26 pre-pitch event in London; Onstage ranks founders by interest from 350 venture funds" },
   { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Invited by the talent team to a first-round interview in London" },
   { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after a single interview" },
   { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "International Academic Research Competition finalist, from 500+ entries across 60 countries" },
@@ -110,7 +110,7 @@ export default function Home() {
                   {m.logo ? (
                     <img src={m.logo} alt={m.name} loading="lazy" />
                   ) : (
-                    <span className="rx-logo-word">{m.word}<i>2026</i></span>
+                    <span className="rx-logo-word">{m.word}<i>{m.sup ?? "2026"}</i></span>
                   )}
                 </span>
                 <span className="rx-logo-note"><b>{m.name}</b>{m.note}</span>
@@ -324,7 +324,7 @@ export default function Home() {
               </div>
               <div className="foot">
                 ORMAS locates the damage within one epoch and recovers through 85 logged repairs; the baseline stays at
-                chance on every seed. Full tables, ablations and stated limits are on the research page.
+                chance on every seed. Full tables and ablations are on the research page.
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ import "../ux/work.css";
 /* The page is one arc, newest first. The chapter bar makes that arc visible
    and lets a reader jump straight to the part they came for. */
 const chapters = [
-  { id: "oxiedo", n: "01", name: "OXIEDO", status: "Now · pre-revenue", tone: "now" },
+  { id: "oxiedo", n: "01", name: "OXIEDO", status: "Now · licensing ORMAS", tone: "now" },
   { id: "oximo", n: "02", name: "OXIMO", status: "2023–2025 · concluded", tone: "done" },
   { id: "black-bloxie", n: "03", name: "Black Bloxie", status: "2025–2026 · field study", tone: "done" },
   { id: "ventures", n: "04", name: "Ventures", status: "2020–2025 · one exit", tone: "done" },

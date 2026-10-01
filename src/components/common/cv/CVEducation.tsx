@@ -168,8 +168,7 @@ export default function CVEducation() {
               While still in his final year of secondary school, Raadh completed seven programmes from MIT Open Learning,
               covering foundation models, AI in medicine, energy and transport, and AI entrepreneurship: the same
               regulated sectors OXIEDO now sells into. After an admissions call about his work, he was offered a 40%
-              scholarship on a further MIT programme, which he could not take up for financial and logistical
-              reasons.
+              scholarship on a further MIT programme.
             </p>
             <div className="mit-stats">
               <div><b>7</b><span>MIT programmes completed</span></div>

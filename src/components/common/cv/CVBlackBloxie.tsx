@@ -51,7 +51,7 @@ export default function CVBlackBloxie() {
       title="Removing OXIMO from a live UK company cut its output 91%."
       lead={
         <>
-          Black Bloxie LTD, incorporated in England and Wales on 11 September 2025 (company no. 16711223; his father is the registered director because Raadh was a minor at incorporation), was Raadh&apos;s
+          Black Bloxie LTD, incorporated in England and Wales on 11 September 2025 (company no. 16711223), was Raadh&apos;s
           twelve-month controlled field study of OXIMO on a live e-commerce company, with a real supplier and
           customers in ten countries.{' '}<strong>When he removed the system, output fell 91%; when he
           restored it, output recovered and overshot its original level.</strong> Revenue alone cannot show
