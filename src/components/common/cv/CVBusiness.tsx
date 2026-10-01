@@ -64,11 +64,11 @@ export default function CVBusiness() {
           display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px;
           font-size: 12px; font-weight: 800; letter-spacing: 1.6px; line-height: 1.5;
           text-transform: uppercase; color: var(--pf-ink-2);
-          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
+          margin: 0 0 14px;
         }
         .bz-step {
           font-family: var(--rx-mono, ui-monospace, monospace); font-weight: 500;
-          font-size: 11.5px; letter-spacing: .08em; color: var(--pf-accent);
+          font-size: 11px; letter-spacing: .08em; color: #fff; background: var(--pf-accent); padding: 3px 8px;
         }
         .bz-gap { height: 48px; }
 
@@ -106,13 +106,13 @@ export default function CVBusiness() {
         }
         .bz-deck-t { font-size: 16px; color: rgba(251, 251, 249, .86); line-height: 1.65; }
         .bz-deck-t strong { color: #fbfbf9; font-weight: 700; }
-        .bz-deck-b {
-          display: inline-flex; align-items: center; gap: 10px; cursor: pointer; min-height: 46px;
+        .rx .bz-deck .bz-deck-b {
+          display: inline-flex; width: auto; align-self: flex-start; align-items: center; gap: 10px; cursor: pointer; min-height: 46px;
           padding: 12px 22px; border: 1px solid #d8ee96; background: #d8ee96; color: #0b404d;
           font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
           transition: background .2s, color .2s;
         }
-        .bz-deck-b:hover { background: transparent; color: #d8ee96; }
+        .rx .bz-deck .bz-deck-b:hover { background: transparent; color: #d8ee96; }
 
         .rx a.bz-cta, .bz-cta {
           display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
@@ -134,7 +134,7 @@ export default function CVBusiness() {
         .bz-cta:hover .bz-cta-b { background: var(--rx-teal-2, #146273); }
       `}</style>
 
-      <p className="bz-label"><span className="bz-step">01 · Problem</span></p>
+      <p className="bz-label"><span className="bz-step">Problem</span></p>
       <div className="bz-thesis">
         <p>
           Institutions do not buy audit trails for their own sake. A hospital wants to train on its own
@@ -145,12 +145,12 @@ export default function CVBusiness() {
         </p>
       </div>
 
-      <p className="bz-label"><span className="bz-step">02 · Product</span>On-premise by design: the data never leaves the building</p>
+      <p className="bz-label"><span className="bz-step">Product</span>On-premise by design: the data never leaves the building</p>
       <OxidoVisualization />
 
       <div className="bz-gap" />
 
-      <p className="bz-label"><span className="bz-step">03 · Markets</span>Five regulated markets, one question regulators ask</p>
+      <p className="bz-label"><span className="bz-step">Markets</span>Five regulated markets, one question regulators ask</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -163,7 +163,7 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label"><span className="bz-step">04 · Position</span>Current position: pre-revenue, founder-led, no outside capital</p>
+      <p className="bz-label"><span className="bz-step">Position</span>Current position: pre-revenue, founder-led, no outside capital</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>

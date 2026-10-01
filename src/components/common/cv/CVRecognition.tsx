@@ -712,7 +712,7 @@ export default function CVRecognition() {
             <h3 className="rec-name">Accepted to Freshmango, the Equity-Free Accelerator</h3>
             <p className="rec-body">
               On 22 September Freshmango offered OXIEDO a place in its equity-free programme after a single
-              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>
+              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>{' '}
               and introductions across <strong>160 venture funds</strong>, with no equity or fees.
             </p>
             <div className="rec-stats">
@@ -743,7 +743,7 @@ export default function CVRecognition() {
             <h3 className="rec-name">Accepted to 1752vc Ignite from the Top 1% of Applicants</h3>
             <p className="rec-body">
               1752vc placed the application in the top 5% of its intake, then held a final round to select
-              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>
+              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>{' '}
               cohort, chosen from <strong>thousands of applications</strong> across three stages.
             </p>
             <div className="rec-stats">

@@ -34,7 +34,7 @@ const rungs = [
 
 /* The four phases at a glance, taken from the rung labels below. */
 const phases = [
-  { p: 'Phase 1', d: 'Aug–Oct 2025', t: 'Cold start · baseline', f: 'Baseline', tone: 'base' },
+  { p: 'Phase 1', d: 'Aug–Oct 2025', t: 'Cold start', f: 'Baseline', tone: 'base' },
   { p: 'Phase 2', d: 'Nov 2025–Feb 2026', t: 'System removed', f: '−91%', tone: 'down' },
   { p: 'Phase 3', d: 'Mar–Jul 2026', t: 'System restored', f: '+1,300%', tone: 'up' },
   { p: 'Phase 4', d: '13 Aug 2026', t: 'High-value test', f: '$4,386', tone: 'final' },
@@ -79,12 +79,12 @@ export default function CVBlackBloxie() {
           display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px;
           font-size: 12px; font-weight: 800; letter-spacing: 1.6px; line-height: 1.5;
           text-transform: uppercase; color: var(--pf-ink-2);
-          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
+          margin: 0 0 14px;
         }
 
         /* phase strip: the whole study on one line */
         .bb-phases { list-style: none; margin: 0 0 14px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); }
-        .bb-ph { position: relative; background: var(--pf-surface); padding: 18px 20px 20px; border-top: 3px solid var(--pf-ink-3); }
+        .bb-ph { margin: 0; position: relative; background: var(--pf-surface); padding: 18px 20px 20px; border-top: 3px solid var(--pf-ink-3); }
         .bb-ph.is-down { background: var(--pf-surface-2); border-top: 3px dashed var(--pf-ink-3); }
         .bb-ph.is-up { border-top-color: var(--pf-pos); }
         .bb-ph.is-final { border-top-color: var(--pf-accent); }
@@ -156,7 +156,7 @@ export default function CVBlackBloxie() {
         .bb-ladder-intro { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0 0 6px; max-width: 75ch; }
         .bb-ladder-tags { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 22px; font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-3); }
         .bb-ladder { list-style: none; margin: 0; padding: 0; position: relative; }
-        .bb-rung { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 0 18px; padding: 0 0 14px; }
+        .bb-rung { margin: 0; position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 0 18px; padding: 0 0 14px; }
         .bb-rung::before { content: ""; position: absolute; left: 27px; top: 0; bottom: 0; width: 1px; background: var(--pf-border-2); }
         .bb-rung:last-child::before { bottom: auto; height: 28px; }
         .bb-rung-n {

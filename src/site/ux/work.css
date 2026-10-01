@@ -27,7 +27,7 @@
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.ux-work .uw-chapters li { min-width: 0; }
+.ux-work .uw-chapters li { min-width: 0; margin: 0; }
 .rx .ux-work .uw-chapters a {
   display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 1px; align-items: baseline;
   height: 100%; padding: 14px 18px 13px 0;
@@ -57,8 +57,12 @@
   .ux-work .uw-chapters { margin-bottom: 44px; }
   .ux-work .uw-chapters .rx-wrap { padding: 0 16px; }
   .ux-work .uw-ch-s { display: none; }
-  .rx .ux-work .uw-chapters a { display: flex; flex-direction: column; gap: 0; padding: 10px 6px 10px 0; min-height: 48px; justify-content: center; }
+  .ux-work .uw-chapters ol { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .ux-work .uw-chapters ol::-webkit-scrollbar { display: none; }
+  .ux-work .uw-chapters li { flex: 1 0 auto; }
+  .rx .ux-work .uw-chapters a { display: flex; flex-direction: column; gap: 0; padding: 9px 10px 9px 0; min-height: 50px; justify-content: center; }
   .ux-work .uw-chapters li + li a { padding-left: 10px; }
+  .ux-work .uw-ch-t { overflow: visible; }
   .ux-work .uw-ch-n { font-size: 11px; }
   .ux-work .uw-ch-t { font-size: 13.5px; }
 }
@@ -72,6 +76,7 @@
   border-top: 1px solid var(--rx-line);
 }
 .ux-work .rx-deep > .rx-wrap > .row > .col-12 > hr { display: none; }
+.ux-work .rx-deep > .rx-wrap > .row:first-child { border-top: 0; padding-top: 0; }
 .rx .ux-work .rx-deep .mb--50 { margin-bottom: 104px !important; }
 
 .rx .ux-work .rx-deep .sx-eyebrow {

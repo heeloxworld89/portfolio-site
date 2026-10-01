@@ -85,11 +85,11 @@ export default function CVVentures() {
         .vn-label {
           font-size: 12px; font-weight: 800; letter-spacing: 1.6px;
           text-transform: uppercase; color: var(--pf-ink-2);
-          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
+          margin: 0 0 14px;
         }
 
         .vn-list { list-style: none; padding: 0; display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); margin: 0 0 48px; }
-        .vn-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; background: var(--pf-surface); padding: 22px 26px; }
+        .vn-row { margin: 0; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; background: var(--pf-surface); padding: 22px 26px; }
         .vn-num { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 13px; color: var(--pf-accent); padding-top: 3px; }
         .vn-top { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; margin-bottom: 8px; }
         .vn-title { font-size: 18px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; }

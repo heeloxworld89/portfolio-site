@@ -59,7 +59,7 @@ export default function EngineeringVisualization() {
         /* mobile: the spine becomes a numbered list, because 980px of SVG at 350px is unreadable */
         .evz-stages-m { display: none; list-style: none; margin: 0; padding: 0; counter-reset: evz; }
         .evz-stages-m li {
-          counter-increment: evz; display: grid; grid-template-columns: 34px 1fr; gap: 2px 10px;
+          counter-increment: evz; margin: 0; display: grid; grid-template-columns: 34px 1fr; gap: 2px 10px;
           padding: 11px 0; border-bottom: 1px solid var(--pf-border);
         }
         .evz-stages-m li::before {

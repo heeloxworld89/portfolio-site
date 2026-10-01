@@ -43,6 +43,16 @@ const tocIds = toc.map((t) => t.id);
 
 export default function AboutPage() {
   const active = useActiveSection(tocIds);
+  // On narrow screens the list scrolls sideways: keep the current item visible.
+  useEffect(() => {
+    const list = document.querySelector<HTMLElement>(".ab-toc-list");
+    const link = list?.querySelector<HTMLElement>(`a[href="#${active}"]`);
+    if (!list || !link || list.scrollWidth <= list.clientWidth) return;
+    const lr = list.getBoundingClientRect();
+    const kr = link.getBoundingClientRect();
+    const left = list.scrollLeft + (kr.left - lr.left) - (lr.width - kr.width) / 2;
+    list.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+  }, [active]);
   return (
     <SiteLayout>
       <div className="ux-about">

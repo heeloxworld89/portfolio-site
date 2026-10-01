@@ -16,10 +16,15 @@
 }
 
 /* Section anchors land below the sticky bar. */
-.ux-about .rx-deep [id] { scroll-margin-top: 76px; }
+.ux-about .rx-deep [id] { scroll-margin-top: 92px; }
 @media (prefers-reduced-motion: no-preference) {
   html:has(.ux-about) { scroll-behavior: smooth; }
 }
+
+/* The legacy theme sets overflow-x:hidden on <body>, which turns it into a
+   scroll container and silently disables position:sticky. On this page only,
+   clip instead (no scroll container, same no-horizontal-scroll guarantee). */
+body:has(.ux-about) { overflow-x: clip !important; overflow-y: visible !important; }
 
 /* ── On this page ──────────────────────────────────────────────────── */
 .ux-about .ab-toc {
@@ -53,6 +58,12 @@
 .ux-about .ab-toc-n { font-family: var(--rx-mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0; color: var(--rx-ink-3); }
 .ux-about .ab-toc-list a[aria-current="location"] .ab-toc-n { color: var(--rx-teal); }
 @media (max-width: 860px) {
+  .ux-about .ab-toc-n { display: none; }
+  .ux-about .ab-toc-list {
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+  .rx .ux-about .ab-toc-list a { text-transform: none; letter-spacing: 0; font-size: 14px !important; padding: 0 9px !important; }
   .ux-about .ab-toc-k { display: none; }
   .ux-about .ab-toc-in { padding-left: 0; padding-right: 0; }
   .ux-about .ab-toc-list { padding: 0 8px; }
@@ -64,6 +75,7 @@
 /* ── Section rhythm ────────────────────────────────────────────────── */
 .ux-about .rx-deep > .rx-wrap > .row { margin-bottom: 0 !important; padding-bottom: 24px; }
 .ux-about .rx-deep hr.my-5 { border: 0; border-top: 1px solid var(--rx-line) !important; opacity: 1; margin: 64px 0 72px !important; }
+@media (max-width: 700px) { .ux-about .rx-deep hr.my-5 { margin: 48px 0 52px !important; } }
 .ux-about .rx-deep .sx-head { margin-bottom: 40px; }
 .ux-about .rx-deep .sx-lead { max-width: var(--ab-measure); font-size: 17px; line-height: 1.7; color: var(--rx-ink-2); }
 .rx .ux-about .rx-deep .sx-title { margin: 0 0 18px; }
@@ -110,6 +122,8 @@
 .ux-about .rec-card:hover { border-color: var(--rx-line); border-top-color: var(--rx-teal); }
 .ux-about .rec-logo-row { margin-bottom: 22px; align-items: center; }
 .ux-about .rec-logo-chip,
+.ux-about .rec-logo-chip.on-white,
+.ux-about .rec-logo-chip.on-dark,
 .ux-about .rec-status-logo {
   height: 56px; min-height: 0; width: 176px; padding: 10px 16px;
   background: #fff; border: 1px solid var(--rx-line-soft);
@@ -117,6 +131,7 @@
 .ux-about .rec-logo-chip img,
 .ux-about .rec-logo-chip.on-ink img { height: 30px; max-width: 140px; }
 .ux-about .rec-logo-chip.on-ink { background: #0b404d; border-color: #0b404d; }
+.ux-about .rec-logo-chip img[src*="neurips"] { height: 40px; max-width: 150px; }
 .ux-about .rec-logo-chip.on-ink img { height: 36px; }
 .ux-about .rec-status-logo img { height: 26px; max-width: 140px; }
 .ux-about .rec-date svg { display: none; }
@@ -223,6 +238,11 @@
   background: var(--rx-white); border: 1px solid var(--rx-line-soft); border-top: 3px solid var(--rx-teal);
   padding: 30px 34px; margin-bottom: var(--ab-gap);
 }
+@media (min-width: 900px) {
+  .ux-about .rec-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
+  .ux-about .rec-verdict-lead { grid-column: 1 / -1; }
+  .ux-about .rec-verdict .rec-verdict-body { margin-bottom: 18px; }
+}
 .ux-about .rec-verdict-lead {
   font-family: var(--rx-serif); font-weight: 400; font-size: 26px; line-height: 1.2;
   color: var(--rx-teal); margin: 0 0 20px;
@@ -254,6 +274,11 @@
   .ux-about .rec-verify-body { min-width: 0; }
   .rx .ux-about .rx-deep a.rec-verify-cta { width: 100%; justify-content: center; white-space: normal; }
   .ux-about .rec-stat-val { font-size: 24px; }
+  .ux-about .rec-stats { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); }
+  .ux-about .rec-stat { padding-right: 10px; margin-right: 10px; }
+  .ux-about .rec-week-wall { gap: 6px; }
+  .ux-about .rec-week-mark { min-height: 36px; padding: 6px 10px; }
+  .ux-about .rec-week-mark.is-type { font-size: 13px; }
 }
 
 /* ── Who he is ─────────────────────────────────────────────────────── */
@@ -371,10 +396,9 @@
   font-family: var(--rx-serif); font-weight: 400; font-size: clamp(30px, 3vw, 42px);
   line-height: 1.08; letter-spacing: -0.015em; color: var(--rx-teal);
 }
-.ux-about .os-rule { border-top: 1px solid var(--rx-line-soft); margin: 64px 0 56px; }
+.ux-about .os-rule { border: 0; border-top: 1px solid var(--rx-line-soft); opacity: 1; color: transparent; margin: 64px 0 56px; max-width: var(--ab-measure); }
 .ux-about .os-body { max-width: var(--ab-measure); }
 .ux-about .os-p { font-size: 17px; line-height: 1.75; color: var(--rx-ink-2); margin: 0 0 1.25em; }
-.ux-about .os-p:first-child::first-line { color: var(--rx-ink); }
 .rx .ux-about .os-p a { color: var(--rx-teal); }
 .ux-about .os-archive { margin-top: 32px; }
 
@@ -402,7 +426,9 @@
   .ux-about .os-needs, .ux-about .os-needs tbody, .ux-about .os-needs tr, .ux-about .os-needs td { display: block; width: 100%; }
   .ux-about .os-needs tr { padding: 18px 20px; border-bottom: 1px solid var(--rx-line-soft); }
   .ux-about .os-needs tr:last-child { border-bottom: 0; }
-  .ux-about .os-needs td { padding: 0; border: 0; }
+  .ux-about .os-needs { min-width: 0 !important; }
+  .ux-about .os-needs td { padding: 0 !important; border: 0; font-size: 15px !important; }
+  .ux-about .os-needs td:first-child { font-size: 16px !important; }
   .ux-about .os-needs td:first-child { margin-bottom: 6px; }
 }
 
@@ -432,7 +458,7 @@
 .ux-about .edu-desc { font-size: 15.5px; line-height: 1.68; }
 
 .ux-about .mit-courses { gap: var(--ab-gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.rx .ux-about .rx-deep a.mit-course { min-height: 150px; }
+@media (min-width: 761px) { .rx .ux-about .rx-deep a.mit-course { min-height: 150px; } }
 .ux-about .mit-course-k { font-size: 11px; }
 .ux-about .mit-note { font-size: 13.5px; color: var(--rx-ink-2); margin: 14px 0 32px; }
 .ux-about .mit-more { gap: var(--ab-gap); margin-bottom: 64px; }

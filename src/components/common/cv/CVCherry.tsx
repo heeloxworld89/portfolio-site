@@ -18,6 +18,7 @@ const notThis = [
 export default function CVCherry() {
   return (
     <CVSection
+      last
       id="cherry"
       phase="now"
       eyebrow="Project Cherry · Next architecture · Fully specified"
@@ -37,62 +38,41 @@ export default function CVCherry() {
         { k: 'Results', v: 'None claimed until built' },
       ]}
     >
-      <style>{`
-        .cy-warn {
-          display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-          background: rgba(var(--pf-accent-rgb), 0.06); border: 1px solid rgba(var(--pf-accent-rgb), 0.3);
-          border-radius: 10px; padding: 16px 22px; margin-bottom: 36px;
-        }
-        .cy-warn-t {
-          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
-          color: var(--pf-accent); background: rgba(var(--pf-accent-rgb), 0.12);
-          border: 1px solid rgba(var(--pf-accent-rgb), 0.36); border-radius: 999px; padding: 4px 12px; flex-shrink: 0;
-        }
-        .cy-warn-v { font-size: 14.5px; line-height: 1.65; color: var(--pf-ink-2); flex: 1; min-width: 240px; }
+      <div className="uxr-body uxr-cherry">
+        <div className="uxr-unbuilt" role="note">
+          <span className="uxr-unbuilt-t">
+            <span className="uxr-unbuilt-dot" aria-hidden="true" />
+            Roadmap
+          </span>
+          <span className="uxr-unbuilt-v">
+            Every other figure on this page comes from a completed experiment. Project Cherry is a specified
+            design, so it reports no results of its own; the numbers it builds on are ORMAS&apos;s.
+          </span>
+        </div>
 
-        .cy-label {
-          font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: var(--pf-ink-3);
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
-        }
-        .cy-p { font-size: 15px; line-height: 1.85; color: var(--pf-ink-2); max-width: 760px; margin: 0 0 30px; }
-        .cy-p strong { color: var(--pf-ink); font-weight: 600; }
+        <p className="uxr-p">
+          ORMAS already provides the difficult part: a network that knows which components are failing, and by
+          how much, can be instructed to grow replacements. New components are introduced with zero net effect
+          on current behaviour, so existing capabilities are undisturbed while they learn.{' '}
+          <strong>This is how the fixed-capacity ceiling is removed.</strong>
+        </p>
 
-        .cy-not { display: flex; flex-direction: column; gap: 2px; }
-        .cy-not-row { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 17px 22px; }
-        @media (max-width: 700px) { .cy-not-row { grid-template-columns: 1fr; gap: 6px; } }
-        .cy-not-k { font-size: 13.5px; font-weight: 700; color: var(--pf-ink); }
-        .cy-not-v { font-size: 13.5px; line-height: 1.7; color: var(--pf-ink-2); }
-      `}</style>
+        <section className="uxr-sec" id="cherry-design">
+          <h3 className="uxr-h">How Project Cherry is designed to work</h3>
+          <CherryVisualization />
+        </section>
 
-      <div className="cy-warn">
-        <span className="cy-warn-t">Roadmap</span>
-        <span className="cy-warn-v">
-          Every other figure on this page comes from a completed experiment. Project Cherry is a specified
-          design, so it reports no results of its own; the numbers it builds on are ORMAS&apos;s.
-        </span>
-      </div>
-
-      <p className="cy-p">
-        ORMAS already provides the difficult part: a network that knows which components are failing, and by
-        how much, can be instructed to grow replacements. New components are introduced with zero net effect
-        on current behaviour, so existing capabilities are undisturbed while they learn.{' '}
-        <strong>This is how the fixed-capacity ceiling is removed.</strong>
-      </p>
-
-      <p className="cy-label">How Project Cherry is designed to work</p>
-      <CherryVisualization />
-
-      <div style={{ marginBottom: '40px' }} />
-
-      <p className="cy-label">How it differs from fine-tuning, LoRA and Mixture-of-Experts</p>
-      <div className="cy-not">
-        {notThis.map((n) => (
-          <div className="cy-not-row" key={n.k}>
-            <div className="cy-not-k">{n.k}</div>
-            <div className="cy-not-v">{n.v}</div>
-          </div>
-        ))}
+        <section className="uxr-sec" id="cherry-differs">
+          <h3 className="uxr-h">How it differs from fine-tuning, LoRA and Mixture-of-Experts</h3>
+          <dl className="uxr-defs is-wide">
+            {notThis.map((n) => (
+              <div className="uxr-def" key={n.k}>
+                <dt>{n.k}</dt>
+                <dd>{n.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
     </CVSection>
   );
