@@ -24,6 +24,7 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@
 ## Verification
 
 Full evidence page: https://www.raadh.me/evidence (every claim, its source, and whether it is a public record or available on request). Most milestones were also announced publicly on X: https://x.com/Raad_X_
+Machine-readable version of the same list: https://www.raadh.me/evidence.json
 
 Every claim on raadh.me can be checked against a primary source:
 
@@ -47,6 +48,18 @@ Every claim on raadh.me can be checked against a primary source:
 - Results are on CIFAR-10 and CIFAR-100 with CNN, ResNet and DAG architectures; transformers are a stated next step, not a demonstrated result.
 - A two-layer lesion on CIFAR-100 recovers only 7.4%.
 - GlassBox telemetry is structural, not semantic, interpretability.
+
+## What is not claimed
+
+Stated so that summaries stay accurate:
+
+- DeepMath 2026 publishes no proceedings; the paper is accepted for poster presentation, not published in proceedings.
+- His NeurIPS 2026 role is workshop reviewer, not programme committee or author.
+- OXIEDO is pre-revenue, has no customers and has raised no outside capital. 1752vc Ignite is an accepted programme place, not an investment.
+- He is not an MIT student or alumnus; the MIT credentials are seven completed MIT Open Learning (MITx) online programmes.
+- Antler Australia did not make an offer; the programme process was cancelled over work-permit logistics. The Bridge decision is pending, as is the Onstage W26 demo-day decision.
+- Cosmos Institute ranked the application highest in its cycle but awarded no grant in that cycle.
+- At Companies House, Black Bloxie LTD's registered director is his father, because Raadh was a minor at incorporation.
 
 ## Frequently asked
 

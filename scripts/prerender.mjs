@@ -104,4 +104,17 @@ const header = `# Rokib Al Dhin Raadh — full site text
 `;
 fs.writeFileSync(path.join(dist, "llms-full.txt"), header + text + "\n");
 
+// ── evidence.json: the /evidence page as structured data ───────────────────
+const { evidence, evidenceChecked } = await import(pathToFileURL(path.join(root, "dist-ssr/entry-server.js")).href);
+const claims = evidence.flatMap((g) => g.rows.map((r) => ({ section: g.title, claim: r.claim, detail: r.detail, status: r.status, sources: r.source ?? [] })));
+fs.writeFileSync(path.join(dist, "evidence.json"), JSON.stringify({
+  subject: "Rokib Al Dhin Raadh",
+  page: SITE + "/evidence",
+  lastChecked: evidenceChecked,
+  requestDocuments: "raadh@oxiedo.com",
+  summary: { claims: claims.length, publicRecord: claims.filter((c) => c.status === "Public record").length },
+  claims,
+}, null, 2) + "\n");
+console.log(`prerender: evidence.json (${claims.length} claims)`);
+
 console.log(`prerender: llms-full.txt ${(text.length / 1024).toFixed(0)} KB`);
