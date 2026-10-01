@@ -29,7 +29,7 @@ body:has(.ux-about) { overflow-x: clip !important; overflow-y: visible !importan
 /* ── On this page ──────────────────────────────────────────────────── */
 .ux-about .ab-toc {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(231, 231, 226, .94);
+  background: var(--rx-bg);
   -webkit-backdrop-filter: saturate(1.2) blur(8px);
   backdrop-filter: saturate(1.2) blur(8px);
   border-top: 1px solid var(--rx-line-soft);

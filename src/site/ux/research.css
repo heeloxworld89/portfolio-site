@@ -453,3 +453,29 @@
 @media (prefers-reduced-motion: reduce) {
   .ux-research .uxr-rec-chev, .rx .ux-research .uxr-toc a { transition: none; }
 }
+
+/* row headers: reading text, not legacy uppercase table chrome */
+.rx .ux-research .uxr-table tbody th {
+  font-family: var(--rx-sans); text-transform: none; letter-spacing: normal;
+}
+.rx .ux-research .uxr-table tbody th.is-code { font-family: var(--rx-mono); }
+.rx .ux-research .uxr-td-note { font-family: var(--rx-sans); text-transform: none; letter-spacing: normal; }
+.ux-research .uxr-limits-list li > p { grid-column: 2; margin: 0; }
+
+/* rail density: the full outline must fit a 900px-tall window */
+@media (min-width: 1180px) {
+  .ux-research .uxr-layout { grid-template-columns: 212px minmax(0, 1fr); gap: 52px; }
+  .rx .ux-research .uxr-toc a { padding-top: 4px; padding-bottom: 4px; font-size: 13px; }
+  .rx .ux-research .uxr-toc-list > li + li { margin-top: 3px; }
+  .rx .ux-research .uxr-toc-sub { margin-top: 1px; }
+  .rx .ux-research .uxr-toc-sub a { font-size: 12.5px; padding-top: 3px; padding-bottom: 3px; }
+}
+
+/* phones: size tables to their content so the figures appear in the first view */
+@media (max-width: 720px) {
+  .ux-research .uxr-table,
+  .ux-research .uxr-table.is-wide { width: max-content; min-width: 100%; }
+  .ux-research .uxr-table tbody th:not(.is-code) { width: 168px; min-width: 150px; white-space: normal; }
+  .ux-research .uxr-table td:not(.num) { min-width: 150px; }
+  .ux-research .uxr-table th, .ux-research .uxr-table td { font-size: 14px; }
+}

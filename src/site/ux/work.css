@@ -17,7 +17,7 @@
 /* ── chapter bar ──────────────────────────────────────────────────────── */
 .ux-work .uw-chapters {
   position: sticky; top: 0; z-index: 4;
-  background: rgba(231, 231, 226, .94);
+  background: var(--rx-bg); box-shadow: 0 8px 18px -14px rgba(11, 64, 77, .35);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   border-top: 1px solid var(--rx-line-soft);
   border-bottom: 1px solid var(--rx-line-soft);

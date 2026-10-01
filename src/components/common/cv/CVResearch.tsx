@@ -434,7 +434,7 @@ export default function CVResearch() {
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={noiseData} margin={{ top: 10, right: 16, left: -8, bottom: 6 }} barGap={4}>
                   <CartesianGrid stroke="rgba(11, 64, 77, 0.12)" vertical={false} />
-                  <XAxis dataKey="name" stroke="var(--rx-ink-2)" tick={{ fill: 'var(--rx-ink-2)', fontSize: 13 }} axisLine={{ stroke: 'rgba(11, 64, 77, 0.42)' }} tickLine={false} />
+                  <XAxis dataKey="name" interval={0} stroke="var(--rx-ink-2)" tick={{ fill: 'var(--rx-ink-2)', fontSize: 13 }} axisLine={{ stroke: 'rgba(11, 64, 77, 0.42)' }} tickLine={false} />
                   <YAxis stroke="var(--rx-ink-3)" tick={{ fill: 'var(--rx-ink-3)', fontSize: 12 }} domain={[0, 100]} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(11, 64, 77, 0.05)' }} />
                   <Legend iconType="square" wrapperStyle={{ paddingTop: '14px', fontSize: '13px', color: 'var(--rx-ink-2)' }} />
@@ -770,16 +770,16 @@ export default function CVResearch() {
             <h3 className="uxr-h">Stated limits: what ORMAS does not yet show</h3>
             <ol className="uxr-limits-list">
               <li>
-                Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. Transformers are a stated next step, not a demonstrated result. The proof gives a local stability guarantee; global convergence remains open, and review by control theorists is pending. GlassBox telemetry is structural, not semantic, interpretability.
+                <p>Validated on CNNs and DAGs. The <code>ORMASModel</code> protocol is architecture-agnostic by design, so extending to Transformers is a compute and integration problem rather than an architectural one. Transformers are a stated next step, not a demonstrated result. The proof gives a local stability guarantee; global convergence remains open, and review by control theorists is pending. GlassBox telemetry is structural, not semantic, interpretability.</p>
               </li>
               <li>
-                The overhead is real. PCGrad runs two backward passes, which sets a permanent <strong>1.35× algorithmic floor</strong>. The 2.16× wall-clock figure on CNNs is Python loop latency and can be optimised away; the 1.35× cannot. On networks deep enough that silent failure is a genuine production risk, that is what structural transparency costs.
+                <p>The overhead is real. PCGrad runs two backward passes, which sets a permanent <strong>1.35× algorithmic floor</strong>. The 2.16× wall-clock figure on CNNs is Python loop latency and can be optimised away; the 1.35× cannot. On networks deep enough that silent failure is a genuine production risk, that is what structural transparency costs.</p>
               </li>
               <li>
-                A two-layer lesion on CIFAR-100 recovers only 7.4%. That is where a single isolated network stops being able to rebuild a complex manifold, and it marks the current edge of the method.
+                <p>A two-layer lesion on CIFAR-100 recovers only 7.4%. That is where a single isolated network stops being able to rebuild a complex manifold, and it marks the current edge of the method.</p>
               </li>
               <li>
-                ORMAS addresses training-time weight-space pathologies. Running the same telemetry at inference to catch distribution shift is a direct generalisation of the idea, and it is out of scope for this work.
+                <p>ORMAS addresses training-time weight-space pathologies. Running the same telemetry at inference to catch distribution shift is a direct generalisation of the idea, and it is out of scope for this work.</p>
               </li>
             </ol>
           </section>
