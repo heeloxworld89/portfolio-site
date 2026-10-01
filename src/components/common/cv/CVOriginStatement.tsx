@@ -276,7 +276,7 @@ export default function CVOriginStatement() {
         </div>
 
         {/* ══ ACT IV ══════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
+        <div className="os-act">
           <div className="os-act-num">Part One</div>
           <h3 className="os-act-title">Built Alone, Self-Funded and on the Record</h3>
         </div>
@@ -303,7 +303,7 @@ export default function CVOriginStatement() {
           </p>
         </div>
 
-        <div style={{ marginTop: '26px' }}>
+        <div className="os-archive">
           <ExpandableSection
             closedLabel="Work archive and technical toolkit"
             hint="The 28 livestreamed working sessions, and the tools, frameworks and languages behind the three systems."
@@ -345,7 +345,7 @@ export default function CVOriginStatement() {
         <hr className="os-rule" />
 
         {/* ══ ACT V ═══════════════════════════════════════════════ */}
-        <div className="os-act" style={{ marginTop: '40px' }}>
+        <div className="os-act">
           <div className="os-act-num">Part Two</div>
           <h3 className="os-act-title">Three Resources the Next Phase Requires</h3>
         </div>
@@ -361,32 +361,32 @@ export default function CVOriginStatement() {
           </p>
           <p className="os-p">
             What the company does next is set out at{' '}
-            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer" style={{ color: 'var(--pf-ink)', textDecoration: 'underline' }}>
+            <a href="https://oxiedo.com/invest" target="_blank" rel="noreferrer">
               oxiedo.com
             </a>. The table below lists the three external resources that plan depends on.
           </p>
         </div>
 
-        <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', overflowX: 'auto', marginTop: '24px' }}>
+        <div className="os-needs-wrap">
           <table className="os-needs">
             <thead>
               <tr>
-                <th style={{ width: '32%' }}>Resource</th>
+                <th className="os-needs-c1">Resource</th>
                 <th>Why it matters</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Multi-node compute</td>
-                <td>The ORMAS protocol is designed to transfer to Transformers unchanged, as the mathematics is architecture-agnostic. Demonstrating that at scale requires multi-node H100/A100 access.</td>
+                <td data-label="Why it matters">The ORMAS protocol is designed to transfer to Transformers unchanged, as the mathematics is architecture-agnostic. Demonstrating that at scale requires multi-node H100/A100 access.</td>
               </tr>
               <tr>
                 <td>Capacity to train Cherry</td>
-                <td>Pre-training a language model on the three-signal architecture builds structural correction into pre-training rather than adding it afterwards through RLHF. It is a compute-intensive programme beyond a single GPU.</td>
+                <td data-label="Why it matters">Pre-training a language model on the three-signal architecture builds structural correction into pre-training rather than adding it afterwards through RLHF. It is a compute-intensive programme beyond a single GPU.</td>
               </tr>
               <tr>
                 <td>A control theorist</td>
-                <td>The ISS characterization passed double-blind review at DeepMath 2026 by deep-learning theorists. The next step is scrutiny from control theory.</td>
+                <td data-label="Why it matters">The ISS characterization passed double-blind review at DeepMath 2026 by deep-learning theorists. The next step is scrutiny from control theory.</td>
               </tr>
             </tbody>
           </table>

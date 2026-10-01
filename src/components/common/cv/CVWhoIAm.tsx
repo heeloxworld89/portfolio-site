@@ -304,12 +304,12 @@ export default function CVWhoIAm() {
       `}</style>
 
       <div className="col-12">
-        <span className="subtitle" style={{ color: 'var(--pf-ink-2)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '14px' }}>
-          Profile
-        </span>
-        <h2 className="title mb--20 fs-2" style={{ fontWeight: 800, color: 'var(--pf-ink)' }}>
-          Founder first: from a first venture at 12 to OXIEDO at <span className="age">18</span>
-        </h2>
+        <div className="sx-head">
+          <div className="sx-eyebrow">Profile</div>
+          <h2 className="sx-title">
+            Founder first: from a first venture at 12 to OXIEDO at <span className="age">18</span>
+          </h2>
+        </div>
 
         {/* ── The founder video carries the introduction itself — no filler
              copy beside it, and no separate lead paragraph above it. ── */}

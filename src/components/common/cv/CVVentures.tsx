@@ -70,51 +70,49 @@ export default function CVVentures() {
     >
       <style>{`
         .vn-exit {
-          display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center;
+          display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center;
           background: var(--pf-surface); border: 1px solid var(--pf-border);
-          border-left: 2px solid var(--pf-pos); border-radius: 0 10px 10px 0;
-          padding: 24px 28px; margin-bottom: 40px;
+          border-top: 3px solid var(--pf-accent);
+          padding: 26px 30px; margin-bottom: 48px;
         }
-        @media (max-width: 640px) { .vn-exit { grid-template-columns: 1fr; gap: 14px; } }
-        .vn-exit-v { font-size: 34px; font-weight: 800; color: var(--pf-pos); line-height: 1; letter-spacing: -1px; }
-        .vn-exit-k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pf-ink-3); margin-top: 8px; }
-        .vn-exit-h { font-size: 15.5px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; }
-        .vn-exit-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
-        .vn-exit-p strong { color: var(--pf-ink); font-weight: 600; }
+        @media (max-width: 640px) { .vn-exit { grid-template-columns: 1fr; gap: 14px; padding: 22px 20px; } }
+        .vn-exit-v { font-family: var(--rx-serif, Georgia, serif); font-size: 56px; font-weight: 400; color: var(--pf-accent); line-height: 1; letter-spacing: -0.02em; }
+        .vn-exit-k { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-3); margin-top: 10px; }
+        .rx .vn-exit-h { font-family: var(--rx-sans, system-ui, sans-serif); font-size: 19px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; letter-spacing: -0.2px; }
+        .vn-exit-p { font-size: 16.5px; line-height: 1.65; color: var(--pf-ink-2); margin: 0; max-width: 75ch; }
+        .vn-exit-p strong { color: var(--pf-ink); font-weight: 700; }
 
         .vn-label {
-          font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: var(--pf-ink-3);
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
+          font-size: 12px; font-weight: 800; letter-spacing: 1.6px;
+          text-transform: uppercase; color: var(--pf-ink-2);
+          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
         }
 
-        .vn-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
-        .vn-row {
-          display: grid; grid-template-columns: 44px 1fr; gap: 20px;
-          background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 20px 24px;
-        }
-        .vn-num { font-size: 12px; font-weight: 800; color: var(--pf-ink-4); font-family: ui-monospace, Menlo, monospace; padding-top: 3px; }
-        .vn-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
-        .vn-title { font-size: 15.5px; font-weight: 700; color: var(--pf-ink); }
-        .vn-age { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-ink-3); }
+        .vn-list { list-style: none; padding: 0; display: grid; gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); margin: 0 0 48px; }
+        .vn-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; background: var(--pf-surface); padding: 22px 26px; }
+        .vn-num { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 13px; color: var(--pf-accent); padding-top: 3px; }
+        .vn-top { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; margin-bottom: 8px; }
+        .vn-title { font-size: 18px; font-weight: 700; color: var(--pf-ink); line-height: 1.35; }
+        .vn-age { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--pf-ink-3); }
         .vn-broke {
-          display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 1.2px;
-          text-transform: uppercase; color: var(--pf-accent);
-          background: rgba(var(--pf-accent-rgb), 0.09); border: 1px solid rgba(var(--pf-accent-rgb), 0.28);
-          border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
+          display: inline-block; font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; font-weight: 500;
+          letter-spacing: .06em; text-transform: uppercase; color: var(--pf-accent); line-height: 1.4;
+          background: transparent; border: 1px solid var(--pf-border-2); padding: 4px 9px; margin-bottom: 10px;
         }
-        .vn-lesson { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
-        @media (max-width: 640px) { .vn-row { grid-template-columns: 1fr; gap: 8px; } .vn-num { display: none; } }
+        .vn-lesson { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0; max-width: 78ch; }
+        @media (max-width: 640px) {
+          .vn-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 18px; }
+        }
 
         .vn-finding {
-          background: var(--pf-surface); border: 1px solid var(--pf-border);
-          border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
-          padding: 26px 30px;
+          background: linear-gradient(135deg, #082f39, #0b404d 55%, #155e5a);
+          padding: 30px 32px;
         }
-        .vn-finding-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px; }
-        .vn-finding p { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink); margin: 0 0 14px; }
+        @media (max-width: 640px) { .vn-finding { padding: 24px 20px; } }
+        .vn-finding-k { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: #d8ee96; margin-bottom: 14px; }
+        .vn-finding p { font-size: 17px; line-height: 1.7; color: rgba(251, 251, 249, .86); margin: 0 0 14px; max-width: 75ch; }
         .vn-finding p:last-child { margin-bottom: 0; }
-        .vn-finding strong { color: var(--pf-ink); font-weight: 700; }
+        .vn-finding strong { color: #fbfbf9; font-weight: 700; }
       `}</style>
 
       <div className="vn-exit">
@@ -133,9 +131,9 @@ export default function CVVentures() {
       </div>
 
       <p className="vn-label">Five ventures, five limits found</p>
-      <div className="vn-list">
+      <ol className="vn-list">
         {ventures.map((v) => (
-          <div className="vn-row" key={v.n}>
+          <li className="vn-row" key={v.n}>
             <div className="vn-num">{v.n}</div>
             <div>
               <div className="vn-top">
@@ -145,9 +143,9 @@ export default function CVVentures() {
               <span className="vn-broke">Limit found: {v.broke}</span>
               <p className="vn-lesson">{v.lesson}</p>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
 
       <div className="vn-finding">
         <div className="vn-finding-k">What five ventures taught him</div>

@@ -529,6 +529,7 @@ export default function CVRecognition() {
 
         {/* ── The diary. Runs above the three-month record because it is the
              more current layer: these are live, dated, and named. ──────── */}
+        <div className="rec-label">Latest decision</div>
         <div className="rec-week">
           <div className="rec-week-banner">
             <div className="rec-week-top">
@@ -615,6 +616,7 @@ export default function CVRecognition() {
           </div>
         </div>
 
+        <div className="rec-label">2026, month by month</div>
         <div className="rec-run">
           {[
             { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
@@ -634,6 +636,7 @@ export default function CVRecognition() {
           ))}
         </div>
 
+        <div className="rec-label">The selections</div>
         <div className="rec-grid">
           {/* NeurIPS — AI4GOOD workshop reviewer */}
           <div className="rec-card">
@@ -827,7 +830,9 @@ export default function CVRecognition() {
 
         {/* Antler Australia — in the programme process; cancelled because participation
             needs an Australian work permit. A logistics boundary, not an assessment. */}
-        <div className="rec-secondary">
+        <div className="rec-label">Other processes</div>
+        <div className="rec-grid is-pair">
+        <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-white">
               <img src="/assets/images/logos/antler.svg" alt="Antler Australia" />
@@ -854,7 +859,7 @@ export default function CVRecognition() {
         </div>
 
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
-        <div className="rec-secondary">
+        <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
             <div className="rec-logo-chip on-dark">
               <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
@@ -903,7 +908,9 @@ export default function CVRecognition() {
             </div>
           </div>
         </div>
+        </div>
 
+        <div className="rec-label">In the final round</div>
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
@@ -938,6 +945,7 @@ export default function CVRecognition() {
           </span>
         </div>
 
+        <div className="rec-label">What it adds up to</div>
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">

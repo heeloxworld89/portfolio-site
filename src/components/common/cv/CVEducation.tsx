@@ -129,12 +129,12 @@ export default function CVEducation() {
       `}</style>
       <div>
         
-        <div style={{ display: "inline-block", padding: "10px 20px", background: "rgba(var(--pf-ink-rgb), 0.05)", borderRadius: "30px", marginBottom: "40px", border: "1px solid rgba(var(--pf-ink-rgb), 0.1)" }}>
-          <span style={{ color: "var(--pf-ink)", fontWeight: "600", fontSize: "16px" }}>12th Grade (Final Year) · Self-directed</span>
+        <div className="edu-status">
+          <span>12th Grade (Final Year) · Self-directed</span>
         </div>
         
         <div className="content">
-          <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--pf-ink-2)", marginBottom: "28px", maxWidth: "700px" }}>
+          <p className="edu-intro">
             Self-taught in machine learning, systems engineering and theoretical computer science, with a focus on underlying mechanisms. Each subject was learned because the work demanded it, including four well beyond software:
           </p>
           
@@ -224,29 +224,29 @@ export default function CVEducation() {
               </p>
             </div>
           </div>
-          <h4 className="fs-4" style={{ fontWeight: "700", color: "var(--pf-ink)", marginBottom: "20px" }}>Research over exam preparation, by choice</h4>
+          <h4 className="edu-sub">Research over exam preparation, by choice</h4>
 
           {/* Big statement */}
-          <div style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '10px', padding: '28px 32px', marginBottom: '16px' }}>
-            <p style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--pf-ink)', marginBottom: '12px', lineHeight: 1.4 }}>
+          <div className="edu-choice">
+            <p className="edu-choice-lead">
               A deliberate choice to prioritise research.
             </p>
-            <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'var(--pf-ink-2)', margin: 0 }}>
+            <p className="edu-choice-body">
               Work on the ISS characterization and OXIMO took priority over exam preparation. The results are recorded not in a transcript but in 383 experiments, 40,933 lines of production code, a public preprint and a peer-reviewed DeepMath 2026 acceptance.
             </p>
           </div>
 
           {/* Evidence stat strip */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', marginBottom: '40px' }}>
+          <div className="edu-figs">
             {[
               { val: '383', lbl: 'Controlled experiments' },
               { val: '40,933', lbl: 'Lines of production code' },
               { val: 'DeepMath 2026', lbl: 'Accepted · Poster' },
               { val: 'UK Ltd', lbl: 'Incorporated, England & Wales' },
             ].map((s, i) => (
-              <div key={i} style={{ background: 'var(--pf-surface)', border: '1px solid var(--pf-border)', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
-                <div style={{ fontSize: '16.5px', fontWeight: 800, color: 'var(--pf-ink)', lineHeight: 1.1, marginBottom: '4px' }}>{s.val}</div>
-                <div style={{ fontSize: '11px', color: 'var(--pf-ink-3)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>{s.lbl}</div>
+              <div key={i} className="edu-fig">
+                <div className="edu-fig-v">{s.val}</div>
+                <div className="edu-fig-l">{s.lbl}</div>
               </div>
             ))}
           </div>

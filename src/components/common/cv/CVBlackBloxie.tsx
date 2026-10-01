@@ -1,4 +1,3 @@
-import ExpandableSection from '../ExpandableSection';
 import CVSection from './CVSection';
 
 /**
@@ -33,6 +32,16 @@ const rungs = [
   { n: '07', phase: 'Phase 4 · 13 Aug 2026 · High-value test', q: 'Can it close a high-value transaction, or does trust break at the price point?', a: 'The residual objection: low-consideration purchases are easy. So the final phase listed high-value inventory and let the architecture run the entire funnel unassisted — discovery, positioning, objection handling, close.', v: 'A $4,386 order closed at $0.00 acquisition cost.' },
 ];
 
+/* The four phases at a glance, taken from the rung labels below. */
+const phases = [
+  { p: 'Phase 1', d: 'Aug–Oct 2025', t: 'Cold start · baseline', f: 'Baseline', tone: 'base' },
+  { p: 'Phase 2', d: 'Nov 2025–Feb 2026', t: 'System removed', f: '−91%', tone: 'down' },
+  { p: 'Phase 3', d: 'Mar–Jul 2026', t: 'System restored', f: '+1,300%', tone: 'up' },
+  { p: 'Phase 4', d: '13 Aug 2026', t: 'High-value test', f: '$4,386', tone: 'final' },
+];
+
+const rungTone = (n: string) => (n === '07' ? 'final' : n === '03' || n === '04' ? 'down' : n === '05' || n === '06' ? 'up' : 'base');
+
 export default function CVBlackBloxie() {
   return (
     <CVSection
@@ -57,80 +66,135 @@ export default function CVBlackBloxie() {
       ]}
     >
       <style>{`
+        .bb-mono { font-family: var(--rx-mono, ui-monospace, monospace); }
         .bb-note {
+          display: flex; gap: 14px; align-items: baseline;
           background: var(--pf-surface); border: 1px solid var(--pf-border);
-          border-left: 2px solid var(--pf-ink-4); border-radius: 0 10px 10px 0;
-          padding: 20px 24px; margin-bottom: 36px;
+          border-top: 3px solid var(--pf-ink-3); padding: 18px 24px; margin-bottom: 28px;
         }
-        .bb-note p { font-size: 15px; line-height: 1.75; color: var(--pf-ink-2); margin: 0; }
-        .bb-note strong { color: var(--pf-ink); font-weight: 600; }
-
-        .bb-headline { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; }
-        @media (max-width: 700px) { .bb-headline { grid-template-columns: 1fr; } }
-        .bb-hcell { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px; padding: 24px 26px; }
-        .bb-hcell.down { border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0; }
-        .bb-hcell.up   { border-left: 2px solid var(--pf-pos); border-radius: 0 10px 10px 0; }
-        .bb-hv { font-size: 38px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; margin-bottom: 8px; }
-        .bb-hcell.down .bb-hv { color: var(--pf-accent); }
-        .bb-hcell.up   .bb-hv { color: var(--pf-pos); }
-        .bb-hl { font-size: 14px; font-weight: 700; color: var(--pf-ink); margin-bottom: 4px; }
-        .bb-hs { font-size: 13px; color: var(--pf-ink-3); line-height: 1.6; }
+        .bb-note p { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0; }
+        .bb-note strong { color: var(--pf-ink); font-weight: 700; }
 
         .bb-label {
-          font-size: 11px; font-weight: 800; letter-spacing: 2px;
-          text-transform: uppercase; color: var(--pf-ink-3);
-          margin: 0 0 16px; padding-bottom: 9px; border-bottom: 1px solid var(--pf-border);
+          display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px;
+          font-size: 12px; font-weight: 800; letter-spacing: 1.6px; line-height: 1.5;
+          text-transform: uppercase; color: var(--pf-ink-2);
+          margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--pf-border);
         }
 
-        .bb-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; }
-        @media (max-width: 820px) { .bb-tables { grid-template-columns: 1fr; } }
-        .bb-table { border: 1px solid var(--pf-border); border-radius: 10px; overflow: hidden; }
-        .bb-table-h {
-          padding: 12px 18px; background: rgba(var(--pf-ink-rgb), 0.02); border-bottom: 1px solid var(--pf-border);
-          font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pf-ink-3);
+        /* phase strip: the whole study on one line */
+        .bb-phases { list-style: none; margin: 0 0 14px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); }
+        .bb-ph { position: relative; background: var(--pf-surface); padding: 18px 20px 20px; border-top: 3px solid var(--pf-ink-3); }
+        .bb-ph.is-down { background: var(--pf-surface-2); border-top: 3px dashed var(--pf-ink-3); }
+        .bb-ph.is-up { border-top-color: var(--pf-pos); }
+        .bb-ph.is-final { border-top-color: var(--pf-accent); }
+        .bb-ph-p { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-3); }
+        .bb-ph-d { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 12px; color: var(--pf-ink-2); margin-top: 2px; }
+        .bb-ph-t { font-size: 16px; font-weight: 700; color: var(--pf-ink); margin-top: 10px; line-height: 1.3; }
+        .bb-ph-f { font-family: var(--rx-serif, Georgia, serif); font-size: 38px; line-height: 1; margin-top: 12px; color: var(--pf-ink-2); letter-spacing: -0.01em; }
+        .bb-ph.is-down .bb-ph-f { color: var(--pf-ink); }
+        .bb-ph.is-up .bb-ph-f { color: var(--pf-pos); }
+        .bb-ph.is-final .bb-ph-f { color: var(--pf-accent); }
+        .bb-ph:not(:last-child)::after {
+          content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); z-index: 1;
+          width: 17px; height: 17px; display: flex; align-items: center; justify-content: center;
+          font-size: 11px; line-height: 1; color: var(--pf-ink-3); background: var(--pf-bg); border: 1px solid var(--pf-border);
         }
-        .bb-tr { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 18px; background: var(--pf-surface); border-bottom: 1px solid rgba(var(--pf-ink-rgb), 0.04); }
+        @media (max-width: 820px) {
+          .bb-phases { grid-template-columns: 1fr 1fr; }
+          .bb-ph:nth-child(2)::after { display: none; }
+        }
+        @media (max-width: 480px) {
+          .bb-phases { grid-template-columns: 1fr; }
+          .bb-ph { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: end; padding: 14px 16px; }
+          .bb-ph-f { grid-column: 2; grid-row: 1 / span 3; margin: 0; font-size: 32px; }
+          .bb-ph-t { margin-top: 6px; }
+          .bb-ph::after { display: none !important; }
+        }
+
+        .bb-headline { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        @media (max-width: 700px) { .bb-headline { grid-template-columns: 1fr; } }
+        .bb-hcell { background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 22px 26px; }
+        .bb-hcell.down { border-top: 3px solid var(--pf-ink); }
+        .bb-hcell.up   { border-top: 3px solid var(--pf-pos); }
+        .bb-hv { font-family: var(--rx-serif, Georgia, serif); font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .bb-hcell.down .bb-hv { color: var(--pf-ink); }
+        .bb-hcell.up   .bb-hv { color: var(--pf-pos); }
+        .bb-hl { font-size: 16px; font-weight: 700; color: var(--pf-ink); margin-bottom: 4px; }
+        .bb-hs { font-size: 15px; color: var(--pf-ink-2); line-height: 1.6; }
+
+        .bb-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 48px; }
+        @media (max-width: 820px) { .bb-tables { grid-template-columns: 1fr; } }
+        .bb-table { border: 1px solid var(--pf-border); background: var(--pf-surface); }
+        .bb-table-h {
+          padding: 12px 18px; background: var(--pf-surface-2); border-bottom: 1px solid var(--pf-border);
+          font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-2);
+        }
+        .bb-tr { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 18px; border-bottom: 1px solid var(--pf-border); }
         .bb-tr:last-child { border-bottom: none; }
-        .bb-tm { font-size: 13.5px; color: var(--pf-ink); font-weight: 600; }
-        .bb-tn { font-size: 11.5px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 3px; }
-        .bb-tp { font-size: 15px; font-weight: 800; font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
-        .bb-table.down .bb-tp { color: var(--pf-accent); }
+        .bb-tm { font-size: 15px; color: var(--pf-ink); font-weight: 600; }
+        .bb-tn { font-size: 14px; color: var(--pf-ink-3); line-height: 1.5; margin-top: 2px; }
+        .bb-tp { font-size: 15px; font-weight: 600; font-family: var(--rx-mono, ui-monospace, monospace); white-space: nowrap; }
+        .bb-table.down .bb-tp { color: var(--pf-ink); }
         .bb-table.up   .bb-tp { color: var(--pf-pos); }
 
-        .bb-money { background: var(--pf-surface); border: 1px solid var(--pf-border); border-radius: 10px; padding: 24px 26px; margin-bottom: 40px; }
-        .bb-money-h { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin-bottom: 10px; }
-        .bb-money-p { font-size: 14.5px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 18px; }
-        .bb-money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); border-radius: 8px; overflow: hidden; }
-        .bb-money-cell { background: var(--pf-surface); padding: 16px 18px; }
-        .bb-money-cell.is-hero { background: rgba(var(--pf-accent-rgb), 0.06); }
-        .bb-money-v { font-size: 20px; font-weight: 800; color: var(--pf-ink); line-height: 1.1; margin-bottom: 5px; }
+        .bb-money { background: var(--pf-surface); border: 1px solid var(--pf-border); border-top: 3px solid var(--pf-accent); padding: 26px 28px; margin-bottom: 48px; }
+        .bb-money-h { font-size: 19px; font-weight: 700; color: var(--pf-ink); margin-bottom: 6px; }
+        .bb-money-p { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0 0 18px; }
+        .bb-money-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--pf-border); border: 1px solid var(--pf-border); }
+        @media (max-width: 820px) { .bb-money-grid { grid-template-columns: 1fr 1fr; } }
+        .bb-money-cell { background: var(--pf-surface); padding: 16px 18px; min-width: 0; }
+        .bb-money-cell.is-hero { background: var(--pf-surface-2); box-shadow: inset 0 3px 0 var(--pf-accent); }
+        .bb-money-v { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 22px; font-weight: 600; color: var(--pf-ink); line-height: 1.15; margin-bottom: 6px; }
         .bb-money-cell.is-hero .bb-money-v { color: var(--pf-accent); }
-        .bb-money-l { font-size: 12px; font-weight: 700; color: var(--pf-ink); }
-        .bb-money-s { font-size: 11.5px; color: var(--pf-ink-3); margin-top: 3px; line-height: 1.5; }
-        .bb-money-note { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 18px 0 0; }
-        .bb-money-note strong { color: var(--pf-ink); font-weight: 600; }
+        .bb-money-l { font-size: 14px; font-weight: 700; color: var(--pf-ink); }
+        .bb-money-s { font-size: 13.5px; color: var(--pf-ink-3); margin-top: 3px; line-height: 1.5; }
+        .bb-money-note { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 18px 0 0; max-width: 80ch; }
+        .bb-money-note strong { color: var(--pf-ink); font-weight: 700; }
 
-        .bb-rung { display: grid; grid-template-columns: 46px 1fr; gap: 18px; background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 20px 24px; margin-bottom: 2px; }
-        .bb-rung.is-final { border-color: rgba(var(--pf-accent-rgb), 0.3); }
-        @media (max-width: 640px) { .bb-rung { grid-template-columns: 1fr; gap: 8px; } }
-        .bb-rung-n { font-size: 20px; font-weight: 800; color: var(--pf-ink-3); font-family: ui-monospace, Menlo, monospace; line-height: 1; }
-        .bb-rung.is-final .bb-rung-n { color: var(--pf-accent); }
-        .bb-rung-p { font-size: 10px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 7px; }
-        .bb-rung.is-final .bb-rung-p { color: var(--pf-accent); }
-        .bb-rung-q { font-size: 15px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; line-height: 1.5; }
-        .bb-rung-a { font-size: 14px; line-height: 1.75; color: var(--pf-ink-2); margin: 0 0 10px; }
-        .bb-rung-v { font-size: 12.5px; font-weight: 700; color: var(--pf-pos); margin: 0; }
+        /* the falsification ladder, open, as a timeline */
+        .bb-ladder-intro { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0 0 6px; max-width: 75ch; }
+        .bb-ladder-tags { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 22px; font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-3); }
+        .bb-ladder { list-style: none; margin: 0; padding: 0; position: relative; }
+        .bb-rung { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 0 18px; padding: 0 0 14px; }
+        .bb-rung::before { content: ""; position: absolute; left: 27px; top: 0; bottom: 0; width: 1px; background: var(--pf-border-2); }
+        .bb-rung:last-child::before { bottom: auto; height: 28px; }
+        .bb-rung-n {
+          position: relative; z-index: 1; width: 56px; height: 34px; display: flex; align-items: center; justify-content: center;
+          font-family: var(--rx-mono, ui-monospace, monospace); font-size: 13px; font-weight: 600;
+          color: var(--pf-ink-2); background: var(--pf-bg); border: 1px solid var(--pf-border-2); margin-top: 16px;
+        }
+        .bb-rung.is-down .bb-rung-n { border-style: dashed; color: var(--pf-ink); }
+        .bb-rung.is-up .bb-rung-n { color: var(--pf-pos); border-color: var(--pf-pos); }
+        .bb-rung.is-final .bb-rung-n { color: #fff; background: var(--pf-accent); border-color: var(--pf-accent); }
+        .bb-rung-body { background: var(--pf-surface); border: 1px solid var(--pf-border); padding: 18px 24px 18px; min-width: 0; }
+        .bb-rung.is-down .bb-rung-body { background: var(--pf-surface-2); }
+        .bb-rung.is-final .bb-rung-body { border-top: 3px solid var(--pf-accent); }
+        .bb-rung-p { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--pf-ink-3); margin-bottom: 8px; }
+        .bb-rung-q { font-size: 18px; font-weight: 700; color: var(--pf-ink); margin: 0 0 8px; line-height: 1.4; }
+        .bb-rung-a { font-size: 16px; line-height: 1.65; color: var(--pf-ink-2); margin: 0 0 12px; max-width: 75ch; }
+        .bb-rung-v { display: flex; gap: 10px; align-items: baseline; font-size: 15px; font-weight: 700; color: var(--pf-ink); margin: 0; padding-top: 10px; border-top: 1px solid var(--pf-border); }
+        .bb-rung-v::before { content: "Verdict"; font-family: var(--rx-mono, ui-monospace, monospace); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-ink-3); flex-shrink: 0; }
+        .bb-rung.is-up .bb-rung-v { color: var(--pf-pos); }
         .bb-rung.is-final .bb-rung-v { color: var(--pf-accent); }
+        @media (max-width: 640px) {
+          .bb-rung { grid-template-columns: 40px 1fr; gap: 0 10px; }
+          .bb-rung::before { left: 19px; }
+          .bb-rung-n { width: 40px; height: 30px; font-size: 12px; }
+          .bb-rung-body { padding: 16px 16px; }
+          .bb-rung-q { font-size: 17px; }
+          .bb-rung-v { flex-direction: column; gap: 2px; }
+        }
 
         .bb-ceiling {
           background: var(--pf-surface); border: 1px solid var(--pf-border);
-          border-left: 2px solid var(--pf-accent); border-radius: 0 10px 10px 0;
-          padding: 24px 28px; margin-top: 40px;
+          border-top: 3px solid var(--pf-accent);
+          padding: 26px 30px; margin-top: 40px;
         }
-        .bb-ceiling-k { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 12px; }
-        .bb-ceiling p { font-size: 15.5px; line-height: 1.8; color: var(--pf-ink-2); margin: 0 0 13px; }
+        .bb-ceiling-k { font-family: var(--rx-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--pf-accent); margin-bottom: 14px; }
+        .bb-ceiling p { font-size: 16.5px; line-height: 1.7; color: var(--pf-ink-2); margin: 0 0 14px; max-width: 75ch; }
         .bb-ceiling p:last-child { margin-bottom: 0; }
-        .bb-ceiling strong { color: var(--pf-ink); font-weight: 600; }
+        .bb-ceiling strong { color: var(--pf-ink); font-weight: 700; }
       `}</style>
 
       <div className="bb-note">
@@ -139,6 +203,18 @@ export default function CVBlackBloxie() {
           It makes no claim about ORMAS, which is separate work with its own evidence.
         </p>
       </div>
+
+      <p className="bb-label">The study in four phases</p>
+      <ol className="bb-phases">
+        {phases.map((ph) => (
+          <li className={`bb-ph is-${ph.tone}`} key={ph.p}>
+            <div className="bb-ph-p">{ph.p}</div>
+            <div className="bb-ph-d">{ph.d}</div>
+            <div className="bb-ph-t">{ph.t}</div>
+            <div className="bb-ph-f">{ph.f}</div>
+          </li>
+        ))}
+      </ol>
 
       <div className="bb-headline">
         <div className="bb-hcell down">
@@ -200,23 +276,24 @@ export default function CVBlackBloxie() {
         </p>
       </div>
 
-      <ExpandableSection
-        closedLabel="Open the falsification ladder — seven questions, twelve months"
-        hint="Each rung is a test the thesis could have failed. They are in the order they were run, with the verdict on each."
-        meta={['7 rungs', '12 months', 'Designed to fail']}
-      >
+      <p className="bb-label">The falsification ladder — seven questions, twelve months</p>
+      <p className="bb-ladder-intro">
+        Each rung is a test the thesis could have failed. They are in the order they were run, with the verdict on each.
+      </p>
+      <p className="bb-ladder-tags"><span>7 rungs</span><span>12 months</span><span>Designed to fail</span></p>
+      <ol className="bb-ladder">
         {rungs.map((r) => (
-          <div className={`bb-rung${r.n === '07' ? ' is-final' : ''}`} key={r.n}>
+          <li className={`bb-rung is-${rungTone(r.n)}`} key={r.n}>
             <div className="bb-rung-n">{r.n}</div>
-            <div>
+            <div className="bb-rung-body">
               <div className="bb-rung-p">{r.phase}</div>
               <p className="bb-rung-q">{r.q}</p>
               <p className="bb-rung-a">{r.a}</p>
               <p className="bb-rung-v">{r.v}</p>
             </div>
-          </div>
+          </li>
         ))}
-      </ExpandableSection>
+      </ol>
 
       <div className="bb-ceiling">
         <div className="bb-ceiling-k">Why the study ended, and how it led to ORMAS</div>

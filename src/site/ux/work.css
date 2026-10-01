@@ -1,0 +1,139 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   /work: page-level layer. Everything is scoped to .ux-work.
+   The page is one arc (OXIEDO → OXIMO → Black Bloxie → Ventures), so the
+   job here is wayfinding and consistency across the four legacy sections.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Legacy tokens the .rx layer does not remap: pull them onto the palette. */
+.rx .ux-work {
+  --pf-ink-4: #8a9396;
+  --pf-accent-2: var(--rx-teal-2);
+  --pf-on-accent: #fff;
+  --pf-pos: #2f7f50;
+  --pf-pos-rgb: 47, 127, 80;
+  --pf-shadow-rgb: 11, 64, 77;
+}
+
+/* ── chapter bar ──────────────────────────────────────────────────────── */
+.ux-work .uw-chapters {
+  position: sticky; top: 0; z-index: 4;
+  background: rgba(231, 231, 226, .94);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--rx-line-soft);
+  border-bottom: 1px solid var(--rx-line-soft);
+  margin-bottom: 64px;
+}
+.ux-work .uw-chapters ol {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.ux-work .uw-chapters li { min-width: 0; }
+.rx .ux-work .uw-chapters a {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 1px; align-items: baseline;
+  height: 100%; padding: 14px 18px 13px 0;
+  color: var(--rx-ink-2); text-decoration: none;
+  border-top: 3px solid transparent; margin-top: -1px;
+  transition: color .2s, border-color .2s;
+}
+.ux-work .uw-chapters li + li a { padding-left: 18px; border-left: 1px solid var(--rx-line-soft); }
+.ux-work .uw-ch-n { font-family: var(--rx-mono); font-size: 12px; color: var(--rx-ink-3); }
+.ux-work .uw-ch-t { font-size: 15px; font-weight: 700; color: var(--rx-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ux-work .uw-ch-s {
+  grid-column: 2; font-family: var(--rx-mono); font-size: 11px; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--rx-ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ux-work .uw-chapters a.is-now .uw-ch-s { color: #1f6b43; }
+.ux-work .uw-chapters a.is-now .uw-ch-s::before {
+  content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: #3e9b62; margin-right: 6px; vertical-align: 1px;
+}
+.rx .ux-work .uw-chapters a:hover { color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a:hover .uw-ch-t { color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active { border-top-color: var(--rx-teal); }
+.rx .ux-work .uw-chapters a.is-active .uw-ch-n,
+.rx .ux-work .uw-chapters a.is-active .uw-ch-t { color: var(--rx-teal); }
+
+@media (max-width: 760px) {
+  .ux-work .uw-chapters { margin-bottom: 44px; }
+  .ux-work .uw-chapters .rx-wrap { padding: 0 16px; }
+  .ux-work .uw-ch-s { display: none; }
+  .rx .ux-work .uw-chapters a { display: flex; flex-direction: column; gap: 0; padding: 10px 6px 10px 0; min-height: 48px; justify-content: center; }
+  .ux-work .uw-chapters li + li a { padding-left: 10px; }
+  .ux-work .uw-ch-n { font-size: 11px; }
+  .ux-work .uw-ch-t { font-size: 13.5px; }
+}
+
+/* ── section heads: numbered chapters, one meta strip treatment ──────── */
+.ux-work .rx-deep > .rx-wrap { counter-reset: uwch; }
+.ux-work .rx-deep > .rx-wrap > .row {
+  counter-increment: uwch;
+  scroll-margin-top: 84px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rx-line);
+}
+.ux-work .rx-deep > .rx-wrap > .row > .col-12 > hr { display: none; }
+.rx .ux-work .rx-deep .mb--50 { margin-bottom: 104px !important; }
+
+.rx .ux-work .rx-deep .sx-eyebrow {
+  display: flex; align-items: baseline; gap: 14px;
+  font-family: var(--rx-mono); font-weight: 400; font-size: 12.5px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--rx-ink-2); margin-bottom: 18px;
+}
+.rx .ux-work .rx-deep .sx-eyebrow::before {
+  content: counter(uwch, decimal-leading-zero);
+  color: var(--rx-teal); font-weight: 600;
+}
+.rx .ux-work .rx-deep .sx-title { margin-bottom: 18px; }
+.rx .ux-work .rx-deep .sx-lead { font-size: 17.5px; line-height: 1.7; max-width: 70ch; color: var(--rx-ink-2); }
+.rx .ux-work .rx-deep .sx-head { margin-bottom: 40px; }
+
+.rx .ux-work .rx-deep .sx-meta {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px; background: var(--rx-line-soft); border: 1px solid var(--rx-line-soft);
+}
+.rx .ux-work .rx-deep .sx-meta-cell { padding: 14px 18px; }
+.rx .ux-work .rx-deep .sx-meta-k {
+  font-family: var(--rx-mono); font-weight: 400; font-size: 11px; letter-spacing: .08em; color: var(--rx-ink-3);
+}
+.rx .ux-work .rx-deep .sx-meta-v { font-size: 15.5px; font-weight: 700; line-height: 1.35; }
+/* the status cell reads as a status, the same way in every section that has one */
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v::before,
+.rx .ux-work #oximo .sx-meta-cell:first-child .sx-meta-v::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  margin-right: 8px; vertical-align: 2px;
+}
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v { color: #1f6b43; }
+.rx .ux-work #oxiedo .sx-meta-cell:first-child .sx-meta-v::before { background: #3e9b62; }
+.rx .ux-work #oximo .sx-meta-cell:first-child .sx-meta-v::before { background: transparent; border: 1.5px solid var(--rx-ink-3); }
+@media (max-width: 900px) {
+  .rx .ux-work .rx-deep .sx-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .rx .ux-work .rx-deep .sx-lead { font-size: 16.5px; }
+  .rx .ux-work .rx-deep .sx-meta-cell { padding: 12px 14px; }
+  .rx .ux-work .rx-deep .sx-meta-v { font-size: 14.5px; }
+}
+
+/* OXIEDO is the section investors come for: give it the clearest frame */
+.rx .ux-work #oxiedo .sx-meta { border-top: 3px solid var(--rx-teal); }
+
+/* ── ExpandableSection on this page: calm, square, no idle animation ─── */
+.ux-work .xps-toggle {
+  background: var(--rx-white); border: 1px solid var(--rx-line-soft);
+  border-top: 3px solid var(--rx-teal); box-shadow: none; padding: 20px 24px;
+}
+.ux-work .xps-toggle:hover { transform: none; box-shadow: none; border-color: var(--rx-line); border-top-color: var(--rx-teal); background: #fff; }
+.ux-work .xps-toggle::after, .ux-work .xps-icon::before { display: none; animation: none; }
+.ux-work .xps-icon { background: transparent; border-color: var(--rx-line-soft); color: var(--rx-teal); }
+.ux-work .xps-label { font-size: 17px; }
+.ux-work .xps-hint { font-size: 15px; }
+.ux-work .xps-chip {
+  font-family: var(--rx-mono); font-weight: 400; font-size: 11px; letter-spacing: .06em;
+  background: transparent; border-color: var(--rx-line-soft); color: var(--rx-ink-2);
+}
+.ux-work .xps-chev { border-color: var(--rx-line-soft); background: transparent; color: var(--rx-teal); }
+.ux-work .xps-action-word { font-family: var(--rx-mono); font-weight: 400; font-size: 11.5px; color: var(--rx-teal); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rx .ux-work .uw-chapters a { transition: none; }
+}
