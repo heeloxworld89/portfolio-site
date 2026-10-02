@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-10-02c";
+export const CV_VERSION = "2026-10-02d";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -102,7 +102,7 @@ export const pages = {
   "/": {
     title: "Rokib Al Dhin Raadh, 18 — Founder of OXIEDO, Inventor of ORMAS",
     description:
-      "Rokib Al Dhin Raadh, 18, founded OXIEDO and invented ORMAS, a neural network that repairs itself in training. Accepted at DeepMath 2026; NeurIPS 2026 reviewer.",
+      "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. DeepMath 2026 paper; NeurIPS 2026 reviewer.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
@@ -116,14 +116,14 @@ export const pages = {
   "/work": {
     title: "OXIEDO: Auditable AI Training — Founded by Rokib Al Dhin Raadh",
     description:
-      "OXIEDO, founded in 2023 by Rokib Al Dhin Raadh, licenses ORMAS to banks, hospitals and defence programmes in the US, EU and UK.",
+      "OXIEDO, founded 2023 by Rokib Al Dhin Raadh, licenses ORMAS on-premise to regulated industries with a tamper-evident record of every weight change in training.",
     image: "/og/work-v3.jpg",
     imageAlt: "OXIEDO, founded by Rokib Al Dhin Raadh, and the Model Change Record: a tamper-evident log of every weight change in training",
   },
   "/about": {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, taught himself machine learning and founded OXIEDO. DeepMath 2026, NeurIPS 2026 reviewer, 1752vc top 1%, a UK company at 17.",
+      "Rokib Al Dhin Raadh, 18, self-taught founder of OXIEDO. DeepMath 2026 paper, NeurIPS 2026 reviewer, 1752vc top 1%, seven MIT Open Learning programmes.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },

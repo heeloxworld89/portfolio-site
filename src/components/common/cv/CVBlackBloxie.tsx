@@ -23,7 +23,7 @@ const recovery = [
 ];
 
 const rungs = [
-  { n: '01', phase: 'Phase 1 · Aug–Oct 2025 · Cold start', q: 'Can an autonomous system originate commercial demand at all?', a: 'The hardest available starting point: a brand-new store (incorporated in England and Wales as Black Bloxie LTD on 11 September 2025), zero domain authority, zero brand equity, zero advertising budget, no human in the acquisition loop. The store went live cold. Customers arrived, every one through LLM-referred channels.', v: 'Yes. Demand originated where there was none.' },
+  { n: '01', phase: 'Phase 1 · Aug–Oct 2025 · Cold start', q: 'Can an autonomous system originate commercial demand at all?', a: 'The hardest available starting point: a brand-new store (incorporated as Black Bloxie LTD on 11 September 2025), zero domain authority, zero brand equity, zero advertising budget, no human in the acquisition loop. The store went live cold. Customers arrived, every one through LLM-referred channels.', v: 'Yes. Demand originated where there was none.' },
   { n: '02', phase: 'Phase 1 · Baseline established', q: 'How much can it sell, and at what unit economics?', a: 'A capability claim needs a cost structure. The pipeline produced a complete 12-asset product suite for $0.0043 against a $50–$150 human benchmark. Baseline output was locked across all channels as the control condition.', v: 'The marginal cost of output collapses to near zero.' },
   { n: '03', phase: 'Phase 2 · Nov 2025–Feb 2026 · The lesion', q: 'Strip the system out. Was it ever the architecture, or was it the market?', a: 'The central test of the study. Every generated asset was removed and the store reverted to bare platform defaults — same products, same prices, same supplier, same category, same seasonality. One variable withdrawn.', v: 'The architecture was the causal variable, not the market.' },
   { n: '04', phase: 'Phase 2 · Dead zone', q: 'What does complete system removal look like?', a: 'Not decay. Cessation. Acquisition went to zero and stayed there for four months. The collapse landed across every channel on the same day rather than tapering channel by channel — the specific signature that rules out seasonality and macro conditions.', v: '−100% acquisition. Simultaneous, not gradual.' },
@@ -47,20 +47,20 @@ export default function CVBlackBloxie() {
     <CVSection
       id="black-bloxie"
       phase="before"
-      eyebrow="Black Bloxie LTD · England & Wales · 2025–2026"
-      title="He switched OXIMO off. Output fell 91%."
+      eyebrow="Black Bloxie LTD · 2025–2026"
+      title="Removing OXIMO from a live UK company cut its output 91%."
       lead={
         <>
-          Black Bloxie LTD, incorporated in England and Wales on 11 September 2025 (company no. 16711223), is Raadh&apos;s
-          company, and he is its founder and CEO. For twelve months it was a live e-commerce business, with a real
-          supplier and customers in ten countries, and OXIMO did the work.{' '}<strong>When he removed the system, output fell 91%; when he
+          Black Bloxie LTD, incorporated in England and Wales on 11 September 2025 (company no. 16711223), was Raadh&apos;s
+          twelve-month controlled field study of OXIMO on a live e-commerce company, with a real supplier and
+          customers in ten countries.{' '}<strong>When he removed the system, output fell 91%; when he
           restored it, output recovered and overshot its original level.</strong> Revenue alone cannot show
           whether the market would have delivered the same result. A removal test can.
         </>
       }
       meta={[
         { k: 'What it tests', v: 'OXIMO (not ORMAS)' },
-        { k: 'Duration', v: '12 months, 7 tests, 10 countries' },
+        { k: 'Duration', v: '12 months, 7 tests' },
         { k: 'On removal', v: '−91% output' },
         { k: 'On restoration', v: '+1,300%' },
       ]}

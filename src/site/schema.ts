@@ -27,16 +27,16 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description: `${DEFINITION} He taught himself machine learning and built ORMAS alone, running all 383 experiments on one RTX 3090 bought with the proceeds of a stock-prediction system he sold at 15. He founded Black Bloxie LTD in England and Wales in 2025, and OXIEDO's US company is in formation in Delaware. He reviews for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated institutions in the US, the EU and the UK.`,
-  disambiguatingDescription: "AI founder, 18: founder and CEO of OXIEDO, inventor of the ORMAS self-repairing neural network, and founder of Black Bloxie LTD (England and Wales).",
+  description: `${DEFINITION} He taught himself machine learning and built ORMAS alone at 18, on one RTX 3090. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
+  disambiguatingDescription: "Self-taught AI founder, 18: founder and CEO of OXIEDO and inventor of the ORMAS self-repairing neural network.",
   jobTitle: "Founder & CEO, OXIEDO",
   hasOccupation: [
-    { "@type": "Occupation", name: "Founder & Chief Executive Officer, OXIEDO", occupationLocation: [{ "@type": "Country", name: "United Kingdom" }, { "@type": "Country", name: "United States" }] },
-    { "@type": "Occupation", name: "Founder & Chief Executive Officer, Black Bloxie LTD", occupationLocation: { "@type": "Country", name: "United Kingdom" } },
+    { "@type": "Occupation", name: "Founder & Chief Executive Officer" },
     { "@type": "Occupation", name: "Inventor of ORMAS, a self-repairing neural network" },
     { "@type": "Occupation", name: "Independent AI researcher" },
   ],
-  worksFor: [ref("oxiedo"), ref("black-bloxie")],
+  worksFor: ref("oxiedo"),
+  homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Dhaka", addressCountry: "BD" } },
   nationality: { "@type": "Country", name: "Bangladesh" },
   email: `mailto:${links.founderEmail}`,
   contactPoint: [
@@ -114,8 +114,7 @@ const oxiedo = {
   founder: ref("person"),
   employee: ref("person"),
   description:
-    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated institutions in the United States, the European Union and the United Kingdom; its US company is in formation in Delaware. Its lead product is the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
-  areaServed: [{ "@type": "Country", name: "United States" }, { "@type": "Place", name: "European Union" }, { "@type": "Country", name: "United Kingdom" }],
+    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated industries, with the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
   knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-repairing neural networks"],
   makesOffer: {
     "@type": "Offer",
@@ -135,13 +134,13 @@ const blackBloxie = {
   name: "Black Bloxie LTD",
   legalName: "Black Bloxie LTD",
   foundingDate: "2025-09-11",
-  foundingLocation: { "@type": "Place", name: "England and Wales", address: { "@type": "PostalAddress", addressCountry: "GB" } },
+  foundingLocation: { "@type": "Place", name: "England and Wales" },
   founder: ref("person"),
   url: "https://www.blackbloxie.com/",
   identifier: { "@type": "PropertyValue", propertyID: "Companies House company number", value: "16711223", url: "https://find-and-update.company-information.service.gov.uk/company/16711223" },
   sameAs: ["https://www.blackbloxie.com/pages/leadership", "https://find-and-update.company-information.service.gov.uk/company/16711223"],
   description:
-    "UK company founded by Rokib Al Dhin Raadh and incorporated in England and Wales on 11 September 2025: a live e-commerce business with customers in ten countries, run on the OXIMO multi-agent system for a twelve-month controlled field study; removing OXIMO cut output by 91%.",
+    "UK company incorporated in England and Wales on 11 September 2025 and run on the OXIMO multi-agent system for a twelve-month controlled field study; removing OXIMO cut output by 91%.",
 };
 
 const deepmath = {

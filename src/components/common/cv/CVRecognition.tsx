@@ -6,17 +6,16 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Recognition · 2026"
-      title={<>Ten selections in one year, at <span className="age">18</span>.</>}
+      title={<>Ten independent selections in 2026, at <span className="age">18</span>.</>}
       lead={
         <>
-          Rokib Al Dhin Raadh had no introductions to any of the panels below. He applied cold. In the United States, DeepMath 2026 accepted his stability result
-          after double-blind review at Ohio State in Columbus, Cosmos Institute ranked the work highest in its
-          2026 review cycle, and 1752vc took OXIEDO into Ignite from the top 1% of applicants. In Paris, NeurIPS
-          2026 made him a reviewer for its Trustworthy AI for Good workshop. In London, Entrepreneur First
-          interviewed him and Onstage invited him to its W26 pre-pitch event; in San Francisco, EF&apos;s The
-          Bridge is holding him in its final round. Cohere Labs admitted him to its Open Science Community,
-          Freshmango offered OXIEDO a place, and IARCO 2026, which drew more than 500 entries from 60 countries,
-          named him a finalist.
+          Rokib Al Dhin Raadh earned ten independent selections in 2026, all from cold applications, across
+          peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
+          after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
+          Cosmos Institute ranked the work highest in its 2026 review cycle, IARCO 2026 named him a finalist, and
+          Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
+          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event, Entrepreneur First interviewed
+          him in London, and The Bridge in San Francisco is holding him in its final round.
         </>
       }
     >
@@ -546,6 +545,8 @@ export default function CVRecognition() {
             <h3 className="rec-week-t">
               Stability result accepted at DeepMath 2026.
             </h3>
+            <div className="rec-week-cols">
+            <div className="rec-week-copy">
             <p className="rec-week-l">
               <strong>DeepMath</strong> is the Conference on the Mathematical Theory of Deep Neural Networks,
               this year hosted by <strong>Ohio State University</strong> in Columbus on 29&ndash;30 October, with an
@@ -558,10 +559,10 @@ export default function CVRecognition() {
               National Science Foundation and the Simons Foundation.
             </p>
             <p className="rec-week-l">
-              Two more are in motion, in London and San Francisco: <strong>Onstage</strong> is ranking its
-              W26 cohort by interest from 350 venture funds, and <strong>The Bridge</strong> is holding him in
-              its final round.
+              Two more are in motion: <strong>Onstage</strong> is ranking its W26 cohort by interest
+              from 350 venture funds, and <strong>The Bridge</strong> is holding him in its final round.
             </p>
+            </div>
 
             <div className="rec-week-wall">
               <span className="rec-week-mark is-type">DeepMath 2026</span>
@@ -570,6 +571,7 @@ export default function CVRecognition() {
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
               <span className="rec-week-mark is-type">Onstage</span>
+            </div>
             </div>
           </div>
 
@@ -623,9 +625,9 @@ export default function CVRecognition() {
         <div className="rec-label">2026, month by month</div>
         <div className="rec-run">
           {[
-            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in its 2026 cycle, United States', state: 'done' },
-            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call, London', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Peer-reviewed acceptance in the US, two accelerator places, a 60-country research final, Cohere Labs membership.', state: 'live' },
+            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
+            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
+            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Peer-reviewed acceptance, two accelerator places, a research-competition final, Cohere Labs membership.', state: 'live' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026', what: 'Poster, Ohio State, Columbus', state: 'ahead' },
             { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
           ].map((r) => (
@@ -640,7 +642,7 @@ export default function CVRecognition() {
           ))}
         </div>
 
-        <div className="rec-label">The selection panels</div>
+        <div className="rec-label">The selections</div>
         <div className="rec-grid">
           {/* NeurIPS — AI4GOOD workshop reviewer */}
           <div className="rec-card">
@@ -650,8 +652,8 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Dec 2026</span>
             </div>
-            <div className="rec-tag">NeurIPS 2026 · Paris · AI4GOOD Workshop · Reviewer</div>
-            <h3 className="rec-name">Reviewer, NeurIPS 2026 Trustworthy AI for Good Workshop, Paris</h3>
+            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Reviewer</div>
+            <h3 className="rec-name">Reviewer, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
             <p className="rec-body">
               Raadh is a reviewer for <strong>Trustworthy AI for Good</strong> at NeurIPS
               2026 in Paris, reviewing submitted papers on mechanistic interpretability, attribution, auditing and
@@ -679,11 +681,11 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Jul 2026</span>
             </div>
-            <div className="rec-tag">Cosmos Institute · United States · 2026 Review Cycle</div>
-            <h3 className="rec-name">Ranked Highest in the Cosmos Institute 2026 Review Cycle</h3>
+            <div className="rec-tag">Cosmos Institute · Review Cycle</div>
+            <h3 className="rec-name">Ranked Highest in the Cosmos Institute Review Cycle</h3>
             <p className="rec-body">
-              In the United States, Cosmos Institute ranked the ORMAS application highest of every application
-              in its 2026 cycle and invited Raadh to its technical track.
+              Cosmos Institute ranked the ORMAS application highest of every application in its cycle and
+              invited Raadh to its technical track.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -712,7 +714,7 @@ export default function CVRecognition() {
               <span className="rec-date">Sep 2026</span>
             </div>
             <div className="rec-tag">Freshmango &middot; Equity-Free Accelerator &middot; Accepted</div>
-            <h3 className="rec-name">Offered a Place by Freshmango After a Single Interview</h3>
+            <h3 className="rec-name">Accepted to Freshmango, the Equity-Free Accelerator</h3>
             <p className="rec-body">
               On 22 September Freshmango offered OXIEDO a place in its equity-free programme after a single
               interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>{' '}
@@ -742,10 +744,10 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">1752vc &middot; United States &middot; Ignite &middot; Accepted</div>
+            <div className="rec-tag">1752vc &middot; Ignite &middot; Accepted</div>
             <h3 className="rec-name">Accepted to 1752vc Ignite from the Top 1% of Applicants</h3>
             <p className="rec-body">
-              The US venture firm 1752vc placed the application in the top 5% of its intake, then held a final round to select
+              1752vc placed the application in the top 5% of its intake, then held a final round to select
               the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>{' '}
               cohort, chosen from <strong>thousands of applications</strong> across three stages.
             </p>
@@ -775,8 +777,8 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">IARCO 2026 &middot; 60+ Countries &middot; Final Round</div>
-            <h3 className="rec-name">Finalist, IARCO 2026, from 500+ Entries Across 60 Countries</h3>
+            <div className="rec-tag">IARCO 2026 &middot; International Academic Research Competition &middot; Final Round</div>
+            <h3 className="rec-name">Finalist, IARCO 2026 International Academic Research Competition</h3>
             <p className="rec-body">
               The International Academic Research Competition is hosted by YRJ, sponsored by
               {' '}<strong>SaveMyExams</strong> with <strong>Domain.ME</strong>, and this year drew
@@ -807,11 +809,11 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">Cohere Labs &middot; Canada &middot; Open Science Community &middot; Member</div>
+            <div className="rec-tag">Cohere Labs &middot; Open Science Community &middot; Member</div>
             <h3 className="rec-name">Member, Cohere Labs Open Science Community</h3>
             <p className="rec-body">
-              Cohere Labs is the research lab of <strong>Cohere</strong>, the Canadian foundation-model
-              company, and runs an open science community spanning researchers worldwide. On 25 September it welcomed Raadh into its <strong>Open Science Community</strong>, noting
+              Cohere Labs is the research lab of <strong>Cohere</strong>, one of the leading foundation-model
+              companies. On 25 September it welcomed Raadh into its <strong>Open Science Community</strong>, noting
               that the solo development of ORMAS across 383 controlled experiments
               {' '}<strong>&ldquo;demonstrates remarkable initiative in ML safety and auditability.&rdquo;</strong>{' '}
               The lab pointed to its <strong>BIRDS</strong> and <strong>Safety &amp; Alignment</strong>
@@ -831,8 +833,8 @@ export default function CVRecognition() {
 
         </div>
 
-        <div className="rec-label">London</div>
-        <div className="rec-grid is-solo">
+        <div className="rec-label">Entrepreneur First · London to San Francisco</div>
+        <div className="rec-grid is-pair rec-ef-pair">
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
         <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
@@ -870,7 +872,7 @@ export default function CVRecognition() {
             goes next.
           </p>
           <p className="rec-body">
-            It led to The Bridge, below.
+            It led to The Bridge.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
@@ -883,9 +885,6 @@ export default function CVRecognition() {
             </div>
           </div>
         </div>
-        </div>
-
-        <div className="rec-label">San Francisco · Final round</div>
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
@@ -919,29 +918,26 @@ export default function CVRecognition() {
             <span className="rec-stage is-live"><span className="rec-stage-dot" />Holding · Final Round</span>
           </span>
         </div>
+        </div>
 
         <div className="rec-label">What it adds up to</div>
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            What the 2026 record establishes: one body of work, assessed blind or from a cold application,
-            by conferences and programmes in the United States, the United Kingdom and France.
+            What the 2026 record establishes.
           </p>
           <p className="rec-verdict-body">
-            <strong>Peer review in the United States.</strong> DeepMath 2026 accepted the ORMAS stability
-            result after double-blind review by specialists in deep-learning theory. He presents it at Ohio
-            State University, Columbus, on 29&ndash;30 October.
+            <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind
+            review by specialists in deep-learning theory.
           </p>
           <p className="rec-verdict-body">
-            <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for the
-            Trustworthy AI for Good workshop in Paris, assessing papers in interpretability and model auditing,
-            the area his own research addresses.
+            <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for
+            the Trustworthy AI for Good workshop, reviewing papers in interpretability and model auditing, the
+            area his own research addresses.
           </p>
           <p className="rec-verdict-body">
-            <strong>Venture.</strong> Cosmos Institute ranked the work highest in its cycle.
-            1752vc and Freshmango each offered OXIEDO places after competitive selection, Onstage invited him to
-            its W26 pre-pitch event in London, and The Bridge in San Francisco is holding him in its final round.
-            He had no warm introduction to any of them.
+            <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
+            Freshmango and 1752vc each offered places after competitive selection, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
           </p>
         </div>
 
@@ -951,7 +947,7 @@ export default function CVRecognition() {
             <span className="rec-verify-k">Made to be checked</span>
             <span className="rec-verify-t">
               Each item above has a named source and a date: the Cosmos correspondence, the NeurIPS reviewer assignment, the
-              EF stage records, the Companies House filings in England &amp; Wales. Documentation is available on request, and every claim is listed with its source on the <a href="/evidence">Evidence page</a>.
+              EF stage records, the Companies House filings. Documentation is available on request, and every claim is listed with its source on the <a href="/evidence">Evidence page</a>.
             </span>
           </span>
           <a

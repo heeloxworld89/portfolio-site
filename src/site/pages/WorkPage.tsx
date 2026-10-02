@@ -9,10 +9,10 @@ import "../ux/work.css";
 /* The page is one arc, newest first. The chapter bar makes that arc visible
    and lets a reader jump straight to the part they came for. */
 const chapters = [
-  { id: "oxiedo", n: "01", name: "OXIEDO", status: "Now · UK → US · licensing ORMAS", tone: "now" },
-  { id: "oximo", n: "02", name: "OXIMO", status: "2023–2025 · ran a UK company", tone: "done" },
-  { id: "black-bloxie", n: "03", name: "Black Bloxie", status: "2025–2026 · UK study · 10 countries", tone: "done" },
-  { id: "ventures", n: "04", name: "Ventures", status: "2020–2025 · EU & US markets · one exit", tone: "done" },
+  { id: "oxiedo", n: "01", name: "OXIEDO", status: "Now · licensing ORMAS", tone: "now" },
+  { id: "oximo", n: "02", name: "OXIMO", status: "2023–2025 · concluded", tone: "done" },
+  { id: "black-bloxie", n: "03", name: "Black Bloxie", status: "2025–2026 · field study", tone: "done" },
+  { id: "ventures", n: "04", name: "Ventures", status: "2020–2025 · one exit", tone: "done" },
 ] as const;
 
 function useActiveChapter() {
@@ -47,8 +47,8 @@ export default function WorkPage() {
           <div className="rx-field is-hero" aria-hidden="true" />
           <div className="rx-wrap" style={{ position: "relative" }}>
             <h2 className="rx-label">Work</h2>
-            <h1>In business since he was twelve. OXIEDO is the company he is building now.</h1>
-            <p>OXIEDO licenses ORMAS, Raadh&rsquo;s self-repairing neural network, to regulated institutions in the US, the EU and the UK, and its US company is being formed in Delaware. It is the end of a long chain. At 12 he started his first venture. At 15 he sold a stock-prediction system for about $10,000. At 17 he registered Black Bloxie LTD in England, handed the business to OXIMO, the 40,933-line agent system he had written, and saw output fall 91% when he switched it off. ORMAS came out of what OXIMO could not do.</p>
+            <h1>Founder of OXIEDO. Building companies since the age of 12.</h1>
+            <p>Rokib Al Dhin Raadh is the founder and CEO of OXIEDO, which licenses ORMAS, his self-repairing neural network, to regulated industries. Each step built on the last: five ventures from age 12 and a ~$10,000 sale at 15; OXIMO, a 40,933-line multi-agent system with 2,069 tests; a 12-month controlled study on a live UK company, Black Bloxie LTD, where removing OXIMO cut output 91%; then ORMAS and OXIEDO.</p>
           </div>
         </section>
 

@@ -148,7 +148,7 @@ export default function MobileMenu() {
         <a className="mm-cta is-quiet" href="/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=2026-09-30a" target="_blank" rel="noreferrer">
           <Icon name="download" size={14} /> Download CV
         </a>
-        <p className="mm-foot">18 · UK · US · Bangladesh · Founder &amp; CEO, OXIEDO</p>
+        <p className="mm-foot">18 · Founder &amp; CEO, OXIEDO</p>
       </nav>
     </div>,
     document.body

@@ -45,8 +45,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '17',
     year: '2025–26',
     kind: 'build',
-    title: 'Black Bloxie LTD: a UK company, a twelve-month field study',
-    body: 'Incorporated in England and Wales in September 2025 and operated as a controlled test of OXIMO on a live e-commerce business with customers in ten countries: the system was removed and restored to measure its causal effect (−91%, then +1,300%). The study also exposed the limit that led to ORMAS: the underlying models could not learn from noisy production data.',
+    title: 'Black Bloxie LTD: a twelve-month field study',
+    body: 'A UK company operated as a controlled test of OXIMO: the system was removed and restored to measure its causal effect (−91%, then +1,300%). The study also exposed the limit that led to ORMAS: the underlying models could not learn from noisy production data.',
   },
   {
     age: '17–18',
@@ -59,8 +59,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'DeepMath 2026 in Columbus · NeurIPS reviewer in Paris · US expansion',
-    body: 'OXIEDO, founded in 2023, gets its core technology: ORMAS, licensed to five regulated sectors, and begins its expansion into the United States. The stability result is accepted at DeepMath 2026 at Ohio State University, Columbus, after double-blind review; Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris; and venture programmes in San Francisco and London advance him through their selection rounds.',
+    title: 'ORMAS breakthrough · DeepMath 2026 · NeurIPS reviewer',
+    body: 'OXIEDO, founded in 2023, gets its core technology: ORMAS, licensed to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.',
   },
 ];
 
@@ -77,9 +77,9 @@ const systems = [
   {
     name: 'OXIEDO',
     role: 'The business',
-    line: 'Licensing the architecture to regulated institutions in the UK, EU and US that cannot yet train on their own data.',
+    line: 'Licensing the architecture to institutions that cannot yet train on their own regulated data.',
     stat: 'Live',
-    statLbl: 'oxiedo.com · five sectors · US expansion',
+    statLbl: 'oxiedo.com · five sectors',
     href: '/work#oxiedo',
     state: 'Live',
   },
@@ -95,7 +95,7 @@ const systems = [
   {
     name: 'Black Bloxie',
     role: 'The experiment on OXIMO',
-    line: 'A live company, incorporated in England and Wales, run for twelve months to measure the system’s causal effect.',
+    line: 'A live UK company run for twelve months to measure the system’s causal effect.',
     stat: '−91% / +1,300%',
     statLbl: '12-month lesion study',
     href: '/work#black-bloxie',
@@ -114,7 +114,7 @@ const systems = [
 
 const router = [
   { a: 'Researchers', d: 'The ISS derivation, all 383 runs, the telemetry design and the adverse results. Scrutiny of the stability bound is especially welcome.', h: '/research', l: 'The research' },
-  { a: 'Investors', d: 'The product, the regulatory drivers (SR 26-2 in the US, the EU AI Act in Europe) and timeline, and a full risk register.', h: '/work#oxiedo', l: 'The company' },
+  { a: 'Investors', d: 'The product, the regulatory drivers and timeline, and a full risk register.', h: '/work#oxiedo', l: 'The company' },
   { a: 'Engineers', d: '40,933 lines and 2,069 tests: a system that turns one sentence into a working organisation.', h: '/work#oximo', l: 'The codebase' },
   { a: 'Sceptics', d: 'A twelve-month controlled study on a live company with real customers, with every figure disclosed.', h: '/work#black-bloxie', l: 'The experiment' },
 ];
@@ -307,7 +307,7 @@ export default function CVWhoIAm() {
         <div className="sx-head">
           <div className="sx-eyebrow">Profile</div>
           <h2 className="sx-title">
-            First venture at 12. A peer-reviewed invention at <span className="age">18</span>.
+            Founder first: from a first venture at 12 to OXIEDO at <span className="age">18</span>
           </h2>
         </div>
 
@@ -330,16 +330,10 @@ export default function CVWhoIAm() {
             <h3 className="wi-why-h">Five ventures, a new neural network architecture, and the company built on it.</h3>
             <p className="wi-why-p">
               Rokib Al Dhin Raadh, <span className="age">18</span>, is the founder and CEO of OXIEDO and the inventor of ORMAS, a
-              self-repairing neural network. In 2025 he registered Black Bloxie LTD in England and let OXIMO, his
-              agent system, run it for a year; it sold to customers in ten countries. In 2026 his stability paper
-              passed double-blind review for DeepMath at Ohio State, and NeurIPS took him on as a reviewer for its
-              Trustworthy AI for Good workshop in Paris.
-            </p>
-            <p className="wi-why-p">
-              Born and raised in Dhaka, he ran five ventures between the ages of 12 and 17 and sold a
-              stock-prediction system for about $10,000 at 15. Tracing one structural cause across those ventures
-              led him to multi-agent systems (OXIMO), then to a new neural network architecture (ORMAS), and then
-              to a company built on it (OXIEDO).
+              self-repairing neural network. Raised in Dhaka, he ran five ventures between the ages of 12
+              and 17 and sold a stock-prediction system for about $10,000 at 15. Tracing one structural cause across
+              those ventures led him to multi-agent systems (OXIMO), then to a new neural network architecture
+              (ORMAS), and then to a company built on it (OXIEDO).
             </p>
             <p className="wi-why-p">
               Two of the projects below are active, two are concluded and one is in specification.

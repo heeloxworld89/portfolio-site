@@ -23,14 +23,14 @@ export default function CVOximo() {
     <CVSection
       id="oximo"
       phase="before"
-      eyebrow="OXIMO · 2023–2025 · Deployed in the UK"
-      title="OXIMO: a 40,933-line multi-agent operating system that ran a live UK company for a year."
+      eyebrow="OXIMO · 2023–2025"
+      title="OXIMO: a 40,933-line multi-agent operating system that ran a live company for a year."
       lead={
         <>
           OXIMO is the multi-agent operating system Raadh built alone after five ventures showed him the same
           constraint: coordination, not individual capability. Given a one-sentence brief, it designs the
           organisation needed to deliver it and creates specialist roles when none exist.{' '}
-          <strong>It ran Black Bloxie LTD, his e-commerce company in England, for twelve months. Its limit on real-world data
+          <strong>It ran Black Bloxie LTD, a live UK company, for twelve months. Its limit on real-world data
           is the problem ORMAS was built to solve.</strong>
         </>
       }
@@ -125,14 +125,14 @@ export default function CVOximo() {
           View the codebase
           <Icon name="externalLink" size={13} />
         </a>
-        {' '}&nbsp;·&nbsp; Production code, built to operate a live UK company.
+        {' '}&nbsp;·&nbsp; Production code, built to operate a live company.
       </p>
 
       <div className="ox-closed">
         <div className="ox-closed-k">Why OXIMO concluded, and how it led to ORMAS</div>
         <p>
           Each OXIMO agent is built on a third-party model whose internals cannot be inspected. That was
-          workable on clean inputs, and the system operated a live UK company, with customers in ten countries, for a year (see Black Bloxie).
+          workable on clean inputs, and the system operated a live company for a year (see Black Bloxie).
         </p>
         <p>
           Training on the company&apos;s own data changed that. Production data is mislabelled, contradictory

@@ -42,7 +42,7 @@ export default function CVOriginStatement() {
       title="Personal statement: from a first venture at 12 to DeepMath 2026 at 18."
       lead={
         <>
-          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and on his own money,
+          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and self-funded,
           and the three resources the next phase requires: multi-node compute, capacity to train Project Cherry,
           and a control theorist.
         </>
@@ -258,13 +258,13 @@ export default function CVOriginStatement() {
 
       <div>
 
-        <p className="os-byline">Rokib Al Dhin Raadh · <span className="age">Age 18</span> · Founder &amp; CEO, OXIEDO · Founder, Black Bloxie LTD (England &amp; Wales)</p>
+        <p className="os-byline">Rokib Al Dhin Raadh · <span className="age">Age 18</span> · Founder &amp; CEO, OXIEDO</p>
 
         <div className="os-band">
           {[
             { v: '14–16 hrs', l: 'A normal working day' },
             { v: '28', l: 'Working days livestreamed' },
-            { v: 'Self-funded', l: 'Built on his own capital' },
+            { v: 'Self-funded', l: 'Every experiment on his own hardware' },
             { v: 'Solo', l: 'Sole author of ORMAS' },
             { v: '100%', l: 'IP ownership' },
           ].map((s, i) => (
@@ -400,7 +400,7 @@ export default function CVOriginStatement() {
           </p>
         </div>
 
-        <div className="os-sign">Rokib Al Dhin Raadh — Founder &amp; CEO, OXIEDO — 2026</div>
+        <div className="os-sign">Rokib Al Dhin Raadh — 2026</div>
       </div>
 
     </CVSection>
