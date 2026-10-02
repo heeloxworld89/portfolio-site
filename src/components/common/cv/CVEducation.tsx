@@ -156,7 +156,7 @@ export default function CVEducation() {
 
             <div className="edu-card">
               <h5 className="edu-title">UK company law, without a lawyer</h5>
-              <p className="edu-desc">Incorporating Black Bloxie LTD at UK Companies House from Bangladesh, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
+              <p className="edu-desc">Incorporating Black Bloxie LTD at UK Companies House from overseas, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
             </div>
           </div>
 

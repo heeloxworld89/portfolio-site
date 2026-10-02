@@ -184,3 +184,20 @@
 
 /* Age as the lead signal in the hero eyebrow */
 .rx .ux-home .ux-age { font-weight: 600; color: var(--rx-teal); background: #d8ee96; padding: 3px 8px; letter-spacing: .08em; }
+
+/* Bio: lede and detail side by side on desktop so the section uses the full
+   width instead of a narrow column with an empty right half. */
+@media (min-width: 1000px) {
+  .rx .ux-home .rx-bio-inner { max-width: none; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); column-gap: 56px; align-items: start; }
+  .rx .ux-home .rx-bio-inner > p { max-width: none; margin: 0; }
+  .rx .ux-home .rx-bio-inner > .rx-links { grid-column: 1 / -1; margin-top: 32px; }
+}
+
+/* DeepMath card: the two ledes in two columns under a full-width headline. */
+@media (min-width: 1000px) {
+  .rx .ux-home .rx-dm-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px; }
+  .rx .ux-home .rx-dm-main > * { grid-column: 1 / -1; }
+  .rx .ux-home .rx-dm-k + h3 + .rx-dm-lede { grid-column: 1; grid-row: 3; max-width: none; }
+  .rx .ux-home .rx-dm-lede + .rx-dm-lede { grid-column: 2; grid-row: 3; max-width: none; }
+  .rx .ux-home .rx-dm-paper { max-width: none; }
+}

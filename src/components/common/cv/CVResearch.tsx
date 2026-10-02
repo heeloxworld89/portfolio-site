@@ -206,7 +206,7 @@ export default function CVResearch() {
         { k: 'Peer review', v: 'DeepMath 2026 · poster' },
         { k: 'Experiments', v: '383 · reproducible from seed' },
         { k: 'Architectures', v: 'Four, on one RTX 3090' },
-        { k: 'Data', v: 'CIFAR-10 / 100 only' },
+        { k: 'Data', v: 'CIFAR-10 · CIFAR-100' },
       ]}
     >
       <div className="uxr-body">
@@ -225,7 +225,7 @@ export default function CVResearch() {
 
         <p className="uxr-role">
           <strong>Inventor and principal researcher, independent | 2024 – present | PyTorch · 16,316 lines · 85 files</strong>
-          <span>383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local; global convergence is stated as open. The paper, the codebase that reproduces all 383 runs and the full results archive are linked below.</span>
+          <span>383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local. The paper, the codebase that reproduces all 383 runs and the full results archive are linked below.</span>
         </p>
 
         {/* Action Link Bar */}

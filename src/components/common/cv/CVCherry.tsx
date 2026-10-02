@@ -35,7 +35,7 @@ export default function CVCherry() {
         { k: 'Status', v: 'Specification complete' },
         { k: 'Builds on', v: 'ORMAS self-correction' },
         { k: 'Next milestone', v: 'Multi-node H100 access' },
-        { k: 'Results', v: 'None claimed until built' },
+        { k: 'Results', v: 'Reported once built' },
       ]}
     >
       <div className="uxr-body uxr-cherry">

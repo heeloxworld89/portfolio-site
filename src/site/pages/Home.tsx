@@ -45,7 +45,8 @@ export default function Home() {
             <p className="rx-h2-sub">
               Every AI model on earth is a black box. <b>OXIEDO</b> is ending that. Its engine, ORMAS, finds its own
               broken parts, repairs them mid-training and writes a tamper-evident record of every change, so banks,
-              hospitals and defence teams can finally train AI on the data they have been locked out of.
+              hospitals and defence teams can finally train AI on the data they have been locked out of. Raadh built it at 18,
+              on one graphics card he paid for himself.
             </p>
             <div className="rx-btns">
               <a className="rx-btn is-cta" href={links.oxiedo} target="_blank" rel="noreferrer">Enter OXIEDO <Arrow /></a>
@@ -71,7 +72,7 @@ export default function Home() {
             </svg>
             <figcaption>
               <span>Rokib Al Dhin Raadh</span>
-              <span>Dhaka · 2026</span>
+              <span>OXIEDO · 2026</span>
             </figcaption>
           </figure>
         </div>
@@ -136,7 +137,7 @@ export default function Home() {
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
             <p>
-              Self-taught and based in Dhaka, Bangladesh, he built ORMAS alone: 16,316 lines of PyTorch and 383
+              He grew up in Dhaka and taught himself machine learning. He built ORMAS alone: 16,316 lines of PyTorch and 383
               controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
               result. OXIEDO, which he founded in 2023, licenses the architecture to regulated industries that need an
               auditable record of what their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent
@@ -379,7 +380,6 @@ export default function Home() {
                 <a href={links.substack} target="_blank" rel="noreferrer">Substack</a> ·{" "}
                 <a href={links.youtube} target="_blank" rel="noreferrer">YouTube</a>
               </p>
-              <p>Dhaka, Bangladesh</p>
             </div>
           </div>
           <a className="ux-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>

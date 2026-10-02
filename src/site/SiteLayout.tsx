@@ -95,7 +95,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <div className="rx-foot-top">
             <div className="rx-foot-id">
               <Link className="rx-mark" to="/">Rokib Al Dhin Raadh</Link>
-              <p>Dhaka, Bangladesh</p>
+              <p>Founder &amp; CEO, OXIEDO · Inventor of ORMAS</p>
             </div>
             <nav className="rx-foot-col" aria-label="Footer">
               <h2>Pages</h2>

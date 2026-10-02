@@ -545,6 +545,8 @@ export default function CVRecognition() {
             <h3 className="rec-week-t">
               Stability result accepted at DeepMath 2026.
             </h3>
+            <div className="rec-week-cols">
+            <div className="rec-week-copy">
             <p className="rec-week-l">
               <strong>DeepMath</strong> is the Conference on the Mathematical Theory of Deep Neural Networks,
               this year hosted by <strong>Ohio State University</strong> in Columbus on 29&ndash;30 October, with an
@@ -560,6 +562,7 @@ export default function CVRecognition() {
               Two more are in motion: <strong>Onstage</strong> is ranking its W26 cohort by interest
               from 350 venture funds, and <strong>The Bridge</strong> is holding him in its final round.
             </p>
+            </div>
 
             <div className="rec-week-wall">
               <span className="rec-week-mark is-type">DeepMath 2026</span>
@@ -568,6 +571,7 @@ export default function CVRecognition() {
                 <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
               </span>
               <span className="rec-week-mark is-type">Onstage</span>
+            </div>
             </div>
           </div>
 
@@ -677,7 +681,7 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Jul 2026</span>
             </div>
-            <div className="rec-tag">Cosmos Institute · Grants Review</div>
+            <div className="rec-tag">Cosmos Institute · Review Cycle</div>
             <h3 className="rec-name">Ranked Highest in the Cosmos Institute Review Cycle</h3>
             <p className="rec-body">
               Cosmos Institute ranked the ORMAS application highest of every application in its cycle and
@@ -829,8 +833,8 @@ export default function CVRecognition() {
 
         </div>
 
-        <div className="rec-label">Other processes</div>
-        <div className="rec-grid is-solo">
+        <div className="rec-label">Entrepreneur First · London to San Francisco</div>
+        <div className="rec-grid is-pair rec-ef-pair">
         {/* Entrepreneur First — deliberately secondary: a screen, not a read */}
         <div className="rec-card rec-secondary">
           <div className="rec-logo-row">
@@ -868,7 +872,7 @@ export default function CVRecognition() {
             goes next.
           </p>
           <p className="rec-body">
-            It led to The Bridge, below.
+            It led to The Bridge.
           </p>
           <div className="rec-stats">
             <div className="rec-stat">
@@ -881,9 +885,6 @@ export default function CVRecognition() {
             </div>
           </div>
         </div>
-        </div>
-
-        <div className="rec-label">In the final round</div>
         {/* ── Quiet current-status line. Deliberately understated: the people
              running this process may read this page. ────────────────────── */}
         <div className="rec-status">
@@ -917,12 +918,13 @@ export default function CVRecognition() {
             <span className="rec-stage is-live"><span className="rec-stage-dot" />Holding · Final Round</span>
           </span>
         </div>
+        </div>
 
         <div className="rec-label">What it adds up to</div>
         {/* ── What this actually adds up to ──────────────────────────── */}
         <div className="rec-verdict">
           <p className="rec-verdict-lead">
-            What the 2026 record establishes, and what it does not.
+            What the 2026 record establishes.
           </p>
           <p className="rec-verdict-body">
             <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind

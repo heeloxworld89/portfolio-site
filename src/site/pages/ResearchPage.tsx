@@ -110,10 +110,10 @@ export default function ResearchPage() {
           <h1>ORMAS: the self-repairing neural network.</h1>
           <p>
             ORMAS, invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a trained layer is destroyed
-            mid-training, while a parameter-matched baseline stays at chance (10.0%). Its stability result, the first
+            mid-training, while a parameter-matched baseline stays at chance (10.0%). Raadh built it alone, at 18, on one RTX 3090. Its stability result, the first
             formal local stability characterisation of a self-correcting neural architecture, was accepted after
-            double-blind review at DeepMath 2026 (poster). Below: the method, all 383 reproducible experiments, the
-            Input-to-State Stability derivation and ablations, then Project Cherry, the next architecture.
+            double-blind review at DeepMath 2026 (poster). This page covers the method, all 383 reproducible
+            experiments, the Input-to-State Stability derivation and ablations, then Project Cherry, the next architecture.
           </p>
         </div>
       </section>

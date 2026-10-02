@@ -1,6 +1,6 @@
 # Rokib Al Dhin Raadh
 
-> Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. ORMAS detects, repairs and records its own failing components during training: after a trained layer is destroyed, it recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop and is based in Dhaka, Bangladesh.
+> Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. ORMAS detects, repairs and records its own failing components during training: after a trained layer is destroyed, it recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. He taught himself machine learning and built ORMAS alone at 18, on one RTX 3090, and is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.
 
 Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@oxiedo.com · General: raadxbusiness9@gmail.com
 
@@ -44,7 +44,7 @@ Every claim on raadh.me can be checked against a primary source:
 
 ## Frequently asked
 
-- **Who is Rokib Al Dhin Raadh?** Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. He is based in Dhaka, Bangladesh, and reviews for the NeurIPS 2026 Trustworthy AI for Good workshop.
+- **Who is Rokib Al Dhin Raadh?** Rokib Al Dhin Raadh is the 18-year-old founder and CEO of OXIEDO and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026. He grew up in Dhaka, Bangladesh, taught himself machine learning and reviews for the NeurIPS 2026 Trustworthy AI for Good workshop.
 - **How old is he?** 18 (in 2026). He started five ventures between ages 12 and 17 and founded OXIEDO in 2023.
 - **What is ORMAS?** ORMAS is a self-repairing neural network architecture invented by Rokib Al Dhin Raadh. It identifies, repairs and records its own failing components during training, instead of relying on post-hoc interpretability. After a trained layer is destroyed, it recovers to 80.3% accuracy on CIFAR-10 while a parameter-matched baseline stays at 10.0%.
 - **What is OXIEDO?** OXIEDO is the deep-tech AI company Raadh founded in 2023. It licenses ORMAS on-premise to regulated industries, with the Model Change Record (a tamper-evident log of every weight change in a training run) as the lead product, sold as one annual licence.

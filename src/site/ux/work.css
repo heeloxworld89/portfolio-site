@@ -144,3 +144,12 @@
    position: sticky inside it. On this page only, clip instead: same visual
    result, no scroll container, so the chapter bar can stick. */
 body:has(.ux-work) { overflow-x: clip; overflow-y: visible; }
+
+/* Boxed panels span the full column, so their copy can run wider than the
+   open-page measure; this closes the empty strip on the right of each box. */
+@media (min-width: 1000px) {
+  .rx .ux-work .bb-ceiling p, .rx .ux-work .vn-finding p, .rx .ux-work .ox-closed p,
+  .rx .ux-work .bz-thesis p, .rx .ux-work .bb-rung-a, .rx .ux-work .bb-rung-q,
+  .rx .ux-work .vn-lesson, .rx .ux-work .vn-exit-p, .rx .ux-work .bb-money-note,
+  .rx .ux-work .bz-pos-v { max-width: 100ch; }
+}

@@ -330,7 +330,7 @@ export default function CVWhoIAm() {
             <h3 className="wi-why-h">Five ventures, a new neural network architecture, and the company built on it.</h3>
             <p className="wi-why-p">
               Rokib Al Dhin Raadh, <span className="age">18</span>, is the founder and CEO of OXIEDO and the inventor of ORMAS, a
-              self-repairing neural network. Based in Dhaka, Bangladesh, he ran five ventures between the ages of 12
+              self-repairing neural network. Raised in Dhaka, he ran five ventures between the ages of 12
               and 17 and sold a stock-prediction system for about $10,000 at 15. Tracing one structural cause across
               those ventures led him to multi-agent systems (OXIMO), then to a new neural network architecture
               (ORMAS), and then to a company built on it (OXIEDO).

@@ -30,7 +30,7 @@ export default function ResearchVisualization() {
       <style>{`
         .rvz { margin: 8px 0 0; }
         .rvz-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; margin-bottom: 14px; }
-        @media (max-width: 900px) { .rvz-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { .rvz-grid { grid-template-columns: minmax(0, 1fr); } }
 
                 .rvz-panel { min-width: 0; }
         .rvz-panel {
@@ -73,7 +73,7 @@ export default function ResearchVisualization() {
         .rvz-logline { animation: rvzLog 5s steps(1) infinite; }
         @keyframes rvzLog { 0%, 36% { opacity: 0; } 44%, 100% { opacity: 1; } }
 
-        .rvz-log {
+        .rvz-log { min-width: 0; max-width: 100%;
           background: var(--pf-sunk); border: 1px solid var(--pf-border); border-radius: 8px;
           padding: 14px 16px; margin-top: 12px; overflow-x: auto;
         }
@@ -83,8 +83,10 @@ export default function ResearchVisualization() {
         }
         .rvz-log code {
           display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px; line-height: 1.75; color: var(--pf-ink-2); white-space: pre;
+          font-size: 11px; line-height: 1.75; color: var(--pf-ink-2); white-space: pre-wrap; overflow-wrap: anywhere;
+          overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;
         }
+        @media (max-width: 640px) { .rvz-log code { font-size: 10px; } }
         .rvz-log .k { color: var(--pf-ink-3); }
         .rvz-log .crit { color: var(--pf-accent-2); font-weight: 600; }
         .rvz-log .ok { color: var(--pf-pos); font-weight: 600; }

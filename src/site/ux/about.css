@@ -520,3 +520,43 @@ body:has(.ux-about) { overflow-x: clip !important; overflow-y: visible !importan
   .ux-about .ask-card { padding: 24px 22px 26px; }
   .rx .ux-about .rx-deep a.ask-action { white-space: nowrap; padding: 0 14px; font-size: 12px; letter-spacing: .06em; }
 }
+
+/* DeepMath card: copy on the left, the marks stacked on the right, so the
+   banner uses its full width instead of leaving an empty right half. */
+.ux-about .rec-week-cols { display: grid; grid-template-columns: minmax(0, 1fr) 232px; gap: 40px; align-items: start; }
+.ux-about .rec-week-cols .rec-week-l { max-width: none; }
+.ux-about .rec-week-cols .rec-week-l:last-child { margin-bottom: 0; }
+.ux-about .rec-week-cols .rec-week-wall { flex-direction: column; margin-top: 4px; padding: 0 0 0 28px; border-top: 0; border-left: 1px solid var(--rx-line); }
+.ux-about .rec-week-cols .rec-week-mark { justify-content: flex-start; }
+@media (max-width: 900px) {
+  .ux-about .rec-week-cols { grid-template-columns: 1fr; gap: 20px; }
+  .ux-about .rec-week-cols .rec-week-wall { flex-direction: row; padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--rx-line); }
+}
+
+/* Entrepreneur First: the London screen and The Bridge side by side. */
+.ux-about .rec-ef-pair { align-items: stretch; }
+.ux-about .rec-ef-pair > .rec-status { margin: 0; height: 100%; display: flex; flex-direction: column; }
+.ux-about .rec-ef-pair .rec-status-head { flex-wrap: wrap; row-gap: 12px; }
+.ux-about .rec-ef-pair .rec-stages { margin-top: 8px; flex-wrap: wrap; }
+
+/* Verdict: three findings in three columns, no empty fourth slot. */
+@media (min-width: 900px) {
+  .ux-about .rec-verdict { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* MIT courses: seven cards on a four-column grid; the last one spans the
+   remaining two slots so the row closes cleanly. */
+@media (min-width: 1000px) {
+  .ux-about .mit-courses { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ux-about .mit-course:last-child { grid-column: span 2; }
+}
+@media (min-width: 640px) and (max-width: 999px) {
+  .ux-about .mit-courses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ux-about .mit-course:last-child { grid-column: span 2; }
+}
+/* Personal statement: one consistent column for text, archive, table and close. */
+.ux-about .os-act, .ux-about .os-body, .ux-about .os-rule { max-width: 760px; }
+.ux-about .os-archive, .ux-about .os-needs-wrap, .ux-about .os-close { max-width: 760px; }
+.ux-about .os-close p { max-width: none; }
+@media (min-width: 621px) and (max-width: 1000px) {
+  .ux-about .os-band-cell:last-child { grid-column: span 2; }
+}
