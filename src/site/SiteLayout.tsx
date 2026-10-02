@@ -90,7 +90,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <main id="main" tabIndex={-1}>{children}</main>
 
       <footer className="rx-foot">
-        <div className="rx-field is-foot" aria-hidden="true" />
         <div className="rx-wrap">
           <div className="rx-foot-top">
             <div className="rx-foot-id">
@@ -131,6 +130,9 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <div className="rx-foot-base">
             <small>© Rokib Al Dhin Raadh, 2026</small>
           </div>
+        </div>
+        <div className="rx-foot-land" aria-hidden="true">
+          <img src="/assets/images/footer-landscape.svg" alt="" loading="lazy" decoding="async" />
         </div>
       </footer>
     </div>

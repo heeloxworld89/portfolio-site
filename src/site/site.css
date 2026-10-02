@@ -624,3 +624,11 @@ body:has(.rx) { background: #e7e7e2; }
    container and silently disables every position:sticky on the site. Clip
    instead, so horizontal overflow stays hidden and sticky elements work. */
 html:has(.rx), body:has(.rx) { overflow-x: clip; overflow-y: visible; }
+
+/* Footer landscape: an engraved plain and ridgeline in the site's teal ink,
+   bleeding off the bottom of every page. */
+.rx-foot { padding-bottom: 0; }
+.rx-foot-land { position: relative; height: 300px; margin-top: 8px; overflow: hidden; pointer-events: none; }
+.rx-foot-land img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+@media (max-width: 900px) { .rx-foot-land { height: 210px; } }
+@media (max-width: 560px) { .rx-foot-land { height: 170px; margin-top: 0; } }
