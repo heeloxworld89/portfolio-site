@@ -40,12 +40,13 @@ export default function Home() {
             </p>
             <h1>
               Building neural networks that can account for what they learned.
-              <span className="rx-h2-age">Peer-reviewed at <em>eighteen.</em></span>
+              <span className="rx-h2-age">Peer-reviewed in the United States at <em>eighteen.</em></span>
             </h1>
             <p className="rx-h2-sub">
               Every AI model on earth is a black box. <b>OXIEDO</b> is ending that. Its engine, ORMAS, finds its own
               broken parts, repairs them mid-training and writes a tamper-evident record of every change, so banks,
-              hospitals and defence teams can finally train AI on the data they have been locked out of.
+              hospitals and defence teams can finally train AI on the data they have been locked out of. The work runs
+              across borders: a UK-incorporated operating history, a US expansion under way and peer review in America.
             </p>
             <div className="rx-btns">
               <a className="rx-btn is-cta" href={links.oxiedo} target="_blank" rel="noreferrer">Enter OXIEDO <Arrow /></a>
@@ -71,7 +72,7 @@ export default function Home() {
             </svg>
             <figcaption>
               <span>Rokib Al Dhin Raadh</span>
-              <span>Dhaka · 2026</span>
+              <span>UK · US · Bangladesh · 2026</span>
             </figcaption>
           </figure>
         </div>
@@ -92,14 +93,16 @@ export default function Home() {
         <div className="rx-wrap">
           <div className="rx-sel-head">
             <div>
-              <p className="rx-sel-eb">Recognition · 2026</p>
+              <p className="rx-sel-eb">International selection · 2026</p>
               <h2 id="rx-sel-h">
-                Vetted by the rooms <em>that are hardest to enter.</em>
+                Vetted in San Francisco, London, Paris and the US, <em>by the rooms that are hardest to enter.</em>
               </h2>
             </div>
             <p>
-              Accepted at DeepMath after double-blind review, a reviewer for NeurIPS 2026, ranked first by the Cosmos
-              Institute and taken into 1752vc Ignite from the top 1% of applicants: ten independent panels, one year.
+              Accepted at DeepMath after double-blind review at Ohio State, a reviewer for the NeurIPS 2026 workshop in
+              Paris, holding in the final round of Entrepreneur First&rsquo;s The Bridge in San Francisco, invited to
+              Onstage W26 in London, ranked highest in the Cosmos Institute&rsquo;s 2026 review cycle and taken into
+              1752vc Ignite from the top 1% of applicants: ten international selection panels, one year.
             </p>
           </div>
           <ul className="rx-logos">
@@ -136,12 +139,14 @@ export default function Home() {
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
             <p>
-              Self-taught and based in Dhaka, Bangladesh, he built ORMAS alone: 16,316 lines of PyTorch and 383
-              controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
-              result. OXIEDO, which he founded in 2023, licenses the architecture to regulated industries that need an
-              auditable record of what their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent
-              operating system with 2,069 passing tests, and founded five ventures between the ages of twelve and
-              seventeen, selling a stock-prediction system for about $10,000 at fifteen.
+              Born and raised in Dhaka, Bangladesh, and self-taught, he built ORMAS alone: 16,316 lines of PyTorch and
+              383 controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
+              result. OXIEDO, which he founded in 2023 and is expanding into the United States, licenses the
+              architecture to regulated industries in the UK, the EU and the US that need an auditable record of what
+              their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent operating system with 2,069
+              passing tests, and ran it through a 12-month controlled field study at Black Bloxie LTD, the company he
+              incorporated in England and Wales in 2025; removing OXIMO cut output by 91%. He founded five ventures
+              between the ages of twelve and seventeen, selling a stock-prediction system for about $10,000 at fifteen.
             </p>
             <div className="rx-links">
               <a href={links.cv} target="_blank" rel="noreferrer">CV <Arrow /></a>
@@ -379,7 +384,7 @@ export default function Home() {
                 <a href={links.substack} target="_blank" rel="noreferrer">Substack</a> ·{" "}
                 <a href={links.youtube} target="_blank" rel="noreferrer">YouTube</a>
               </p>
-              <p>Dhaka, Bangladesh</p>
+              <p>Working across the UK, the US and Bangladesh</p>
             </div>
           </div>
           <a className="ux-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
