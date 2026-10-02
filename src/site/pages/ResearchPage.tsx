@@ -106,19 +106,19 @@ export default function ResearchPage() {
       <section className="rx-page-head">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
-          <h2 className="rx-label">Research · ORMAS · DeepMath 2026, Columbus · NeurIPS 2026 reviewer</h2>
-          <h1>ORMAS: a self-repairing neural network, peer-reviewed in the United States.</h1>
+          <h2 className="rx-label">Research · ORMAS</h2>
+          <h1>ORMAS: a neural network that repairs itself while it trains.</h1>
           <p>
             ORMAS, a neural network architecture invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a
-            trained layer is destroyed mid-training, while a parameter-matched baseline stays at chance (10.0%). Raadh built it alone at 18, inside his own
-            startup rather than a university lab: self-taught, self-funded, on a single RTX 3090. Its
+            trained layer is destroyed mid-training, while a parameter-matched baseline stays at chance (10.0%). Raadh built it alone at 18, on one RTX
+            3090, with no lab behind him. Its
             stability result, the first formal local stability characterisation of a self-correcting neural
             architecture, was accepted after double-blind review at DeepMath 2026, the Conference on the Mathematical
             Theory of Deep Neural Networks, held at Ohio State University in Columbus on 29&ndash;30 October, where it will
             be presented as a poster. The preprint is open and citable on Zenodo, and the public code reproduces all
             383 experiments. Raadh also reviews for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris and is a
-            member of the Cohere Labs Open Science Community. Below: the method, the experiments, the Input-to-State
-            Stability derivation and ablations, then Project Cherry, the next architecture.
+            member of the Cohere Labs Open Science Community. The page walks through the method, the experiments and
+            the stability proof, and ends with Project Cherry, the architecture he is building next.
           </p>
         </div>
       </section>

@@ -30,8 +30,7 @@ export default function CVOximo() {
           OXIMO is the multi-agent operating system Raadh built alone after five ventures showed him the same
           constraint: coordination, not individual capability. Given a one-sentence brief, it designs the
           organisation needed to deliver it and creates specialist roles when none exist.{' '}
-          <strong>It ran Black Bloxie LTD, his UK-incorporated e-commerce company with customers in ten
-          countries, for twelve months. Its limit on real-world data
+          <strong>It ran Black Bloxie LTD, his e-commerce company in England, for twelve months. Its limit on real-world data
           is the problem ORMAS was built to solve.</strong>
         </>
       }

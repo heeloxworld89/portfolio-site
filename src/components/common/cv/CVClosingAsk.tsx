@@ -6,8 +6,8 @@ export default function CVClosingAsk() {
       id="contact"
       phase="about"
       eyebrow="Contact"
-      title="For investors, research labs and the press: review the research, reproduce the results, or discuss OXIEDO."
-      lead="Rokib Al Dhin Raadh, founder and CEO of OXIEDO, takes direct enquiries from research labs reviewing the ORMAS stability result, international investors and partners in compute and regulated data, engineers reproducing the 383 experiments, and the press. Each has a starting point below."
+      title="Review the research, reproduce the results, or talk to him about OXIEDO."
+      lead="Rokib Al Dhin Raadh, founder and CEO of OXIEDO, takes direct enquiries from research labs reviewing the ORMAS stability result, investors and partners in compute and regulated data, engineers reproducing the 383 experiments, and the press. Each has a starting point below."
       last
     >
       <style>{`
@@ -123,7 +123,7 @@ export default function CVClosingAsk() {
           </div>
 
           <div className="ask-card">
-            <div className="ask-for">International investors and partners</div>
+            <div className="ask-for">Investors and partners</div>
             <div className="ask-audience">The next phase: compute, regulated data and the US expansion</div>
             <p className="ask-body">
               The next phase requires multi-node compute for Transformer-scale validation and a data partner with regulated data in the UK, EU or US. The round, milestones and risk register are set out on the company site.

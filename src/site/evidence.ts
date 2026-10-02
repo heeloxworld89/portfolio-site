@@ -69,7 +69,7 @@ export const groups: Group[] = [
     rows: [
       {
         claim: "Founder and CEO of OXIEDO (founded 2023)",
-        detail: "OXIEDO licenses ORMAS on-premise to regulated industries and is expanding into the United States, where its incorporation is under way.",
+        detail: "OXIEDO licenses ORMAS on-premise to regulated industries. Its Delaware company is in formation.",
         source: [{ label: "oxiedo.com", href: links.oxiedo }],
         status: "Public record",
       },
@@ -107,7 +107,7 @@ export const groups: Group[] = [
   },
   {
     id: "selection",
-    title: "International selection, 2026",
+    title: "Selection, 2026",
     rows: [
       { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc, United States.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Cosmos Institute: ranked highest in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, United States, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },

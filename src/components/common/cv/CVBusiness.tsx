@@ -27,7 +27,7 @@ const sectors = [
 
 const position = [
   { k: 'Stage',     v: 'Licensing model defined. Conversations with model-risk and compliance teams are under way.' },
-  { k: 'Entity',    v: 'Operating history in the United Kingdom through Black Bloxie LTD (England & Wales, company no. 16711223). US incorporation under way: a Delaware C-corporation in formation. The ORMAS IP is held by the founder and will be assigned to it.' },
+  { k: 'Entity',    v: 'A Delaware C-corporation is in formation, and the ORMAS IP held by the founder will be assigned to it. His UK company, Black Bloxie LTD (England & Wales, no. 16711223), has run since 2025.' },
   { k: 'Evidence',  v: '383 ORMAS experiments on CIFAR-10 and CIFAR-100, every one reproducible from seed. Next: validation on clinical, financial and defence data with a data-custodian partner.' },
   { k: 'Team',      v: 'Founder-led: Raadh invented ORMAS and wrote its 16,316-line PyTorch codebase. The first use of funds is a research engineer.' },
 ];
@@ -39,14 +39,13 @@ export default function CVBusiness() {
     <CVSection
       id="oxiedo"
       phase="now"
-      eyebrow="OXIEDO · US expansion · Markets in the US, EU and UK"
+      eyebrow="OXIEDO · Founded 2023"
       title="OXIEDO lets regulated institutions in the US, the EU and the UK train AI on data they already own."
       lead={
         <>
           OXIEDO, founded by Raadh in 2023, licenses ORMAS on-premise to banks, hospitals and other
-          regulated institutions in the United States, the European Union and the United Kingdom. It builds on
-          its founder&apos;s operating history in England and Wales and is expanding into the United States, where its
-          incorporation is under way. The institutions&apos; records are among the most valuable training data in existence, and
+          regulated institutions in the United States, the European Union and the United Kingdom. Its US company
+          is being formed in Delaware. Those institutions&apos; records are among the most valuable training data in existence, and
           most of it sits unused, because conventional models cannot account for what they learned from it.
           ORMAS writes that account during training: the <strong>Model Change Record</strong>, a
           tamper-evident log of every weight change in a run.{' '}<strong>It is built for model-risk
@@ -165,7 +164,7 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label"><span className="bz-step">Position</span>Current position: founder-led, licence defined, US expansion under way</p>
+      <p className="bz-label"><span className="bz-step">Position</span>Where it stands: founder-led, licence written, Delaware company in formation</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>

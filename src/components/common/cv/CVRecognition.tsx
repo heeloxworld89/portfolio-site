@@ -5,12 +5,11 @@ export default function CVRecognition() {
     <CVSection
       id="recognition"
       phase="now"
-      eyebrow="International record · 2026"
-      title={<>Ten selections in 2026, from San Francisco to Paris. At <span className="age">18</span>.</>}
+      eyebrow="Recognition · 2026"
+      title={<>Ten selections in one year, at <span className="age">18</span>.</>}
       lead={
         <>
-          In 2026 Rokib Al Dhin Raadh cleared ten independent selection panels on both sides of the Atlantic,
-          every one from a cold application. In the United States, DeepMath 2026 accepted his stability result
+          Rokib Al Dhin Raadh had no introductions to any of the panels below. He applied cold. In the United States, DeepMath 2026 accepted his stability result
           after double-blind review at Ohio State in Columbus, Cosmos Institute ranked the work highest in its
           2026 review cycle, and 1752vc took OXIEDO into Ignite from the top 1% of applicants. In Paris, NeurIPS
           2026 made him a reviewer for its Trustworthy AI for Good workshop. In London, Entrepreneur First
@@ -939,10 +938,10 @@ export default function CVRecognition() {
             the area his own research addresses.
           </p>
           <p className="rec-verdict-body">
-            <strong>Cross-border selection.</strong> Cosmos Institute ranked the work highest in its cycle.
+            <strong>Venture.</strong> Cosmos Institute ranked the work highest in its cycle.
             1752vc and Freshmango each offered OXIEDO places after competitive selection, Onstage invited him to
             its W26 pre-pitch event in London, and The Bridge in San Francisco is holding him in its final round.
-            Every one began as an unsolicited application.
+            He had no warm introduction to any of them.
           </p>
         </div>
 

@@ -27,8 +27,8 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description: `${DEFINITION} He built all of it at 18 from his own startup, self-taught and self-funded, without a university lab or a team. His operating history is in the United Kingdom, where he founded Black Bloxie LTD (England & Wales, 2025), and OXIEDO is expanding into the United States. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris and has advanced through selection rounds at venture programmes in San Francisco and London. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated institutions in the US, the EU and the UK.`,
-  disambiguatingDescription: "International AI founder, 18: founder and CEO of OXIEDO, founder of the UK-incorporated Black Bloxie LTD, and inventor of the ORMAS self-repairing neural network.",
+  description: `${DEFINITION} He taught himself machine learning and built ORMAS alone, running all 383 experiments on one RTX 3090 bought with the proceeds of a stock-prediction system he sold at 15. He founded Black Bloxie LTD in England and Wales in 2025, and OXIEDO's US company is in formation in Delaware. He reviews for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated institutions in the US, the EU and the UK.`,
+  disambiguatingDescription: "AI founder, 18: founder and CEO of OXIEDO, inventor of the ORMAS self-repairing neural network, and founder of Black Bloxie LTD (England and Wales).",
   jobTitle: "Founder & CEO, OXIEDO",
   hasOccupation: [
     { "@type": "Occupation", name: "Founder & Chief Executive Officer, OXIEDO", occupationLocation: [{ "@type": "Country", name: "United Kingdom" }, { "@type": "Country", name: "United States" }] },
@@ -114,7 +114,7 @@ const oxiedo = {
   founder: ref("person"),
   employee: ref("person"),
   description:
-    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated institutions in the United States, the European Union and the United Kingdom, and is expanding into the United States. Its lead product is the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
+    "OXIEDO is a deep-tech AI company founded in 2023 by Rokib Al Dhin Raadh. It licenses ORMAS, his self-repairing neural network, on-premise to regulated institutions in the United States, the European Union and the United Kingdom; its US company is in formation in Delaware. Its lead product is the Model Change Record: a tamper-evident log of every weight change in a training run, for model-risk teams (SR 26-2) and the EU AI Act's high-risk obligations.",
   areaServed: [{ "@type": "Country", name: "United States" }, { "@type": "Place", name: "European Union" }, { "@type": "Country", name: "United Kingdom" }],
   knowsAbout: ["Auditable AI training", "AI model risk management", "EU AI Act compliance", "Self-repairing neural networks"],
   makesOffer: {

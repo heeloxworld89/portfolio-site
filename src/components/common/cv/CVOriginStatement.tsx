@@ -39,11 +39,11 @@ export default function CVOriginStatement() {
       id="statement"
       phase="about"
       eyebrow="Personal Statement"
-      title="Personal statement: from a first venture at 12 to DeepMath 2026 in Columbus and a NeurIPS review role in Paris at 18."
+      title="Personal statement: from a first venture at 12 to DeepMath 2026 at 18."
       lead={
         <>
-          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and self-funded,
-          from a UK operating history to a US expansion, and the three resources the next phase requires: multi-node compute, capacity to train Project Cherry,
+          In his own words, Rokib Al Dhin Raadh sets out how he built ORMAS and OXIEDO alone and on his own money,
+          and the three resources the next phase requires: multi-node compute, capacity to train Project Cherry,
           and a control theorist.
         </>
       }

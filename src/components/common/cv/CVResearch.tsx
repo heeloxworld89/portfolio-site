@@ -199,8 +199,8 @@ export default function CVResearch() {
           probing classifiers, circuit discovery) analyse a model from the outside, after training, and
           reconstruct what probably happened; those reconstructions cannot be verified.{' '}
           <strong>In ORMAS the record is produced by the same computation that performs the learning</strong>,
-          so it is measured rather than inferred. The work is in the open: a citable preprint, public code and the
-          full results archive, for any laboratory to check.
+          so it is measured rather than inferred. Anyone can check it: the preprint, the code and
+          every experiment log are public.
         </>
       }
       meta={[

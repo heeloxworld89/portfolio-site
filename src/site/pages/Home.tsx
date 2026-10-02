@@ -45,9 +45,9 @@ export default function Home() {
             <p className="rx-h2-sub">
               Every AI model on earth is a black box. <b>OXIEDO</b> is ending that. Its engine, ORMAS, finds its own
               broken parts, repairs them mid-training and writes a tamper-evident record of every change, so banks,
-              hospitals and defence teams can finally train AI on the data they have been locked out of. He built it at
-              18, from his own startup: no lab, no university, no team. The work now runs across borders, with a
-              UK-incorporated operating history, a US expansion under way and peer review in America.
+              hospitals and defence teams can finally train AI on the data they have been locked out of. Raadh built it
+              at 18 on a single graphics card he paid for himself. In September, DeepMath at Ohio State accepted the
+              mathematics behind it.
             </p>
             <div className="rx-btns">
               <a className="rx-btn is-cta" href={links.oxiedo} target="_blank" rel="noreferrer">Enter OXIEDO <Arrow /></a>
@@ -94,16 +94,16 @@ export default function Home() {
         <div className="rx-wrap">
           <div className="rx-sel-head">
             <div>
-              <p className="rx-sel-eb">International selection · 2026</p>
+              <p className="rx-sel-eb">2026</p>
               <h2 id="rx-sel-h">
-                Vetted in San Francisco, London, Paris and the US, <em>by the rooms that are hardest to enter.</em>
+                Ten panels moved him forward this year. <em>He came in cold to all of them.</em>
               </h2>
             </div>
             <p>
-              Accepted at DeepMath after double-blind review at Ohio State, a reviewer for the NeurIPS 2026 workshop in
-              Paris, holding in the final round of Entrepreneur First&rsquo;s The Bridge in San Francisco, invited to
-              Onstage W26 in London, ranked highest in the Cosmos Institute&rsquo;s 2026 review cycle and taken into
-              1752vc Ignite from the top 1% of applicants: ten international selection panels, one year.
+              DeepMath&rsquo;s reviewers accepted his paper without knowing who wrote it. NeurIPS took him on as a
+              reviewer for its Paris workshop. 1752vc took OXIEDO from the top 1% of applicants, Cosmos Institute ranked
+              the work first in its cycle, and Entrepreneur First&rsquo;s The Bridge in San Francisco is still holding
+              him in its final round.
             </p>
           </div>
           <ul className="rx-logos">
@@ -140,11 +140,11 @@ export default function Home() {
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
             <p>
-              He did it from a startup, not a lab. Born and raised in Dhaka, Bangladesh, self-taught and self-funded, he built ORMAS alone: 16,316 lines of PyTorch and
-              383 controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
-              result. OXIEDO, which he founded in 2023 and is expanding into the United States, licenses the
-              architecture to regulated industries in the UK, the EU and the US that need an auditable record of what
-              their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent operating system with 2,069
+              Raadh grew up in Dhaka and taught himself machine learning. He wrote all 16,316 lines of ORMAS himself
+              and ran its 383 experiments on one RTX 3090, bought with the money from a stock-prediction system he
+              sold at fifteen. The paper and the code are public. OXIEDO, which he founded in 2023, licenses the architecture
+              to banks, hospitals and defence programmes in the UK, the EU and the US, and is setting up its US
+              company in Delaware. Before ORMAS he built OXIMO, a 40,933-line multi-agent operating system with 2,069
               passing tests, and ran it through a 12-month controlled field study at Black Bloxie LTD, the company he
               incorporated in England and Wales in 2025; removing OXIMO cut output by 91%. He founded five ventures
               between the ages of twelve and seventeen, selling a stock-prediction system for about $10,000 at fifteen.

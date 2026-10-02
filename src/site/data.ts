@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-10-02b";
+export const CV_VERSION = "2026-10-02c";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -102,7 +102,7 @@ export const pages = {
   "/": {
     title: "Rokib Al Dhin Raadh, 18 — Founder of OXIEDO, Inventor of ORMAS",
     description:
-      "Rokib Al Dhin Raadh, 18: international AI founder, CEO of OXIEDO, founder of UK-incorporated Black Bloxie LTD, inventor of ORMAS. DeepMath 2026; NeurIPS reviewer.",
+      "Rokib Al Dhin Raadh, 18, founded OXIEDO and invented ORMAS, a neural network that repairs itself in training. Accepted at DeepMath 2026; NeurIPS 2026 reviewer.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
@@ -116,14 +116,14 @@ export const pages = {
   "/work": {
     title: "OXIEDO: Auditable AI Training — Founded by Rokib Al Dhin Raadh",
     description:
-      "OXIEDO, founded 2023 by Rokib Al Dhin Raadh and expanding into the US, licenses ORMAS to regulated institutions in the US, EU and UK.",
+      "OXIEDO, founded in 2023 by Rokib Al Dhin Raadh, licenses ORMAS to banks, hospitals and defence programmes in the US, EU and UK.",
     image: "/og/work-v3.jpg",
     imageAlt: "OXIEDO, founded by Rokib Al Dhin Raadh, and the Model Change Record: a tamper-evident log of every weight change in training",
   },
   "/about": {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, international founder of OXIEDO with a UK operating history. DeepMath 2026, NeurIPS 2026 reviewer, 1752vc top 1%, seven MIT programmes.",
+      "Rokib Al Dhin Raadh, 18, taught himself machine learning and founded OXIEDO. DeepMath 2026, NeurIPS 2026 reviewer, 1752vc top 1%, a UK company at 17.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },

@@ -48,12 +48,12 @@ export default function CVBlackBloxie() {
       id="black-bloxie"
       phase="before"
       eyebrow="Black Bloxie LTD · England & Wales · 2025–2026"
-      title="Removing OXIMO from his UK company, with customers in ten countries, cut its output 91%."
+      title="He switched OXIMO off. Output fell 91%."
       lead={
         <>
           Black Bloxie LTD, incorporated in England and Wales on 11 September 2025 (company no. 16711223), is Raadh&apos;s
-          UK-incorporated company; he is its founder and CEO. It was his twelve-month, cross-border controlled
-          field study of OXIMO on a live e-commerce company, with a real supplier and customers in ten countries.{' '}<strong>When he removed the system, output fell 91%; when he
+          company, and he is its founder and CEO. For twelve months it was a live e-commerce business, with a real
+          supplier and customers in ten countries, and OXIMO did the work.{' '}<strong>When he removed the system, output fell 91%; when he
           restored it, output recovered and overshot its original level.</strong> Revenue alone cannot show
           whether the market would have delivered the same result. A removal test can.
         </>
@@ -204,7 +204,7 @@ export default function CVBlackBloxie() {
         </p>
       </div>
 
-      <p className="bb-label">A cross-border study in four phases</p>
+      <p className="bb-label">The study in four phases</p>
       <ol className="bb-phases">
         {phases.map((ph) => (
           <li className={`bb-ph is-${ph.tone}`} key={ph.p}>

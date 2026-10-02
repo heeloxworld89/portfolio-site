@@ -114,7 +114,7 @@ const systems = [
 
 const router = [
   { a: 'Researchers', d: 'The ISS derivation, all 383 runs, the telemetry design and the adverse results. Scrutiny of the stability bound is especially welcome.', h: '/research', l: 'The research' },
-  { a: 'Investors', d: 'The product, the cross-border regulatory drivers (SR 26-2 in the US, the EU AI Act in Europe) and timeline, and a full risk register.', h: '/work#oxiedo', l: 'The company' },
+  { a: 'Investors', d: 'The product, the regulatory drivers (SR 26-2 in the US, the EU AI Act in Europe) and timeline, and a full risk register.', h: '/work#oxiedo', l: 'The company' },
   { a: 'Engineers', d: '40,933 lines and 2,069 tests: a system that turns one sentence into a working organisation.', h: '/work#oximo', l: 'The codebase' },
   { a: 'Sceptics', d: 'A twelve-month controlled study on a live company with real customers, with every figure disclosed.', h: '/work#black-bloxie', l: 'The experiment' },
 ];
@@ -307,7 +307,7 @@ export default function CVWhoIAm() {
         <div className="sx-head">
           <div className="sx-eyebrow">Profile</div>
           <h2 className="sx-title">
-            Founder first: from a first venture at 12 to a UK operating history and a US expansion at <span className="age">18</span>
+            First venture at 12. A peer-reviewed invention at <span className="age">18</span>.
           </h2>
         </div>
 
@@ -330,11 +330,10 @@ export default function CVWhoIAm() {
             <h3 className="wi-why-h">Five ventures, a new neural network architecture, and the company built on it.</h3>
             <p className="wi-why-p">
               Rokib Al Dhin Raadh, <span className="age">18</span>, is the founder and CEO of OXIEDO and the inventor of ORMAS, a
-              self-repairing neural network. His operating history is in the United Kingdom: Black Bloxie LTD,
-              incorporated in England and Wales in 2025, was a live e-commerce company with customers in ten
-              countries, run for twelve months as a controlled field study of OXIMO. OXIEDO is now expanding into the
-              United States, where the ORMAS stability result passed double-blind review for DeepMath 2026 at Ohio
-              State University. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris.
+              self-repairing neural network. In 2025 he registered Black Bloxie LTD in England and let OXIMO, his
+              agent system, run it for a year; it sold to customers in ten countries. In 2026 his stability paper
+              passed double-blind review for DeepMath at Ohio State, and NeurIPS took him on as a reviewer for its
+              Trustworthy AI for Good workshop in Paris.
             </p>
             <p className="wi-why-p">
               Born and raised in Dhaka, he ran five ventures between the ages of 12 and 17 and sold a
@@ -403,7 +402,7 @@ export default function CVWhoIAm() {
         </div>
 
         <p className="wi-standing-note">
-          The ten 2026 selections, made by international panels in the United States, the United Kingdom and beyond, are in <a href="#recognition">Recognition</a>. The five ventures are covered in{' '}
+          The ten 2026 selections are in <a href="#recognition">Recognition</a>. The five ventures are covered in{' '}
           <a href="/work#ventures">Ventures</a>, and credentials in <a href="#education">Education</a>.
         </p>
 

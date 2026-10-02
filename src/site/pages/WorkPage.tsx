@@ -46,9 +46,9 @@ export default function WorkPage() {
         <section className="rx-page-head">
           <div className="rx-field is-hero" aria-hidden="true" />
           <div className="rx-wrap" style={{ position: "relative" }}>
-            <h2 className="rx-label">Work · United Kingdom · United States</h2>
-            <h1>Founder of OXIEDO: a UK operating history, a US expansion, companies since the age of 12.</h1>
-            <p>Rokib Al Dhin Raadh is the founder and CEO of OXIEDO, which licenses ORMAS, his self-repairing neural network, to regulated institutions in a market that spans the United States, the European Union and the United Kingdom. The company is expanding into the United States, with US incorporation under way, building on his operating history in England and Wales. Each step built on the last: five ventures from age 12, selling into European and US markets, and a ~$10,000 sale at 15; OXIMO, a 40,933-line multi-agent system with 2,069 tests; a 12-month cross-border field study on Black Bloxie LTD, his UK-incorporated e-commerce company with customers in ten countries, where removing OXIMO cut output 91%; then ORMAS and OXIEDO. All of it was built from his own startup, self-funded and founder-led, before he turned 19.</p>
+            <h2 className="rx-label">Work</h2>
+            <h1>In business since he was twelve. OXIEDO is the company he is building now.</h1>
+            <p>OXIEDO licenses ORMAS, Raadh&rsquo;s self-repairing neural network, to regulated institutions in the US, the EU and the UK, and its US company is being formed in Delaware. It is the end of a long chain. At 12 he started his first venture. At 15 he sold a stock-prediction system for about $10,000. At 17 he registered Black Bloxie LTD in England, handed the business to OXIMO, the 40,933-line agent system he had written, and saw output fall 91% when he switched it off. ORMAS came out of what OXIMO could not do.</p>
           </div>
         </section>
 
