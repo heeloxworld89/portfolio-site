@@ -6,8 +6,8 @@ export default function CVClosingAsk() {
       id="contact"
       phase="about"
       eyebrow="Contact"
-      title="Review the research, reproduce the results, or discuss OXIEDO."
-      lead="Rokib Al Dhin Raadh, founder and CEO of OXIEDO, takes direct enquiries from researchers reviewing the ORMAS stability result, investors and partners in compute and regulated data, and engineers reproducing the 383 experiments. Each has a starting point below."
+      title="For investors, research labs and the press: review the research, reproduce the results, or discuss OXIEDO."
+      lead="Rokib Al Dhin Raadh, founder and CEO of OXIEDO, takes direct enquiries from research labs reviewing the ORMAS stability result, international investors and partners in compute and regulated data, engineers reproducing the 383 experiments, and the press. Each has a starting point below."
       last
     >
       <style>{`
@@ -111,7 +111,7 @@ export default function CVClosingAsk() {
 
         <div className="ask-grid">
           <div className="ask-card">
-            <div className="ask-for">Researchers</div>
+            <div className="ask-for">Researchers and labs</div>
             <div className="ask-audience">Stress-test the DeepMath 2026 stability result</div>
             <p className="ask-body">
               The preprint is on Zenodo, and the codebase reproduces the core claims in under an hour on a single GPU. Feedback on the ISS stability result, including potential errors or tighter bounds, is particularly welcome.
@@ -123,10 +123,10 @@ export default function CVClosingAsk() {
           </div>
 
           <div className="ask-card">
-            <div className="ask-for">Investors and partners</div>
-            <div className="ask-audience">Fund the next phase: compute and regulated data</div>
+            <div className="ask-for">International investors and partners</div>
+            <div className="ask-audience">The next phase: compute, regulated data and the US expansion</div>
             <p className="ask-body">
-              The next phase requires multi-node compute for Transformer-scale validation and a data partner with regulated data. The round, milestones and risk register are set out on the company site.
+              The next phase requires multi-node compute for Transformer-scale validation and a data partner with regulated data in the UK, EU or US. The round, milestones and risk register are set out on the company site.
             </p>
             <a className="ask-action" href="https://oxiedo.com/invest" target="_blank" rel="noreferrer">
               The Investment Case
@@ -148,9 +148,9 @@ export default function CVClosingAsk() {
         </div>
 
         <div className="ask-email-bar">
-          <span className="ask-email-label">Write to the founder directly</span>
+          <span className="ask-email-label">Investors, labs and press: write to the founder directly</span>
           <a className="ask-email-link" href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>
-          <span className="ask-email-note">Replies are typically sent within one working day.</span>
+          <span className="ask-email-note">Replies are typically sent within one working day. General enquiries: <a href="mailto:raadxbusiness9@gmail.com">raadxbusiness9@gmail.com</a>.</span>
           <a className="ask-site" href="https://oxiedo.com" target="_blank" rel="noreferrer">
             <span className="ask-site-dot" aria-hidden="true" />
             oxiedo.com

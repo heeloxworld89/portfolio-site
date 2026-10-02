@@ -51,11 +51,12 @@ export default function CVVentures() {
     <CVSection
       id="ventures"
       phase="before"
-      eyebrow="Ventures · 2020–2025"
+      eyebrow="Ventures · 2020–2025 · European and US markets"
       title={<>Five ventures from age 12, and a ~$10,000 sale at 15.</>}
       lead={
         <>
-          Raadh founded his first company at 12 and four more by 17, and at 15 he built and sold a
+          Raadh founded his first company at 12 and four more by 17, two of them selling into European and
+          US markets, and at 15 he built and sold a
           stock-prediction system for about $10,000. Each venture hit a different limit.{' '}
           <strong>Together they identified the constraint every later system was built to remove:
           coordination, not individual capability.</strong>

@@ -19,15 +19,15 @@ const DECK_VERSION = '2026-09-22a';
 
 const sectors = [
   { n: 'AI Training',               q: 'Is this run failing, and which component?', w: 'A lab whose long training run keeps failing, with no way to say which component broke' },
-  { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A bank whose model cannot clear SR 26-2 validation' },
-  { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital whose approved model may never be updated' },
-  { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A controller facing erasure against trained weights' },
+  { n: 'Regulated Finance',         q: 'What changed, and can a validator verify it?', w: 'A US bank whose model cannot clear validation under SR 26-2, the Federal Reserve’s model-risk guidance' },
+  { n: 'Medical AI',                q: 'Which site caused this, and can we show it?', w: 'A hospital in the EU or UK whose approved model may never be updated' },
+  { n: 'Data Obligation',           q: 'What data is in here, and can I take it back out?', w: 'A UK or EU data controller facing erasure requests against trained weights' },
   { n: 'Defence & Safety-Critical', q: 'What did it do to itself in the field?', w: 'A programme that ends if the answer is “we cannot say”' },
 ];
 
 const position = [
   { k: 'Stage',     v: 'Licensing model defined. Conversations with model-risk and compliance teams are under way.' },
-  { k: 'Entity',    v: 'Delaware C-corporation in formation; the ORMAS IP is held by the founder and will be assigned to it.' },
+  { k: 'Entity',    v: 'Operating history in the United Kingdom through Black Bloxie LTD (England & Wales, company no. 16711223). US incorporation under way: a Delaware C-corporation in formation. The ORMAS IP is held by the founder and will be assigned to it.' },
   { k: 'Evidence',  v: '383 ORMAS experiments on CIFAR-10 and CIFAR-100, every one reproducible from seed. Next: validation on clinical, financial and defence data with a data-custodian partner.' },
   { k: 'Team',      v: 'Founder-led: Raadh invented ORMAS and wrote its 16,316-line PyTorch codebase. The first use of funds is a research engineer.' },
 ];
@@ -39,16 +39,18 @@ export default function CVBusiness() {
     <CVSection
       id="oxiedo"
       phase="now"
-      eyebrow="OXIEDO · The Business"
-      title="OXIEDO lets regulated industries train AI on data they already own."
+      eyebrow="OXIEDO · US expansion · Markets in the US, EU and UK"
+      title="OXIEDO lets regulated institutions in the US, the EU and the UK train AI on data they already own."
       lead={
         <>
           OXIEDO, founded by Raadh in 2023, licenses ORMAS on-premise to banks, hospitals and other
-          regulated institutions. Their records are among the most valuable training data in existence, and
+          regulated institutions in the United States, the European Union and the United Kingdom. It builds on
+          its founder&apos;s operating history in England and Wales and is expanding into the United States, where its
+          incorporation is under way. The institutions&apos; records are among the most valuable training data in existence, and
           most of it sits unused, because conventional models cannot account for what they learned from it.
           ORMAS writes that account during training: the <strong>Model Change Record</strong>, a
-          tamper-evident log of every weight change in a run.{' '}<strong>It is built for SR 26-2 model-risk
-          validation and for the EU AI Act&apos;s high-risk record-keeping obligations, which apply from
+          tamper-evident log of every weight change in a run.{' '}<strong>It is built for model-risk
+          validation under SR 26-2, the US Federal Reserve&apos;s guidance, and for the EU AI Act&apos;s high-risk record-keeping obligations, which apply from
           December 2027.</strong>
         </>
       }
@@ -56,7 +58,7 @@ export default function CVBusiness() {
         { k: 'Model', v: 'On-premise licence' },
         { k: 'Founded', v: '2023' },
         { k: 'Lead product', v: 'Model Change Record' },
-        { k: 'Markets', v: 'Five regulated' },
+        { k: 'Markets', v: 'US · EU · UK' },
       ]}
     >
       <style>{`
@@ -150,7 +152,7 @@ export default function CVBusiness() {
 
       <div className="bz-gap" />
 
-      <p className="bz-label"><span className="bz-step">Markets</span>Five regulated markets, one question regulators ask</p>
+      <p className="bz-label"><span className="bz-step">Markets</span>Five regulated sectors across the US, EU and UK, one question regulators ask</p>
       <div className="bz-sectors">
         {sectors.map((s) => (
           <div className="bz-sector" key={s.n}>
@@ -163,7 +165,7 @@ export default function CVBusiness() {
         ))}
       </div>
 
-      <p className="bz-label"><span className="bz-step">Position</span>Current position: founder-led, licence defined</p>
+      <p className="bz-label"><span className="bz-step">Position</span>Current position: founder-led, licence defined, US expansion under way</p>
       <div className="bz-pos">
         {position.map((p) => (
           <div className="bz-pos-row" key={p.k}>

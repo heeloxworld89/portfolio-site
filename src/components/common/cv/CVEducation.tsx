@@ -5,13 +5,14 @@ export default function CVEducation() {
       id="education"
       phase="about"
       eyebrow="Education"
-      title="Self-directed by design: seven MIT programmes and a DeepMath 2026 acceptance before leaving school."
+      title="Self-directed by design: seven MIT Open Learning programmes, a UK company and a DeepMath 2026 acceptance before leaving school."
       lead={
         <>
           Rokib Al Dhin Raadh, <span className="age">18</span>, is in his final year of secondary school and chose to learn his field
           independently, without a university or advisor. He completed seven MIT Open Learning (MITx) programmes
           and Andrew Ng&apos;s Deep Learning Specialization, and learned whatever each problem required: control
-          theory for the ORMAS stability proof, market microstructure and UK company law alongside machine learning.
+          theory for the ORMAS stability proof, market microstructure, and the company law of England and Wales to
+          incorporate a UK company, alongside machine learning.
         </>
       }
     >
@@ -155,8 +156,8 @@ export default function CVEducation() {
             </div>
 
             <div className="edu-card">
-              <h5 className="edu-title">UK company law, without a lawyer</h5>
-              <p className="edu-desc">Incorporating Black Bloxie LTD at UK Companies House from Bangladesh, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
+              <h5 className="edu-title">England &amp; Wales company law, without a lawyer</h5>
+              <p className="edu-desc">Incorporating Black Bloxie LTD (company no. 16711223) at Companies House from overseas, without a lawyer or agent, meant mastering the filing regime, anti-money-laundering requirements and director obligations.</p>
             </div>
           </div>
 
@@ -166,8 +167,8 @@ export default function CVEducation() {
             <h4 className="mit-h">Seven MIT programmes. <em>Before finishing school.</em></h4>
             <p className="mit-lede">
               While still in his final year of secondary school, Raadh completed seven programmes from MIT Open Learning,
-              covering foundation models, AI in medicine, energy and transport, and AI entrepreneurship: the same
-              regulated sectors OXIEDO now sells into. After an admissions call about his work, he was offered a 40%
+              the Massachusetts Institute of Technology&apos;s online-learning division, covering foundation models, AI in
+              medicine, energy and transport, and AI entrepreneurship: the same regulated sectors OXIEDO is built for. After an admissions call about his work, he was offered a 40%
               scholarship on a further MIT programme.
             </p>
             <div className="mit-stats">
@@ -241,7 +242,7 @@ export default function CVEducation() {
               { val: '383', lbl: 'Controlled experiments' },
               { val: '40,933', lbl: 'Lines of production code' },
               { val: 'DeepMath 2026', lbl: 'Accepted · Poster' },
-              { val: 'UK Ltd', lbl: 'Incorporated, England & Wales' },
+              { val: 'UK Ltd', lbl: 'Incorporated, England & Wales · 2025' },
             ].map((s, i) => (
               <div key={i} className="edu-fig">
                 <div className="edu-fig-v">{s.val}</div>

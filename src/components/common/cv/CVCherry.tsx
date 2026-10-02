@@ -21,7 +21,7 @@ export default function CVCherry() {
       last
       id="cherry"
       phase="now"
-      eyebrow="Project Cherry · Next architecture · Fully specified"
+      eyebrow="Project Cherry · Next architecture after ORMAS · Fully specified"
       title="Project Cherry: the next architecture after ORMAS, a network that grows its own components."
       lead={
         <>
@@ -35,7 +35,7 @@ export default function CVCherry() {
         { k: 'Status', v: 'Specification complete' },
         { k: 'Builds on', v: 'ORMAS self-correction' },
         { k: 'Next milestone', v: 'Multi-node H100 access' },
-        { k: 'Results', v: 'None claimed until built' },
+        { k: 'Results', v: 'Reported once built' },
       ]}
     >
       <div className="uxr-body uxr-cherry">
@@ -63,7 +63,7 @@ export default function CVCherry() {
         </section>
 
         <section className="uxr-sec" id="cherry-differs">
-          <h3 className="uxr-h">How it differs from fine-tuning, LoRA and Mixture-of-Experts</h3>
+          <h3 className="uxr-h">How it differs from fine-tuning, LoRA and Mixture-of-Experts, the field&apos;s standard routes to new capability</h3>
           <dl className="uxr-defs is-wide">
             {notThis.map((n) => (
               <div className="uxr-def" key={n.k}>

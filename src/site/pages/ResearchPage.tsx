@@ -106,14 +106,18 @@ export default function ResearchPage() {
       <section className="rx-page-head">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
-          <h2 className="rx-label">Research · ORMAS</h2>
-          <h1>ORMAS: the self-repairing neural network.</h1>
+          <h2 className="rx-label">Research · ORMAS · DeepMath 2026, Columbus · NeurIPS 2026 reviewer</h2>
+          <h1>ORMAS: a self-repairing neural network, peer-reviewed in the United States.</h1>
           <p>
-            ORMAS, invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a trained layer is destroyed
-            mid-training, while a parameter-matched baseline stays at chance (10.0%). Its stability result, the first
-            formal local stability characterisation of a self-correcting neural architecture, was accepted after
-            double-blind review at DeepMath 2026 (poster). Below: the method, all 383 reproducible experiments, the
-            Input-to-State Stability derivation and ablations, then Project Cherry, the next architecture.
+            ORMAS, a neural network architecture invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a
+            trained layer is destroyed mid-training, while a parameter-matched baseline stays at chance (10.0%). Its
+            stability result, the first formal local stability characterisation of a self-correcting neural
+            architecture, was accepted after double-blind review at DeepMath 2026, the Conference on the Mathematical
+            Theory of Deep Neural Networks, held at Ohio State University in Columbus on 29&ndash;30 October, where it will
+            be presented as a poster. The preprint is open and citable on Zenodo, and the public code reproduces all
+            383 experiments. Raadh also reviews for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris and is a
+            member of the Cohere Labs Open Science Community. Below: the method, the experiments, the Input-to-State
+            Stability derivation and ablations, then Project Cherry, the next architecture.
           </p>
         </div>
       </section>

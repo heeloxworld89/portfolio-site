@@ -17,9 +17,11 @@ export default function EvidencePage() {
             <h2 className="rx-label">Evidence</h2>
             <h1>Every claim on this site, with where to check it.</h1>
             <p>
-              Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS. This page lists each
-              claim made on raadh.me and its source: {publicCount} of {total} link to a public record anyone can open,
-              and the rest are backed by correspondence available on request from{" "}
+              Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS. His record runs
+              across jurisdictions: a company incorporated in England &amp; Wales, peer review at Ohio State in
+              Columbus, a NeurIPS reviewer role in Paris, and selection by programmes in San Francisco and London.
+              Each claim on raadh.me is listed here with its source: {publicCount} of {total} link to a public record
+              anyone can open, and the rest are backed by correspondence available on request from{" "}
               <a href={`mailto:${links.founderEmail}?subject=Verifying%20a%20claim%20on%20raadh.me`}>{links.founderEmail}</a>.
               Most milestones were also announced publicly on{" "}
               <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked 1 October 2026.

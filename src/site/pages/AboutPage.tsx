@@ -60,8 +60,8 @@ export default function AboutPage() {
           <div className="rx-field is-hero" aria-hidden="true" />
           <div className="rx-wrap" style={{ position: "relative" }}>
             <h2 className="rx-label">About</h2>
-            <h1>Rokib Al Dhin Raadh, 18: founder of OXIEDO and inventor of ORMAS.</h1>
-            <p>Founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. In 2026 he earned ten independent selections, including a DeepMath 2026 acceptance after double-blind review and a NeurIPS 2026 reviewer role. Below: the full recognition record, a six-year timeline, his personal statement, education and contact.</p>
+            <h1>Rokib Al Dhin Raadh, 18: founder of OXIEDO, inventor of ORMAS, with a research and venture record on both sides of the Atlantic.</h1>
+            <p>Founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. His operating history is in the United Kingdom, where he incorporated Black Bloxie LTD in 2025; OXIEDO is now expanding into the United States. In 2026 his stability result passed double-blind review for DeepMath 2026 at Ohio State University, he became a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris, and he advanced through international selection panels in San Francisco and London: ten independent selections in all. Below: the full recognition record, a six-year timeline, his personal statement, education and contact.</p>
           </div>
         </section>
         <nav className="ab-toc" aria-label="On this page">

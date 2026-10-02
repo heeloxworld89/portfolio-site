@@ -43,7 +43,7 @@ export const groups: Group[] = [
   },
   {
     id: "peer-review",
-    title: "Peer review and service",
+    title: "Peer review: Columbus and Paris",
     rows: [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
@@ -65,11 +65,11 @@ export const groups: Group[] = [
   },
   {
     id: "company",
-    title: "Company and systems",
+    title: "Companies: UK and US",
     rows: [
       {
         claim: "Founder and CEO of OXIEDO (founded 2023)",
-        detail: "OXIEDO licenses ORMAS on-premise to regulated industries.",
+        detail: "OXIEDO licenses ORMAS on-premise to regulated industries and is expanding into the United States, where its incorporation is under way.",
         source: [{ label: "oxiedo.com", href: links.oxiedo }],
         status: "Public record",
       },
@@ -82,7 +82,7 @@ export const groups: Group[] = [
       {
         claim: "Founder and CEO of Black Bloxie LTD (England & Wales, company no. 16711223)",
         detail:
-          "Incorporated on 11 September 2025. The company's leadership page names Raadh as founder and CEO. He was a minor at incorporation, so his father is the registered director and shareholder at Companies House.",
+          "Incorporated on 11 September 2025. The company's leadership page names Raadh as founder and CEO. As he was under 18 at incorporation, his father is recorded as director and shareholder at Companies House.",
         source: [
           { label: "Black Bloxie leadership page", href: "https://www.blackbloxie.com/pages/leadership" },
           { label: "Companies House record", href: "https://find-and-update.company-information.service.gov.uk/company/16711223" },
@@ -107,16 +107,16 @@ export const groups: Group[] = [
   },
   {
     id: "selection",
-    title: "Selection and recognition, 2026",
+    title: "International selection, 2026",
     rows: [
-      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Cosmos Institute: ranked highest in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc, United States.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Cosmos Institute: ranked highest in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, United States, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Freshmango: offered a place after a single interview", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "The Bridge (Entrepreneur First, San Francisco): holding in the final round", detail: "Interview records from two completed rounds.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team for the London programme.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition: 500+ entries from 60 countries.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs, the research lab of Canadian AI company Cohere.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
     ],
   },
   {

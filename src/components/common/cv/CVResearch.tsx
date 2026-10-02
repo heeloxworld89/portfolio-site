@@ -189,7 +189,7 @@ export default function CVResearch() {
     <CVSection
       id="research"
       phase="now"
-      eyebrow="ORMAS · Self-repairing neural network"
+      eyebrow="ORMAS · Self-repairing neural network · Peer-reviewed at DeepMath 2026, Columbus"
       title="ORMAS: a self-repairing neural network that rebuilds a destroyed layer to 80.3% accuracy while a standard network stays at chance."
       lead={
         <>
@@ -199,41 +199,49 @@ export default function CVResearch() {
           probing classifiers, circuit discovery) analyse a model from the outside, after training, and
           reconstruct what probably happened; those reconstructions cannot be verified.{' '}
           <strong>In ORMAS the record is produced by the same computation that performs the learning</strong>,
-          so it is measured rather than inferred.
+          so it is measured rather than inferred. The work is in the open: a citable preprint, public code and the
+          full results archive, for any laboratory to check.
         </>
       }
       meta={[
-        { k: 'Peer review', v: 'DeepMath 2026 · poster' },
+        { k: 'Peer review', v: 'DeepMath 2026 · Ohio State · poster' },
         { k: 'Experiments', v: '383 · reproducible from seed' },
         { k: 'Architectures', v: 'Four, on one RTX 3090' },
-        { k: 'Data', v: 'CIFAR-10 / 100 only' },
+        { k: 'Open record', v: 'Zenodo DOI · public code' },
       ]}
     >
       <div className="uxr-body">
         <div className="uxr-venue">
-          <span className="uxr-venue-tag">Accepted · DeepMath 2026 · Poster</span>
+          <span className="uxr-venue-tag">Accepted · DeepMath 2026 · Ohio State University, Columbus, USA · Poster</span>
           <p className="uxr-venue-txt">
             <strong>Peer-reviewed: the first formal local stability characterisation of a self-correcting neural
             architecture.</strong> Raadh&apos;s paper{' '}
             <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
             Dynamics&rdquo;</em> was accepted after double-blind review for poster presentation at DeepMath 2026, the
             Conference on the Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus,
-            29&ndash;30 October 2026). The complete ORMAS preprint is public on
-            Zenodo (DOI 10.5281/zenodo.21730363).
+            29&ndash;30 October 2026). DeepMath is an international meeting on the mathematical foundations of deep
+            learning: its organisers are drawn from Johns Hopkins, Michigan, Ohio State and Konstanz, its invited
+            speakers from Stanford, the University of Pennsylvania, Michigan and the University of Washington, and past
+            editions have been supported by the NSF and the Simons Foundation. The complete ORMAS preprint is open and
+            citable on Zenodo (DOI 10.5281/zenodo.21730363).
+          </p>
+          <p className="uxr-venue-txt" style={{ marginTop: 10 }}>
+            In the same cycle Raadh serves as a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop (Paris,
+            12&ndash;13 December 2026), and he is a member of the Cohere Labs Open Science Community.
           </p>
         </div>
 
         <p className="uxr-role">
           <strong>Inventor and principal researcher, independent | 2024 – present | PyTorch · 16,316 lines · 85 files</strong>
-          <span>383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local; global convergence is stated as open. The paper, the codebase that reproduces all 383 runs and the full results archive are linked below.</span>
+          <span>383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local; global convergence is stated as open. The paper, the codebase that reproduces all 383 runs and the full results archive are open and linked below.</span>
         </p>
 
         {/* Action Link Bar */}
         <div className="uxr-links">
           {([
-            { icon: 'fileText', label: 'Paper', sub: 'Preprint · Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
-            { icon: 'flask', label: 'Codebase', sub: 'Reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
-            { icon: 'archive', label: 'Results Archive', sub: 'All experiment logs', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
+            { icon: 'fileText', label: 'Paper', sub: 'Open, citable preprint · Zenodo DOI', href: 'https://zenodo.org/records/21730363' },
+            { icon: 'flask', label: 'Codebase', sub: 'Public code · reproduce all 383 runs', href: 'https://anonymous.4open.science/r/ormas-EB73/README.md' },
+            { icon: 'archive', label: 'Results Archive', sub: 'Every experiment log, open', href: 'https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view?usp=drive_link' },
           ] as const).map((link, i) => (
             <a key={i} href={link.href} target="_blank" rel="noreferrer" className="uxr-link">
               <span className="uxr-link-icon" aria-hidden="true"><Icon name={link.icon} size={17} /></span>
@@ -332,9 +340,9 @@ export default function CVResearch() {
             onClick={() => setOpen((o) => !o)}
           >
             <span className="uxr-rec-text">
-              <span className="uxr-rec-kicker">For reviewers and engineers</span>
+              <span className="uxr-rec-kicker">For peer reviewers and research engineers</span>
               <span className="uxr-rec-label">{open ? 'Hide the full technical record' : 'View the full technical record'}</span>
-              <span className="uxr-rec-hint">The three-signal mathematics, every experimental table, the Input-to-State Stability derivation and ablations, for reviewers and engineers.</span>
+              <span className="uxr-rec-hint">The three-signal mathematics, every experimental table, the Input-to-State Stability derivation and the ablations: the record a reviewer needs to check every claim.</span>
               <span className="uxr-rec-meta">
                 {['383 experiments', 'ISS stability derivation', 'Ablation tables', 'Reproducible from seed'].map((m) => (
                   <span key={m}>{m}</span>
@@ -629,7 +637,7 @@ export default function CVResearch() {
           </section>
 
           <section className="uxr-sec" id="research-stability">
-            <h3 className="uxr-h">The stability result: Input-to-State Stability for a self-correcting network, accepted at DeepMath 2026</h3>
+            <h3 className="uxr-h">The stability result: Input-to-State Stability for a self-correcting network, accepted after double-blind review at DeepMath 2026</h3>
 
             <div className="uxr-card">
               <p className="uxr-note-k">Where the Mathematics Came From</p>
@@ -642,7 +650,7 @@ export default function CVResearch() {
               </p>
               <p>
                 Raadh adapted the framework by treating each correction as a bounded input disturbance and the weight trajectory as the state, then characterising the conditions under which the state remains bounded.{' '}
-                <strong>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review.
+                <strong>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted after double-blind review at DeepMath 2026, at Ohio State University in Columbus, for poster presentation.
               </p>
             </div>
 
@@ -801,7 +809,7 @@ export default function CVResearch() {
             Structural recovery, noise robustness, zero-shot generalisation — these are not three findings. They are one structural property showing up three times. Bounding the local gradient chain produces an attribution signal. The attribution signal makes the health gate possible. The health gate delivers both the repair and the spatial separation of competing representations.
           </p>
           <p className="uxr-p">
-            Which points at something larger: continuous autonomous correction may be sufficient on its own to make modular internal structure emerge — no explicit modularity constraints, no replay buffers. If that holds, it is a research direction rather than an engineering result.
+            Which points at something larger: continuous autonomous correction may be sufficient on its own to make modular internal structure emerge — no explicit modularity constraints, no replay buffers. If that holds, it is a research direction for the field rather than an engineering result.
           </p>
         </section>
       </div>
