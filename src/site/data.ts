@@ -102,7 +102,7 @@ export const pages = {
   "/": {
     title: "Rokib Al Dhin Raadh, 18 — Founder of OXIEDO, Inventor of ORMAS",
     description:
-      "Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and inventor of ORMAS, a self-repairing neural network. DeepMath 2026 paper; NeurIPS 2026 reviewer.",
+      "Rokib Al Dhin Raadh, 18, international AI founder: CEO of OXIEDO, founder of UK company Black Bloxie LTD, inventor of ORMAS. DeepMath 2026; NeurIPS reviewer.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
@@ -123,7 +123,7 @@ export const pages = {
   "/about": {
     title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, self-taught founder of OXIEDO. DeepMath 2026 paper, NeurIPS 2026 reviewer, 1752vc top 1%, seven MIT Open Learning programmes.",
+      "Rokib Al Dhin Raadh, 18, international AI founder of OXIEDO and UK company Black Bloxie LTD. DeepMath 2026, NeurIPS 2026 reviewer, 1752vc top 1%.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
