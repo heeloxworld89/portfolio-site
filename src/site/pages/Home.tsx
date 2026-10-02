@@ -45,8 +45,9 @@ export default function Home() {
             <p className="rx-h2-sub">
               Every AI model on earth is a black box. <b>OXIEDO</b> is ending that. Its engine, ORMAS, finds its own
               broken parts, repairs them mid-training and writes a tamper-evident record of every change, so banks,
-              hospitals and defence teams can finally train AI on the data they have been locked out of. The work runs
-              across borders: a UK-incorporated operating history, a US expansion under way and peer review in America.
+              hospitals and defence teams can finally train AI on the data they have been locked out of. He built it at
+              18, from his own startup: no lab, no university, no team. The work now runs across borders, with a
+              UK-incorporated operating history, a US expansion under way and peer review in America.
             </p>
             <div className="rx-btns">
               <a className="rx-btn is-cta" href={links.oxiedo} target="_blank" rel="noreferrer">Enter OXIEDO <Arrow /></a>
@@ -139,7 +140,7 @@ export default function Home() {
               and is a member of Cohere Labs&rsquo; Open Science Community.
             </p>
             <p>
-              Born and raised in Dhaka, Bangladesh, and self-taught, he built ORMAS alone: 16,316 lines of PyTorch and
+              He did it from a startup, not a lab. Born and raised in Dhaka, Bangladesh, self-taught and self-funded, he built ORMAS alone: 16,316 lines of PyTorch and
               383 controlled experiments on one RTX 3090, released as an open preprint with code that reproduces every
               result. OXIEDO, which he founded in 2023 and is expanding into the United States, licenses the
               architecture to regulated industries in the UK, the EU and the US that need an auditable record of what

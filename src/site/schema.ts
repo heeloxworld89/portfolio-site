@@ -27,7 +27,7 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description: `${DEFINITION} His operating history is in the United Kingdom, where he founded Black Bloxie LTD (England & Wales, 2025), and OXIEDO is expanding into the United States. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris and has advanced through selection rounds at venture programmes in San Francisco and London. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated institutions in the US, the EU and the UK.`,
+  description: `${DEFINITION} He built all of it at 18 from his own startup, self-taught and self-funded, without a university lab or a team. His operating history is in the United Kingdom, where he founded Black Bloxie LTD (England & Wales, 2025), and OXIEDO is expanding into the United States. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop in Paris and has advanced through selection rounds at venture programmes in San Francisco and London. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated institutions in the US, the EU and the UK.`,
   disambiguatingDescription: "International AI founder, 18: founder and CEO of OXIEDO, founder of the UK-incorporated Black Bloxie LTD, and inventor of the ORMAS self-repairing neural network.",
   jobTitle: "Founder & CEO, OXIEDO",
   hasOccupation: [
