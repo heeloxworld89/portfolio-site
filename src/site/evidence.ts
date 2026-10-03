@@ -48,18 +48,22 @@ export const groups: Group[] = [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
         detail:
-          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. The submission record is on OpenReview, where access may be limited to the conference community; the acceptance email is available on request.",
+          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. Paper Decision posted on OpenReview by the Program Chairs on 25 September 2026: Accept (Poster), submission 39. The OpenReview page may be limited to the conference community, so a screenshot of the decision is published here.",
         source: [
+          { label: "Decision: Accept (Poster), OpenReview screenshot", href: "/assets/evidence/deepmath-2026-openreview-decision.jpg" },
           { label: "OpenReview submission record", href: "https://openreview.net/forum?id=kowltBZEIv" },
           { label: "DeepMath 2026", href: links.deepmath },
         ],
-        status: "On request",
+        status: "Public record",
       },
       {
         claim: "Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop",
-        detail: "Workshop at NeurIPS 2026, Paris, 12–13 December. Reviewer role through the workshop's open application.",
-        source: [{ label: "Workshop site", href: links.neurips }],
-        status: "On request",
+        detail: "Workshop co-located with NeurIPS 2026 at the Paris satellite venue, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality.",
+        source: [
+          { label: "Reviewer recognition letter (PDF)", href: "/assets/evidence/neurips-2026-ai4good-reviewer-letter.pdf" },
+          { label: "Workshop site", href: links.neurips },
+        ],
+        status: "Public record",
       },
     ],
   },
@@ -152,4 +156,4 @@ export const groups: Group[] = [
   },
 ];
 
-export const evidenceChecked = "2026-10-01";
+export const evidenceChecked = "2026-10-03";
