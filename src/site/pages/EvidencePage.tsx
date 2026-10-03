@@ -22,7 +22,7 @@ export default function EvidencePage() {
               and the rest are backed by correspondence available on request from{" "}
               <a href={`mailto:${links.founderEmail}?subject=Verifying%20a%20claim%20on%20raadh.me`}>{links.founderEmail}</a>.
               Most milestones were also announced publicly on{" "}
-              <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked 1 October 2026.
+              <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked 3 October 2026.
             </p>
           </div>
         </section>

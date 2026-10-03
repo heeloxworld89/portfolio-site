@@ -39,8 +39,8 @@ Every claim on raadh.me can be checked against a primary source:
 | Author of the ORMAS preprint (1 Aug 2026) | Zenodo record, DOI [10.5281/zenodo.21730363](https://doi.org/10.5281/zenodo.21730363) |
 | All 383 experiments are reproducible | [Anonymised code archive](https://anonymous.4open.science/r/ormas-EB73/README.md) |
 | Researcher identity | ORCID [0009-0003-1178-5296](https://orcid.org/0009-0003-1178-5296) |
-| DeepMath 2026 acceptance (poster, double-blind) | [DeepMath 2026](https://deepmath-conference.com/), hosted by Ohio State University, 29–30 Oct 2026; acceptance email available on request; [OpenReview submission record](https://openreview.net/forum?id=kowltBZEIv) (access may be limited to the conference community) |
-| Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop | [Workshop site](https://trustworthy-ai-for-good.github.io/); reviewer assignment available on request |
+| DeepMath 2026 acceptance (poster, double-blind) | [DeepMath 2026](https://deepmath-conference.com/), hosted by Ohio State University, 29–30 Oct 2026; [Paper Decision: Accept (Poster), OpenReview screenshot](https://www.raadh.me/assets/evidence/deepmath-2026-openreview-decision.jpg) (posted 25 Sep 2026, submission 39); [OpenReview submission record](https://openreview.net/forum?id=kowltBZEIv) |
+| Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop | [Reviewer recognition letter from the Program Chairs (PDF)](https://www.raadh.me/assets/evidence/neurips-2026-ai4good-reviewer-letter.pdf), 3 Oct 2026; [Workshop site](https://trustworthy-ai-for-good.github.io/) (Paris satellite venue, 12 Dec 2026) |
 | Seven MIT Open Learning (MITx) programmes | Shared MITx Online records linked on [raadh.me/about](https://www.raadh.me/about#education) |
 | Deep Learning Specialization (DeepLearning.AI) | [Coursera verification](https://coursera.org/verify/specialization/R7SYBBCXR1OY) |
 | OXIEDO, founded 2023 | [oxiedo.com](https://oxiedo.com) |
