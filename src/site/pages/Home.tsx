@@ -17,7 +17,7 @@ const marks: Mark[] = [
   { name: "Onstage W26", word: "Onstage", sup: "W26", tag: "Invited · Pre-Pitch", note: "Invited to the W26 pre-pitch event in London; Onstage ranks founders by interest from 350 venture funds" },
   { name: "Entrepreneur First", logo: L + "entrepreneur-first.svg", tag: "Invited to Interview", note: "Invited by the talent team to a first-round interview in London" },
   { name: "Freshmango", logo: L + "freshmango.png", tag: "Offer Extended", note: "Offered a place in the equity-free accelerator after a single interview" },
-  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "International Academic Research Competition finalist, from 500+ entries across 60 countries" },
+  { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist", note: "International Academic Research Competition finalist; nearly 500 participants from 60 countries" },
   { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Research Community", note: "Open Science Community member; Cohere cited his solo work on ORMAS for “remarkable initiative in ML safety and auditability”" },
 ];
 

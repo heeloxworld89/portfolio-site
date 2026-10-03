@@ -52,8 +52,8 @@ export const news: NewsItem[] = [
   },
   {
     date: "Sep 2026", kind: "Competition",
-    title: "IARCO 2026 finalist, from 500+ submissions across 60 countries",
-    body: "Selected for the final stage of the International Academic Research Competition from more than 500 submissions across 60 countries.",
+    title: "IARCO 2026 finalist, among nearly 500 participants from 60 countries",
+    body: "Selected for the final stage of the International Academic Research Competition, which drew nearly 500 participants from 60 countries.",
   },
   {
     date: "1 Aug 2026", kind: "Publication",

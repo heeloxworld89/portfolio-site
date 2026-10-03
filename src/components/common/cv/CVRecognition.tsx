@@ -782,21 +782,22 @@ export default function CVRecognition() {
             <p className="rec-body">
               The International Academic Research Competition is hosted by YRJ, sponsored by
               {' '}<strong>SaveMyExams</strong> with <strong>Domain.ME</strong>, and this year drew
-              {' '}<strong>more than 500 submissions from over 60 countries</strong>. Only <strong>30%</strong> of
-              participants advanced. ORMAS was selected for the final stage, a recorded research presentation.
+              {' '}<strong>nearly 500 participants from 60 countries</strong>. ORMAS was among the research papers
+              selected for the final stage, a recorded research presentation, and Raadh is listed as selected on
+              IARCO&apos;s <a href="https://iarco.org/2026-finalists" target="_blank" rel="noreferrer">published 2026 finalist list</a>.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">500+</span>
-                <span className="rec-stat-lbl">Submissions</span>
+                <span className="rec-stat-val">~500</span>
+                <span className="rec-stat-lbl">Participants</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">60+</span>
+                <span className="rec-stat-val">60</span>
                 <span className="rec-stat-lbl">Countries</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">30%</span>
-                <span className="rec-stat-lbl">Selected for the final</span>
+                <span className="rec-stat-val">Selected</span>
+                <span className="rec-stat-lbl">Final stage, Junior</span>
               </div>
             </div>
           </div>

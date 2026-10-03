@@ -119,7 +119,7 @@ export const groups: Group[] = [
       { claim: "The Bridge (Entrepreneur First, San Francisco): holding in the final round", detail: "Interview records from two completed rounds.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "IARCO 2026: finalist", detail: "Finalist notification, International Academic Research Competition.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "IARCO 2026: finalist", detail: "International Academic Research Competition 2026, Junior category. IARCO's published list shows Rokib Al Dhin Raadh, Rajuk Uttara Model College, Bangladesh, as selected; the competition drew nearly 500 participants from 60 countries.", source: [{ label: "IARCO 2026 finalist list", href: "https://iarco.org/2026-finalists" }], status: "Public record" },
       { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
     ],
   },
