@@ -68,6 +68,32 @@ export const news: NewsItem[] = [
   },
 ];
 
+/** Talks and presentations, newest last. Status ("Upcoming" / "Presented")
+ *  is worked out at build time from the end date. */
+export type Talk = {
+  id: string; start: string; end: string; day: string; month: string; time?: string;
+  kind: string; host: string; logo: string; title: string; where: string; note: string;
+  href: string; hrefLabel: string;
+};
+export const talks: Talk[] = [
+  {
+    id: "deepmath-2026", start: "2026-10-29", end: "2026-10-30", day: "29–30", month: "Oct 2026",
+    kind: "Poster", host: "DeepMath 2026", logo: "/assets/images/logos/deepmath.png",
+    title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
+    where: "Ohio State University, Columbus",
+    note: "The stability result behind ORMAS, accepted after double-blind review at the Conference on the Mathematical Theory of Deep Neural Networks.",
+    href: "https://deepmath-conference.com/", hrefLabel: "Conference site",
+  },
+  {
+    id: "cohere-labs-2026", start: "2026-11-02", end: "2026-11-02", day: "2", month: "Nov 2026", time: "12:00 EST",
+    kind: "Talk", host: "Cohere Labs", logo: "/assets/images/logos/cohere.svg",
+    title: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
+    where: "Cohere Labs Open Science Community",
+    note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk shows why, and exactly where the proof stops.",
+    href: "https://cohere.com/research", hrefLabel: "Cohere Labs",
+  },
+];
+
 export const publications = [
   {
     authors: "R. A. D. Raadh",

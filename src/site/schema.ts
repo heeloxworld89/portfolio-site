@@ -159,9 +159,22 @@ const deepmath = {
     address: { "@type": "PostalAddress", addressLocality: "Columbus", addressRegion: "OH", addressCountry: "US" },
   },
   description:
-    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review;",
+    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review.",
   workFeatured: ref("deepmath-paper"),
   performer: ref("person"),
+};
+
+const cohereTalk = {
+  "@type": "Event",
+  "@id": id("cohere-labs-talk-2026"),
+  name: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
+  startDate: "2026-11-02T12:00:00-05:00",
+  eventStatus: "https://schema.org/EventScheduled",
+  organizer: { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
+  performer: ref("person"),
+  description:
+    "Talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training: why training whose updates are not gradients still converges, and where the proof stops.",
+  about: ref("deepmath-paper"),
 };
 
 const deepmathPaper = {
@@ -283,6 +296,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, ormasCode, oximo, oximoReport];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, oximo, oximoReport];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }

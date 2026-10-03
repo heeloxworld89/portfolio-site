@@ -201,3 +201,33 @@
   .rx .ux-home .rx-dm-lede + .rx-dm-lede { grid-column: 2; grid-row: 3; max-width: none; }
   .rx .ux-home .rx-dm-paper { max-width: none; }
 }
+
+/* ── Talks: dated cards with the host's mark ───────────────────────────── */
+.rx .ux-home .ux-talks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.rx .ux-home .ux-talk { display: grid; grid-template-columns: 132px minmax(0, 1fr); background: var(--rx-white); border: 1px solid var(--rx-line-soft); border-top: 3px solid var(--rx-teal); }
+.rx .ux-home .ux-talk.is-past { border-top-color: var(--rx-line); }
+.rx .ux-home .ux-talk-date { display: flex; flex-direction: column; gap: 6px; padding: 26px 18px; border-right: 1px solid var(--rx-line-soft); background: var(--rx-bg); }
+.rx .ux-home .ux-talk-day { font-family: var(--rx-serif); font-size: 36px; line-height: 1; white-space: nowrap; letter-spacing: -0.02em; color: var(--rx-teal); }
+.rx .ux-home .ux-talk-mon { font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--rx-ink-2); }
+.rx .ux-home .ux-talk-time { font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .04em; color: var(--rx-ink-3); }
+.rx .ux-home .ux-talk-body { display: flex; flex-direction: column; padding: 24px 26px 24px; min-width: 0; }
+.rx .ux-home .ux-talk-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.rx .ux-home .ux-talk-logo { display: inline-flex; align-items: center; justify-content: center; height: 48px; min-width: 48px; padding: 6px 10px; background: #fff; border: 1px solid var(--rx-line-soft); }
+.rx .ux-home .ux-talk-logo img { display: block; height: 36px; width: auto; max-width: 110px; object-fit: contain; }
+.rx .ux-home .ux-talk-k { display: flex; flex-direction: column; gap: 4px; font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--rx-ink-2); }
+.rx .ux-home .ux-talk-state { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid var(--rx-line); color: var(--rx-ink-3); font-size: 10.5px; }
+.rx .ux-home .ux-talk-state.is-up { border-color: rgba(62, 155, 98, .45); background: rgba(62, 155, 98, .1); color: #2f7d4e; }
+.rx .ux-home .ux-talk-state.is-up::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #3e9b62; }
+.rx .ux-home .ux-talk h3 { font-family: var(--rx-serif); font-weight: 400; font-size: 23px; line-height: 1.2; letter-spacing: -0.01em; color: var(--rx-teal); margin: 0 0 10px; }
+.rx .ux-home .ux-talk-where { font-size: 14px; font-weight: 600; color: var(--rx-ink); margin: 0 0 8px; }
+.rx .ux-home .ux-talk-note { font-size: 15px; line-height: 1.65; color: var(--rx-ink-2); margin: 0 0 18px; }
+.rx .ux-home a.ux-talk-go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--rx-teal); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.rx .ux-home a.ux-talk-go:hover { color: var(--rx-ink); }
+@media (max-width: 1000px) { .rx .ux-home .ux-talks { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .rx .ux-home .ux-talk { grid-template-columns: minmax(0, 1fr); }
+  .rx .ux-home .ux-talk-date { flex-direction: row; align-items: baseline; gap: 12px; padding: 14px 20px; border-right: 0; border-bottom: 1px solid var(--rx-line-soft); }
+  .rx .ux-home .ux-talk-day { font-size: 30px; }
+  .rx .ux-home .ux-talk-body { padding: 20px; }
+  .rx .ux-home .ux-talk h3 { font-size: 20px; }
+}
