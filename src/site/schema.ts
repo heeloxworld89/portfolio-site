@@ -63,7 +63,7 @@ const person = {
     "DeepMath 2026: stability paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University",
     "1752vc Ignite: OXIEDO accepted from the top 1% of applicants (2026)",
     "Cosmos Institute: ORMAS application ranked highest in its 2026 review cycle",
-    "IARCO 2026: finalist, International Academic Research Competition (500+ entries, 60 countries)",
+    "IARCO 2026: finalist, International Academic Research Competition (nearly 500 participants, 60 countries)",
     "Freshmango: OXIEDO offered a place in the equity-free accelerator after a single interview (2026)",
   ],
   memberOf: [
