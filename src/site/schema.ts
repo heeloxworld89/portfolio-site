@@ -6,6 +6,8 @@
 import { links, pages } from "./data";
 
 const SITE = "https://www.raadh.me";
+// Full ISO 8601 timestamp of this build; Google rejects a bare date here.
+const BUILT_AT = new Date().toISOString().replace(/\.\d{3}Z$/, "+00:00");
 const id = (frag: string) => `${SITE}/#${frag}`;
 const ref = (frag: string) => ({ "@id": id(frag) });
 // The one-sentence entity definition, repeated verbatim in the page meta,
@@ -119,10 +121,10 @@ const oxiedo = {
   makesOffer: {
     "@type": "Offer",
     itemOffered: {
-      "@type": "Product",
+      "@type": "Service",
       name: "ORMAS on-premise licence with the Model Change Record",
       description: "Annual on-premise licence for the ORMAS training architecture and a tamper-evident record of every weight change during training.",
-      brand: { "@id": id("oxiedo") },
+      provider: { "@id": id("oxiedo") },
     },
   },
   sameAs: [links.oxiedo],
@@ -160,6 +162,8 @@ const deepmath = {
   },
   description:
     "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review.",
+  organizer: { "@type": "Organization", name: "DeepMath: Conference on the Mathematical Theory of Deep Neural Networks", url: links.deepmath },
+  image: [`${SITE}/og/research-v3.jpg`, `${SITE}/assets/images/logos/deepmath.png`],
   workFeatured: ref("deepmath-paper"),
   performer: ref("person"),
 };
@@ -170,6 +174,9 @@ const cohereTalk = {
   name: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
   startDate: "2026-11-02T12:00:00-05:00",
   eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+  location: { "@type": "VirtualLocation", url: "https://cohere.com/research" },
+  image: [`${SITE}/og/research-v3.jpg`],
   organizer: { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
   performer: ref("person"),
   description:
@@ -287,7 +294,7 @@ export function schemaFor(path: string): string {
     about: m.about.map(ref),
     author: ref("person"),
     primaryImageOfPage: { "@type": "ImageObject", url: SITE + meta.image, width: 1200, height: 630, caption: meta.imageAlt },
-    dateModified: "2026-09-30",
+    dateModified: BUILT_AT,
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
