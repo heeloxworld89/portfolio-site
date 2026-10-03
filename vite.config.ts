@@ -3,7 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
+// Build date (UTC midnight) so the SSR and client builds agree on which
+// talks are upcoming and which are past.
+const BUILD_DAY = Date.parse(new Date().toISOString().slice(0, 10));
 export default defineConfig(({ isSsrBuild }) => ({
+  define: { "import.meta.env.VITE_BUILD_TIME": JSON.stringify(String(BUILD_DAY)) },
   plugins: [
     react(),
     // The SSR build only renders HTML at build time; it needs no service worker.

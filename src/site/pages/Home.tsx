@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
-import { links, news, publications } from "../data";
+import { links, news, publications, talks } from "../data";
 import "../ux/home.css";
 
 type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: string; note: string };
 
 const L = "/assets/images/logos/";
+// Fixed at build time so the prerendered and hydrated markup agree.
+const BUILD_TIME = Number(import.meta.env.VITE_BUILD_TIME ?? Date.parse("2026-10-03T00:00:00Z"));
 const marks: Mark[] = [
   { name: "DeepMath 2026", word: "DeepMath", tag: "Accepted · Double-Blind", note: "Stability paper on self-repairing neural networks accepted after double-blind review; poster at Ohio State" },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Reviewer", note: "Reviewer for the Trustworthy AI for Good workshop, invited to judge submissions on AI auditing" },
@@ -83,6 +85,7 @@ export default function Home() {
             <a href="#news">News</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
+            <a href="#talks">Talks</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
@@ -352,6 +355,40 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── talks ────────────────────────────────────────────────────── */}
+      <section className="rx-sec" id="talks">
+        <div className="rx-wrap">
+          <h2 className="rx-label">Talks <small>Poster · talk · 2026</small></h2>
+          <div className="ux-talks">
+            {talks.map((t) => {
+              const past = new Date(`${t.end}T23:59:59Z`).getTime() < BUILD_TIME;
+              return (
+                <article className={`ux-talk${past ? " is-past" : ""}`} key={t.id}>
+                  <div className="ux-talk-date">
+                    <span className="ux-talk-day">{t.day}</span>
+                    <span className="ux-talk-mon">{t.month}</span>
+                    {t.time && <span className="ux-talk-time">{t.time}</span>}
+                  </div>
+                  <div className="ux-talk-body">
+                    <div className="ux-talk-top">
+                      <span className="ux-talk-logo"><img src={t.logo} alt={t.host} loading="lazy" /></span>
+                      <span className="ux-talk-k">
+                        <span className={`ux-talk-state${past ? "" : " is-up"}`}>{past ? "Presented" : "Upcoming"}</span>
+                        {t.kind} · {t.host}
+                      </span>
+                    </div>
+                    <h3>{t.title}</h3>
+                    <p className="ux-talk-where">{t.where}</p>
+                    <p className="ux-talk-note">{t.note}</p>
+                    <a className="ux-talk-go" href={t.href} target="_blank" rel="noreferrer">{t.hrefLabel} <Arrow /></a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
