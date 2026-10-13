@@ -5,7 +5,7 @@ import OxidoVisualization from './OxidoVisualization';
 import CVSection from './CVSection';
 
 /* Bump on every deck recompile so browsers refetch rather than serving cache. */
-const DECK_VERSION = '2026-09-22a';
+const DECK_VERSION = '2026-10-13a';
 
 /**
  * OXIEDO — the business.
@@ -177,7 +177,7 @@ export default function CVBusiness() {
         <div className="bz-deck">
           <span className="bz-deck-t">
             <strong>Investors:</strong> the round, the six milestones and the full risk register are at
-            oxiedo.com/invest. The investor deck (15 slides plus appendix, September 2026) opens here.
+            oxiedo.com/invest. The investor deck (13 slides plus appendix, October 2026) opens here.
           </span>
           <button type="button" className="bz-deck-b" onClick={() => setDeckOpen(true)} aria-haspopup="dialog">
             <Icon name="fileText" size={15} />
