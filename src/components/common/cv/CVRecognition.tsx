@@ -9,13 +9,14 @@ export default function CVRecognition() {
       title={<>Ten independent selections in 2026, at <span className="age">18</span>.</>}
       lead={
         <>
-          Rokib Al Dhin Raadh earned ten independent selections in 2026, all from cold applications, across
+          Rokib Al Dhin Raadh earned eleven independent selections in 2026, all from cold applications, across
           peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
           after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
           Cosmos Institute ranked the work highest in its 2026 review cycle, IARCO 2026 named him a finalist, and
           Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
           1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event, Entrepreneur First interviewed
-          him in London, and The Bridge in San Francisco is holding him in its final round.
+          him in London, The Bridge in San Francisco took him to its final round, and 500 Global invited him to
+          interview on 22 October.
         </>
       }
     >
@@ -560,7 +561,7 @@ export default function CVRecognition() {
             </p>
             <p className="rec-week-l">
               Two more are in motion: <strong>Onstage</strong> is ranking its W26 cohort by interest
-              from 350 venture funds, and <strong>The Bridge</strong> is holding him in its final round.
+              from 350 venture funds, and <strong>500 Global</strong> interviews him on 22 October.
             </p>
             </div>
 
@@ -596,8 +597,8 @@ export default function CVRecognition() {
               d: 'Since Sep',
               h: 'San Francisco',
               who: 'Entrepreneur First \u00b7 The Bridge',
-              what: <>Two interview rounds completed; holding in the final round. Details below.</>,
-              pill: 'Holding',
+              what: <>Two interview rounds completed; reached the final round. Details below.</>,
+              pill: 'Final round',
               now: false,
             },
           ].map((r) => (
@@ -899,7 +900,7 @@ export default function CVRecognition() {
             </span>
             <span className="rec-date is-live">
               <span className="rec-date-dot" aria-hidden="true" />
-              Sep 2026 · Holding in Final Round
+              Aug–Sep 2026 · Final Round
             </span>
           </div>
 
@@ -910,13 +911,13 @@ export default function CVRecognition() {
             for founders who have already built something.
           </p>
           <p className="rec-status-v">
-            Raadh has <strong>completed two interview rounds</strong> and is <strong>holding in the final round</strong>.
+            Raadh <strong>completed two interview rounds</strong> and <strong>reached the final round</strong>.
           </p>
 
           <span className="rec-stages">
             <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
             <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
-            <span className="rec-stage is-live"><span className="rec-stage-dot" />Holding · Final Round</span>
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Final Round · Reached</span>
           </span>
         </div>
         </div>
@@ -938,7 +939,7 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
-            Freshmango and 1752vc each offered places after competitive selection, and The Bridge in San Francisco is holding him in its final round. Every one began as an unsolicited application.
+            Freshmango and 1752vc each offered places after competitive selection, The Bridge in San Francisco took him to its final round, and 500 Global has invited him to interview. Every one began as an unsolicited application.
           </p>
         </div>
 
