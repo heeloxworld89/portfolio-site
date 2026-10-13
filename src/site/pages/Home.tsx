@@ -252,7 +252,7 @@ export default function Home() {
                 This year it is hosted by <b>Ohio State</b> and organised by researchers from{" "}
                 <b>Johns Hopkins</b> and <b>Michigan</b>, with invited speakers from <b>Stanford</b> and <b>UPenn</b>; past
                 editions were supported by the <b>National Science Foundation</b> and the <b>Simons Foundation</b>. He
-                presents his poster at the conference on 29–30 October.
+                presents his poster on 30 October.
               </p>
               <p className="rx-dm-paper">
                 &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training

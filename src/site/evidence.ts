@@ -48,7 +48,7 @@ export const groups: Group[] = [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
         detail:
-          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. Paper Decision posted on OpenReview by the Program Chairs on 25 September 2026: Accept (Poster), submission 39. The OpenReview page may be limited to the conference community, so a screenshot of the decision is published here. The organizing committee's invitation letter (6 October 2026) confirms the acceptance and invites him to present at Ohio State; passport number and date of birth are redacted.",
+          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. Decision released by the Program Chairs on 30 September 2026: Accept (Poster), submission 39 (the OpenReview record is dated 25 September and was finalised on 30 September). His poster is presented on 30 October. The OpenReview page may be limited to the conference community, so a screenshot of the decision is published here. The organizing committee's invitation letter (6 October 2026) confirms the acceptance and invites him to present at Ohio State; passport number and date of birth are redacted.",
         source: [
           { label: "Decision: Accept (Poster), OpenReview screenshot", href: "/assets/evidence/deepmath-2026-openreview-decision.jpg" },
           { label: "Invitation letter from the organizing committee (PDF)", href: "/assets/evidence/deepmath-2026-invitation-letter.pdf" },

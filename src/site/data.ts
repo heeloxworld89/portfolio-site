@@ -31,7 +31,7 @@ export const news: NewsItem[] = [
   {
     date: "30 Sep 2026", kind: "Peer review",
     title: "ORMAS stability paper accepted at DeepMath 2026 after double-blind review",
-    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review for poster presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October.",
+    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review for poster presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October. His poster is presented on 30 October.",
     href: links.deepmath,
   },
   {
@@ -77,7 +77,7 @@ export type Talk = {
 };
 export const talks: Talk[] = [
   {
-    id: "deepmath-2026", start: "2026-10-29", end: "2026-10-30", day: "29–30", month: "Oct 2026",
+    id: "deepmath-2026", start: "2026-10-30", end: "2026-10-30", day: "30", month: "Oct 2026",
     kind: "Poster", host: "DeepMath 2026", logo: "/assets/images/logos/deepmath.png",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
     where: "Ohio State University, Columbus",
@@ -98,7 +98,7 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
-    venue: "Accepted after double-blind review, DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 Oct 2026. Poster.",
+    venue: "Accepted after double-blind review, DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 Oct 2026. Poster, 30 Oct.",
     year: "2026",
     links: [{ label: "Conference", href: links.deepmath }],
   },
