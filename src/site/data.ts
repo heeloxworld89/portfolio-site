@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-10-02d";
+export const CV_VERSION = "2026-10-13a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -43,7 +43,7 @@ export const news: NewsItem[] = [
   {
     date: "Sep 2026", kind: "Company",
     title: "OXIEDO accepted to 1752vc Ignite from the top 1% of applicants",
-    body: "1752vc placed OXIEDO in its Ignite cohort from the top 1% of applicants, and the equity-free Freshmango programme offered a place after a single interview. Raadh is holding in the final round of The Bridge (Entrepreneur First, San Francisco) after two interview rounds.",
+    body: "1752vc placed OXIEDO in its Ignite cohort from the top 1% of applicants, and the equity-free Freshmango programme offered a place after a single interview. Raadh reached the final round of The Bridge (Entrepreneur First, San Francisco) after two interview rounds, and 500 Global has invited him to a first-round interview on 22 October.",
   },
   {
     date: "25 Sep 2026", kind: "Community",
