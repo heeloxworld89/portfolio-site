@@ -90,7 +90,7 @@ export const talks: Talk[] = [
     title: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
     where: "Cohere Labs Open Science Community",
     note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk shows why, and exactly where the proof stops.",
-    href: "https://cohere.com/research", hrefLabel: "Cohere Labs",
+    href: "https://luma.com/p28sna3q", hrefLabel: "Event page",
   },
 ];
 

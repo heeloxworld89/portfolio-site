@@ -122,6 +122,7 @@ export const groups: Group[] = [
       { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "IARCO 2026: finalist", detail: "International Academic Research Competition 2026, Junior category. IARCO's published list shows Rokib Al Dhin Raadh, Rajuk Uttara Model College, Bangladesh, as selected; the competition drew nearly 500 participants from 60 countries.", source: [{ label: "IARCO 2026 finalist list", href: "https://iarco.org/2026-finalists" }], status: "Public record" },
+      { claim: "Talk, Cohere Labs Open Science Community (2 November 2026)", detail: "Public event page from Cohere Labs (ML Math) listing him as speaker for \"When the Update Is Not a Gradient\".", source: [{ label: "Event page (Luma)", href: "https://luma.com/p28sna3q" }], status: "Public record" },
       { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
     ],
   },
