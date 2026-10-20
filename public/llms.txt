@@ -25,7 +25,7 @@ Website: https://www.raadh.me/ · Company: https://oxiedo.com · Founder: raadh@
 ## Upcoming talks
 
 - **30 October 2026 · Poster, DeepMath 2026** (Ohio State University, Columbus): "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics", accepted after double-blind review.
-- **2 November 2026, 12:00 EST · Talk, Cohere Labs Open Science Community**: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training". Why self-repairing training, whose updates are not gradients, still converges, and where the proof stops.
+- **2 November 2026, 12:00 EST · Talk, Cohere Labs Open Science Community**: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training". Why self-repairing training, whose updates are not gradients, still converges, and where the proof stops. Presented by ML Math, Cohere Labs Open Science Community; [event page](https://luma.com/p28sna3q).
 
 ## Verification
 
