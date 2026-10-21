@@ -32,7 +32,7 @@ export default defineConfig(({ isSsrBuild }) => ({
         // always tries the network first and only falls back to cache if
         // the network is unreachable.
         navigateFallback: undefined,
-        globIgnores: ["**/index.html"],
+        globIgnores: ["**/index.html", "**/deepmath.html"],
         // ── Never cache the HTML shell or SW itself ──
         navigateFallbackDenylist: [/^\/assets\/pdf\//, /\.pdf$/],
         runtimeCaching: [

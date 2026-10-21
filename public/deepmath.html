@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  /* ───────────────────────── PAGE SETTINGS ─────────────────────────
+     Edit these four lines. Leave a value as "" to switch that feature off.
+       VIDEO_URL      YouTube or Vimeo link. Empty = "coming soon" card.
+       FORM_ENDPOINT  Formspree form URL (https://formspree.io/f/xxxx).
+                      Empty = the form is replaced by an email button.
+       BOOKING_URL    Calendly or Google Calendar booking page. Empty = no button.
+       PAPER_URL      The paper on OpenReview.
+     ───────────────────────────────────────────────────────────────── */
+  const VIDEO_URL = "";
+  const FORM_ENDPOINT = "";
+  const BOOKING_URL = "";
+  const PAPER_URL = "https://openreview.net/forum?id=kowltBZEIv";
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self-Repair as a Bounded Disturbance · DeepMath 2026 poster · Rokib Al Dhin Raadh</title>
+<meta name="description" content="Small repairs keep training stable. Only a jump can revive a dead layer. DeepMath 2026 poster by Rokib Al Dhin Raadh: input-to-state stability of self-repairing neural network training.">
+<link rel="canonical" href="https://www.raadh.me/deepmath">
+<meta name="theme-color" content="#0F766E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rokib Al Dhin Raadh">
+<meta property="og:url" content="https://www.raadh.me/deepmath">
+<meta property="og:title" content="Self-Repair as a Bounded Disturbance · DeepMath 2026 poster">
+<meta property="og:description" content="Small repairs keep training stable. Only a jump can revive a dead layer. We prove both.">
+<meta property="og:image" content="https://www.raadh.me/og/deepmath.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Poster title card: Self-Repair as a Bounded Disturbance, DeepMath 2026, Ohio State.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Self-Repair as a Bounded Disturbance · DeepMath 2026 poster">
+<meta name="twitter:description" content="Small repairs keep training stable. Only a jump can revive a dead layer. We prove both.">
+<meta name="twitter:image" content="https://www.raadh.me/og/deepmath.png">
+<link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
+<!-- Fonts and KaTeX are self-hosted on raadh.me, so the page works on any conference Wi-Fi. -->
+<link rel="preload" href="/assets/fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fira-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<!-- Vercel Web Analytics: cookieless. Counts visits once Analytics is enabled for the project in Vercel. -->
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+  @font-face { font-family: "Fira Sans"; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/fira-sans-400.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 500; font-style: normal; font-display: swap; src: url(/assets/fonts/fira-sans-500.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/fira-sans-700.woff2) format("woff2"); }
+  :root {
+    --teal: #0F766E; --red: #C8102E; --blue: #2B6CB0; --ink: #1D2433;
+    --teal-l: #E6F2F0; --muted: #4A5568; --line: #D5E3E0; --bg: #FFFFFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 17px/1.55 "Fira Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    overflow-wrap: break-word;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--teal); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--blue); outline-offset: 2px;
+  }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 10; }
+  section { padding: 28px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin: 0 0 14px; }
+
+  /* 1. header */
+  header { padding: 28px 0 22px; }
+  .venue { display: inline-block; font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--teal); background: var(--teal-l); padding: 5px 10px; border-radius: 999px; margin: 0 0 14px; }
+  h1 { font-size: clamp(24px, 6.4vw, 34px); line-height: 1.2; font-weight: 700; margin: 0 0 12px; letter-spacing: -.01em; }
+  .byline { margin: 0; color: var(--muted); font-size: 15px; }
+  .byline strong { color: var(--ink); font-weight: 500; }
+
+  /* 2. video */
+  .video { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 12px; overflow: hidden; background: var(--teal-l); }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-soon { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; }
+  .video-soon .tag { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin: 0 0 8px; }
+  .video-soon p { margin: 0; font-size: clamp(15px, 4.2vw, 18px); line-height: 1.45; }
+
+  /* 3. takeaway */
+  .takeaway h3 { font-size: clamp(26px, 7.4vw, 40px); line-height: 1.15; font-weight: 700; margin: 0 0 14px; letter-spacing: -.015em; color: var(--teal); }
+  .takeaway h3 .jump { color: var(--red); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+  .takeaway p { font-size: 18px; margin: 0; color: var(--ink); }
+  .takeaway .flick { color: var(--blue); font-weight: 500; }
+  .takeaway .jumpw { color: var(--red); font-weight: 500; }
+
+  /* 4. numbers */
+  .nums { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 0; padding: 0; list-style: none; }
+  .num { border: 1px solid var(--line); border-left: 5px solid var(--ink); border-radius: 10px; padding: 14px 16px; }
+  .num.is-red { border-left-color: var(--red); }
+  .num.is-teal { border-left-color: var(--teal); }
+  .num .v { display: block; font-size: 34px; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
+  .num.is-red .v { color: var(--red); }
+  .num.is-teal .v { color: var(--teal); }
+  .num .k { font-size: 15px; color: var(--muted); }
+
+  /* 5. theorems */
+  .cards { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 16px; background: #fff; }
+  .card .lbl { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 4px; }
+  .card.is-safe .lbl { color: var(--teal); }
+  .card.is-stuck .lbl { color: var(--red); }
+  .card h3 { font-size: 20px; line-height: 1.3; margin: 0 0 10px; font-weight: 700; }
+  .card p { margin: 0 0 10px; font-size: 16px; }
+  .card .eq { background: var(--teal-l); border-radius: 8px; padding: 4px 10px; margin: 0 0 12px; overflow-x: auto; }
+  .card .plain { border-top: 1px dashed var(--line); padding-top: 10px; margin: 0; font-weight: 500; }
+  .katex { font-size: 1.04em; }
+  .katex-display { margin: .6em 0; }
+
+  /* 6. open problem */
+  .open { background: var(--teal-l); border-radius: 12px; padding: 20px; }
+  .open h3 { font-size: 22px; margin: 0 0 10px; }
+  .open p { margin: 0 0 10px; }
+  .open p:last-child { margin: 0; font-weight: 500; }
+
+  /* 7–8. ask + book */
+  form { display: grid; gap: 12px; }
+  label { display: grid; gap: 6px; font-size: 15px; font-weight: 500; }
+  label .opt { font-weight: 400; color: var(--muted); }
+  input, textarea { font: inherit; color: var(--ink); width: 100%; padding: 12px 14px; border: 1.5px solid #B9CCC8; border-radius: 10px; background: #fff; min-height: 48px; }
+  textarea { min-height: 120px; resize: vertical; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 22px; border-radius: 10px; font: 700 17px/1.2 "Fira Sans", system-ui, sans-serif; text-decoration: none; cursor: pointer; border: 2px solid var(--teal); }
+  .btn-primary { background: var(--teal); color: #fff; }
+  .btn-primary:hover { background: #0C5F59; border-color: #0C5F59; }
+  .btn-ghost { background: #fff; color: var(--teal); }
+  .btn-ghost:hover { background: var(--teal-l); }
+  .btn[disabled] { opacity: .6; cursor: wait; }
+  .msg { margin: 0; padding: 14px 16px; border-radius: 10px; font-weight: 500; }
+  .msg.ok { background: var(--teal-l); color: var(--teal); }
+  .msg.err { background: #FBEAEC; color: #8E0B21; }
+  .hint { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+  [hidden] { display: none !important; }
+
+  /* 9. links */
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .links a { display: flex; align-items: center; min-height: 52px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); font-weight: 500; }
+  .links a span { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
+  .links a:hover { border-color: var(--teal); }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--teal); font-weight: 500; }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    header { padding-top: 48px; }
+    section { padding: 36px 0; }
+    .nums { grid-template-columns: repeat(3, 1fr); }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .links { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+  <!-- 1. Header -->
+  <header>
+    <p class="venue">DeepMath 2026 · Ohio State · 29–30 Oct</p>
+    <h1>Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics</h1>
+    <p class="byline"><strong>Rokib Al Dhin Raadh</strong> · Independent researcher · high-school senior, Dhaka, Bangladesh</p>
+  </header>
+
+  <main id="main">
+
+    <!-- 2. Video walkthrough -->
+    <section aria-labelledby="h-video">
+      <h2 id="h-video">Video walkthrough</h2>
+      <div class="video" id="video">
+        <div class="video-soon" id="video-soon">
+          <p class="tag">3-minute video walkthrough, coming soon</p>
+          <p>Small repairs keep training stable. Only a jump can revive a dead layer. We prove both, which makes self-repair a switched system: bounded flicks between isolated jumps.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The takeaway -->
+    <section class="takeaway" aria-labelledby="h-take">
+      <h2 id="h-take">The takeaway</h2>
+      <h3>Small repairs keep training stable. Only <span class="jump">a jump</span> can revive a dead layer.</h3>
+      <p>We prove both, which makes self-repair a switched system: <span class="flick">bounded flicks</span> between <span class="jumpw">isolated jumps</span>.</p>
+    </section>
+
+    <!-- 4. Three key numbers -->
+    <section aria-labelledby="h-nums">
+      <h2 id="h-nums">Three numbers</h2>
+      <ul class="nums">
+        <li class="num"><span class="v">10.00%</span><span class="k">without repair, after two conv layers are zeroed: exactly chance, 99 epochs, 3/3 seeds.</span></li>
+        <li class="num is-red"><span class="v">39&#8239;493</span><span class="k">the training step where the first reset fires, identical in every seed.</span></li>
+        <li class="num is-teal"><span class="v">80.3%</span><span class="k">with self-repair (85% before the lesion).</span></li>
+      </ul>
+    </section>
+
+    <!-- 5. Two results -->
+    <section aria-labelledby="h-res">
+      <h2 id="h-res">Two results</h2>
+      <div class="cards">
+        <article class="card is-safe">
+          <p class="lbl">Theorem 1</p>
+          <h3>Bounded repair is safe (practical ISS)</h3>
+          <p>Near a minimum <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\theta^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>, with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span></span></span></span>-smooth, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>-strongly convex loss, step <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≤</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">\eta \le 1/L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">η</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/</span><span class="mord mathnormal">L</span></span></span></span>, repairs <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">∥</mo><msub><mi>u</mi><mi>t</mi></msub><mo stretchy="false">∥</mo><mo>≤</mo><msub><mi>ε</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">\lVert u_t \rVert \le \varepsilon_{\max}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∥</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">∥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mtight">m</span><span class="mtight">a</span><span class="mtight">x</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, and local gradients (weight <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0528em;">β</span></span></span></span>) bounded by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span>:</p>
+          <div class="eq"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi mathvariant="normal">lim sup</mi><mo>⁡</mo></mrow><mrow><mi>t</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mtext> </mtext><mo stretchy="false">∥</mo><msub><mi>θ</mi><mi>t</mi></msub><mo>−</mo><msup><mi>θ</mi><mo>∗</mo></msup><mo stretchy="false">∥</mo><mo>≤</mo><mi>γ</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>β</mi><mi>M</mi></mrow><mi>α</mi></mfrac><mo>+</mo><mfrac><msub><mi>ε</mi><mi>max</mi><mo>⁡</mo></msub><mrow><mi>η</mi><mtext> </mtext><mi>α</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\limsup_{t \to \infty}\, \lVert \theta_t - \theta^* \rVert \le \gamma = \frac{2\beta M}{\alpha} + \frac{\varepsilon_{\max}}{\eta\,\alpha}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6444em;vertical-align:-0.8944em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.2056em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mrel mtight">→</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mord mathrm">lim</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathrm">sup</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">∥</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7387em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mclose">∥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0528em;">β</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.988em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">η</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mtight">m</span><span class="mtight">a</span><span class="mtight">x</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div>
+          <p class="plain">Repairs push training around, but never further than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span></span></span></span> from a good solution.</p>
+        </article>
+        <article class="card is-stuck">
+          <p class="lbl">Theorem 2</p>
+          <h3>Bounded repair cannot revive (absorbing dead set)</h3>
+          <p>In a Conv–BN–ReLU layer (BatchNorm in train mode), a channel with zero filter and BN shift <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>c</mi></msub><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta_c \le 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0528em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> stays dead under AdamW and under any repair with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">∥</mo><mi>R</mi><mo stretchy="false">(</mo><mi>W</mi><mo stretchy="false">)</mo><mo>−</mo><mi>W</mi><mo stretchy="false">∥</mo><mo>≤</mo><mi>ρ</mi><mtext> </mtext><mo stretchy="false">∥</mo><mi>W</mi><mo stretchy="false">∥</mo></mrow><annotation encoding="application/x-tex">\lVert R(W) - W \rVert \le \rho\, \lVert W \rVert</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∥</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mclose">∥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ρ</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">∥</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mclose">∥</span></span></span></span>.</p>
+          <p class="plain">Gradient descent and small fixes are both stuck, exactly. Only a jump leaves.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Open problem -->
+    <section aria-labelledby="h-open">
+      <h2 id="h-open">Open problem</h2>
+      <div class="open">
+        <h3>How often may a network jump?</h3>
+        <p>Theorem 1 holds between jumps; Theorem 2 says jumps are unavoidable. Find a dwell time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">\tau_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1132em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0278em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> such that jumps at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">\tau_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1132em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0278em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> apart keep training stable (cf. Hespanha &amp; Morse, 1999).</p>
+        <p>If you have ideas, I'd love to hear them.</p>
+      </div>
+    </section>
+
+    <!-- 7. Ask a question -->
+    <section aria-labelledby="h-ask" id="ask">
+      <h2 id="h-ask">Ask a question</h2>
+      <form id="ask-form" hidden novalidate>
+        <label>Name <span class="opt">(optional)</span>
+          <input name="name" type="text" autocomplete="name">
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required inputmode="email">
+        </label>
+        <label>Question
+          <textarea name="message" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="DeepMath 2026 poster question">
+        <div><button class="btn btn-primary" type="submit" id="ask-submit">Send question</button></div>
+        <p class="msg err" id="ask-err" role="alert" hidden></p>
+      </form>
+      <p class="msg ok" id="ask-ok" role="status" hidden>Thank you, your question is on its way. I'll reply by email.</p>
+      <div id="ask-mail">
+        <p class="hint">Send me a question or a counter-example. I read everything.</p>
+        <a class="btn btn-primary" href="mailto:raadh@oxiedo.com?subject=DeepMath%202026%20poster%20question">Email your question</a>
+      </div>
+    </section>
+
+    <!-- 8. Book a call -->
+    <section aria-labelledby="h-book" id="book" hidden>
+      <h2 id="h-book">Talk it through</h2>
+      <a class="btn btn-ghost" id="book-btn" href="#" target="_blank" rel="noopener">Book a 15-minute call</a>
+    </section>
+
+    <!-- 9. Links -->
+    <section aria-labelledby="h-links">
+      <h2 id="h-links">Links</h2>
+      <ul class="links">
+        <li><a id="paper-link" href="https://openreview.net/forum?id=kowltBZEIv" target="_blank" rel="noopener"><div>Paper<span>OpenReview</span></div></a></li>
+        <li><a href="mailto:raadh@oxiedo.com"><div>Email<span>raadh@oxiedo.com</span></div></a></li>
+        <li><a href="https://orcid.org/0009-0003-1178-5296" target="_blank" rel="noopener"><div>ORCID<span>0009-0003-1178-5296</span></div></a></li>
+        <li><a href="https://raadh.me"><div>Homepage<span>raadh.me</span></div></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 10. Footer -->
+  <footer>Open to research collaborations.</footer>
+</div>
+
+<script>
+(function () {
+  // Video: YouTube or Vimeo link -> privacy-friendly embed, never autoplay.
+  function embedUrl(u) {
+    try {
+      var url = new URL(u), h = url.hostname.replace(/^www\.|^m\./, ""), id = "";
+      if (h === "youtu.be") id = url.pathname.slice(1);
+      else if (h.endsWith("youtube.com") || h.endsWith("youtube-nocookie.com")) {
+        id = url.searchParams.get("v") || (url.pathname.match(/\/(?:embed|shorts|live)\/([^/?#]+)/) || [])[1] || "";
+      }
+      if (id) return "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?rel=0";
+      if (h.endsWith("vimeo.com")) {
+        var v = (url.pathname.match(/(\d+)/) || [])[1];
+        if (v) return "https://player.vimeo.com/video/" + v + "?dnt=1";
+      }
+    } catch (e) {}
+    return "";
+  }
+  var src = VIDEO_URL ? embedUrl(VIDEO_URL) : "";
+  if (src) {
+    var f = document.createElement("iframe");
+    f.src = src;
+    f.title = "3-minute video walkthrough of the poster";
+    f.loading = "lazy";
+    f.allow = "encrypted-media; picture-in-picture; fullscreen";
+    f.allowFullscreen = true;
+    var box = document.getElementById("video");
+    box.innerHTML = "";
+    box.appendChild(f);
+  }
+
+  // Paper link.
+  if (PAPER_URL) document.getElementById("paper-link").href = PAPER_URL;
+
+  // Booking button: hidden unless BOOKING_URL is set.
+  if (BOOKING_URL) {
+    document.getElementById("book-btn").href = BOOKING_URL;
+    document.getElementById("book").hidden = false;
+  }
+
+  // Question form: posts to FORM_ENDPOINT (Formspree); otherwise the email button stays.
+  if (FORM_ENDPOINT) {
+    var form = document.getElementById("ask-form"), btn = document.getElementById("ask-submit"),
+        err = document.getElementById("ask-err"), ok = document.getElementById("ask-ok");
+    form.hidden = false;
+    document.getElementById("ask-mail").hidden = true;
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      err.hidden = true;
+      if (!form.email.value.trim() || !form.message.value.trim() || !form.email.checkValidity()) {
+        err.textContent = "Please add a valid email and your question.";
+        err.hidden = false;
+        return;
+      }
+      btn.disabled = true; btn.textContent = "Sending…";
+      fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); form.hidden = true; ok.hidden = false; ok.setAttribute("tabindex", "-1"); ok.focus(); })
+        .catch(function () {
+          btn.disabled = false; btn.textContent = "Send question";
+          err.innerHTML = 'Sorry, that didn\'t send. Please email <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>.';
+          err.hidden = false;
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>
