@@ -4,7 +4,8 @@
 <script>
   /* ───────────────────────── PAGE SETTINGS ─────────────────────────
      Edit these four lines. Leave a value as "" to switch that feature off.
-       VIDEO_URL      YouTube or Vimeo link. Empty = "coming soon" card.
+       VIDEO_URL      YouTube or Vimeo link. Empty = no video section
+                      (the poster is always shown at the top).
        FORM_ENDPOINT  Formspree form URL (https://formspree.io/f/xxxx).
                       Empty = the form is replaced by an email button.
        BOOKING_URL    Calendly or Google Calendar booking page. Empty = no button.
@@ -73,12 +74,14 @@
   .byline { margin: 0; color: var(--muted); font-size: 15px; }
   .byline strong { color: var(--ink); font-weight: 500; }
 
-  /* 2. video */
+  /* 2. poster + video */
+  .poster { display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+  .poster img { display: block; width: 100%; height: auto; aspect-ratio: 3370 / 2384; }
+  .poster-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+  .poster-cta .btn { flex: 1 1 200px; }
+  .poster-note { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
   .video { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 12px; overflow: hidden; background: var(--teal-l); }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .video-soon { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; }
-  .video-soon .tag { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin: 0 0 8px; }
-  .video-soon p { margin: 0; font-size: clamp(15px, 4.2vw, 18px); line-height: 1.45; }
 
   /* 3. takeaway */
   .takeaway h3 { font-size: clamp(26px, 7.4vw, 40px); line-height: 1.15; font-weight: 700; margin: 0 0 14px; letter-spacing: -.015em; color: var(--teal); }
@@ -137,6 +140,7 @@
   /* 9. links */
   .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; margin: 0; padding: 0; }
   .links a { display: flex; align-items: center; min-height: 52px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); font-weight: 500; }
+  .links li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .links a span { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
   .links a:hover { border-color: var(--teal); }
 
@@ -165,15 +169,27 @@
 
   <main id="main">
 
-    <!-- 2. Video walkthrough -->
-    <section aria-labelledby="h-video">
-      <h2 id="h-video">Video walkthrough</h2>
-      <div class="video" id="video">
-        <div class="video-soon" id="video-soon">
-          <p class="tag">3-minute video walkthrough, coming soon</p>
-          <p>Small repairs keep training stable. Only a jump can revive a dead layer. We prove both, which makes self-repair a switched system: bounded flicks between isolated jumps.</p>
-        </div>
+    <!-- 2. The poster -->
+    <section aria-labelledby="h-poster">
+      <h2 id="h-poster">The poster</h2>
+      <a class="poster" href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf" target="_blank" rel="noopener">
+        <img src="/assets/deepmath/poster-1000.webp"
+             srcset="/assets/deepmath/poster-1000.webp 1000w, /assets/deepmath/poster-1200.webp 1200w, /assets/deepmath/poster-1600.webp 1600w"
+             sizes="(min-width: 760px) 720px, calc(100vw - 40px)"
+             width="1000" height="707" fetchpriority="high"
+             alt="DeepMath 2026 poster: Self-Repair as a Bounded Disturbance. Tap to open the full A0 PDF.">
+      </a>
+      <div class="poster-cta">
+        <a class="btn btn-primary" href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf" target="_blank" rel="noopener">Open full poster (PDF)</a>
+        <a class="btn btn-ghost" href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf" download>Download</a>
       </div>
+      <p class="poster-note">A0 landscape, vector PDF. Pinch to zoom on a phone.</p>
+    </section>
+
+    <!-- 2b. Video walkthrough: shown only when VIDEO_URL is set -->
+    <section aria-labelledby="h-video" id="video-sec" hidden>
+      <h2 id="h-video">Video walkthrough</h2>
+      <div class="video" id="video"></div>
     </section>
 
     <!-- 3. The takeaway -->
@@ -257,6 +273,7 @@
     <section aria-labelledby="h-links">
       <h2 id="h-links">Links</h2>
       <ul class="links">
+        <li><a href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf" target="_blank" rel="noopener"><div>Poster<span>PDF, A0</span></div></a></li>
         <li><a id="paper-link" href="https://openreview.net/forum?id=kowltBZEIv" target="_blank" rel="noopener"><div>Paper<span>OpenReview</span></div></a></li>
         <li><a href="mailto:raadh@oxiedo.com"><div>Email<span>raadh@oxiedo.com</span></div></a></li>
         <li><a href="https://orcid.org/0009-0003-1178-5296" target="_blank" rel="noopener"><div>ORCID<span>0009-0003-1178-5296</span></div></a></li>
@@ -296,9 +313,8 @@
     f.loading = "lazy";
     f.allow = "encrypted-media; picture-in-picture; fullscreen";
     f.allowFullscreen = true;
-    var box = document.getElementById("video");
-    box.innerHTML = "";
-    box.appendChild(f);
+    document.getElementById("video").appendChild(f);
+    document.getElementById("video-sec").hidden = false;
   }
 
   // Paper link.
