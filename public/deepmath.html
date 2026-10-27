@@ -8,12 +8,12 @@
                       (the poster is always shown at the top).
        FORM_ENDPOINT  Formspree form URL (https://formspree.io/f/xxxx).
                       Empty = the form is replaced by an email button.
-       BOOKING_URL    Calendly or Google Calendar booking page. Empty = no button.
+       BOOKING_URL    Calendly or Google Calendar booking page. Empty = no "Book a call" card.
        PAPER_URL      The paper on OpenReview.
      ───────────────────────────────────────────────────────────────── */
   const VIDEO_URL = "";
   const FORM_ENDPOINT = "";
-  const BOOKING_URL = "";
+  const BOOKING_URL = "https://calendly.com/raadh";
   const PAPER_URL = "https://openreview.net/forum?id=kowltBZEIv";
 </script>
 <meta charset="utf-8">
@@ -134,6 +134,17 @@
   .msg { margin: 0; padding: 14px 16px; border-radius: 10px; font-weight: 500; }
   .msg.ok { background: var(--teal-l); color: var(--teal); }
   .msg.err { background: #FBEAEC; color: #8E0B21; }
+  /* meet the author */
+  .meet-lead { margin: 0 0 16px; }
+  .meet { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  .mcard { border: 1px solid var(--line); border-top: 4px solid var(--teal); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .mcard.is-call { border-top-color: var(--blue); }
+  .mcard .lbl { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin: 0; }
+  .mcard.is-call .lbl { color: var(--blue); }
+  .mcard h3 { font-size: 20px; line-height: 1.3; margin: 0; }
+  .mcard p { margin: 0; font-size: 16px; }
+  .mcard .when { font-weight: 500; }
+  .mcard .btn { margin-top: auto; align-self: flex-start; }
   .hint { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
   [hidden] { display: none !important; }
 
@@ -152,6 +163,7 @@
     section { padding: 36px 0; }
     .nums { grid-template-columns: repeat(3, 1fr); }
     .cards { grid-template-columns: 1fr 1fr; }
+    .meet { grid-template-columns: 1fr 1fr; }
     .links { grid-template-columns: repeat(4, 1fr); }
   }
 </style>
@@ -184,6 +196,27 @@
         <a class="btn btn-ghost" href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf?v=20261023" download>Download</a>
       </div>
       <p class="poster-note">A0 landscape, vector PDF. Pinch to zoom on a phone.</p>
+    </section>
+
+    <!-- 2a. Meet the author: live talk and a call -->
+    <section aria-labelledby="h-meet" id="meet">
+      <h2 id="h-meet">Meet the author</h2>
+      <p class="meet-lead">I can't be at Ohio State in person, so here are two ways to go deeper. I'd love to collaborate with anyone working on these questions.</p>
+      <div class="meet">
+        <article class="mcard">
+          <p class="lbl" id="talk-tag">Live talk · Cohere Labs</p>
+          <h3>When the Update Is Not a Gradient</h3>
+          <p class="when">Monday 2 November 2026, 12:00 ET (17:00 UTC), online</p>
+          <p>The same work, presented live at the Cohere Labs Open Science Community, with time for questions. Register and join.</p>
+          <a class="btn btn-primary" id="talk-btn" href="https://luma.com/p28sna3q" target="_blank" rel="noopener">Register on Luma</a>
+        </article>
+        <article class="mcard is-call" id="book" hidden>
+          <p class="lbl">Book a call</p>
+          <h3>Talk about the work or a collaboration</h3>
+          <p>Pick any time that suits you on my calendar: questions on the proofs, a collaboration, or a place in your lab.</p>
+          <a class="btn btn-ghost" id="book-btn" href="#" target="_blank" rel="noopener">Pick a time</a>
+        </article>
+      </div>
     </section>
 
     <!-- 2b. Video walkthrough: shown only when VIDEO_URL is set -->
@@ -266,12 +299,6 @@
       </div>
     </section>
 
-    <!-- 8. Book a call -->
-    <section aria-labelledby="h-book" id="book" hidden>
-      <h2 id="h-book">Talk it through</h2>
-      <a class="btn btn-ghost" id="book-btn" href="#" target="_blank" rel="noopener">Book a 15-minute call</a>
-    </section>
-
     <!-- 9. Links -->
     <section aria-labelledby="h-links">
       <h2 id="h-links">Links</h2>
@@ -324,7 +351,13 @@
   // Paper link.
   if (PAPER_URL) document.getElementById("paper-link").href = PAPER_URL;
 
-  // Booking button: hidden unless BOOKING_URL is set.
+  // Talk card: once the talk is over, point to the event page instead of registration.
+  if (Date.now() > Date.UTC(2026, 10, 2, 18, 30)) {
+    document.getElementById("talk-tag").textContent = "Talk · Cohere Labs · 2 November";
+    document.getElementById("talk-btn").textContent = "Event page";
+  }
+
+  // Booking card: hidden unless BOOKING_URL is set.
   if (BOOKING_URL) {
     document.getElementById("book-btn").href = BOOKING_URL;
     document.getElementById("book").hidden = false;
