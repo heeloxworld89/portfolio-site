@@ -19,7 +19,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Self-Repair as a Bounded Disturbance · DeepMath 2026 poster · Rokib Al Dhin Raadh</title>
-<meta name="description" content="Small repairs keep training stable. Only a jump can revive a dead layer. DeepMath 2026 poster by Rokib Al Dhin Raadh: input-to-state stability of self-repairing neural network training.">
+<meta name="description" content="DeepMath 2026 poster by Rokib Al Dhin Raadh, who could not travel to Ohio State. Join his invited Cohere Labs talk on 2 November or book a call; he is looking to join a research lab.">
 <link rel="canonical" href="https://www.raadh.me/deepmath">
 <meta name="theme-color" content="#0F766E">
 <meta property="og:type" content="article">
@@ -135,17 +135,8 @@
   .msg { margin: 0; padding: 14px 16px; border-radius: 10px; font-weight: 500; }
   .msg.ok { background: var(--teal-l); color: var(--teal); }
   .msg.err { background: #FBEAEC; color: #8E0B21; }
-  /* header banner: the live talk, visible above the fold */
-  .next { display: flex; align-items: center; gap: 12px; margin: 20px 0 0; padding: 12px 14px; border-radius: 12px; background: var(--ink); color: #fff; text-decoration: none; }
-  .next:hover { background: #111827; }
-  .next .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #34D399; box-shadow: 0 0 0 0 rgba(52, 211, 153, .6); animation: pulse 2s infinite; }
-  .next .txt { flex: 1; min-width: 0; font-size: 15px; line-height: 1.35; }
-  .next .txt b { display: block; font-weight: 700; }
-  .next .txt span { color: #CBD5E1; }
-  .next .go { flex: none; font-weight: 700; font-size: 15px; color: #6EE7B7; }
-  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
-
   /* meet the author */
+  .note { border-top: 0; padding-top: 4px; }
   .meet-title { font-size: clamp(24px, 6.4vw, 32px); line-height: 1.2; font-weight: 700; margin: 0 0 8px; letter-spacing: -.01em; }
   .meet-lead { margin: 0 0 18px; color: var(--muted); }
   .meet { display: grid; gap: 14px; grid-template-columns: 1fr; }
@@ -179,7 +170,7 @@
   .bar.on { transform: none; }
   .bar .btn { flex: 1; min-height: 46px; padding: 8px 10px; font-size: 15px; }
   .bar .btn-blue-ghost { background: #fff; color: var(--blue); border-color: var(--blue); }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .next .dot { animation: none; } .bar { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bar { transition: none; } }
 
   .hint { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
   [hidden] { display: none !important; }
@@ -218,23 +209,47 @@
     <p class="venue">DeepMath 2026 · Ohio State · 29–30 Oct</p>
     <h1>Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics</h1>
     <p class="byline"><strong>Rokib Al Dhin Raadh</strong> · Independent researcher · high-school senior, Dhaka, Bangladesh</p>
-    <a class="next" id="next" href="#meet">
-      <span class="dot" aria-hidden="true"></span>
-      <span class="txt"><b>Live online talk on this work · 2 Nov</b><span>Cohere Labs · 12:00 ET. Join, or book a call.</span></span>
-      <span class="go" aria-hidden="true">→</span>
-    </a>
   </header>
 
   <main id="main">
 
-    <!-- 2. The poster -->
+    <!-- 2. From the author: why the poster is here alone, the talk, and a call -->
+    <section aria-labelledby="h-meet" id="meet" class="note">
+      <h2 id="h-meet">From the author</h2>
+      <p class="meet-title">Thanks for scanning. I couldn't be here in person.</p>
+      <p class="meet-lead">I'm based in Dhaka, Bangladesh, and couldn't get a visa to travel to Ohio State, so this poster is here without me. You can still hear the work from me and talk to me directly.</p>
+      <div class="meet">
+        <article class="talk" aria-labelledby="talk-h">
+          <div class="talk-top">
+            <span class="cal" aria-hidden="true"><span class="m">NOV</span><span class="d">2</span><span class="w">Mon</span></span>
+            <div>
+              <p class="lbl" id="talk-tag">Invited talk · Cohere Labs</p>
+              <h3 id="talk-h">When the Update Is Not a Gradient</h3>
+            </div>
+          </div>
+          <p class="when">Monday 2 November 2026, 12:00 ET (17:00 UTC), online</p>
+          <p class="local" id="talk-local" hidden></p>
+          <p>Cohere Labs invited me as a guest speaker to present this DeepMath work to its Open Science Community. If you're interested, register and join live, with time for questions.</p>
+          <span class="badge" id="talk-badge"></span>
+          <a class="btn btn-white" id="talk-btn" href="https://luma.com/p28sna3q" target="_blank" rel="noopener">Register on Luma</a>
+        </article>
+        <article class="mcard" id="book" hidden>
+          <p class="lbl">Meetings always open</p>
+          <h3>Join a lab, collaborate, or talk it through</h3>
+          <p>I'm looking to join a research lab and to collaborate with researchers on these questions. Book a 30-minute call at any time that suits you.</p>
+          <a class="btn btn-blue" id="book-btn" href="#" target="_blank" rel="noopener">Book a 30-minute call</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. The poster -->
     <section aria-labelledby="h-poster">
       <h2 id="h-poster">The poster</h2>
       <a class="poster" href="/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf?v=20261023" target="_blank" rel="noopener">
         <img src="/assets/deepmath/poster-1000.webp?v=20261023"
              srcset="/assets/deepmath/poster-1000.webp?v=20261023 1000w, /assets/deepmath/poster-1200.webp?v=20261023 1200w, /assets/deepmath/poster-1600.webp?v=20261023 1600w"
              sizes="(min-width: 760px) 720px, calc(100vw - 40px)"
-             width="1000" height="707" fetchpriority="high"
+             width="1000" height="707" loading="lazy" decoding="async"
              alt="DeepMath 2026 poster: Self-Repair as a Bounded Disturbance. Tap to open the full A0 PDF.">
       </a>
       <div class="poster-cta">
@@ -244,49 +259,20 @@
       <p class="poster-note">A0 landscape, vector PDF. Pinch to zoom on a phone.</p>
     </section>
 
-    <!-- 2a. Meet the author: live talk and a call -->
-    <section aria-labelledby="h-meet" id="meet">
-      <h2 id="h-meet">Meet the author</h2>
-      <p class="meet-title">I can't be at Ohio State, so let's talk online.</p>
-      <p class="meet-lead">I'd love to collaborate with anyone working on these questions, and I'm looking to join a research lab.</p>
-      <div class="meet">
-        <article class="talk" aria-labelledby="talk-h">
-          <div class="talk-top">
-            <span class="cal" aria-hidden="true"><span class="m">NOV</span><span class="d">2</span><span class="w">Mon</span></span>
-            <div>
-              <p class="lbl" id="talk-tag">Live talk · Cohere Labs</p>
-              <h3 id="talk-h">When the Update Is Not a Gradient</h3>
-            </div>
-          </div>
-          <p class="when">Monday 2 November 2026, 12:00 ET (17:00 UTC), online</p>
-          <p class="local" id="talk-local" hidden></p>
-          <p>The same work, presented live at the Cohere Labs Open Science Community, with time for questions. Register and join.</p>
-          <span class="badge" id="talk-badge"></span>
-          <a class="btn btn-white" id="talk-btn" href="https://luma.com/p28sna3q" target="_blank" rel="noopener">Register on Luma</a>
-        </article>
-        <article class="mcard" id="book" hidden>
-          <p class="lbl">Book a 30-minute call</p>
-          <h3>Talk about the work or a collaboration</h3>
-          <p>Pick any time that suits you on my calendar for a 30-minute call: questions on the proofs, a collaboration, or a place in your lab.</p>
-          <a class="btn btn-blue" id="book-btn" href="#" target="_blank" rel="noopener">Pick a time</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- 2b. Video walkthrough: shown only when VIDEO_URL is set -->
+    <!-- 3b. Video walkthrough: shown only when VIDEO_URL is set -->
     <section aria-labelledby="h-video" id="video-sec" hidden>
       <h2 id="h-video">Video walkthrough</h2>
       <div class="video" id="video"></div>
     </section>
 
-    <!-- 3. The takeaway -->
+    <!-- 4. The takeaway -->
     <section class="takeaway" aria-labelledby="h-take">
       <h2 id="h-take">The takeaway</h2>
       <h3>Small repairs keep training stable. Only <span class="jump">a jump</span> can revive a dead layer.</h3>
       <p>We prove both, which makes self-repair a switched system: <span class="flick">bounded flicks</span> between <span class="jumpw">isolated jumps</span>.</p>
     </section>
 
-    <!-- 4. Three key numbers -->
+    <!-- 5. Three key numbers -->
     <section aria-labelledby="h-nums">
       <h2 id="h-nums">Three numbers</h2>
       <ul class="nums">
@@ -296,7 +282,7 @@
       </ul>
     </section>
 
-    <!-- 5. Two results -->
+    <!-- 6. Two results -->
     <section aria-labelledby="h-res">
       <h2 id="h-res">Two results</h2>
       <div class="cards">
@@ -318,7 +304,7 @@
       </div>
     </section>
 
-    <!-- 6. Open problem -->
+    <!-- 7. Open problem -->
     <section aria-labelledby="h-open">
       <h2 id="h-open">Open problem</h2>
       <div class="open">
@@ -329,7 +315,7 @@
       </div>
     </section>
 
-    <!-- 7. Ask a question -->
+    <!-- 8. Ask a question -->
     <section aria-labelledby="h-ask" id="ask">
       <h2 id="h-ask">Ask a question</h2>
       <form id="ask-form" hidden novalidate>
@@ -348,7 +334,7 @@
       </form>
       <p class="msg ok" id="ask-ok" role="status" hidden>Thank you, your question is on its way. I'll reply by email.</p>
       <div id="ask-mail">
-        <p class="hint">Send me a question or a counter-example. I read everything. I'm also looking to join a research lab, and I'd be happy to hear from any lab.</p>
+        <p class="hint">Send me a question or a counter-example. I read everything.</p>
         <a class="btn btn-primary" href="mailto:raadh@oxiedo.com?subject=DeepMath%202026%20poster%20question">Email your question</a>
       </div>
     </section>
@@ -371,7 +357,7 @@
   <!-- 10. Footer -->
   <footer>
     <p>Open to research collaborations, and happy to join a research lab.</p>
-    <span>I'm looking forward to it. <a href="#meet">Join the talk or book a call</a>.</span>
+    <span>Meetings are always open. <a href="#meet">Join the talk or book a call</a>.</span>
   </footer>
 </div>
 
@@ -419,7 +405,6 @@
   if (now > TALK_END) {
     document.getElementById("talk-tag").textContent = "Talk · Cohere Labs · 2 November";
     document.getElementById("talk-btn").textContent = "Event page";
-    document.getElementById("next").hidden = true;
     document.getElementById("bar-talk").hidden = true;
   } else {
     var h = (TALK_START - now) / 36e5;
@@ -443,19 +428,22 @@
     bb.href = BOOKING_URL; bb.target = "_blank"; bb.rel = "noopener"; bb.hidden = false;
   }
 
-  // Phone bar: appears once the header banner scrolls away, hides while the
-  // talk/call section or the footer is on screen, and if it has nothing to offer.
+  // Phone bar: appears once the note above has scrolled away, hides while the
+  // footer is on screen, and if it has nothing to offer.
   var bar = document.getElementById("bar");
   var hasAction = !document.getElementById("bar-talk").hidden || !document.getElementById("bar-book").hidden;
   if (hasAction && "IntersectionObserver" in window) {
-    var seen = {};
+    var passed = false, foot = false;
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
-      bar.classList.toggle("on", seen.top === false && !seen.meet && !seen.foot);
+      es.forEach(function (e) {
+        if (e.target.id === "meet") passed = !e.isIntersecting && e.boundingClientRect.top < 0;
+        else foot = e.isIntersecting;
+      });
+      bar.classList.toggle("on", passed && !foot);
     });
-    document.querySelector("header").id = "top";
     document.querySelector("footer").id = "foot";
-    ["top", "meet", "foot"].forEach(function (id) { io.observe(document.getElementById(id)); });
+    io.observe(document.getElementById("meet"));
+    io.observe(document.getElementById("foot"));
   } else {
     bar.hidden = true;
   }
