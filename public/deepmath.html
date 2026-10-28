@@ -19,7 +19,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Self-Repair as a Bounded Disturbance · DeepMath 2026 poster · Rokib Al Dhin Raadh</title>
-<meta name="description" content="DeepMath 2026 poster by Rokib Al Dhin Raadh, who could not travel to Ohio State. Join his invited Cohere Labs talk on 2 November or book a call; he is looking to join a research lab.">
+<meta name="description" content="DeepMath 2026 poster by Rokib Al Dhin Raadh, an 18-year-old independent researcher who could not travel to Ohio State. Join his invited Cohere Labs talk on 2 November, or book a call with questions or opportunities.">
 <link rel="canonical" href="https://www.raadh.me/deepmath">
 <meta name="theme-color" content="#0F766E">
 <meta property="og:type" content="article">
@@ -217,7 +217,7 @@
     <section aria-labelledby="h-meet" id="meet" class="note">
       <h2 id="h-meet">From the author</h2>
       <p class="meet-title">Thanks for scanning. I couldn't be here in person.</p>
-      <p class="meet-lead">I'm based in Dhaka, Bangladesh, and couldn't get a visa to travel to Ohio State, so this poster is here without me. You can still hear the work from me and talk to me directly.</p>
+      <p class="meet-lead">I'm Rokib Al Dhin Raadh, an 18-year-old independent researcher in Dhaka, Bangladesh. I wrote this paper on my own, outside any lab, and it was accepted after double-blind review. I couldn't get a visa to travel to Ohio State, so the poster is here without me, but you can still hear the work from me and ask me anything about it.</p>
       <div class="meet">
         <article class="talk" aria-labelledby="talk-h">
           <div class="talk-top">
@@ -234,9 +234,9 @@
           <a class="btn btn-white" id="talk-btn" href="https://luma.com/p28sna3q" target="_blank" rel="noopener">Register on Luma</a>
         </article>
         <article class="mcard" id="book" hidden>
-          <p class="lbl">Meetings always open</p>
-          <h3>Join a lab, collaborate, or talk it through</h3>
-          <p>I'm looking to join a research lab and to collaborate with researchers on these questions. Book a 30-minute call at any time that suits you.</p>
+          <p class="lbl">Questions and opportunities</p>
+          <h3>Ask me directly</h3>
+          <p>A question about the proofs or the experiments, or an opportunity you'd like to discuss? Book a 30-minute call at any time that suits you.</p>
           <a class="btn btn-blue" id="book-btn" href="#" target="_blank" rel="noopener">Book a 30-minute call</a>
         </article>
       </div>
@@ -356,8 +356,8 @@
 
   <!-- 10. Footer -->
   <footer>
-    <p>Open to research collaborations, and happy to join a research lab.</p>
-    <span>Meetings are always open. <a href="#meet">Join the talk or book a call</a>.</span>
+    <p>Questions and opportunities are always welcome.</p>
+    <span><a href="#meet">Join the talk or book a call</a>, or email <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>.</span>
   </footer>
 </div>
 
@@ -410,7 +410,14 @@
     var h = (TALK_START - now) / 36e5;
     if (now >= TALK_START) document.getElementById("talk-btn").textContent = "Join now on Luma";
     badge.textContent = now >= TALK_START ? "Live now" : h < 1 ? "Starts within the hour"
-      : h < 24 ? "Starts in " + Math.round(h) + " hours" : "In " + Math.ceil(h / 24) + " days";
+      : h < 24 ? "Starts in " + Math.round(h) + " hours" : calDays();
+    // Calendar days between today and the talk date, in the reader's own time zone.
+    function calDays() {
+      var a = new Date(now), b = new Date(TALK_START);
+      var d = Math.round((new Date(b.getFullYear(), b.getMonth(), b.getDate()) -
+                          new Date(a.getFullYear(), a.getMonth(), a.getDate())) / 864e5);
+      return d <= 1 ? "Tomorrow" : "In " + d + " days";
+    }
     try {
       var local = new Intl.DateTimeFormat(undefined, { weekday: "short", day: "numeric", month: "short",
         hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(TALK_START));
