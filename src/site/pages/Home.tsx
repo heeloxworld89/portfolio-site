@@ -402,7 +402,7 @@ export default function Home() {
               <h4>Press, interviews and research</h4>
               <p><a href={`mailto:${links.email}`}>{links.email}</a></p>
               <p>Replies are typically sent within one working day.</p>
-              <p>Looking to join a research lab, and happy to hear from any lab.</p>
+              <p>Questions and opportunities are always welcome.</p>
             </div>
             <div className="rx-cell">
               <h4>Founder: OXIEDO and investors</h4>
