@@ -59,10 +59,10 @@ export const groups: Group[] = [
       },
       {
         claim: "Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop",
-        detail: "Workshop co-located with NeurIPS 2026 at the Paris satellite venue, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality.",
+        detail: "Workshop co-located with NeurIPS 2026 at the Paris satellite venue, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality. The workshop site lists him among the 490 reviewers who submitted official reviews.",
         source: [
           { label: "Reviewer recognition letter (PDF)", href: "/assets/evidence/neurips-2026-ai4good-reviewer-letter.pdf" },
-          { label: "Workshop site", href: links.neurips },
+          { label: "Public reviewer list (workshop site)", href: links.neurips + "#reviewers" },
         ],
         status: "Public record",
       },
@@ -159,4 +159,4 @@ export const groups: Group[] = [
   },
 ];
 
-export const evidenceChecked = "2026-10-11";
+export const evidenceChecked = "2026-10-28";
