@@ -172,6 +172,33 @@
   .bar .btn-blue-ghost { background: #fff; color: var(--blue); border-color: var(--blue); }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bar { transition: none; } }
 
+  /* abstract, figures, FAQ, reproduce, cite, references */
+  .abstract p { margin: 0; font-size: 17px; line-height: 1.65; }
+  .abstract .kw { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+  figure { margin: 0 0 22px; }
+  figure:last-child { margin-bottom: 0; }
+  figure.narrow { max-width: 560px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  figcaption { margin: 10px 0 0; font-size: 15px; color: var(--muted); line-height: 1.55; }
+  figcaption b { color: var(--ink); }
+  .faq details { border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  .faq details + details { margin-top: 10px; }
+  .faq summary { cursor: pointer; list-style: none; padding: 14px 44px 14px 16px; font-weight: 500; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--teal); }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details > p { margin: 0; padding: 0 16px 16px; color: var(--ink); }
+  .faq details > p + p { padding-top: 0; }
+  pre.code { margin: 0 0 12px; padding: 14px 16px; border-radius: 10px; background: var(--ink); color: #E5E7EB; font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; white-space: pre; }
+  pre.code .c { color: #94A3B8; }
+  .copy-wrap { position: relative; }
+  .copy-wrap pre.code { padding-top: 48px; margin: 0; }
+  .copy { position: absolute; top: 8px; right: 8px; font: 600 13px/1 "Fira Sans", system-ui, sans-serif; padding: 7px 10px; border-radius: 6px; border: 1px solid #475569; background: #1F2937; color: #E5E7EB; cursor: pointer; }
+  .copy:hover { background: #374151; }
+  .refs { margin: 0; padding-left: 22px; font-size: 15px; color: var(--ink); }
+  .refs li { margin: 0 0 8px; }
+  .refs a { word-break: break-word; }
+  .meta { margin: 14px 0 0; font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--muted); }
   .hint { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
   [hidden] { display: none !important; }
 
@@ -272,6 +299,13 @@
       <p>We prove both, which makes self-repair a switched system: <span class="flick">bounded flicks</span> between <span class="jumpw">isolated jumps</span>.</p>
     </section>
 
+    <!-- 4b. Abstract -->
+    <section class="abstract" aria-labelledby="h-abs">
+      <h2 id="h-abs">Abstract</h2>
+      <p>Methods that repair a network while it trains, such as Continual Backprop, ReDo, Shrink &amp; Perturb and plasticity injection, apply updates that are not the gradient of any loss, so the usual convergence proofs do not cover them. We model each repair as an input to the training dynamics and ask for input-to-state stability (ISS). Proposition&nbsp;1 shows that near a strongly convex minimum, bounded repairs keep training within a radius γ&nbsp;=&nbsp;2βM/α&nbsp;+&nbsp;ε̄/(ηα) of the minimum, where ε̄ is the asymptotic repair size. Theorem&nbsp;2 gives the matching limit: in a Conv–BN–ReLU layer, a channel with a zero filter and non-positive BatchNorm shift is invariant under AdamW and under every per-channel-bounded repair, so only a reset can revive it. Self-repairing training is therefore a switched system: bounded corrections between isolated jumps. We test both predictions in a 383-run evaluation. After a shock, the largest correction per epoch falls by 93% (5.07&nbsp;→&nbsp;0.38); a CIFAR-10 CNN with two zeroed conv layers stays at exactly 10.00% under standard AdamW and recovers to 80.3% with self-repair; on ResNet-18 the skip path makes repair unnecessary.</p>
+      <p class="kw">Keywords: input-to-state stability · switched systems · loss of plasticity · self-repairing training · BatchNorm</p>
+    </section>
+
     <!-- 5. Three key numbers -->
     <section aria-labelledby="h-nums">
       <h2 id="h-nums">Three numbers</h2>
@@ -304,6 +338,23 @@
       </div>
     </section>
 
+    <!-- 6b. Figures -->
+    <section aria-labelledby="h-figs">
+      <h2 id="h-figs">Figures</h2>
+      <figure>
+        <img src="/assets/deepmath/fig-lesion-1000.webp" srcset="/assets/deepmath/fig-lesion-1000.webp 1000w, /assets/deepmath/fig-lesion-1800.webp 1800w"
+             sizes="(min-width: 760px) 720px, calc(100vw - 40px)" width="1000" height="455" loading="lazy" decoding="async"
+             alt="Test accuracy over 200 epochs. Two conv layers are zeroed at epoch 100. Standard AdamW stays at exactly 10.00% in all three seeds; with self-repair, a reset at step 39 493 is followed by recovery to 80.3 ± 1.5%. Below, every repair event per seed.">
+        <figcaption><b>Figure 1. Theorem 2, in data.</b> CIFAR-10 CNN; two conv layers zeroed after epoch 100. Small corrections cannot revive them, so accuracy sits at chance until a reset (a jump) redraws the dead channels at step 39&nbsp;493 in every seed; small corrections then finish the recovery to 80.3&nbsp;±&nbsp;1.5%. Standard AdamW stays at exactly 10.00% in 3/3 seeds. Bottom: every repair event (blue: small corrections; red: resets).</figcaption>
+      </figure>
+      <figure class="narrow">
+        <img src="/assets/deepmath/fig-decay-800.webp" srcset="/assets/deepmath/fig-decay-800.webp 800w, /assets/deepmath/fig-decay-1400.webp 1400w"
+             sizes="(min-width: 760px) 560px, calc(100vw - 40px)" width="800" height="386" loading="lazy" decoding="async"
+             alt="Largest correction per epoch on a log scale over 200 epochs after a shock: the mean over the first 20 epochs is 5.07 and over the last 20 epochs is 0.38.">
+        <figcaption><b>Figure 2. The falsifiable prediction.</b> Proposition 1's bound is informative only if repairs shrink. After a shock (σ&nbsp;=&nbsp;1), the largest correction per epoch, ε<sub>k</sub>, falls from 5.07 (first 20 epochs) to 0.38 (last 20), a 93% reduction.</figcaption>
+      </figure>
+    </section>
+
     <!-- 7. Open problem -->
     <section aria-labelledby="h-open">
       <h2 id="h-open">Open problem</h2>
@@ -313,6 +364,86 @@
         <p>Also open: strong convexity cannot hold exactly for BatchNorm layers (scale invariance); Cui et al. (2025) give ISS under a generalised PL condition, but whether BN networks satisfy it is open.</p>
         <p>If you have ideas, I'd love to hear them.</p>
       </div>
+    </section>
+
+    <!-- 7b. Questions I'd expect at the poster -->
+    <section class="faq" aria-labelledby="h-faq">
+      <h2 id="h-faq">Questions I'd expect at the poster</h2>
+      <details>
+        <summary>Why model a repair as an input rather than as part of the optimiser?</summary>
+        <p>Because it is not a gradient step. A repair fires when a diagnostic crosses a threshold, depends on the current state and is discontinuous. Writing training as θ<sub>t+1</sub> = θ<sub>t</sub> − η∇L(θ<sub>t</sub>) + u<sub>t</sub> lets input-to-state stability bound the effect of u<sub>t</sub> without requiring it to descend any objective.</p>
+      </details>
+      <details>
+        <summary>How does this relate to Cui, Jiang, Sontag &amp; Braatz (2025)?</summary>
+        <p>They prove that perturbed gradient descent is small-disturbance ISS under a generalised Polyak–Łojasiewicz condition. Modelling repair as the input lets bounds of that kind apply to self-repair. What this work adds is the repair-specific side: the diagnostic-triggered input, the measurable condition the bound needs (repairs must shrink), and Theorem 2, which shows that bounded repair alone cannot leave a dead set.</p>
+      </details>
+      <details>
+        <summary>Strong convexity cannot hold with BatchNorm. Doesn't that break Proposition 1?</summary>
+        <p>It makes Proposition 1 a local, idealised statement, and the poster says so: BatchNorm's scale invariance rules out exact strong convexity. The natural replacement is a PL-type condition, under which Cui et al. (2025) already have ISS for gradient descent; whether BN networks satisfy it is the open step. Theorem 2 does not use convexity at all.</p>
+      </details>
+      <details>
+        <summary>Why exactly 10.00%, with zero variance across seeds?</summary>
+        <p>Once the layers are zeroed, the network's output no longer depends on the input, so it predicts the same class for every image. The CIFAR-10 test set is balanced, 1,000 images per class, so accuracy is exactly 10.00%. Theorem 2 says no gradient step or bounded repair can change that, and none did in 99 epochs across 3 seeds.</p>
+      </details>
+      <details>
+        <summary>Does Theorem 2 depend on the optimiser state?</summary>
+        <p>Yes. Leftover momentum could move a zero filter, so the theorem is stated for AdamW with fresh state for the channel. Every gradient into the channel is then exactly zero, and with decoupled weight decay the BatchNorm shift evolves as β<sub>c</sub>(t) = (1 − ηλ)<sup>t</sup> β<sub>c</sub>(0), which stays non-positive; the run logs match this to the bit. The ormas-monitor certificate checks these conditions before it certifies a channel as dead.</p>
+      </details>
+      <details>
+        <summary>Why doesn't ResNet-18 benefit from repair?</summary>
+        <p>The skip path routes around the same lesion, so the network barely notices it: 92.3% without repair against 91.6% with (3-seed means). Repair matters when there is no redundancy to fall back on.</p>
+      </details>
+      <details>
+        <summary>Is the bound informative in practice?</summary>
+        <p>Only if ε̄ is small, which is what makes it a prediction rather than a formality: a self-repairing network should need progressively smaller repairs. It does: after a shock the largest correction per epoch falls from 5.07 to 0.38 (Figure 2).</p>
+      </details>
+    </section>
+
+    <!-- 7c. Reproduce -->
+    <section aria-labelledby="h-repro">
+      <h2 id="h-repro">Reproduce it</h2>
+      <p class="hint">Theorem 2 is implemented as a check you can run on your own PyTorch model: ormas-monitor watches training, certifies dead channels when the theorem's conditions hold, and can optionally repair them.</p>
+      <pre class="code"><span class="c"># the lesion experiment, small scale</span>
+pip install "ormas-monitor[demo]"
+ormas-monitor demo</pre>
+      <p class="hint">The demo trains a CIFAR-10 CNN, zeroes two of its three conv layers and clears the optimiser state, then trains on twice from that same state: once only watching, once repairing. It downloads CIFAR-10 (about 170&nbsp;MB) once.</p>
+      <ul class="links">
+        <li><a href="https://pypi.org/project/ormas-monitor/" target="_blank" rel="noopener"><div>ormas-monitor<span>PyPI</span></div></a></li>
+        <li><a href="https://oxiedo.github.io/ormas-monitor/" target="_blank" rel="noopener"><div>Documentation<span>oxiedo.github.io</span></div></a></li>
+        <li><a href="https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view" target="_blank" rel="noopener"><div>Run archive<span>All 383 runs</span></div></a></li>
+      </ul>
+    </section>
+
+    <!-- 7d. Cite -->
+    <section aria-labelledby="h-cite">
+      <h2 id="h-cite">Cite</h2>
+      <div class="copy-wrap">
+        <pre class="code" id="bibtex">@misc{raadh2026selfrepair,
+  author       = {Raadh, Rokib Al Dhin},
+  title        = {Self-Repair as a Bounded Disturbance: Input-to-State
+                  Stability of Neural Network Training Dynamics},
+  howpublished = {Poster, DeepMath 2026: Conference on the Mathematical
+                  Theory of Deep Neural Networks, The Ohio State University},
+  year         = {2026},
+  month        = oct,
+  url          = {https://openreview.net/forum?id=kowltBZEIv}
+}</pre>
+        <button class="copy" type="button" id="copy-bib">Copy</button>
+      </div>
+    </section>
+
+    <!-- 7e. References -->
+    <section aria-labelledby="h-refs">
+      <h2 id="h-refs">Key references</h2>
+      <ol class="refs">
+        <li>S. Dohare, J. F. Hernandez-Garcia, Q. Lan, P. Rahman, A. R. Mahmood and R. S. Sutton. Loss of plasticity in deep continual learning. <i>Nature</i> 632, 768–774, 2024. <a href="https://doi.org/10.1038/s41586-024-07711-7" target="_blank" rel="noopener">doi</a></li>
+        <li>G. Sokar, R. Agarwal, P. S. Castro and U. Evci. The dormant neuron phenomenon in deep reinforcement learning (ReDo). <i>ICML</i>, 2023.</li>
+        <li>J. Ash and R. P. Adams. On warm-starting neural network training (Shrink &amp; Perturb). <i>NeurIPS</i>, 2020.</li>
+        <li>E. Nikishin, J. Oh, G. Ostrovski, C. Lyle, R. Pascanu, W. Dabney and A. Barreto. Deep reinforcement learning with plasticity injection. <i>NeurIPS</i>, 2023.</li>
+        <li>E. D. Sontag. Smooth stabilization implies coprime factorization. <i>IEEE Trans. Automatic Control</i> 34(4), 435–443, 1989.</li>
+        <li>J. P. Hespanha and A. S. Morse. Stability of switched systems with average dwell-time. <i>Proc. 38th IEEE Conference on Decision and Control</i>, 1999.</li>
+        <li>L. Cui, Z.-P. Jiang, E. D. Sontag and R. D. Braatz. Perturbed gradient descent algorithms are small-disturbance input-to-state stable. 2025. <a href="https://arxiv.org/abs/2507.02131" target="_blank" rel="noopener">arXiv:2507.02131</a></li>
+      </ol>
     </section>
 
     <!-- 8. Ask a question -->
@@ -358,6 +489,7 @@
   <footer>
     <p>Questions and opportunities are always welcome.</p>
     <span><a href="#meet">Join the talk or book a call</a>, or email <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>.</span>
+    <p class="meta">Poster version of 23 October 2026. All numbers are recomputed from the run logs (3 seeds, final epoch; sample s.d.) and supersede the submitted abstract where they differ. Thank you to DeepMath 2026 for displaying the poster in my absence.</p>
   </footer>
 </div>
 
@@ -426,6 +558,15 @@
       el.hidden = false;
     } catch (e) {}
   }
+
+  // BibTeX copy button.
+  var cb = document.getElementById("copy-bib");
+  cb.addEventListener("click", function () {
+    var t = document.getElementById("bibtex").textContent;
+    var done = function () { cb.textContent = "Copied"; setTimeout(function () { cb.textContent = "Copy"; }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { cb.textContent = "Select and copy"; });
+    else cb.textContent = "Select and copy";
+  });
 
   // Booking card: hidden unless BOOKING_URL is set.
   if (BOOKING_URL) {
