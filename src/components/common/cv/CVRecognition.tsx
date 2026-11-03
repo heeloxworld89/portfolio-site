@@ -6,17 +6,15 @@ export default function CVRecognition() {
       id="recognition"
       phase="now"
       eyebrow="Recognition · 2026"
-      title={<>Ten independent selections in 2026, at <span className="age">18</span>.</>}
+      title={<>Recognition in 2026, at <span className="age">18</span>.</>}
       lead={
         <>
-          Rokib Al Dhin Raadh earned eleven independent selections in 2026, all from cold applications, across
-          peer review, AI conferences and venture. In research: DeepMath 2026 accepted his stability result
-          after double-blind review, NeurIPS 2026 made him a reviewer for its Trustworthy AI for Good workshop,
-          Cosmos Institute ranked the work highest in its 2026 review cycle, IARCO 2026 named him a finalist, and
-          Cohere Labs admitted him to its Open Science Community. In venture: Freshmango and 1752vc Ignite (top
-          1%) offered OXIEDO places, Onstage invited him to its W26 pre-pitch event, Entrepreneur First interviewed
-          him in London, The Bridge in San Francisco took him to its final round, and 500 Global invited him to
-          interview on 22 October.
+          In research: a sole-authored paper accepted after double-blind review at DeepMath 2026 and shown at its
+          poster session at The Ohio State University; a reviewer role at the NeurIPS 2026 Workshop on Trustworthy AI
+          for Good; an invited talk at Cohere Labs; the highest-ranked application in the Cosmos Institute review
+          cycle; and a finalist place at IARCO 2026, ranked 24th of 145 in the Junior division. In venture: OXIEDO
+          was accepted to 1752vc Ignite from the top 1% of applicants, offered a place by Freshmango, and is in
+          investment discussions with 500 Global and 1752vc; Raadh was a finalist for The Bridge by Entrepreneur First.
         </>
       }
     >
@@ -532,73 +530,70 @@ export default function CVRecognition() {
 
         {/* ── The diary. Runs above the three-month record because it is the
              more current layer: these are live, dated, and named. ──────── */}
-        <div className="rec-label">Latest decision</div>
+        <div className="rec-label">Latest</div>
         <div className="rec-week">
           <div className="rec-week-banner">
             <div className="rec-week-top">
               <span className="rec-week-badge">
                 <span className="rec-date-dot" aria-hidden="true" />
-                Accepted
+                Presented
               </span>
-              <span className="rec-week-stamp">30 Sep 2026</span>
+              <span className="rec-week-stamp">29 Oct 2026</span>
             </div>
 
             <h3 className="rec-week-t">
-              Stability result accepted at DeepMath 2026.
+              Poster presented at DeepMath 2026.
             </h3>
             <div className="rec-week-cols">
             <div className="rec-week-copy">
             <p className="rec-week-l">
               <strong>DeepMath</strong> is the Conference on the Mathematical Theory of Deep Neural Networks,
-              this year hosted by <strong>Ohio State University</strong> in Columbus on 29&ndash;30 October, with an
-              organising committee drawn from Johns Hopkins, Michigan and Ohio State. It takes theory only, and
-              reviews it <strong>double-blind</strong>, so reviewers assessed the work without knowledge of
-              his background. The paper, <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State
-              Stability of Neural Network Training Dynamics&rdquo;</em>, was accepted for poster presentation.
-              It formalises the stability guarantee underlying ORMAS. The 2026 invited speakers come from Stanford,
-              Michigan, UPenn and the University of Washington, and past editions have been supported by the
-              National Science Foundation and the Simons Foundation.
+              hosted this year by <strong>The Ohio State University</strong> in Columbus on 29&ndash;30 October. It
+              reviews submissions <strong>double-blind</strong>. Raadh&apos;s sole-authored paper,{' '}
+              <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
+              Dynamics&rdquo;</em>, was one of 41 accepted papers and was shown at the poster session on 29 October.
+              Invited speakers came from Michigan, Stanford, Penn, Georgia Tech, the University of Washington and Brown.
             </p>
             <p className="rec-week-l">
-              Two more are in motion: <strong>Onstage</strong> is ranking its W26 cohort by interest
-              from 350 venture funds, and <strong>500 Global</strong> interviews him on 22 October.
+              Prof. Zhihui Zhu of The Ohio State University printed and displayed the poster. Four days later Raadh
+              gave an <strong>invited talk at Cohere Labs</strong> on the same work.
             </p>
             </div>
 
             <div className="rec-week-wall">
               <span className="rec-week-mark is-type">DeepMath 2026</span>
-              <span className="rec-week-mark is-type">Ohio State University</span>
+              <span className="rec-week-mark is-type">The Ohio State University</span>
               <span className="rec-week-mark is-wide is-bright">
-                <img src="/assets/images/logos/entrepreneur-first.svg" alt="Entrepreneur First" />
+                <img src="/assets/images/logos/cohere.svg" alt="Cohere Labs" />
               </span>
-              <span className="rec-week-mark is-type">Onstage</span>
+              <span className="rec-week-mark is-type">NeurIPS 2026</span>
             </div>
             </div>
           </div>
 
           {[
             {
-              d: '30 Sep',
-              h: 'Columbus, Ohio',
-              who: 'DeepMath 2026 \u00b7 Mathematical Theory of Deep Neural Networks',
-              what: <><strong>Accept (Poster)</strong> after double-blind review. The input-to-state stability result behind ORMAS, presented at Ohio State on 29&ndash;30 October.</>,
-              pill: 'Accepted',
+              d: '2 Nov',
+              h: 'Toronto',
+              who: 'Cohere Labs \u00b7 Invited talk',
+              what: <><strong>When the Update Is Not a Gradient</strong>: input-to-state stability of self-repairing neural network training.</>,
+              pill: 'Presented',
               now: true,
             },
             {
-              d: 'W26 cohort',
-              h: 'Central London',
-              who: 'Onstage \u00b7 W26 Demo Day',
-              what: <><strong>Invited to the pre-pitch event</strong> in Central London. Onstage ranks applicants by interest from <strong>350 VC partners</strong>, including a16z, Sequoia, Balderton and LocalGlobe.</>,
-              pill: 'Invited',
+              d: '29 Oct',
+              h: 'Columbus, Ohio',
+              who: 'DeepMath 2026 \u00b7 Mathematical Theory of Deep Neural Networks',
+              what: <><strong>Poster session.</strong> Accepted after double-blind review on 30 September; one of 41 accepted papers. <a href="/deepmath">Poster and paper</a>.</>,
+              pill: 'Presented',
               now: false,
             },
             {
-              d: 'Since Sep',
-              h: 'San Francisco',
-              who: 'Entrepreneur First \u00b7 The Bridge',
-              what: <>Two interview rounds completed; reached the final round. Details below.</>,
-              pill: 'Final round',
+              d: 'Since Oct',
+              h: 'OXIEDO',
+              who: '500 Global \u00b7 1752vc',
+              what: <>Investment discussions with OXIEDO.</>,
+              pill: 'Ongoing',
               now: false,
             },
           ].map((r) => (
@@ -619,18 +614,18 @@ export default function CVRecognition() {
           ))}
 
           <div className="rec-week-foot">
-            Status as of 30 September 2026
+            Status as of November 2026
           </div>
         </div>
 
         <div className="rec-label">2026, month by month</div>
         <div className="rec-run">
           {[
-            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Ranked highest in cycle', state: 'done' },
-            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'Cold application → first-round call', state: 'done' },
-            { m: 'Sep', y: '2026', who: 'DeepMath · Freshmango · 1752vc · IARCO · Cohere Labs', what: 'Peer-reviewed acceptance, two accelerator places, a research-competition final, Cohere Labs membership.', state: 'live' },
-            { m: 'Oct', y: '2026', who: 'DeepMath 2026', what: 'Poster, Ohio State, Columbus', state: 'ahead' },
-            { m: 'Dec', y: '2026', who: 'NeurIPS · AI4GOOD', what: 'Reviewing, Paris', state: 'ahead' },
+            { m: 'Jul', y: '2026', who: 'Cosmos Institute', what: 'Highest-ranked application in its cycle', state: 'done' },
+            { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'First-round interview, London', state: 'done' },
+            { m: 'Sep', y: '2026', who: 'DeepMath · NeurIPS workshop · 1752vc · IARCO · Cohere Labs', what: 'Paper accepted, reviewer role, top 1% at Ignite, IARCO finalist, Cohere Labs community.', state: 'done' },
+            { m: 'Oct', y: '2026', who: 'DeepMath 2026 · ormas-monitor', what: 'Poster presented at Ohio State; monitor released on PyPI', state: 'done' },
+            { m: 'Nov', y: '2026', who: 'Cohere Labs', what: 'Invited talk', state: 'live' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
               <div className="rec-run-m">
@@ -651,25 +646,24 @@ export default function CVRecognition() {
               <div className="rec-logo-chip on-white">
                 <img src="/assets/images/logos/neurips.svg" alt="NeurIPS" />
               </div>
-              <span className="rec-date">Dec 2026</span>
+              <span className="rec-date">2026</span>
             </div>
-            <div className="rec-tag">NeurIPS 2026 · AI4GOOD Workshop · Reviewer</div>
-            <h3 className="rec-name">Reviewer, NeurIPS 2026 Trustworthy AI for Good Workshop</h3>
+            <div className="rec-tag">NeurIPS 2026 · Workshop · Reviewer</div>
+            <h3 className="rec-name">Reviewer, NeurIPS 2026 Workshop on Trustworthy AI for Good</h3>
             <p className="rec-body">
-              Raadh is a reviewer for <strong>Trustworthy AI for Good</strong> at NeurIPS
-              2026 in Paris, reviewing submitted papers on mechanistic interpretability, attribution, auditing and
-              post-deployment monitoring. The ICML edition of this workshop took <strong>539 submissions and accepted 34%</strong>,
-              assessed by a committee of 237 reviewers drawn from Oxford, MIT, Toronto, Berkeley, Stanford
-              and Mila.
+              Raadh reviewed submissions for <strong>Trustworthy AI for Good</strong>, a NeurIPS 2026 workshop held at
+              the Palais des Congrès de Paris on 12 December, on mechanistic interpretability, attribution, model
+              auditing and post-deployment monitoring. The workshop lists him on its{' '}
+              <a href="https://trustworthy-ai-for-good.github.io/#reviewers" target="_blank" rel="noreferrer">public reviewer list</a>.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">237</span>
-                <span className="rec-stat-lbl">Reviewers on the committee</span>
+                <span className="rec-stat-val">NeurIPS</span>
+                <span className="rec-stat-lbl">2026 workshop</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">34%</span>
-                <span className="rec-stat-lbl">Acceptance rate, ICML edition</span>
+                <span className="rec-stat-val">Paris</span>
+                <span className="rec-stat-lbl">Palais des Congrès</span>
               </div>
             </div>
           </div>
@@ -683,10 +677,10 @@ export default function CVRecognition() {
               <span className="rec-date">Jul 2026</span>
             </div>
             <div className="rec-tag">Cosmos Institute · Review Cycle</div>
-            <h3 className="rec-name">Ranked Highest in the Cosmos Institute Review Cycle</h3>
+            <h3 className="rec-name">Highest-Ranked Application, Cosmos Institute</h3>
             <p className="rec-body">
-              Cosmos Institute ranked the ORMAS application highest of every application in its cycle and
-              invited Raadh to its technical track.
+              The ORMAS application was the highest-ranked in its Cosmos Institute review cycle, and Raadh was
+              invited to the technical track.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -714,12 +708,12 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">Freshmango &middot; Equity-Free Accelerator &middot; Accepted</div>
-            <h3 className="rec-name">Accepted to Freshmango, the Equity-Free Accelerator</h3>
+            <div className="rec-tag">Freshmango &middot; Accelerator &middot; Offer</div>
+            <h3 className="rec-name">Offered a Place in the Freshmango Accelerator</h3>
             <p className="rec-body">
-              On 22 September Freshmango offered OXIEDO a place in its equity-free programme after a single
-              interview: access to a <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong>{' '}
-              and introductions across <strong>160 venture funds</strong>, with no equity or fees.
+              On 22 September Freshmango offered OXIEDO a place in its equity-free programme, with access to a{' '}
+              <strong>5,000-founder network</strong>, <strong>$4M in AI credits</strong> and introductions across{' '}
+              <strong>160 venture funds</strong>.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -749,8 +743,8 @@ export default function CVRecognition() {
             <h3 className="rec-name">Accepted to 1752vc Ignite from the Top 1% of Applicants</h3>
             <p className="rec-body">
               1752vc placed the application in the top 5% of its intake, then held a final round to select
-              the <strong>top 1%</strong>. OXIEDO was offered a place in the limited <strong>Ignite</strong>{' '}
-              cohort, chosen from <strong>thousands of applications</strong> across three stages.
+              the <strong>top 1%</strong>. OXIEDO was accepted to <strong>Ignite</strong>, and investment discussions
+              with 1752vc are ongoing.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
@@ -758,8 +752,8 @@ export default function CVRecognition() {
                 <span className="rec-stat-lbl">Final-round selection</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">Accepted</span>
-                <span className="rec-stat-lbl">Ignite cohort</span>
+                <span className="rec-stat-val">Ongoing</span>
+                <span className="rec-stat-lbl">Investment discussions</span>
               </div>
             </div>
           </div>
@@ -778,16 +772,21 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Sep 2026</span>
             </div>
-            <div className="rec-tag">IARCO 2026 &middot; International Academic Research Competition &middot; Final Round</div>
-            <h3 className="rec-name">Finalist, IARCO 2026 International Academic Research Competition</h3>
+            <div className="rec-tag">IARCO 2026 &middot; International Academic Research Competition &middot; Finalist</div>
+            <h3 className="rec-name">Finalist, IARCO 2026: Ranked 24th of 145</h3>
             <p className="rec-body">
-              The International Academic Research Competition is hosted by YRJ, sponsored by
-              {' '}<strong>SaveMyExams</strong> with <strong>Domain.ME</strong>, and this year drew
-              {' '}<strong>nearly 500 participants from 60 countries</strong>. ORMAS was among the research papers
-              selected for the final stage, a recorded research presentation, and Raadh is listed as selected on
-              IARCO&apos;s <a href="https://iarco.org/2026-finalists" target="_blank" rel="noreferrer">published 2026 finalist list</a>.
+              The International Academic Research Competition drew <strong>about 500 participants from 60
+              countries</strong>. Raadh&apos;s research proposal,{' '}
+              <em>&ldquo;Can a Machine&apos;s Own Failure Record Be Read? Evaluating the Human Usability and Reliability
+              of Automatically Generated Neural Network Incident Logs&rdquo;</em>, reached the final and ranked{' '}
+              <strong>24th of 145 in the Junior division</strong> on IARCO&apos;s{' '}
+              <a href="https://iarco.org/2026-winners" target="_blank" rel="noreferrer">published results</a>.
             </p>
             <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">24 / 145</span>
+                <span className="rec-stat-lbl">Junior division</span>
+              </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">~500</span>
                 <span className="rec-stat-lbl">Participants</span>
@@ -796,39 +795,35 @@ export default function CVRecognition() {
                 <span className="rec-stat-val">60</span>
                 <span className="rec-stat-lbl">Countries</span>
               </div>
-              <div className="rec-stat">
-                <span className="rec-stat-val">Selected</span>
-                <span className="rec-stat-lbl">Final stage, Junior</span>
-              </div>
             </div>
           </div>
 
-          {/* Cohere Labs — Open Science Community membership */}
+          {/* Cohere Labs — invited talk and research community */}
           <div className="rec-card">
             <div className="rec-logo-row">
               <div className="rec-logo-chip on-white">
                 <img src="/assets/images/logos/cohere.svg" alt="Cohere Labs" />
               </div>
-              <span className="rec-date">Sep 2026</span>
+              <span className="rec-date">Nov 2026</span>
             </div>
-            <div className="rec-tag">Cohere Labs &middot; Open Science Community &middot; Member</div>
-            <h3 className="rec-name">Member, Cohere Labs Open Science Community</h3>
+            <div className="rec-tag">Cohere Labs &middot; Toronto &middot; Invited talk</div>
+            <h3 className="rec-name">Invited Talk, Cohere Labs</h3>
             <p className="rec-body">
-              Cohere Labs is the research lab of <strong>Cohere</strong>, one of the leading foundation-model
-              companies. On 25 September it welcomed Raadh into its <strong>Open Science Community</strong>, noting
-              that the solo development of ORMAS across 383 controlled experiments
-              {' '}<strong>&ldquo;demonstrates remarkable initiative in ML safety and auditability.&rdquo;</strong>{' '}
-              The lab pointed to its <strong>BIRDS</strong> and <strong>Safety &amp; Alignment</strong>
-              {' '}programmes as a route to extending the architecture to a transformer backbone.
+              Cohere Labs is the research lab of <strong>Cohere</strong> in Toronto. In September it invited Raadh into
+              its research community, describing the development of ORMAS across 383 controlled experiments as showing{' '}
+              <strong>&ldquo;remarkable initiative in ML safety and auditability.&rdquo;</strong> On 2 November he gave
+              an invited talk there,{' '}
+              <em>&ldquo;When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network
+              Training.&rdquo;</em>
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">Member</span>
-                <span className="rec-stat-lbl">Open Science Community</span>
+                <span className="rec-stat-val">Invited</span>
+                <span className="rec-stat-lbl">Talk, 2 Nov 2026</span>
               </div>
               <div className="rec-stat">
-                <span className="rec-stat-val">ORMAS</span>
-                <span className="rec-stat-lbl">Cited in the welcome</span>
+                <span className="rec-stat-val">Member</span>
+                <span className="rec-stat-lbl">Research community</span>
               </div>
             </div>
           </div>
@@ -865,7 +860,7 @@ export default function CVRecognition() {
           </div>
 
           <p className="rec-body">
-            An unsolicited application to one of European venture&apos;s most selective sourcing programmes led
+            An application to Entrepreneur First, one of Europe&apos;s most selective founder programmes, led
             EF&apos;s talent team to invite Raadh to a first-round interview.
           </p>
           <p className="rec-body">
@@ -898,26 +893,23 @@ export default function CVRecognition() {
               <span className="rec-status-k">Entrepreneur First</span>
               <span className="rec-status-t">The Bridge — San Francisco</span>
             </span>
-            <span className="rec-date is-live">
-              <span className="rec-date-dot" aria-hidden="true" />
-              Aug–Sep 2026 · Final Round
+            <span className="rec-date">
+              Aug–Sep 2026 · Finalist
             </span>
           </div>
 
           <p className="rec-status-v">
-            The Bridge is Entrepreneur First&apos;s <strong>eight-week residency in San Francisco</strong>,
-            where they place a small cohort of technical founders alongside the US investor and operator
-            network, and back those who come through it with company-building capital. It is EF&apos;s route
-            for founders who have already built something.
+            The Bridge is Entrepreneur First&apos;s <strong>eight-week residency in San Francisco</strong> for
+            technical founders who have already built something.
           </p>
           <p className="rec-status-v">
-            Raadh <strong>completed two interview rounds</strong> and <strong>reached the final round</strong>.
+            Raadh <strong>completed two interview rounds</strong> and was a <strong>finalist</strong>.
           </p>
 
           <span className="rec-stages">
-            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1 · Done</span>
-            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2 · Done</span>
-            <span className="rec-stage is-done"><span className="rec-stage-dot" />Final Round · Reached</span>
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 1</span>
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Interview 2</span>
+            <span className="rec-stage is-done"><span className="rec-stage-dot" />Finalist</span>
           </span>
         </div>
         </div>
@@ -930,16 +922,16 @@ export default function CVRecognition() {
           </p>
           <p className="rec-verdict-body">
             <strong>Peer review.</strong> DeepMath 2026 accepted the ORMAS stability result after double-blind
-            review by specialists in deep-learning theory.
+            review, and the poster was shown at The Ohio State University.
           </p>
           <p className="rec-verdict-body">
-            <strong>Standing in the field.</strong> NeurIPS 2026 brought Raadh in as a reviewer for
-            the Trustworthy AI for Good workshop, reviewing papers in interpretability and model auditing, the
-            area his own research addresses.
+            <strong>Standing in the field.</strong> Raadh reviewed for a NeurIPS 2026 workshop on interpretability and
+            model auditing, the area his own research addresses, and gave an invited talk at Cohere Labs.
           </p>
           <p className="rec-verdict-body">
-            <strong>Independent assessment.</strong> Cosmos Institute ranked the work highest in its cycle.
-            Freshmango and 1752vc each offered places after competitive selection, The Bridge in San Francisco took him to its final round, and 500 Global has invited him to interview. Every one began as an unsolicited application.
+            <strong>Independent assessment.</strong> The Cosmos Institute ranked the work highest in its cycle and
+            IARCO ranked his proposal 24th of 145. OXIEDO was accepted to 1752vc Ignite from the top 1% and is in
+            investment discussions with 500 Global and 1752vc.
           </p>
         </div>
 

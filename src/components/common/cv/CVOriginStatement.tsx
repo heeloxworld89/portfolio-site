@@ -284,9 +284,9 @@ export default function CVOriginStatement() {
         <div className="os-body">
           <p className="os-p">
             I started my first venture at 12 and ran five by 17. Each failed at a different layer, and together
-            they showed me the constraint was coordination, not individual capability. At 15 I built and sold a
-            stock-prediction system for about $10,000; that money bought the RTX 3090 that later ran every ORMAS
-            experiment. OXIMO was my answer to coordination. Running it on a live UK company for twelve months
+            they showed me the constraint was coordination, not individual capability. At 15 I sold the EWM
+            trading algorithm to a U.S. client for about $10,000; that money bought the RTX 3090 that later ran
+            every ORMAS experiment. OXIMO was my answer to coordination. Running it on a live UK company for twelve months
             showed that the models underneath could not learn from noisy production data, and ORMAS was my answer
             to that. OXIEDO is the company that licenses it. At 18, its stability result was accepted at
             DeepMath 2026.
@@ -296,10 +296,8 @@ export default function CVOriginStatement() {
             funding. Every experiment ran on hardware I paid for, and every architectural decision was my own.
           </p>
           <p className="os-p">
-            I work fourteen to sixteen hours a day. In November 2024 I livestreamed every working session
-            for two weeks, producing{' '}
-            <strong>28 sessions of unedited footage, submitted as a Guinness World Record application</strong>.
-            The full archive is linked below.
+            In November 2024 I livestreamed every working session for two weeks as a Guinness World Record
+            attempt: 28 sessions of unedited footage. The archive is linked below.
           </p>
         </div>
 
@@ -307,13 +305,13 @@ export default function CVOriginStatement() {
           <ExpandableSection
             closedLabel="Work archive and technical toolkit"
             hint="The 28 livestreamed working sessions, and the tools, frameworks and languages behind the three systems."
-            meta={['28 unedited days', 'Guinness application', 'Every tool used']}
+            meta={['28 unedited sessions', 'Guinness attempt', 'Every tool used']}
           >
             <div className="os-detail" style={{ marginBottom: '18px' }}>
               <div className="os-detail-head">Work Archive — November 2024 · 28 Sessions</div>
               <div style={{ padding: '16px 20px' }}>
                 <p style={{ fontSize: '13px', color: 'var(--pf-ink-2)', marginBottom: '14px', lineHeight: 1.7 }}>
-                  Unlisted livestreams recorded for the Guinness World Record application: complete,
+                  Unlisted livestreams recorded for the Guinness World Record attempt: complete,
                   unedited working sessions.
                 </p>
                 <div className="os-sessions">

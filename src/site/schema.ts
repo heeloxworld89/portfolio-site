@@ -13,7 +13,7 @@ const ref = (frag: string) => ({ "@id": id(frag) });
 // The one-sentence entity definition, repeated verbatim in the page meta,
 // public/llms.txt and here so every system that summarises him converges on it.
 const DEFINITION =
-  "Rokib Al Dhin Raadh is an 18-year-old international AI founder: the founder and CEO of OXIEDO, founder of the UK company Black Bloxie LTD, and the inventor of ORMAS, a self-repairing neural network whose stability paper was accepted after double-blind review at DeepMath 2026.";
+  "Rokib Al Dhin Raadh is an 18-year-old AI researcher and the founder and CEO of OXIEDO. He is the inventor of ORMAS, a self-repairing neural network, and the sole author of a peer-reviewed paper on its stability, accepted after double-blind review at DeepMath 2026.";
 const wiki = (name: string, slug: string) => ({ "@type": "Thing", name, sameAs: `https://en.wikipedia.org/wiki/${slug}` });
 
 const person = {
@@ -29,9 +29,9 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description: `${DEFINITION} He taught himself machine learning and built ORMAS alone at 18, on one RTX 3090. He is a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
-  disambiguatingDescription: "International AI founder, 18: founder and CEO of OXIEDO (US entity, a Delaware C-corporation, in formation), founder of Black Bloxie LTD (England and Wales), and inventor of the ORMAS self-repairing neural network.",
-  jobTitle: "Founder & CEO, OXIEDO",
+  description: `${DEFINITION} He developed ORMAS independently over 383 experiments on one RTX 3090. He was a reviewer for the NeurIPS 2026 Workshop on Trustworthy AI for Good and gave an invited talk at Cohere Labs in November 2026. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
+  disambiguatingDescription: "AI researcher, 18, from Dhaka, Bangladesh: founder and CEO of OXIEDO, founder of Black Bloxie LTD (England and Wales), and inventor of the ORMAS self-repairing neural network.",
+  jobTitle: "AI Researcher; Founder & CEO, OXIEDO",
   hasOccupation: [
     { "@type": "Occupation", name: "Founder & Chief Executive Officer" },
     { "@type": "Occupation", name: "Inventor of ORMAS, a self-repairing neural network" },
@@ -42,8 +42,7 @@ const person = {
   nationality: { "@type": "Country", name: "Bangladesh" },
   email: `mailto:${links.founderEmail}`,
   contactPoint: [
-    { "@type": "ContactPoint", contactType: "founder, investor and press enquiries", email: links.founderEmail },
-    { "@type": "ContactPoint", contactType: "general enquiries", email: links.email },
+    { "@type": "ContactPoint", contactType: "research, press and investor enquiries", email: links.founderEmail },
   ],
   knowsAbout: [
     wiki("Neural networks", "Neural_network_(machine_learning)"),
@@ -60,19 +59,20 @@ const person = {
     "Mathematical theory of deep learning",
   ],
   award: [
-    "DeepMath 2026: stability paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University",
+    "DeepMath 2026: sole-authored paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, The Ohio State University",
+    "IARCO 2026: finalist, ranked 24th of 145 in the Junior division, International Academic Research Competition",
+    "Cosmos Institute: highest-ranked application in its 2026 review cycle",
     "1752vc Ignite: OXIEDO accepted from the top 1% of applicants (2026)",
-    "Cosmos Institute: ORMAS application ranked highest in its 2026 review cycle",
-    "IARCO 2026: finalist, International Academic Research Competition (nearly 500 participants, 60 countries)",
-    "Freshmango: OXIEDO offered a place in the equity-free accelerator after a single interview (2026)",
+    "The Bridge by Entrepreneur First, San Francisco: finalist (2026)",
   ],
   memberOf: [
-    { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
+    { "@type": "Organization", name: "Cohere Labs", url: "https://cohere.com/research" },
+    { "@type": "Organization", name: "FIAP", url: "https://www.fiap.com.br/" },
     {
       "@type": "OrganizationRole",
       roleName: "Reviewer",
       startDate: "2026",
-      memberOf: { "@type": "Organization", name: "NeurIPS 2026 Workshop: Trustworthy AI for Good", url: links.neurips },
+      memberOf: { "@type": "Organization", name: "NeurIPS 2026 Workshop on Trustworthy AI for Good", url: links.neurips },
     },
   ],
   hasCredential: [
@@ -165,7 +165,6 @@ const deepmath = {
   organizer: { "@type": "Organization", name: "DeepMath: Conference on the Mathematical Theory of Deep Neural Networks", url: links.deepmath },
   image: [`${SITE}/og/research-v3.jpg`, `${SITE}/assets/images/logos/deepmath.png`],
   workFeatured: ref("deepmath-paper"),
-  performer: ref("person"),
 };
 
 const cohereTalk = {
@@ -178,10 +177,22 @@ const cohereTalk = {
   url: "https://luma.com/p28sna3q",
   location: { "@type": "VirtualLocation", url: "https://luma.com/p28sna3q" },
   image: [`${SITE}/og/research-v3.jpg`],
-  organizer: { "@type": "Organization", name: "Cohere Labs Open Science Community", url: "https://cohere.com/research" },
+  organizer: {
+    "@type": "Organization",
+    name: "Cohere Labs",
+    url: "https://cohere.com/research",
+    address: { "@type": "PostalAddress", addressLocality: "Toronto", addressRegion: "ON", addressCountry: "CA" },
+  },
   performer: ref("person"),
+  workFeatured: {
+    "@type": "PresentationDigitalDocument",
+    name: "When the Update Is Not a Gradient (slides)",
+    url: `${SITE}/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf`,
+    encodingFormat: "application/pdf",
+    author: ref("person"),
+  },
   description:
-    "Talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training: why training whose updates are not gradients still converges, and where the proof stops.",
+    "Invited talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training: why training whose updates are not gradients still converges, and where the proof stops.",
   about: ref("deepmath-paper"),
 };
 
@@ -194,11 +205,13 @@ const deepmathPaper = {
   inLanguage: "en",
   dateCreated: "2026-09",
   genre: "Conference poster",
-  url: `${SITE}/research`,
+  url: `${SITE}/deepmath`,
+  sameAs: links.openreview,
+  image: `${SITE}/assets/deepmath/poster-at-deepmath.jpg`,
   creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
-  keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "ORMAS"],
+  keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "switched systems", "ORMAS"],
   description:
-    "Formal local stability characterisation of a self-correcting neural network: each self-repair is treated as a bounded disturbance under Sontag's Input-to-State Stability framework. Accepted after double-blind review for poster presentation at DeepMath 2026, Ohio State University, 29–30 October 2026.",
+    "Local stability analysis of self-repairing neural network training. Bounded repairs keep training within a computable radius of a local minimum (practical input-to-state stability), and per-channel-bounded repairs cannot reactivate a dead BatchNorm–ReLU channel, so self-repairing training is a switched system. Sole author. Accepted after double-blind review at DeepMath 2026, The Ohio State University; poster session 29 October 2026; one of 41 accepted papers.",
   about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Deep learning", "Deep_learning")],
   isBasedOn: ref("ormas-preprint"),
   subjectOf: ref("deepmath-2026"),
@@ -220,7 +233,7 @@ const ormasPreprint = {
   isAccessibleForFree: true,
   keywords: ["ORMAS", "self-repairing neural networks", "self-correcting neural networks", "auditable AI training", "interpretability"],
   description:
-    "A neural network architecture that identifies, repairs and records its own failing components during training. After a trained convolutional layer is destroyed (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while a parameter-matched baseline stays at 10.0%. 383 controlled experiments across four architectures on a single RTX 3090.",
+    "A neural network architecture that identifies, repairs and records its own failing components during training. After trained convolutional layers are zeroed (CIFAR-10, three seeds), ORMAS recovers to 80.3% accuracy while standard training stays at 10.0%. 383 controlled experiments across four architectures on a single RTX 3090.",
   about: [wiki("Neural networks", "Neural_network_(machine_learning)"), wiki("Explainable artificial intelligence", "Explainable_artificial_intelligence")],
   hasPart: ref("ormas-code"),
 };
@@ -235,6 +248,21 @@ const ormasCode = {
   runtimePlatform: "PyTorch",
   author: ref("person"),
   isPartOf: ref("ormas-preprint"),
+};
+
+const ormasMonitor = {
+  "@type": "SoftwareSourceCode",
+  "@id": id("ormas-monitor"),
+  name: "ormas-monitor",
+  description:
+    "Open training monitor for PyTorch: per-layer alarms, dead-channel certification based on the DeepMath 2026 result, optional repair and a tamper-evident training log.",
+  url: links.monitor,
+  codeRepository: links.monitor,
+  programmingLanguage: "Python",
+  runtimePlatform: "PyTorch",
+  dateCreated: "2026-10-23",
+  author: ref("person"),
+  isBasedOn: ref("deepmath-paper"),
 };
 
 const oximo = {
@@ -272,10 +300,11 @@ const website = {
 type PageKey = keyof typeof pages;
 const pageMeta: Record<PageKey, { type: string; name: string; main: string; about: string[] }> = {
   "/": { type: "ProfilePage", name: "Home", main: "person", about: ["person", "oxiedo"] },
-  "/research": { type: "WebPage", name: "Technology: ORMAS", main: "ormas-preprint", about: ["ormas-preprint", "deepmath-paper", "ormas-code"] },
+  "/research": { type: "WebPage", name: "Technology: ORMAS", main: "ormas-preprint", about: ["ormas-preprint", "deepmath-paper", "ormas-code", "ormas-monitor"] },
   "/work": { type: "WebPage", name: "Company: OXIEDO", main: "oxiedo", about: ["oxiedo", "oximo", "black-bloxie"] },
   "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
   "/evidence": { type: "WebPage", name: "Evidence", main: "person", about: ["person", "ormas-preprint", "deepmath-paper", "oxiedo"] },
+  "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
 };
 
 export function schemaFor(path: string): string {
@@ -304,6 +333,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, oximo, oximoReport];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }

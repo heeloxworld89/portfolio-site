@@ -1,0 +1,186 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   /deepmath: the DeepMath 2026 paper page. Built on the /research layer
+   (ux/research.css: rail, headings, cards, maths, cells); this file adds only
+   what a paper page needs on top. Everything is scoped to .ux-dm.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Head: the paper title, with its subtitle at a reading size. */
+.rx .ux-dm-head h1 { max-width: 1100px; }
+.rx .ux-dm-head .dmp-sub {
+  display: block; margin-top: 14px; max-width: 30em;
+  font-size: clamp(24px, 2.6vw, 38px); line-height: 1.12; color: var(--rx-ink-2);
+}
+.rx .ux-dm-head p strong { color: var(--rx-ink); }
+
+.ux-dm [id] { scroll-margin-top: 28px; }
+.ux-dm .uxr-main > section:first-child > .uxr-kicker { margin-top: 0; }
+
+/* Photo from the conference. */
+.ux-dm .dmp-photo { margin: 8px 0 30px; }
+.ux-dm .dmp-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--rx-line-soft); }
+.ux-dm .dmp-photo figcaption,
+.ux-dm .dmp-fig figcaption { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--rx-ink-3); max-width: 78ch; }
+.ux-dm .dmp-fig figcaption b { color: var(--rx-ink); }
+
+/* Talk and call, side by side. */
+.ux-dm .dmp-pair { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; }
+.ux-dm .dmp-talk, .ux-dm .dmp-call { padding: 28px 28px 26px; display: flex; flex-direction: column; }
+.ux-dm .dmp-talk {
+  position: relative; overflow: hidden; color: #eef6f3;
+  background: linear-gradient(135deg, #082f39 0%, #0b404d 55%, #155e5a 100%);
+}
+.ux-dm .dmp-talk::before {
+  content: ""; position: absolute; left: -160px; bottom: -260px; width: 520px; height: 420px;
+  background: radial-gradient(closest-side, rgba(152, 224, 160, .22), transparent); pointer-events: none;
+}
+.ux-dm .dmp-talk > * { position: relative; }
+.ux-dm .dmp-call { background: var(--rx-white); border: 1px solid var(--rx-line-soft); border-top: 3px solid var(--rx-teal); }
+.rx .ux-dm .dmp-k {
+  font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--rx-teal); margin: 0 0 12px;
+}
+.rx .ux-dm .dmp-talk .dmp-k { color: #d8ee96; }
+.rx .ux-dm .dmp-pair h4 { font-family: var(--rx-serif); font-weight: 400; font-size: 30px; line-height: 1.08; margin: 0 0 12px; color: var(--rx-teal); }
+.rx .ux-dm .dmp-talk h4 { color: #fbfbf9; }
+.ux-dm .dmp-pair p { font-size: 15.5px; line-height: 1.65; color: var(--rx-ink-2); margin: 0 0 10px; }
+.ux-dm .dmp-talk p { color: rgba(240, 247, 245, .9); }
+.rx .ux-dm .dmp-talk .dmp-soon { font-family: var(--rx-mono); font-size: 12px; letter-spacing: .04em; color: #d8ee96; margin: 4px 0 0; }
+.ux-dm .dmp-pair .rx-btns { margin-top: auto; padding-top: 18px; }
+.ux-dm .dmp-pair .rx-btn { padding: 12px 16px; font-size: 12px; }
+.ux-dm .dmp-video { position: relative; aspect-ratio: 16 / 9; margin: 8px 0 0; background: #062a33; }
+.ux-dm .dmp-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.rx .ux-dm .dmp-video .vf-t { font-size: 17px; }
+
+/* Facts at the conference: a large figure above each cell's text. */
+.rx .ux-dm .dmp-cell-v { font-family: var(--rx-serif); font-size: 44px; line-height: 1; color: var(--rx-teal); margin: 2px 0 10px; }
+
+/* The poster. */
+.ux-dm .dmp-poster { display: block; border: 1px solid var(--rx-line-soft); background: var(--rx-white); }
+.ux-dm .dmp-poster img { display: block; width: 100%; height: auto; }
+
+/* Abstract: the one-line result above the text. */
+.rx .ux-dm .dmp-take {
+  font-family: var(--rx-serif); font-size: clamp(30px, 3vw, 42px); line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--rx-teal); max-width: 22em; margin: 0 0 24px;
+}
+.rx .ux-dm .dmp-take em { font-style: italic; color: #8c2f2f; }
+
+/* Three numbers: the site's figure strip, three across. */
+.ux-dm .dmp-figs { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 30px 0 18px; }
+.rx .ux-dm .dmp-figs .rx-fig-v { font-size: clamp(44px, 4.4vw, 64px); }
+
+/* Two results. */
+.ux-dm .dmp-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.ux-dm .dmp-results .uxr-card { margin: 0; display: flex; flex-direction: column; }
+.ux-dm .dmp-results .uxr-card.is-stuck { border-top-color: #8c2f2f; }
+.ux-dm .dmp-results .uxr-card.is-stuck .uxr-note-k { color: #8c2f2f; }
+.rx .ux-dm .dmp-card-h { font-family: var(--rx-serif); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--rx-teal); margin: 0 0 12px; }
+.ux-dm .dmp-results .uxr-math { margin: 14px 0 16px; padding: 4px 14px; }
+.ux-dm .dmp-results .uxr-math .katex { font-size: 1.04em; }
+.rx .ux-dm .dmp-plain { margin-top: auto !important; padding-top: 12px; border-top: 1px dashed var(--rx-line-soft); color: var(--rx-ink) !important; font-weight: 600; }
+
+/* Figures. */
+.ux-dm .dmp-fig { margin: 0 0 36px; }
+.ux-dm .dmp-fig:last-child { margin-bottom: 0; }
+.ux-dm .dmp-fig img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--rx-line-soft); }
+.ux-dm .dmp-fig.is-narrow { max-width: 600px; }
+
+/* Questions. */
+.ux-dm .dmp-faq { border-top: 1px solid var(--rx-line-soft); max-width: 78ch; }
+.ux-dm .dmp-faq details { border-bottom: 1px solid var(--rx-line-soft); }
+.ux-dm .dmp-faq summary {
+  cursor: pointer; list-style: none; position: relative; padding: 18px 44px 18px 0;
+  font-size: 17px; font-weight: 600; line-height: 1.45; color: var(--rx-ink);
+}
+.ux-dm .dmp-faq summary::-webkit-details-marker { display: none; }
+.ux-dm .dmp-faq summary::after {
+  content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-family: var(--rx-mono); font-size: 20px; color: var(--rx-teal);
+}
+.ux-dm .dmp-faq details[open] summary::after { content: "−"; }
+.ux-dm .dmp-faq summary:hover { color: var(--rx-teal); }
+.ux-dm .dmp-faq details > p { margin: 0 0 20px; font-size: 16px; line-height: 1.72; color: var(--rx-ink-2); }
+
+/* Code and BibTeX. */
+.rx .ux-dm .dmp-code {
+  margin: 0 0 18px; padding: 18px 20px; background: var(--rx-teal); color: #e6f0ee;
+  font-family: var(--rx-mono); font-size: 13.5px; line-height: 1.65; white-space: pre; overflow-x: auto;
+}
+.ux-dm .dmp-code .c { color: #9fc3bd; }
+.ux-dm .dmp-bib { position: relative; }
+.ux-dm .dmp-bib .dmp-code { padding-top: 52px; margin: 0; }
+.rx .ux-dm .dmp-copy {
+  position: absolute; top: 12px; right: 12px; left: auto; width: auto; cursor: pointer;
+  font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+  padding: 7px 12px; background: #d8ee96; color: var(--rx-teal); border: 0;
+}
+.rx .ux-dm .dmp-copy:hover { background: #fbfbf9; }
+
+/* References. */
+.ux-dm .dmp-refs { margin: 0; padding-left: 22px; max-width: 80ch; }
+.ux-dm .dmp-refs li { font-size: 15px; line-height: 1.6; color: var(--rx-ink-2); margin: 0 0 10px; padding-left: 4px; }
+
+/* Link tiles. */
+.ux-dm .dmp-links { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--rx-line-soft); border: 1px solid var(--rx-line-soft); }
+.ux-dm .dmp-links li { margin: 0; padding: 0; }
+.rx .ux-dm .dmp-links a { display: block; height: 100%; padding: 16px 18px; background: var(--rx-white); text-decoration: none; color: var(--rx-ink); }
+.rx .ux-dm .dmp-links a:hover { background: var(--rx-paper); }
+.ux-dm .dmp-links b { display: block; font-size: 15px; color: var(--rx-teal); }
+.ux-dm .dmp-links span { display: block; margin-top: 2px; font-family: var(--rx-mono); font-size: 11.5px; color: var(--rx-ink-3); }
+
+@media (max-width: 860px) {
+  .ux-dm .dmp-pair, .ux-dm .dmp-results { grid-template-columns: 1fr; }
+  .ux-dm .dmp-figs { grid-template-columns: 1fr; }
+  .ux-dm .dmp-figs .rx-fig { border-right: 0; border-bottom: 1px solid rgba(234, 244, 242, .18); }
+  .ux-dm .dmp-figs .rx-fig:last-child { border-bottom: 0; }
+  .ux-dm .dmp-talk, .ux-dm .dmp-call { padding: 22px 20px; }
+  .rx .ux-dm .dmp-pair h4 { font-size: 26px; }
+}
+
+/* Keep a formula and the punctuation after it on one line. */
+.ux-dm .dmp-nb { white-space: nowrap; }
+
+/* Phones: the jump list in two columns; every label here is short. */
+@media (max-width: 600px) {
+  .ux-dm .uxr-toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+  .rx .ux-dm .uxr-toc a { font-size: 14px; }
+  .ux-dm .uxr-toc-list > li:nth-last-child(2):nth-child(odd) > a { border-bottom: 0; }
+}
+
+/* Proofs, folded under each result. */
+.ux-dm .dmp-proof { margin-top: 14px; border-top: 1px solid var(--rx-line-soft); }
+.rx .ux-dm .dmp-proof summary {
+  cursor: pointer; list-style: none; position: relative; padding: 14px 28px 4px 0;
+  font-family: var(--rx-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--rx-teal);
+}
+.ux-dm .dmp-proof summary::-webkit-details-marker { display: none; }
+.ux-dm .dmp-proof summary::after { content: "+"; position: absolute; right: 2px; top: 11px; font-size: 17px; }
+.ux-dm .dmp-proof[open] summary::after { content: "−"; }
+.ux-dm .dmp-proof > p { margin: 12px 0 0; }
+.ux-dm .dmp-proof ol { margin: 12px 0 0; padding-left: 20px; }
+.ux-dm .dmp-proof li { font-size: 14.5px; line-height: 1.6; color: var(--rx-ink-2); margin: 0 0 6px; }
+.ux-dm .dmp-proof li b { color: var(--rx-ink); }
+.ux-dm .dmp-proof .katex-display { margin: 8px 0 12px; padding: 4px 0; overflow-x: auto; overflow-y: hidden; }
+.ux-dm .dmp-proof .katex-display > .katex { font-size: 1em; }
+.rx .ux-dm .dmp-proof .dmp-proof-note { font-size: 13.5px; line-height: 1.6; color: var(--rx-ink-3); }
+
+/* A heading inside a section; tables use the /research table (.uxr-table). */
+.rx .ux-dm .dmp-sub-h { font-family: var(--rx-serif); font-weight: 400; font-size: 26px; line-height: 1.15; color: var(--rx-teal); margin: 44px 0 4px; }
+.ux-dm .dmp-fig + .uxr-table-wrap { margin-top: 0; }
+
+/* Smaller open steps. */
+.ux-dm .dmp-open { margin: 0 0 14px; padding-left: 20px; }
+.ux-dm .dmp-open li { margin: 0 0 8px; line-height: 1.65; }
+
+@media (max-width: 600px) {
+}
+
+/* Phones: these tables are small, so fit them to the screen instead of
+   scrolling (overrides the /research phone minimums). */
+@media (max-width: 720px) {
+  .ux-research.ux-dm .uxr-table { width: 100%; }
+  .ux-research.ux-dm .uxr-table tbody th:not(.is-code) { width: auto; min-width: 104px; }
+  .ux-research.ux-dm .uxr-table td:not(.num) { min-width: 0; }
+  .ux-research.ux-dm .uxr-table thead th { white-space: normal; }
+  .ux-research.ux-dm .uxr-table th, .ux-research.ux-dm .uxr-table td { padding: 10px 10px; }
+}

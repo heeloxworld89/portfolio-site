@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Icon from '@/components/common/Icon';
+import VideoFacade from '@/components/common/VideoFacade';
 import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -81,8 +82,8 @@ export default function CVResearch() {
   ];
 
   const stats = [
-    { val: '80.3%',   lbl: 'Recovered after a layer is destroyed (baseline 10.0%)' },
-    { val: '+70.3pp', lbl: 'Gap over a parameter-matched baseline' },
+    { val: '80.3%',   lbl: 'Recovered after trained layers are zeroed (standard training: 10.0%)' },
+    { val: '+70.3pp', lbl: 'Gap over standard training' },
     { val: '94.6%',   lbl: 'Task retention (ResNet-18: 47.3%)' },
     { val: '+60.8pp', lbl: 'Gap with all three layers destroyed' },
     { val: '58.8%',   lbl: 'Zero-shot compositional (chance 25%)' },
@@ -98,8 +99,8 @@ export default function CVResearch() {
     {
       n: '01',
       fig: '+70.3pp',
-      title: 'A destroyed layer, rebuilt: 80.3% versus 10.0% (+70.3pp)',
-      body: 'After a converged convolutional layer is zeroed at epoch 100, ORMAS recovers to 80.3% accuracy while the standard CNN stays at chance (10.0% ± 0.0%) on all three seeds: a +70.3pp gap. ORMAS gets there with 85 targeted corrections between epochs 100 and 110. A checkpoint rollback can also restore accuracy, but it discards all learning since the checkpoint and gives no account of what failed or why.'
+      title: 'Zeroed layers, rebuilt: 80.3% versus 10.0% (+70.3pp)',
+      body: 'After trained convolutional layers are zeroed at epoch 100, ORMAS recovers to 80.3% accuracy while the standard CNN stays at chance (10.0% ± 0.0%) on all three seeds: a +70.3pp gap. Small corrections alone cannot revive the dead channels; a reset redraws them, at the same step in every seed, and corrections finish the recovery. A checkpoint rollback can also restore accuracy, but it discards all learning since the checkpoint and gives no account of what failed or why.'
     },
     {
       n: '02',
@@ -190,7 +191,7 @@ export default function CVResearch() {
       id="research"
       phase="now"
       eyebrow="ORMAS · Self-repairing neural network"
-      title="ORMAS: a self-repairing neural network that rebuilds a destroyed layer to 80.3% accuracy while a standard network stays at chance."
+      title="ORMAS: a self-repairing neural network that recovers zeroed layers to 80.3% accuracy while a standard network stays at chance."
       lead={
         <>
           ORMAS, invented by Rokib Al Dhin Raadh, is a neural network architecture that detects its own
@@ -213,13 +214,14 @@ export default function CVResearch() {
         <div className="uxr-venue">
           <span className="uxr-venue-tag">Accepted · DeepMath 2026 · Poster</span>
           <p className="uxr-venue-txt">
-            <strong>Peer-reviewed: the first formal local stability characterisation of a self-correcting neural
-            architecture.</strong> Raadh&apos;s paper{' '}
+            <strong>Peer-reviewed: a local stability analysis of self-repairing training.</strong> Raadh&apos;s
+            sole-authored paper{' '}
             <em>&ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
-            Dynamics&rdquo;</em> was accepted after double-blind review for poster presentation at DeepMath 2026, the
-            Conference on the Mathematical Theory of Deep Neural Networks (Ohio State University, Columbus,
-            29&ndash;30 October 2026). The complete ORMAS preprint is public on
-            Zenodo (DOI 10.5281/zenodo.21730363).
+            Dynamics&rdquo;</em> was accepted after double-blind review at DeepMath 2026, the Conference on the
+            Mathematical Theory of Deep Neural Networks (The Ohio State University, Columbus), and shown at its poster
+            session on 29 October 2026. The poster, abstract and figures are at{' '}
+            <a href="/deepmath">raadh.me/deepmath</a>. The complete ORMAS preprint is public on Zenodo
+            (DOI 10.5281/zenodo.21730363).
           </p>
         </div>
 
@@ -265,11 +267,10 @@ export default function CVResearch() {
             </ul>
           </div>
           <div className="uxr-video-embed">
-            <iframe
+            <VideoFacade
               src="https://www.loom.com/embed/59caaa73445443cb8d345b4d594a8347"
-              allowFullScreen
-              loading="lazy"
               title="Explaining ORMAS: Transparent Neural Networks That Self-Heal"
+              label="Video · 12 min"
             />
           </div>
         </div>
@@ -642,12 +643,12 @@ export default function CVResearch() {
               </p>
               <p>
                 Raadh adapted the framework by treating each correction as a bounded input disturbance and the weight trajectory as the state, then characterising the conditions under which the state remains bounded.{' '}
-                <strong>The result is the first formal local stability characterisation of a self-correcting neural architecture.</strong> Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review.
+                <strong>The result is a local, practical input-to-state stability bound for self-repairing training,</strong> paired with a proof that bounded repairs alone cannot revive a dead channel. Derived at seventeen, it was accepted at DeepMath 2026 after double-blind review.
               </p>
             </div>
 
             <p className="uxr-p">
-              <strong>Local stability characterisation, the first for a self-correcting neural architecture.</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
+              <strong>Local stability characterisation.</strong> Under standard regularity assumptions, the conservation constraint (<InlineMath math="\sum \Delta w = 0" />) bounds each correction's L² norm via mean-subtraction (weight magnitude is redistributed, not created). Empirical validation: late-stage parameter variance reduces from 0.86 (Standard CNN) to 0.19 (ORMAS) — a 4.5× reduction.
             </p>
             <div className="uxr-math">
               <BlockMath math="\limsup_{t \to \infty} \|\theta(t) - \theta^*\| \leq \gamma(\varepsilon) = \frac{\varepsilon}{\mu \eta}" />

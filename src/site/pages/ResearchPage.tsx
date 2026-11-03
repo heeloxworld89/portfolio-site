@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 import CVResearch from "@/components/common/cv/CVResearch";
 import CVCherry from "@/components/common/cv/CVCherry";
+import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
+import { OnThisPage, useActiveSection, type TocItem } from "../OnThisPage";
 import "../ux/research.css";
-
-type TocItem = { id: string; label: string; children?: { id: string; label: string }[] };
 
 /** "On this page": built from the section headings below; every id exists in the DOM at prerender. */
 const TOC: TocItem[] = [
@@ -39,68 +38,8 @@ const TOC: TocItem[] = [
   },
 ];
 
-const ALL_IDS = TOC.flatMap((t) => [t.id, ...(t.children ?? []).map((c) => c.id)]);
-
-function useActiveSection() {
-  const [active, setActive] = useState<string>(ALL_IDS[0]);
-  useEffect(() => {
-    let raf = 0;
-    const measure = () => {
-      raf = 0;
-      const line = window.innerHeight * 0.28;
-      let current = ALL_IDS[0];
-      for (const id of ALL_IDS) {
-        const el = document.getElementById(id);
-        if (!el || el.closest('[data-collapsed="true"]')) continue;
-        if (el.getBoundingClientRect().top <= line) current = id;
-      }
-      setActive(current);
-    };
-    const onScroll = () => { if (!raf) raf = requestAnimationFrame(measure); };
-    measure();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    // The technical record opening or closing moves everything below it.
-    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(onScroll) : null;
-    ro?.observe(document.body);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      ro?.disconnect();
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-  return active;
-}
-
-function OnThisPage({ active }: { active: string }) {
-  const parentOf = (id: string) => TOC.find((t) => t.id === id || t.children?.some((c) => c.id === id))?.id;
-  const activeParent = parentOf(active);
-  return (
-    <nav className="uxr-toc" aria-label="On this page">
-      <p className="uxr-toc-h">On this page</p>
-      <ol className="uxr-toc-list">
-        {TOC.map((t) => (
-          <li key={t.id} className={t.id === activeParent ? "is-in" : undefined}>
-            <a href={`#${t.id}`} aria-current={active === t.id ? "location" : undefined}>{t.label}</a>
-            {t.children ? (
-              <ol className="uxr-toc-sub">
-                {t.children.map((c) => (
-                  <li key={c.id}>
-                    <a href={`#${c.id}`} aria-current={active === c.id ? "location" : undefined}>{c.label}</a>
-                  </li>
-                ))}
-              </ol>
-            ) : null}
-          </li>
-        ))}
-      </ol>
-    </nav>
-  );
-}
-
 export default function ResearchPage() {
-  const active = useActiveSection();
+  const active = useActiveSection(TOC);
   return (
     <SiteLayout>
       <section className="rx-page-head">
@@ -109,18 +48,18 @@ export default function ResearchPage() {
           <h2 className="rx-label">Research · ORMAS</h2>
           <h1>ORMAS: the self-repairing neural network.</h1>
           <p>
-            ORMAS, invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after a trained layer is destroyed
-            mid-training, while a parameter-matched baseline stays at chance (10.0%). Raadh built it alone, at 18, on one RTX 3090. Its stability result, the first
-            formal local stability characterisation of a self-correcting neural architecture, was accepted after
-            double-blind review at DeepMath 2026 (poster). This page covers the method, all 383 reproducible
-            experiments, the Input-to-State Stability derivation and ablations, then Project Cherry, the next architecture.
+            ORMAS, invented by Rokib Al Dhin Raadh, recovers to 80.3% accuracy after trained convolutional layers are
+            zeroed mid-training, while standard training stays at chance (10.0%). Raadh developed it independently, on one
+            RTX 3090. His stability analysis of self-repairing training was accepted after double-blind review at{" "}
+            <Link to="/deepmath">DeepMath 2026</Link> (poster). This page covers the method, all 383 reproducible
+            experiments, the input-to-state stability analysis and ablations, then Project Cherry, the next architecture.
           </p>
         </div>
       </section>
       <div className="rx-deep ux-research">
         <div className="rx-wrap uxr-layout">
           <aside className="uxr-rail">
-            <OnThisPage active={active} />
+            <OnThisPage toc={TOC} active={active} />
           </aside>
           <div className="uxr-main">
             <CVResearch />

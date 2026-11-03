@@ -4,8 +4,10 @@ import { links, pages, type PagePath } from "./data";
 
 const nav: { to: string; label: string; external?: boolean }[] = [
   { to: "/research", label: "Research" },
+  { to: "/deepmath", label: "DeepMath" },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
+  { to: "/evidence", label: "Evidence" },
   { to: links.cv, label: "CV", external: true },
   { to: links.oxiedo, label: "OXIEDO ↗", external: true },
 ];
@@ -94,7 +96,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <div className="rx-foot-top">
             <div className="rx-foot-id">
               <Link className="rx-mark" to="/">Rokib Al Dhin Raadh</Link>
-              <p>Founder &amp; CEO, OXIEDO · Inventor of ORMAS</p>
+              <p>AI researcher · Founder &amp; CEO, OXIEDO · Inventor of ORMAS</p>
             </div>
             <nav className="rx-foot-col" aria-label="Footer">
               <h2>Pages</h2>
@@ -108,14 +110,13 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                     )}
                   </li>
                 ))}
-                <li><Link to="/evidence">Evidence</Link></li>
               </ul>
             </nav>
             <div className="rx-foot-col">
               <h2>Contact</h2>
               <ul>
-                <li><a href={`mailto:${links.founderEmail}`}>{links.founderEmail}</a></li>
                 <li><a href={`mailto:${links.email}`}>{links.email}</a></li>
+                <li><a href={links.calendly} target="_blank" rel="noreferrer">Book a 30-minute call</a></li>
               </ul>
             </div>
             <div className="rx-foot-col">

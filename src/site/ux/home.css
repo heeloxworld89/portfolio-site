@@ -193,7 +193,7 @@
   .rx .ux-home .rx-bio-inner > .rx-links { grid-column: 1 / -1; margin-top: 32px; }
 }
 
-/* DeepMath card: the two ledes in two columns under a full-width headline. */
+/* Featured news card: the two ledes in two columns under a full-width headline. */
 @media (min-width: 1000px) {
   .rx .ux-home .rx-dm-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px; }
   .rx .ux-home .rx-dm-main > * { grid-column: 1 / -1; }
@@ -223,6 +223,8 @@
 .rx .ux-home .ux-talk-note { font-size: 15px; line-height: 1.65; color: var(--rx-ink-2); margin: 0 0 18px; }
 .rx .ux-home a.ux-talk-go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--rx-teal); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .rx .ux-home a.ux-talk-go:hover { color: var(--rx-ink); }
+.rx .ux-home .ux-talk-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.rx .ux-home .ux-talk-links a.ux-talk-go { margin-top: 0; }
 @media (max-width: 1000px) { .rx .ux-home .ux-talks { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 560px) {
   .rx .ux-home .ux-talk { grid-template-columns: minmax(0, 1fr); }

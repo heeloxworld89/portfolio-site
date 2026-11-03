@@ -51,6 +51,8 @@ body:has(.rx) { background: #e7e7e2; }
 
 .rx *, .rx *::before, .rx *::after { box-sizing: border-box; }
 .rx p, .rx li, .rx td, .rx th, .rx span, .rx div { font-family: inherit; }
+/* ...except maths: .katex is a span, so the rule above would replace KaTeX's own font. */
+.rx .katex { font-family: KaTeX_Main, "Times New Roman", serif; }
 .rx a { color: var(--rx-teal); text-decoration: underline; text-decoration-color: var(--rx-line); text-underline-offset: 3px; transition: color .2s, text-decoration-color .2s; }
 .rx a:hover { color: var(--rx-ink); text-decoration-color: var(--rx-ink); }
 .rx h1, .rx h2, .rx h3, .rx h4, .rx h5 { font-family: var(--rx-serif); font-weight: 400; color: var(--rx-teal); letter-spacing: -0.01em; }
@@ -75,6 +77,21 @@ body:has(.rx) { background: #e7e7e2; }
 /* ── header ───────────────────────────────────────────────────────────── */
 .rx-skip { position: absolute; left: 16px; top: -100px; z-index: 100; padding: 12px 18px; background: var(--rx-teal); color: #fff !important; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none !important; }
 .rx-skip:focus { top: 12px; }
+
+/* Click-to-play video placeholder (components/common/VideoFacade.tsx). */
+.rx .vf {
+  position: absolute; inset: 0; width: 100%; height: 100%; padding: 24px; border: 0; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center;
+  font: inherit; color: #eef6f3; background: linear-gradient(135deg, #082f39 0%, #0b404d 55%, #155e5a 100%);
+}
+.rx .vf-play {
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  background: #d8ee96; color: #0b404d; transition: transform .2s;
+}
+.rx .vf:hover .vf-play, .rx .vf:focus-visible .vf-play { transform: scale(1.08); }
+.rx .vf:focus-visible { outline: 3px solid #d8ee96; outline-offset: -3px; }
+.rx .vf-t { max-width: 34ch; font-family: var(--rx-serif); font-size: 20px; line-height: 1.25; color: #fbfbf9; }
+.rx .vf-k { font-family: var(--rx-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #d8ee96; }
 .rx main:focus { outline: none; }
 .rx-head { position: relative; z-index: 40; }
 .rx-head .rx-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 30px; padding-bottom: 20px; }
