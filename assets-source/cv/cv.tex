@@ -1,9 +1,9 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % ============================================================
 % PACKAGES
 % ============================================================
-\usepackage[top=0.45in, bottom=0.42in, left=0.65in, right=0.65in]{geometry}
+\usepackage[top=0.5in, bottom=0.45in, left=0.7in, right=0.7in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -11,15 +11,15 @@
 \usepackage[T1]{fontenc}
 \usepackage{charter}
 \usepackage{parskip}
-\usepackage{ifthen}
 \usepackage{needspace}
 
 % ============================================================
-% COLORS
+% COLORS (match raadh.me)
 % ============================================================
-\definecolor{heading}{HTML}{1A6B7A}
-\definecolor{link}{HTML}{2B6B8A}
+\definecolor{heading}{HTML}{0B4F5C}
+\definecolor{link}{HTML}{0B4F5C}
 \definecolor{body}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{5A6470}
 
 % ============================================================
 % HYPERLINKS
@@ -29,35 +29,33 @@
     linkcolor=link,
     urlcolor=link,
     pdfauthor={Rokib Al Dhin Raadh},
-    pdftitle={CV - Rokib Al Dhin Raadh},
+    pdftitle={Rokib Al Dhin Raadh - Curriculum Vitae},
+    pdfsubject={AI researcher; founder and CEO of OXIEDO; inventor of ORMAS},
+    pdfkeywords={Rokib Al Dhin Raadh, ORMAS, OXIEDO, DeepMath 2026, NeurIPS 2026, input-to-state stability, self-repairing neural networks},
 }
 
 % ============================================================
 % SECTION STYLE
 % ============================================================
 \titleformat{\section}
-  {\large\bfseries\color{heading}}
+  {\normalsize\bfseries\scshape\color{heading}}
   {}
   {0em}
   {}
-  [\vspace{-0.6em}{\color{heading}\rule{\textwidth}{0.5pt}}]
-
-\titlespacing{\section}{0pt}{4.5pt}{2pt}
+  [\vspace{-1pt}{\color{heading}\titlerule[0.4pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
 
 \pagestyle{empty}
 
 % ============================================================
-% CV ENTRY COMMAND
+% CV ENTRY: date in the left gutter, body indented
 % ============================================================
-% A minipage cannot break across a page, so a long entry was thrown whole
-% onto the next page and left a hole behind it. A list environment breaks,
-% and reproduces the same two-column geometry: date in the left gutter,
-% body indented to a fixed margin.
+% A list (not a minipage) so long entries can break across pages.
 \newcommand{\cvitem}[3]{%
   \begin{list}{}{%
-    \setlength{\leftmargin}{2.7cm}%
-    \setlength{\labelwidth}{2.4cm}%
-    \setlength{\labelsep}{0.3cm}%
+    \setlength{\leftmargin}{2.35cm}%
+    \setlength{\labelwidth}{2.1cm}%
+    \setlength{\labelsep}{0.25cm}%
     \setlength{\itemindent}{0pt}%
     \setlength{\listparindent}{0pt}%
     \setlength{\rightmargin}{0pt}%
@@ -66,33 +64,21 @@
     \setlength{\parsep}{0pt}%
     \setlength{\itemsep}{0pt}%
   }%
-  \item[{\makebox[2.4cm][l]{\footnotesize #1}}]%
+  \item[{\makebox[2.1cm][l]{\footnotesize\color{muted}#1}}]%
   #2
   #3
   \end{list}%
-  \vspace{1pt}
+  \vspace{1.5pt}
 }
 
 % Tight bullet list
 \newlist{bullets}{itemize}{1}
 \setlist[bullets]{leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
-% Skill row
-\newcommand{\skillrow}[2]{%
-  \noindent
-  \begin{minipage}[t]{2.6cm}
-    \raggedright\footnotesize\textbf{#1}
-  \end{minipage}%
-  \hfill
-  \begin{minipage}[t]{\dimexpr\textwidth-2.9cm}
-    #2
-  \end{minipage}
-  \vspace{2pt}
-}
+% Numbered publication list
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{leftmargin=2.35cm, labelsep=0.25cm, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
 
-% ============================================================
-% DOCUMENT
-% ============================================================
 \begin{document}
 \color{body}
 
@@ -100,198 +86,149 @@
 % HEADER
 % ============================================================
 \begin{center}
-  {\LARGE\bfseries\color{heading} ROKIB AL DHIN RAADH}\\[6pt]
-  {\small
-    \href{mailto:raadxbusiness9@gmail.com}{raadxbusiness9@gmail.com}
-    \quad$|$\quad
+  {\LARGE\bfseries\color{heading} Rokib Al Dhin Raadh}\\[3pt]
+  {\small AI researcher \enspace$\cdot$\enspace Founder \& CEO, \href{https://oxiedo.com}{OXIEDO} \enspace$\cdot$\enspace Inventor of ORMAS \enspace$\cdot$\enspace Dhaka, Bangladesh}\\[3pt]
+  {\footnotesize
     \href{mailto:raadh@oxiedo.com}{raadh@oxiedo.com}
-    \quad$|$\quad
+    \enspace$|$\enspace
     \href{https://www.raadh.me}{raadh.me}
-    \quad$|$\quad
+    \enspace$|$\enspace
+    \href{https://orcid.org/0009-0003-1178-5296}{ORCID 0009-0003-1178-5296}
+    \enspace$|$\enspace
     \href{https://oxiedo.com}{oxiedo.com}
-  }\\[6pt]
-  {\footnotesize\textit{18-year-old self-taught AI founder. Founder of Oxiedo, licensing the ORMAS training architecture to institutions whose data is closed to deep learning.}}
+  }
 \end{center}
-
-\vspace{-4pt}
-
-
+\vspace{-2pt}
 
 % ============================================================
-% PREPRINTS
+% DISTINCTIONS (the skim layer)
 % ============================================================
-\needspace{3\baselineskip}\section*{Publications \& Technical Reports}
-
-\noindent\textbf{R.A.D.\ Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' 2026.
-Zenodo preprint. DOI: \href{https://zenodo.org/records/21730363}{10.5281/zenodo.21730363}.
-
-\vspace{2pt}
-\noindent\textbf{R.A.D.\ Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textbf{DeepMath 2026}, Ohio State University. \textbf{Accepted (poster)} after double-blind review.
-
-\vspace{2pt}
+\section*{Distinctions}
+\begin{bullets}
+  \item \textbf{Sole-authored paper accepted after double-blind review} at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks (The Ohio State University); one of 41 accepted papers.
+  \item \textbf{Reviewer, NeurIPS 2026} Workshop on Trustworthy AI for Good; listed among its 490 reviewers.
+  \item \textbf{Invited speaker, Cohere Labs} Open Science Community, November 2026.
+  \item \textbf{Highest-ranked application} in its 2026 review cycle, Cosmos Institute.
+  \item \textbf{Inventor of ORMAS}, a self-repairing neural network: recovers to 80.3\% accuracy after trained layers are zeroed mid-training, while standard training stays at chance (10.0\%).
+  \item \textbf{Founder \& CEO of OXIEDO} (2023); accepted to 1752vc Ignite from the top 1\% of applicants.
+\end{bullets}
 
 % ============================================================
-% SERVICE & RECOGNITION
+% RESEARCH
 % ============================================================
-\needspace{3\baselineskip}\section*{Recent Academic Service \& Recognition}
+\section*{Research}
+\noindent{\small\textbf{Focus.} Stability theory of self-repairing training: neural networks that detect, repair and record their own failures while they train, analysed as switched control systems (input-to-state stability).}
 
-\cvitem{Dec 2026}{%
-  \textbf{Reviewer, Program Committee}\\
-  \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good (AI4GOOD) Workshop} --- \textbf{NeurIPS 2026}, Paris
+\vspace{3pt}
+\cvitem{2024--now}{%
+  \textbf{Independent researcher} \quad {\small ORMAS: self-repairing neural networks}
 }{%
   \begin{bullets}
-    \item Peer review for the workshop's trustworthy-AI track, covering mechanistic interpretability, attribution, post-deployment monitoring and model auditing.
+    \item Proved that, near a minimum, bounded repairs keep training within a computable radius of it (practical input-to-state stability), and that bounded repairs alone cannot revive a dead channel in a BatchNorm and ReLU layer: self-repairing training is a switched system of bounded corrections and isolated resets.
+    \item Recovery after trained convolutional layers are zeroed: \textbf{80.3\%} against \textbf{10.00\%} (chance) for standard training, 3/3 seeds. Sequential learning: \textbf{94.6\%} retention against 47.3\% for \mbox{ResNet-18}.
+    \item \textbf{383 controlled experiments} across four architecture families (DAG, two CNNs, \mbox{ResNet-18}; CIFAR-10/100), each reproducible from seed, all on one RTX~3090. 16,316 lines of PyTorch.
+    \item Released \textbf{ormas-monitor} (PyPI), a training monitor that certifies dead channels under the theorem's conditions; on 22 released torchvision models it finds near-zero channels in 19 of the 21 that use BatchNorm--ReLU.
   \end{bullets}
 }
 
-\cvitem{Jul 2026}{%
-  \href{https://cosmosgrants.org/}{\textbf{Cosmos Institute}} --- Review Cycle
-}{%
-  \\Application ranked \textbf{highest in its cycle}.
-}
-
-\vspace{2pt}
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\section*{Publications}
+\noindent{\footnotesize\color{muted}Peer-reviewed}
+\begin{pubs}
+  \item \textbf{R.~A.~D. Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textit{DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks}, The Ohio State University, 2026. Poster; double-blind review. \href{https://openreview.net/forum?id=kowltBZEIv}{OpenReview} $\cdot$ \href{https://www.raadh.me/deepmath}{poster}
+\end{pubs}
+\noindent{\footnotesize\color{muted}Preprints and technical reports}
+\begin{pubs}[resume]
+  \item \textbf{R.~A.~D. Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' Preprint, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.21730363}{doi:10.5281/zenodo.21730363}. 36-page supplement; code reproduces all 383 experiments.
+  \item \textbf{R.~A.~D. Raadh}. ``OXIMO/AX09: Autonomous LLM-Dependent Commerce. A Twelve-Month Controlled Ablation Study.'' Technical report, 2026.
+\end{pubs}
 
 % ============================================================
-% SELECTION
+% TALKS
 % ============================================================
-\needspace{3\baselineskip}\section*{Accelerator \& Venture Selection}
-
-\cvitem{Sep 2026}{%
-  \href{https://www.freshmango.ee/}{\textbf{Freshmango}} --- Accelerator, Estonia \quad \textit{Accepted}
-}{%
-  \\Offered a place after a direct evaluation call with CEO \textbf{Philip Adler} (Forbes 30 Under 30 Europe, 2026). \textbf{No equity, no fee}: 5,000-founder network, \textbf{\$4M} in AI credits, introductions across \textbf{160 venture funds}.
-}
-
-\cvitem{Sep 2026}{%
-  \href{https://1752.vc/}{\textbf{1752vc}} --- Ignite Cohort \quad \textit{Accepted}
-}{%
-  \\Top 5\% of the applicant pool, then a final round to select the \textbf{top 1\%}; offered a place in the Ignite cohort.
-}
-
-\cvitem{Aug--Sep 2026}{%
-  \href{https://www.joinef.com/}{\textbf{Entrepreneur First}} --- The Bridge, San Francisco \quad \textit{Final round}
-}{%
-  \\Cold application to a first-round call with EF's London team, August 2026. Two interview rounds completed for \textbf{The Bridge}, EF's eight-week San Francisco residency; reached the final round.
-}
-
+\section*{Invited Talks and Presentations}
+\cvitem{Nov 2026}{%
+  \textbf{Invited talk}, Cohere Labs Open Science Community.\\
+  ``When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.''
+}{}
 \cvitem{Oct 2026}{%
-  \href{https://500.co/}{\textbf{500 Global}} --- Venture investor \quad \textit{Interview, 22 Oct}
-}{%
-  \\Invited to a first-round interview.
-}
-
-\cvitem{Sep 2026}{%
-  \href{https://www.onstage.vc/}{\textbf{Onstage}} --- W26 Demo Day
-}{%
-  \\Invited to the pre-pitch event in Central London; in the pool for the W26 cohort, ranked by investor interest across \textbf{350 venture funds} including a16z, Sequoia, Balderton and LocalGlobe.
-}
+  \textbf{Poster}, DeepMath 2026, The Ohio State University, Columbus, OH (poster session, 29 October).\\
+  ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.''
+}{}
 
 % ============================================================
-% RESEARCH EXPERIENCE
+% SERVICE
 % ============================================================
-\needspace{3\baselineskip}\section*{Research Experience}
+\section*{Professional Service}
+\cvitem{2026}{%
+  \textbf{Reviewer}, Trustworthy AI for Good Workshop, \textbf{NeurIPS 2026} (Paris). Reviewed submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring. \href{https://trustworthy-ai-for-good.github.io/\#reviewers}{Reviewer list}
+}{}
 
-\cvitem{2024--pres.}{%
-  \textbf{Independent Machine Learning Researcher}\\
-  ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction\\
-  {\footnotesize PyTorch $\cdot$ 16,316 lines $\cdot$ 85 files $\cdot$ Codebase: \href{https://anonymous.4open.science/r/ormas-EB73}{anonymous.4open.science/r/ormas-EB73}}
+% ============================================================
+% VENTURES
+% ============================================================
+\section*{Ventures}
+\cvitem{2023--now}{%
+  \textbf{Founder \& CEO, \href{https://oxiedo.com}{OXIEDO}} \quad {\small Auditable AI training for regulated industries}
 }{%
   \begin{bullets}
-    \item Three-signal training architecture: unmodified global backpropagation, a per-node local loss through a small shared bottleneck, and a health-gated correction engine with 8 diagnoses, each capped and logged.
-    \item First Input-to-State Stability characterisation for a self-correcting architecture; correction rate decays from 4.2 to 0.05 per epoch, consistent with the stability analysis.
-    \item Recovery from mid-training structural collapse: \textbf{80.3\%} against a parameter-matched baseline stuck at 10.0\% permanently, on every seed ($+$70.3\,pp).
-    \item Retention through sequential task shift with no replay buffer and no task ID: \textbf{94.6\%} against 47.3\% for ResNet-18; 58.8\% zero-shot on unseen combinations against 25\% chance.
-    \item 383 controlled experiments, 4 architecture families, every run reproducible from seed, single RTX~3090. One adverse result published: 1.0\,pp below baseline under adversarial weight injection.
+    \item Licenses ORMAS on-premise: every training run produces a tamper-evident record of what the model learned, so banks, hospitals and other regulated institutions can train on data they already hold.
+    \item Accepted to 1752vc Ignite (top 1\% of applicants); offered a place by Freshmango; finalist, The Bridge (Entrepreneur First, San Francisco); invited to Onstage W26. In investment discussions with 500 Global and 1752vc.
   \end{bullets}
 }
-
-% ============================================================
-% ENGINEERING
-% ============================================================
-\needspace{3\baselineskip}\section*{Engineering}
-
-\cvitem{2023--pres.}{%
-  \textbf{Sole Architect \& Engineer}\\
-  OXIMO --- Cognitive Multi-Agent Operating System\\
-  {\footnotesize Python $\cdot$ 40,933 lines production $\cdot$ 2,069 tests $\cdot$ Codebase: \href{https://anonymous.4open.science/r/oximo-5C73}{anonymous.4open.science/r/oximo-5C73}}
+\cvitem{2023--2026}{%
+  \textbf{Sole architect, OXIMO} \quad {\small Multi-agent operating system}
 }{%
   \begin{bullets}
-    \item Multi-agent operating system: hierarchical task decomposition, on-demand role creation via a self-hiring pipeline, Graph-of-Thoughts planner, three-tier memory with temporal decay, and a seven-check input safety cascade.
-    \item Rebuilt from a \textbf{106,000-line monolith} to 40,933 lines --- a \textbf{72\% reduction} with all 12 critical algorithms ported and 2,069 tests passing.
+    \item 40,933 lines of production Python and 2,069 passing tests, rebuilt from a 106,000-line monolith (72\% smaller). Creates the specialist roles a task needs, with no human in the loop.
   \end{bullets}
 }
-
-% ============================================================
-% VENTURES & DEPLOYMENT
-% ============================================================
-\needspace{3\baselineskip}\section*{Companies}
-
-\cvitem{2023--pres.}{%
-  \textbf{Founder} \quad \textit{\href{https://oxiedo.com}{Oxiedo} --- \href{https://oxiedo.com}{oxiedo.com}}\\
-  {\footnotesize Licensing ORMAS to institutions holding data they cannot currently train on.}
+\cvitem{2025--2026}{%
+  \textbf{Founder \& CEO, Black Bloxie LTD} \quad {\small England \& Wales, company no.\ 16711223}
 }{%
   \begin{bullets}
-    \item One architecture under one licence, deployed on customer infrastructure. Five sectors in scope: AI training, regulated finance, medical AI, data-deletion obligation, and defence.
+    \item Twelve-month controlled field study of OXIMO on a live e-commerce company: removing the system cut output by 91\%; restoring it recovered and exceeded the original level.
   \end{bullets}
 }
-
-\cvitem{2024--2026}{%
-  \textbf{Founder} \quad \textit{Black Bloxie LTD --- UK registered}\\
-  {\footnotesize A live company run as a controlled test environment for OXIMO.}
-}{%
-  \begin{bullets}
-    \item Registered a UK company at 17 from overseas, handling formation, AML compliance and cross-border operations independently.
-    \item Twelve-month deploy--remove--restore ablation on a live company, run to test whether the orchestration layer was load-bearing. Zero advertising spend, zero human sales hours.
-  \end{bullets}
-}
-
 \cvitem{2020--2024}{%
-  \textbf{Independent ventures (5)} \quad \textit{Automated sales $\cdot$ AI development $\cdot$ market tools}
-}{%
-  \\Five ventures between 12 and 17, each failing at a different layer; the shared finding, that the constraint was coordination rather than capability, is what OXIMO was built to answer.
-}
+  \textbf{Five earlier ventures}, ages 12 to 17; built and sold a stock-prediction system for about \$10,000 at 15.
+}{}
 
 % ============================================================
-% TECHNICAL SKILLS
+% HONOURS
 % ============================================================
-\needspace{3\baselineskip}\section*{Technical Skills}
+\section*{Honours and Selection}
+\cvitem{2026}{\textbf{IARCO 2026}, International Academic Research Competition: finalist; ranked 24th of 145 in the Junior division (\href{https://iarco.org/2026-winners}{results}).}{}
+\cvitem{2026}{\textbf{Cosmos Institute}: ranked the ORMAS application highest in its review cycle; invited to its technical track.}{}
+\cvitem{2026}{\textbf{Cohere Labs}: member, Open Science Community; the lab cited ORMAS for ``remarkable initiative in ML safety and auditability''.}{}
+\cvitem{2026}{\textbf{MIT Open Learning}: offered a 40\% scholarship on a further programme.}{}
 
-\skillrow{ML / AI}{PyTorch, PCGrad gradient surgery, ISS convergence theory, noise-robust training, multi-agent orchestration}
-
-\skillrow{Engineering}{Python (advanced), C++, LaTeX, Docker, FastAPI, SQLAlchemy, ChromaDB, Prometheus, React, TypeScript}
-
-\skillrow{Languages}{English (fluent), Bengali (native)}
+% ============================================================
+% SOFTWARE
+% ============================================================
+\section*{Software}
+\cvitem{2026}{\textbf{\href{https://pypi.org/project/ormas-monitor/}{ormas-monitor}} (PyPI): per-layer alarms, certified dead channels, optional repair and a tamper-evident training record for PyTorch. \href{https://oxiedo.github.io/ormas-monitor/}{Docs}}{}
+\cvitem{2026}{\textbf{ORMAS reference implementation}: reproduces all 383 experiments. \href{https://anonymous.4open.science/r/ormas-EB73}{Source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{run archive}}{}
 
 % ============================================================
 % EDUCATION
 % ============================================================
-\needspace{3\baselineskip}\section*{Education}
-
-\cvitem{Fall 2027}{%
-  \textbf{Prospective Undergraduate}
-}{}
-
-\cvitem{2025--2026}{%
-  \textbf{Self-Directed Coursework}
-}{%
-  \begin{bullets}
-    \item Deep Learning Specialization (5 courses), DeepLearning.AI (Andrew Ng). \mbox{\textit{Completed.}}
-    \item MIT Open Learning (MITx) --- seven programmes across foundation models, precision medicine, sustainable energy and transportation, and AI entrepreneurship. \textit{Completed.}
-  \end{bullets}
-}
+\section*{Education}
+\cvitem{now}{\textbf{Higher Secondary Certificate (HSC)}, final year, Rajuk Uttara Model College, Dhaka.}{}
+\cvitem{2025--2026}{\textbf{MIT Open Learning (MITx)}: seven programmes completed, in foundation models, AI in medicine, energy, transportation and AI entrepreneurship. \textbf{Deep Learning Specialization} (five courses), DeepLearning.AI.}{}
 
 % ============================================================
-% OPEN-SOURCE
+% OTHER
 % ============================================================
-\section*{Open-Source \& Archives}
-
-\skillrow{ORMAS}{\href{https://zenodo.org/records/21730363}{preprint} $\cdot$ \href{https://anonymous.4open.science/r/ormas-EB73}{source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{full archive of 383 experiments}}
-\skillrow{OXIMO}{\href{https://anonymous.4open.science/r/oximo-5C73}{source} \enspace {\footnotesize (anonymous review)}}
+\section*{Other}
+\cvitem{Nov 2024}{Guinness World Record attempt: 28 unedited livestreamed working sessions over two weeks.}{}
+\cvitem{}{Languages: English (fluent), Bengali (native).}{}
 
 \vfill
 \begin{flushright}
-  \small\textit{Last updated 30 September 2026}
+  \footnotesize\color{muted}\textit{Last updated November 2026}
 \end{flushright}
 
 \end{document}
