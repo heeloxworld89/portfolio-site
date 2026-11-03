@@ -12,6 +12,7 @@
 \usepackage{charter}
 \usepackage{parskip}
 \usepackage{needspace}
+\usepackage{ragged2e}
 
 % ============================================================
 % COLORS (match raadh.me)
@@ -77,10 +78,13 @@
 
 % Numbered publication list
 \newlist{pubs}{enumerate}{1}
-\setlist[pubs]{leftmargin=2.35cm, labelsep=0.25cm, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
+\setlist[pubs]{leftmargin=2.35cm, labelwidth=2.1cm, labelsep=0.25cm, labelindent=0pt, align=left, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
 
 \setlength{\emergencystretch}{2.5em}
+\hyphenpenalty=10000
+\exhyphenpenalty=50
 \begin{document}
+\RaggedRight
 \color{body}
 
 % ============================================================
@@ -98,7 +102,7 @@
     \enspace$|$\enspace
     \href{https://oxiedo.com}{oxiedo.com}
     \enspace$|$\enspace
-    Dhaka, Bangladesh
+    {\color{muted}Dhaka, Bangladesh}
   }
 \end{center}
 \vspace{1pt}
@@ -129,7 +133,7 @@
 }{%
   \begin{bullets}
     \item Developed ORMAS, a training architecture that monitors each layer during training, repairs failing components and logs every correction with its cause.
-    \item Established local practical input-to-state stability under bounded repairs, and showed that per-channel-bounded repairs cannot reactivate a dead BatchNorm--ReLU channel (DeepMath 2026).
+    \item In the DeepMath 2026 paper, established local practical input-to-state stability under bounded repairs and showed that per-channel-bounded repairs cannot reactivate a dead BatchNorm--ReLU channel.
     \item After two trained convolutional layers were zeroed, ORMAS recovered to 80.3\% test accuracy on CIFAR-10, compared with 10.00\% for standard training (three seeds). Under sequential learning it retained 94.6\% on the first task, compared with 47.3\% for \mbox{ResNet-18}.
     \item Conducted 383 controlled experiments across four architecture families (DAG, two CNNs, \mbox{ResNet-18}) on CIFAR-10 and CIFAR-100, all reproducible from seed, on one RTX~3090. Codebase of 16,316 lines of PyTorch.
     \item Released ormas-monitor on PyPI, which implements the dead-channel result as a runtime check. Applied to 22 torchvision models, it found near-zero channels in 19 of the 21 that use BatchNorm and ReLU; removing them from VGG-19-BN reduced compute by 18.6\% without changing top-1 predictions on a 64-image sample.
@@ -142,7 +146,7 @@
 \needspace{5\baselineskip}\section*{Publications}
 \noindent{\footnotesize\color{muted}Peer-reviewed}
 \begin{pubs}
-  \item \textbf{R.~A.~D. Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textit{DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks}, The Ohio State University, 2026. Double-blind review; poster. \href{https://openreview.net/forum?id=kowltBZEIv}{OpenReview} $\cdot$ \href{https://www.raadh.me/deepmath}{Poster}
+  \item \textbf{R.~A.~D. Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textit{DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks}, The Ohio State University, 2026. Double-blind review; poster. \mbox{\href{https://openreview.net/forum?id=kowltBZEIv}{OpenReview} $\cdot$ \href{https://www.raadh.me/deepmath}{Poster}}
 \end{pubs}
 \noindent{\footnotesize\color{muted}Preprints and technical reports}
 \begin{pubs}[resume]
@@ -156,11 +160,11 @@
 \needspace{5\baselineskip}\section*{Invited Talks and Presentations}
 \cvitem{Nov 2026}{%
   \textbf{Invited talk}, Cohere Labs, Toronto, Canada.\\
-  \textit{When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.}
+  {\small\textit{When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.}}
 }{}
 \cvitem{Oct 2026}{%
   \textbf{Poster}, DeepMath 2026, The Ohio State University, Columbus, OH.\\
-  \textit{Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.}
+  {\small\textit{Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.}}
 }{}
 
 % ============================================================
