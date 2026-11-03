@@ -79,6 +79,7 @@
 \newlist{pubs}{enumerate}{1}
 \setlist[pubs]{leftmargin=2.35cm, labelsep=0.25cm, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
 
+\setlength{\emergencystretch}{2.5em}
 \begin{document}
 \color{body}
 
@@ -102,36 +103,36 @@
 \end{center}
 \vspace{1pt}
 
-{\small\noindent Eighteen-year-old independent AI researcher and founder. Sole author of a peer-reviewed stability theory of self-repairing neural networks (DeepMath 2026), reviewer for a NeurIPS 2026 workshop, and invited speaker at Cohere Labs. Built ORMAS, the self-repairing network behind OXIEDO, alone: 383 experiments on one GPU, with no lab, advisor or outside funding.\par}
+{\small\noindent AI researcher and founder, age 18. Sole author of a peer-reviewed paper on the stability of self-repairing neural networks (DeepMath 2026). Reviewer for a NeurIPS 2026 workshop and invited speaker at Cohere Labs. Developed ORMAS independently over 383 experiments on a single GPU, without institutional affiliation or external funding.\par}
 
 % ============================================================
 % DISTINCTIONS (the skim layer)
 % ============================================================
 \needspace{5\baselineskip}\section*{Selected Distinctions}
 \begin{bullets}
-  \item \textbf{Peer-reviewed, sole author} \,---\, DeepMath 2026, Conference on the Mathematical Theory of Deep Neural Networks, The Ohio State University. Double-blind review; one of 41 accepted papers.
-  \item \textbf{Reviewer, NeurIPS 2026 Workshop} \,---\, \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good}, Paris, France; one of 490 reviewers.
-  \item \textbf{Invited talk, Cohere Labs} \,---\, Toronto, Canada, November 2026.
-  \item \textbf{Inventor of ORMAS} \,---\, a network that repairs itself mid-training: 80.3\% accuracy after trained layers are destroyed, against 10.0\% (chance) for standard training.
-  \item \textbf{Highest-ranked application} \,---\, Cosmos Institute, 2026 review cycle.
-  \item \textbf{Top 1\% of applicants} \,---\, 1752vc Ignite, for OXIEDO.
+  \item \textbf{Sole author, peer-reviewed paper}, DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks), The Ohio State University. Double-blind review; 41 papers accepted.
+  \item \textbf{Reviewer}, NeurIPS 2026 Workshop on \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good}, Paris, France.
+  \item \textbf{Invited talk}, Cohere Labs, Toronto, Canada, November 2026.
+  \item \textbf{Highest-ranked application}, Cosmos Institute, 2026 review cycle.
+  \item \textbf{Accepted, top 1\% of applicants}, 1752vc Ignite, 2026 (OXIEDO).
 \end{bullets}
 
 % ============================================================
 % RESEARCH
 % ============================================================
 \needspace{5\baselineskip}\section*{Research}
-\noindent{\small\textbf{Focus.} Stability theory of self-repairing training: neural networks that detect, repair and record their own failures while they train, analyzed as switched control systems through input-to-state stability (ISS).\par}
+\noindent{\small\textbf{Interests.} Stability of neural network training under non-gradient updates; self-repairing and auditable training; input-to-state stability and switched systems.\par}
 
 \vspace{3pt}
 \cvitem{2024--present}{%
   \textbf{Independent Researcher} \quad {\small ORMAS: self-repairing neural networks}
 }{%
   \begin{bullets}
-    \item \textbf{Proved} that bounded repairs keep training within a computable radius of a local minimum (practical ISS), and a matching impossibility result: no per-channel-bounded repair can revive a dead channel in a BatchNorm and ReLU layer. Self-repairing training is therefore a switched system of bounded corrections and isolated resets.
-    \item \textbf{Demonstrated} recovery to \textbf{80.3\%} after trained convolutional layers are zeroed, against \textbf{10.00\%} for standard training in all three seeds; \textbf{94.6\%} retention under sequential learning, against 47.3\% for \mbox{ResNet-18}.
-    \item \textbf{Ran 383 controlled experiments} across four architecture families (DAG, two CNNs, \mbox{ResNet-18}; CIFAR-10/100), each reproducible from seed, on a single RTX~3090; 16,316 lines of PyTorch.
-    \item \textbf{Shipped ormas-monitor} (PyPI), which turns the impossibility theorem into a certified check. In 19 of 21 released torchvision models with BatchNorm and ReLU it finds near-zero channels; removing them from VGG-19-BN cuts compute by 18.6\% with unchanged top-1 predictions \mbox{(64-image check)}.
+    \item Developed ORMAS, a training architecture that monitors each layer during training, repairs failing components and logs every correction with its cause.
+    \item Established local practical input-to-state stability under bounded repairs, and showed that per-channel-bounded repairs cannot reactivate a dead BatchNorm--ReLU channel (DeepMath 2026).
+    \item After two trained convolutional layers were zeroed, ORMAS recovered to 80.3\% test accuracy on CIFAR-10, compared with 10.00\% for standard training (three seeds). Under sequential learning it retained 94.6\% on the first task, compared with 47.3\% for \mbox{ResNet-18}.
+    \item Conducted 383 controlled experiments across four architecture families (DAG, two CNNs, \mbox{ResNet-18}) on CIFAR-10 and CIFAR-100, all reproducible from seed, on one RTX~3090. Codebase of 16,316 lines of PyTorch.
+    \item Released ormas-monitor on PyPI, which implements the dead-channel result as a runtime check. Applied to 22 torchvision models, it found near-zero channels in 19 of the 21 that use BatchNorm and ReLU; removing them from VGG-19-BN reduced compute by 18.6\% without changing top-1 predictions on a 64-image sample.
   \end{bullets}
 }
 
@@ -167,7 +168,7 @@
 % ============================================================
 \needspace{5\baselineskip}\section*{Professional Service}
 \cvitem{2026}{%
-  \textbf{Reviewer, NeurIPS 2026 Workshop on Trustworthy AI for Good}, Palais des Congr\`es de Paris, Paris, France. Reviewed submissions on mechanistic interpretability, attribution, model auditing and post-deployment monitoring. \href{https://trustworthy-ai-for-good.github.io/}{Workshop} $\cdot$ \href{https://trustworthy-ai-for-good.github.io/\#reviewers}{Reviewer list}
+  \textbf{Reviewer}, NeurIPS 2026 Workshop on Trustworthy AI for Good, Palais des Congr\`es de Paris, France. Submissions on mechanistic interpretability, attribution, model auditing and post-deployment monitoring. \href{https://trustworthy-ai-for-good.github.io/}{Workshop} $\cdot$ \href{https://trustworthy-ai-for-good.github.io/\#reviewers}{Reviewer list}
 }{}
 
 % ============================================================
@@ -178,57 +179,57 @@
   \textbf{Founder \& CEO, \href{https://oxiedo.com}{OXIEDO}} \quad {\small Auditable AI training for regulated industries}
 }{%
   \begin{bullets}
-    \item Licenses ORMAS on-premise. Every training run produces a tamper-evident record of what the model learned, so banks, hospitals and other regulated institutions can train AI on data they already hold.
-    \item Selected for 1752vc Ignite (top 1\% of applicants); offered a place by the Freshmango accelerator; finalist, The Bridge by Entrepreneur First (San Francisco); invited to Onstage W26. In investment discussions with 500 Global and 1752vc.
+    \item Licenses ORMAS for on-premise use in regulated industries. Each training run produces a tamper-evident record of model changes, for institutions such as banks and hospitals that cannot yet train on their own data.
+    \item Accepted to 1752vc Ignite (top 1\% of applicants) and offered a place in the Freshmango accelerator. Finalist, The Bridge by Entrepreneur First, San Francisco. Invited to the Onstage W26 pre-pitch. Investment discussions ongoing with 500 Global and 1752vc.
   \end{bullets}
 }
 \cvitem{2023--2026}{%
   \textbf{Sole Architect, OXIMO} \quad {\small Multi-agent operating system}
 }{%
   \begin{bullets}
-    \item Designed and built 40,933 lines of production Python with 2,069 passing tests, rebuilt from a 106,000-line monolith (72\% smaller). It creates the specialist roles a task needs, with no human in the loop.
+    \item Designed and built a multi-agent system of 40,933 lines of Python with 2,069 tests, refactored from a 106,000-line codebase. Agents create new specialist roles as tasks require.
   \end{bullets}
 }
 \cvitem{2025--2026}{%
   \textbf{Founder \& CEO, Black Bloxie LTD} \quad {\small England \& Wales, company no.\ 16711223}
 }{%
   \begin{bullets}
-    \item Ran a twelve-month controlled field study of OXIMO on a live e-commerce company: removing the system cut output by 91\%; restoring it recovered and exceeded the original level.
+    \item Ran a twelve-month controlled study of OXIMO on a live e-commerce business. Output fell 91\% when the system was removed and exceeded its original level after it was restored.
   \end{bullets}
 }
 \cvitem{2020--2024}{%
-  \textbf{Five earlier ventures}, founded between ages 12 and 17; built and sold a stock-prediction system for about \$10,000 at 15.
+  \textbf{Five earlier ventures}, founded between ages 12 and 17. Sold a stock-prediction system for approximately \$10,000 at age 15.
 }{}
 
 % ============================================================
 % HONORS
 % ============================================================
 \needspace{5\baselineskip}\section*{Honors and Awards}
-\cvitem{2026}{\textbf{IARCO 2026}, International Academic Research Competition: finalist, ranked 24th of 145 in the Junior division; nearly 500 participants from 60 countries. \href{https://iarco.org/2026-winners}{Results}}{}
-\cvitem{2026}{\textbf{Cosmos Institute}: ORMAS was the highest-ranked application in its review cycle; invited to the technical track.}{}
-\cvitem{2026}{\textbf{Cohere Labs}, Toronto, Canada: invited into the lab's research community; the lab cited ORMAS for ``remarkable initiative in ML safety and auditability.''}{}
-\cvitem{2026}{\textbf{FIAP}, S\~ao Paulo, Brazil, one of Brazil's leading technology schools: member; sponsored place in MIT Open Learning's Universal AI program.}{}
+\cvitem{2026}{\textbf{Finalist}, International Academic Research Competition (IARCO 2026). Ranked 24th of 145 in the Junior division; approximately 500 participants from 60 countries. \href{https://iarco.org/2026-winners}{Results}}{}
+\cvitem{2026}{\textbf{Highest-ranked application}, Cosmos Institute, 2026 review cycle. Invited to the technical track.}{}
+\cvitem{2026}{\textbf{Research community member}, Cohere Labs, Toronto, Canada. Invited on the basis of ORMAS, which the lab described as showing ``remarkable initiative in ML safety and auditability.''}{}
+\cvitem{2026}{\textbf{Member}, FIAP, S\~ao Paulo, Brazil. Sponsored for MIT Open Learning's Universal AI program.}{}
 
 % ============================================================
 % SOFTWARE
 % ============================================================
 \needspace{5\baselineskip}\section*{Software}
-\cvitem{2026}{\textbf{\href{https://pypi.org/project/ormas-monitor/}{ormas-monitor}} (PyPI): per-layer alarms, certified dead channels, optional repair and a tamper-evident training record for PyTorch. \href{https://oxiedo.github.io/ormas-monitor/}{Documentation}}{}
-\cvitem{2026}{\textbf{ORMAS reference implementation}: reproduces all 383 experiments. \href{https://anonymous.4open.science/r/ormas-EB73/README.md}{Source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{Run archive}}{}
+\cvitem{2026}{\textbf{\href{https://pypi.org/project/ormas-monitor/}{ormas-monitor}} (PyPI). Training monitor for PyTorch with per-layer alarms, dead-channel certification, optional repair and a tamper-evident log. \href{https://oxiedo.github.io/ormas-monitor/}{Documentation}}{}
+\cvitem{2026}{\textbf{ORMAS reference implementation}. Reproduces all 383 experiments. \href{https://anonymous.4open.science/r/ormas-EB73/README.md}{Source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{Run archive}}{}
 
 % ============================================================
 % EDUCATION
 % ============================================================
 \needspace{5\baselineskip}\section*{Education}
-\cvitem{present}{\textbf{High School Senior; Prospective Undergraduate.} Homeschooled, combined with senior-year high school coursework. Independent study in the mathematics of learning dynamics, control theory and machine learning.}{}
-\cvitem{2025--2026}{\textbf{MIT Open Learning (MITx Online)}: seven programs completed, in foundation models, AI in medicine, energy, transportation and AI entrepreneurship.}{}
-\cvitem{2025--2026}{\textbf{DeepLearning.AI}: Deep Learning Specialization, five courses.}{}
+\cvitem{present}{\textbf{High school senior; prospective undergraduate.} Homeschooled, with senior-year high school coursework. Independent study in machine learning, control theory and the mathematics of learning dynamics.}{}
+\cvitem{2025--2026}{\textbf{MIT Open Learning (MITx Online)}. Seven programs completed in foundation models, AI in medicine, energy, transportation and entrepreneurship.}{}
+\cvitem{2025--2026}{\textbf{DeepLearning.AI}. Deep Learning Specialization (five courses).}{}
 
 % ============================================================
 % ADDITIONAL
 % ============================================================
 \needspace{5\baselineskip}\section*{Additional}
-\cvitem{Nov 2024}{Guinness World Record attempt: 28 unedited livestreamed working sessions over two weeks.}{}
+\cvitem{Nov 2024}{Guinness World Record attempt. 28 unedited livestreamed work sessions over two weeks.}{}
 \cvitem{}{Languages: English (fluent), Bengali (native).}{}
 
 \vfill
