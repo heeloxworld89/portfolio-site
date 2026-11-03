@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
-import { links, news, publications, talks } from "../data";
+import { links, news, publications, talks, youtubeId } from "../data";
 import "../ux/home.css";
 
 type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: string; note: string };
@@ -32,8 +32,9 @@ const Arrow = () => (
 const ext = (href: string) => (href.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" });
 
 export default function Home() {
-  const featured = news.find((n) => n.kind === "Conference") ?? news[0];
+  const featured = news.find((n) => n.kind === "Invited talk") ?? news[0];
   const rest = news.filter((n) => n !== featured);
+  const recording = youtubeId(links.cohereRecording);
   return (
     <SiteLayout>
       <div className="ux-home">
@@ -50,9 +51,10 @@ export default function Home() {
               <span className="rx-h2-age">Peer-reviewed at <em>eighteen.</em></span>
             </h1>
             <p className="rx-h2-sub">
-              Rokib Al Dhin Raadh is an AI researcher and the founder of <b>OXIEDO</b>. His network, ORMAS, finds its
-              failing components during training, repairs them and records every change. His analysis of its stability
-              was accepted after double-blind review at DeepMath 2026, and he was a reviewer for a NeurIPS 2026 workshop.
+              Most AI models cannot account for what they learned. <b>OXIEDO</b> is changing that. Its engine, ORMAS,
+              finds its own broken parts, repairs them mid-training and writes a tamper-evident record of every change,
+              so banks and hospitals can train AI on the data they have been locked out of. Raadh built it at 18, on one
+              graphics card he paid for himself, and its mathematics passed double-blind review at DeepMath 2026.
             </p>
             <div className="rx-btns">
               <Link className="rx-btn is-cta" to="/research">Read the research <Arrow /></Link>
@@ -103,12 +105,12 @@ export default function Home() {
             <div>
               <p className="rx-sel-eb">Recognition · 2026</p>
               <h2 id="rx-sel-h">
-                Selected distinctions, <em>2026.</em>
+                Vetted by the rooms <em>that are hardest to enter.</em>
               </h2>
             </div>
             <p>
-              A sole-authored paper at DeepMath 2026, a reviewer role at a NeurIPS 2026 workshop, an invited talk at
-              Cohere Labs, the highest-ranked application at the Cosmos Institute and the top 1% at 1752vc Ignite.
+              Accepted at DeepMath after double-blind review, a reviewer for NeurIPS 2026, invited to speak at Cohere
+              Labs, ranked highest by the Cosmos Institute and taken into 1752vc Ignite from the top 1% of applicants.
             </p>
           </div>
           <ul className="rx-logos">
@@ -126,7 +128,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link className="rx-sel-more" to="/evidence">Every claim, with its source <Arrow /></Link>
+          <Link className="rx-sel-more" to="/about">Read the full record <Arrow /></Link>
         </div>
       </section>
 
@@ -139,7 +141,7 @@ export default function Home() {
               <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a>. He invented{" "}
               <Link to="/research">ORMAS</Link>, a self-repairing neural network that identifies, repairs and records its
               own failures while it trains, and is the sole author of a paper on its stability, accepted at{" "}
-              <a href="/deepmath">DeepMath 2026</a> after double-blind review. He was a reviewer for the{" "}
+              <Link to="/deepmath">DeepMath 2026</Link> after double-blind review. He was a reviewer for the{" "}
               <a href={links.neuripsReviewers} target="_blank" rel="noreferrer">NeurIPS 2026 Workshop on Trustworthy AI for Good</a>{" "}
               and gave an invited talk at Cohere Labs.
             </p>
@@ -154,7 +156,7 @@ export default function Home() {
             </p>
             <div className="rx-links">
               <a href={links.cv} target="_blank" rel="noreferrer">CV <Arrow /></a>
-              <a href="/deepmath">DeepMath poster <Arrow /></a>
+              <Link to="/deepmath">DeepMath poster <Arrow /></Link>
               <a href={links.doi} target="_blank" rel="noreferrer">Preprint <Arrow /></a>
               <a href={links.code} target="_blank" rel="noreferrer">Code <Arrow /></a>
               <a href={links.monitor} target="_blank" rel="noreferrer">ormas-monitor <Arrow /></a>
@@ -191,42 +193,39 @@ export default function Home() {
         <div className="rx-wrap">
           <h2 className="rx-label">News <small>updated November 2026</small></h2>
 
-          <article className="rx-dm-card has-photo">
+          <article className="rx-dm-card">
             <div className="rx-dm-main">
-              <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Conference · Poster · Double-blind review</p>
+              <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Invited talk · Cohere Labs · Toronto</p>
               <h3>
-                The mathematics behind ORMAS at <em>DeepMath&nbsp;2026.</em>
+                When the update is not a gradient: an invited talk at <em>Cohere&nbsp;Labs.</em>
               </h3>
               <p className="rx-dm-lede">
-                Raadh&rsquo;s sole-authored paper, accepted after double-blind review, was shown at the poster session of
-                DeepMath 2026 at <b>The Ohio State University</b> on 29 October. It was one of 41 papers accepted to the
-                Conference on the Mathematical Theory of Deep Neural Networks, whose invited speakers came from{" "}
-                <b>Michigan</b>, <b>Stanford</b>, <b>Penn</b>, <b>Georgia Tech</b>, the <b>University of Washington</b>{" "}
-                and <b>Brown</b>.
+                Cohere Labs, the research lab of <b>Cohere</b> in Toronto, invited Raadh as a guest speaker to present his
+                work on self-repairing neural networks. The talk explained why training whose updates are not gradients
+                can still converge, and exactly where the proof stops.
               </p>
               <p className="rx-dm-lede">
-                Prof. Zhihui Zhu of The Ohio State University printed and displayed the poster.
+                It came four days after the paper&rsquo;s poster session at <b>DeepMath 2026</b> at{" "}
+                <b>The Ohio State University</b>, and followed an invitation into the Cohere Labs research community,
+                which described ORMAS as showing &ldquo;remarkable initiative in ML safety and auditability.&rdquo;
               </p>
               <p className="rx-dm-paper">
-                &ldquo;Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training
-                Dynamics&rdquo;
+                &ldquo;When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network
+                Training&rdquo;
               </p>
-              <div className="rx-meta">Date: <b>{featured.date}</b> &nbsp;·&nbsp; By: <b>Rokib Al Dhin Raadh</b></div>
+              <div className="rx-meta">
+                Date: <b>{featured.date}</b> &nbsp;·&nbsp; Speaker: <b>Rokib Al Dhin Raadh</b>
+                {recording ? null : <> &nbsp;·&nbsp; Recording: <b>on YouTube soon</b></>}
+              </div>
               <div className="rx-btns">
-                <a className="rx-btn is-light" href="/deepmath">Poster and paper <Arrow /></a>
-                <a className="rx-btn is-outline-light" href={links.openreview} target="_blank" rel="noreferrer">OpenReview <Arrow /></a>
+                {recording ? (
+                  <a className="rx-btn is-light" href={links.cohereRecording} target="_blank" rel="noreferrer">Watch the talk <Arrow /></a>
+                ) : (
+                  <a className="rx-btn is-light" href={links.cohereTalk} target="_blank" rel="noreferrer">Event page <Arrow /></a>
+                )}
+                <Link className="rx-btn is-outline-light" to="/deepmath">The DeepMath paper <Arrow /></Link>
               </div>
             </div>
-            <figure className="ux-dm-fig">
-              <img
-                src="/assets/deepmath/poster-at-deepmath-800.webp"
-                srcSet="/assets/deepmath/poster-at-deepmath-800.webp 800w, /assets/deepmath/poster-at-deepmath-1400.webp 1400w"
-                sizes="(min-width: 1000px) 560px, 100vw"
-                width="800" height="600" loading="lazy" decoding="async"
-                alt="The poster Self-Repair as a Bounded Disturbance on display at DeepMath 2026, The Ohio State University"
-              />
-              <figcaption>The poster at DeepMath 2026, The Ohio State University, 29 October 2026.</figcaption>
-            </figure>
           </article>
 
           <div className="rx-rows ux-news-rows">
@@ -279,7 +278,7 @@ export default function Home() {
               </p>
               <div className="rx-btns">
                 <Link className="rx-btn" to="/research">Read the research <Arrow /></Link>
-                <a className="rx-btn is-ghost" href="/deepmath">DeepMath poster <Arrow /></a>
+                <Link className="rx-btn is-ghost" to="/deepmath">DeepMath poster <Arrow /></Link>
                 <a className="rx-btn is-ghost" href={links.preprint} target="_blank" rel="noreferrer">Preprint <Arrow /></a>
               </div>
             </div>

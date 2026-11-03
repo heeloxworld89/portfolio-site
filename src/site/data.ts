@@ -31,7 +31,18 @@ export const links = {
   monitor: "https://pypi.org/project/ormas-monitor/",
   monitorDocs: "https://oxiedo.github.io/ormas-monitor/",
   calendly: "https://calendly.com/raadh",
+  posterPdf: "/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf?v=20261023",
+  programme: "https://drive.google.com/file/d/1b_d27WosXvAi9IVP1lDwCBilCDe5oCGz/view",
+  // YouTube link to the recording of the Cohere Labs talk. Leave "" until it
+  // is published; every "Watch the talk" button and player appears once set.
+  cohereRecording: "",
 };
+
+/** YouTube video id from a watch, youtu.be, shorts or embed URL ("" if none). */
+export function youtubeId(url: string): string {
+  const m = url.match(/(?:youtu\.be\/|[?&]v=|\/(?:embed|shorts|live)\/)([\w-]{11})/);
+  return m ? m[1] : "";
+}
 
 export type NewsItem = { date: string; kind: string; title: string; body: string; href?: string };
 
@@ -197,6 +208,13 @@ export const pages = {
       "Each claim about Rokib Al Dhin Raadh, 18, founder of OXIEDO and inventor of ORMAS, with its source: DOI, ORCID, code, MITx records, and documents on request.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
+  },
+  "/deepmath": {
+    title: "Self-Repair as a Bounded Disturbance · DeepMath 2026 · Rokib Al Dhin Raadh",
+    description:
+      "Sole-authored DeepMath 2026 paper by Rokib Al Dhin Raadh on the stability of self-repairing neural network training. Poster, abstract, results, figures and Q&A.",
+    image: "/og/deepmath.png",
+    imageAlt: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics, DeepMath 2026 poster",
   },
 } as const;
 

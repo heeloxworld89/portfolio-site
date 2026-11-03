@@ -200,6 +200,7 @@ const deepmathPaper = {
   genre: "Conference poster",
   url: `${SITE}/deepmath`,
   sameAs: links.openreview,
+  image: `${SITE}/assets/deepmath/poster-at-deepmath.jpg`,
   creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
   keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "switched systems", "ORMAS"],
   description:
@@ -296,6 +297,7 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/work": { type: "WebPage", name: "Company: OXIEDO", main: "oxiedo", about: ["oxiedo", "oximo", "black-bloxie"] },
   "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
   "/evidence": { type: "WebPage", name: "Evidence", main: "person", about: ["person", "ormas-preprint", "deepmath-paper", "oxiedo"] },
+  "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
 };
 
 export function schemaFor(path: string): string {

@@ -2,11 +2,9 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { links, pages, type PagePath } from "./data";
 
-// `page` entries are static HTML outside the React app (public/*.html), so
-// they take a full page load rather than a client-side route change.
-const nav: { to: string; label: string; external?: boolean; page?: boolean }[] = [
+const nav: { to: string; label: string; external?: boolean }[] = [
   { to: "/research", label: "Research" },
-  { to: "/deepmath", label: "DeepMath", page: true },
+  { to: "/deepmath", label: "DeepMath" },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/evidence", label: "Evidence" },
@@ -82,8 +80,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             {nav.map((n) =>
               n.external ? (
                 <a key={n.to} href={n.to} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{n.label}</a>
-              ) : n.page ? (
-                <a key={n.to} href={n.to}>{n.label}</a>
               ) : (
                 <Link key={n.to} to={n.to} aria-current={pathname === n.to ? "page" : undefined}>{n.label}</Link>
               )
@@ -109,8 +105,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                   <li key={n.to}>
                     {n.external ? (
                       <a href={n.to} target="_blank" rel="noreferrer">{n.label}</a>
-                    ) : n.page ? (
-                      <a href={n.to}>{n.label}</a>
                     ) : (
                       <Link to={n.to}>{n.label}</Link>
                     )}
