@@ -130,12 +130,12 @@ export default function CVEducation() {
       <div>
         
         <div className="edu-status">
-          <span>12th Grade (Final Year) · Self-directed</span>
+          <span>High school senior · Prospective undergraduate</span>
         </div>
         
         <div className="content">
           <p className="edu-intro">
-            Self-taught in machine learning, systems engineering and theoretical computer science, with a focus on underlying mechanisms. Each subject was learned because the work demanded it, including four well beyond software:
+            Homeschooled, with senior-year high school coursework, and a prospective undergraduate. Independent study in machine learning, control theory and the mathematics of learning dynamics. Each subject was learned because the work demanded it, including four well beyond software:
           </p>
           
           <div className="edu-grid">
@@ -151,7 +151,7 @@ export default function CVEducation() {
 
             <div className="edu-card">
               <h5 className="edu-title">Market microstructure, at fifteen</h5>
-              <p className="edu-desc">The stock-prediction system he built and sold at 15 had to account for institutional order flow, which cannot be inferred from price data alone.</p>
+              <p className="edu-desc">The EWM trading algorithm he built and sold at 15 had to account for institutional order flow, which cannot be inferred from price data alone.</p>
             </div>
 
             <div className="edu-card">
@@ -163,17 +163,16 @@ export default function CVEducation() {
           {/* MIT Open Learning: the strongest external marks on his education, stated exactly. */}
           <div className="mit-card">
             <p className="mit-k">MIT Open Learning · MITx</p>
-            <h4 className="mit-h">Seven MIT programmes. <em>Before finishing school.</em></h4>
+            <h4 className="mit-h">Seven MIT programs. <em>Before finishing school.</em></h4>
             <p className="mit-lede">
-              While still in his final year of secondary school, Raadh completed seven programmes from MIT Open Learning,
-              covering foundation models, AI in medicine, energy and transport, and AI entrepreneurship: the same
-              regulated sectors OXIEDO now sells into. After an admissions call about his work, he was offered a 40%
-              scholarship on a further MIT programme.
+              As a high school senior, Raadh completed seven programs from MIT Open Learning, covering foundation
+              models, AI in medicine, energy and transportation, and AI entrepreneurship: the same regulated sectors
+              OXIEDO now sells into.
             </p>
             <div className="mit-stats">
-              <div><b>7</b><span>MIT programmes completed</span></div>
-              <div><b>40%</b><span>Scholarship offered on a further MIT programme</span></div>
-              <div><b>Sponsored</b><span>Into MIT Open Learning&apos;s Universal AI programme by FIAP</span></div>
+              <div><b>7</b><span>MIT programs completed</span></div>
+              <div><b>FIAP</b><span>Member; sponsored for MIT Open Learning&apos;s Universal AI program</span></div>
+              <div><b>5</b><span>Courses, Deep Learning Specialization</span></div>
             </div>
           </div>
 
@@ -216,22 +215,21 @@ export default function CVEducation() {
               </p>
             </div>
             <div>
-              <span className="mit-course-k">FIAP · São Paulo</span>
+              <span className="mit-course-k">FIAP · São Paulo, Brazil</span>
               <p>
-                One of Brazil&apos;s leading technology schools made him a member in early 2026 and sponsored his place in
-                MIT Open Learning&apos;s Universal AI programme.
+                Member since early 2026. FIAP sponsored his place in MIT Open Learning&apos;s Universal AI program.
               </p>
             </div>
           </div>
-          <h4 className="edu-sub">Research over exam preparation, by choice</h4>
+          <h4 className="edu-sub">The record outside the classroom</h4>
 
           {/* Big statement */}
           <div className="edu-choice">
             <p className="edu-choice-lead">
-              A deliberate choice to prioritise research.
+              Independent research alongside senior year.
             </p>
             <p className="edu-choice-body">
-              Work on the ISS characterization and OXIMO took priority over exam preparation. The results are recorded not in a transcript but in 383 experiments, 40,933 lines of production code, a public preprint and a peer-reviewed DeepMath 2026 acceptance.
+              Alongside school, the work on ORMAS and OXIMO produced 383 controlled experiments, 40,933 lines of production code, a public preprint and a peer-reviewed DeepMath 2026 paper.
             </p>
           </div>
 

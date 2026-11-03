@@ -19,8 +19,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Self-Repair as a Bounded Disturbance · DeepMath 2026 poster · Rokib Al Dhin Raadh</title>
-<meta name="description" content="DeepMath 2026 poster by Rokib Al Dhin Raadh, an 18-year-old independent researcher who couldn't attend in person. Join his invited Cohere Labs talk on 2 November, or book a call with questions or opportunities.">
+<meta name="description" content="DeepMath 2026 poster by Rokib Al Dhin Raadh, 18, sole author: input-to-state stability of self-repairing neural network training. Presented at The Ohio State University, 29 October 2026. Poster, abstract, figures and Q&amp;A.">
 <link rel="canonical" href="https://www.raadh.me/deepmath">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ScholarlyArticle","@id":"https://www.raadh.me/#deepmath-paper","headline":"Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics","name":"Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics","author":{"@type":"Person","@id":"https://www.raadh.me/#person","name":"Rokib Al Dhin Raadh","url":"https://www.raadh.me/","sameAs":["https://orcid.org/0009-0003-1178-5296"]},"genre":"Conference poster","inLanguage":"en","url":"https://www.raadh.me/deepmath","sameAs":"https://openreview.net/forum?id=kowltBZEIv","creativeWorkStatus":"Accepted (poster) after double-blind review, DeepMath 2026","dateCreated":"2026-09","image":"https://www.raadh.me/assets/deepmath/poster-at-deepmath.jpg","keywords":["input-to-state stability","self-repairing neural networks","training dynamics","switched systems","BatchNorm","ORMAS"],"description":"Sole-authored paper accepted after double-blind review at DeepMath 2026 (The Ohio State University) and shown at the poster session on 29 October 2026, one of 41 accepted papers. Bounded repairs keep training within a computable radius of a local minimum (practical input-to-state stability), and per-channel-bounded repairs cannot reactivate a dead BatchNorm-ReLU channel, so self-repairing training is a switched system.","isPartOf":{"@id":"https://www.raadh.me/#deepmath-2026"}},
+ {"@type":"Event","@id":"https://www.raadh.me/#deepmath-2026","name":"DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks","startDate":"2026-10-29","endDate":"2026-10-30","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","url":"https://deepmath-conference.com/","location":{"@type":"Place","name":"Energy Advancement Innovation Center, The Ohio State University","address":{"@type":"PostalAddress","streetAddress":"2281 Kenny Rd","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43210","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"DeepMath","url":"https://deepmath-conference.com/"}}
+]}
+</script>
 <meta name="theme-color" content="#0F766E">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Rokib Al Dhin Raadh">
@@ -139,6 +145,13 @@
   .note { border-top: 0; padding-top: 4px; }
   .meet-title { font-size: clamp(24px, 6.4vw, 32px); line-height: 1.2; font-weight: 700; margin: 0 0 8px; letter-spacing: -.01em; }
   .meet-lead { margin: 0 0 18px; color: var(--muted); }
+  .at-conf { margin: 0 0 18px; }
+  .at-conf img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+  .at-conf figcaption { margin: 10px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .conf-facts { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 10px; }
+  .conf-facts li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: baseline; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: #fff; }
+  .conf-facts b { color: var(--teal); font-size: 20px; line-height: 1.2; }
+  .conf-facts span { font-size: 15px; line-height: 1.45; }
   .meet { display: grid; gap: 14px; grid-template-columns: 1fr; }
   .talk { position: relative; overflow: hidden; border-radius: 16px; padding: 22px 20px 20px; background: var(--teal); color: #fff; display: grid; gap: 14px; }
   .talk::after { content: ""; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255, 255, 255, .07); pointer-events: none; }
@@ -233,18 +246,26 @@
 
   <!-- 1. Header -->
   <header>
-    <p class="venue">DeepMath 2026 · Ohio State · 29–30 Oct</p>
+    <p class="venue">DeepMath 2026 · The Ohio State University · Poster, 29 Oct 2026</p>
     <h1>Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics</h1>
-    <p class="byline"><strong>Rokib Al Dhin Raadh</strong> · Independent researcher · high-school senior, Dhaka, Bangladesh</p>
+    <p class="byline"><strong>Rokib Al Dhin Raadh</strong> · Independent researcher, Dhaka, Bangladesh · Sole author · Accepted after double-blind review</p>
   </header>
 
   <main id="main">
 
-    <!-- 2. From the author: why the poster is here alone, the talk, and a call -->
+    <!-- 2. From the author: the poster at the conference, the talk, and a call -->
     <section aria-labelledby="h-meet" id="meet" class="note">
       <h2 id="h-meet">From the author</h2>
-      <p class="meet-title">Thanks for scanning. I couldn't be here in person.</p>
-      <p class="meet-lead">I'm Rokib Al Dhin Raadh, an 18-year-old independent researcher in Dhaka, Bangladesh. I wrote this paper on my own, outside any lab, and it was accepted after double-blind review. I couldn't travel to Ohio State for the conference, so the poster is here without me, but you can still hear the work from me and ask me anything about it.</p>
+      <p class="meet-title">Thanks for scanning.</p>
+      <p class="meet-lead">I'm Rokib Al Dhin Raadh, an 18-year-old independent researcher in Dhaka, Bangladesh. I wrote this paper on my own, outside any lab, and it was accepted after double-blind review. I couldn't travel to Ohio State for the conference, so the poster was shown at the poster session on 29 October without me. You can still hear the work from me and ask me anything about it.</p>
+      <figure class="at-conf">
+        <img src="/assets/deepmath/poster-at-deepmath-800.webp"
+             srcset="/assets/deepmath/poster-at-deepmath-800.webp 800w, /assets/deepmath/poster-at-deepmath-1400.webp 1400w"
+             sizes="(min-width: 760px) 720px, calc(100vw - 40px)"
+             width="800" height="600" fetchpriority="high"
+             alt="The poster on display at the DeepMath 2026 poster session, The Ohio State University">
+        <figcaption>The poster at DeepMath 2026, The Ohio State University, 29 October 2026. Thank you to Prof. Zhihui Zhu of The Ohio State University, who printed and displayed it.</figcaption>
+      </figure>
       <div class="meet">
         <article class="talk" aria-labelledby="talk-h">
           <div class="talk-top">
@@ -254,9 +275,9 @@
               <h3 id="talk-h">When the Update Is Not a Gradient</h3>
             </div>
           </div>
-          <p class="when">Monday 2 November 2026, 12:00 ET (17:00 UTC), online</p>
+          <p class="when" id="talk-when">Monday 2 November 2026, 12:00 ET (17:00 UTC)</p>
           <p class="local" id="talk-local" hidden></p>
-          <p>Cohere Labs invited me as a guest speaker to present this DeepMath work to its Open Science Community. If you're interested, register and join live, with time for questions.</p>
+          <p id="talk-body">Cohere Labs invited me to present this work as a guest speaker, with time for questions.</p>
           <span class="badge" id="talk-badge"></span>
           <a class="btn btn-white" id="talk-btn" href="https://luma.com/p28sna3q" target="_blank" rel="noopener">Register on Luma</a>
         </article>
@@ -267,6 +288,17 @@
           <a class="btn btn-blue" id="book-btn" href="#" target="_blank" rel="noopener">Book a 30-minute call</a>
         </article>
       </div>
+    </section>
+
+    <!-- 2b. At the conference -->
+    <section aria-labelledby="h-conf">
+      <h2 id="h-conf">At DeepMath 2026</h2>
+      <ul class="conf-facts">
+        <li><b>41</b><span>papers accepted to the conference: 8 contributed talks and 33 posters. This is poster 36.</span></li>
+        <li><b>30 Sep</b><span>accepted after double-blind review: Accept (Poster).</span></li>
+        <li><b>29 Oct</b><span>poster session, Energy Advancement Innovation Center, The Ohio State University, Columbus.</span></li>
+      </ul>
+      <p class="hint">Invited speakers came from the University of Michigan, Stanford, the University of Pennsylvania, the University of Washington, Georgia Tech and Brown. <a href="https://drive.google.com/file/d/1b_d27WosXvAi9IVP1lDwCBilCDe5oCGz/view" target="_blank" rel="noopener">Conference programme (PDF)</a> · <a href="https://deepmath-conference.com/" target="_blank" rel="noopener">DeepMath</a></p>
     </section>
 
     <!-- 3. The poster -->
@@ -501,8 +533,8 @@ ormas-monitor demo</pre>
   <!-- 10. Footer -->
   <footer>
     <p>Questions and opportunities are always welcome.</p>
-    <span><a href="#meet">Join the talk or book a call</a>, or email <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>.</span>
-    <p class="meta">Poster version of 23 October 2026. All numbers are recomputed from the run logs (3 seeds, final epoch; sample s.d.) and supersede the submitted abstract where they differ. Thank you to DeepMath 2026 for displaying the poster in my absence.</p>
+    <span><a href="#meet">Book a call</a> or email <a href="mailto:raadh@oxiedo.com">raadh@oxiedo.com</a>. More at <a href="/">raadh.me</a>.</span>
+    <p class="meta">Poster version of 23 October 2026. All numbers are recomputed from the run logs (3 seeds, final epoch; sample s.d.) and supersede the submitted abstract where they differ. Thank you to Prof. Zhihui Zhu and to DeepMath 2026 for displaying the poster in my absence.</p>
   </footer>
 </div>
 
@@ -548,7 +580,9 @@ ormas-monitor demo</pre>
   var TALK_START = Date.UTC(2026, 10, 2, 17, 0), TALK_END = Date.UTC(2026, 10, 2, 18, 30),
       now = Date.now(), badge = document.getElementById("talk-badge");
   if (now > TALK_END) {
-    document.getElementById("talk-tag").textContent = "Talk · Cohere Labs · 2 November";
+    document.getElementById("talk-tag").textContent = "Invited talk · Cohere Labs · Presented";
+    document.getElementById("talk-when").textContent = "Presented on 2 November 2026";
+    document.getElementById("talk-body").textContent = "Cohere Labs invited me to present this work as a guest speaker. A recording will follow.";
     document.getElementById("talk-btn").textContent = "Event page";
     document.getElementById("bar-talk").hidden = true;
   } else {

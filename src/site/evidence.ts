@@ -24,12 +24,22 @@ export const groups: Group[] = [
         status: "Public record",
       },
       {
-        claim: "80.3% vs 10.0% after a layer is destroyed; 383 experiments on one RTX 3090",
-        detail: "Every number is in the preprint's tables. The code reproduces all 383 runs from seed.",
+        claim: "80.3% vs 10.0% after trained layers are zeroed; 383 experiments on one RTX 3090",
+        detail: "Every number is in the preprint's tables. The code reproduces all 383 runs from seed. The DeepMath poster recomputes the lesion figures from the run logs (two convolutional layers zeroed after epoch 100; 80.3 ± 1.5% with self-repair, 10.00% without, three seeds).",
         source: [
           { label: "Preprint", href: links.preprint },
           { label: "Code archive", href: links.code },
           { label: "Results archive", href: links.archive },
+          { label: "DeepMath poster", href: links.poster },
+        ],
+        status: "Public record",
+      },
+      {
+        claim: "ormas-monitor, an open training monitor for PyTorch (released 23 October 2026)",
+        detail: "Implements the dead-channel result from the DeepMath paper as a runtime check. Its published results report near-zero channels in 19 of the 21 torchvision models that use BatchNorm and ReLU, and an 18.6% compute reduction on VGG-19-BN with unchanged top-1 predictions on a 64-image sample.",
+        source: [
+          { label: "PyPI", href: links.monitor },
+          { label: "Documentation and results", href: links.monitorDocs },
         ],
         status: "Public record",
       },
@@ -48,18 +58,20 @@ export const groups: Group[] = [
       {
         claim: "DeepMath 2026: stability paper accepted after double-blind review (poster)",
         detail:
-          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. Decision released by the Program Chairs on 30 September 2026: Accept (Poster), submission 39 (the OpenReview record is dated 25 September and was finalised on 30 September). His poster is presented on 30 October. The OpenReview page may be limited to the conference community, so a screenshot of the decision is published here. The organizing committee's invitation letter (6 October 2026) confirms the acceptance and invites him to present at Ohio State; passport number and date of birth are redacted.",
+          "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University, 29–30 October 2026. Submissions are reviewed double-blind. Decision released by the Program Chairs on 30 September 2026: Accept (Poster), submission 39 (the OpenReview record is dated 25 September and was finalised on 30 September). The conference programme lists 41 accepted papers (8 contributed talks and 33 posters); this paper is poster 36. It was shown at the poster session on 29 October 2026, printed and displayed by Prof. Zhihui Zhu of The Ohio State University. The OpenReview page may be limited to the conference community, so a screenshot of the decision is published here. The organizing committee's invitation letter (6 October 2026) confirms the acceptance; passport number and date of birth are redacted.",
         source: [
           { label: "Decision: Accept (Poster), OpenReview screenshot", href: "/assets/evidence/deepmath-2026-openreview-decision.jpg" },
           { label: "Invitation letter from the organizing committee (PDF)", href: "/assets/evidence/deepmath-2026-invitation-letter.pdf" },
-          { label: "OpenReview submission record", href: "https://openreview.net/forum?id=kowltBZEIv" },
+          { label: "Conference programme (PDF)", href: "https://drive.google.com/file/d/1b_d27WosXvAi9IVP1lDwCBilCDe5oCGz/view" },
+          { label: "Poster and photo at the conference", href: links.poster },
+          { label: "OpenReview submission record", href: links.openreview },
           { label: "DeepMath 2026", href: links.deepmath },
         ],
         status: "Public record",
       },
       {
-        claim: "Reviewer, NeurIPS 2026 Trustworthy AI for Good workshop",
-        detail: "Workshop co-located with NeurIPS 2026 at the Paris satellite venue, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality. The workshop site lists him among the 490 reviewers who submitted official reviews.",
+        claim: "Reviewer, NeurIPS 2026 Workshop on Trustworthy AI for Good",
+        detail: "Workshop of NeurIPS 2026, Palais des Congrès de Paris, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality. The workshop site lists him among the 490 reviewers who submitted official reviews.",
         source: [
           { label: "Reviewer recognition letter (PDF)", href: "/assets/evidence/neurips-2026-ai4good-reviewer-letter.pdf" },
           { label: "Public reviewer list (workshop site)", href: links.neurips + "#reviewers" },
@@ -104,8 +116,8 @@ export const groups: Group[] = [
         status: "Public record",
       },
       {
-        claim: "Five ventures between ages 12 and 17; a stock-prediction system sold for about $10,000 at 15",
-        detail: "Records of the ventures and of the sale.",
+        claim: "Five ventures between ages 12 and 17; the EWM trading algorithm sold for about $10,000 at 15",
+        detail: "A tournament gaming app (co-founded), the EWM trading algorithm, a web-development sales agency, an e-commerce store and a blockchain software project that was discontinued. The algorithm was sold to a U.S. client. Records of the ventures and of the sale.",
         status: "On request",
       },
     ],
@@ -114,16 +126,16 @@ export const groups: Group[] = [
     id: "selection",
     title: "Selection and recognition, 2026",
     rows: [
-      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Cosmos Institute: ranked highest in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Freshmango: offered a place after a single interview", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "The Bridge (Entrepreneur First, San Francisco): reached the final round", detail: "Interview records from two completed rounds.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "500 Global: invited to a first-round interview (22 October 2026)", detail: "Interview invitation from 500 Global.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "Entrepreneur First, London: first-round interview", detail: "Interview invitation from EF's talent team.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "Invited talk, Cohere Labs (2 November 2026)", detail: "Public event page from Cohere Labs listing him as speaker for \"When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training\".", source: [{ label: "Event page (Luma)", href: links.cohereTalk }], status: "Public record" },
+      { claim: "Cohere Labs research community: invited member", detail: "Invitation from Cohere Labs, which described ORMAS as showing \"remarkable initiative in ML safety and auditability\".", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "IARCO 2026: finalist; ranked 24th of 145 in the Junior division", detail: "International Academic Research Competition 2026, for the research proposal \"Can a Machine's Own Failure Record Be Read? Evaluating the Human Usability and Reliability of Automatically Generated Neural Network Incident Logs\". Score 147. The competition drew about 500 participants from 60 countries.", source: [{ label: "IARCO 2026 results", href: links.iarco }, { label: "IARCO 2026 finalist list", href: "https://iarco.org/2026-finalists" }], status: "Public record" },
+      { claim: "Cosmos Institute: highest-ranked application in its 2026 review cycle", detail: "Correspondence from Cosmos Institute, which invited the work to its technical track.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "1752vc Ignite: accepted from the top 1% of applicants", detail: "Acceptance correspondence from 1752vc. Investment discussions with 1752vc are ongoing.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "500 Global: investment discussions with OXIEDO", detail: "Ongoing discussions following a first-round interview in October 2026.", status: "On request" },
+      { claim: "Freshmango: offered a place in the accelerator", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "The Bridge by Entrepreneur First (San Francisco): finalist", detail: "Reached the final round after a first-round interview with Entrepreneur First in London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
-      { claim: "IARCO 2026: finalist", detail: "International Academic Research Competition 2026, Junior category. IARCO's published list shows Rokib Al Dhin Raadh, Rajuk Uttara Model College, Bangladesh, as selected; the competition drew nearly 500 participants from 60 countries.", source: [{ label: "IARCO 2026 finalist list", href: "https://iarco.org/2026-finalists" }], status: "Public record" },
-      { claim: "Talk, Cohere Labs Open Science Community (2 November 2026)", detail: "Public event page from Cohere Labs (ML Math) listing him as speaker for \"When the Update Is Not a Gradient\".", source: [{ label: "Event page (Luma)", href: "https://luma.com/p28sna3q" }], status: "Public record" },
-      { claim: "Cohere Labs Open Science Community: member", detail: "Welcome correspondence from Cohere Labs.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "FIAP (São Paulo, Brazil): member", detail: "FIAP sponsored his place in MIT Open Learning's Universal AI program.", status: "On request" },
     ],
   },
   {
@@ -150,13 +162,8 @@ export const groups: Group[] = [
         source: [{ label: "Coursera verification", href: "https://coursera.org/verify/specialization/R7SYBBCXR1OY" }],
         status: "Public record",
       },
-      {
-        claim: "40% scholarship offered on a further MIT programme",
-        detail: "Offered after an admissions call about his work.",
-        status: "On request",
-      },
     ],
   },
 ];
 
-export const evidenceChecked = "2026-10-28";
+export const evidenceChecked = "2026-11-03";

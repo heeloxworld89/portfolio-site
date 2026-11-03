@@ -21,50 +21,77 @@ export const links = {
   substack: "https://rokibraadh.substack.com/",
   youtube: "https://www.youtube.com/@rokibraadh",
   founderEmail: "raadh@oxiedo.com",
-  email: "raadxbusiness9@gmail.com",
+  email: "raadh@oxiedo.com",
   neurips: "https://trustworthy-ai-for-good.github.io/",
+  neuripsReviewers: "https://trustworthy-ai-for-good.github.io/#reviewers",
+  openreview: "https://openreview.net/forum?id=kowltBZEIv",
+  poster: "/deepmath",
+  cohereTalk: "https://luma.com/p28sna3q",
+  iarco: "https://iarco.org/2026-winners",
+  monitor: "https://pypi.org/project/ormas-monitor/",
+  monitorDocs: "https://oxiedo.github.io/ormas-monitor/",
+  calendly: "https://calendly.com/raadh",
 };
 
 export type NewsItem = { date: string; kind: string; title: string; body: string; href?: string };
 
 export const news: NewsItem[] = [
   {
-    date: "30 Sep 2026", kind: "Peer review",
-    title: "ORMAS stability paper accepted at DeepMath 2026 after double-blind review",
-    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review for poster presentation at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 October. His poster is presented on 30 October.",
-    href: links.deepmath,
+    date: "2 Nov 2026", kind: "Invited talk",
+    title: "Invited talk at Cohere Labs on the stability of self-repairing training",
+    body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. A recording will follow.",
+    href: links.cohereTalk,
   },
   {
-    date: "Sep 2026", kind: "Reviewer",
-    title: "Named a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop",
-    body: "Raadh reviews submissions on mechanistic interpretability, attribution, auditing and post-deployment monitoring, the problems ORMAS was built to address, for the NeurIPS 2026 workshop in Paris.",
-    href: links.neurips,
+    date: "29 Oct 2026", kind: "Conference",
+    title: "Poster presented at DeepMath 2026, The Ohio State University",
+    body: "The paper was shown at the DeepMath 2026 poster session in Columbus, one of 41 papers accepted to the Conference on the Mathematical Theory of Deep Neural Networks. Prof. Zhihui Zhu of The Ohio State University printed and displayed the poster.",
+    href: links.poster,
+  },
+  {
+    date: "23 Oct 2026", kind: "Software",
+    title: "ormas-monitor released on PyPI",
+    body: "An open training monitor for PyTorch that implements the dead-channel result from the DeepMath paper as a runtime check, with per-layer alarms, optional repair and a tamper-evident log.",
+    href: links.monitor,
+  },
+  {
+    date: "30 Sep 2026", kind: "Peer review",
+    title: "Stability paper accepted at DeepMath 2026 after double-blind review",
+    body: "“Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics” was accepted after double-blind review at DeepMath 2026, the Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Raadh is the sole author.",
+    href: links.openreview,
+  },
+  {
+    date: "Sep 2026", kind: "Service",
+    title: "Reviewer for the NeurIPS 2026 Workshop on Trustworthy AI for Good",
+    body: "Raadh reviewed submissions on mechanistic interpretability, attribution, model auditing and post-deployment monitoring for the workshop, held at the Palais des Congrès de Paris on 12 December 2026. The workshop lists him among its reviewers.",
+    href: links.neuripsReviewers,
   },
   {
     date: "Sep 2026", kind: "Company",
     title: "OXIEDO accepted to 1752vc Ignite from the top 1% of applicants",
-    body: "1752vc placed OXIEDO in its Ignite cohort from the top 1% of applicants, and the equity-free Freshmango programme offered a place after a single interview. Raadh reached the final round of The Bridge (Entrepreneur First, San Francisco) after two interview rounds, and 500 Global has invited him to a first-round interview on 22 October.",
+    body: "1752vc accepted OXIEDO to its Ignite programme from the top 1% of applicants, and the Freshmango accelerator offered a place. Raadh was a finalist for The Bridge by Entrepreneur First in San Francisco. OXIEDO is in investment discussions with 500 Global and 1752vc.",
   },
   {
     date: "25 Sep 2026", kind: "Community",
-    title: "Joins Cohere Labs’ Open Science Community, cited for “remarkable initiative in ML safety and auditability”",
-    body: "Cohere’s research lab welcomed him into its Open Science Community, citing his solo development of ORMAS across 383 experiments.",
+    title: "Invited into the Cohere Labs research community",
+    body: "Cohere Labs, the research lab of Cohere in Toronto, invited Raadh into its research community on the basis of ORMAS, which it described as showing “remarkable initiative in ML safety and auditability.”",
   },
   {
     date: "Sep 2026", kind: "Competition",
-    title: "IARCO 2026 finalist, among nearly 500 participants from 60 countries",
-    body: "Selected for the final stage of the International Academic Research Competition, which drew nearly 500 participants from 60 countries.",
+    title: "IARCO 2026 finalist, ranked 24th of 145 in the Junior division",
+    body: "His research proposal, “Can a Machine’s Own Failure Record Be Read? Evaluating the Human Usability and Reliability of Automatically Generated Neural Network Incident Logs,” was ranked 24th of 145 in the Junior division of the International Academic Research Competition, which drew about 500 participants from 60 countries.",
+    href: links.iarco,
   },
   {
     date: "1 Aug 2026", kind: "Publication",
-    title: "Full ORMAS paper and code released openly",
-    body: "The full paper and a 36-page supplementary are public on Zenodo (DOI 10.5281/zenodo.21730363), with code that reproduces all 383 experiments, including the 80.3% vs 10.0% recovery after a layer is destroyed.",
+    title: "ORMAS paper and code released",
+    body: "The full paper and a 36-page supplement are public on Zenodo (DOI 10.5281/zenodo.21730363), with code that reproduces all 383 experiments.",
     href: links.preprint,
   },
   {
     date: "Jul 2026", kind: "Recognition",
-    title: "ORMAS ranked first in the Cosmos Institute review cycle",
-    body: "The ORMAS application ranked highest of every application in its cycle; Cosmos invited it to its technical track.",
+    title: "Highest-ranked application in the Cosmos Institute review cycle",
+    body: "The ORMAS application was the highest-ranked in its Cosmos Institute review cycle and was invited to the technical track.",
   },
 ];
 
@@ -77,19 +104,19 @@ export type Talk = {
 };
 export const talks: Talk[] = [
   {
-    id: "deepmath-2026", start: "2026-10-30", end: "2026-10-30", day: "30", month: "Oct 2026",
+    id: "deepmath-2026", start: "2026-10-29", end: "2026-10-29", day: "29", month: "Oct 2026",
     kind: "Poster", host: "DeepMath 2026", logo: "/assets/images/logos/deepmath.png",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
-    where: "Ohio State University, Columbus",
-    note: "The stability result behind ORMAS, accepted after double-blind review at the Conference on the Mathematical Theory of Deep Neural Networks.",
-    href: "https://deepmath-conference.com/", hrefLabel: "Conference site",
+    where: "The Ohio State University, Columbus, OH",
+    note: "Poster session of the Conference on the Mathematical Theory of Deep Neural Networks. One of 41 accepted papers.",
+    href: "/deepmath", hrefLabel: "Poster and paper",
   },
   {
-    id: "cohere-labs-2026", start: "2026-11-02", end: "2026-11-02", day: "2", month: "Nov 2026", time: "12:00 EST",
-    kind: "Talk", host: "Cohere Labs", logo: "/assets/images/logos/cohere.svg",
+    id: "cohere-labs-2026", start: "2026-11-02", end: "2026-11-02", day: "2", month: "Nov 2026",
+    kind: "Invited talk", host: "Cohere Labs", logo: "/assets/images/logos/cohere.svg",
     title: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
-    where: "Cohere Labs Open Science Community",
-    note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk shows why, and exactly where the proof stops.",
+    where: "Cohere Labs, Toronto, Canada",
+    note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk covers why, and where the proof stops.",
     href: "https://luma.com/p28sna3q", hrefLabel: "Event page",
   },
 ];
@@ -98,14 +125,18 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
-    venue: "Accepted after double-blind review, DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, Ohio State University, 29–30 Oct 2026. Poster, 30 Oct.",
+    venue: "DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, The Ohio State University. Double-blind review; poster, 29 Oct 2026.",
     year: "2026",
-    links: [{ label: "Conference", href: links.deepmath }],
+    links: [
+      { label: "OpenReview", href: links.openreview },
+      { label: "Poster", href: links.poster },
+      { label: "Conference", href: links.deepmath },
+    ],
   },
   {
     authors: "R. A. D. Raadh",
     title: "ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction",
-    venue: "Preprint, Zenodo, 1 Aug 2026. Full paper, 36-page supplementary and code reproducing all 383 experiments. DOI 10.5281/zenodo.21730363.",
+    venue: "Preprint, Zenodo, 1 Aug 2026. Full paper, 36-page supplement and code reproducing all 383 experiments. DOI 10.5281/zenodo.21730363.",
     year: "2026",
     links: [
       { label: "Paper", href: links.preprint },
@@ -115,10 +146,17 @@ export const publications = [
   },
   {
     authors: "R. A. D. Raadh",
-    title: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A twelve-month controlled ablation study",
+    title: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A Twelve-Month Controlled Ablation Study",
     venue: "Technical report, 2026. Twelve-month controlled field study on a live UK company (Black Bloxie LTD): removing OXIMO cut output by 91%.",
     year: "2026",
     links: [{ label: "PDF", href: links.techPaper }, { label: "Whitepaper", href: links.whitepaper }],
+  },
+  {
+    authors: "R. A. D. Raadh",
+    title: "Can a Machine’s Own Failure Record Be Read? Evaluating the Human Usability and Reliability of Automatically Generated Neural Network Incident Logs",
+    venue: "Research proposal, International Academic Research Competition (IARCO 2026). Finalist; ranked 24th of 145 in the Junior division.",
+    year: "2026",
+    links: [{ label: "Results", href: links.iarco }],
   },
 ];
 
@@ -126,18 +164,18 @@ export const publications = [
 // the share card rendered by assets-source/og/make.cjs.
 export const pages = {
   "/": {
-    title: "Rokib Al Dhin Raadh, 18 — Founder of OXIEDO, Inventor of ORMAS",
+    title: "Rokib Al Dhin Raadh — AI Researcher, Founder of OXIEDO, Inventor of ORMAS",
     description:
-      "Rokib Al Dhin Raadh, 18, international AI founder: CEO of OXIEDO, founder of UK company Black Bloxie LTD, inventor of ORMAS. DeepMath 2026; NeurIPS reviewer.",
+      "Rokib Al Dhin Raadh, 18: AI researcher and founder of OXIEDO. Sole-authored DeepMath 2026 paper, NeurIPS 2026 workshop reviewer, invited talk at Cohere Labs.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
     title: "ORMAS: The Self-Repairing Neural Network — Rokib Al Dhin Raadh",
     description:
-      "ORMAS repairs its own failures in training: 80.3% accuracy after a layer is destroyed vs 10.0% for a baseline. Stability paper accepted at DeepMath 2026.",
+      "ORMAS repairs its own failures during training: 80.3% accuracy after trained layers are zeroed, against 10.0% for standard training. Stability paper at DeepMath 2026.",
     image: "/og/research-v3.jpg",
-    imageAlt: "ORMAS, the self-repairing neural network, recovers to 80.3% after a layer is destroyed; a parameter-matched baseline stays at 10.0%",
+    imageAlt: "ORMAS, the self-repairing neural network, recovers to 80.3% after trained layers are zeroed; standard training stays at 10.0%",
   },
   "/work": {
     title: "OXIEDO: Auditable AI Training — Founded by Rokib Al Dhin Raadh",
@@ -147,9 +185,9 @@ export const pages = {
     imageAlt: "OXIEDO, founded by Rokib Al Dhin Raadh, and the Model Change Record: a tamper-evident log of every weight change in training",
   },
   "/about": {
-    title: "About Rokib Al Dhin Raadh — Founder & CEO of OXIEDO",
+    title: "About Rokib Al Dhin Raadh — AI Researcher and Founder of OXIEDO",
     description:
-      "Rokib Al Dhin Raadh, 18, international AI founder of OXIEDO and UK company Black Bloxie LTD. DeepMath 2026, NeurIPS 2026 reviewer, 1752vc top 1%.",
+      "Rokib Al Dhin Raadh, 18, AI researcher and founder of OXIEDO: DeepMath 2026 paper, NeurIPS 2026 workshop reviewer, Cohere Labs invited talk, 1752vc top 1%.",
     image: "/og/about-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },

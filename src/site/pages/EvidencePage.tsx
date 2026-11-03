@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import { links } from "../data";
 import "../ux/evidence.css";
-import { groups } from "../evidence";
+import { evidenceChecked, groups } from "../evidence";
 
+const checkedLabel = new Date(`${evidenceChecked}T00:00:00Z`).toLocaleDateString("en-GB", {
+  day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+});
 const publicCount = groups.flatMap((g) => g.rows).filter((r) => r.status === "Public record").length;
 const total = groups.flatMap((g) => g.rows).length;
 
@@ -17,12 +20,12 @@ export default function EvidencePage() {
             <h2 className="rx-label">Evidence</h2>
             <h1>Every claim on this site, with where to check it.</h1>
             <p>
-              Rokib Al Dhin Raadh, 18, is the founder and CEO of OXIEDO and the inventor of ORMAS. This page lists each
+              Rokib Al Dhin Raadh, 18, is an AI researcher, the founder and CEO of OXIEDO and the inventor of ORMAS. This page lists each
               claim made on raadh.me and its source: {publicCount} of {total} link to a public record anyone can open,
               and the rest are backed by correspondence available on request from{" "}
               <a href={`mailto:${links.founderEmail}?subject=Verifying%20a%20claim%20on%20raadh.me`}>{links.founderEmail}</a>.
               Most milestones were also announced publicly on{" "}
-              <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked 3 October 2026.
+              <a href={links.x} target="_blank" rel="noreferrer">X (@Raad_X_)</a>. Last checked {checkedLabel}.
             </p>
           </div>
         </section>

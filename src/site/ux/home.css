@@ -193,13 +193,18 @@
   .rx .ux-home .rx-bio-inner > .rx-links { grid-column: 1 / -1; margin-top: 32px; }
 }
 
-/* DeepMath card: the two ledes in two columns under a full-width headline. */
+/* Featured news card: the text beside the photo from the conference. */
+.rx .ux-home .ux-dm-fig { position: relative; margin: 0; }
+.rx .ux-home .ux-dm-fig img { display: block; width: 100%; height: auto; }
+.rx .ux-home .ux-dm-fig figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 16px 12px;
+  font-size: 12px; line-height: 1.45; color: rgba(240, 247, 245, .92);
+  background: linear-gradient(transparent, rgba(4, 30, 36, .88));
+}
 @media (min-width: 1000px) {
-  .rx .ux-home .rx-dm-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px; }
-  .rx .ux-home .rx-dm-main > * { grid-column: 1 / -1; }
-  .rx .ux-home .rx-dm-k + h3 + .rx-dm-lede { grid-column: 1; grid-row: 3; max-width: none; }
-  .rx .ux-home .rx-dm-lede + .rx-dm-lede { grid-column: 2; grid-row: 3; max-width: none; }
-  .rx .ux-home .rx-dm-paper { max-width: none; }
+  .rx .ux-home .rx-dm-card.has-photo { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
+  .rx .ux-home .rx-dm-card.has-photo .ux-dm-fig img { height: 100%; object-fit: cover; object-position: 38% 50%; }
+  .rx .ux-home .rx-dm-card.has-photo .rx-dm-lede { max-width: none; }
 }
 
 /* ── Talks: dated cards with the host's mark ───────────────────────────── */

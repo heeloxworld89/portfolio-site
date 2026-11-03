@@ -8,41 +8,42 @@ import CVSection from './CVSection';
  * and burying it inside a personal statement lost that.
  */
 
+// In order, ages 12 to 17. Per-venture ages are left out where they are not on record.
 const ventures = [
   {
     n: '01',
-    title: 'Software Services',
-    age: 'Age 12–14',
-    broke: 'Distribution without credibility',
-    lesson: 'The product could be built; reaching buyers was the obstacle. Enterprise procurement does not route on technical merit alone, and distribution without institutional credibility is not a technical problem.',
+    title: 'Tournament Gaming App',
+    age: 'Co-founder',
+    broke: 'Trust before distribution',
+    lesson: 'A gaming app in which players competed in tournaments for points they could later cash out. The product could be built; reaching players and earning their trust in the payouts was the obstacle.',
   },
   {
     n: '02',
-    title: 'Cold-Call Automation, European Markets',
-    age: 'Age 14–15',
-    broke: 'Trust limits at the close',
-    lesson: 'Automation reliably handled 90% of the sales cycle, but every close required a human. Trust in autonomous agents stops at the transaction, a constraint the Black Bloxie study later tested directly with a $4,386 order closed with no human involved.',
+    title: 'EWM Trading Algorithm',
+    age: 'Sold at 15',
+    broke: 'Signal hidden in order flow',
+    lesson: 'A trading algorithm that matured into the EWM model and was sold to a U.S. client for about $10,000. Building it meant learning market microstructure: order flow that cannot be inferred from price data alone.',
   },
   {
     n: '03',
-    title: 'US-Targeted Digital Marketing',
-    age: 'Age 15',
-    broke: 'The wrong bottleneck',
-    lesson: 'The assumed bottleneck was distribution; the real one was production. The need was not to move content but to create it at volume.',
+    title: 'Web-Development Sales Agency',
+    age: 'Services',
+    broke: 'Trust limits at the close',
+    lesson: 'A sales operation selling website development. Automation could carry most of the sales cycle, but every close required a human: trust in an autonomous agent stops at the transaction.',
   },
   {
     n: '04',
-    title: 'Organic E-Commerce',
-    age: 'Age 15–16',
+    title: 'E-Commerce Store',
+    age: 'Retail',
     broke: 'Coordination at scale',
-    lesson: 'Optimising pricing, listings or marketing individually yields a few percent. The real challenge was coordinating research, listing, pricing, fulfilment and service at once, which no single operator can sustain.',
+    lesson: 'Optimising pricing, listings or marketing one at a time yields a few percent. The real work was coordinating research, listing, pricing, fulfilment and service at once, which no single operator can sustain.',
   },
   {
     n: '05',
-    title: 'Automation Tooling',
-    age: 'Age 16–17',
+    title: 'Blockchain Software Project',
+    age: 'Discontinued',
     broke: 'Confirmation of the pattern',
-    lesson: 'The fifth venture confirmed the pattern: the constraint was coordination, not individual capability. That finding became the design brief for OXIMO.',
+    lesson: 'A software company building blockchain-based cryptographic products, discontinued before launch. It confirmed the pattern: the constraint was coordination, not individual capability. That finding became the design brief for OXIMO.',
   },
 ];
 
@@ -55,14 +56,14 @@ export default function CVVentures() {
       title={<>Five ventures from age 12, and a ~$10,000 sale at 15.</>}
       lead={
         <>
-          Raadh founded his first company at 12 and four more by 17, and at 15 he built and sold a
-          stock-prediction system for about $10,000. Each venture hit a different limit.{' '}
+          Raadh started his first venture at 12 and four more by 17, and at 15 he sold the EWM trading
+          algorithm to a U.S. client for about $10,000. Each venture hit a different limit.{' '}
           <strong>Together they identified the constraint every later system was built to remove:
           coordination, not individual capability.</strong>
         </>
       }
       meta={[
-        { k: 'Companies', v: 'Five, ages 12–17' },
+        { k: 'Ventures', v: 'Five, ages 12–17' },
         { k: 'Exit', v: '~$10,000 at fifteen' },
         { k: 'Reinvested in', v: 'The RTX 3090' },
         { k: 'Key finding', v: 'Coordination → OXIMO' },
@@ -121,9 +122,9 @@ export default function CVVentures() {
           <div className="vn-exit-k">Built and exited · age 15</div>
         </div>
         <div>
-          <h3 className="vn-exit-h">A stock-prediction system, built and sold at fifteen</h3>
+          <h3 className="vn-exit-h">The EWM trading algorithm, built and sold at fifteen</h3>
           <p className="vn-exit-p">
-            His first exit, at about $10,000.{' '}
+            Sold to a U.S. client for about $10,000.{' '}
             <strong>The proceeds funded the RTX 3090 that ran all 383 ORMAS experiments</strong>, so the
             research behind OXIEDO was financed by a product he built and sold himself.
           </p>

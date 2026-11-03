@@ -1,4 +1,5 @@
 import Icon from '@/components/common/Icon';
+import VideoFacade from '@/components/common/VideoFacade';
 
 /**
  * Who I Am — the synthesis, not a summary of the sections below.
@@ -25,14 +26,14 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     year: '2020–25',
     kind: 'venture',
     title: 'Five ventures between 12 and 17',
-    body: 'Software services, cold-call automation, digital marketing, e-commerce and automation tooling. Each failed at a different layer, and together they pointed to one finding: the constraint was coordination, not individual capability.',
+    body: 'A tournament gaming app (co-founded), the EWM trading algorithm, a web-development sales agency, an e-commerce store and a blockchain software project. Each failed at a different layer, and together they pointed to one finding: the constraint was coordination, not individual capability.',
   },
   {
     age: '15',
     year: '2023',
     kind: 'proof',
-    title: 'Sold a stock-prediction system for about $10,000',
-    body: 'Built and sold at 15. The proceeds funded the RTX 3090 that later ran all 383 ORMAS experiments.',
+    title: 'Sold the EWM trading algorithm for about $10,000',
+    body: 'Built and sold to a U.S. client at 15. The proceeds funded the RTX 3090 that later ran all 383 ORMAS experiments.',
   },
   {
     age: '16–17',
@@ -53,14 +54,14 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     year: '2025–26',
     kind: 'build',
     title: 'ORMAS: 383 experiments on one GPU',
-    body: 'A network that diagnoses and repairs its own damage during training, tested across four architectures and six noise regimes: 80.3% recovery where parameter-matched baselines remain at 10.0%.',
+    body: 'A network that diagnoses and repairs its own damage during training, tested across four architectures and six noise regimes: 80.3% recovery after trained layers are zeroed, where standard training stays at 10.0%.',
   },
   {
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'ORMAS breakthrough · DeepMath 2026 · NeurIPS reviewer',
-    body: 'OXIEDO, founded in 2023, gets its core technology: ORMAS, licensed to five regulated sectors. The stability result is accepted at DeepMath 2026 after double-blind review, and Raadh becomes a reviewer for the NeurIPS 2026 Trustworthy AI for Good workshop.',
+    title: 'DeepMath 2026 · NeurIPS workshop reviewer · Cohere Labs talk',
+    body: 'OXIEDO, founded in 2023, licenses ORMAS to regulated industries. The stability paper is accepted at DeepMath 2026 after double-blind review and shown at The Ohio State University; Raadh reviews for the NeurIPS 2026 Workshop on Trustworthy AI for Good and gives an invited talk at Cohere Labs.',
   },
 ];
 
@@ -315,23 +316,22 @@ export default function CVWhoIAm() {
              copy beside it, and no separate lead paragraph above it. ── */}
         <div className="wi-why">
           <div className="wi-why-embed">
-            <iframe
+            <VideoFacade
               src="https://www.loom.com/embed/c30a0509fdc442b5b6f6ea47213798c9"
-              allowFullScreen
-              loading="lazy"
               title="Founder introduction — Rokib Al Dhin Raadh"
+              label="Video · 53 sec"
             />
           </div>
           <div className="wi-why-side">
             <div className="wi-why-eyebrow">
               <Icon name="play" size={14} />
-              Founder Introduction · 31 sec
+              Founder Introduction · 53 sec
             </div>
             <h3 className="wi-why-h">Five ventures, a new neural network architecture, and the company built on it.</h3>
             <p className="wi-why-p">
-              Rokib Al Dhin Raadh, <span className="age">18</span>, is the founder and CEO of OXIEDO and the inventor of ORMAS, a
-              self-repairing neural network. Raised in Dhaka, he ran five ventures between the ages of 12
-              and 17 and sold a stock-prediction system for about $10,000 at 15. Tracing one structural cause across
+              Rokib Al Dhin Raadh, <span className="age">18</span>, is an AI researcher, the founder and CEO of OXIEDO and the
+              inventor of ORMAS, a self-repairing neural network. Raised in Dhaka, he ran five ventures between the ages
+              of 12 and 17 and sold the EWM trading algorithm for about $10,000 at 15. Tracing one structural cause across
               those ventures led him to multi-agent systems (OXIMO), then to a new neural network architecture
               (ORMAS), and then to a company built on it (OXIEDO).
             </p>

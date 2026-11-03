@@ -2,10 +2,14 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { links, pages, type PagePath } from "./data";
 
-const nav: { to: string; label: string; external?: boolean }[] = [
+// `page` entries are static HTML outside the React app (public/*.html), so
+// they take a full page load rather than a client-side route change.
+const nav: { to: string; label: string; external?: boolean; page?: boolean }[] = [
   { to: "/research", label: "Research" },
+  { to: "/deepmath", label: "DeepMath", page: true },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
+  { to: "/evidence", label: "Evidence" },
   { to: links.cv, label: "CV", external: true },
   { to: links.oxiedo, label: "OXIEDO ↗", external: true },
 ];
@@ -78,6 +82,8 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             {nav.map((n) =>
               n.external ? (
                 <a key={n.to} href={n.to} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{n.label}</a>
+              ) : n.page ? (
+                <a key={n.to} href={n.to}>{n.label}</a>
               ) : (
                 <Link key={n.to} to={n.to} aria-current={pathname === n.to ? "page" : undefined}>{n.label}</Link>
               )
@@ -94,7 +100,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <div className="rx-foot-top">
             <div className="rx-foot-id">
               <Link className="rx-mark" to="/">Rokib Al Dhin Raadh</Link>
-              <p>Founder &amp; CEO, OXIEDO · Inventor of ORMAS</p>
+              <p>AI researcher · Founder &amp; CEO, OXIEDO · Inventor of ORMAS</p>
             </div>
             <nav className="rx-foot-col" aria-label="Footer">
               <h2>Pages</h2>
@@ -103,19 +109,20 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                   <li key={n.to}>
                     {n.external ? (
                       <a href={n.to} target="_blank" rel="noreferrer">{n.label}</a>
+                    ) : n.page ? (
+                      <a href={n.to}>{n.label}</a>
                     ) : (
                       <Link to={n.to}>{n.label}</Link>
                     )}
                   </li>
                 ))}
-                <li><Link to="/evidence">Evidence</Link></li>
               </ul>
             </nav>
             <div className="rx-foot-col">
               <h2>Contact</h2>
               <ul>
-                <li><a href={`mailto:${links.founderEmail}`}>{links.founderEmail}</a></li>
                 <li><a href={`mailto:${links.email}`}>{links.email}</a></li>
+                <li><a href={links.calendly} target="_blank" rel="noreferrer">Book a 30-minute call</a></li>
               </ul>
             </div>
             <div className="rx-foot-col">
