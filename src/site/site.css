@@ -51,6 +51,8 @@ body:has(.rx) { background: #e7e7e2; }
 
 .rx *, .rx *::before, .rx *::after { box-sizing: border-box; }
 .rx p, .rx li, .rx td, .rx th, .rx span, .rx div { font-family: inherit; }
+/* ...except maths: .katex is a span, so the rule above would replace KaTeX's own font. */
+.rx .katex { font-family: KaTeX_Main, "Times New Roman", serif; }
 .rx a { color: var(--rx-teal); text-decoration: underline; text-decoration-color: var(--rx-line); text-underline-offset: 3px; transition: color .2s, text-decoration-color .2s; }
 .rx a:hover { color: var(--rx-ink); text-decoration-color: var(--rx-ink); }
 .rx h1, .rx h2, .rx h3, .rx h4, .rx h5 { font-family: var(--rx-serif); font-weight: 400; color: var(--rx-teal); letter-spacing: -0.01em; }

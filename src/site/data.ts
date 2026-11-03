@@ -33,6 +33,8 @@ export const links = {
   calendly: "https://calendly.com/raadh",
   posterPdf: "/assets/pdf/DeepMath2026_Poster_Raadh_A0.pdf?v=20261023",
   programme: "https://drive.google.com/file/d/1b_d27WosXvAi9IVP1lDwCBilCDe5oCGz/view",
+  // Slides of the Cohere Labs talk, 2 Nov 2026 (37 slides, with both proofs and the corrections).
+  cohereSlides: "/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf",
   // YouTube link to the recording of the Cohere Labs talk. Leave "" until it
   // is published; every "Watch the talk" button and player appears once set.
   cohereRecording: "",
@@ -50,7 +52,7 @@ export const news: NewsItem[] = [
   {
     date: "2 Nov 2026", kind: "Invited talk",
     title: "Invited talk at Cohere Labs on the stability of self-repairing training",
-    body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. A recording will follow.",
+    body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. The slides are public; a recording will follow.",
     href: links.cohereTalk,
   },
   {
@@ -112,6 +114,8 @@ export type Talk = {
   id: string; start: string; end: string; day: string; month: string; time?: string;
   kind: string; host: string; logo: string; title: string; where: string; note: string;
   href: string; hrefLabel: string;
+  /** Slides (PDF), shown as a second link when present. */
+  slides?: string;
 };
 export const talks: Talk[] = [
   {
@@ -127,8 +131,9 @@ export const talks: Talk[] = [
     kind: "Invited talk", host: "Cohere Labs", logo: "/assets/images/logos/cohere.svg",
     title: "When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training",
     where: "Cohere Labs, Toronto, Canada",
-    note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk covers why, and where the proof stops.",
+    note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk covered why, and where the proof stops.",
     href: "https://luma.com/p28sna3q", hrefLabel: "Event page",
+    slides: links.cohereSlides,
   },
 ];
 

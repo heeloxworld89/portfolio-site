@@ -184,6 +184,13 @@ const cohereTalk = {
     address: { "@type": "PostalAddress", addressLocality: "Toronto", addressRegion: "ON", addressCountry: "CA" },
   },
   performer: ref("person"),
+  workFeatured: {
+    "@type": "PresentationDigitalDocument",
+    name: "When the Update Is Not a Gradient (slides)",
+    url: `${SITE}/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf`,
+    encodingFormat: "application/pdf",
+    author: ref("person"),
+  },
   description:
     "Invited talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training: why training whose updates are not gradients still converges, and where the proof stops.",
   about: ref("deepmath-paper"),

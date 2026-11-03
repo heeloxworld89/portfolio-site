@@ -220,8 +220,10 @@ export default function Home() {
               <div className="rx-btns">
                 {recording ? (
                   <a className="rx-btn is-light" href={links.cohereRecording} target="_blank" rel="noreferrer">Watch the talk <Arrow /></a>
-                ) : (
-                  <a className="rx-btn is-light" href={links.cohereTalk} target="_blank" rel="noreferrer">Event page <Arrow /></a>
+                ) : null}
+                <a className={`rx-btn ${recording ? "is-outline-light" : "is-light"}`} href={links.cohereSlides} target="_blank" rel="noreferrer">Slides (PDF) <Arrow /></a>
+                {recording ? null : (
+                  <a className="rx-btn is-outline-light" href={links.cohereTalk} target="_blank" rel="noreferrer">Event page <Arrow /></a>
                 )}
                 <Link className="rx-btn is-outline-light" to="/deepmath">The DeepMath paper <Arrow /></Link>
               </div>
@@ -351,7 +353,10 @@ export default function Home() {
                     <h3>{t.title}</h3>
                     <p className="ux-talk-where">{t.where}</p>
                     <p className="ux-talk-note">{t.note}</p>
-                    <a className="ux-talk-go" href={t.href} {...ext(t.href)}>{t.hrefLabel} <Arrow /></a>
+                    <div className="ux-talk-links">
+                      <a className="ux-talk-go" href={t.href} {...ext(t.href)}>{t.hrefLabel} <Arrow /></a>
+                      {t.slides && <a className="ux-talk-go" href={t.slides} target="_blank" rel="noreferrer">Slides (PDF) <Arrow /></a>}
+                    </div>
                   </div>
                 </article>
               );

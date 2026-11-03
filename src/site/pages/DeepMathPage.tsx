@@ -20,9 +20,10 @@ const TOC: TocItem[] = [
   { id: "dm-abstract", label: "Abstract" },
   { id: "dm-results", label: "Two results" },
   { id: "dm-figures", label: "Figures" },
-  { id: "dm-open", label: "Open problem" },
+  { id: "dm-open", label: "Open problems" },
   { id: "dm-faq", label: "Questions" },
   { id: "dm-reproduce", label: "Reproduce it" },
+  { id: "dm-corrections", label: "Corrections" },
   { id: "dm-cite", label: "Cite" },
   { id: "dm-refs", label: "References" },
   { id: "dm-contact", label: "Ask a question" },
@@ -46,7 +47,7 @@ const BIBTEX = `@misc{raadh2026selfrepair,
 const FAQ: { q: string; a: ReactNode }[] = [
   {
     q: "Isn't Theorem 2 just the dead-ReLU problem?",
-    a: <>The mechanism is simple: a zero filter gives a constant pre-activation, train-mode BatchNorm maps it to β<sub>c</sub>&nbsp;≤&nbsp;0, and ReLU blocks every gradient. What the theorem adds is the exact conditions: fresh optimiser state, and invariance under every per-channel-bounded repair, not only gradient steps. That makes it checkable, which is what ormas-monitor certifies, and it is the lower bound that makes self-repair a switched system.</>,
+    a: <>The mechanism is simple: a zero filter gives a constant pre-activation, train-mode BatchNorm maps it to its shift b&nbsp;≤&nbsp;0, and ReLU blocks every gradient. What the theorem adds is the exact conditions: fresh optimiser state, and invariance under every per-channel-bounded repair, not only gradient steps. That makes it checkable, which is what ormas-monitor certifies, and it is the lower bound that makes self-repair a switched system.</>,
   },
   {
     q: "You zeroed the layers yourself. Does this happen in real models?",
@@ -54,7 +55,15 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "With no repair, γ is still 2βM/α. Why doesn't training converge to θ*?",
-    a: <>Because training also optimises each layer's local loss with weight β&nbsp;≤&nbsp;0.3, which pulls against the global loss. That offset is why this is practical ISS; it becomes strict ISS only if β(t)&nbsp;→&nbsp;0. (β here is the local-loss weight, not the BatchNorm shift β<sub>c</sub> in Theorem 2.)</>,
+    a: <>Because training also optimises each layer's local loss with weight β&nbsp;≤&nbsp;0.3, which pulls against the global loss. The local-loss gradient and its projection add up to 2ηβM per step whether or not a repair fires. That offset is why this is practical ISS; it becomes strict ISS only if β(t)&nbsp;→&nbsp;0, for example by annealing the local-loss weight.</>,
+  },
+  {
+    q: "What keeps θ near θ* in Proposition 1?",
+    a: <>Induction. If the worst-case radius fits inside the strongly convex ball of radius R, that is r<sub>0</sub>&nbsp;≤&nbsp;R and 2βM/α + ε<sub>max</sub>/(ηα)&nbsp;≤&nbsp;R, each step gives r&nbsp;≤&nbsp;(1&nbsp;−&nbsp;ηα)R + ηαR = R, so the iterates never leave the ball. The statement is self-consistent, but with realistic constants it cannot be checked, which is why I call it idealised.</>,
+  },
+  {
+    q: "Why does the radius grow as the step size shrinks?",
+    a: <>Because a repair is an absolute move of size ε; it is not multiplied by η. Gradient descent pulls back only about ηα of the distance per step, so the balance is ηα·r = ε, giving r = ε/(ηα). Smaller η means a slower pull-back against the same push. The fix is to scale the repairs with η, or anneal them with the learning rate. In these runs the repairs also shrink late in training (about 90% smaller when one fires), which offsets part of this.</>,
   },
   {
     q: "Why model a repair as an input rather than as part of the optimiser?",
@@ -66,7 +75,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Strong convexity cannot hold with BatchNorm. Doesn't that break Proposition 1?",
-    a: <>It makes Proposition 1 a local, idealised statement, and the poster says so: BatchNorm's scale invariance rules out exact strong convexity. The natural replacement is a PL-type condition, under which Cui et al. (2025) already have ISS for gradient descent; whether BN networks satisfy it is the open step. Theorem 2 does not use convexity at all.</>,
+    a: <>It makes Proposition 1 a local, idealised statement, and the poster says so: BatchNorm makes the loss invariant to rescaling a layer's incoming weights (Arora, Li & Lyu, 2019), so it is flat along those directions and cannot be strongly convex. The natural replacement is a PL-type condition, under which Cui et al. (2025) already have ISS for gradient descent; whether BN networks satisfy it is the open step. Theorem 2 does not use convexity at all.</>,
   },
   {
     q: "Why exactly 10.00%, with zero variance across seeds?",
@@ -74,7 +83,11 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Does Theorem 2 depend on the optimiser state?",
-    a: <>Yes. Leftover momentum could move a zero filter, so the theorem is stated for AdamW with fresh state for the channel. Every gradient into the channel is then exactly zero, and with decoupled weight decay the BatchNorm shift evolves as β<sub>c</sub>(t) = (1 − ηλ)<sup>t</sup> β<sub>c</sub>(0), which stays non-positive; the run logs match this to the bit. The ormas-monitor certificate checks these conditions before it certifies a channel as dead.</>,
+    a: <>Yes. Leftover momentum could move a zero filter, so the theorem is stated for AdamW with fresh state for the channel. Every gradient into the channel is then exactly zero, and with decoupled weight decay the BatchNorm shift evolves as b(t) = (1 − ηλ)<sup>t</sup> b(0), which stays non-positive; the run logs match this to the bit. The ormas-monitor certificate checks these conditions before it certifies a channel as dead. One edge case: in the monitor&apos;s quick demo run, 2 of 64 channels in the zeroed layers had a positive shift. Those output a constant, and the monitor reports them as constant, not as certified dead.</>,
+  },
+  {
+    q: "Does the jump do all the work?",
+    a: <>For reviving a dead layer, yes: that is Theorem 2. In all three seeds accuracy stays at exactly chance until the epoch of that seed&apos;s reset and rises from that epoch on (Figure 2). The small corrections then help finish the recovery. Whether they beat plain resets is an open empirical question; the next experiment is reset-only and ReDo baselines over several seeds, with the same detector.</>,
   },
   {
     q: "Why doesn't ResNet-18 benefit from repair?",
@@ -82,7 +95,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Is the bound informative in practice?",
-    a: <>Only if ε̄ is small, which is what makes it a prediction rather than a formality: a self-repairing network should need progressively smaller repairs. It does: after a shock the largest correction per epoch falls from 5.07 to 0.38 (Figure 2).</>,
+    a: <>Only if ε̄ is small, which is what makes it a prediction rather than a formality: a self-repairing network should need progressively smaller repairs. It does: after a shock the largest correction per epoch falls from 5.07 to 0.38 (Figure 3), and a correction that fires late is about 90% smaller than an early one (Table 1). Two limits. Late corrections still reach 6.6, so ε̄&nbsp;&gt;&nbsp;0: this is practical stability, not convergence to θ*. And with our settings γ comes out at about 3,800, so the bound should be read for its shape, not its size.</>,
   },
 ];
 
@@ -166,7 +179,8 @@ export default function DeepMathPage() {
                   <h4>When the Update Is Not a Gradient</h4>
                   <p>
                     Cohere Labs invited me to present this work as a guest speaker: why training whose updates are not
-                    gradients still converges, and where the proof stops.
+                    gradients still converges, and where the proof stops. The 37 slides include both proofs and the
+                    corrections below.
                   </p>
                   {recording ? (
                     <div className="dmp-video">
@@ -183,7 +197,8 @@ export default function DeepMathPage() {
                     {recording ? (
                       <a className="rx-btn is-light" href={links.cohereRecording} target="_blank" rel="noreferrer">Watch on YouTube <Arrow /></a>
                     ) : null}
-                    <a className={`rx-btn ${recording ? "is-outline-light" : "is-light"}`} href={links.cohereTalk} target="_blank" rel="noreferrer">Event page <Arrow /></a>
+                    <a className={`rx-btn ${recording ? "is-outline-light" : "is-light"}`} href={links.cohereSlides} target="_blank" rel="noreferrer">Slides (PDF) <Arrow /></a>
+                    <a className="rx-btn is-outline-light" href={links.cohereTalk} target="_blank" rel="noreferrer">Event page <Arrow /></a>
                   </div>
                 </article>
                 <article className="dmp-call">
@@ -244,7 +259,10 @@ export default function DeepMathPage() {
                 <a className="rx-btn" href={links.posterPdf} target="_blank" rel="noreferrer">Open full poster (PDF) <Arrow /></a>
                 <a className="rx-btn is-ghost" href={links.posterPdf} download>Download</a>
               </div>
-              <p className="uxr-cap">A0 landscape, vector PDF. Poster version of 23 October 2026.</p>
+              <p className="uxr-cap">
+                A0 landscape, vector PDF. Poster version of 23 October 2026. One label and three abstract figures have
+                since been corrected; see <a href="#dm-corrections">Corrections</a>.
+              </p>
             </section>
 
             {/* ── Abstract ── */}
@@ -277,8 +295,8 @@ export default function DeepMathPage() {
                   <div className="rx-fig-k">Without repair, after two conv layers are zeroed: exactly chance, 3/3 seeds</div>
                 </div>
                 <div className="rx-fig" role="listitem">
-                  <div className="rx-fig-v">39&#8239;493</div>
-                  <div className="rx-fig-k">The training step where the first reset fires, identical in every seed</div>
+                  <div className="rx-fig-v">103–104</div>
+                  <div className="rx-fig-k">The epochs in which the resets fire; each seed recovers only after its own reset</div>
                 </div>
                 <div className="rx-fig" role="listitem">
                   <div className="rx-fig-v is-age">80.3%</div>
@@ -309,13 +327,44 @@ export default function DeepMathPage() {
                   </div>
                   <p>where <M m="\bar\varepsilon = \limsup_t \varepsilon_t" p="." /></p>
                   <p className="dmp-plain">Repairs push training around, but never further than <M m="\gamma" /> from a good solution.</p>
+                  <details className="dmp-proof">
+                    <summary>Proof in four steps</summary>
+                    <p>Training follows</p>
+                    <BlockMath math="\theta_{t+1} = \theta_t - \eta\nabla L(\theta_t) - \eta\, d_t + u_t, \qquad \lVert d_t \rVert \le 2\beta M," />
+                    <p>
+                      where <M m="d_t" /> is the local-loss term with its projection. Write{" "}
+                      <M m="r_t = \lVert \theta_t - \theta^* \rVert" p="." />
+                    </p>
+                    <ol>
+                      <li>
+                        <b>The gradient step contracts</b>, for <M m="\eta \le 1/\ell" p=":" />
+                        <BlockMath math="\lVert \theta - \eta\nabla L(\theta) - \theta^* \rVert \le \rho\, \lVert \theta - \theta^* \rVert, \quad \rho = 1 - \eta\alpha" />
+                      </li>
+                      <li>
+                        <b>Triangle inequality</b> on <M m="d_t" /> and <M m="u_t" p=":" />
+                        <BlockMath math="r_{t+1} \le \rho\, r_t + 2\eta\beta M + \varepsilon_t" />
+                      </li>
+                      <li>
+                        <b>Unroll the recursion:</b>
+                        <BlockMath math="r_t \le \rho^t r_0 + \sum_{k<t} \rho^{\,t-1-k}\,(2\eta\beta M + \varepsilon_k)" />
+                      </li>
+                      <li>
+                        <b>Sum the geometric series:</b>
+                        <BlockMath math="\limsup_{t\to\infty} r_t \le \frac{2\eta\beta M + \bar\varepsilon}{1 - \rho} = \frac{2\beta M}{\alpha} + \frac{\bar\varepsilon}{\eta\,\alpha}" />
+                      </li>
+                    </ol>
+                    <p className="dmp-proof-note">
+                      This is the standard analysis of gradient descent with errors (cf. Devolder, Glineur &amp; Nesterov,
+                      2014). What is new is the input it is fed: the repair.
+                    </p>
+                  </details>
                 </article>
                 <article className="uxr-card is-stuck">
                   <p className="uxr-note-k">Theorem 2 · Absorbing dead set</p>
                   <h4 className="dmp-card-h">Bounded repair cannot revive</h4>
                   <p>
                     In a Conv–BN–ReLU layer (BatchNorm in train mode), let channel <M m="c" /> have zero filter{" "}
-                    <M m="W_c" /> and BN shift <M m="\beta_c \le 0" p="." /> This dead set <M m="D" /> is invariant under AdamW
+                    <M m="W_c" /> and BatchNorm shift <M m="b_c \le 0" p="." /> This dead set <M m="D" /> is invariant under AdamW
                     (fresh state) and under every repair bounded per channel,{" "}
                     <M m="\lVert R(W)_c - W_c \rVert \le f\, \lVert W_c \rVert" p=":" />
                   </p>
@@ -323,11 +372,62 @@ export default function DeepMathPage() {
                     <BlockMath math="\theta_0 \in D \implies \theta_t \in D \quad \forall t" />
                   </div>
                   <p className="dmp-plain">Gradient descent and small fixes are both stuck, exactly. Only a jump leaves <M m="D" p="." /></p>
+                  <details className="dmp-proof">
+                    <summary>Proof in four steps</summary>
+                    <p>
+                      Take one channel with filter <M m="W" p="," /> BatchNorm scale <M m="s" /> and shift <M m="b" p="." />
+                    </p>
+                    <ol>
+                      <li>
+                        <b>A zero filter feeds BatchNorm a constant</b> (a bias is a constant too), which it normalises to zero:
+                        <BlockMath math="\hat x = \frac{x - \mu_{\text{batch}}}{\sqrt{\sigma^2_{\text{batch}} + \epsilon}} = 0" />
+                      </li>
+                      <li>
+                        <b>The channel outputs ReLU(<M m="b" />) = 0</b>, and the ReLU is closed there:
+                        <BlockMath math="y = s\,\hat x + b = b \le 0 \;\Rightarrow\; \mathrm{ReLU}(y) = 0,\ \mathrm{ReLU}'(y) = 0" />
+                      </li>
+                      <li>
+                        <b>So every gradient into the channel is exactly zero:</b>
+                        <BlockMath math="\partial L/\partial W = \partial L/\partial s = \partial L/\partial b = 0" />
+                      </li>
+                      <li>
+                        <b>AdamW with fresh state cannot move it, and neither can a bounded repair:</b>
+                        <BlockMath math="\begin{aligned} &m = v = 0 \;\Rightarrow\; W \leftarrow (1 - \eta\lambda)\,W = 0, \\ &b_t = (1 - \eta\lambda)^t\, b_0 \le 0; \\ &\lVert R(W) - W \rVert \le f\, \lVert W \rVert = 0 \;\Rightarrow\; R(W) = W = 0 \end{aligned}" />
+                      </li>
+                    </ol>
+                    <p className="dmp-proof-note">
+                      By induction, the channel stays in <M m="D" /> forever. A relative bound cannot move zero; only an
+                      additive jump can.
+                    </p>
+                  </details>
                 </article>
               </div>
               <p className="uxr-cap">
-                Notation: <M m="\beta" /> in Proposition 1 is the local-loss weight; <M m="\beta_c" /> in Theorem 2 is a
-                BatchNorm shift. The poster uses the same letter for both.
+                Notation: as in the talk, <M m="b" /> is a BatchNorm shift and <M m="\beta" /> is the local-loss weight in
+                Proposition 1. The poster writes the shift as <M m="\beta" /> too.
+              </p>
+
+              <h4 className="dmp-sub-h">What Theorem 2 explains: every working fix contains a jump</h4>
+              <div className="uxr-table-wrap" role="region" aria-label="Repair methods: bounded part and jump part" tabIndex={0}>
+                <table className="uxr-table">
+                  <thead>
+                    <tr><th scope="col">Method</th><th scope="col">Bounded part</th><th scope="col">Jump part</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Continual Backprop</th><td>none</td><td>re-draws low-utility units</td></tr>
+                    <tr><th scope="row">ReDo</th><td>none</td><td>re-draws dormant neurons&apos; inputs</td></tr>
+                    <tr><th scope="row">Shrink &amp; Perturb</th><td>shrinks weights toward zero</td><td>adds fresh noise</td></tr>
+                    <tr><th scope="row">Plasticity injection</th><td>none</td><td>adds fresh trainable parameters</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="uxr-p">
+                A correction bounded relative to the weights cannot move a zero filter, so a method that only rescales or
+                clips can never revive a dead channel; only the jump part can leave <M m="D" p="." /> <strong>The jump is not a design accident; it is necessary.</strong>
+              </p>
+              <p className="uxr-cap">
+                L2 Init (Kumar, Marklund &amp; Van Roy, 2024) escapes differently: it pulls weights toward their initial
+                values, which changes the loss, so <M m="D" /> is no longer invariant.
               </p>
             </section>
 
@@ -336,18 +436,31 @@ export default function DeepMathPage() {
               <h3 className="uxr-h" id="dm-figures-h">Figures</h3>
               <figure className="dmp-fig">
                 <img
-                  src="/assets/deepmath/fig-lesion-1000.webp"
-                  srcSet="/assets/deepmath/fig-lesion-1000.webp 1000w, /assets/deepmath/fig-lesion-1800.webp 1800w"
+                  src="/assets/deepmath/fig-run-1000.webp"
+                  srcSet="/assets/deepmath/fig-run-1000.webp 1000w, /assets/deepmath/fig-run-1800.webp 1800w"
                   sizes="(min-width: 1180px) 860px, calc(100vw - 48px)"
-                  width="1000" height="455" loading="lazy" decoding="async"
-                  alt="Test accuracy over 200 epochs. Two conv layers are zeroed at epoch 100. Standard AdamW stays at exactly 10.00% in all three seeds; with self-repair, a reset at step 39 493 is followed by recovery to 80.3 ± 1.5%. Below, every repair event per seed."
+                  width="1000" height="602" loading="lazy" decoding="async"
+                  alt="Test accuracy over 200 epochs. Two conv layers are zeroed at epoch 100. Standard AdamW stays at exactly 10.00%; with resets, accuracy recovers to 80.3 ± 1.5%."
                 />
                 <figcaption>
-                  <b>Figure 1. Theorem 2, in data.</b> CIFAR-10 CNN; two conv layers zeroed after epoch 100. Small
-                  corrections cannot revive them, so accuracy sits at chance until a reset (a jump) redraws the dead channels
-                  at step 39&nbsp;493 in every seed; small corrections then finish the recovery to 80.3&nbsp;±&nbsp;1.5%.
-                  Standard AdamW stays at exactly 10.00% in 3/3 seeds. Bottom: every repair event (blue: small corrections;
-                  red: resets).
+                  <b>Figure 1. Zero two layers, and gradient descent never recovers.</b> CIFAR-10 CNN; two conv layers
+                  zeroed at epoch 100. Standard AdamW stays at exactly 10.00% for all 99 remaining epochs, in 3 of 3 seeds.
+                  With resets, accuracy recovers to 80.3&nbsp;±&nbsp;1.5% (85% before the lesion).
+                </figcaption>
+              </figure>
+              <figure className="dmp-fig">
+                <img
+                  src="/assets/deepmath/fig-resets-1000.webp"
+                  srcSet="/assets/deepmath/fig-resets-1000.webp 1000w, /assets/deepmath/fig-resets-1800.webp 1800w"
+                  sizes="(min-width: 1180px) 860px, calc(100vw - 48px)"
+                  width="1000" height="612" loading="lazy" decoding="async"
+                  alt="Test accuracy for epochs 100 to 111 in three seeds. After the lesion all three seeds sit at 10%. Resets fire in epochs 103 to 104, and each seed rises only after its own reset; AdamW alone stays at 10%."
+                />
+                <figcaption>
+                  <b>Figure 2. Theorem 2, in data: recovery starts exactly at the reset.</b> The dead layers are flagged at
+                  step 39&nbsp;493, two steps after the lesion, in every seed. Small corrections cannot revive them, so
+                  accuracy stays at chance until the resets fire in epochs <span className="dmp-nb">103–104</span>; each seed rises only after its own
+                  reset.
                 </figcaption>
               </figure>
               <figure className="dmp-fig is-narrow">
@@ -359,26 +472,56 @@ export default function DeepMathPage() {
                   alt="Largest correction per epoch on a log scale over 200 epochs after a shock: the mean over the first 20 epochs is 5.07 and over the last 20 epochs is 0.38."
                 />
                 <figcaption>
-                  <b>Figure 2. The falsifiable prediction.</b> Proposition 1&apos;s bound is informative only if repairs
+                  <b>Figure 3. The falsifiable prediction.</b> Proposition 1&apos;s bound is informative only if repairs
                   shrink. After a shock (σ&nbsp;=&nbsp;1), the largest correction per epoch, ε<sub>k</sub>, falls from 5.07
-                  (first 20 epochs) to 0.38 (last 20), a 93% reduction.
+                  (first 20 epochs) to 0.38 (last 20), a 93% reduction. CIFAR-10 CNN; Gaussian noise with σ&nbsp;=&nbsp;1
+                  added to every backbone weight at epoch 2; three seeds.
                 </figcaption>
               </figure>
+              <div className="uxr-table-wrap" role="region" aria-label="Table 1: repair sizes after the shock" tabIndex={0}>
+                <table className="uxr-table">
+                  <thead>
+                    <tr><th scope="col">Measure, 3 seeds</th><th scope="col" className="num">First 20 epochs</th><th scope="col" className="num">Last 20 epochs</th><th scope="col" className="num">Change</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Largest correction per epoch, mean</th><td className="num">5.07</td><td className="num">0.38</td><td className="num">−93%</td></tr>
+                    <tr><th scope="row">Size, given a correction fired</th><td className="num">13.1</td><td className="num">1.34</td><td className="num">−90%</td></tr>
+                    <tr><th scope="row">Epochs with any correction</th><td className="num">39%</td><td className="num">28%</td><td className="num">−11 points</td></tr>
+                    <tr><th scope="row">Largest single correction</th><td className="num">41.0</td><td className="num">6.57</td><td className="num">−84%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="uxr-cap">
+                <b>Table 1. Smaller, not just rarer. But not zero.</b> Repair sizes after the shock. A late correction is about 90% smaller, but late corrections still reach 6.6, so <M m="\bar\varepsilon > 0" p="." />{" "}
+                The repair term shrinks without vanishing: practical stability, not convergence to <M m="\theta^*" p="." />
+              </p>
             </section>
 
             {/* ── Open problem ── */}
             <section className="uxr-sec" id="dm-open" aria-labelledby="dm-open-h">
-              <h3 className="uxr-h" id="dm-open-h">Open problem: how often may a network jump?</h3>
+              <h3 className="uxr-h" id="dm-open-h">Open problems: how often may a network jump?</h3>
               <div className="uxr-note is-accent">
                 <p>
                   Proposition 1 holds between jumps; Theorem 2 says jumps are unavoidable. Find a dwell time{" "}
                   <M m="\tau_D" /> such that jumps at least <M m="\tau_D" /> apart keep training stable (cf. Hespanha &amp;
                   Morse, 1999).
                 </p>
-                <p>
-                  Also open: strong convexity cannot hold exactly for BatchNorm layers (scale invariance); Cui et al. (2025)
-                  give ISS under a generalised PL condition, but whether BN networks satisfy it is open.
-                </p>
+                <p>Three smaller steps are also open:</p>
+                <ul className="dmp-open">
+                  <li>
+                    <b>PL, not strong convexity.</b> BatchNorm&apos;s scale invariance rules out strong convexity. Cui et al.
+                    (2025) have ISS under a generalised PL condition; do BatchNorm networks satisfy it near the minima that
+                    matter?
+                  </li>
+                  <li>
+                    <b>Derive the repair sizes.</b> The shrinking repairs are measured, not derived. Derive that decay from
+                    the repair rule itself.
+                  </li>
+                  <li>
+                    <b>Optimiser state.</b> Theorem 2 needs fresh AdamW state. Adam&apos;s moments belong in the state of the
+                    ISS analysis.
+                  </li>
+                </ul>
                 <p><strong>If you have ideas, I&apos;d love to hear them.</strong></p>
               </div>
             </section>
@@ -416,6 +559,40 @@ export default function DeepMathPage() {
               </ul>
             </section>
 
+            {/* ── Corrections ── */}
+            <section className="uxr-sec" id="dm-corrections" aria-labelledby="dm-corrections-h">
+              <h3 className="uxr-h" id="dm-corrections-h">Corrections</h3>
+              <p className="uxr-p">
+                Four figures in the submitted abstract and on the printed poster have since been corrected. The lesion and
+                shock numbers on this page and in the talk were recomputed from the raw run logs.
+              </p>
+              <div className="uxr-table-wrap" role="region" aria-label="Corrections to the abstract and the poster" tabIndex={0}>
+                <table className="uxr-table">
+                  <thead>
+                    <tr><th scope="col">Earlier claim</th><th scope="col">Corrected</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Correction size fell 83–93% (abstract)</th>
+                      <td>93% for the largest correction per epoch after a shock, 3 seeds; 90% counting only corrections that fired. Not to zero.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Contraction holds on 31.6% of steps (abstract)</th>
+                      <td>Not a contraction measurement. It is the share of steps where ε/(ηα)&nbsp;&lt;&nbsp;1, essentially steps with no correction, in one seed; the other seeds give 71% and 76%. Contraction itself is not measured yet.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ResNet-18: 92.6% vs 91.7% (abstract)</th>
+                      <td>Those were seed 0. Three-seed means: 92.3% vs 91.6%.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">First reset at step 39&nbsp;493 (poster)</th>
+                      <td>That is when the dead layers are flagged. The resets fire three epochs later, in epochs <span className="dmp-nb">103–104</span>.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
             {/* ── Cite ── */}
             <section className="uxr-sec" id="dm-cite" aria-labelledby="dm-cite-h">
               <h3 className="uxr-h" id="dm-cite-h">Cite</h3>
@@ -436,6 +613,12 @@ export default function DeepMathPage() {
                 <li>E. D. Sontag. Smooth stabilization implies coprime factorization. <i>IEEE Trans. Automatic Control</i> 34(4), 435–443, 1989.</li>
                 <li>J. P. Hespanha and A. S. Morse. Stability of switched systems with average dwell-time. <i>Proc. 38th IEEE Conference on Decision and Control</i>, 1999.</li>
                 <li>L. Cui, Z.-P. Jiang, E. D. Sontag and R. D. Braatz. Perturbed gradient descent algorithms are small-disturbance input-to-state stable. 2025. <a href="https://arxiv.org/abs/2507.02131" target="_blank" rel="noreferrer">arXiv:2507.02131</a></li>
+                <li>Z.-P. Jiang, A. R. Teel and L. Praly. Small-gain theorem for ISS systems and applications. <i>Mathematics of Control, Signals and Systems</i> 7, 95–120, 1994.</li>
+                <li>Z.-P. Jiang and Y. Wang. Input-to-state stability for discrete-time nonlinear systems. <i>Automatica</i> 37(6), 857–869, 2001.</li>
+                <li>O. Devolder, F. Glineur and Y. Nesterov. First-order methods of smooth convex optimization with inexact oracle. <i>Mathematical Programming</i> 146, 37–75, 2014.</li>
+                <li>S. Arora, Z. Li and K. Lyu. Theoretical analysis of auto rate-tuning by batch normalization. <i>ICLR</i>, 2019.</li>
+                <li>S. Kumar, H. Marklund and B. Van Roy. Maintaining plasticity in continual learning via regenerative regularization (L2 Init). <i>CoLLAs</i>, 2024.</li>
+                <li>Z. Liu, J. Li, Z. Shen, G. Huang, S. Yan and C. Zhang. Learning efficient convolutional networks through network slimming. <i>ICCV</i>, 2017.</li>
               </ol>
             </section>
 
@@ -452,12 +635,13 @@ export default function DeepMathPage() {
               <ul className="dmp-links">
                 <li><a href={links.posterPdf} target="_blank" rel="noreferrer"><b>Poster</b><span>PDF, A0</span></a></li>
                 <li><a href={links.openreview} target="_blank" rel="noreferrer"><b>Paper</b><span>OpenReview</span></a></li>
+                <li><a href={links.cohereSlides} target="_blank" rel="noreferrer"><b>Talk slides</b><span>Cohere Labs, PDF</span></a></li>
                 <li><a href={links.orcid} target="_blank" rel="noreferrer"><b>ORCID</b><span>0009-0003-1178-5296</span></a></li>
                 <li><Link to="/research"><b>ORMAS</b><span>The full research record</span></Link></li>
               </ul>
               <p className="uxr-foot">
                 All numbers are recomputed from the run logs (3 seeds, final epoch; sample s.d.) and supersede the submitted
-                abstract where they differ. Thank you to Prof. Zhihui Zhu and to DeepMath 2026 for displaying the poster in
+                abstract and the poster where they differ (see <a href="#dm-corrections">Corrections</a>). Thank you to Prof. Zhihui Zhu and to DeepMath 2026 for displaying the poster in
                 my absence.
               </p>
             </section>
