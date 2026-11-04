@@ -75,10 +75,11 @@ export default defineConfig(({ isSsrBuild }) => ({
         ],
       },
       manifest: {
-        name: "Rokib Al Dhin Raadh Portfolio",
+        name: "Rokib Al Dhin Raadh",
         short_name: "Raadh",
-        description: "Independent AI Researcher Portfolio",
-        theme_color: "#ffffff",
+        description: "Rokib Al Dhin Raadh: AI researcher, founder and CEO of OXIEDO, inventor of ORMAS.",
+        theme_color: "#e7e7e2",
+        background_color: "#e7e7e2",
         display: "standalone",
         icons: [
           {
