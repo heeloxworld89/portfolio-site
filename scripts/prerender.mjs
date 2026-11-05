@@ -23,6 +23,8 @@ const routes = [
   { path: "/evidence", file: "evidence.html", mustContain: 'id="ev-research"' },
   { path: "/deepmath", file: "deepmath.html", mustContain: 'id="dm-results"' },
   { path: "/dead-channels", file: "dead-channels.html", mustContain: 'id="dc-proof"' },
+  // The article list is short by design, so it gets a lower size floor.
+  { path: "/articles", file: "articles.html", mustContain: 'href="/dead-channels"', minBytes: 3_000 },
 ];
 const { pages, schemaFor } = await import(pathToFileURL(path.join(root, "dist-ssr/entry-server.js")).href);
 
@@ -37,7 +39,7 @@ const setMeta = (html, attr, key, value) =>
 const rendered = {};
 for (const r of routes) {
   const appHtml = await render(r.path);
-  if (appHtml.length < 8_000 || !appHtml.includes(r.mustContain)) {
+  if (appHtml.length < (r.minBytes ?? 8_000) || !appHtml.includes(r.mustContain)) {
     throw new Error(`Prerender of ${r.path} is incomplete (${appHtml.length} bytes)`);
   }
   rendered[r.path] = appHtml;
