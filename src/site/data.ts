@@ -221,6 +221,13 @@ export const pages = {
     image: "/og/deepmath.png",
     imageAlt: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics, DeepMath 2026 poster",
   },
+  "/articles": {
+    title: "Articles · Rokib Al Dhin Raadh",
+    description:
+      "Articles by Rokib Al Dhin Raadh, an independent AI researcher in Dhaka, on neural network training and the tools he builds.",
+    image: "/og/home-v3.jpg",
+    imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
+  },
   "/dead-channels": {
     title: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
     description:
@@ -231,3 +238,10 @@ export const pages = {
 } as const;
 
 export type PagePath = keyof typeof pages;
+
+/** Articles, newest first. Title and description come from `pages`; each
+ *  article also needs a route in App.tsx and an entry in scripts/prerender.mjs. */
+export type Article = { path: PagePath; date: string; dateLabel: string; minutes: number };
+export const articles: Article[] = [
+  { path: "/dead-channels", date: "2026-11-05", dateLabel: "November 2026", minutes: 6 },
+];

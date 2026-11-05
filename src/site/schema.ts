@@ -3,7 +3,7 @@
 // recognition, each pointing at an independent source (DOI, ORCID, conference
 // site, code archive, course record) so search engines and AI systems can
 // corroborate every claim instead of taking the site's word for it.
-import { links, pages } from "./data";
+import { articles, links, pages } from "./data";
 
 const SITE = "https://www.raadh.me";
 // Full ISO 8601 timestamp of this build; Google rejects a bare date here.
@@ -305,6 +305,15 @@ const deadChannels = {
   ],
 };
 
+// Every article, newest first, for /articles.
+const articleList = {
+  "@type": "ItemList",
+  "@id": id("articles"),
+  name: "Articles",
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  itemListElement: articles.map((a, i) => ({ "@type": "ListItem", position: i + 1, url: SITE + a.path, name: pages[a.path].title })),
+};
+
 const website = {
   "@type": "WebSite",
   "@id": id("website"),
@@ -325,6 +334,7 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
   "/evidence": { type: "WebPage", name: "Evidence", main: "person", about: ["person", "ormas-preprint", "deepmath-paper", "oxiedo"] },
   "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
+  "/articles": { type: "CollectionPage", name: "Articles", main: "articles", about: ["dead-channels"] },
   "/dead-channels": { type: "WebPage", name: "VGG-19-BN spends 18.6% of its compute on channels that output zero", main: "dead-channels", about: ["dead-channels", "ormas-monitor", "deepmath-paper"] },
 };
 
@@ -354,6 +364,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }
