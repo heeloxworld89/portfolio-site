@@ -77,6 +77,27 @@
   .ux-research .uxr-toc-list > li:last-child > a { border-bottom: 0; }
 }
 
+/* Optional fold (OnThisPage foldOnPhone): on phones the list collapses behind
+   a tap-to-open row so the article starts on the first screen. Tablets and
+   desktop are unchanged. */
+.ux-research .uxr-toc-toggle { display: none; }
+@media (max-width: 767px) {
+  .ux-research .uxr-toc.can-fold { padding: 0; }
+  .ux-research .uxr-toc.can-fold.is-open { padding-bottom: 8px; }
+  .ux-research .uxr-toc.can-fold .uxr-toc-h { display: none; }
+  .rx .ux-research .uxr-toc.can-fold .uxr-toc-toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    position: static; left: auto; width: 100%; min-height: 48px; margin: 0; padding: 0;
+    background: none; border: 0; border-radius: 0; cursor: pointer; text-align: left;
+    font-family: var(--rx-mono); font-size: 11.5px; font-weight: 400; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--rx-ink-2);
+  }
+  .rx .ux-research .uxr-toc.can-fold .uxr-toc-toggle::after { content: "+"; font-size: 20px; line-height: 1; color: var(--rx-teal); }
+  .rx .ux-research .uxr-toc.can-fold.is-open .uxr-toc-toggle::after { content: "\2212"; }
+  .ux-research .uxr-toc.can-fold:not(.is-open) .uxr-toc-list { display: none; }
+  .ux-research .uxr-rail:has(.uxr-toc.can-fold) { margin-bottom: 28px; }
+}
+
 /* ── section shells (CVSection) ───────────────────────────────────────── */
 .ux-research .sx-lead { max-width: var(--uxr-measure); font-size: 17px; line-height: 1.7; }
 .ux-research .sx-meta { margin-top: 26px; }
