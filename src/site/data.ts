@@ -221,6 +221,13 @@ export const pages = {
     image: "/og/deepmath.png",
     imageAlt: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics, DeepMath 2026 poster",
   },
+  "/dead-channels": {
+    title: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
+    description:
+      "292 channels in torchvision's VGG-19-BN output exactly 0 on 10,000 test photos. Cutting them changed no answers and saved 18.6% of the operations.",
+    image: "/og/dead-channels-v3.jpg",
+    imageAlt: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
+  },
 } as const;
 
 export type PagePath = keyof typeof pages;

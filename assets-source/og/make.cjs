@@ -1,7 +1,8 @@
 // Renders the link-preview (Open Graph) images in public/og/ with the site's
 // own fonts and colours. Run from the repo root: node assets-source/og/make.cjs
 // (needs Playwright). Bump VERSION when the images change, so WhatsApp,
-// LinkedIn and X fetch the new file instead of a cached one.
+// LinkedIn and X fetch the new file instead of a cached one. Pass card names
+// to render only those, e.g. node assets-source/og/make.cjs dead-channels
 const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
@@ -48,6 +49,14 @@ const cards = {
     chips: [["7", "MIT programmes"], ["10", "selections in 2026"], ["Age 12", "first venture"]],
     right: "portrait",
   },
+  // Article card: the article's own title, description and figures; no right panel.
+  "dead-channels": {
+    k: "Rokib Al Dhin Raadh · Independent researcher, Dhaka",
+    h: "VGG-19-BN spends 18.6% of its compute on <em>channels that output zero</em>",
+    t: "292 channels in torchvision's VGG-19-BN output exactly 0 on 10,000 test photos. Cutting them changed no answers and saved 18.6% of the operations.",
+    chips: [["292 of 5,504", "flagged channels"], ["18.6%", "fewer operations"], ["10,000", "test photos"]],
+    wide: true,
+  },
 };
 
 const right = {
@@ -74,6 +83,7 @@ body{width:1200px;height:630px;overflow:hidden;position:relative;background:#e7e
 .h em{font-style:italic;color:#146273}
 .t{font-size:29px;line-height:1.38;color:#273033;margin-top:24px;max-width:630px}
 .chips{display:flex;gap:10px;margin-top:auto}
+.l.wide{width:1056px}.l.wide .h{font-size:66px}.l.wide .t{max-width:960px;font-size:27px}
 .chip{background:rgba(251,251,249,.85);border:1px solid rgba(11,64,77,.28);border-top:3px solid #0b404d;padding:14px 18px}
 .chip b{display:block;font-size:22px;font-weight:700;color:#0f1516}
 .chip span{display:block;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#4d575a;margin-top:3px}
@@ -89,16 +99,18 @@ body{width:1200px;height:630px;overflow:hidden;position:relative;background:#e7e
 .pf{font-size:16px;line-height:1.5;color:rgba(240,247,245,.85);border-top:1px solid rgba(240,247,245,.2);padding-top:14px}
 .cob{font-family:'Instrument Serif',serif;font-size:60px;line-height:.98;color:#fbfbf9;margin-bottom:24px}
 </style></head><body><div class="field"></div><div class="top"></div>
-<div class="l"><div class="k"><i></i>${c.k}</div>
+<div class="l${c.wide ? " wide" : ""}"><div class="k"><i></i>${c.k}</div>
 ${c.name ? `<div class="n">Rokib Al Dhin Raadh</div>` : `<div class="h">${c.h}</div>`}
 <div class="t">${c.t}</div>
 <div class="chips">${c.chips.map(([b, s]) => `<div class="chip"><b>${b}</b><span>${s}</span></div>`).join("")}</div></div>
-${right[c.right]}<div class="url">raadh.me</div></body></html>`;
+${c.right ? right[c.right] : ""}<div class="url">raadh.me</div></body></html>`;
 
 (async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
+  const only = process.argv.slice(2);
   for (const [k, c] of Object.entries(cards)) {
+    if (only.length && !only.includes(k)) continue;
     await p.setContent(html(c), { waitUntil: "load" });
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(300);

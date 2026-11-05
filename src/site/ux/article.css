@@ -1,0 +1,57 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Article pages (/dead-channels). Built on the /research reading layer
+   (ux/research.css: rail, paragraphs, tables, lists); this file adds only
+   what an article needs on top. Everything is scoped to .ux-art.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.rx .ux-art-head h1 { max-width: 1100px; }
+.ux-art [id] { scroll-margin-top: 28px; }
+
+/* Section headings: the /research heading style, on h2. */
+.rx .ux-research.ux-art h2.uxr-h {
+  font-family: var(--rx-serif); font-weight: 400;
+  font-size: clamp(28px, 2.5vw, 36px); line-height: 1.12; letter-spacing: -0.01em;
+  color: var(--rx-teal); max-width: 26em; margin: 0 0 20px;
+  padding-top: 22px; border-top: 1px solid var(--rx-line-soft);
+}
+
+/* Commands and tool output: scroll inside the block, never widen the page. */
+.rx .ux-art .art-code {
+  margin: 0 0 22px; padding: 16px 18px; max-width: 100%; overflow-x: auto;
+  background: var(--rx-teal); color: #e6f0ee;
+  font-family: var(--rx-mono); font-size: 13px; line-height: 1.65; white-space: pre;
+}
+.rx .ux-art .art-code.is-output {
+  background: var(--rx-white); color: var(--rx-ink);
+  border: 1px solid var(--rx-line-soft); border-left: 3px solid #b8892b;
+}
+/* The legacy theme sets code { color: … !important }; keep the block's own colour. */
+.rx .ux-art .art-code code { font: inherit; background: none; padding: 0; color: inherit !important; }
+
+/* Tables use .uxr-table; keep them clear of the text around them. */
+.ux-art .uxr-table-wrap { margin: 8px 0 22px; }
+
+/* Links to the code and results, under the sign-off. */
+.ux-art .art-sign { margin-top: 26px; }
+.ux-art .art-sign p { margin-bottom: 6px; }
+.ux-art .art-links {
+  list-style: none; margin: 18px 0 0; padding: 0; max-width: var(--uxr-measure);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px;
+  background: var(--rx-line-soft); border: 1px solid var(--rx-line-soft);
+}
+.ux-art .art-links li { margin: 0; padding: 0; }
+.rx .ux-art .art-links a {
+  display: block; height: 100%; padding: 13px 16px; background: var(--rx-white);
+  color: var(--rx-teal); font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.rx .ux-art .art-links a:hover { background: var(--rx-paper); }
+
+/* Phones: each table row stays on one line and the table scrolls sideways
+   inside its frame (.uxr-table-wrap, which is focusable), never the page.
+   The legacy theme forces white-space: normal !important on every cell under
+   768px, so the no-wrap rule has to answer with !important. */
+@media (max-width: 767px) {
+  .rx .ux-research.ux-art .uxr-table { display: table; width: max-content; min-width: 100%; max-width: none; overflow: visible; }
+  .rx .ux-research.ux-art .uxr-table th,
+  .rx .ux-research.ux-art .uxr-table td { white-space: nowrap !important; }
+}
