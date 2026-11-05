@@ -22,6 +22,7 @@ const routes = [
   { path: "/about", file: "about.html", mustContain: 'id="recognition"' },
   { path: "/evidence", file: "evidence.html", mustContain: 'id="ev-research"' },
   { path: "/deepmath", file: "deepmath.html", mustContain: 'id="dm-results"' },
+  { path: "/dead-channels", file: "dead-channels.html", mustContain: 'id="dc-proof"' },
 ];
 const { pages, schemaFor } = await import(pathToFileURL(path.join(root, "dist-ssr/entry-server.js")).href);
 

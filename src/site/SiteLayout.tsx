@@ -30,8 +30,11 @@ function usePageMeta(path: string) {
   }, [path]);
 }
 
-export default function SiteLayout({ children }: { children: ReactNode }) {
+/** `hideCompanyLink` drops the OXIEDO ↗ link from the header and footer, for
+ *  pages that must not link to oxiedo.com (the /dead-channels article). */
+export default function SiteLayout({ children, hideCompanyLink = false }: { children: ReactNode; hideCompanyLink?: boolean }) {
   const { pathname } = useLocation();
+  const items = hideCompanyLink ? nav.filter((n) => n.to !== links.oxiedo) : nav;
   const [open, setOpen] = useState(false);
   const burgerRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -77,7 +80,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             <span /><span /><span />
           </button>
           <nav ref={navRef} id="rx-nav" className={`rx-nav${open ? " is-open" : ""}`} aria-label="Main">
-            {nav.map((n) =>
+            {items.map((n) =>
               n.external ? (
                 <a key={n.to} href={n.to} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{n.label}</a>
               ) : (
@@ -101,7 +104,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             <nav className="rx-foot-col" aria-label="Footer">
               <h2>Pages</h2>
               <ul>
-                {nav.map((n) => (
+                {items.map((n) => (
                   <li key={n.to}>
                     {n.external ? (
                       <a href={n.to} target="_blank" rel="noreferrer">{n.label}</a>

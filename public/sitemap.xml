@@ -53,6 +53,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.raadh.me/dead-channels</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.raadh.me/og/dead-channels-v3.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.raadh.me/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>

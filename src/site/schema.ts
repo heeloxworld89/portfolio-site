@@ -285,6 +285,26 @@ const oximoReport = {
   about: [ref("oximo"), ref("black-bloxie")],
 };
 
+// The /dead-channels article (text by the author, published as written).
+const deadChannels = {
+  "@type": "TechArticle",
+  "@id": id("dead-channels"),
+  headline: pages["/dead-channels"].title,
+  description: pages["/dead-channels"].description,
+  author: ref("person"),
+  datePublished: "2026-11-05",
+  url: `${SITE}/dead-channels`,
+  image: `${SITE}${pages["/dead-channels"].image}`,
+  about: [ref("ormas-monitor"), ref("deepmath-paper")],
+  isBasedOn: "https://github.com/Oxiedo/ormas-monitor/blob/main/docs/results.md",
+  citation: [
+    "https://arxiv.org/abs/1902.10811",
+    "https://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html",
+    "https://arxiv.org/abs/1708.06519",
+    "https://arxiv.org/abs/2302.12902",
+  ],
+};
+
 const website = {
   "@type": "WebSite",
   "@id": id("website"),
@@ -305,6 +325,7 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/about": { type: "AboutPage", name: "About", main: "person", about: ["person"] },
   "/evidence": { type: "WebPage", name: "Evidence", main: "person", about: ["person", "ormas-preprint", "deepmath-paper", "oxiedo"] },
   "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
+  "/dead-channels": { type: "WebPage", name: "VGG-19-BN spends 18.6% of its compute on channels that output zero", main: "dead-channels", about: ["dead-channels", "ormas-monitor", "deepmath-paper"] },
 };
 
 export function schemaFor(path: string): string {
@@ -333,6 +354,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }
