@@ -124,7 +124,7 @@ export default function DeadChannelsPage() {
       <div className="rx-deep ux-research ux-art">
         <div className="rx-wrap uxr-layout">
           <aside className="uxr-rail">
-            <OnThisPage toc={TOC} active={active} />
+            <OnThisPage toc={TOC} active={active} foldOnPhone />
           </aside>
           <article className="uxr-main">
 
@@ -198,7 +198,7 @@ export default function DeadChannelsPage() {
             <section className="uxr-sec" id="dc-you" aria-labelledby="dc-you-h">
               <h2 className="uxr-h" id="dc-you-h">Tell me where I'm wrong</h2>
               <p className="uxr-p">Run <code>ormas-monitor check</code> on your own BatchNorm → ReLU model and tell me what you find. I especially want to see a flagged channel that fires, results from models trained with modern recipes, and any explanation for the gap between VGG-16-BN and VGG-19-BN.</p>
-              <p className="uxr-p">The tool is free, Apache-2.0, and runs locally. I run a small company, Oxiedo, that hopes to sell team features later, so you should know I have an interest.</p>
+              <p className="uxr-p">The tool is free, Apache-2.0, and runs locally. I'm building a company, Oxiedo, that hopes to sell team features later, so you should know I have an interest.</p>
               <div className="art-sign">
                 <p className="uxr-p">Code and all results: <a href={L.tool} {...ext}>github.com/Oxiedo/ormas-monitor</a></p>
                 <p className="uxr-p">Paper and poster: <Link to="/deepmath">/deepmath</Link></p>
