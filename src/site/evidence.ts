@@ -36,10 +36,11 @@ export const groups: Group[] = [
       },
       {
         claim: "ormas-monitor, an open training monitor for PyTorch (released 23 October 2026)",
-        detail: "Implements the dead-channel result from the DeepMath paper as a runtime check. Its published results report near-zero channels in 19 of the 21 torchvision models that use BatchNorm and ReLU, and an 18.6% compute reduction on VGG-19-BN with unchanged top-1 predictions on a 64-image sample.",
+        detail: "Implements the dead-channel result from the DeepMath paper as a runtime check. Its published results report near-zero channels in 19 of the 21 torchvision models that use BatchNorm and ReLU, and an 18.6% compute reduction on VGG-19-BN that changed none of its top-1 predictions on 10,000 ImageNetV2 photos.",
         source: [
           { label: "PyPI", href: links.monitor },
           { label: "Documentation and results", href: links.monitorDocs },
+          { label: "Article: the VGG-19-BN test", href: "/dead-channels" },
         ],
         status: "Public record",
       },
