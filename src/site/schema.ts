@@ -161,7 +161,13 @@ const deepmath = {
     address: { "@type": "PostalAddress", addressLocality: "Columbus", addressRegion: "OH", addressCountry: "US" },
   },
   description:
-    "Conference on the Mathematical Theory of Deep Neural Networks, hosted by The Ohio State University. Papers are accepted after double-blind review.",
+    "Conference on the Mathematical Theory of Deep Neural Networks, in its eighth year, hosted in 2026 by The Ohio State University. Papers are accepted after double-blind review; 41 were accepted in 2026 (8 contributed talks and 33 posters). Invited speakers: Alfred Hero (University of Michigan), Renyuan Xu (Stanford University), Yuting Wei (University of Pennsylvania), Wenjing Liao (Georgia Tech), Randall Balestriero (Brown University) and Mo Zhou (University of Washington). The poster session included papers co-authored by René Vidal, Richard Baraniuk, Laura Balzano, Christos Thrampoulidis, Jonathan Keating, Ness Shroff, Aylin Yener and Zhihui Zhu, and paper 36 by Rokib Al Dhin Raadh, sole author.",
+  // Invited speakers, as printed in the conference programme.
+  performer: [
+    ["Alfred Hero", "University of Michigan"], ["Renyuan Xu", "Stanford University"],
+    ["Yuting Wei", "University of Pennsylvania"], ["Wenjing Liao", "Georgia Institute of Technology"],
+    ["Randall Balestriero", "Brown University"], ["Mo Zhou", "University of Washington"],
+  ].map(([name, org]) => ({ "@type": "Person", name, affiliation: { "@type": "Organization", name: org } })),
   organizer: { "@type": "Organization", name: "DeepMath: Conference on the Mathematical Theory of Deep Neural Networks", url: links.deepmath },
   image: [`${SITE}/og/research-v3.jpg`, `${SITE}/assets/images/logos/deepmath.png`],
   workFeatured: ref("deepmath-paper"),
@@ -211,7 +217,7 @@ const deepmathPaper = {
   creativeWorkStatus: "Accepted (poster) after double-blind review, DeepMath 2026",
   keywords: ["Input-to-State Stability", "self-repairing neural networks", "training dynamics", "switched systems", "ORMAS"],
   description:
-    "Local stability analysis of self-repairing neural network training. Bounded repairs keep training within a computable radius of a local minimum (practical input-to-state stability), and per-channel-bounded repairs cannot reactivate a dead BatchNorm–ReLU channel, so self-repairing training is a switched system. Sole author. Accepted after double-blind review at DeepMath 2026, The Ohio State University; poster session 29 October 2026; one of 41 accepted papers.",
+    "Local stability analysis of self-repairing neural network training. Bounded repairs keep training within a computable radius of a local minimum (practical input-to-state stability), and per-channel-bounded repairs cannot reactivate a dead BatchNorm–ReLU channel, so self-repairing training is a switched system. Sole author. Accepted after double-blind review at DeepMath 2026, The Ohio State University; poster session 29 October 2026; one of 41 accepted papers (paper 36), in the same poster session as papers co-authored by René Vidal, Richard Baraniuk and Laura Balzano.",
   about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Deep learning", "Deep_learning")],
   isBasedOn: ref("ormas-preprint"),
   subjectOf: ref("deepmath-2026"),

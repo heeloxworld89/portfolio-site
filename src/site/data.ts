@@ -217,7 +217,7 @@ export const pages = {
   "/deepmath": {
     title: "Self-Repair as a Bounded Disturbance · DeepMath 2026 · Rokib Al Dhin Raadh",
     description:
-      "Sole-authored DeepMath 2026 paper by Rokib Al Dhin Raadh on the stability of self-repairing neural network training. Poster, abstract, results, figures and Q&A.",
+      "Sole-author DeepMath 2026 paper by Rokib Al Dhin Raadh, 18: one of 41 accepted after double-blind review, on a programme with René Vidal and Richard Baraniuk.",
     image: "/og/deepmath.png",
     imageAlt: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics, DeepMath 2026 poster",
   },
