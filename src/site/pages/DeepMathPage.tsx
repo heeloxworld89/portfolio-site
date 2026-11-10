@@ -235,9 +235,18 @@ export default function DeepMathPage() {
                   <dd className="uxr-cell-v">Energy Advancement Innovation Center, The Ohio State University, Columbus.</dd>
                 </div>
               </dl>
+              <p className="uxr-p">
+                <strong>Invited speakers.</strong> Alfred Hero (University of Michigan; former President of the IEEE Signal
+                Processing Society), Renyuan Xu (Stanford), Yuting Wei (Wharton, University of Pennsylvania), Wenjing Liao
+                (Georgia Tech), Randall Balestriero (Brown) and Mo Zhou (University of Washington).
+              </p>
+              <p className="uxr-p">
+                <strong>In the same poster session.</strong> Papers co-authored by Ren&eacute; Vidal, Richard Baraniuk, Laura
+                Balzano, Christos Thrampoulidis, Jonathan Keating, Ness Shroff, Yingbin Liang, Aylin Yener and Zhihui Zhu.
+                The contributed talks included work co-authored by Patrick Jaillet, Qing Qu and Eric Shea-Brown.
+              </p>
               <p className="uxr-cap">
-                Invited speakers came from the University of Michigan, Stanford, the University of Pennsylvania, the
-                University of Washington, Georgia Tech and Brown.{" "}
+                Names are from the conference programme, which lists all 41 accepted papers.{" "}
                 <a href={links.programme} target="_blank" rel="noreferrer">Conference programme (PDF)</a> ·{" "}
                 <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath</a>
               </p>

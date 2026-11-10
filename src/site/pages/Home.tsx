@@ -10,7 +10,7 @@ const L = "/assets/images/logos/";
 const BUILD_TIME = Number(import.meta.env.VITE_BUILD_TIME ?? Date.parse("2026-10-03T00:00:00Z"));
 // Ten marks: the logo wall is laid out for exactly ten (5×2, 3×3 plus one, 2×5).
 const marks: Mark[] = [
-  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review; poster at The Ohio State University, one of 41 accepted papers" },
+  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review; one of 41 accepted papers, in the same poster session as papers from René Vidal's and Richard Baraniuk's groups" },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Workshop reviewer", note: "Reviewer for the Workshop on Trustworthy AI for Good, Paris" },
   { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited talk", note: "Invited talk at Cohere Labs, Toronto, November 2026; member of its research community" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Highest-ranked", note: "ORMAS was the highest-ranked application in its review cycle" },
@@ -206,7 +206,8 @@ export default function Home() {
               </p>
               <p className="rx-dm-lede">
                 It came four days after the paper&rsquo;s poster session at <b>DeepMath 2026</b> at{" "}
-                <b>The Ohio State University</b>, and followed an invitation into the Cohere Labs research community,
+                <b>The Ohio State University</b>, where it was shown alongside papers from Ren&eacute; Vidal&rsquo;s and
+                Richard Baraniuk&rsquo;s groups, and followed an invitation into the Cohere Labs research community,
                 which described ORMAS as showing &ldquo;remarkable initiative in ML safety and auditability.&rdquo;
               </p>
               <p className="rx-dm-paper">

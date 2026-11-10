@@ -58,7 +58,7 @@ export const news: NewsItem[] = [
   {
     date: "29 Oct 2026", kind: "Conference",
     title: "Poster presented at DeepMath 2026, The Ohio State University",
-    body: "The paper was shown at the DeepMath 2026 poster session in Columbus, one of 41 papers accepted to the Conference on the Mathematical Theory of Deep Neural Networks. Prof. Zhihui Zhu of The Ohio State University printed and displayed the poster.",
+    body: "The paper was shown at the DeepMath 2026 poster session in Columbus, one of 41 papers accepted to the Conference on the Mathematical Theory of Deep Neural Networks. The same poster session included papers co-authored by René Vidal, Richard Baraniuk and Laura Balzano; invited speakers included Alfred Hero (Michigan), Yuting Wei (Wharton) and Randall Balestriero (Brown). Prof. Zhihui Zhu of The Ohio State University printed and displayed the poster.",
     href: links.poster,
   },
   {
@@ -123,7 +123,7 @@ export const talks: Talk[] = [
     kind: "Poster", host: "DeepMath 2026", logo: "/assets/images/logos/deepmath.png",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
     where: "The Ohio State University, Columbus, OH",
-    note: "Poster session of the Conference on the Mathematical Theory of Deep Neural Networks. One of 41 accepted papers.",
+    note: "Poster session of the Conference on the Mathematical Theory of Deep Neural Networks. One of 41 accepted papers, alongside papers from René Vidal's and Richard Baraniuk's groups.",
     href: "/deepmath", hrefLabel: "Poster and paper",
   },
   {
