@@ -50,24 +50,28 @@ export default function DeepMathRoom({ headingId = "rx-room-h" }: { headingId?: 
   return (
     <section className="rx-room" aria-labelledby={headingId}>
       <div className="rx-wrap">
-        <p className="rx-room-eb">DeepMath 2026 · The Ohio State University · 29–30 October</p>
-        <h2 id={headingId}>
-          One of 41 accepted papers. <em>Sole author, age 18, no university.</em>
-        </h2>
-        <p className="rx-room-lede">
-          DeepMath is the Conference on the Mathematical Theory of Deep Neural Networks, now in its eighth year. Papers
-          are accepted after double-blind review. This is who else was on the 2026 programme.
-        </p>
-        <div className="rx-room-grid">
-          <Group label="Invited speakers" people={speakers} />
-          <Group label="Co-authors in the same poster session" people={posters} />
-          <Group label="Co-authors of contributed talks" people={talks} />
+        <div className="rx-room-card">
+          <div className="rx-room-head">
+            <p className="rx-room-eb"><span className="dot" aria-hidden="true" /> DeepMath 2026 · Ohio State · 29–30 Oct</p>
+            <h2 id={headingId}>
+              One of 41 accepted papers. <em>Sole author, age 18, no university.</em>
+            </h2>
+            <p className="rx-room-lede">
+              DeepMath is the Conference on the Mathematical Theory of Deep Neural Networks, now in its eighth year.
+              Papers are accepted after double-blind review. These people were on the same 2026 programme.
+            </p>
+            <p className="rx-room-src">
+              Names from the{" "}
+              <a href={links.programme} target="_blank" rel="noreferrer">conference programme (PDF)</a>, which lists
+              all 41 accepted papers. Raadh&rsquo;s is paper 36.
+            </p>
+          </div>
+          <div className="rx-room-grid">
+            <Group label="Invited speakers" people={speakers} />
+            <Group label="Co-authors in the same poster session" people={posters} />
+            <Group label="Co-authors of contributed talks" people={talks} />
+          </div>
         </div>
-        <p className="rx-room-src">
-          Names from the{" "}
-          <a href={links.programme} target="_blank" rel="noreferrer">conference programme (PDF)</a>, which lists all 41
-          accepted papers. Raadh&rsquo;s is paper 36.
-        </p>
       </div>
     </section>
   );
