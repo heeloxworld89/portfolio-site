@@ -4,6 +4,7 @@ import "katex/dist/katex.min.css";
 import { BlockMath, InlineMath } from "react-katex";
 import VideoFacade from "@/components/common/VideoFacade";
 import SiteLayout from "../SiteLayout";
+import DeepMathRoom from "../DeepMathRoom";
 import { links, youtubeId } from "../data";
 import { OnThisPage, useActiveSection, type TocItem } from "../OnThisPage";
 import "../ux/research.css";
@@ -235,12 +236,7 @@ export default function DeepMathPage() {
                   <dd className="uxr-cell-v">Energy Advancement Innovation Center, The Ohio State University, Columbus.</dd>
                 </div>
               </dl>
-              <p className="uxr-cap">
-                Invited speakers came from the University of Michigan, Stanford, the University of Pennsylvania, the
-                University of Washington, Georgia Tech and Brown.{" "}
-                <a href={links.programme} target="_blank" rel="noreferrer">Conference programme (PDF)</a> ·{" "}
-                <a href={links.deepmath} target="_blank" rel="noreferrer">DeepMath</a>
-              </p>
+              <DeepMathRoom headingId="dm-room-h" />
             </section>
 
             {/* ── The poster ── */}
