@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
+import DeepMathRoom from "../DeepMathRoom";
 import { links, news, publications, talks, youtubeId } from "../data";
 import "../ux/home.css";
 
@@ -131,6 +132,9 @@ export default function Home() {
           <Link className="rx-sel-more" to="/about">Read the full record <Arrow /></Link>
         </div>
       </section>
+
+      {/* ── the DeepMath programme ───────────────────────────────────── */}
+      <DeepMathRoom />
 
       {/* ── bio ──────────────────────────────────────────────────────── */}
       <section className="rx-bio">

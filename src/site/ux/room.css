@@ -1,0 +1,24 @@
+/* The DeepMath programme band (DeepMathRoom.tsx): dark teal, names in three groups. */
+.rx-room { position: relative; z-index: 1; background: var(--rx-teal); color: #e6f0ee; padding: 96px 0 88px; margin: 56px 0 0; }
+.rx .rx-room-eb { font-family: var(--rx-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #d8ee96; margin: 0 0 22px; }
+.rx .rx-room h2 { font-family: var(--rx-serif); font-weight: 400; font-size: clamp(38px, 4.6vw, 68px); line-height: 1.04; letter-spacing: -0.02em; color: #fbfbf9; max-width: 1000px; margin: 0 0 22px; }
+.rx .rx-room h2 em { font-style: italic; color: #d8ee96; }
+.rx .rx-room-lede { font-size: 18px; line-height: 1.6; color: #cfe0dd; max-width: 720px; margin: 0 0 48px; }
+.rx-room-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.rx .rx-room h3.rx-room-k, .rx .ux-research .rx-room h3.rx-room-k { font-family: var(--rx-mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: #d8ee96; margin: 0 0 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(216, 238, 150, .35); }
+.rx-room-list { list-style: none; margin: 0; padding: 0; }
+.rx .rx-room-list li { margin: 0; padding: 11px 0; border-bottom: 1px solid rgba(230, 240, 238, .14); }
+.rx .rx-room-list b { display: block; font-family: var(--rx-serif); font-weight: 400; font-size: 24px; line-height: 1.15; color: #fbfbf9; }
+.rx .rx-room-list span { display: block; font-size: 14px; line-height: 1.45; color: #b9cfcb; margin-top: 3px; }
+.rx .rx-room-src { font-size: 14px; color: #b9cfcb; margin: 36px 0 0; }
+.rx .rx-room-src a { color: #d8ee96; }
+/* Inside the /deepmath reading column the band is a card, not full-bleed. */
+.ux-research .rx-room { margin: 8px 0 0; padding: 40px 32px 34px; }
+.ux-research .rx-room .rx-wrap { padding: 0; max-width: none; width: auto; }
+.rx .ux-research .rx-room h2 { font-size: clamp(30px, 3vw, 42px); }
+.ux-research .rx-room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; }
+@media (max-width: 900px) {
+  .rx-room { padding: 64px 0 56px; }
+  .rx-room-grid, .ux-research .rx-room-grid { grid-template-columns: 1fr; gap: 32px; }
+  .ux-research .rx-room { padding: 28px 20px 24px; }
+}
