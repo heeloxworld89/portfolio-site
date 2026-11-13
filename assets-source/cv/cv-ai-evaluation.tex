@@ -1,0 +1,204 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[top=0.5in, bottom=0.45in, left=0.7in, right=0.7in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{parskip}
+\usepackage{needspace}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS (match raadh.me)
+% ============================================================
+\definecolor{heading}{HTML}{0B4F5C}
+\definecolor{link}{HTML}{0B4F5C}
+\definecolor{body}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{5A6470}
+
+% ============================================================
+% HYPERLINKS
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=link,
+    urlcolor=link,
+    pdfauthor={Rokib Al Dhin Raadh},
+    pdftitle={Rokib Al Dhin Raadh - CV (AI Evaluation Programme)},
+    pdfsubject={AI researcher; founder and CEO of OXIEDO; inventor of ORMAS; DeepMath 2026; NeurIPS 2026 Workshop reviewer; Cohere Labs invited talk},
+    pdfkeywords={Rokib Al Dhin Raadh, model evaluation, training observability, regression detection, failure modes, held-out evaluation, ablations, PyTorch, LLMs, ORMAS},
+}
+
+% ============================================================
+% SECTION STYLE
+% ============================================================
+\titleformat{\section}
+  {\normalsize\bfseries\scshape\color{heading}}
+  {}
+  {0em}
+  {}
+  [\vspace{-1pt}{\color{heading}\titlerule[0.4pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+\pagestyle{empty}
+
+% ============================================================
+% CV ENTRY: date in the left gutter, body indented
+% ============================================================
+% A list (not a minipage) so long entries can break across pages.
+\newcommand{\cvitem}[3]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.35cm}%
+    \setlength{\labelwidth}{2.1cm}%
+    \setlength{\labelsep}{0.25cm}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+  }%
+  \item[{\makebox[2.1cm][l]{\footnotesize\color{muted}#1}}]%
+  #2
+  #3
+  \end{list}%
+  \vspace{1.5pt}
+}
+
+% Tight bullet list
+\newlist{bullets}{itemize}{1}
+\setlist[bullets]{leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% Numbered publication list
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{leftmargin=2.35cm, labelwidth=2.1cm, labelsep=0.25cm, labelindent=0pt, align=left, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
+
+\setlength{\emergencystretch}{2.5em}
+\hyphenpenalty=10000
+\exhyphenpenalty=50
+\begin{document}
+\RaggedRight
+\color{body}
+
+% ============================================================
+% HEADER
+% ============================================================
+\begin{center}
+  {\LARGE\bfseries\color{heading} Rokib Al Dhin Raadh}\\[3pt]
+  {\small AI Researcher: AI evaluation, auditing and training dynamics \enspace$\cdot$\enspace Founder \& CEO, \href{https://oxiedo.com}{OXIEDO}}\\[3pt]
+  {\footnotesize
+    \href{mailto:raadh@oxiedo.com}{raadh@oxiedo.com}
+    \enspace$|$\enspace
+    \href{https://www.raadh.me}{raadh.me}
+    \enspace$|$\enspace
+    \href{https://github.com/Oxiedo/ormas-monitor}{github.com/Oxiedo/ormas-monitor}
+    \enspace$|$\enspace
+    \href{https://orcid.org/0009-0003-1178-5296}{ORCID 0009-0003-1178-5296}
+    \enspace$|$\enspace
+    {\color{muted}Dhaka, Bangladesh}
+  }
+\end{center}
+\vspace{1pt}
+
+{\small\noindent AI researcher, age 18, working on how to measure what AI systems do and make them accountable: tools that record what changes inside a model while it trains, and evaluations designed to prove a finding wrong before trusting it (held-out data, negative controls, seeded ablations). Sole author of a peer-reviewed paper proving stability for training whose updates are not gradients (DeepMath 2026). Invited speaker at Cohere Labs and member of its research community. Ran 383 controlled, seeded experiments on one GPU and shipped ormas-monitor, an open-source PyTorch training monitor.\par}
+
+% ============================================================
+% DISTINCTIONS
+% ============================================================
+\needspace{5\baselineskip}\section*{Selected Distinctions}
+\begin{bullets}
+  \item \textbf{Invited talk}, Cohere Labs, Toronto, November 2026: ``When the Update Is Not a Gradient.'' Invited into the Cohere Labs research community on the basis of ORMAS.
+  \item \textbf{Sole author, peer-reviewed paper}, DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks), The Ohio State University. Double-blind review; 41 papers accepted.
+  \item \textbf{Reviewer}, NeurIPS 2026 Workshop on \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good}, Paris, France.
+  \item \textbf{Highest-ranked application}, Cosmos Institute, 2026 review cycle.
+\end{bullets}
+
+% ============================================================
+% RESEARCH
+% ============================================================
+\needspace{5\baselineskip}\section*{Research Experience}
+\noindent{\small\textbf{Focus.} Evaluation methodology (controls, held-out data, reproducibility); auditing what changes inside models during training; failure detection; evidence that regulators and institutions can rely on.\par}
+
+\vspace{3pt}
+\cvitem{Oct--Nov 2026}{%
+  \textbf{ormas-monitor} \quad {\small open-source PyTorch training monitor (Apache-2.0, PyPI)}
+}{%
+  \begin{bullets}
+    \item Turned the dead-channel theorem into a runtime check with per-layer alarms, optional repair and a tamper-evident log.
+    \item Applied to 22 torchvision models: flagged near-zero channels in 19 of the 21 that use BatchNorm and ReLU.
+    \item \textbf{Held-out evaluation with a control.} In VGG-19-BN, 292 channels output exactly zero on all 10,000 ImageNetV2 photos. Removing them cut compute by 18.6\% and changed none of the 10,000 predictions; removing 292 random live channels changed 499 of 500. \href{https://www.raadh.me/dead-channels}{Write-up}
+  \end{bullets}
+}
+\cvitem{2024--present}{%
+  \textbf{Independent Researcher} \quad {\small ORMAS: self-repairing neural network training}
+}{%
+  \begin{bullets}
+    \item \textbf{Training-dynamics theory.} Proved local practical input-to-state stability for training with bounded repair updates, so training stays stable even though its updates are not gradients. Showed that per-channel-bounded repairs cannot reactivate a dead BatchNorm--ReLU channel (DeepMath 2026).
+    \item \textbf{Failure diagnosis.} Built ORMAS, a training architecture that monitors every layer during training, detects failing components, repairs them and logs each correction with its cause.
+    \item \textbf{Robustness and retention.} After two trained convolutional layers were zeroed, ORMAS recovered to 80.3\% test accuracy on CIFAR-10, compared with 10.00\% for standard training (three seeds). Under sequential learning it retained 94.6\% on the first task, compared with 47.3\% for \mbox{ResNet-18}.
+    \item \textbf{Experimental practice.} Ran 383 controlled experiments across four architecture families (DAG, two CNNs, \mbox{ResNet-18}) on CIFAR-10 and CIFAR-100, all reproducible from seed, on one RTX~3090; 16,316 lines of PyTorch. Published corrections to my own results in the Cohere Labs talk.
+  \end{bullets}
+}
+
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\needspace{5\baselineskip}\section*{Publications and Talks}
+\begin{pubs}
+  \item \textbf{R.~A.~D. Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textit{DeepMath 2026}, The Ohio State University. Peer-reviewed (double-blind); poster. \mbox{\href{https://openreview.net/forum?id=kowltBZEIv}{OpenReview} $\cdot$ \href{https://www.raadh.me/deepmath}{Poster}}
+  \item \textbf{R.~A.~D. Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' Preprint, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.21730363}{doi:10.5281/zenodo.21730363}. 36-page supplement; code reproduces all 383 experiments.
+  \item \textbf{R.~A.~D. Raadh}. ``When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.'' Invited talk, Cohere Labs, November 2026. \href{https://www.raadh.me/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf}{Slides}
+  \item \textbf{R.~A.~D. Raadh}. ``VGG-19-BN spends 18.6\% of its compute on channels that output zero.'' Article, November 2026. \href{https://www.raadh.me/dead-channels}{raadh.me/dead-channels}
+  \item \textbf{R.~A.~D. Raadh}. ``OXIMO/AX09: Autonomous LLM-Dependent Commerce. A Twelve-Month Controlled Ablation Study.'' Technical report, 2026.
+\end{pubs}
+
+% ============================================================
+% ENGINEERING
+% ============================================================
+\needspace{5\baselineskip}\section*{Engineering and Company}
+\cvitem{2023--present}{%
+  \textbf{Founder \& CEO, \href{https://oxiedo.com}{OXIEDO}} \quad {\small Auditable AI training}
+}{%
+  \begin{bullets}
+    \item Builds ORMAS into on-premise training where each run produces a tamper-evident record of model changes. Accepted to 1752vc Ignite (top 1\% of applicants).
+  \end{bullets}
+}
+\cvitem{2023--2026}{%
+  \textbf{Sole Architect, OXIMO} \quad {\small Multi-agent LLM system}
+}{%
+  \begin{bullets}
+    \item Designed and built a multi-agent LLM system of 40,933 lines of Python with 2,069 tests, refactored from a 106,000-line codebase.
+    \item Ran a twelve-month controlled ablation on a live e-commerce business: output fell 91\% when the system was removed and recovered after it was restored.
+  \end{bullets}
+}
+
+% ============================================================
+% SKILLS
+% ============================================================
+\needspace{5\baselineskip}\section*{Skills}
+\begin{bullets}
+  \item \textbf{Training and evaluation:} PyTorch; training-run instrumentation (per-layer health, dead-unit detection); seeded, controlled ablations with negative controls; held-out evaluation under distribution shift.
+  \item \textbf{Theory:} training dynamics, input-to-state stability, switched systems.
+  \item \textbf{Engineering:} large Python codebases with test suites; LLM agent systems; packaging and releasing open-source tools.
+\end{bullets}
+
+% ============================================================
+% SERVICE, EDUCATION
+% ============================================================
+\needspace{5\baselineskip}\section*{Service}
+\cvitem{2026}{\textbf{Reviewer}, NeurIPS 2026 Workshop on Trustworthy AI for Good: submissions on mechanistic interpretability, attribution, model auditing and post-deployment monitoring. \href{https://trustworthy-ai-for-good.github.io/\#reviewers}{Reviewer list}}{}
+
+\needspace{5\baselineskip}\section*{Education}
+\cvitem{present}{\textbf{High school senior; prospective undergraduate.} Homeschooled. Independent study in machine learning, control theory and the mathematics of learning dynamics.}{}
+\cvitem{2025--2026}{\textbf{MIT Open Learning (MITx Online)}, seven programs including foundation models.}{}
+\cvitem{2025--2026}{\textbf{DeepLearning.AI}, Deep Learning Specialization (five courses).}{}
+\cvitem{}{Languages: English (fluent), Bengali (native).}{}
+
+\end{document}
