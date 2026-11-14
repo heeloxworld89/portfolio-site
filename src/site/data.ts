@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-06a";
+export const CV_VERSION = "2026-11-14a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -37,7 +37,9 @@ export const links = {
   cohereSlides: "/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf",
   // YouTube link to the recording of the Cohere Labs talk. Leave "" until it
   // is published; every "Watch the talk" button and player appears once set.
-  cohereRecording: "",
+  cohereRecording: "https://www.youtube.com/watch?v=R75wEi3Ti-M",
+  // Still frame for the click-to-play placeholder (saved from the video).
+  coherePoster: "/assets/images/talks/cohere-labs-2026.jpg",
 };
 
 /** YouTube video id from a watch, youtu.be, shorts or embed URL ("" if none). */
@@ -52,7 +54,7 @@ export const news: NewsItem[] = [
   {
     date: "2 Nov 2026", kind: "Invited talk",
     title: "Invited talk at Cohere Labs on the stability of self-repairing training",
-    body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. The slides are public; a recording will follow.",
+    body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. The recording is on Cohere's YouTube channel, and the slides are public.",
     href: links.cohereTalk,
   },
   {
@@ -116,6 +118,8 @@ export type Talk = {
   href: string; hrefLabel: string;
   /** Slides (PDF), shown as a second link when present. */
   slides?: string;
+  /** Recording of the talk, shown as a third link when present. */
+  recording?: string;
 };
 export const talks: Talk[] = [
   {
@@ -134,6 +138,7 @@ export const talks: Talk[] = [
     note: "Every convergence proof for gradient descent assumes each update is a gradient. Self-repairing training breaks that assumption and still converges. The talk covered why, and where the proof stops.",
     href: "https://luma.com/p28sna3q", hrefLabel: "Event page",
     slides: links.cohereSlides,
+    recording: links.cohereRecording,
   },
 ];
 

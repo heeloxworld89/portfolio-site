@@ -188,7 +188,8 @@ export default function DeepMathPage() {
                       <VideoFacade
                         src={`https://www.youtube-nocookie.com/embed/${recording}?rel=0`}
                         title="When the Update Is Not a Gradient, invited talk at Cohere Labs"
-                        label="Recording · YouTube"
+                        label="Recording · Cohere on YouTube"
+                        poster={links.coherePoster}
                       />
                     </div>
                   ) : (

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
+import VideoFacade from "@/components/common/VideoFacade";
 import DeepMathRoom from "../DeepMathRoom";
 import { links, news, publications, talks, youtubeId } from "../data";
 import "../ux/home.css";
@@ -197,7 +198,7 @@ export default function Home() {
         <div className="rx-wrap">
           <h2 className="rx-label">News <small>updated November 2026</small></h2>
 
-          <article className="rx-dm-card">
+          <article className={recording ? "rx-dm-card has-video" : "rx-dm-card"}>
             <div className="rx-dm-main">
               <p className="rx-dm-k"><span className="dot" aria-hidden="true" /> Invited talk · Cohere Labs · Toronto</p>
               <h3>
@@ -224,7 +225,7 @@ export default function Home() {
               </div>
               <div className="rx-btns">
                 {recording ? (
-                  <a className="rx-btn is-light" href={links.cohereRecording} target="_blank" rel="noreferrer">Watch the talk <Arrow /></a>
+                  <a className="rx-btn is-light" href={links.cohereRecording} target="_blank" rel="noreferrer">Watch on YouTube <Arrow /></a>
                 ) : null}
                 <a className={`rx-btn ${recording ? "is-outline-light" : "is-light"}`} href={links.cohereSlides} target="_blank" rel="noreferrer">Slides (PDF) <Arrow /></a>
                 {recording ? null : (
@@ -233,6 +234,16 @@ export default function Home() {
                 <Link className="rx-btn is-outline-light" to="/deepmath">The DeepMath paper <Arrow /></Link>
               </div>
             </div>
+            {recording ? (
+              <div className="rx-dm-video">
+                <VideoFacade
+                  src={`https://www.youtube-nocookie.com/embed/${recording}?rel=0`}
+                  title="When the Update Is Not a Gradient, invited talk at Cohere Labs"
+                  label="Watch the talk · Cohere on YouTube"
+                  poster={links.coherePoster}
+                />
+              </div>
+            ) : null}
           </article>
 
           <div className="rx-rows ux-news-rows">
@@ -360,6 +371,7 @@ export default function Home() {
                     <p className="ux-talk-note">{t.note}</p>
                     <div className="ux-talk-links">
                       <a className="ux-talk-go" href={t.href} {...ext(t.href)}>{t.hrefLabel} <Arrow /></a>
+                      {t.recording && <a className="ux-talk-go" href={t.recording} target="_blank" rel="noreferrer">Watch the talk <Arrow /></a>}
                       {t.slides && <a className="ux-talk-go" href={t.slides} target="_blank" rel="noreferrer">Slides (PDF) <Arrow /></a>}
                     </div>
                   </div>
