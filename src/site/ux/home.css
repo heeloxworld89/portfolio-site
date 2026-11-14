@@ -201,6 +201,16 @@
   .rx .ux-home .rx-dm-lede + .rx-dm-lede { grid-column: 2; grid-row: 3; max-width: none; }
   .rx .ux-home .rx-dm-paper { max-width: none; }
 }
+/* With the recording: headline across the top, the text on the left and the
+   player on the right, top-aligned with the text. */
+@media (min-width: 1000px) {
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-main { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); column-gap: 44px; }
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-main > * { grid-column: 1; }
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-main > .rx-dm-k,
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-main > h3 { grid-column: 1 / -1; }
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-lede { grid-column: 1; grid-row: auto; }
+  .rx .ux-home .rx-dm-card.has-video .rx-dm-video { grid-column: 2; grid-row: 3 / span 6; align-self: start; margin: 4px 0 0; }
+}
 
 /* ── Talks: dated cards with the host's mark ───────────────────────────── */
 .rx .ux-home .ux-talks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }

@@ -204,6 +204,16 @@ export default function Home() {
               <h3>
                 When the update is not a gradient: an invited talk at <em>Cohere&nbsp;Labs.</em>
               </h3>
+              {recording ? (
+                <div className="rx-dm-video">
+                  <VideoFacade
+                    src={`https://www.youtube-nocookie.com/embed/${recording}?rel=0`}
+                    title="When the Update Is Not a Gradient, invited talk at Cohere Labs"
+                    label="Watch the talk · Cohere on YouTube"
+                    poster={links.coherePoster}
+                  />
+                </div>
+              ) : null}
               <p className="rx-dm-lede">
                 Cohere Labs, the research lab of <b>Cohere</b> in Toronto, invited Raadh as a guest speaker to present his
                 work on self-repairing neural networks. The talk explained why training whose updates are not gradients
@@ -234,16 +244,6 @@ export default function Home() {
                 <Link className="rx-btn is-outline-light" to="/deepmath">The DeepMath paper <Arrow /></Link>
               </div>
             </div>
-            {recording ? (
-              <div className="rx-dm-video">
-                <VideoFacade
-                  src={`https://www.youtube-nocookie.com/embed/${recording}?rel=0`}
-                  title="When the Update Is Not a Gradient, invited talk at Cohere Labs"
-                  label="Watch the talk · Cohere on YouTube"
-                  poster={links.coherePoster}
-                />
-              </div>
-            ) : null}
           </article>
 
           <div className="rx-rows ux-news-rows">
