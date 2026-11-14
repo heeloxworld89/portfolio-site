@@ -200,6 +200,17 @@ const cohereTalk = {
   description:
     "Invited talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training: why training whose updates are not gradients still converges, and where the proof stops.",
   about: ref("deepmath-paper"),
+  // Recording on Cohere's YouTube channel.
+  recordedIn: {
+    "@type": "VideoObject",
+    name: "Rokib Al Dhin Raadh - When the Update Is Not a Gradient",
+    description:
+      "Recording of the invited talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training.",
+    url: links.cohereRecording,
+    embedUrl: "https://www.youtube.com/embed/R75wEi3Ti-M",
+    thumbnailUrl: `${SITE}${links.coherePoster}`,
+    publisher: { "@type": "Organization", name: "Cohere", url: "https://www.youtube.com/@CohereAI" },
+  },
 };
 
 const deepmathPaper = {
