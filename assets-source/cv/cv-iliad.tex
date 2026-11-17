@@ -1,0 +1,235 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[top=0.5in, bottom=0.45in, left=0.7in, right=0.7in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{parskip}
+\usepackage{needspace}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS (match raadh.me)
+% ============================================================
+\definecolor{heading}{HTML}{0B4F5C}
+\definecolor{link}{HTML}{0B4F5C}
+\definecolor{body}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{5A6470}
+
+% ============================================================
+% HYPERLINKS
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=link,
+    urlcolor=link,
+    pdfauthor={Rokib Al Dhin Raadh},
+    pdftitle={Rokib Al Dhin Raadh - Curriculum Vitae (Iliad)},
+    pdfsubject={AI researcher; founder and CEO of OXIEDO; inventor of ORMAS; DeepMath 2026; NeurIPS 2026 Workshop reviewer; Cohere Labs invited talk},
+    pdfkeywords={Rokib Al Dhin Raadh, ORMAS, OXIEDO, DeepMath 2026, NeurIPS 2026, input-to-state stability, self-repairing neural networks},
+}
+
+% ============================================================
+% SECTION STYLE
+% ============================================================
+\titleformat{\section}
+  {\normalsize\bfseries\scshape\color{heading}}
+  {}
+  {0em}
+  {}
+  [\vspace{-1pt}{\color{heading}\titlerule[0.4pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+\pagestyle{empty}
+
+% ============================================================
+% CV ENTRY: date in the left gutter, body indented
+% ============================================================
+% A list (not a minipage) so long entries can break across pages.
+\newcommand{\cvitem}[3]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.35cm}%
+    \setlength{\labelwidth}{2.1cm}%
+    \setlength{\labelsep}{0.25cm}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+  }%
+  \item[{\makebox[2.1cm][l]{\footnotesize\color{muted}#1}}]%
+  #2
+  #3
+  \end{list}%
+  \vspace{1.5pt}
+}
+
+% Tight bullet list
+\newlist{bullets}{itemize}{1}
+\setlist[bullets]{leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% Numbered publication list
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{leftmargin=2.35cm, labelwidth=2.1cm, labelsep=0.25cm, labelindent=0pt, align=left, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
+
+\setlength{\emergencystretch}{2.5em}
+\hyphenpenalty=10000
+\exhyphenpenalty=50
+\begin{document}
+\RaggedRight
+\color{body}
+
+% ============================================================
+% HEADER
+% ============================================================
+\begin{center}
+  {\LARGE\bfseries\color{heading} Rokib Al Dhin Raadh}\\[3pt]
+  {\small Independent Researcher \enspace$\cdot$\enspace Stability of Neural Network Training Dynamics}\\[3pt]
+  {\footnotesize
+    \href{mailto:raadh@oxiedo.com}{raadh@oxiedo.com}
+    \enspace$|$\enspace
+    \href{https://www.raadh.me}{raadh.me}
+    \enspace$|$\enspace
+    \href{https://orcid.org/0009-0003-1178-5296}{ORCID 0009-0003-1178-5296}
+    \enspace$|$\enspace
+    \href{https://oxiedo.com}{oxiedo.com}
+    \enspace$|$\enspace
+    {\color{muted}Dhaka, Bangladesh}
+  }
+\end{center}
+\vspace{1pt}
+
+{\small\noindent Independent researcher, age 18, working on guarantees for neural network training when updates are not gradients. Sole author of a peer-reviewed paper proving input-to-state stability for self-repairing training (DeepMath 2026). Built and tested the method independently over 383 experiments on a single GPU, without institutional affiliation or external funding.\par}
+
+% ============================================================
+% DISTINCTIONS (the skim layer)
+% ============================================================
+\needspace{5\baselineskip}\section*{Selected Distinctions}
+\begin{bullets}
+  \item \textbf{Sole author, peer-reviewed paper}, DeepMath 2026 (Conference on the Mathematical Theory of Deep Neural Networks), The Ohio State University. Double-blind review; 41 papers accepted.
+  \item \textbf{Reviewer}, NeurIPS 2026 Workshop on \href{https://trustworthy-ai-for-good.github.io/}{Trustworthy AI for Good}, Paris, France.
+  \item \textbf{Invited talk}, Cohere Labs, Toronto, Canada, November 2026.
+  \item \textbf{Highest-ranked application}, Cosmos Institute, 2026 review cycle.
+\end{bullets}
+
+% ============================================================
+% RESEARCH
+% ============================================================
+\needspace{5\baselineskip}\section*{Research}
+\noindent{\small\textbf{Interests.} Guarantees on training dynamics under non-gradient updates (self-repair, model editing, self-modification); input-to-state stability, Lyapunov methods and invariant sets for learning systems; irreversible capacity loss (dead units) and how to detect it.\par}
+
+\vspace{3pt}
+\cvitem{2024--present}{%
+  \textbf{Independent Researcher} \quad {\small ORMAS: self-repairing neural networks}
+}{%
+  \begin{bullets}
+    \item Developed ORMAS, a training architecture that monitors each layer during training, repairs failing components and logs every correction with its cause.
+    \item In the DeepMath 2026 paper, established local practical input-to-state stability under bounded repairs and showed that per-channel-bounded repairs cannot reactivate a dead BatchNorm--ReLU channel.
+    \item After two trained convolutional layers were zeroed, ORMAS recovered to 80.3\% test accuracy on CIFAR-10, compared with 10.00\% for standard training (three seeds). Under sequential learning it retained 94.6\% on the first task, compared with 47.3\% for \mbox{ResNet-18}.
+    \item Conducted 383 controlled experiments across four architecture families (DAG, two CNNs, \mbox{ResNet-18}) on CIFAR-10 and CIFAR-100, all reproducible from seed, on one RTX~3090. Codebase of 16,316 lines of PyTorch.
+    \item Released ormas-monitor on PyPI, which implements the dead-channel result as a runtime check. Applied to 22 torchvision models, it found near-zero channels in 19 of the 21 that use BatchNorm and ReLU; removing them from VGG-19-BN reduced compute by 18.6\% and changed none of its top-1 predictions on 10,000 ImageNetV2 photos.
+  \end{bullets}
+}
+
+% ============================================================
+% MATHEMATICAL BACKGROUND
+% ============================================================
+\needspace{4\baselineskip}\section*{Mathematical Background}
+\noindent{\small Used in published work: input-to-state stability and ISS-Lyapunov functions; comparison functions (class $\mathcal{K}$, $\mathcal{K}_\infty$, $\mathcal{KL}$); discrete-time and switched dynamical systems; invariant and absorbing sets; bounded-disturbance analysis of gradient-based training. Self-taught through the primary literature in control theory and the mathematics of learning dynamics.\par}
+
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\needspace{5\baselineskip}\section*{Publications}
+\noindent{\footnotesize\color{muted}Peer-reviewed}
+\begin{pubs}
+  \item \textbf{R.~A.~D. Raadh}. ``Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.'' \textit{DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks}, The Ohio State University, 2026. Double-blind review; poster. \mbox{\href{https://openreview.net/forum?id=kowltBZEIv}{OpenReview} $\cdot$ \href{https://www.raadh.me/deepmath}{Poster}}
+\end{pubs}
+\noindent{\footnotesize\color{muted}Preprints and technical reports}
+\begin{pubs}[resume]
+  \item \textbf{R.~A.~D. Raadh}. ``ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction.'' Preprint, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.21730363}{doi:10.5281/zenodo.21730363}. With a 36-page supplement and code that reproduces all 383 experiments.
+\end{pubs}
+\noindent{\footnotesize\color{muted}Research proposals}
+\begin{pubs}[resume]
+  \item \textbf{R.~A.~D. Raadh}. ``Can a Machine's Own Failure Record Be Read? Evaluating the Human Usability and Reliability of Automatically Generated Neural Network Incident Logs.'' Research proposal, International Academic Research Competition (IARCO 2026), 2026. Finalist.
+\end{pubs}
+
+% ============================================================
+% TALKS
+% ============================================================
+\needspace{5\baselineskip}\section*{Invited Talks and Presentations}
+\cvitem{Nov 2026}{%
+  \textbf{Invited talk}, Cohere Labs, Toronto, Canada.\\
+  {\small\textit{When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.} \mbox{\href{https://www.youtube.com/watch?v=R75wEi3Ti-M}{Recording} $\cdot$ \href{https://www.raadh.me/assets/pdf/Raadh_CohereLabs_2026_When_the_Update_Is_Not_a_Gradient.pdf}{Slides}}}
+}{}
+\cvitem{Oct 2026}{%
+  \textbf{Poster}, DeepMath 2026, The Ohio State University, Columbus, OH.\\
+  {\small\textit{Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics.}}
+}{}
+
+% ============================================================
+% SERVICE
+% ============================================================
+\needspace{5\baselineskip}\section*{Professional Service}
+\cvitem{2026}{%
+  \textbf{Reviewer}, NeurIPS 2026 Workshop on Trustworthy AI for Good, Palais des Congr\`es de Paris, France. Submissions on mechanistic interpretability, attribution, model auditing and post-deployment monitoring. \href{https://trustworthy-ai-for-good.github.io/}{Workshop} $\cdot$ \href{https://trustworthy-ai-for-good.github.io/\#reviewers}{Reviewer list}
+}{}
+
+% ============================================================
+% OTHER WORK
+% ============================================================
+\needspace{4\baselineskip}\section*{Other Work}
+\cvitem{2023--present}{%
+  \textbf{Founder, \href{https://oxiedo.com}{OXIEDO}}. Applies the ORMAS research to auditable model training for regulated institutions.
+}{}
+\cvitem{2023--2026}{%
+  \textbf{Sole architect, OXIMO}. Multi-agent system of 40,933 lines of Python with 2,069 tests; tested for twelve months on a live UK company, Black Bloxie LTD.
+}{}
+\cvitem{2020--2025}{%
+  \textbf{Five earlier ventures}, ages 12 to 17. Sold a trading algorithm to a U.S. client for about \$10,000 at age 15.
+}{}
+
+% ============================================================
+% HONORS
+% ============================================================
+\needspace{5\baselineskip}\section*{Honors and Awards}
+\cvitem{2026}{\textbf{Finalist}, International Academic Research Competition (IARCO 2026), for research proposal [3]. Ranked 24th of 145 in the Junior division, from about 500 participants in 60 countries. \href{https://iarco.org/2026-winners}{Results}}{}
+\cvitem{2026}{\textbf{Highest-ranked application}, Cosmos Institute, 2026 review cycle. Invited to the technical track.}{}
+\cvitem{2026}{\textbf{Research community member}, Cohere Labs, Toronto, Canada. Invited on the basis of ORMAS, which the lab described as showing ``remarkable initiative in ML safety and auditability.''}{}
+\cvitem{2026}{\textbf{Member}, FIAP, S\~ao Paulo, Brazil. Sponsored for MIT Open Learning's Universal AI program.}{}
+
+% ============================================================
+% SOFTWARE
+% ============================================================
+\needspace{5\baselineskip}\section*{Software}
+\cvitem{2026}{\textbf{\href{https://pypi.org/project/ormas-monitor/}{ormas-monitor}} (PyPI). Training monitor for PyTorch with per-layer alarms, dead-channel certification, optional repair and a tamper-evident log. \href{https://oxiedo.github.io/ormas-monitor/}{Documentation}}{}
+\cvitem{2026}{\textbf{ORMAS reference implementation}. Reproduces all 383 experiments. \href{https://anonymous.4open.science/r/ormas-EB73/README.md}{Source} $\cdot$ \href{https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view}{Run archive}}{}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\needspace{5\baselineskip}\section*{Education}
+\cvitem{present}{\textbf{High school senior; prospective undergraduate.} Homeschooled, with senior-year high school coursework. Independent study in machine learning, control theory and the mathematics of learning dynamics.}{}
+\cvitem{2025--2026}{\textbf{MIT Open Learning (MITx Online)}. Seven programs completed in foundation models, AI in medicine, energy, transportation and entrepreneurship.}{}
+\cvitem{2025--2026}{\textbf{DeepLearning.AI}. Deep Learning Specialization (five courses).}{}
+
+% ============================================================
+% ADDITIONAL
+% ============================================================
+\needspace{5\baselineskip}\section*{Additional}
+\cvitem{}{Languages: English (fluent), Bengali (native).}{}
+
+\vfill
+\begin{flushright}
+  \footnotesize\color{muted}\textit{Last updated November 2026}
+\end{flushright}
+
+\end{document}
