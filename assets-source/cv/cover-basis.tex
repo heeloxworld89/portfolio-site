@@ -1,0 +1,114 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[top=0.5in, bottom=0.45in, left=0.7in, right=0.7in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{parskip}
+\usepackage{needspace}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS (match raadh.me)
+% ============================================================
+\definecolor{heading}{HTML}{0B4F5C}
+\definecolor{link}{HTML}{0B4F5C}
+\definecolor{body}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{5A6470}
+
+% ============================================================
+% HYPERLINKS
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=link,
+    urlcolor=link,
+    pdfauthor={Rokib Al Dhin Raadh},
+    pdftitle={Rokib Al Dhin Raadh - Cover Letter (Research Intern, Basis)},
+    pdfsubject={AI researcher; founder and CEO of OXIEDO; inventor of ORMAS; DeepMath 2026; NeurIPS 2026 Workshop reviewer; Cohere Labs invited talk},
+    pdfkeywords={Rokib Al Dhin Raadh, model evaluation, training observability, regression detection, failure modes, held-out evaluation, ablations, PyTorch, LLMs, ORMAS},
+}
+
+% ============================================================
+% SECTION STYLE
+% ============================================================
+\titleformat{\section}
+  {\normalsize\bfseries\scshape\color{heading}}
+  {}
+  {0em}
+  {}
+  [\vspace{-1pt}{\color{heading}\titlerule[0.4pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+\pagestyle{empty}
+
+% ============================================================
+% CV ENTRY: date in the left gutter, body indented
+% ============================================================
+% A list (not a minipage) so long entries can break across pages.
+\newcommand{\cvitem}[3]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.35cm}%
+    \setlength{\labelwidth}{2.1cm}%
+    \setlength{\labelsep}{0.25cm}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+  }%
+  \item[{\makebox[2.1cm][l]{\footnotesize\color{muted}#1}}]%
+  #2
+  #3
+  \end{list}%
+  \vspace{1.5pt}
+}
+
+% Tight bullet list
+\newlist{bullets}{itemize}{1}
+\setlist[bullets]{leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% Numbered publication list
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{leftmargin=2.35cm, labelwidth=2.1cm, labelsep=0.25cm, labelindent=0pt, align=left, itemsep=2pt, parsep=0pt, topsep=1pt, label={\footnotesize\color{muted}[\arabic*]}}
+
+\setlength{\emergencystretch}{2.5em}
+\hyphenpenalty=10000
+\exhyphenpenalty=50
+\begin{document}
+\RaggedRight
+\color{body}
+\setlength{\parskip}{7pt}
+{\large\bfseries\color{heading} Rokib Al Dhin Raadh}\\[1pt]
+{\footnotesize \href{mailto:raadh@oxiedo.com}{raadh@oxiedo.com} \enspace$|$\enspace \href{https://www.raadh.me}{raadh.me} \enspace$|$\enspace \href{https://github.com/Oxiedo/ormas-monitor}{github.com/Oxiedo/ormas-monitor} \enspace$|$\enspace Dhaka, Bangladesh}
+
+\vspace{6pt}
+{\small Basis \enspace$\cdot$\enspace Research Intern, Summer 2027 \enspace$\cdot$\enspace Dynamical Systems + Machine Learning, or Formal Methods and Verification}
+
+\vspace{4pt}
+Dear Basis team,
+
+Your rollback work for safer agents rests on one rule: before a state-changing call goes through, record how to undo it, and refuse any call you cannot undo. I reached the same idea from inside neural network training, and found that some changes cannot be undone at all.
+
+I model training as a dynamical system in which a self-repair mechanism acts as a bounded disturbance on gradient descent. In my sole-author DeepMath 2026 paper (Ohio State, double-blind review), I proved local practical input-to-state stability for this system. I also proved a negative result: once a BatchNorm--ReLU channel dies, no per-channel-bounded repair can bring it back. That set of states is absorbing. Some damage during training is permanent, and you can certify it.
+
+I then tried to break the result on real models. Turned into a check, it found near-zero channels in 19 of the 21 torchvision models that use BatchNorm and ReLU. In VGG-19-BN, 292 channels output exactly zero on all 10,000 ImageNetV2 photos. Removing them cut 18.6\% of the compute and changed none of the predictions. Removing 292 random live channels instead changed 499 of 500. I released this as \href{https://pypi.org/project/ormas-monitor/}{ormas-monitor}, which certifies dead channels and keeps a tamper-evident log of every correction made during training, so the evidence of how a model changed is kept as it evolves.
+
+That is why both of your tracks fit me. In Dynamical Systems + Machine Learning, I want to learn the inference side I don't yet have: uncertainty quantification and system identification, the questions Dynestyx is built for. In Formal Methods and Verification, I'd like to turn my guarantees into machine-checkable ones instead of proofs on paper.
+
+I've completed a full research cycle alone: theory, 383 seeded experiments on one GPU, a peer-reviewed paper, an open-source tool, and an invited talk at Cohere Labs where I presented corrections to my own results. What I haven't had is a team that works on foundations and on real problems. Basis is the rare place that does both.
+
+To be direct about logistics: I'm 18 and finishing high school in Bangladesh in 2027, and I would need visa sponsorship. If summer 2027 isn't workable, I would be glad to be considered for 2028, or to contribute to your open-source work remotely in the meantime.
+
+Thank you for reading.
+
+Rokib Al Dhin Raadh
+\end{document}
