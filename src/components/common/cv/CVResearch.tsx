@@ -225,6 +225,23 @@ export default function CVResearch() {
           </p>
         </div>
 
+        <div className="uxr-venue">
+          <span className="uxr-venue-tag">Preprint · Under review · 20 Nov 2026</span>
+          <p className="uxr-venue-txt">
+            <strong>Follow-up: which resets revive a dead unit, and when they are safe.</strong> In{' '}
+            <em>&ldquo;Dead BatchNorm&ndash;ReLU Units Need Resets: Dwell-Time Practical Input-to-State Stability for
+            Gradient Descent with Repair&rdquo;</em>, also sole-authored, Raadh models training with repair as a hybrid
+            system. He proves that a dead Conv&ndash;BatchNorm&ndash;ReLU channel stays dead under SGD, heavy ball and
+            Adam-type optimisers (under stated conditions), and that redrawing its filter cannot revive it: the reset
+            must also write the BatchNorm scale and shift. Bounded corrections keep gradient descent locally
+            input-to-state stable, and resets spaced by a dwell time keep it locally practically stable, with explicit
+            constants. On CIFAR-10 (three seeds), a filter-only redraw leaves the block at 10.00% with exactly zero
+            gradient; resetting only BatchNorm recovers it to 81.2 &plusmn; 0.7%.{' '}
+            <a href="https://zenodo.org/records/24406555" target="_blank" rel="noreferrer">Preprint on Zenodo</a>{' '}
+            (DOI 10.5281/zenodo.24406555).
+          </p>
+        </div>
+
         <p className="uxr-role">
           <strong>Inventor and principal researcher, independent | 2024 – present | PyTorch · 16,316 lines · 85 files</strong>
           <span>383 controlled experiments across four architectures (FC-DAG, CNN, Fat CNN, ResNet-18), all run on a single RTX 3090 and every one reproducible from seed. The stability result is local. The paper, the codebase that reproduces all 383 runs and the full results archive are linked below.</span>

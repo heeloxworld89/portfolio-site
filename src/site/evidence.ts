@@ -35,6 +35,12 @@ export const groups: Group[] = [
         status: "Public record",
       },
       {
+        claim: "Dead BatchNorm–ReLU Units Need Resets: second preprint, sole author (20 November 2026), under review",
+        detail: "19-page preprint on Zenodo (CC BY 4.0). Proves that a dead Conv–BatchNorm–ReLU channel is absorbing for SGD, heavy ball and Adam-type optimisers under stated conditions, that a filter-only redraw cannot leave its shift-dead part, and that resets spaced by a dwell time keep full-batch gradient descent locally practically input-to-state stable. CIFAR-10 ablation, three seeds: 10.00% with exactly zero gradient after a filter-only redraw; 81.2 ± 0.7% after a BatchNorm-only reset. The paper is under review; the venue is not named while review is ongoing.",
+        source: [{ label: "Zenodo · DOI 10.5281/zenodo.24406555", href: links.resetsDoi }],
+        status: "Public record",
+      },
+      {
         claim: "ormas-monitor, an open training monitor for PyTorch (released 23 October 2026)",
         detail: "Implements the dead-channel result from the DeepMath paper as a runtime check. Its published results report near-zero channels in 19 of the 21 torchvision models that use BatchNorm and ReLU, and an 18.6% compute reduction on VGG-19-BN that changed none of its top-1 predictions on 10,000 ImageNetV2 photos.",
         source: [
