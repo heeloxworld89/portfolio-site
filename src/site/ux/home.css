@@ -134,8 +134,8 @@
   .rx .ux-home .rx-bio { padding-top: 56px; }
   .rx .ux-home .rx-bio-inner { padding-top: 28px; }
 
-  /* logo wall: an even 2 × 5 grid, no orphan */
-  .rx .ux-home .rx-logos li:first-child { grid-column: auto; }
+  /* logo wall: DeepMath spans the full row, then an even 2 × 5 grid, no orphan */
+  .rx .ux-home .rx-logos li:first-child { grid-column: span 2; }
   .rx .ux-home .rx-logos li { padding: 16px 14px 20px; gap: 12px; grid-template-rows: auto 52px auto; }
   .rx .ux-home .rx-logo-verb { font-size: 11px; letter-spacing: .03em; gap: 6px; }
   .rx .ux-home .rx-logo-word { font-size: 28px; }
