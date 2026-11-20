@@ -269,3 +269,14 @@
   .rx .ux-home .ux-talk-body { padding: 20px; }
   .rx .ux-home .ux-talk h3 { font-size: 20px; }
 }
+
+/* publications with thumbnails */
+.rx .ux-home .rx-pub.has-thumb { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 36px; align-items: start; }
+.rx .ux-home .rx-pub.has-thumb .rx-pub-y { padding-top: 0; margin-bottom: 6px; }
+@media (max-width: 860px) {
+  .rx .ux-home .rx-pub.has-thumb { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 640px) {
+  .rx .ux-home .rx-pub.has-thumb { grid-template-columns: 1fr; gap: 16px; }
+  .rx .ux-home .rx-pub.has-thumb .pt { max-width: 520px; }
+}

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SiteLayout from "../SiteLayout";
 import VideoFacade from "@/components/common/VideoFacade";
 import DeepMathRoom from "../DeepMathRoom";
+import PubThumb from "../PubThumb";
 import { links, news, publications, talks, youtubeId } from "../data";
 import "../ux/home.css";
 
@@ -337,9 +338,10 @@ export default function Home() {
           <h2 className="rx-label">Publications <small>Peer-reviewed paper · preprint · report · proposal</small></h2>
           <div className="rx-pubs">
             {publications.map((p) => (
-              <div className="rx-pub" key={p.title}>
-                <div className="rx-pub-y">{p.year}</div>
+              <div className="rx-pub has-thumb" key={p.title}>
+                <PubThumb kind={p.thumb} />
                 <div>
+                  <div className="rx-pub-y">{p.year}</div>
                   <h3>{p.title}</h3>
                   <p className="a">{p.authors}</p>
                   <p className="v">{p.venue}</p>
