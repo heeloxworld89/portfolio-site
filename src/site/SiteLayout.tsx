@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { articles, links, pages, type PagePath } from "./data";
+import { links, pages, type PagePath } from "./data";
 
-const nav: { to: string; label: string; external?: boolean }[] = [
+const nav: { to: string; label: string; external?: boolean; footerOnly?: boolean }[] = [
   { to: "/research", label: "Research" },
   { to: "/deepmath", label: "DeepMath" },
-  { to: "/articles", label: "Articles" },
+  { to: "/articles", label: "Articles", footerOnly: true },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/evidence", label: "Evidence" },
@@ -36,8 +36,6 @@ function usePageMeta(path: string) {
 export default function SiteLayout({ children, hideCompanyLink = false }: { children: ReactNode; hideCompanyLink?: boolean }) {
   const { pathname } = useLocation();
   const items = hideCompanyLink ? nav.filter((n) => n.to !== links.oxiedo) : nav;
-  // On an article, "Articles" shows as the current section.
-  const isArticle = articles.some((a) => a.path === pathname);
   const [open, setOpen] = useState(false);
   const burgerRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -83,11 +81,11 @@ export default function SiteLayout({ children, hideCompanyLink = false }: { chil
             <span /><span /><span />
           </button>
           <nav ref={navRef} id="rx-nav" className={`rx-nav${open ? " is-open" : ""}`} aria-label="Main">
-            {items.map((n) =>
+            {items.filter((n) => !n.footerOnly).map((n) =>
               n.external ? (
                 <a key={n.to} href={n.to} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{n.label}</a>
               ) : (
-                <Link key={n.to} to={n.to} aria-current={pathname === n.to ? "page" : n.to === "/articles" && isArticle ? "true" : undefined}>{n.label}</Link>
+                <Link key={n.to} to={n.to} aria-current={pathname === n.to ? "page" : undefined}>{n.label}</Link>
               )
             )}
           </nav>
