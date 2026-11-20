@@ -166,7 +166,7 @@ export const publications = [
     authors: "R. A. D. Raadh",
     title: "Self-Repair as a Bounded Disturbance: Input-to-State Stability of Neural Network Training Dynamics",
     venue: "DeepMath 2026: Conference on the Mathematical Theory of Deep Neural Networks, The Ohio State University. Double-blind review; poster, 29 Oct 2026.",
-    year: "2026",
+    year: "2026", thumb: "deepmath" as const,
     links: [
       { label: "OpenReview", href: links.openreview },
       { label: "Poster", href: links.poster },
@@ -177,7 +177,7 @@ export const publications = [
     authors: "R. A. D. Raadh",
     title: "Dead BatchNorm–ReLU Units Need Resets: Dwell-Time Practical Input-to-State Stability for Gradient Descent with Repair",
     venue: "Preprint, Zenodo, 20 Nov 2026. Under review. 19 pages. DOI 10.5281/zenodo.24406555.",
-    year: "2026",
+    year: "2026", thumb: "resets" as const,
     links: [
       { label: "Paper", href: links.resets },
       { label: "DOI", href: links.resetsDoi },
@@ -187,7 +187,7 @@ export const publications = [
     authors: "R. A. D. Raadh",
     title: "ORMAS: Neural Architectural Transparency Enables Autonomous Self-Correction",
     venue: "Preprint, Zenodo, 1 Aug 2026. Full paper, 36-page supplement and code reproducing all 383 experiments. DOI 10.5281/zenodo.21730363.",
-    year: "2026",
+    year: "2026", thumb: "ormas" as const,
     links: [
       { label: "Paper", href: links.preprint },
       { label: "Code", href: links.code },
@@ -198,14 +198,14 @@ export const publications = [
     authors: "R. A. D. Raadh",
     title: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A Twelve-Month Controlled Ablation Study",
     venue: "Technical report, 2026. Twelve-month controlled field study on a live UK company (Black Bloxie LTD): removing OXIMO cut output by 91%.",
-    year: "2026",
+    year: "2026", thumb: "oximo" as const,
     links: [{ label: "PDF", href: links.techPaper }, { label: "Whitepaper", href: links.whitepaper }],
   },
   {
     authors: "R. A. D. Raadh",
     title: "Can a Machine’s Own Failure Record Be Read? Evaluating the Human Usability and Reliability of Automatically Generated Neural Network Incident Logs",
     venue: "Research proposal, International Academic Research Competition (IARCO 2026). Finalist; ranked 24th of 145 in the Junior division.",
-    year: "2026",
+    year: "2026", thumb: "iarco" as const,
     links: [{ label: "Results", href: links.iarco }],
   },
 ];

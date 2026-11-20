@@ -1,0 +1,96 @@
+/* ── publication thumbnails ───────────────────────────────────────────── */
+.pt {
+  --pt-teal: #13756a;
+  --pt-ink: var(--rx-teal, #0b404d);
+  --pt-gray: #9aa0a4;
+  --pt-lime: #d8ee96;
+  --pt-blue: #0072b2;
+  --pt-verm: #d55e00;
+  --pt-purple: #b0588f;
+  --pt-green: #009e73;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  background: var(--rx-white, #fbfbf9);
+  border: 1px solid var(--rx-line-soft, rgba(11, 64, 77, .16));
+  overflow: hidden;
+}
+.pt svg { display: block; width: 100%; height: 100%; }
+.pt text { font-family: var(--rx-mono); fill: var(--pt-ink); }
+
+/* shared marks */
+.pt-axis line { stroke: var(--pt-ink); stroke-width: 1; opacity: .55; }
+.pt-axis .pt-grid { stroke-dasharray: 2 3; opacity: .25; }
+.pt-tick { font-size: 8px; opacity: .7; }
+.pt-note { font-size: 8px; opacity: .8; }
+.pt-val { font-size: 12px; font-weight: 700; }
+.pt .pt-tealtxt { fill: var(--pt-teal); }
+.pt .pt-graytxt { fill: #6d7377; }
+.pt-lesion { stroke: var(--pt-ink); stroke-width: 1; stroke-dasharray: 3 3; opacity: .7; }
+.pt-line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pt-teal { stroke: var(--pt-teal); stroke-width: 2.2; }
+.pt-gray { stroke: var(--pt-gray); }
+.pt-green { stroke: var(--pt-green); }
+
+/* resets figure */
+.pt-omega { fill: #e2eef7; stroke: var(--pt-blue); stroke-width: 1.6; }
+.pt-ring { fill: none; stroke: #8fbfe0; stroke-width: 1; }
+.pt-band { fill: #c6e1f5; stroke: #56a6dc; stroke-width: 1.4; stroke-dasharray: 3 2.5; }
+.pt-star { fill: #111; }
+.pt .pt-math { font-family: var(--rx-serif); font-style: italic; font-size: 13px; fill: #111; }
+.pt .pt-blue { fill: var(--pt-blue); }
+.pt-dead { fill: url(#pt-hatch); stroke: var(--pt-verm); stroke-width: 1.6; }
+.pt-hatchline { stroke: var(--pt-verm); stroke-width: 1; opacity: .45; }
+.pt-lbl { font-size: 8.5px; }
+.pt .pt-verm { fill: var(--pt-verm); }
+.pt .pt-purple { fill: var(--pt-purple); }
+.pt-dot-green { fill: var(--pt-green); }
+.pt-redraw { fill: none; stroke: var(--pt-purple); stroke-width: 2; stroke-dasharray: 5 4; }
+.pt-arrowhead { fill: var(--pt-purple); }
+
+/* ORMAS figure */
+.pt-edge { stroke: var(--pt-ink); stroke-width: .7; opacity: .18; }
+.pt-node { fill: var(--pt-teal); }
+.pt-pulse { fill: none; stroke: var(--pt-verm); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.pt-x { stroke: #fff; stroke-width: 2; stroke-linecap: round; opacity: 0; }
+.pt-check { fill: none; stroke: var(--pt-lime); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.pt-chip { fill: var(--pt-lime); }
+.pt-log { font-size: 8.5px; }
+
+/* OXIMO figure */
+.pt-base { stroke: var(--pt-ink); stroke-width: 1; opacity: .5; }
+.pt-bar { fill: var(--pt-ink); transform-box: fill-box; transform-origin: bottom; }
+.pt-bar-off { fill: var(--pt-gray); transform-box: fill-box; transform-origin: bottom; }
+.pt-cap { font-size: 9px; }
+.pt-big { font-size: 15px; font-weight: 700; }
+
+/* IARCO figure */
+.pt-term { fill: var(--pt-ink); }
+.pt-termdot { fill: rgba(255, 255, 255, .35); }
+.pt .pt-logk { font-size: 9px; fill: var(--pt-lime); font-weight: 700; }
+.pt .pt-logv { font-size: 9px; fill: #e9f1f2; }
+.pt .pt-q { font-family: var(--rx-serif); font-style: italic; font-size: 17px; }
+
+/* ── animation: armed by JS, plays once in view ──────────────────────── */
+.pt-armed .pt-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.pt-armed .pt-fade { opacity: 0; }
+.pt-armed .pt-grow { transform: scaleY(0); }
+.pt-armed.is-in .pt-draw { animation: ptDraw 2s cubic-bezier(.45, .05, .35, 1) var(--d, 0s) forwards; }
+.pt-armed.is-in .pt-fade { animation: ptFade .6s ease var(--d, 0s) forwards; }
+.pt-armed.is-in .pt-rise { animation-name: ptRise; }
+.pt-armed.is-in .pt-grow { animation: ptGrow 1s cubic-bezier(.2, .8, .2, 1) var(--d, 0s) forwards; }
+.pt-armed.is-in .pt-sick { animation: ptSick 1.9s ease .5s both; }
+.pt-armed.is-in .pt-x { animation: ptX 1.9s ease .5s both; }
+.pt-armed.is-in .pt-pulse { animation: ptPulse .9s ease-out 1.1s 2; }
+.pt-armed.is-in .pt-edge-in,
+.pt-armed.is-in .pt-edge-out { animation: ptDim 1.9s ease .5s both; }
+.pt-resets.pt-armed.is-in .pt-draw { animation-duration: 1.4s; }
+.pt-resets.pt-armed.is-in mask .pt-draw { animation-duration: 1s; }
+
+@keyframes ptDraw { to { stroke-dashoffset: 0; } }
+@keyframes ptFade { to { opacity: 1; } }
+@keyframes ptRise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes ptGrow { to { transform: scaleY(1); } }
+@keyframes ptSick { 0% { fill: var(--pt-teal); } 18%, 72% { fill: var(--pt-verm); } 100% { fill: var(--pt-teal); } }
+@keyframes ptX { 0% { opacity: 0; } 18%, 72% { opacity: 1; } 90%, 100% { opacity: 0; } }
+@keyframes ptPulse { from { opacity: .8; transform: scale(1); } to { opacity: 0; transform: scale(2.6); } }
+@keyframes ptDim { 0% { opacity: .18; } 18%, 72% { opacity: .04; } 100% { opacity: .18; } }
