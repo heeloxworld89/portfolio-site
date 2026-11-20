@@ -148,6 +148,31 @@ export default function Home() {
       {/* ── the DeepMath programme ───────────────────────────────────── */}
       <DeepMathRoom />
 
+      {/* ── publications ─────────────────────────────────────────────── */}
+      <section className="rx-sec" id="publications">
+        <div className="rx-wrap">
+          <h2 className="rx-label">Publications <small>Peer-reviewed paper · preprint · report · proposal</small></h2>
+          <div className="rx-pubs">
+            {publications.map((p) => (
+              <div className="rx-pub has-thumb" key={p.title}>
+                <PubThumb kind={p.thumb} />
+                <div>
+                  <div className="rx-pub-y">{p.year}</div>
+                  <h3>{p.title}</h3>
+                  <p className="a">{p.authors}</p>
+                  <p className="v">{p.venue}</p>
+                  <div className="l">
+                    {p.links.map((l) => (
+                      <a key={l.label} href={l.href} {...ext(l.href)}>{l.label}</a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── bio ──────────────────────────────────────────────────────── */}
       <section className="rx-bio">
         <div className="rx-wrap">
@@ -328,31 +353,6 @@ export default function Home() {
                 the research page.
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── publications ─────────────────────────────────────────────── */}
-      <section className="rx-sec" id="publications">
-        <div className="rx-wrap">
-          <h2 className="rx-label">Publications <small>Peer-reviewed paper · preprint · report · proposal</small></h2>
-          <div className="rx-pubs">
-            {publications.map((p) => (
-              <div className="rx-pub has-thumb" key={p.title}>
-                <PubThumb kind={p.thumb} />
-                <div>
-                  <div className="rx-pub-y">{p.year}</div>
-                  <h3>{p.title}</h3>
-                  <p className="a">{p.authors}</p>
-                  <p className="v">{p.venue}</p>
-                  <div className="l">
-                    {p.links.map((l) => (
-                      <a key={l.label} href={l.href} {...ext(l.href)}>{l.label}</a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
