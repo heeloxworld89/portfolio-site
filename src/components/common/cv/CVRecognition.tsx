@@ -10,8 +10,8 @@ export default function CVRecognition() {
       lead={
         <>
           In research: a sole-authored paper accepted after double-blind review at DeepMath 2026 and shown at its
-          poster session at The Ohio State University; a reviewer role at the NeurIPS 2026 Workshop on Trustworthy AI
-          for Good; an invited talk at Cohere Labs; the highest-ranked application in the Cosmos Institute review
+          poster session at The Ohio State University; reviewer roles for IEEE Transactions on Neural Networks and
+          Learning Systems and the NeurIPS 2026 Workshop on Trustworthy AI for Good; an invited talk at Cohere Labs; the highest-ranked application in the Cosmos Institute review
           cycle; and a finalist place at IARCO 2026, ranked 24th of 145 in the Junior division. In venture: OXIEDO
           was accepted to 1752vc Ignite from the top 1% of applicants, offered a place by Freshmango, and is in
           investment discussions with 500 Global and 1752vc; Raadh was a finalist for The Bridge by Entrepreneur First.
