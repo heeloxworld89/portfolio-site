@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-14a";
+export const CV_VERSION = "2026-11-20a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -197,7 +197,7 @@ export const pages = {
   "/": {
     title: "Rokib Al Dhin Raadh — AI Researcher, Founder of OXIEDO, Inventor of ORMAS",
     description:
-      "Rokib Al Dhin Raadh, 18: AI researcher and founder of OXIEDO. Sole-authored DeepMath 2026 paper, NeurIPS 2026 workshop reviewer, invited talk at Cohere Labs.",
+      "Rokib Al Dhin Raadh, 18: AI researcher and founder of OXIEDO. Sole-authored DeepMath 2026 paper; reviewer for IEEE TNNLS and NeurIPS 2026; Cohere Labs talk.",
     image: "/og/home-v3.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },

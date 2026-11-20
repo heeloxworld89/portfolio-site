@@ -111,7 +111,7 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Accepted at DeepMath after double-blind review, a reviewer for NeurIPS 2026, invited to speak at Cohere
+              Accepted at DeepMath after double-blind review, a reviewer for IEEE TNNLS and NeurIPS 2026, invited to speak at Cohere
               Labs, ranked highest by the Cosmos Institute and taken into 1752vc Ignite from the top 1% of applicants.
             </p>
           </div>
@@ -146,7 +146,8 @@ export default function Home() {
               <a href={links.oxiedo} target="_blank" rel="noreferrer">OXIEDO</a>. He invented{" "}
               <Link to="/research">ORMAS</Link>, a self-repairing neural network that identifies, repairs and records its
               own failures while it trains, and is the sole author of a paper on its stability, accepted at{" "}
-              <Link to="/deepmath">DeepMath 2026</Link> after double-blind review. He was a reviewer for the{" "}
+              <Link to="/deepmath">DeepMath 2026</Link> after double-blind review. He is a reviewer for IEEE Transactions on Neural Networks and Learning Systems,
+              was a reviewer for the{" "}
               <a href={links.neuripsReviewers} target="_blank" rel="noreferrer">NeurIPS 2026 Workshop on Trustworthy AI for Good</a>{" "}
               and gave an invited talk at Cohere Labs.
             </p>
