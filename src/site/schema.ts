@@ -261,6 +261,29 @@ const ormasPreprint = {
   hasPart: ref("ormas-code"),
 };
 
+const resetsPreprint = {
+  "@type": "ScholarlyArticle",
+  "@id": id("resets-preprint"),
+  headline: "Dead BatchNorm–ReLU Units Need Resets: Dwell-Time Practical Input-to-State Stability for Gradient Descent with Repair",
+  name: "Dead BatchNorm–ReLU Units Need Resets: Dwell-Time Practical Input-to-State Stability for Gradient Descent with Repair",
+  author: ref("person"),
+  inLanguage: "en",
+  datePublished: "2026-11-20",
+  genre: "Preprint",
+  url: links.resets,
+  sameAs: links.resetsDoi,
+  identifier: { "@type": "PropertyValue", propertyID: "DOI", value: "10.5281/zenodo.24406555", url: links.resetsDoi },
+  publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org/" },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  creativeWorkStatus: "Under review",
+  keywords: ["input-to-state stability", "dead neurons", "resets", "dwell time", "batch normalization", "Polyak-Łojasiewicz condition", "hybrid systems", "training dynamics"],
+  description:
+    "Models neural network training with repair as a hybrid system. Proves that a dead Conv–BatchNorm–ReLU channel is absorbing for SGD, heavy ball and Adam-type optimisers under stated conditions, and that a filter-only redraw cannot revive it: the reset must write the BatchNorm scale and shift. Bounded corrections keep gradient descent locally exponentially input-to-state stable on a Polyak–Łojasiewicz sublevel set, and redraws meeting a dwell-time condition keep it locally practically ISS. CIFAR-10, three seeds: 10.00% after a filter-only redraw, 81.2 ± 0.7% after a BatchNorm-only reset. Sole author.",
+  about: [wiki("Input-to-state stability", "Input-to-state_stability"), wiki("Batch normalization", "Batch_normalization")],
+  isBasedOn: ref("deepmath-paper"),
+};
+
 const ormasCode = {
   "@type": "SoftwareSourceCode",
   "@id": id("ormas-code"),
@@ -387,6 +410,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, resetsPreprint, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }

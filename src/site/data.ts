@@ -1,11 +1,14 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-20a";
+export const CV_VERSION = "2026-11-20b";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
   preprint: "https://zenodo.org/records/21730363",
   doi: "https://doi.org/10.5281/zenodo.21730363",
+  // Second preprint, 20 Nov 2026 (under review; venue not named while review is ongoing).
+  resets: "https://zenodo.org/records/24406555",
+  resetsDoi: "https://doi.org/10.5281/zenodo.24406555",
   code: "https://anonymous.4open.science/r/ormas-EB73/README.md",
   archive: "https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view",
   oximoCode: "https://anonymous.4open.science/r/oximo-5C73/README.md",
@@ -51,6 +54,12 @@ export function youtubeId(url: string): string {
 export type NewsItem = { date: string; kind: string; title: string; body: string; href?: string };
 
 export const news: NewsItem[] = [
+  {
+    date: "20 Nov 2026", kind: "Preprint",
+    title: "New preprint: Dead BatchNorm–ReLU Units Need Resets",
+    body: "A sole-authored follow-up to the DeepMath paper, now under review. It proves that gradient training cannot revive a dead BatchNorm–ReLU unit and that redrawing its filter is not enough either: the reset must also write the BatchNorm scale and shift. It then gives a stability guarantee for the resets themselves, if they are spaced far enough apart. On CIFAR-10 (three seeds), a filter-only redraw leaves the block at 10.00% with exactly zero gradient; resetting only BatchNorm recovers it to 81.2 ± 0.7%.",
+    href: links.resets,
+  },
   {
     date: "19 Nov 2026", kind: "Service",
     title: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems",
@@ -162,6 +171,16 @@ export const publications = [
       { label: "OpenReview", href: links.openreview },
       { label: "Poster", href: links.poster },
       { label: "Conference", href: links.deepmath },
+    ],
+  },
+  {
+    authors: "R. A. D. Raadh",
+    title: "Dead BatchNorm–ReLU Units Need Resets: Dwell-Time Practical Input-to-State Stability for Gradient Descent with Repair",
+    venue: "Preprint, Zenodo, 20 Nov 2026. Under review. 19 pages. DOI 10.5281/zenodo.24406555.",
+    year: "2026",
+    links: [
+      { label: "Paper", href: links.resets },
+      { label: "DOI", href: links.resetsDoi },
     ],
   },
   {
