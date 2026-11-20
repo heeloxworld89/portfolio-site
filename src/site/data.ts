@@ -53,8 +53,8 @@ export type NewsItem = { date: string; kind: string; title: string; body: string
 export const news: NewsItem[] = [
   {
     date: "19 Nov 2026", kind: "Service",
-    title: "Invited to review for IEEE Transactions on Neural Networks and Learning Systems",
-    body: "Associate Editor Prof. Jindong Wang invited Raadh to review a manuscript for IEEE Transactions on Neural Networks and Learning Systems and added him to the journal's reviewer database.",
+    title: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems",
+    body: "Raadh is reviewing a manuscript for IEEE Transactions on Neural Networks and Learning Systems at the invitation of Associate Editor Prof. Jindong Wang, and has joined the journal's reviewer database.",
   },
   {
     date: "Nov 2026", kind: "Selection",
