@@ -74,6 +74,7 @@ export default function CVRecognition() {
           border: 1px solid var(--pf-border);
         }
         .rec-logo-chip img { display: block; height: 34px; width: auto; max-width: 190px; object-fit: contain; }
+        .rec-logo-text { display: block; font-family: var(--rx-mono, ui-monospace, monospace); font-size: 15px; font-weight: 700; letter-spacing: .06em; color: #00629b; line-height: 34px; white-space: nowrap; }
         .rec-logo-chip.on-ink { background: #0b2a5b; border: 1px solid #0b2a5b; }
         .rec-logo-chip.on-ink img { height: 44px; max-width: 200px; }
         .rec-tag {
@@ -625,7 +626,7 @@ export default function CVRecognition() {
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'First-round interview, London', state: 'done' },
             { m: 'Sep', y: '2026', who: 'DeepMath · NeurIPS workshop · 1752vc · IARCO · Cohere Labs', what: 'Paper accepted, reviewer role, top 1% at Ignite, IARCO finalist, Cohere Labs community.', state: 'done' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026 · ormas-monitor', what: 'Poster presented at Ohio State; monitor released on PyPI', state: 'done' },
-            { m: 'Nov', y: '2026', who: 'Cohere Labs', what: 'Invited talk', state: 'live' },
+            { m: 'Nov', y: '2026', who: 'Cohere Labs · IEEE TNNLS · The Residency', what: 'Invited talk; invited to review for IEEE TNNLS; invited to interview for The Residency', state: 'live' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
               <div className="rec-run-m">
@@ -664,6 +665,33 @@ export default function CVRecognition() {
               <div className="rec-stat">
                 <span className="rec-stat-val">Paris</span>
                 <span className="rec-stat-lbl">Palais des Congrès</span>
+              </div>
+            </div>
+          </div>
+
+          {/* IEEE TNNLS — invited to review */}
+          <div className="rec-card">
+            <div className="rec-logo-row">
+              <div className="rec-logo-chip on-white">
+                <span className="rec-logo-text">IEEE TNNLS</span>
+              </div>
+              <span className="rec-date">Nov 2026</span>
+            </div>
+            <div className="rec-tag">IEEE &middot; Journal &middot; Invited reviewer</div>
+            <h3 className="rec-name">Invited to Review for IEEE Transactions on Neural Networks and Learning Systems</h3>
+            <p className="rec-body">
+              On 19 November, Associate Editor <strong>Prof. Jindong Wang</strong> invited Raadh to review a manuscript
+              for <strong>IEEE Transactions on Neural Networks and Learning Systems</strong> and added him to the
+              journal&rsquo;s reviewer database. Manuscripts under review are confidential, so the paper is not named.
+            </p>
+            <div className="rec-stats">
+              <div className="rec-stat">
+                <span className="rec-stat-val">IEEE</span>
+                <span className="rec-stat-lbl">Journal</span>
+              </div>
+              <div className="rec-stat">
+                <span className="rec-stat-val">TNNLS</span>
+                <span className="rec-stat-lbl">Reviewer database</span>
               </div>
             </div>
           </div>

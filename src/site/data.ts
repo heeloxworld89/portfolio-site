@@ -52,6 +52,16 @@ export type NewsItem = { date: string; kind: string; title: string; body: string
 
 export const news: NewsItem[] = [
   {
+    date: "19 Nov 2026", kind: "Service",
+    title: "Invited to review for IEEE Transactions on Neural Networks and Learning Systems",
+    body: "Associate Editor Prof. Jindong Wang invited Raadh to review a manuscript for IEEE Transactions on Neural Networks and Learning Systems and added him to the journal's reviewer database.",
+  },
+  {
+    date: "Nov 2026", kind: "Selection",
+    title: "Invited to interview for The Residency in San Francisco",
+    body: "The Residency, a three-month residency in San Francisco for founders and researchers, invited Raadh to an interview.",
+  },
+  {
     date: "2 Nov 2026", kind: "Invited talk",
     title: "Invited talk at Cohere Labs on the stability of self-repairing training",
     body: "Raadh gave an invited talk at Cohere Labs, “When the Update Is Not a Gradient: Input-to-State Stability of Self-Repairing Neural Network Training.” The talk covered why self-repairing training converges although its updates are not gradients, and where the proof stops. The recording is on Cohere's YouTube channel, and the slides are public.",

@@ -79,6 +79,11 @@ export const groups: Group[] = [
         ],
         status: "Public record",
       },
+      {
+        claim: "IEEE Transactions on Neural Networks and Learning Systems: invited to review",
+        detail: "On 19 November 2026, Associate Editor Prof. Jindong Wang invited him to review a manuscript submitted to IEEE TNNLS and added him to the journal's reviewer database. Manuscripts under review are confidential, so the paper is not named here. Invitation email from the journal's Manuscript Central system.",
+        status: "On request",
+      },
     ],
   },
   {
@@ -135,6 +140,7 @@ export const groups: Group[] = [
       { claim: "500 Global: investment discussions with OXIEDO", detail: "Ongoing discussions following a first-round interview in October 2026.", status: "On request" },
       { claim: "Freshmango: offered a place in the accelerator", detail: "Offer correspondence from Freshmango.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "The Bridge by Entrepreneur First (San Francisco): finalist", detail: "Reached the final round after a first-round interview with Entrepreneur First in London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
+      { claim: "The Residency (San Francisco): invited to interview", detail: "The Residency, a three-month residency in San Francisco for founders and researchers, invited him to an interview in November 2026. Invitation correspondence.", status: "On request" },
       { claim: "Onstage W26: invited to the pre-pitch event", detail: "Invitation to the pre-pitch event in Central London.", source: [{ label: "Announcements on X (@Raad_X_)", href: links.x }], status: "On request" },
       { claim: "FIAP (São Paulo, Brazil): member", detail: "FIAP sponsored his place in MIT Open Learning's Universal AI program.", status: "On request" },
     ],
@@ -167,4 +173,4 @@ export const groups: Group[] = [
   },
 ];
 
-export const evidenceChecked = "2026-11-03";
+export const evidenceChecked = "2026-11-20";
