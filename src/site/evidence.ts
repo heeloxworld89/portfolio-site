@@ -80,8 +80,8 @@ export const groups: Group[] = [
         status: "Public record",
       },
       {
-        claim: "IEEE Transactions on Neural Networks and Learning Systems: invited to review",
-        detail: "On 19 November 2026, Associate Editor Prof. Jindong Wang invited him to review a manuscript submitted to IEEE TNNLS and added him to the journal's reviewer database. Manuscripts under review are confidential, so the paper is not named here. Invitation email from the journal's Manuscript Central system.",
+        claim: "Reviewer, IEEE Transactions on Neural Networks and Learning Systems",
+        detail: "Reviewing a manuscript for IEEE TNNLS at the invitation of Associate Editor Prof. Jindong Wang (November 2026), and a member of the journal's reviewer database. Manuscripts under review are confidential, so the paper is not named here. Correspondence from the journal's Manuscript Central system.",
         status: "On request",
       },
     ],

@@ -626,7 +626,7 @@ export default function CVRecognition() {
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'First-round interview, London', state: 'done' },
             { m: 'Sep', y: '2026', who: 'DeepMath · NeurIPS workshop · 1752vc · IARCO · Cohere Labs', what: 'Paper accepted, reviewer role, top 1% at Ignite, IARCO finalist, Cohere Labs community.', state: 'done' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026 · ormas-monitor', what: 'Poster presented at Ohio State; monitor released on PyPI', state: 'done' },
-            { m: 'Nov', y: '2026', who: 'Cohere Labs · IEEE TNNLS · The Residency', what: 'Invited talk; invited to review for IEEE TNNLS; invited to interview for The Residency', state: 'live' },
+            { m: 'Nov', y: '2026', who: 'Cohere Labs · IEEE TNNLS · The Residency', what: 'Invited talk; reviewer for IEEE TNNLS; invited to interview for The Residency', state: 'live' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
               <div className="rec-run-m">
@@ -669,7 +669,7 @@ export default function CVRecognition() {
             </div>
           </div>
 
-          {/* IEEE TNNLS — invited to review */}
+          {/* IEEE TNNLS — reviewer */}
           <div className="rec-card">
             <div className="rec-logo-row">
               <div className="rec-logo-chip on-white">
@@ -677,12 +677,12 @@ export default function CVRecognition() {
               </div>
               <span className="rec-date">Nov 2026</span>
             </div>
-            <div className="rec-tag">IEEE &middot; Journal &middot; Invited reviewer</div>
-            <h3 className="rec-name">Invited to Review for IEEE Transactions on Neural Networks and Learning Systems</h3>
+            <div className="rec-tag">IEEE &middot; Journal &middot; Reviewer</div>
+            <h3 className="rec-name">Reviewer, IEEE Transactions on Neural Networks and Learning Systems</h3>
             <p className="rec-body">
-              On 19 November, Associate Editor <strong>Prof. Jindong Wang</strong> invited Raadh to review a manuscript
-              for <strong>IEEE Transactions on Neural Networks and Learning Systems</strong> and added him to the
-              journal&rsquo;s reviewer database. Manuscripts under review are confidential, so the paper is not named.
+              Raadh is reviewing a manuscript for <strong>IEEE Transactions on Neural Networks and Learning
+              Systems</strong> at the invitation of Associate Editor <strong>Prof. Jindong Wang</strong>, and has joined
+              the journal&rsquo;s reviewer database. Manuscripts under review are confidential, so the paper is not named.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
