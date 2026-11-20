@@ -10,10 +10,12 @@ type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: str
 const L = "/assets/images/logos/";
 // Fixed at build time so the prerendered and hydrated markup agree.
 const BUILD_TIME = Number(import.meta.env.VITE_BUILD_TIME ?? Date.parse("2026-10-03T00:00:00Z"));
-// Ten marks: the logo wall is laid out for exactly ten (5×2, 3×3 plus one, 2×5).
+// Eleven marks. The first (DeepMath) spans two columns, so the wall fills twelve
+// cells with no orphan at every width: 4×3 on desktop, 3×4 on tablet, 2×6 on phone.
 const marks: Mark[] = [
   { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review; one of 41 accepted papers, in the same poster session as papers from René Vidal's and Richard Baraniuk's groups" },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Workshop reviewer", note: "Reviewer for the Workshop on Trustworthy AI for Good, Paris" },
+  { name: "IEEE TNNLS", word: "IEEE", sup: "TNNLS", tag: "Journal reviewer", note: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems, at the invitation of Associate Editor Prof. Jindong Wang" },
   { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited talk", note: "Invited talk at Cohere Labs, Toronto, November 2026; member of its research community" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Highest-ranked", note: "ORMAS was the highest-ranked application in its review cycle" },
   { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist · 24th of 145", note: "International Academic Research Competition, Junior division; about 500 participants from 60 countries" },

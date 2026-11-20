@@ -370,10 +370,11 @@ body:has(.rx) { background: #e7e7e2; }
 .rx .rx-sel-eb { display: flex; align-items: center; gap: 12px; font-family: var(--rx-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--rx-ink-2); margin: 0 0 22px; }
 .rx .rx-sel-eb::before { content: ""; width: 28px; height: 1px; background: var(--rx-teal); }
 .rx-sel-head > p { font-size: 17px; line-height: 1.6; color: var(--rx-ink-2); margin: 0; max-width: 380px; justify-self: end; }
-.rx-logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--rx-line); border-left: 1px solid var(--rx-line); }
+.rx-logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--rx-line); border-left: 1px solid var(--rx-line); }
 .rx .rx-logos li { margin: 0;  }
 .rx-logos li { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 230px; padding: 20px 22px 22px; border-right: 1px solid var(--rx-line); border-bottom: 1px solid var(--rx-line); background: rgba(251, 251, 249, .25); transition: background .35s; }
 .rx-logos li:hover { background: var(--rx-white); }
+.rx-logos li:first-child { grid-column: span 2; }
 .rx .rx-logo-verb { align-self: flex-start; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border: 1px solid var(--rx-line-soft); background: rgba(251, 251, 249, .6); font-weight: 500; font-family: var(--rx-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--rx-ink-3); transition: color .35s; }
 .rx-logos li:hover .rx-logo-verb { color: var(--rx-teal); border-color: var(--rx-line); }
 .rx .rx-logo-verb::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #3e9b62; }
@@ -386,7 +387,7 @@ body:has(.rx) { background: #e7e7e2; }
 .rx-logo-note { min-height: 78px; font-size: 13px; line-height: 1.45; color: var(--rx-ink-2); }
 .rx-logo-note b { display: block; font-weight: 700; color: var(--rx-ink); font-size: 14px; }
 .rx .rx-sel-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; color: var(--rx-ink); }
-@media (max-width: 1100px) { .rx-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); } .rx-logos li:first-child { grid-column: span 3; } }
+@media (max-width: 1100px) { .rx-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); } .rx-logos li:first-child { grid-column: span 2; } }
 @media (max-width: 760px) {
   .rx-sel { padding-top: 80px; }
   .rx-sel-head { grid-template-columns: 1fr; gap: 18px; }
