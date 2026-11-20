@@ -5,7 +5,7 @@ import DeepMathRoom from "../DeepMathRoom";
 import { links, news, publications, talks, youtubeId } from "../data";
 import "../ux/home.css";
 
-type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: string; note: string };
+type Mark = { name: string; logo?: string; word?: string; sup?: string; tag: string; note: string; feature?: { to: string; label: string; facts: string[] } };
 
 const L = "/assets/images/logos/";
 // Fixed at build time so the prerendered and hydrated markup agree.
@@ -13,9 +13,9 @@ const BUILD_TIME = Number(import.meta.env.VITE_BUILD_TIME ?? Date.parse("2026-10
 // Eleven marks. The first (DeepMath) spans two columns, so the wall fills twelve
 // cells with no orphan at every width: 4×3 on desktop, 3×4 on tablet, 2×6 on phone.
 const marks: Mark[] = [
-  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review; one of 41 accepted papers, in the same poster session as papers from René Vidal's and Richard Baraniuk's groups" },
+  { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review, in the same poster session as papers from René Vidal's and Richard Baraniuk's groups.", feature: { to: "/deepmath", label: "Read the paper", facts: ["1 of 41 papers", "Double-blind", "Ohio State"] } },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Workshop reviewer", note: "Reviewer for the Workshop on Trustworthy AI for Good, Paris" },
-  { name: "IEEE TNNLS", word: "IEEE", sup: "TNNLS", tag: "Journal reviewer", note: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems, at the invitation of Associate Editor Prof. Jindong Wang" },
+  { name: "IEEE TNNLS", word: "IEEE", sup: "TNNLS", tag: "Journal reviewer", note: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems" },
   { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited talk", note: "Invited talk at Cohere Labs, Toronto, November 2026; member of its research community" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Highest-ranked", note: "ORMAS was the highest-ranked application in its review cycle" },
   { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist · 24th of 145", note: "International Academic Research Competition, Junior division; about 500 participants from 60 countries" },
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           <ul className="rx-logos">
             {marks.map((m) => (
-              <li key={m.name} className={m.logo ? undefined : "is-word"}>
+              <li key={m.name} className={[m.logo ? "" : "is-word", m.feature ? "is-feature" : ""].join(" ").trim() || undefined}>
                 <span className="rx-logo-verb">{m.tag}</span>
                 <span className="rx-logo-img">
                   {m.logo ? (
@@ -128,7 +128,15 @@ export default function Home() {
                     <span className="rx-logo-word">{m.word}<i>{m.sup ?? "2026"}</i></span>
                   )}
                 </span>
-                <span className="rx-logo-note"><b>{m.name}</b>{m.note}</span>
+                <span className="rx-logo-note">
+                  <b>{m.name}</b>{m.note}
+                  {m.feature ? (
+                    <>
+                      <span className="rx-logo-facts">{m.feature.facts.map((f) => <span key={f}>{f}</span>)}</span>
+                      <Link className="rx-logo-go" to={m.feature.to}>{m.feature.label} <Arrow /></Link>
+                    </>
+                  ) : null}
+                </span>
               </li>
             ))}
           </ul>
