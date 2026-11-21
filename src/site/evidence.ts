@@ -77,6 +77,15 @@ export const groups: Group[] = [
         status: "Public record",
       },
       {
+        claim: "Reviewer, IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS), recruited at 18",
+        detail: "Recruited in November 2026 by Associate Editor Prof. Jindong Wang, Assistant Professor at William & Mary, whose homepage lists him as an associate editor of IEEE TNNLS. Raadh, 18, before starting university and with no institutional affiliation, is reviewing a manuscript for the journal and has been added to its reviewer database. Manuscripts under review are confidential, so the paper is not named here. The invitation and reviewer correspondence from the journal's Manuscript Central system are available on request.",
+        source: [
+          { label: "Prof. Jindong Wang's homepage (associate editor, IEEE TNNLS)", href: "https://jd92.wang/" },
+          { label: "IEEE TNNLS (journal page)", href: "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems" },
+        ],
+        status: "On request",
+      },
+      {
         claim: "Reviewer, NeurIPS 2026 Workshop on Trustworthy AI for Good",
         detail: "Workshop of NeurIPS 2026, Palais des Congrès de Paris, 12 December 2026. The Program Chairs' recognition letter (3 October 2026) certifies his service as a reviewer; the titles of the papers he reviewed are redacted to protect reviewer confidentiality. The workshop site lists him among the 490 reviewers who submitted official reviews.",
         source: [
@@ -84,11 +93,6 @@ export const groups: Group[] = [
           { label: "Public reviewer list (workshop site)", href: links.neurips + "#reviewers" },
         ],
         status: "Public record",
-      },
-      {
-        claim: "Reviewer, IEEE Transactions on Neural Networks and Learning Systems",
-        detail: "Reviewing a manuscript for IEEE TNNLS at the invitation of Associate Editor Prof. Jindong Wang (November 2026), and a member of the journal's reviewer database. Manuscripts under review are confidential, so the paper is not named here. Correspondence from the journal's Manuscript Central system.",
-        status: "On request",
       },
     ],
   },

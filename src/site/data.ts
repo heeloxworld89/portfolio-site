@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-20b";
+export const CV_VERSION = "2026-11-21a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -62,8 +62,8 @@ export const news: NewsItem[] = [
   },
   {
     date: "19 Nov 2026", kind: "Service",
-    title: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems",
-    body: "Raadh is reviewing a manuscript for IEEE Transactions on Neural Networks and Learning Systems at the invitation of Associate Editor Prof. Jindong Wang, and has joined the journal's reviewer database.",
+    title: "Recruited at 18 as a reviewer for IEEE Transactions on Neural Networks and Learning Systems",
+    body: "At 18, before starting university and with no institutional affiliation, Raadh was recruited as a reviewer for IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS) by Associate Editor Prof. Jindong Wang of William & Mary. He is reviewing a manuscript for the journal and has been added to its reviewer database. Manuscripts under review are confidential, so the paper is not named.",
   },
   {
     date: "Nov 2026", kind: "Selection",

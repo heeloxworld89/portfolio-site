@@ -16,7 +16,7 @@ const BUILD_TIME = Number(import.meta.env.VITE_BUILD_TIME ?? Date.parse("2026-10
 const marks: Mark[] = [
   { name: "DeepMath 2026", word: "DeepMath", tag: "Peer-reviewed · Sole author", note: "Stability paper accepted after double-blind review, in the same poster session as papers from René Vidal's and Richard Baraniuk's groups.", feature: { to: "/deepmath", label: "Read the paper", facts: ["1 of 41 papers", "Double-blind", "Ohio State"] } },
   { name: "NeurIPS 2026", word: "NeurIPS", tag: "Workshop reviewer", note: "Reviewer for the Workshop on Trustworthy AI for Good, Paris" },
-  { name: "IEEE TNNLS", word: "IEEE", sup: "TNNLS", tag: "Journal reviewer", note: "Reviewer for IEEE Transactions on Neural Networks and Learning Systems" },
+  { name: "IEEE TNNLS", word: "IEEE", sup: "TNNLS", tag: "Journal reviewer", note: "Recruited at 18 by Associate Editor Prof. Jindong Wang (William & Mary) to review for IEEE Transactions on Neural Networks and Learning Systems" },
   { name: "Cohere Labs", logo: L + "cohere.svg", tag: "Invited talk", note: "Invited talk at Cohere Labs, Toronto, November 2026; member of its research community" },
   { name: "Cosmos Institute", logo: L + "cosmos-institute.svg", tag: "Highest-ranked", note: "ORMAS was the highest-ranked application in its review cycle" },
   { name: "IARCO 2026", logo: L + "iarco-dark.png", tag: "Finalist · 24th of 145", note: "International Academic Research Competition, Junior division; about 500 participants from 60 countries" },
