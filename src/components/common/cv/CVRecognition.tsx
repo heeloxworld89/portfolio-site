@@ -680,14 +680,15 @@ export default function CVRecognition() {
             <div className="rec-tag">IEEE &middot; Journal &middot; Reviewer</div>
             <h3 className="rec-name">Reviewer, IEEE Transactions on Neural Networks and Learning Systems</h3>
             <p className="rec-body">
-              Raadh is reviewing a manuscript for <strong>IEEE Transactions on Neural Networks and Learning
-              Systems</strong> at the invitation of Associate Editor <strong>Prof. Jindong Wang</strong>, and has joined
-              the journal&rsquo;s reviewer database. Manuscripts under review are confidential, so the paper is not named.
+              At 18, before starting university and with no institutional affiliation, Raadh was recruited as a reviewer
+              for <strong>IEEE Transactions on Neural Networks and Learning Systems</strong> by Associate Editor{' '}
+              <strong>Prof. Jindong Wang</strong> of William &amp; Mary. He is reviewing a manuscript for the journal and
+              has been added to its reviewer database. Manuscripts under review are confidential, so the paper is not named.
             </p>
             <div className="rec-stats">
               <div className="rec-stat">
-                <span className="rec-stat-val">IEEE</span>
-                <span className="rec-stat-lbl">Journal</span>
+                <span className="rec-stat-val">18</span>
+                <span className="rec-stat-lbl">Age when recruited</span>
               </div>
               <div className="rec-stat">
                 <span className="rec-stat-val">TNNLS</span>
