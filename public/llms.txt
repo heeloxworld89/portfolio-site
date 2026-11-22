@@ -84,6 +84,7 @@ Machine-readable version of the same list: https://www.raadh.me/evidence.json
 - [About](https://www.raadh.me/about): recognition, background, education, contact
 - [Evidence](https://www.raadh.me/evidence): every claim on the site with its source
 - [Full site text](https://www.raadh.me/llms-full.txt)
+- [Sitemap](https://www.raadh.me/sitemap.xml): every page and document with its last-updated date ([readable version](https://www.raadh.me/sitemap))
 - [Invited talk at Cohere Labs, recording (YouTube)](https://www.youtube.com/watch?v=R75wEi3Ti-M)
 - [ORMAS preprint (Zenodo)](https://zenodo.org/records/21730363)
 - [Dead BatchNorm–ReLU Units Need Resets (Zenodo)](https://zenodo.org/records/24406555)
