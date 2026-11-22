@@ -29,7 +29,7 @@ const rungs = [
   { n: '04', phase: 'Phase 2 · Dead zone', q: 'What does complete system removal look like?', a: 'Not decay. Cessation. Acquisition went to zero and stayed there for four months. The collapse landed across every channel on the same day rather than tapering channel by channel — the specific signature that rules out seasonality and macro conditions.', v: '−100% acquisition. Simultaneous, not gradual.' },
   { n: '05', phase: 'Phase 3 · Mar–Jul 2026 · Re-injection', q: 'Is the collapse reversible?', a: 'A one-directional result is only half a proof. If the system caused the output, restoring it should restore the output — and if it does not, the causal claim fails from the other side. Redeployed into the same entity with no other change.', v: 'Yes. The dead zone was a lesion, not a wound.' },
   { n: '06', phase: 'Phase 3 · Recovery ablation', q: 'Does it return to baseline, or past it?', a: 'It overshot: the study’s most significant result. The knowledge graph had retained everything learned in Phase 1, so the system restarted with everything it had learned in Phase 1 (August–October 2025) instead of starting cold. It came back knowing things it did not know the first time.', v: 'Recovery compounds. Institutional memory survives.' },
-  { n: '07', phase: 'Phase 4 · 13 Aug 2026 · High-value test', q: 'Can it close a high-value transaction, or does trust break at the price point?', a: 'The residual objection: low-consideration purchases are easy. So the final phase listed high-value inventory and let the architecture run the entire funnel unassisted — discovery, positioning, objection handling, close.', v: 'A $4,386 order closed at $0.00 acquisition cost.' },
+  { n: '07', phase: 'Phase 4 · 13 Aug 2026 · High-value test', q: 'Can it close a high-value transaction, or does trust break at the price point?', a: 'The residual objection: low-consideration purchases are easy. So the final phase listed high-value inventory and let the architecture run the entire funnel unassisted — discovery, positioning, objection handling, close.', v: 'Yes: the system carried a buyer to a $4,386 order at $0.00 acquisition cost. The customer later cancelled it.' },
 ];
 
 /* The four phases at a glance, taken from the rung labels below. */
@@ -251,16 +251,16 @@ export default function CVBlackBloxie() {
       </div>
 
       <div className="bb-money">
-        <div className="bb-money-h">Full revenue disclosure</div>
+        <div className="bb-money-h">Full order disclosure</div>
         <p className="bb-money-p">
-          The complete revenue record for the twelve-month study.
+          The complete order record for the twelve-month study.
         </p>
         <div className="bb-money-grid">
           {[
-            { v: '$6,691.68', l: 'Total verified revenue', s: 'Everything the company earned in 12 months' },
+            { v: '$6,691.68', l: 'Total order value', s: '12 months, including the $4,386 order later cancelled' },
             { v: '79+', l: 'Orders', s: 'Across 10 countries' },
             { v: '~$30', l: 'Typical order', s: 'The other 78 orders average $29.56' },
-            { v: '$4,386', l: 'Largest single order', s: 'The Rung 7 test · 13 Aug 2026 · $0.00 CAC', hero: true },
+            { v: '$4,386', l: 'Largest single order', s: 'The Rung 7 test · 13 Aug 2026 · $0.00 CAC · later cancelled by the customer', hero: true },
           ].map((m) => (
             <div className={`bb-money-cell${m.hero ? ' is-hero' : ''}`} key={m.l}>
               <div className="bb-money-v">{m.v}</div>
@@ -270,9 +270,10 @@ export default function CVBlackBloxie() {
           ))}
         </div>
         <p className="bb-money-note">
-          <strong>A single order accounts for 65% of total revenue.</strong> It was the study&apos;s final
-          test: whether an autonomous system could carry a customer through a high-value purchase. Total
-          revenue is <strong>under $7,000</strong>, deliberately capped for the duration of the study.
+          <strong>A single order accounts for 65% of total order value.</strong> It was the study&apos;s final
+          test: whether an autonomous system could carry a customer through a high-value purchase. It could, and the
+          customer cancelled the order afterwards, so it counts here as an order placed, not revenue kept. Total order
+          value is <strong>under $7,000</strong>, deliberately capped for the duration of the study.
         </p>
       </div>
 

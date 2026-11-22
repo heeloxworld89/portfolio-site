@@ -59,7 +59,8 @@ export default function Home() {
               Most AI models cannot account for what they learned. <b>OXIEDO</b> is changing that. Its engine, ORMAS,
               finds its own broken parts, repairs them mid-training and writes a tamper-evident record of every change,
               so banks and hospitals can train AI on the data they have been locked out of. Raadh built it at 18, on one
-              graphics card he paid for himself, and its mathematics passed double-blind review at DeepMath 2026.
+              graphics card he paid for himself. Its mathematics passed double-blind review at DeepMath 2026, and IEEE
+              Transactions on Neural Networks and Learning Systems recruited him as a reviewer.
             </p>
             <div className="rx-btns">
               <Link className="rx-btn is-cta" to="/research">Read the research <Arrow /></Link>
@@ -93,9 +94,9 @@ export default function Home() {
         <div className="rx-wrap">
           <nav className="ux-jump" aria-label="On this page">
             <span className="ux-jump-k">On this page</span>
+            <a href="#publications">Publications</a>
             <a href="#news">News</a>
             <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
             <a href="#talks">Talks</a>
             <a href="#work">Work</a>
             <a href="#contact">Contact</a>
@@ -185,7 +186,10 @@ export default function Home() {
               <Link to="/deepmath">DeepMath 2026</Link> after double-blind review. He is a reviewer for IEEE Transactions on Neural Networks and Learning Systems,
               was a reviewer for the{" "}
               <a href={links.neuripsReviewers} target="_blank" rel="noreferrer">NeurIPS 2026 Workshop on Trustworthy AI for Good</a>{" "}
-              and gave an invited talk at Cohere Labs.
+              and gave an invited talk at Cohere Labs. His side project applies the same theory to{" "}
+              <Link to="/lunar-fire-safety">a fire-safety problem in NASA&apos;s plans for the Moon</Link>: the exact rule for
+              carrying fire tests into the 34%-oxygen lunar habitat atmosphere, with predictions for the first fire
+              experiment on the lunar surface registered before it flies.
             </p>
             <p>
               He grew up in Dhaka, Bangladesh. He developed ORMAS independently over 383 controlled experiments on a
@@ -224,7 +228,7 @@ export default function Home() {
             </div>
             <div className="rx-fig" role="listitem">
               <div className="rx-fig-v">2026</div>
-              <div className="rx-fig-k">DeepMath paper; NeurIPS workshop reviewer; invited talk at Cohere Labs</div>
+              <div className="rx-fig-k">Three sole-authored papers, including DeepMath; IEEE TNNLS and NeurIPS reviewer; invited talk at Cohere Labs</div>
             </div>
           </div>
         </div>
@@ -331,10 +335,17 @@ export default function Home() {
                 <a href={links.monitor} target="_blank" rel="noreferrer">ormas-monitor</a>, an open training monitor for
                 PyTorch.
               </p>
+              <p>
+                A follow-up paper (November 2026, under review) proves which resets can bring a dead unit back: for a
+                BatchNorm&ndash;ReLU unit the reset must rewrite the BatchNorm scale and shift, not only the filter, and
+                repeated resets stay stable if they are spaced far enough apart. The same theory now drives a side
+                project on <Link to="/lunar-fire-safety">a fire-safety problem in NASA&apos;s plans for the Moon</Link>.
+              </p>
               <div className="rx-btns">
                 <Link className="rx-btn" to="/research">Read the research <Arrow /></Link>
                 <Link className="rx-btn is-ghost" to="/deepmath">DeepMath poster <Arrow /></Link>
                 <a className="rx-btn is-ghost" href={links.preprint} target="_blank" rel="noreferrer">Preprint <Arrow /></a>
+                <a className="rx-btn is-ghost" href={links.resets} target="_blank" rel="noreferrer">Resets paper <Arrow /></a>
               </div>
             </div>
             <div className="rx-result">

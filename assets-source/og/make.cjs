@@ -7,7 +7,7 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 
-const VERSION = "v3";
+const VERSION = "v4";
 const dir = __dirname;
 const b64 = (f) => fs.readFileSync(path.join(dir, f)).toString("base64");
 const portrait = "data:image/webp;base64," + fs.readFileSync("public/assets/images/portrait.webp").toString("base64");
@@ -25,7 +25,7 @@ const cards = {
     k: "Founder & CEO, OXIEDO · Dhaka",
     name: true,
     t: "The 18-year-old founder of OXIEDO and inventor of ORMAS, the self-repairing neural network.",
-    chips: [["DeepMath 2026", "Accepted"], ["1752vc", "Top 1%"], ["Cosmos Institute", "Ranked #1"]],
+    chips: [["DeepMath 2026", "Accepted"], ["IEEE TNNLS", "Reviewer at 18"], ["1752vc", "Top 1%"]],
     right: "portrait",
   },
   research: {
@@ -45,8 +45,8 @@ const cards = {
   about: {
     k: "About · Founder & CEO, OXIEDO",
     name: true,
-    t: "Self-taught, eighteen, and selected by DeepMath, NeurIPS, 1752vc and Cosmos Institute in one year.",
-    chips: [["7", "MIT programmes"], ["10", "selections in 2026"], ["Age 12", "first venture"]],
+    t: "Self-taught at eighteen: a DeepMath paper, an IEEE TNNLS reviewer role and three papers in one year.",
+    chips: [["3", "papers in 2026"], ["7", "MIT programmes"], ["Age 12", "first venture"]],
     right: "portrait",
   },
   // Article card: the article's own title, description and figures; no right panel.
@@ -55,6 +55,13 @@ const cards = {
     h: "VGG-19-BN spends 18.6% of its compute on <em>channels that output zero</em>",
     t: "292 channels in torchvision's VGG-19-BN output exactly 0 on 10,000 test photos. Cutting them changed no answers and saved 18.6% of the operations.",
     chips: [["292 of 5,504", "flagged channels"], ["18.6%", "fewer operations"], ["10,000", "test photos"]],
+    wide: true,
+  },
+  "lunar-fire-safety": {
+    k: "Research project · Lunar fire safety",
+    h: "Solving a fire-safety problem in <em>NASA's plans for the Moon.</em>",
+    t: "NASA's lunar habitats will run at 34% oxygen, above most of its fire data. An exact rule for carrying fire tests there, checked on NASA's own data.",
+    chips: [["34%", "oxygen planned"], ["0 vs 38 of 44", "failures let through"], ["Pre-flight", "FM2 predictions"]],
     wide: true,
   },
 };

@@ -63,8 +63,8 @@ export const groups: Group[] = [
     title: "Research: spacecraft fire safety",
     rows: [
       {
-        claim: "Carrying flammability limits across cabin pressure: preprint, sole author (22 November 2026)",
-        detail: "39-page preprint on Zenodo (CC BY 4.0) with the code and data that regenerate its numbers. It proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval, and tests it on the 22-material NASA White Sands Test 1 table of Harper et al. (2016): exception (f) licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs up to 14.7 psia. Independent work from public sources; not affiliated with NASA or the FM2 team.",
+        claim: "Lunar fire-safety project: a fire-safety rule problem in NASA's lunar habitat plans, paper published 22 November 2026 (sole author)",
+        detail: "39-page preprint on Zenodo (CC BY 4.0) with the code and data that regenerate its numbers. It proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval, and tests it on the 22-material NASA White Sands Test 1 table of Harper et al. (2016): exception (f) licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs up to 14.7 psia.",
         source: [
           { label: "Zenodo · DOI 10.5281/zenodo.24435363", href: links.fireDoi },
           { label: "Code and data (zip)", href: links.fireCode },
@@ -208,4 +208,4 @@ export const groups: Group[] = [
   },
 ];
 
-export const evidenceChecked = "2026-11-20";
+export const evidenceChecked = "2026-11-22";

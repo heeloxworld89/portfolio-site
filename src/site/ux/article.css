@@ -64,3 +64,10 @@
 .ux-art .lf-ledger-val { margin: 0 0 10px; line-height: 1.55; }
 .ux-art .lf-ledger-st { display: inline-block; font-family: var(--rx-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; background: #d8ee96; color: var(--rx-teal); }
 .ux-art .lf-ledger-st.is-cond { background: transparent; border: 1px solid var(--rx-line); }
+.rx-page-head .lf-byline { font-family: var(--rx-mono); font-size: 12.5px; letter-spacing: .04em; color: var(--rx-ink-2); margin-top: 14px; }
+.ux-art .lf-stats { list-style: none; margin: 0 0 30px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rx-line-soft); border: 1px solid var(--rx-line-soft); }
+.ux-art .lf-stats li { margin: 0; background: var(--rx-teal); color: #e9f1f2; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+.ux-art .lf-stats b { font-family: var(--rx-serif); font-weight: 400; font-size: 34px; line-height: 1; color: #d8ee96; }
+.ux-art .lf-stats span { font-size: 13px; line-height: 1.45; }
+@media (max-width: 1100px) { .ux-art .lf-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ux-art .lf-solved-anchor { height: 0; scroll-margin-top: 24px; }

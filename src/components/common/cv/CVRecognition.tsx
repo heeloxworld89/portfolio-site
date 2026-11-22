@@ -10,7 +10,8 @@ export default function CVRecognition() {
       lead={
         <>
           In research: a sole-authored paper accepted after double-blind review at DeepMath 2026 and shown at its
-          poster session at The Ohio State University; reviewer roles for IEEE Transactions on Neural Networks and
+          poster session at The Ohio State University; two more sole-authored papers in November, a follow-up on
+          resets and a research project on a fire-safety problem in NASA&apos;s plans for the Moon; reviewer roles for IEEE Transactions on Neural Networks and
           Learning Systems and the NeurIPS 2026 Workshop on Trustworthy AI for Good; an invited talk at Cohere Labs; the highest-ranked application in the Cosmos Institute review
           cycle; and a finalist place at IARCO 2026, ranked 24th of 145 in the Junior division. In venture: OXIEDO
           was accepted to 1752vc Ignite from the top 1% of applicants, offered a place by Freshmango, and is in
@@ -574,12 +575,36 @@ export default function CVRecognition() {
 
           {[
             {
+              d: '22 Nov',
+              h: 'Research project',
+              who: 'Lunar fire safety',
+              what: <><strong>A fire-safety problem in NASA&apos;s plans for the Moon</strong>: the exact rule for carrying fire tests into the 34%-oxygen lunar habitat atmosphere, with predictions registered before the first fire experiment on the Moon. <a href="/lunar-fire-safety">The project</a>.</>,
+              pill: 'Published',
+              now: true,
+            },
+            {
+              d: '20 Nov',
+              h: 'Paper',
+              who: 'Follow-up to the DeepMath paper \u00b7 under review',
+              what: <><strong>Dead BatchNorm&ndash;ReLU Units Need Resets</strong>: which resets revive a dead unit, and when repeated resets stay stable.</>,
+              pill: 'Published',
+              now: false,
+            },
+            {
+              d: '19 Nov',
+              h: 'IEEE',
+              who: 'IEEE Transactions on Neural Networks and Learning Systems',
+              what: <><strong>Recruited as a reviewer at 18</strong> by Associate Editor Prof. Jindong Wang of William &amp; Mary.</>,
+              pill: 'Reviewer',
+              now: false,
+            },
+            {
               d: '2 Nov',
               h: 'Toronto',
               who: 'Cohere Labs \u00b7 Invited talk',
               what: <><strong>When the Update Is Not a Gradient</strong>: input-to-state stability of self-repairing neural network training.</>,
               pill: 'Presented',
-              now: true,
+              now: false,
             },
             {
               d: '29 Oct',
@@ -626,7 +651,7 @@ export default function CVRecognition() {
             { m: 'Aug', y: '2026', who: 'Entrepreneur First', what: 'First-round interview, London', state: 'done' },
             { m: 'Sep', y: '2026', who: 'DeepMath · NeurIPS workshop · 1752vc · IARCO · Cohere Labs', what: 'Paper accepted, reviewer role, top 1% at Ignite, IARCO finalist, Cohere Labs community.', state: 'done' },
             { m: 'Oct', y: '2026', who: 'DeepMath 2026 · ormas-monitor', what: 'Poster presented at Ohio State; monitor released on PyPI', state: 'done' },
-            { m: 'Nov', y: '2026', who: 'Cohere Labs · IEEE TNNLS · The Residency', what: 'Invited talk; reviewer for IEEE TNNLS; invited to interview for The Residency', state: 'live' },
+            { m: 'Nov', y: '2026', who: 'Cohere Labs · IEEE TNNLS · two papers · The Residency', what: 'Invited talk; recruited as an IEEE TNNLS reviewer; the resets paper and the lunar fire-safety project; invited to interview for The Residency', state: 'live' },
           ].map((r) => (
             <div className={`rec-run-cell is-${r.state}`} key={r.m}>
               <div className="rec-run-m">

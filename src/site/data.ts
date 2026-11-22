@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-22a";
+export const CV_VERSION = "2026-11-22b";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -61,8 +61,8 @@ export type NewsItem = { date: string; kind: string; title: string; body: string
 export const news: NewsItem[] = [
   {
     date: "22 Nov 2026", kind: "Preprint",
-    title: "New preprint in spacecraft fire safety, with predictions registered before the FM2 lunar tests",
-    body: "A sole-authored preprint outside machine learning, with the same method: find the exact condition under which a safety rule is safe. It proves when the oxygen partial-pressure rule in NASA-STD-6016C, exception (f), can carry a fire-test result to another cabin pressure, tests the condition on NASA White Sands data for 22 materials, and registers predictions for FM2, the burn tests planned on the Moon, before any FM2 data were public. Independent work from public sources; not affiliated with NASA or the FM2 team.",
+    title: "Solving a fire-safety problem in NASA's plans for the Moon",
+    body: "NASA's lunar habitats are planned to run at 34% oxygen, and NASA's own engineering review says it has limited fire data above 30%. Raadh's new research project, built on the same theory as ORMAS, gives the exact rule for when a fire test passed in one cabin atmosphere still holds in another, checks it against NASA's White Sands data for 22 materials (NASA's rule allows no known failure; judging by oxygen share alone allows one on 38 of 44 moves), and registers predictions for FM2, which its team calls the first combustion experiments on another world, before it flies.",
     href: "/lunar-fire-safety",
   },
   {
@@ -208,7 +208,7 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "Carrying flammability limits across cabin pressure: the oxygen partial-pressure rule, and how to read the FM2 lunar burn-down tests",
-    venue: "Preprint, Zenodo, 22 Nov 2026. 39 pages, with code and data. Spacecraft fire safety; predictions for the FM2 lunar burn tests registered before any FM2 data were public. DOI 10.5281/zenodo.24435363.",
+    venue: "Paper from the lunar fire-safety project, Zenodo, 22 Nov 2026. Gives the exact rule for carrying fire-test results into NASA's 34%-oxygen lunar habitat atmosphere, and registers predictions for FM2, the first fire experiment planned on the Moon, before it flies. 39 pages with code and data. DOI 10.5281/zenodo.24435363.",
     year: "2026", thumb: "fm2" as const,
     links: [
       { label: "Paper", href: links.fire },
@@ -239,7 +239,7 @@ export const pages = {
     title: "Rokib Al Dhin Raadh — AI Researcher, Founder of OXIEDO, Inventor of ORMAS",
     description:
       "Rokib Al Dhin Raadh, 18: AI researcher and founder of OXIEDO. Sole-authored DeepMath 2026 paper; reviewer for IEEE TNNLS and NeurIPS 2026; Cohere Labs talk.",
-    image: "/og/home-v3.jpg",
+    image: "/og/home-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
@@ -260,14 +260,14 @@ export const pages = {
     title: "About Rokib Al Dhin Raadh — AI Researcher and Founder of OXIEDO",
     description:
       "Rokib Al Dhin Raadh, 18, AI researcher and founder of OXIEDO: DeepMath 2026 paper, NeurIPS 2026 workshop reviewer, Cohere Labs invited talk, 1752vc top 1%.",
-    image: "/og/about-v3.jpg",
+    image: "/og/about-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/evidence": {
     title: "Evidence: every claim, with its source — Rokib Al Dhin Raadh",
     description:
       "Each claim about Rokib Al Dhin Raadh, 18, founder of OXIEDO and inventor of ORMAS, with its source: DOI, ORCID, code, MITx records, and documents on request.",
-    image: "/og/about-v3.jpg",
+    image: "/og/about-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/deepmath": {
@@ -281,7 +281,7 @@ export const pages = {
     title: "Articles · Rokib Al Dhin Raadh",
     description:
       "Articles by Rokib Al Dhin Raadh, an independent AI researcher in Dhaka, on neural network training and the tools he builds.",
-    image: "/og/home-v3.jpg",
+    image: "/og/home-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/dead-channels": {
@@ -292,11 +292,11 @@ export const pages = {
     imageAlt: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
   },
   "/lunar-fire-safety": {
-    title: "Fire safety at lunar cabin pressure: an exact rule and registered predictions · Rokib Al Dhin Raadh",
+    title: "Fire Safety in NASA's Moon Habitats — Rokib Al Dhin Raadh",
     description:
-      "When can a spacecraft fire test be carried to another cabin pressure? An exact condition for NASA's oxygen partial-pressure rule, a test on White Sands data, and predictions for the FM2 lunar burn tests registered before any FM2 data.",
-    image: "/og/research-v3.jpg",
-    imageAlt: "Rokib Al Dhin Raadh: fire safety at lunar cabin pressure",
+      "NASA's lunar habitats will run at 34% oxygen, above most of its fire data. The exact rule for carrying fire tests there, checked on NASA's data, with FM2 predictions.",
+    image: "/og/lunar-fire-safety-v4.jpg",
+    imageAlt: "Solving a fire-safety problem in NASA's plans for the Moon: a research project by Rokib Al Dhin Raadh",
   },
 } as const;
 
