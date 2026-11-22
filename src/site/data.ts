@@ -1,6 +1,6 @@
 // Single source for the facts the profile pages repeat.
 
-export const CV_VERSION = "2026-11-21a";
+export const CV_VERSION = "2026-11-22a";
 
 export const links = {
   cv: `/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf?v=${CV_VERSION}`,
@@ -9,6 +9,11 @@ export const links = {
   // Second preprint, 20 Nov 2026 (under review; venue not named while review is ongoing).
   resets: "https://zenodo.org/records/24406555",
   resetsDoi: "https://doi.org/10.5281/zenodo.24406555",
+  // Spacecraft fire-safety preprint, 22 Nov 2026, with registered FM2 predictions.
+  fire: "https://zenodo.org/records/24435363",
+  fireDoi: "https://doi.org/10.5281/zenodo.24435363",
+  fireCode: "https://zenodo.org/records/24435363/files/Raadh_2026_preprint_v1_code_data.zip?download=1",
+  fireRegistered: "https://zenodo.org/records/24435363/files/f1_band.out?download=1",
   code: "https://anonymous.4open.science/r/ormas-EB73/README.md",
   archive: "https://drive.google.com/file/d/1CDaMIpTZ_8Mkot9D-O7JU29mDopq_Bdl/view",
   oximoCode: "https://anonymous.4open.science/r/oximo-5C73/README.md",
@@ -54,6 +59,12 @@ export function youtubeId(url: string): string {
 export type NewsItem = { date: string; kind: string; title: string; body: string; href?: string };
 
 export const news: NewsItem[] = [
+  {
+    date: "22 Nov 2026", kind: "Preprint",
+    title: "New preprint in spacecraft fire safety, with predictions registered before the FM2 lunar tests",
+    body: "A sole-authored preprint outside machine learning, with the same method: find the exact condition under which a safety rule is safe. It proves when the oxygen partial-pressure rule in NASA-STD-6016C, exception (f), can carry a fire-test result to another cabin pressure, tests the condition on NASA White Sands data for 22 materials, and registers predictions for FM2, the burn tests planned on the Moon, before any FM2 data were public. Independent work from public sources; not affiliated with NASA or the FM2 team.",
+    href: "/lunar-fire-safety",
+  },
   {
     date: "20 Nov 2026", kind: "Preprint",
     title: "New preprint: Dead BatchNorm–ReLU Units Need Resets",
@@ -196,6 +207,17 @@ export const publications = [
   },
   {
     authors: "R. A. D. Raadh",
+    title: "Carrying flammability limits across cabin pressure: the oxygen partial-pressure rule, and how to read the FM2 lunar burn-down tests",
+    venue: "Preprint, Zenodo, 22 Nov 2026. 39 pages, with code and data. Spacecraft fire safety; predictions for the FM2 lunar burn tests registered before any FM2 data were public. DOI 10.5281/zenodo.24435363.",
+    year: "2026", thumb: "fm2" as const,
+    links: [
+      { label: "Paper", href: links.fire },
+      { label: "Registered predictions", href: "/lunar-fire-safety" },
+      { label: "Code and data", href: links.fireCode },
+    ],
+  },
+  {
+    authors: "R. A. D. Raadh",
     title: "OXIMO/AX09: Autonomous LLM-Dependent Commerce. A Twelve-Month Controlled Ablation Study",
     venue: "Technical report, 2026. Twelve-month controlled field study on a live UK company (Black Bloxie LTD): removing OXIMO cut output by 91%.",
     year: "2026", thumb: "oximo" as const,
@@ -268,6 +290,13 @@ export const pages = {
       "292 channels in torchvision's VGG-19-BN output exactly 0 on 10,000 test photos. Cutting them changed no answers and saved 18.6% of the operations.",
     image: "/og/dead-channels-v3.jpg",
     imageAlt: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
+  },
+  "/lunar-fire-safety": {
+    title: "Fire safety at lunar cabin pressure: an exact rule and registered predictions · Rokib Al Dhin Raadh",
+    description:
+      "When can a spacecraft fire test be carried to another cabin pressure? An exact condition for NASA's oxygen partial-pressure rule, a test on White Sands data, and predictions for the FM2 lunar burn tests registered before any FM2 data.",
+    image: "/og/research-v3.jpg",
+    imageAlt: "Rokib Al Dhin Raadh: fire safety at lunar cabin pressure",
   },
 } as const;
 

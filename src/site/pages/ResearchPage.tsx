@@ -36,6 +36,7 @@ const TOC: TocItem[] = [
       { id: "cherry-differs", label: "How it differs" },
     ],
   },
+  { id: "beyond-ml", label: "Beyond ML: fire safety" },
 ];
 
 export default function ResearchPage() {
@@ -64,6 +65,19 @@ export default function ResearchPage() {
           <div className="uxr-main">
             <CVResearch />
             <CVCherry />
+            <section className="uxr-sec" id="beyond-ml" aria-labelledby="beyond-ml-h">
+              <h2 className="uxr-h" id="beyond-ml-h">Beyond machine learning: the same method in spacecraft fire safety</h2>
+              <p className="uxr-p">
+                The question behind ORMAS is when an update that is not a gradient keeps training safe. A preprint from
+                November 2026 asks the same kind of question about a NASA fire-safety rule: when can a flammability test
+                passed at one cabin pressure be carried to another? It proves the exact condition, tests it on NASA White
+                Sands data for 22 materials, and registers predictions for FM2, the burn tests planned on the lunar
+                surface, before any FM2 data were public. Independent work from public sources; not affiliated with NASA.
+              </p>
+              <p className="uxr-p">
+                <Link to="/lunar-fire-safety">The paper and its registered predictions →</Link>
+              </p>
+            </section>
           </div>
         </div>
       </div>

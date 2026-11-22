@@ -6,6 +6,7 @@ const nav: { to: string; label: string; external?: boolean; footerOnly?: boolean
   { to: "/research", label: "Research" },
   { to: "/deepmath", label: "DeepMath" },
   { to: "/articles", label: "Articles", footerOnly: true },
+  { to: "/lunar-fire-safety", label: "Lunar fire safety", footerOnly: true },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/evidence", label: "Evidence" },

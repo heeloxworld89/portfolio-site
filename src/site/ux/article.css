@@ -55,3 +55,12 @@
   .rx .ux-research.ux-art .uxr-table th,
   .rx .ux-research.ux-art .uxr-table td { white-space: nowrap !important; }
 }
+
+/* /lunar-fire-safety: long hash wraps instead of overflowing on phones */
+.ux-art .lf-hash { word-break: break-all; font-size: 0.86em; }
+.ux-art .lf-ledger { list-style: none; margin: 18px 0 22px; padding: 0; display: grid; gap: 10px; }
+.ux-art .lf-ledger li { border: 1px solid var(--rx-line-soft); background: var(--rx-white); padding: 14px 16px; }
+.ux-art .lf-ledger-name { font-family: var(--rx-mono); font-size: 12.5px; letter-spacing: .02em; color: var(--rx-teal); margin: 0 0 6px; }
+.ux-art .lf-ledger-val { margin: 0 0 10px; line-height: 1.55; }
+.ux-art .lf-ledger-st { display: inline-block; font-family: var(--rx-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; background: #d8ee96; color: var(--rx-teal); }
+.ux-art .lf-ledger-st.is-cond { background: transparent; border: 1px solid var(--rx-line); }
