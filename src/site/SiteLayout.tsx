@@ -2,11 +2,20 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { links, pages, type PagePath } from "./data";
 
-const nav: { to: string; label: string; external?: boolean; footerOnly?: boolean }[] = [
-  { to: "/research", label: "Research" },
-  { to: "/deepmath", label: "DeepMath" },
+type NavChild = { to: string; label: string; note: string };
+type NavItem = { to: string; label: string; external?: boolean; footerOnly?: boolean; children?: NavChild[] };
+
+/** "Research" opens a menu: one entry per research line. */
+const nav: NavItem[] = [
+  {
+    to: "/research", label: "Research",
+    children: [
+      { to: "/research", label: "ORMAS", note: "Self-repairing neural networks" },
+      { to: "/deepmath", label: "DeepMath 2026", note: "Peer-reviewed stability paper and poster" },
+      { to: "/lunar-fire-safety", label: "Lunar fire safety", note: "A fire-safety problem in NASA's plans for the Moon" },
+    ],
+  },
   { to: "/articles", label: "Articles", footerOnly: true },
-  { to: "/lunar-fire-safety", label: "Lunar fire safety", footerOnly: true },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/evidence", label: "Evidence" },
@@ -38,10 +47,27 @@ export default function SiteLayout({ children, hideCompanyLink = false }: { chil
   const { pathname } = useLocation();
   const items = hideCompanyLink ? nav.filter((n) => n.to !== links.oxiedo) : nav;
   const [open, setOpen] = useState(false);
+  const [dd, setDd] = useState(false);
+  const ddBtnRef = useRef<HTMLButtonElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   usePageMeta(pathname);
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => { setOpen(false); setDd(false); }, [pathname]);
+
+  // Research menu: Escape closes it and returns focus to its button; a click
+  // outside closes it too.
+  useEffect(() => {
+    if (!dd) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setDd(false); ddBtnRef.current?.focus(); }
+    };
+    const onDown = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest?.(".rx-dd")) setDd(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onDown);
+    return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("mousedown", onDown); };
+  }, [dd]);
 
   // Mobile menu: Escape closes it and hands focus back to the toggle,
   // the page behind it stops scrolling, and focus moves into the list.
@@ -83,7 +109,34 @@ export default function SiteLayout({ children, hideCompanyLink = false }: { chil
           </button>
           <nav ref={navRef} id="rx-nav" className={`rx-nav${open ? " is-open" : ""}`} aria-label="Main">
             {items.filter((n) => !n.footerOnly).map((n) =>
-              n.external ? (
+              n.children ? (
+                <div
+                  key={n.to}
+                  className={`rx-dd${dd ? " is-open" : ""}`}
+                  onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDd(false); }}
+                >
+                  <button
+                    ref={ddBtnRef}
+                    type="button"
+                    className={`rx-dd-btn${n.children.some((c) => c.to === pathname) ? " is-current" : ""}`}
+                    aria-expanded={dd}
+                    aria-controls="rx-dd-research"
+                    onClick={() => setDd((v) => !v)}
+                  >
+                    {n.label}
+                    <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+                  </button>
+                  <span className="rx-dd-label" aria-hidden="true">{n.label}</span>
+                  <div className="rx-dd-menu" id="rx-dd-research">
+                    {n.children.map((c) => (
+                      <Link key={c.to} to={c.to} aria-current={pathname === c.to ? "page" : undefined}>
+                        <b>{c.label}</b>
+                        <span>{c.note}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : n.external ? (
                 <a key={n.to} href={n.to} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{n.label}</a>
               ) : (
                 <Link key={n.to} to={n.to} aria-current={pathname === n.to ? "page" : undefined}>{n.label}</Link>
@@ -106,8 +159,8 @@ export default function SiteLayout({ children, hideCompanyLink = false }: { chil
             <nav className="rx-foot-col" aria-label="Footer">
               <h2>Pages</h2>
               <ul>
-                {items.map((n) => (
-                  <li key={n.to}>
+                {items.flatMap<NavItem>((n) => n.children ? n.children.map((c) => ({ to: c.to, label: c.label })) : [n]).map((n) => (
+                  <li key={n.label}>
                     {n.external ? (
                       <a href={n.to} target="_blank" rel="noreferrer">{n.label}</a>
                     ) : (

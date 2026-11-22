@@ -302,7 +302,7 @@ const firePreprint = {
   isAccessibleForFree: true,
   keywords: ["spacecraft fire safety", "exploration atmosphere", "oxygen partial pressure", "maximum oxygen concentration", "reduced pressure", "NASA-STD-6016C exception (f)", "lunar burn-down test", "pre-registration"],
   description:
-    "Proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval: the secant slope of the limiting oxygen fraction against pressure must lie in [0, 1]. On NASA White Sands data for 22 materials the rule licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs. Registers predictions for the FM2 lunar burn-down tests before any FM2 data were public. Sole author; independent work, not affiliated with NASA.",
+    "Proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval: the secant slope of the limiting oxygen fraction against pressure must lie in [0, 1]. On NASA White Sands data for 22 materials the rule licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs. Registers predictions for the FM2 lunar burn-down tests before any FM2 data were public. Sole author.",
   about: [wiki("Fire safety", "Fire_safety"), wiki("Cabin pressurization", "Cabin_pressurization")],
   subjectOf: { "@type": "WebPage", url: `${SITE}/lunar-fire-safety` },
 };

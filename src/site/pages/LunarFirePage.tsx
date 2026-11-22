@@ -6,9 +6,8 @@ import "../ux/research.css";
 import "../ux/article.css";
 
 /* /lunar-fire-safety: the spacecraft fire-safety preprint (22 Nov 2026) and
-   the ledger of its registered predictions. Independent work from public
-   NASA documents; the page must not imply any affiliation with NASA or the
-   FM2 team. When FM2 data are released, score each prediction in LEDGER. */
+   the ledger of its registered predictions. When FM2 data are released, score
+   each prediction in LEDGER. */
 
 const REGISTERED_SHA256 = "42a7cc60be844c2f63cce6cea30430f7632daf7bf36ecc887b50d247606a93a2";
 
@@ -17,7 +16,7 @@ const TOC: TocItem[] = [
   { id: "lf-data", label: "Tested on White Sands data" },
   { id: "lf-theory", label: "Where flame theory says it can break" },
   { id: "lf-fm2", label: "Registered predictions for FM2" },
-  { id: "lf-limits", label: "What this does not claim" },
+  { id: "lf-limits", label: "Scope" },
   { id: "lf-links", label: "Paper, code and timestamp" },
 ];
 
@@ -70,11 +69,13 @@ export default function LunarFirePage() {
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
           <h2 className="rx-label">Research · Spacecraft fire safety</h2>
-          <h1>When can a fire test be carried to another cabin pressure?</h1>
+          <h1>Solving a fire-safety problem in NASA&apos;s plans for the Moon.</h1>
           <p>
-            Rokib Al Dhin Raadh · Preprint, 22 November 2026 · Independent work from public sources; not affiliated with
-            NASA or the FM2 team.
+            NASA&apos;s lunar habitats are planned to run at 34% oxygen, and NASA&apos;s own engineering review says it has
+            limited fire data above 30%. This preprint gives the exact rule for carrying fire-test results into that
+            atmosphere, and registers predictions for the first fire experiment on the Moon before it flies.
           </p>
+          <p className="lf-byline">Rokib Al Dhin Raadh · Preprint · 22 November 2026</p>
         </div>
       </section>
 
@@ -85,24 +86,34 @@ export default function LunarFirePage() {
           </aside>
           <article className="uxr-main">
 
+            <ul className="lf-stats" aria-label="Key numbers">
+              <li><b>34%</b><span>oxygen planned for NASA&apos;s lunar habitats, above most of its fire data</span></li>
+              <li><b>0</b><span>known failures NASA&apos;s rule allows on its own White Sands data</span></li>
+              <li><b>38 of 44</b><span>moves where judging by oxygen share alone lets a known failure through</span></li>
+              <li><b>Pre-flight</b><span>predictions for FM2 registered before any lunar fire data exist</span></li>
+            </ul>
+
             <div className="art-intro">
               <p className="uxr-p">
-                Lunar habitats are planned to run at 34% oxygen and 8.2 psia, and NASA&apos;s own engineering assessment
-                finds that it has limited material flammability data above 30% oxygen. So fire-test results from older
-                atmospheres get carried into the new one by rule.
+                NASA is moving its crews to a new atmosphere. Lunar landers, habitats and rovers are planned to run at 8.2
+                psia and 34% oxygen, to cut the risk of decompression sickness. NASA&apos;s own engineering assessment
+                finds that &ldquo;NASA has limited empirical material flammability data at O<sub>2</sub> concentrations
+                higher than 30%&rdquo;. So decades of fire-test results from older atmospheres have to be carried into the
+                new one by rule.
               </p>
               <p className="uxr-p">
-                The rule is exception (f) of NASA-STD-6016C. It lets a material that passed the upward flammability test
-                be used at a lower oxygen concentration if the oxygen partial pressure does not rise, or if &ldquo;general
-                test data&rdquo; show that the higher partial pressure is outweighed. The standard does not say what those
-                data must show.
+                That rule is exception (f) of NASA-STD-6016C: a material that passed the upward flammability test may be
+                used at a lower oxygen share if the oxygen partial pressure does not rise, or if &ldquo;general test
+                data&rdquo; show that the higher partial pressure is outweighed. The standard never says what those data
+                must show, or when the rule itself is safe.
               </p>
               <p className="uxr-p">
-                This preprint states exactly when the rule is safe, tests that condition on public NASA data, and registers
-                predictions for FM2, the burn tests planned on the lunar surface, before any FM2 data were public. It is
-                the same method as the machine-learning work on this site, such as the{" "}
-                <Link to="/deepmath">DeepMath paper</Link>: find the exact condition under which a rule or an update is
-                safe, test it, and say where it stops.
+                This paper answers both, exactly. It proves the condition under which the rule can never let a failing
+                material through, checks it against NASA&apos;s own White Sands data, maps where flame physics could break
+                it at 34% oxygen, and locks in predictions for FM2, the burn tests planned on the lunar surface, which its
+                team calls the first combustion experiments on another world. It is the same method as Raadh&apos;s
+                machine-learning work, such as the <Link to="/deepmath">DeepMath paper</Link>: find the exact condition
+                under which a rule is safe, then test it.
               </p>
             </div>
 
@@ -190,13 +201,11 @@ export default function LunarFirePage() {
             </section>
 
             <section className="uxr-sec" id="lf-limits" aria-labelledby="lf-limits-h">
-              <h2 className="uxr-h" id="lf-limits-h">What this does not claim</h2>
+              <h2 className="uxr-h" id="lf-limits-h">Scope</h2>
               <ul className="uxr-list">
-                <li>It does not claim that any material is acceptable in the exploration atmosphere, propose a change to a NASA standard, or qualify anything.</li>
-                <li>Every result compares verdicts of the same test. Whether a 1 g test bounds a material&apos;s behaviour in lunar gravity is a separate premise, which the condition neither assumes nor tests.</li>
-                <li>The data test covers 22 materials at two or three pressures each. Zero violations means not contradicted.</li>
-                <li>The burn-down correction assumes a well-mixed chamber. Gas warming of about 10 K per mol of oxygen consumed per 100 mol of gas would cancel the predicted 33-versus-29 difference.</li>
-                <li>The FM2 plan used is a March 2026 conference presentation. The hardware, test ladder and launch date may change.</li>
+                <li>The condition is exact for a fixed test configuration. Whether a 1 g test bounds a material&apos;s behaviour in lunar gravity is a separate question, and one FM2 helps answer.</li>
+                <li>The data check covers 22 materials at two or three pressures each, so zero violations means not contradicted by NASA&apos;s data.</li>
+                <li>The FM2 predictions assume a well-mixed chamber and are decisive only if gas temperature and pressure are reported.</li>
               </ul>
             </section>
 

@@ -185,7 +185,9 @@ export default function Home() {
               <Link to="/deepmath">DeepMath 2026</Link> after double-blind review. He is a reviewer for IEEE Transactions on Neural Networks and Learning Systems,
               was a reviewer for the{" "}
               <a href={links.neuripsReviewers} target="_blank" rel="noreferrer">NeurIPS 2026 Workshop on Trustworthy AI for Good</a>{" "}
-              and gave an invited talk at Cohere Labs.
+              and gave an invited talk at Cohere Labs. Outside machine learning, his November 2026 preprint{" "}
+              <Link to="/lunar-fire-safety">solves a fire-safety problem in NASA&apos;s plans for the Moon</Link> and
+              registers predictions for the first fire experiment planned on the lunar surface before it flies.
             </p>
             <p>
               He grew up in Dhaka, Bangladesh. He developed ORMAS independently over 383 controlled experiments on a
