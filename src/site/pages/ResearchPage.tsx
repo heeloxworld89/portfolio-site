@@ -70,7 +70,7 @@ export default function ResearchPage() {
               <p className="uxr-p">
                 The question behind ORMAS is when an update that is not a gradient keeps training safe. The same question
                 sits under NASA&apos;s lunar habitats, planned at 34% oxygen, above most of NASA&apos;s fire data: when does a
-                fire test passed in one cabin atmosphere still hold in another? Raadh&apos;s November 2026 preprint answers it
+                fire test passed in one cabin atmosphere still hold in another? A side project built on the same theory answers it
                 exactly, checks the answer against NASA&apos;s White Sands data for 22 materials, and registers predictions
                 for FM2, the first fire experiment planned on the Moon, before it flies.
               </p>

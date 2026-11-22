@@ -70,3 +70,4 @@
 .ux-art .lf-stats b { font-family: var(--rx-serif); font-weight: 400; font-size: 34px; line-height: 1; color: #d8ee96; }
 .ux-art .lf-stats span { font-size: 13px; line-height: 1.45; }
 @media (max-width: 1100px) { .ux-art .lf-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ux-art .lf-solved-anchor { height: 0; scroll-margin-top: 24px; }

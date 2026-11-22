@@ -62,7 +62,7 @@ export const news: NewsItem[] = [
   {
     date: "22 Nov 2026", kind: "Preprint",
     title: "Solving a fire-safety problem in NASA's plans for the Moon",
-    body: "NASA's lunar habitats are planned to run at 34% oxygen, and NASA's own engineering review says it has limited fire data above 30%. Raadh's new preprint gives the exact rule for when a fire test passed in one cabin atmosphere still holds in another, checks it against NASA's White Sands data for 22 materials (NASA's rule allows no known failure; judging by oxygen share alone allows one on 38 of 44 moves), and registers predictions for FM2, which its team calls the first combustion experiments on another world, before it flies.",
+    body: "NASA's lunar habitats are planned to run at 34% oxygen, and NASA's own engineering review says it has limited fire data above 30%. Raadh's new research project, built on the same theory as ORMAS, gives the exact rule for when a fire test passed in one cabin atmosphere still holds in another, checks it against NASA's White Sands data for 22 materials (NASA's rule allows no known failure; judging by oxygen share alone allows one on 38 of 44 moves), and registers predictions for FM2, which its team calls the first combustion experiments on another world, before it flies.",
     href: "/lunar-fire-safety",
   },
   {
@@ -208,7 +208,7 @@ export const publications = [
   {
     authors: "R. A. D. Raadh",
     title: "Carrying flammability limits across cabin pressure: the oxygen partial-pressure rule, and how to read the FM2 lunar burn-down tests",
-    venue: "Preprint, Zenodo, 22 Nov 2026. Gives the exact rule for carrying fire-test results into NASA's 34%-oxygen lunar habitat atmosphere, and registers predictions for FM2, the first fire experiment planned on the Moon, before it flies. 39 pages with code and data. DOI 10.5281/zenodo.24435363.",
+    venue: "Paper from the lunar fire-safety project, Zenodo, 22 Nov 2026. Gives the exact rule for carrying fire-test results into NASA's 34%-oxygen lunar habitat atmosphere, and registers predictions for FM2, the first fire experiment planned on the Moon, before it flies. 39 pages with code and data. DOI 10.5281/zenodo.24435363.",
     year: "2026", thumb: "fm2" as const,
     links: [
       { label: "Paper", href: links.fire },

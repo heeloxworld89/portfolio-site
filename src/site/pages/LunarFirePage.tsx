@@ -5,25 +5,34 @@ import { links } from "../data";
 import "../ux/research.css";
 import "../ux/article.css";
 
-/* /lunar-fire-safety: the spacecraft fire-safety preprint (22 Nov 2026) and
-   the ledger of its registered predictions. When FM2 data are released, score
-   each prediction in LEDGER. */
+/* /lunar-fire-safety: the lunar fire-safety research project, told as
+   problem → approach → what is solved → what is next. Its paper (22 Nov 2026)
+   is one output. When FM2 data are released, score each prediction in LEDGER. */
 
 const REGISTERED_SHA256 = "42a7cc60be844c2f63cce6cea30430f7632daf7bf36ecc887b50d247606a93a2";
 
 const TOC: TocItem[] = [
-  { id: "lf-rule", label: "The exact condition" },
-  { id: "lf-data", label: "Tested on White Sands data" },
-  { id: "lf-theory", label: "Where flame theory says it can break" },
-  { id: "lf-fm2", label: "Registered predictions for FM2" },
+  { id: "lf-problem", label: "The problem" },
+  { id: "lf-approach", label: "The approach" },
+  {
+    id: "lf-solved",
+    label: "What is solved",
+    children: [
+      { id: "lf-rule", label: "1 · The exact rule" },
+      { id: "lf-data", label: "2 · Checked on NASA's data" },
+      { id: "lf-theory", label: "3 · Where flame physics could break it" },
+      { id: "lf-fm2", label: "4 · Reading FM2 before it flies" },
+    ],
+  },
+  { id: "lf-next", label: "What comes next" },
   { id: "lf-limits", label: "Scope" },
-  { id: "lf-links", label: "Paper, code and timestamp" },
+  { id: "lf-links", label: "Paper, code and data" },
 ];
 
 const WSTF: string[][] = [
-  ["Exception (f), s̄ = 1", "44", "0"],
-  ["Relaxed rule, s̄ = 0.5", "44", "1"],
-  ["Oxygen share alone, s̄ = 0", "44", "38"],
+  ["NASA's rule, exception (f)", "44", "0"],
+  ["A relaxed version of the rule", "44", "1"],
+  ["Judging by oxygen share alone", "44", "38"],
 ];
 
 const LEDGER: string[][] = [
@@ -35,14 +44,14 @@ const LEDGER: string[][] = [
 
 const ext = { target: "_blank", rel: "noreferrer" } as const;
 
-function Table({ label, head, rows, numeric = false }: { label: string; head: string[]; rows: string[][]; numeric?: boolean }) {
+function Table({ label, head, rows }: { label: string; head: string[]; rows: string[][] }) {
   return (
     <div className="uxr-table-wrap" role="region" aria-label={label} tabIndex={0}>
       <table className="uxr-table">
         <thead>
           <tr>
             {head.map((h, i) => (
-              <th key={h} scope="col" className={numeric && i > 0 ? "num" : undefined}>{h}</th>
+              <th key={h} scope="col" className={i > 0 ? "num" : undefined}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -50,9 +59,7 @@ function Table({ label, head, rows, numeric = false }: { label: string; head: st
           {rows.map(([a, ...rest]) => (
             <tr key={a}>
               <th scope="row">{a}</th>
-              {rest.map((c, i) => (
-                <td key={i} className={numeric ? "num" : undefined}>{c}</td>
-              ))}
+              {rest.map((c, i) => <td key={i} className="num">{c}</td>)}
             </tr>
           ))}
         </tbody>
@@ -68,14 +75,14 @@ export default function LunarFirePage() {
       <section className="rx-page-head ux-art-head">
         <div className="rx-field is-hero" aria-hidden="true" />
         <div className="rx-wrap" style={{ position: "relative" }}>
-          <h2 className="rx-label">Research · Spacecraft fire safety</h2>
+          <h2 className="rx-label">Research project · Spacecraft fire safety</h2>
           <h1>Solving a fire-safety problem in NASA&apos;s plans for the Moon.</h1>
           <p>
-            NASA&apos;s lunar habitats are planned to run at 34% oxygen, and NASA&apos;s own engineering review says it has
-            limited fire data above 30%. This preprint gives the exact rule for carrying fire-test results into that
-            atmosphere, and registers predictions for the first fire experiment on the Moon before it flies.
+            NASA&apos;s lunar habitats will run at 34% oxygen, above most of NASA&apos;s fire data. This project finds the
+            exact rule for when a fire test still holds in that atmosphere, checks it against NASA&apos;s own data, and
+            reads the first fire experiment on the Moon before it flies.
           </p>
-          <p className="lf-byline">Rokib Al Dhin Raadh · Preprint · 22 November 2026</p>
+          <p className="lf-byline">A research project by Rokib Al Dhin Raadh · built on the same theory as ORMAS</p>
         </div>
       </section>
 
@@ -93,90 +100,99 @@ export default function LunarFirePage() {
               <li><b>Pre-flight</b><span>predictions for FM2 registered before any lunar fire data exist</span></li>
             </ul>
 
-            <div className="art-intro">
+            <section className="uxr-sec" id="lf-problem" aria-labelledby="lf-problem-h">
+              <h2 className="uxr-h" id="lf-problem-h">The problem</h2>
               <p className="uxr-p">
-                NASA is moving its crews to a new atmosphere. Lunar landers, habitats and rovers are planned to run at 8.2
-                psia and 34% oxygen, to cut the risk of decompression sickness. NASA&apos;s own engineering assessment
-                finds that &ldquo;NASA has limited empirical material flammability data at O<sub>2</sub> concentrations
-                higher than 30%&rdquo;. So decades of fire-test results from older atmospheres have to be carried into the
-                new one by rule.
+                Fire is the hazard an oxygen-rich cabin cannot afford. In 1967 a fire in the pure-oxygen cabin of Apollo 1
+                killed three astronauts during a ground test, and spacecraft materials have been fire-tested ever since.
               </p>
               <p className="uxr-p">
-                That rule is exception (f) of NASA-STD-6016C: a material that passed the upward flammability test may be
-                used at a lower oxygen share if the oxygen partial pressure does not rise, or if &ldquo;general test
-                data&rdquo; show that the higher partial pressure is outweighed. The standard never says what those data
-                must show, or when the rule itself is safe.
+                Now NASA is moving its crews to a new atmosphere. Lunar landers, habitats and rovers are planned to run at
+                8.2 psia and 34% oxygen, to cut the risk of decompression sickness, with control bands up to 37%. NASA&apos;s
+                own engineering assessment finds that &ldquo;NASA has limited empirical material flammability data at
+                O<sub>2</sub> concentrations higher than 30%&rdquo;.
               </p>
               <p className="uxr-p">
-                This paper answers both, exactly. It proves the condition under which the rule can never let a failing
-                material through, checks it against NASA&apos;s own White Sands data, maps where flame physics could break
-                it at 34% oxygen, and locks in predictions for FM2, the burn tests planned on the lunar surface, which its
-                team calls the first combustion experiments on another world. It is the same method as Raadh&apos;s
-                machine-learning work, such as the <Link to="/deepmath">DeepMath paper</Link>: find the exact condition
-                under which a rule is safe, then test it.
+                So the fire-test results NASA already has, from 24.1% oxygen at 14.7 psia and 30% at 10.2 psia, have to be
+                carried into the new atmosphere by rule. That rule is exception (f) of NASA-STD-6016C, and it never says
+                when it is safe: its &ldquo;general test data&rdquo; clause does not say what the data must show.
               </p>
-            </div>
+              <p className="uxr-p">
+                The first direct test is coming. FM2, which its team calls the first combustion experiments on another
+                world, will burn a fabric in a sealed chamber on the lunar surface. Each burn eats the chamber&apos;s own
+                oxygen and fills it with combustion products, so its raw readings will not be the limits they look like.
+              </p>
+            </section>
+
+            <section className="uxr-sec" id="lf-approach" aria-labelledby="lf-approach-h">
+              <h2 className="uxr-h" id="lf-approach-h">The approach</h2>
+              <p className="uxr-p">
+                The same theory that runs through <Link to="/research">ORMAS</Link>: when a system takes a step that is not
+                the standard one, find the exact condition under which it stays safe. In ORMAS the step is a repair that is
+                not a gradient. Here it is a move from the atmosphere a material was tested in to the one it will be used
+                in.
+              </p>
+              <ol className="uxr-list">
+                <li><strong>Prove</strong> the exact condition under which NASA&apos;s rule can never let a failing material through.</li>
+                <li><strong>Test</strong> it against NASA&apos;s own fire-test data.</li>
+                <li><strong>Predict</strong> what FM2 will read on the Moon, and register it before FM2 flies, so the theory can be proven wrong.</li>
+              </ol>
+            </section>
+
+            <div id="lf-solved" className="lf-solved-anchor" />
 
             <section className="uxr-sec" id="lf-rule" aria-labelledby="lf-rule-h">
-              <h2 className="uxr-h" id="lf-rule-h">The exact condition</h2>
+              <h2 className="uxr-h" id="lf-rule-h">1 · The exact rule</h2>
               <p className="uxr-p">
-                Fix one test configuration: material, thickness, geometry, gravity, flow and igniter. The partial-pressure
-                rule, and every relaxed rule <i>X</i>·<i>P</i><sup>s̄</sup> ≤ constant, never licenses an atmosphere in
-                which the same test would fail, across a pressure interval, <strong>if and only if</strong> the slope of
-                the material&apos;s limiting oxygen fraction against pressure, σ = −Δ ln <i>X</i>* / Δ ln <i>P</i>, stays
-                between 0 and s̄ for every pair of pressures in it.
+                For one fixed test, NASA&apos;s partial-pressure rule, and every relaxed rule <i>X</i>·<i>P</i><sup>s̄</sup>
+                {" "}≤ constant, never licenses an atmosphere in which the material would fail, across a pressure range,{" "}
+                <strong>if and only if</strong> one number stays in a band: the slope of the material&apos;s limiting oxygen
+                fraction against pressure, σ = −Δ ln <i>X</i>* / Δ ln <i>P</i>, must lie between 0 and s̄.
               </p>
               <p className="uxr-p">
-                Direction matters. A move to higher pressure needs only σ ≤ s̄; a move to lower pressure needs only σ ≥ 0.
-                A version on pass-probability curves removes the assumption that a material has a sharp limit.
-              </p>
-              <p className="uxr-p">
-                This gives the &ldquo;general test data&rdquo; clause a precise meaning: an upper bound, below one, on that
-                slope between the test and use pressures, in the test configuration. The proofs are elementary; the
-                contribution is the exact statement.
+                Direction matters. Moving to a higher pressure needs only σ ≤ s̄; moving to a lower pressure needs only
+                σ ≥ 0. A version on pass-probability curves drops the assumption that a material has a sharp limit. Now the
+                &ldquo;general test data&rdquo; clause has a precise meaning: an upper bound, below one, on
+                that slope between the test and use pressures.
               </p>
             </section>
 
             <section className="uxr-sec" id="lf-data" aria-labelledby="lf-data-h">
-              <h2 className="uxr-h" id="lf-data-h">Tested on White Sands data</h2>
+              <h2 className="uxr-h" id="lf-data-h">2 · Checked on NASA&apos;s data</h2>
               <p className="uxr-p">
-                The largest public table of these limits at several pressures is NASA White Sands Test Facility data for 22
-                materials (Harper et al., 2016; 1 g upward Test 1, 7 to 17.3 psia). On it, exception (f) licenses no
-                known failure, and no pressure pair is provably outside the band. Reading by oxygen share alone licenses a
-                known failure on 38 of 44 upward pairs up to 14.7 psia.
+                On the largest public table of these limits at several pressures, NASA White Sands Test Facility data for 22
+                materials (Harper et al., 2016; 7 to 17.3 psia), NASA&apos;s rule allows no known failure. Judging by oxygen
+                share alone, the intuitive shortcut, lets a known failure through on 38 of 44 moves to higher pressure.
               </p>
               <Table
-                label="Known failures licensed by each rule on the White Sands table, 7 to 14.7 psia"
-                head={["Rule", "Upward pressure pairs", "Known failures licensed"]}
+                label="Known failures each rule lets through on NASA's White Sands table, 7 to 14.7 psia"
+                head={["Rule", "Moves to higher pressure", "Known failures let through"]}
                 rows={WSTF}
-                numeric
               />
               <p className="uxr-p">
-                The test can only falsify: zero violations means &ldquo;not contradicted by these data&rdquo;, not proven.
+                The same data also supply the evidence the &ldquo;general test data&rdquo; clause asks for: for a material
+                that passed at 34% and 8.2 psia and is later used at 24.1% and 14.7 psia, the table covers two of the four
+                materials that could pass at 34% at all, and all four from the 37% worst case.
               </p>
             </section>
 
             <section className="uxr-sec" id="lf-theory" aria-labelledby="lf-theory-h">
-              <h2 className="uxr-h" id="lf-theory-h">Where flame theory says it can break</h2>
+              <h2 className="uxr-h" id="lf-theory-h">3 · Where flame physics could break it</h2>
               <p className="uxr-p">
-                Within a standard family of flame scaling models, both ways out of the band appear in low-flow
-                configurations: radiation-controlled regimes give slopes above 1, and slow-kinetics regimes give slopes
-                below 0. The models cannot say which controls at 34% oxygen, and none of them is a model of the 1 g upward
-                Test 1. That is the gap a test at the target pressure has to close.
+                Standard flame scaling models show both ways out of the band in low-flow conditions: where radiation
+                controls the flame the slope rises above 1, and where chemistry is slow it falls below 0. Which one governs
+                at 34% oxygen the models cannot say. That is exactly what a test at the target pressure, in real lunar
+                gravity, has to settle.
               </p>
             </section>
 
             <section className="uxr-sec" id="lf-fm2" aria-labelledby="lf-fm2-h">
-              <h2 className="uxr-h" id="lf-fm2-h">Registered predictions for FM2</h2>
+              <h2 className="uxr-h" id="lf-fm2-h">4 · Reading FM2 before it flies</h2>
               <p className="uxr-p">
-                FM2 plans four burn tests at 8.2 psia, starting at 37, 33, 29 and 25% oxygen, in a 14.4 L sealed chamber on
-                the lunar surface. Each test reaches its limit by burning the chamber&apos;s own oxygen, so its raw reading
-                is not a fresh-gas limit.
-              </p>
-              <p className="uxr-p">
-                The preprint derives the bias. Combustion products carry more heat than nitrogen, so a raw reading comes
-                out high, by 0.17 to 0.21 points per mol of oxygen consumed per 100 mol of gas. Used as a fresh-gas limit,
-                a raw reading is unconservative.
+                FM2 plans four burns at 8.2 psia, starting at 37, 33, 29 and 25% oxygen, in a 14.4 L sealed chamber. A gas
+                balance gives the size of the error in its raw readings: they come out high, by 0.17 to 0.21 points per mol
+                of oxygen consumed per 100 mol of gas, because combustion products carry more heat than nitrogen. Read
+                uncorrected, a burn-down limit is unsafe.
               </p>
               <ol className="lf-ledger" aria-label="Registered predictions and their status">
                 {LEDGER.map(([name, value, status]) => (
@@ -188,40 +204,50 @@ export default function LunarFirePage() {
                 ))}
               </ol>
               <p className="uxr-p">
-                F1 is decisive only if gas temperature, pressure, the oxygen sensor&apos;s uncertainty and the reading time
-                relative to flame-out are reported; in practice FM2 can test the sign of the correction, not its size.
-                When FM2 data are released, each prediction will be scored on this page, including the ones that fail.
+                F1 is decisive if FM2 reports gas temperature, pressure, the oxygen sensor&apos;s uncertainty and the reading
+                time relative to flame-out. When FM2 data are released, every prediction will be scored here, including any
+                that fail.
               </p>
               <p className="uxr-p">
-                <strong>When it was registered.</strong> In v1 of the preprint, whose Zenodo record was created on 22
-                November 2026 at 07:08 UTC. As of that date no report of an FM2 flight and no public FM2 data could be
-                found. The registered band is printed in <a href={links.fireRegistered} {...ext}>f1_band.out</a>, SHA-256{" "}
-                <code className="lf-hash">{REGISTERED_SHA256}</code>.
+                <strong>Registered on 22 November 2026</strong>, in a Zenodo record created at 07:08 UTC, before any FM2 data
+                were public. The registered band is printed in <a href={links.fireRegistered} {...ext}>f1_band.out</a>,
+                SHA-256 <code className="lf-hash">{REGISTERED_SHA256}</code>.
               </p>
+            </section>
+
+            <section className="uxr-sec" id="lf-next" aria-labelledby="lf-next-h">
+              <h2 className="uxr-h" id="lf-next-h">What comes next</h2>
+              <ol className="uxr-list">
+                <li><strong>Score FM2.</strong> Compare every registered prediction with FM2&apos;s data when it is released, and publish the result either way.</li>
+                <li><strong>Class-by-class bounds.</strong> Turn NASA&apos;s White Sands archive into slope bounds for each material family (hydrocarbons, halogenated polymers, silicones, aramids), fitted on one set of materials and tested on another. That is exactly the evidence exception (f)&apos;s second clause asks for.</li>
+                <li><strong>Test the physics map on the ISS.</strong> Check the flame-scaling predictions against the reduced-pressure limits from the SoFIE experiments on the ISS when they are published.</li>
+                <li><strong>Partial-gravity data.</strong> Digitize NASA&apos;s published centrifuge and reduced-pressure limits and add a model for the upward-flow test, so the physics map becomes a test.</li>
+                <li><strong>Test-campaign design.</strong> Finish the model that ranks which facility, from White Sands to the ISS to the Moon, best pins down a lunar-habitat material&apos;s fire limit.</li>
+              </ol>
             </section>
 
             <section className="uxr-sec" id="lf-limits" aria-labelledby="lf-limits-h">
               <h2 className="uxr-h" id="lf-limits-h">Scope</h2>
               <ul className="uxr-list">
-                <li>The condition is exact for a fixed test configuration. Whether a 1 g test bounds a material&apos;s behaviour in lunar gravity is a separate question, and one FM2 helps answer.</li>
+                <li>The rule is exact for a fixed test configuration. Whether a 1 g test bounds a material&apos;s behaviour in lunar gravity is a separate question, and one FM2 helps answer.</li>
                 <li>The data check covers 22 materials at two or three pressures each, so zero violations means not contradicted by NASA&apos;s data.</li>
                 <li>The FM2 predictions assume a well-mixed chamber and are decisive only if gas temperature and pressure are reported.</li>
               </ul>
             </section>
 
             <section className="uxr-sec" id="lf-links" aria-labelledby="lf-links-h">
-              <h2 className="uxr-h" id="lf-links-h">Paper, code and timestamp</h2>
+              <h2 className="uxr-h" id="lf-links-h">Paper, code and data</h2>
               <p className="uxr-p">
-                The preprint is 39 pages, sole-authored and public on Zenodo under CC BY 4.0, with the code and data that
-                regenerate every number and a SHA-256 list of every file.
+                The full 39-page paper is public under CC BY 4.0, with the code and data that regenerate every number and a
+                SHA-256 list of every file.
               </p>
               <div className="art-sign">
                 <p className="uxr-p">
                   Raadh, R. A. D. (2026). <i>Carrying flammability limits across cabin pressure: the oxygen partial-pressure
-                  rule, and how to read the FM2 lunar burn-down tests.</i> Preprint, Zenodo.{" "}
+                  rule, and how to read the FM2 lunar burn-down tests.</i> Zenodo.{" "}
                   <a href={links.fireDoi} {...ext}>doi:10.5281/zenodo.24435363</a>
                 </p>
-                <p className="uxr-p">Corrections and data: raadh@oxiedo.com</p>
+                <p className="uxr-p">Data, corrections and collaboration: raadh@oxiedo.com</p>
                 <ul className="art-links">
                   <li><a href={links.fire} {...ext}>Paper</a></li>
                   <li><a href={links.fireCode} {...ext}>Code and data</a></li>
