@@ -285,6 +285,28 @@ const resetsPreprint = {
   isBasedOn: ref("deepmath-paper"),
 };
 
+const firePreprint = {
+  "@type": "ScholarlyArticle",
+  "@id": id("fire-preprint"),
+  headline: "Carrying flammability limits across cabin pressure: the oxygen partial-pressure rule, and how to read the FM2 lunar burn-down tests",
+  name: "Carrying flammability limits across cabin pressure: the oxygen partial-pressure rule, and how to read the FM2 lunar burn-down tests",
+  author: ref("person"),
+  inLanguage: "en",
+  datePublished: "2026-11-22",
+  genre: "Preprint",
+  url: links.fire,
+  sameAs: links.fireDoi,
+  identifier: { "@type": "PropertyValue", propertyID: "DOI", value: "10.5281/zenodo.24435363", url: links.fireDoi },
+  publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org/" },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  keywords: ["spacecraft fire safety", "exploration atmosphere", "oxygen partial pressure", "maximum oxygen concentration", "reduced pressure", "NASA-STD-6016C exception (f)", "lunar burn-down test", "pre-registration"],
+  description:
+    "Proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval: the secant slope of the limiting oxygen fraction against pressure must lie in [0, 1]. On NASA White Sands data for 22 materials the rule licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs. Registers predictions for the FM2 lunar burn-down tests before any FM2 data were public. Sole author; independent work, not affiliated with NASA.",
+  about: [wiki("Fire safety", "Fire_safety"), wiki("Cabin pressurization", "Cabin_pressurization")],
+  subjectOf: { "@type": "WebPage", url: `${SITE}/lunar-fire-safety` },
+};
+
 const ormasCode = {
   "@type": "SoftwareSourceCode",
   "@id": id("ormas-code"),
@@ -383,6 +405,7 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
   "/articles": { type: "CollectionPage", name: "Articles", main: "articles", about: ["dead-channels"] },
   "/dead-channels": { type: "WebPage", name: "VGG-19-BN spends 18.6% of its compute on channels that output zero", main: "dead-channels", about: ["dead-channels", "ormas-monitor", "deepmath-paper"] },
+  "/lunar-fire-safety": { type: "WebPage", name: "Fire safety at lunar cabin pressure", main: "fire-preprint", about: ["fire-preprint"] },
 };
 
 export function schemaFor(path: string): string {
@@ -411,6 +434,6 @@ export function schemaFor(path: string): string {
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, resetsPreprint, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, resetsPreprint, firePreprint, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }

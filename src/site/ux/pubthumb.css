@@ -94,3 +94,15 @@
 @keyframes ptX { 0% { opacity: 0; } 18%, 72% { opacity: 1; } 90%, 100% { opacity: 0; } }
 @keyframes ptPulse { from { opacity: .8; transform: scale(1); } to { opacity: 0; transform: scale(2.6); } }
 @keyframes ptDim { 0% { opacity: .18; } 18%, 72% { opacity: .04; } 100% { opacity: .18; } }
+
+/* fire-safety figure */
+.pt-fm-region { fill: #cfe3f2; }
+.pt-fm-up { fill: url(#pt-fm-hv); }
+.pt-fm-down { fill: url(#pt-fm-hp); }
+.pt-fm-hv { stroke: var(--pt-verm); stroke-width: 1.2; }
+.pt-fm-hp { stroke: var(--pt-purple); stroke-width: 1.2; }
+.pt-fm-verm { stroke: var(--pt-verm); }
+.pt-fm-purp { stroke: var(--pt-purple); }
+.pt .pt-fm-vermtxt { fill: var(--pt-verm); }
+.pt .pt-fm-purptxt { fill: var(--pt-purple); }
+.pt-fm-dot { fill: var(--pt-ink); stroke: #fff; stroke-width: 1.2; }

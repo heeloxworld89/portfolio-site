@@ -23,6 +23,7 @@ const routes = [
   { path: "/evidence", file: "evidence.html", mustContain: 'id="ev-research"' },
   { path: "/deepmath", file: "deepmath.html", mustContain: 'id="dm-results"' },
   { path: "/dead-channels", file: "dead-channels.html", mustContain: 'id="dc-proof"' },
+  { path: "/lunar-fire-safety", file: "lunar-fire-safety.html", mustContain: 'id="lf-fm2"' },
   // The article list is short by design, so it gets a lower size floor.
   { path: "/articles", file: "articles.html", mustContain: 'href="/dead-channels"', minBytes: 3_000 },
 ];

@@ -5,7 +5,7 @@ import "./ux/pubthumb.css";
    results. Without JavaScript, or with reduced motion, each one renders in its
    final state; with JavaScript it plays once when it scrolls into view. */
 
-export type PubThumbKind = "deepmath" | "resets" | "ormas" | "oximo" | "iarco";
+export type PubThumbKind = "deepmath" | "resets" | "ormas" | "oximo" | "iarco" | "fm2";
 
 const d = (s: number) => ({ "--d": `${s}s` }) as CSSProperties;
 
@@ -154,8 +154,68 @@ function Iarco() {
   );
 }
 
+
+/* After Figure 1 of the fire-safety preprint: log pressure against log oxygen
+   fraction. The rule licenses the shaded region below a pass at 37% / 8.2 psia;
+   a material is safe under it exactly when its limit line stays above both
+   edges (0 ≤ s ≤ 1). */
+const FM = { p0: 5, p1: 20, x0: 0.15, x1: 0.5, pt: 8.2, xt: 0.37 };
+const fx = (p: number) => 34 + 270 * Math.log(p / FM.p0) / Math.log(FM.p1 / FM.p0);
+const fy = (x: number) => 176 - 158 * Math.log(x / FM.x0) / Math.log(FM.x1 / FM.x0);
+const pt = (p: number, x: number) => `${fx(p).toFixed(1)} ${fy(x).toFixed(1)}`;
+const range = (a: number, b: number, n = 24) => Array.from({ length: n + 1 }, (_, i) => a + ((b - a) * i) / n);
+const limit = (s: number) => (p: number) => FM.xt * Math.pow(p / FM.pt, -s);
+const edge = (p: number) => (p <= FM.pt ? FM.xt : (FM.xt * FM.pt) / p);
+const line = (f: (p: number) => number, a = FM.p0, b = FM.p1) => "M" + range(a, b).map((p) => pt(p, f(p))).join(" L");
+const FM_REGION = `M${pt(FM.p0, FM.xt)} L${pt(FM.pt, FM.xt)} ` + range(FM.pt, FM.p1).map((p) => "L" + pt(p, edge(p))).join(" ") + ` L${pt(FM.p1, FM.x0)} L${pt(FM.p0, FM.x0)} Z`;
+const sliver = (s: number, a: number, b: number) =>
+  "M" + range(a, b).map((p) => pt(p, edge(p))).join(" L") + " L" + range(b, a).map((p) => pt(p, limit(s)(p))).join(" L") + " Z";
+const FM_UP = sliver(1.5, FM.pt, FM.p1);
+const FM_DOWN = sliver(-0.3, FM.p0, FM.pt);
+
+function Fm2() {
+  return (
+    <svg viewBox="0 0 320 200" role="img" aria-labelledby="pt-fm-t">
+      <title id="pt-fm-t">The oxygen partial-pressure rule licenses the shaded region below a passing test at 37% oxygen and 8.2 psia. A material is safe under it exactly when its limit line stays above both edges: a slope between 0 and 1 is safe, a slope of 1.5 fails at higher pressure and a slope of −0.3 fails at lower pressure.</title>
+      <defs>
+        <clipPath id="pt-fm-clip"><rect x="34" y="18" width="270" height="158" /></clipPath>
+        <pattern id="pt-fm-hv" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="5" className="pt-fm-hv" />
+        </pattern>
+        <pattern id="pt-fm-hp" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+          <line x1="0" y1="0" x2="0" y2="5" className="pt-fm-hp" />
+        </pattern>
+      </defs>
+      <g className="pt-axis">
+        <line x1="34" y1="176" x2="304" y2="176" />
+        <line x1="34" y1="18" x2="34" y2="176" />
+      </g>
+      <text className="pt-tick" x="34" y="190">5 psia</text>
+      <text className="pt-tick" x="304" y="190" textAnchor="end">20 psia</text>
+      <text className="pt-tick" x="29" y="24" textAnchor="end">50%</text>
+      <text className="pt-tick" x="29" y="178" textAnchor="end">15%</text>
+      <g clipPath="url(#pt-fm-clip)">
+        <path className="pt-fm-region pt-fade" style={d(0)} d={FM_REGION} />
+        <path className="pt-fm-up pt-fade" style={d(1.7)} d={FM_UP} />
+        <path className="pt-fm-down pt-fade" style={d(1.7)} d={FM_DOWN} />
+        <path className="pt-line pt-teal pt-draw" style={d(0.3)} d={line(limit(0.3))} pathLength={1} />
+        <path className="pt-line pt-fm-verm pt-draw" style={d(0.5)} d={line(limit(1.5))} pathLength={1} />
+        <path className="pt-line pt-fm-purp pt-draw" style={d(0.7)} d={line(limit(-0.3))} pathLength={1} />
+      </g>
+      <circle cx={fx(FM.pt)} cy={fy(FM.xt)} r="3.4" className="pt-fm-dot" />
+      <g className="pt-fade" style={d(2.1)}>
+        <text className="pt-lbl pt-tealtxt" x="300" y={fy(limit(0.3)(20)) + 13} textAnchor="end">safe, s = 0.3</text>
+        <text className="pt-lbl pt-fm-vermtxt" x="303" y="119" textAnchor="end">fails up, s = 1.5</text>
+        <text className="pt-lbl pt-fm-purptxt" x="40" y={fy(limit(-0.3)(5)) + 12}>fails down, s = −0.3</text>
+        <text className="pt-note" x="42" y="150">● pass at 37% O₂, 8.2 psia</text>
+        <text className="pt-val" x="42" y="166">safe ⇔ 0 ≤ σ ≤ 1</text>
+      </g>
+    </svg>
+  );
+}
+
 const MAP: Record<PubThumbKind, () => ReactNode> = {
-  deepmath: DeepMath, resets: Resets, ormas: Ormas, oximo: Oximo, iarco: Iarco,
+  deepmath: DeepMath, resets: Resets, ormas: Ormas, oximo: Oximo, iarco: Iarco, fm2: Fm2,
 };
 
 export default function PubThumb({ kind }: { kind: PubThumbKind }) {

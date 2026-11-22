@@ -59,6 +59,31 @@ export const groups: Group[] = [
     ],
   },
   {
+    id: "fire",
+    title: "Research: spacecraft fire safety",
+    rows: [
+      {
+        claim: "Carrying flammability limits across cabin pressure: preprint, sole author (22 November 2026)",
+        detail: "39-page preprint on Zenodo (CC BY 4.0) with the code and data that regenerate its numbers. It proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval, and tests it on the 22-material NASA White Sands Test 1 table of Harper et al. (2016): exception (f) licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs up to 14.7 psia. Independent work from public sources; not affiliated with NASA or the FM2 team.",
+        source: [
+          { label: "Zenodo · DOI 10.5281/zenodo.24435363", href: links.fireDoi },
+          { label: "Code and data (zip)", href: links.fireCode },
+          { label: "Summary and predictions", href: "/lunar-fire-safety" },
+        ],
+        status: "Public record",
+      },
+      {
+        claim: "Predictions for the FM2 lunar burn tests registered before any FM2 data were public",
+        detail: "Registered in v1 of the preprint; the Zenodo record was created on 22 November 2026 at 07:08 UTC, when no report of an FM2 flight and no public FM2 data could be found. The registered band is printed in f1_band.out, SHA-256 42a7cc60be844c2f63cce6cea30430f7632daf7bf36ecc887b50d247606a93a2. Each prediction will be scored when FM2 data are released.",
+        source: [
+          { label: "Registered output (f1_band.out)", href: links.fireRegistered },
+          { label: "Zenodo record", href: links.fire },
+        ],
+        status: "Public record",
+      },
+    ],
+  },
+  {
     id: "peer-review",
     title: "Peer review and service",
     rows: [
