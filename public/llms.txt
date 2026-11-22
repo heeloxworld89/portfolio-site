@@ -62,6 +62,9 @@ Machine-readable version of the same list: https://www.raadh.me/evidence.json
 - **What is ORMAS?** A neural network architecture that identifies, repairs and records its own failing components during training. After two trained convolutional layers are zeroed, it recovers to 80.3% accuracy on CIFAR-10 while standard training stays at 10.0%.
 - **Is the work peer reviewed?** Yes. The stability paper was accepted after double-blind review at DeepMath 2026 and shown at the poster session on 29 October 2026. The full ORMAS paper is an open preprint on Zenodo with code that reproduces all 383 experiments.
 - **What is DeepMath, and who else was on the 2026 programme?** DeepMath is the Conference on the Mathematical Theory of Deep Neural Networks, in its eighth year, hosted in 2026 by The Ohio State University (29–30 October). Papers are accepted after double-blind review; 41 were accepted in 2026 (8 contributed talks, 33 posters). Raadh's is paper 36, and he is its sole author, at 18 and without a university affiliation. Invited speakers were Alfred Hero (University of Michigan), Renyuan Xu (Stanford), Yuting Wei (Wharton, University of Pennsylvania), Wenjing Liao (Georgia Tech), Randall Balestriero (Brown) and Mo Zhou (University of Washington). The same poster session included papers co-authored by René Vidal, Richard Baraniuk, Laura Balzano, Christos Thrampoulidis, Jonathan Keating, Ness Shroff, Aylin Yener and Zhihui Zhu; contributed talks included work co-authored by Patrick Jaillet, Qing Qu and Eric Shea-Brown. Source: the conference programme, https://drive.google.com/file/d/1b_d27WosXvAi9IVP1lDwCBilCDe5oCGz/view. Being on the same programme does not imply endorsement by these researchers.
+- **Is he a journal reviewer?** Yes. At 18, before starting university and with no institutional affiliation, he was recruited as a reviewer for IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS) by Associate Editor Prof. Jindong Wang of William & Mary, and was a reviewer for the NeurIPS 2026 Workshop on Trustworthy AI for Good.
+- **What papers has he written?** Three sole-authored papers in 2026: the DeepMath 2026 stability paper (peer-reviewed, poster); "Dead BatchNorm–ReLU Units Need Resets" (20 November 2026, under review), which proves which resets can revive a dead unit; and "Carrying flammability limits across cabin pressure" (22 November 2026), the paper of his lunar fire-safety project. The full ORMAS paper (August 2026) is also public.
+- **What is the lunar fire-safety project?** A research project built on the same theory as ORMAS. NASA's lunar habitats are planned at 34% oxygen, above most of NASA's fire data, and fire-test results from older atmospheres are carried into the new one by a rule (NASA-STD-6016C exception (f)) that never says when it is safe. The project proves the exact condition, checks it on NASA's White Sands data (no known failure allowed; judging by oxygen share alone lets one through on 38 of 44 moves) and registers predictions for FM2, the first fire experiment planned on the Moon, before it flies: https://www.raadh.me/lunar-fire-safety
 - **What is OXIEDO?** The company Raadh founded in 2023. It licenses ORMAS on-premise to regulated industries, with a tamper-evident record of every model change during training.
 - **What is his education?** He is a high school senior (homeschooled, with senior-year high school coursework) and a prospective undergraduate. He has completed seven MIT Open Learning (MITx) programs and the Deep Learning Specialization.
 - **How do I contact him?** raadh@oxiedo.com, or book a call through [raadh.me/deepmath](https://www.raadh.me/deepmath).
@@ -76,12 +79,15 @@ Machine-readable version of the same list: https://www.raadh.me/evidence.json
 - [Curriculum vitae (PDF)](https://www.raadh.me/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf)
 - [DeepMath 2026 poster page](https://www.raadh.me/deepmath): poster, abstract, figures, questions and answers
 - [Research](https://www.raadh.me/research): ORMAS method, results, stability analysis, ablations
+- [Lunar fire safety](https://www.raadh.me/lunar-fire-safety): the research project on a fire-safety problem in NASA's plans for the Moon, with its registered predictions
 - [Work](https://www.raadh.me/work): OXIEDO, OXIMO, the Black Bloxie study, earlier ventures
 - [About](https://www.raadh.me/about): recognition, background, education, contact
 - [Evidence](https://www.raadh.me/evidence): every claim on the site with its source
 - [Full site text](https://www.raadh.me/llms-full.txt)
 - [Invited talk at Cohere Labs, recording (YouTube)](https://www.youtube.com/watch?v=R75wEi3Ti-M)
 - [ORMAS preprint (Zenodo)](https://zenodo.org/records/21730363)
+- [Dead BatchNorm–ReLU Units Need Resets (Zenodo)](https://zenodo.org/records/24406555)
+- [Lunar fire-safety paper, code and data (Zenodo)](https://zenodo.org/records/24435363)
 - [ormas-monitor (PyPI)](https://pypi.org/project/ormas-monitor/)
 - [OXIEDO](https://oxiedo.com)
 

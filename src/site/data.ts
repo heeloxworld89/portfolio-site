@@ -239,7 +239,7 @@ export const pages = {
     title: "Rokib Al Dhin Raadh — AI Researcher, Founder of OXIEDO, Inventor of ORMAS",
     description:
       "Rokib Al Dhin Raadh, 18: AI researcher and founder of OXIEDO. Sole-authored DeepMath 2026 paper; reviewer for IEEE TNNLS and NeurIPS 2026; Cohere Labs talk.",
-    image: "/og/home-v3.jpg",
+    image: "/og/home-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/research": {
@@ -260,14 +260,14 @@ export const pages = {
     title: "About Rokib Al Dhin Raadh — AI Researcher and Founder of OXIEDO",
     description:
       "Rokib Al Dhin Raadh, 18, AI researcher and founder of OXIEDO: DeepMath 2026 paper, NeurIPS 2026 workshop reviewer, Cohere Labs invited talk, 1752vc top 1%.",
-    image: "/og/about-v3.jpg",
+    image: "/og/about-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/evidence": {
     title: "Evidence: every claim, with its source — Rokib Al Dhin Raadh",
     description:
       "Each claim about Rokib Al Dhin Raadh, 18, founder of OXIEDO and inventor of ORMAS, with its source: DOI, ORCID, code, MITx records, and documents on request.",
-    image: "/og/about-v3.jpg",
+    image: "/og/about-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/deepmath": {
@@ -281,7 +281,7 @@ export const pages = {
     title: "Articles · Rokib Al Dhin Raadh",
     description:
       "Articles by Rokib Al Dhin Raadh, an independent AI researcher in Dhaka, on neural network training and the tools he builds.",
-    image: "/og/home-v3.jpg",
+    image: "/og/home-v4.jpg",
     imageAlt: "Rokib Al Dhin Raadh, 18-year-old founder and CEO of OXIEDO and inventor of ORMAS",
   },
   "/dead-channels": {
@@ -292,11 +292,11 @@ export const pages = {
     imageAlt: "VGG-19-BN spends 18.6% of its compute on channels that output zero",
   },
   "/lunar-fire-safety": {
-    title: "Solving a fire-safety problem in NASA's plans for the Moon · Rokib Al Dhin Raadh",
+    title: "Fire Safety in NASA's Moon Habitats — Rokib Al Dhin Raadh",
     description:
-      "NASA's lunar habitats will run at 34% oxygen, above most of its fire data. An exact rule for carrying fire-test results into that atmosphere, a check on NASA's White Sands data, and predictions for the first fire experiment on the Moon, registered before it flies.",
-    image: "/og/research-v3.jpg",
-    imageAlt: "Rokib Al Dhin Raadh: fire safety at lunar cabin pressure",
+      "NASA's lunar habitats will run at 34% oxygen, above most of its fire data. The exact rule for carrying fire tests there, checked on NASA's data, with FM2 predictions.",
+    image: "/og/lunar-fire-safety-v4.jpg",
+    imageAlt: "Solving a fire-safety problem in NASA's plans for the Moon: a research project by Rokib Al Dhin Raadh",
   },
 } as const;
 

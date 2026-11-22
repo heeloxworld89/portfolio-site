@@ -54,9 +54,14 @@ const person = {
     wiki("Catastrophic interference", "Catastrophic_interference"),
     wiki("Multi-agent system", "Multi-agent_system"),
     wiki("PyTorch", "PyTorch"),
+    wiki("Batch normalization", "Batch_normalization"),
+    wiki("Fire safety", "Fire_safety"),
     "Self-repairing neural networks",
     "Auditable AI training",
     "Mathematical theory of deep learning",
+    "Dead neurons and resets in neural network training",
+    "Spacecraft fire safety",
+    "Flammability limits at reduced pressure",
   ],
   award: [
     "DeepMath 2026: sole-authored paper accepted after double-blind review (poster), Conference on the Mathematical Theory of Deep Neural Networks, The Ohio State University",
@@ -304,7 +309,22 @@ const firePreprint = {
   description:
     "Proves an exact condition for when the oxygen partial-pressure rule of NASA-STD-6016C, exception (f), never licenses a failing atmosphere across a pressure interval: the secant slope of the limiting oxygen fraction against pressure must lie in [0, 1]. On NASA White Sands data for 22 materials the rule licenses no known failure, while reading by oxygen share alone licenses one on 38 of 44 upward pairs. Registers predictions for the FM2 lunar burn-down tests before any FM2 data were public. Sole author.",
   about: [wiki("Fire safety", "Fire_safety"), wiki("Cabin pressurization", "Cabin_pressurization")],
-  subjectOf: { "@type": "WebPage", url: `${SITE}/lunar-fire-safety` },
+  isPartOf: ref("lunar-project"),
+};
+
+const lunarProject = {
+  "@type": "ResearchProject",
+  "@id": id("lunar-project"),
+  name: "Lunar fire safety",
+  alternateName: "Solving a fire-safety problem in NASA's plans for the Moon",
+  url: `${SITE}/lunar-fire-safety`,
+  founder: ref("person"),
+  member: ref("person"),
+  description:
+    "Research project by Rokib Al Dhin Raadh, built on the same stability theory as ORMAS. NASA's lunar habitats are planned at 34% oxygen and 8.2 psia, above most of NASA's material fire data. The project gives the exact rule for when a fire test passed in one cabin atmosphere still holds in another (NASA-STD-6016C exception (f)), checks it on NASA White Sands data for 22 materials, and registers predictions for FM2, the first fire experiment planned on the lunar surface, before it flies.",
+  keywords: ["spacecraft fire safety", "lunar habitat atmosphere", "oxygen partial pressure", "NASA-STD-6016C", "FM2", "pre-registration"],
+  subjectOf: ref("fire-preprint"),
+  image: `${SITE}/og/lunar-fire-safety-v4.jpg`,
 };
 
 const ormasCode = {
@@ -405,8 +425,11 @@ const pageMeta: Record<PageKey, { type: string; name: string; main: string; abou
   "/deepmath": { type: "WebPage", name: "DeepMath 2026 poster", main: "deepmath-paper", about: ["deepmath-paper", "deepmath-2026", "cohere-labs-talk-2026", "ormas-monitor"] },
   "/articles": { type: "CollectionPage", name: "Articles", main: "articles", about: ["dead-channels"] },
   "/dead-channels": { type: "WebPage", name: "VGG-19-BN spends 18.6% of its compute on channels that output zero", main: "dead-channels", about: ["dead-channels", "ormas-monitor", "deepmath-paper"] },
-  "/lunar-fire-safety": { type: "WebPage", name: "Fire safety at lunar cabin pressure", main: "fire-preprint", about: ["fire-preprint"] },
+  "/lunar-fire-safety": { type: "WebPage", name: "Lunar fire safety", main: "lunar-project", about: ["lunar-project", "fire-preprint"] },
 };
+
+/** Pages that sit under Research in the menu, so their breadcrumb goes Home › Research › page. */
+const RESEARCH_CHILDREN = new Set<string>(["/deepmath", "/lunar-fire-safety"]);
 
 export function schemaFor(path: string): string {
   const key = (path in pages ? path : "/") as PageKey;
@@ -430,10 +453,12 @@ export function schemaFor(path: string): string {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Rokib Al Dhin Raadh", item: `${SITE}/` },
-        ...(key === "/" ? [] : [{ "@type": "ListItem", position: 2, name: m.name, item: url }]),
+        ...(key === "/" ? [] : RESEARCH_CHILDREN.has(key)
+          ? [{ "@type": "ListItem", position: 2, name: "Research", item: `${SITE}/research` }, { "@type": "ListItem", position: 3, name: m.name, item: url }]
+          : [{ "@type": "ListItem", position: 2, name: m.name, item: url }]),
       ],
     },
   };
-  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, resetsPreprint, firePreprint, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
+  const graph = [website, page, person, oxiedo, blackBloxie, ormasPreprint, deepmathPaper, resetsPreprint, firePreprint, lunarProject, deepmath, cohereTalk, ormasCode, ormasMonitor, oximo, oximoReport, deadChannels, articleList];
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 1).replace(/</g, "\\u003c");
 }
