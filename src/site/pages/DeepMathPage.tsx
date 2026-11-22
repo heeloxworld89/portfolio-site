@@ -88,7 +88,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Does the jump do all the work?",
-    a: <>For reviving a dead layer, yes: that is Theorem 2. In all three seeds accuracy stays at exactly chance until the epoch of that seed&apos;s reset and rises from that epoch on (Figure 2). The small corrections then help finish the recovery. Whether they beat plain resets is an open empirical question; the next experiment is reset-only and ReDo baselines over several seeds, with the same detector.</>,
+    a: <>For reviving a dead layer, yes: that is Theorem 2. In all three seeds accuracy stays at exactly chance until the epoch of that seed&apos;s reset and rises from that epoch on (Figure 2). The small corrections then help finish the recovery. Whether they beat plain resets is an open empirical question; the next experiment is reset-only and ReDo baselines over several seeds, with the same detector. The <a href={links.resets} target="_blank" rel="noreferrer">follow-up paper</a> (November 2026, under review) proves what a reset has to write: for a BatchNorm&ndash;ReLU unit, the BatchNorm scale and shift, not only the filter.</>,
   },
   {
     q: "Why doesn't ResNet-18 benefit from repair?",

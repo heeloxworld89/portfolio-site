@@ -29,7 +29,7 @@ const person = {
     url: `${SITE}/assets/images/banner/header-left-user.jpg`,
     caption: "Rokib Al Dhin Raadh",
   },
-  description: `${DEFINITION} He developed ORMAS independently over 383 experiments on one RTX 3090. At 18 he was recruited by Associate Editor Prof. Jindong Wang of William & Mary as a reviewer for IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS). He was a reviewer for the NeurIPS 2026 Workshop on Trustworthy AI for Good and gave an invited talk at Cohere Labs in November 2026. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
+  description: `${DEFINITION} He developed ORMAS independently over 383 experiments on one RTX 3090. In November 2026 he published two more sole-authored papers: a follow-up proving which resets can revive a dead BatchNorm–ReLU unit, and a research project on a fire-safety problem in NASA's plans for the Moon. At 18 he was recruited by Associate Editor Prof. Jindong Wang of William & Mary as a reviewer for IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS). He was a reviewer for the NeurIPS 2026 Workshop on Trustworthy AI for Good and gave an invited talk at Cohere Labs in November 2026. OXIEDO, founded in 2023, licenses ORMAS on-premise to regulated industries.`,
   disambiguatingDescription: "AI researcher, 18, from Dhaka, Bangladesh: founder and CEO of OXIEDO, founder of Black Bloxie LTD (England and Wales), and inventor of the ORMAS self-repairing neural network.",
   jobTitle: "AI Researcher; Founder & CEO, OXIEDO",
   hasOccupation: [

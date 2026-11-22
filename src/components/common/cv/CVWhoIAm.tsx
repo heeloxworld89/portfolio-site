@@ -60,8 +60,8 @@ const timeline: { age: string; year: string; kind: Kind; title: string; body: st
     age: '18',
     year: '2026',
     kind: 'proof',
-    title: 'DeepMath 2026 · IEEE TNNLS and NeurIPS reviewer · Cohere Labs talk',
-    body: 'OXIEDO, founded in 2023, licenses ORMAS to regulated industries. The stability paper is accepted at DeepMath 2026 after double-blind review and shown at The Ohio State University; Raadh reviews for IEEE Transactions on Neural Networks and Learning Systems and the NeurIPS 2026 Workshop on Trustworthy AI for Good, and gave an invited talk at Cohere Labs.',
+    title: 'DeepMath 2026 · three papers · IEEE TNNLS and NeurIPS reviewer · Cohere Labs talk',
+    body: 'OXIEDO, founded in 2023, licenses ORMAS to regulated industries. The stability paper is accepted at DeepMath 2026 after double-blind review and shown at The Ohio State University; Raadh reviews for IEEE Transactions on Neural Networks and Learning Systems and the NeurIPS 2026 Workshop on Trustworthy AI for Good, and gave an invited talk at Cohere Labs. In November he published a follow-up on resets and a research project on a fire-safety problem in NASA\'s plans for the Moon.',
   },
 ];
 
