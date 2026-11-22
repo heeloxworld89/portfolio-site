@@ -115,6 +115,16 @@
           h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(44px,7vw,72px); line-height:.98; letter-spacing:-.02em; color:var(--teal); margin:0 0 18px; }
           h1 em { font-style:italic; color:#146273; }
           .lead { font-size:17px; line-height:1.6; color:var(--ink2); max-width:62ch; margin:0 0 28px; }
+          .copy { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin:0 0 28px; }
+          .copy-box { background:var(--paper); border:1px solid var(--line); border-top:3px solid var(--teal); padding:14px 16px; }
+          .copy-box label { display:block; font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+          .copy-row { display:flex; gap:8px; align-items:stretch; }
+          .copy-row input, .copy-row textarea { flex:1; min-width:0; font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--ink); background:#f1f1ec; border:1px solid var(--line); padding:9px 10px; resize:none; line-height:1.5; }
+          .copy-row textarea { white-space:pre; overflow-x:auto; }
+          .copy-row button { flex:none; font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--teal); border:0; padding:0 16px; cursor:pointer; min-height:40px; }
+          .copy-row button:hover { background:#146273; }
+          .copy-row button.ok { background:#3e9b62; }
+          .copy-hint { margin:8px 0 0; font-size:12.5px; line-height:1.5; color:var(--ink2); }
           .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin:0 0 40px; }
           .stat { background:var(--teal); color:#e9f1f2; padding:16px 18px; }
           .stat b { display:block; font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:36px; line-height:1; color:var(--lime); }
@@ -140,6 +150,7 @@
           code { font-family:"JetBrains Mono",monospace; font-size:.92em; background:rgba(11,64,77,.07); padding:1px 5px; }
           @media (max-width:820px) {
             .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+            .copy { grid-template-columns:1fr; }
             .row { grid-template-columns:1fr; gap:12px; }
             .meta { flex-direction:row; flex-wrap:wrap; gap:14px; }
             .thumb img { width:100%; max-width:360px; }
@@ -153,15 +164,39 @@
           <a class="brand" href="/">Rokib Al Dhin Raadh</a>
           <p class="eb">Sitemap</p>
           <h1>Every page on <em>raadh.me.</em></h1>
+          <xsl:variable name="all" select="s:urlset/s:url"/>
           <p class="lead">
             This is the map search engines and AI assistants read to find the site. People can use it too: every page,
             document and AI-readable file is listed below, with when it last changed.
           </p>
 
-          <xsl:variable name="all" select="s:urlset/s:url"/>
+
           <xsl:variable name="pages" select="$all[not(contains(s:loc,'.pdf')) and not(contains(s:loc,'.txt'))]"/>
           <xsl:variable name="docs" select="$all[contains(s:loc,'.pdf')]"/>
           <xsl:variable name="ai" select="$all[contains(s:loc,'.txt')]"/>
+
+          <div class="copy">
+            <div class="copy-box">
+              <label for="sm-url">Sitemap URL</label>
+              <div class="copy-row">
+                <input id="sm-url" readonly="readonly" value="{$site}/sitemap.xml" onfocus="this.select()"/>
+                <button type="button" data-copy="sm-url">Copy</button>
+              </div>
+              <p class="copy-hint">Paste into Google Search Console or Bing Webmaster Tools, under Sitemaps.</p>
+            </div>
+            <div class="copy-box">
+              <label for="sm-all">All <xsl:value-of select="count($all)"/> URLs, one per line</label>
+              <div class="copy-row">
+                <textarea id="sm-all" readonly="readonly" rows="3" wrap="off" onfocus="this.select()"><xsl:for-each select="$all"><xsl:value-of select="s:loc"/><xsl:if test="position() != last()"><xsl:text>&#10;</xsl:text></xsl:if></xsl:for-each></textarea>
+                <button type="button" data-copy="sm-all">Copy</button>
+              </div>
+              <p class="copy-hint">
+                For requesting indexing page by page. Last change:
+                <b><xsl:for-each select="$all"><xsl:sort select="s:lastmod" order="descending"/><xsl:if test="position() = 1"><xsl:value-of select="s:lastmod"/></xsl:if></xsl:for-each></b>.
+                This file is regenerated on every deploy.
+              </p>
+            </div>
+          </div>
 
           <div class="stats">
             <div class="stat"><b><xsl:value-of select="count($all)"/></b><span>URLs in total</span></div>
@@ -194,6 +229,20 @@
             <br/>© Rokib Al Dhin Raadh · <a href="/">raadh.me</a>
           </p>
         </div>
+        <script><![CDATA[
+          document.addEventListener("click", function (e) {
+            var b = e.target.closest ? e.target.closest("[data-copy]") : null;
+            if (!b) return;
+            var el = document.getElementById(b.getAttribute("data-copy"));
+            var done = function () {
+              var label = b.textContent; b.textContent = "Copied"; b.classList.add("ok");
+              setTimeout(function () { b.textContent = label; b.classList.remove("ok"); }, 1600);
+            };
+            var fallback = function () { el.focus(); el.select(); try { document.execCommand("copy"); } catch (x) {} done(); };
+            if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(el.value).then(done, fallback);
+            else fallback();
+          });
+        ]]></script>
       </body>
     </html>
   </xsl:template>
