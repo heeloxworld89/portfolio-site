@@ -191,15 +191,61 @@ export default function Home() {
               carrying fire tests into the 34%-oxygen lunar habitat atmosphere, with predictions for the first fire
               experiment on the lunar surface registered before it flies.
             </p>
-            <p>
-              He grew up in Dhaka, Bangladesh. He developed ORMAS independently over 383 controlled experiments on a
-              single GPU, released it as an open preprint with code that reproduces every result, and published{" "}
-              <a href={links.monitor} target="_blank" rel="noreferrer">ormas-monitor</a>, an open training monitor based on
-              the DeepMath result. OXIEDO, which he founded in 2023, licenses ORMAS to regulated industries that need an
-              auditable record of what their models learned. Before ORMAS he built OXIMO, a 40,933-line multi-agent system,
-              and founded five ventures between the ages of 12 and 17, selling the EWM trading algorithm for about $10,000
-              at 15.
-            </p>
+            <div className="ux-bento" role="list" aria-label="Rokib Al Dhin Raadh at a glance">
+              <div className="ux-b ux-b-peak" role="listitem">
+                <div className="ux-b-peak-top">
+                  <span className="ux-b-k">Age 18 · 2026</span>
+                  <span className="ux-b-big">18</span>
+                </div>
+                <p className="ux-b-h">The year it all landed.</p>
+                <ul className="ux-b-chips">
+                  <li><Link to="/deepmath">DeepMath 2026 paper</Link></li>
+                  <li><Link to="/evidence">IEEE TNNLS reviewer</Link></li>
+                  <li><a href={links.neuripsReviewers} target="_blank" rel="noreferrer">NeurIPS 2026 reviewer</a></li>
+                  <li><a href={links.cohereRecording} target="_blank" rel="noreferrer">Cohere Labs invited talk</a></li>
+                  <li><a href="#publications">3 sole-authored papers</a></li>
+                  <li><Link to="/lunar-fire-safety">Lunar fire safety</Link></li>
+                </ul>
+              </div>
+              <div className="ux-b ux-b-place" role="listitem">
+                <span className="ux-b-k">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15Z" fill="none" stroke="currentColor" strokeWidth="1.4" /><circle cx="8" cy="6.5" r="1.8" fill="currentColor" /></svg>
+                  Home
+                </span>
+                <span className="ux-b-name">Dhaka, Bangladesh</span>
+                <p>He grew up in Dhaka and developed ORMAS here, independently.</p>
+              </div>
+              <div className="ux-b ux-b-mfull" role="listitem">
+                <span className="ux-b-k">ORMAS</span>
+                <span className="ux-b-num">383</span>
+                <p>Controlled experiments on a single GPU, released as an open preprint with code that reproduces every result.</p>
+              </div>
+              <div className="ux-b ux-b-sm" role="listitem">
+                <span className="ux-b-k">Age 12 to 17</span>
+                <span className="ux-b-num">5</span>
+                <p>Ventures founded.</p>
+              </div>
+              <div className="ux-b ux-b-sm" role="listitem">
+                <span className="ux-b-k">Age 15</span>
+                <span className="ux-b-num">$10K</span>
+                <p>The EWM trading algorithm, sold for about $10,000.</p>
+              </div>
+              <div className="ux-b ux-b-sm ux-b-mfull" role="listitem">
+                <span className="ux-b-k">Before ORMAS</span>
+                <span className="ux-b-num">40,933</span>
+                <p>Lines in OXIMO, his multi-agent system.</p>
+              </div>
+              <a className="ux-b ux-b-link" role="listitem" href={links.oxiedo} target="_blank" rel="noreferrer">
+                <span className="ux-b-k">Founded 2023</span>
+                <span className="ux-b-name">OXIEDO <Arrow /></span>
+                <p>Licenses ORMAS to regulated industries that need an auditable record of what their models learned.</p>
+              </a>
+              <a className="ux-b ux-b-link" role="listitem" href={links.monitor} target="_blank" rel="noreferrer">
+                <span className="ux-b-k">Open source</span>
+                <span className="ux-b-name">ormas-monitor <Arrow /></span>
+                <p>An open training monitor for PyTorch, based on the DeepMath result.</p>
+              </a>
+            </div>
             <div className="rx-links">
               <a href={links.cv} target="_blank" rel="noreferrer">CV <Arrow /></a>
               <Link to="/deepmath">DeepMath poster <Arrow /></Link>

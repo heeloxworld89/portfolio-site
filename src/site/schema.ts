@@ -220,6 +220,8 @@ const cohereTalk = {
       "Recording of the invited talk by Rokib Al Dhin Raadh at Cohere Labs on the input-to-state stability of self-repairing neural network training.",
     url: links.cohereRecording,
     embedUrl: "https://www.youtube.com/embed/R75wEi3Ti-M",
+    // Published on Cohere's YouTube channel on 14 Nov 2026 (required by Google for video results).
+    uploadDate: "2026-11-14",
     thumbnailUrl: `${SITE}${links.coherePoster}`,
     publisher: { "@type": "Organization", name: "Cohere", url: "https://www.youtube.com/@CohereAI" },
   },
