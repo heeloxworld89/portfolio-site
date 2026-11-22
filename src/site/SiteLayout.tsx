@@ -187,7 +187,7 @@ export default function SiteLayout({ children, hideCompanyLink = false }: { chil
             </div>
           </div>
           <div className="rx-foot-base">
-            <small>© Rokib Al Dhin Raadh, 2026</small>
+            <small>© Rokib Al Dhin Raadh, 2026 · <a href="/sitemap">Sitemap</a></small>
           </div>
         </div>
         <div className="rx-foot-land" aria-hidden="true">
