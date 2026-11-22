@@ -123,3 +123,63 @@ fs.writeFileSync(path.join(dist, "evidence.json"), JSON.stringify({
 console.log(`prerender: evidence.json (${claims.length} claims)`);
 
 console.log(`prerender: llms-full.txt ${(text.length / 1024).toFixed(0)} KB`);
+
+// ── sitemap.xml: generated on every build ──────────────────────────────────
+// Each URL's <lastmod> is the date its content last changed. A short hash of
+// the rendered page (header, footer and scripts removed) or of the file is
+// kept in scripts/sitemap-state.json; when the hash changes, lastmod becomes
+// the build date. Commit the state file after a local build so deploys keep
+// the dates. Add new pages and documents to SITEMAP below.
+import crypto from "node:crypto";
+const statePath = path.join(root, "scripts/sitemap-state.json");
+const state = fs.existsSync(statePath) ? JSON.parse(fs.readFileSync(statePath, "utf8")) : {};
+const today = new Date().toISOString().slice(0, 10);
+const digest = (v) => crypto.createHash("sha256").update(v).digest("hex").slice(0, 16);
+const pageBody = (html) => html
+  .replace(/<header class="rx-head"[\s\S]*?<\/header>/g, "")
+  .replace(/<footer class="rx-foot"[\s\S]*?<\/footer>/g, "")
+  .replace(/<script[\s\S]*?<\/script>/g, "");
+const SITEMAP = [
+  { loc: "/", freq: "weekly", prio: "1.0" },
+  { loc: "/research", freq: "monthly", prio: "0.9" },
+  { loc: "/evidence", freq: "monthly", prio: "0.9" },
+  { loc: "/work", freq: "monthly", prio: "0.8" },
+  { loc: "/about", freq: "monthly", prio: "0.8" },
+  { loc: "/deepmath", freq: "weekly", prio: "0.7" },
+  { loc: "/lunar-fire-safety", freq: "monthly", prio: "0.7" },
+  { loc: "/dead-channels", freq: "monthly", prio: "0.7" },
+  { loc: "/articles", freq: "weekly", prio: "0.6" },
+  { loc: "/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf", file: "dist/assets/pdf/Rokib_Al_Dhin_Raadh_CV.pdf", freq: "monthly", prio: "0.8" },
+  { loc: "/assets/pdf/oxiedo_academic_research_paper.pdf", file: "dist/assets/pdf/oxiedo_academic_research_paper.pdf", freq: "yearly", prio: "0.6" },
+  { loc: "/assets/pdf/oxiedo_investor_whitepaper.pdf", file: "dist/assets/pdf/oxiedo_investor_whitepaper.pdf", freq: "yearly", prio: "0.6" },
+  { loc: "/assets/pdf/oxiedo_pitch_deck.pdf", file: "dist/assets/pdf/oxiedo_pitch_deck.pdf", freq: "monthly", prio: "0.6" },
+  { loc: "/llms.txt", file: "dist/llms.txt", freq: "weekly", prio: "0.5" },
+  { loc: "/llms-full.txt", file: "dist/llms-full.txt", freq: "weekly", prio: "0.5" },
+];
+const missing = routes.filter((r) => !SITEMAP.some((e) => e.loc === r.path)).map((r) => r.path);
+if (missing.length) throw new Error(`sitemap: add ${missing.join(", ")} to SITEMAP in scripts/prerender.mjs`);
+const xmlEsc = (v) => v.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const nextState = {};
+const urls = SITEMAP.map((e) => {
+  const content = e.file
+    ? fs.readFileSync(path.join(root, e.file))
+    : pageBody(rendered[e.loc]) + JSON.stringify(pages[e.loc]);
+  const h = digest(content);
+  const prev = state[e.loc];
+  const lastmod = prev && (prev.hash === h || prev.hash === null) ? prev.lastmod : today;
+  nextState[e.loc] = { lastmod, hash: h };
+  const image = !e.file && pages[e.loc]?.image
+    ? `\n    <image:image>\n      <image:loc>${SITE}${xmlEsc(pages[e.loc].image)}</image:loc>\n    </image:image>`
+    : "";
+  return `  <url>\n    <loc>${SITE}${xmlEsc(e.loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${e.freq}</changefreq>\n    <priority>${e.prio}</priority>${image}\n  </url>`;
+});
+fs.writeFileSync(path.join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.join("\n")}
+</urlset>
+`);
+fs.writeFileSync(statePath, JSON.stringify(nextState, null, 2) + "\n");
+const changed = SITEMAP.filter((e) => nextState[e.loc].lastmod === today).length;
+console.log(`prerender: sitemap.xml (${urls.length} URLs, ${changed} dated ${today})`);
