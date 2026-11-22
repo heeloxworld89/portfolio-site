@@ -1,0 +1,70 @@
+/* Styles /sitemap.xml in browsers (CSS on XML, no XSLT). Crawlers ignore it.
+   The page for people, with copy buttons, is /sitemap. */
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap");
+@namespace url(http://www.sitemaps.org/schemas/sitemap/0.9);
+@namespace image url(http://www.google.com/schemas/sitemap-image/1.1);
+
+urlset {
+  display: block;
+  background: #e7e7e2;
+  color: #0f1516;
+  font-family: "Funnel Sans", system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 48px max(24px, calc((100vw - 1032px) / 2)) 72px;
+  border-top: 6px solid #0b404d;
+  -webkit-font-smoothing: antialiased;
+}
+urlset::before {
+  content: "Every page on raadh.me.";
+  white-space: pre;
+  display: block;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(40px, 7vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: #0b404d;
+  margin-bottom: 14px;
+}
+urlset::after {
+  content: "This is the machine-readable sitemap search engines read. For a readable version with copy buttons, open www.raadh.me/sitemap";
+  display: block;
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(11, 64, 77, .16);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4d575a;
+}
+url {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px 24px;
+  align-items: center;
+  background: #fbfbf9;
+  border: 1px solid rgba(11, 64, 77, .16);
+  border-left: 3px solid #0b404d;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+loc {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b404d;
+  word-break: break-all;
+}
+lastmod, priority {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #4d575a;
+  white-space: nowrap;
+}
+lastmod::before { content: "UPDATED  "; font-size: 10.5px; letter-spacing: .06em; color: #6b7477; }
+priority::before { content: "PRIORITY  "; font-size: 10.5px; letter-spacing: .06em; color: #6b7477; }
+changefreq, image|image { display: none; }
+@media (max-width: 720px) {
+  url { grid-template-columns: 1fr; gap: 6px; }
+  urlset::before { white-space: pre-wrap; }
+}
